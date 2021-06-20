@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE5F6E68267ED7F700FCD3A1 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F6E67267ED7F700FCD3A1 /* AppStore.swift */; };
 		DED39B8726700D4200EFE68D /* SwiftUIAndReduxExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED39B8626700D4200EFE68D /* SwiftUIAndReduxExampleApp.swift */; };
 		DED39B8926700D4200EFE68D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED39B8826700D4200EFE68D /* ContentView.swift */; };
 		DED39B8B26700D4400EFE68D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DED39B8A26700D4400EFE68D /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DE5F6E67267ED7F700FCD3A1 /* AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
 		DED39B8326700D4200EFE68D /* SwiftUIAndReduxExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIAndReduxExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DED39B8626700D4200EFE68D /* SwiftUIAndReduxExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIAndReduxExampleApp.swift; sourceTree = "<group>"; };
 		DED39B8826700D4200EFE68D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -69,6 +71,69 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE5F6E5F267ED6F500FCD3A1 /* Redux */ = {
+			isa = PBXGroup;
+			children = (
+				DE5F6E64267ED78700FCD3A1 /* ActionCreator */,
+				DE5F6E63267ED73B00FCD3A1 /* Action */,
+				DE5F6E62267ED71700FCD3A1 /* Reducer */,
+				DE5F6E61267ED70F00FCD3A1 /* Middleware */,
+				DE5F6E60267ED70400FCD3A1 /* Store */,
+			);
+			path = Redux;
+			sourceTree = "<group>";
+		};
+		DE5F6E60267ED70400FCD3A1 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				DE5F6E67267ED7F700FCD3A1 /* AppStore.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		DE5F6E61267ED70F00FCD3A1 /* Middleware */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Middleware;
+			sourceTree = "<group>";
+		};
+		DE5F6E62267ED71700FCD3A1 /* Reducer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Reducer;
+			sourceTree = "<group>";
+		};
+		DE5F6E63267ED73B00FCD3A1 /* Action */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Action;
+			sourceTree = "<group>";
+		};
+		DE5F6E64267ED78700FCD3A1 /* ActionCreator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ActionCreator;
+			sourceTree = "<group>";
+		};
+		DE5F6E65267ED7A900FCD3A1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DE5F6E66267ED7B200FCD3A1 /* Entity */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DE5F6E66267ED7B200FCD3A1 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		DED39B7A26700D4200EFE68D = {
 			isa = PBXGroup;
 			children = (
@@ -92,9 +157,11 @@
 		DED39B8526700D4200EFE68D /* SwiftUIAndReduxExample */ = {
 			isa = PBXGroup;
 			children = (
-				DED39B8626700D4200EFE68D /* SwiftUIAndReduxExampleApp.swift */,
-				DED39B8826700D4200EFE68D /* ContentView.swift */,
+				DE5F6E65267ED7A900FCD3A1 /* Model */,
+				DE5F6E5F267ED6F500FCD3A1 /* Redux */,
 				DED39B8A26700D4400EFE68D /* Assets.xcassets */,
+				DED39B8826700D4200EFE68D /* ContentView.swift */,
+				DED39B8626700D4200EFE68D /* SwiftUIAndReduxExampleApp.swift */,
 				DED39B8C26700D4400EFE68D /* Preview Content */,
 			);
 			path = SwiftUIAndReduxExample;
@@ -254,6 +321,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE5F6E68267ED7F700FCD3A1 /* AppStore.swift in Sources */,
 				DED39B8926700D4200EFE68D /* ContentView.swift in Sources */,
 				DED39B8726700D4200EFE68D /* SwiftUIAndReduxExampleApp.swift in Sources */,
 			);
