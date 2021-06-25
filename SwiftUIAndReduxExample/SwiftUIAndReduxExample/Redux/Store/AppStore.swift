@@ -7,4 +7,9 @@
 
 import Foundation
 
+// MARK: - Struct
+
+struct AppState {}
+
+// MARK: - Protocols
 
