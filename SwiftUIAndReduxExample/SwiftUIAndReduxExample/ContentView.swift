@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  SwiftUIAndReduxExample
 //
-//  Created by 酒井文也 on 2021/06/09.
+//  Created by 酒井文也 on 2021/09/08.
 //
 
 import SwiftUI
