@@ -1,26 +1,19 @@
-# MEMO: 入門!実践!サーバーサイドKotlinで紹介されていたDocker構成を参考に実装しています
-# (URL) https://booth.pm/ja/items/1560389
-
-# 実行手順:
-# $ docker-compose up -d
-# $ chmod +x make_database.sh
-# $ sh make_database.sh
-
-version: '3'
-services: 
-  db:
-    image: mysql:5.7 
-    container_name: swiftui_redux_container
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: swiftui_redux_database
-      MYSQL_USER: just1factory
-      MYSQL_PASSWORD: just1factory
-      TZ: 'Asia/Tokyo'
-    volumes:
-      - ./docker/db/data:/var/lib/mysql
-      - ./docker/db/my.cnf:/etc/mysql/conf.d/my.cnf
-      # MEMO: 初期データ投入用やTest環境用のDB作成が必要な場合を想定している
-      - ./docker/db/sql:/docker-initdb
+version: '3.2'
+services:
+  web:
+    build: .
     ports:
-      - 3306:3306
+      - '4000:4000'
+    command: mix phx.server
+    environment:
+      - MIX_ENV=dev
+      - PORT=4000
+    volumes:
+      - .:/app
+
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_HOST=db
