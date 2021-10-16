@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE0BFBB7271B080900FC0F32 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBB6271B080900FC0F32 /* UIColorExtension.swift */; };
+		DE0BFBBA271B154900FC0F32 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBB9271B154900FC0F32 /* AppConstants.swift */; };
+		DE0BFBBC271B16AB00FC0F32 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBBB271B16AB00FC0F32 /* HomeScreenView.swift */; };
+		DE0BFBBE271B16E300FC0F32 /* ArchiveScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBBD271B16E300FC0F32 /* ArchiveScreenView.swift */; };
+		DE0BFBC0271B16FD00FC0F32 /* FavoriteScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBBF271B16FD00FC0F32 /* FavoriteScreenView.swift */; };
+		DE0BFBC2271B170B00FC0F32 /* ProfileScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBC1271B170B00FC0F32 /* ProfileScreenView.swift */; };
 		DEE9C6F626E8308700190505 /* SwiftUIAndReduxExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE9C6F526E8308700190505 /* SwiftUIAndReduxExampleApp.swift */; };
 		DEE9C6F826E8308700190505 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE9C6F726E8308700190505 /* ContentView.swift */; };
 		DEE9C6FA26E8308800190505 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEE9C6F926E8308800190505 /* Assets.xcassets */; };
@@ -33,6 +39,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DE0BFBB6271B080900FC0F32 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		DE0BFBB9271B154900FC0F32 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		DE0BFBBB271B16AB00FC0F32 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
+		DE0BFBBD271B16E300FC0F32 /* ArchiveScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveScreenView.swift; sourceTree = "<group>"; };
+		DE0BFBBF271B16FD00FC0F32 /* FavoriteScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteScreenView.swift; sourceTree = "<group>"; };
+		DE0BFBC1271B170B00FC0F32 /* ProfileScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenView.swift; sourceTree = "<group>"; };
 		DEE9C6F226E8308700190505 /* SwiftUIAndReduxExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIAndReduxExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEE9C6F526E8308700190505 /* SwiftUIAndReduxExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIAndReduxExampleApp.swift; sourceTree = "<group>"; };
 		DEE9C6F726E8308700190505 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -84,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				DEE9C6F726E8308700190505 /* ContentView.swift */,
+				DE0BFBB4271A9D1900FC0F32 /* Representable */,
 				DE0BFBB3271A9B3F00FC0F32 /* Components */,
 				DE0BFBB2271A9B3500FC0F32 /* Screens */,
 			);
@@ -139,6 +152,10 @@
 		DE0BFBB2271A9B3500FC0F32 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				DE0BFBBB271B16AB00FC0F32 /* HomeScreenView.swift */,
+				DE0BFBBD271B16E300FC0F32 /* ArchiveScreenView.swift */,
+				DE0BFBBF271B16FD00FC0F32 /* FavoriteScreenView.swift */,
+				DE0BFBC1271B170B00FC0F32 /* ProfileScreenView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -148,6 +165,29 @@
 			children = (
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		DE0BFBB4271A9D1900FC0F32 /* Representable */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Representable;
+			sourceTree = "<group>";
+		};
+		DE0BFBB5271B07ED00FC0F32 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				DE0BFBB6271B080900FC0F32 /* UIColorExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		DE0BFBB8271B151F00FC0F32 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				DE0BFBB9271B154900FC0F32 /* AppConstants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		DEE9C6E926E8308700190505 = {
@@ -174,6 +214,8 @@
 			isa = PBXGroup;
 			children = (
 				DE0BFBAA271A99E700FC0F32 /* App */,
+				DE0BFBB8271B151F00FC0F32 /* Constants */,
+				DE0BFBB5271B07ED00FC0F32 /* Extension */,
 				DE0BFBAC271A9A1800FC0F32 /* Entity */,
 				DE0BFBAD271A9AD600FC0F32 /* Store */,
 				DE0BFBAB271A99F200FC0F32 /* View */,
@@ -339,8 +381,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE0BFBB7271B080900FC0F32 /* UIColorExtension.swift in Sources */,
+				DE0BFBC0271B16FD00FC0F32 /* FavoriteScreenView.swift in Sources */,
 				DEE9C6F826E8308700190505 /* ContentView.swift in Sources */,
+				DE0BFBBC271B16AB00FC0F32 /* HomeScreenView.swift in Sources */,
 				DEE9C6F626E8308700190505 /* SwiftUIAndReduxExampleApp.swift in Sources */,
+				DE0BFBBA271B154900FC0F32 /* AppConstants.swift in Sources */,
+				DE0BFBC2271B170B00FC0F32 /* ProfileScreenView.swift in Sources */,
+				DE0BFBBE271B16E300FC0F32 /* ArchiveScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
