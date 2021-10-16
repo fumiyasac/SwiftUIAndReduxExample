@@ -1,0 +1,34 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Cosmos",
+        "repositoryURL": "https://github.com/evgenyneu/Cosmos.git",
+        "state": {
+          "branch": "master",
+          "revision": "cce521e734d0090494bd4afab5fd2e2f2465c1af",
+          "version": null
+        }
+      },
+      {
+        "package": "GRDB",
+        "repositoryURL": "https://github.com/groue/GRDB.swift.git",
+        "state": {
+          "branch": "master",
+          "revision": "32b2923e890df320906e64cbd0faca22a8bfda14",
+          "version": null
+        }
+      },
+      {
+        "package": "SDWebImage",
+        "repositoryURL": "https://github.com/SDWebImage/SDWebImage.git",
+        "state": {
+          "branch": "master",
+          "revision": "a72df4849408da7e5d3c1b586797b7c601c41d1b",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

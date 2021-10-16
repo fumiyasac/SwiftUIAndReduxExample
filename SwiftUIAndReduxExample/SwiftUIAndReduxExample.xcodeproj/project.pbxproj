@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,11 @@
 		DE0BFBC6271B20D200FC0F32 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBC5271B20D200FC0F32 /* AppState.swift */; };
 		DE0BFBC8271B20FA00FC0F32 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBC7271B20FA00FC0F32 /* AppReducer.swift */; };
 		DE0BFBCA271B21B400FC0F32 /* ApiClientMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBC9271B21B400FC0F32 /* ApiClientMiddleware.swift */; };
+		DE0BFBCF271B354800FC0F32 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = DE0BFBCE271B354800FC0F32 /* SDWebImage */; };
+		DE0BFBD2271B356D00FC0F32 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = DE0BFBD1271B356D00FC0F32 /* Cosmos */; };
+		DE0BFBD5271B35D100FC0F32 /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = DE0BFBD4271B35D100FC0F32 /* GRDB */; };
+		DE0BFBD7271B38BD00FC0F32 /* ArchiveEntityResponseJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBD6271B38BD00FC0F32 /* ArchiveEntityResponseJson.swift */; };
+		DE0BFBD9271B38CF00FC0F32 /* ArchiveEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBD8271B38CF00FC0F32 /* ArchiveEntity.swift */; };
 		DEE9C6F626E8308700190505 /* SwiftUIAndReduxExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE9C6F526E8308700190505 /* SwiftUIAndReduxExampleApp.swift */; };
 		DEE9C6F826E8308700190505 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE9C6F726E8308700190505 /* ContentView.swift */; };
 		DEE9C6FA26E8308800190505 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEE9C6F926E8308800190505 /* Assets.xcassets */; };
@@ -53,6 +58,8 @@
 		DE0BFBC5271B20D200FC0F32 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		DE0BFBC7271B20FA00FC0F32 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		DE0BFBC9271B21B400FC0F32 /* ApiClientMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClientMiddleware.swift; sourceTree = "<group>"; };
+		DE0BFBD6271B38BD00FC0F32 /* ArchiveEntityResponseJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveEntityResponseJson.swift; sourceTree = "<group>"; };
+		DE0BFBD8271B38CF00FC0F32 /* ArchiveEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveEntity.swift; sourceTree = "<group>"; };
 		DEE9C6F226E8308700190505 /* SwiftUIAndReduxExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIAndReduxExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEE9C6F526E8308700190505 /* SwiftUIAndReduxExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIAndReduxExampleApp.swift; sourceTree = "<group>"; };
 		DEE9C6F726E8308700190505 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -72,6 +79,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE0BFBD5271B35D100FC0F32 /* GRDB in Frameworks */,
+				DE0BFBD2271B356D00FC0F32 /* Cosmos in Frameworks */,
+				DE0BFBCF271B354800FC0F32 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +124,7 @@
 		DE0BFBAC271A9A1800FC0F32 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				DE0BFBCC271B349600FC0F32 /* EntityJson */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -209,6 +220,15 @@
 			path = Infrastructure;
 			sourceTree = "<group>";
 		};
+		DE0BFBCC271B349600FC0F32 /* EntityJson */ = {
+			isa = PBXGroup;
+			children = (
+				DE0BFBD6271B38BD00FC0F32 /* ArchiveEntityResponseJson.swift */,
+				DE0BFBD8271B38CF00FC0F32 /* ArchiveEntity.swift */,
+			);
+			path = EntityJson;
+			sourceTree = "<group>";
+		};
 		DEE9C6E926E8308700190505 = {
 			isa = PBXGroup;
 			children = (
@@ -288,6 +308,11 @@
 			dependencies = (
 			);
 			name = SwiftUIAndReduxExample;
+			packageProductDependencies = (
+				DE0BFBCE271B354800FC0F32 /* SDWebImage */,
+				DE0BFBD1271B356D00FC0F32 /* Cosmos */,
+				DE0BFBD4271B35D100FC0F32 /* GRDB */,
+			);
 			productName = SwiftUIAndReduxExample;
 			productReference = DEE9C6F226E8308700190505 /* SwiftUIAndReduxExample.app */;
 			productType = "com.apple.product-type.application";
@@ -359,6 +384,11 @@
 				Base,
 			);
 			mainGroup = DEE9C6E926E8308700190505;
+			packageReferences = (
+				DE0BFBCD271B354800FC0F32 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				DE0BFBD0271B356D00FC0F32 /* XCRemoteSwiftPackageReference "Cosmos" */,
+				DE0BFBD3271B35D100FC0F32 /* XCRemoteSwiftPackageReference "GRDB.swift" */,
+			);
 			productRefGroup = DEE9C6F326E8308700190505 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -408,6 +438,8 @@
 				DE0BFBC4271B1EA400FC0F32 /* Store.swift in Sources */,
 				DE0BFBBC271B16AB00FC0F32 /* HomeScreenView.swift in Sources */,
 				DE0BFBC6271B20D200FC0F32 /* AppState.swift in Sources */,
+				DE0BFBD9271B38CF00FC0F32 /* ArchiveEntity.swift in Sources */,
+				DE0BFBD7271B38BD00FC0F32 /* ArchiveEntityResponseJson.swift in Sources */,
 				DEE9C6F626E8308700190505 /* SwiftUIAndReduxExampleApp.swift in Sources */,
 				DE0BFBBA271B154900FC0F32 /* AppConstants.swift in Sources */,
 				DE0BFBC2271B170B00FC0F32 /* ProfileScreenView.swift in Sources */,
@@ -732,6 +764,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DE0BFBCD271B354800FC0F32 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		DE0BFBD0271B356D00FC0F32 /* XCRemoteSwiftPackageReference "Cosmos" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/Cosmos.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		DE0BFBD3271B35D100FC0F32 /* XCRemoteSwiftPackageReference "GRDB.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/groue/GRDB.swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DE0BFBCE271B354800FC0F32 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE0BFBCD271B354800FC0F32 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		DE0BFBD1271B356D00FC0F32 /* Cosmos */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE0BFBD0271B356D00FC0F32 /* XCRemoteSwiftPackageReference "Cosmos" */;
+			productName = Cosmos;
+		};
+		DE0BFBD4271B35D100FC0F32 /* GRDB */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE0BFBD3271B35D100FC0F32 /* XCRemoteSwiftPackageReference "GRDB.swift" */;
+			productName = GRDB;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DEE9C6EA26E8308700190505 /* Project object */;
 }

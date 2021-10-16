@@ -43,7 +43,7 @@ struct ContentView: View {
                     }
                 }.tag(3)
         }
-        .accentColor(Color(AppConstants.ColorPalette.primary))
+        .accentColor(Color(AppConstants.ColorPalette.mint))
     }
 }
 

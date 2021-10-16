@@ -32,7 +32,7 @@ struct SwiftUIAndReduxExampleApp: App {
         // MEMO: NavigationBarの色を白色に合わせる対応
         let newNavAppearance = UINavigationBarAppearance()
         newNavAppearance.configureWithTransparentBackground()
-        newNavAppearance.backgroundColor = AppConstants.ColorPalette.primary
+        newNavAppearance.backgroundColor = AppConstants.ColorPalette.mint
         UINavigationBar.appearance().standardAppearance = newNavAppearance
     }
 }
