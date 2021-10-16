@@ -72,6 +72,84 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE0BFBAA271A99E700FC0F32 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				DEE9C6F526E8308700190505 /* SwiftUIAndReduxExampleApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		DE0BFBAB271A99F200FC0F32 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DEE9C6F726E8308700190505 /* ContentView.swift */,
+				DE0BFBB3271A9B3F00FC0F32 /* Components */,
+				DE0BFBB2271A9B3500FC0F32 /* Screens */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DE0BFBAC271A9A1800FC0F32 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		DE0BFBAD271A9AD600FC0F32 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				DE0BFBB1271A9B0A00FC0F32 /* States */,
+				DE0BFBB0271A9B0000FC0F32 /* Reducers */,
+				DE0BFBAF271A9AF600FC0F32 /* Middlewares */,
+				DE0BFBAE271A9AE900FC0F32 /* Actions */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		DE0BFBAE271A9AE900FC0F32 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
+		DE0BFBAF271A9AF600FC0F32 /* Middlewares */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Middlewares;
+			sourceTree = "<group>";
+		};
+		DE0BFBB0271A9B0000FC0F32 /* Reducers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Reducers;
+			sourceTree = "<group>";
+		};
+		DE0BFBB1271A9B0A00FC0F32 /* States */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = States;
+			sourceTree = "<group>";
+		};
+		DE0BFBB2271A9B3500FC0F32 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		DE0BFBB3271A9B3F00FC0F32 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		DEE9C6E926E8308700190505 = {
 			isa = PBXGroup;
 			children = (
@@ -95,8 +173,10 @@
 		DEE9C6F426E8308700190505 /* SwiftUIAndReduxExample */ = {
 			isa = PBXGroup;
 			children = (
-				DEE9C6F526E8308700190505 /* SwiftUIAndReduxExampleApp.swift */,
-				DEE9C6F726E8308700190505 /* ContentView.swift */,
+				DE0BFBAA271A99E700FC0F32 /* App */,
+				DE0BFBAC271A9A1800FC0F32 /* Entity */,
+				DE0BFBAD271A9AD600FC0F32 /* Store */,
+				DE0BFBAB271A99F200FC0F32 /* View */,
 				DEE9C6F926E8308800190505 /* Assets.xcassets */,
 				DEE9C6FE26E8308800190505 /* Info.plist */,
 				DEE9C6FB26E8308800190505 /* Preview Content */,
