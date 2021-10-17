@@ -8,10 +8,19 @@
 import SwiftUI
 
 struct ArchiveScreenView: View {
+
+    // MARK: - body
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            Text("ArchiveScreenView")
+                .navigationBarTitle(Text("Archive"), displayMode: .inline)
+        }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
+
+// MARK: - Preview
 
 struct ArchiveScreenView_Previews: PreviewProvider {
     static var previews: some View {

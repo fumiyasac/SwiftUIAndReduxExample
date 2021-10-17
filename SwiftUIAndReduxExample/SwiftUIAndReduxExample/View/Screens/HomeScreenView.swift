@@ -8,10 +8,19 @@
 import SwiftUI
 
 struct HomeScreenView: View {
+
+    // MARK: - body
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            Text("HomeScreenView")
+                .navigationBarTitle(Text("Home"), displayMode: .inline)
+        }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
+
+// MARK: - Preview
 
 struct HomeScreenView_Previews: PreviewProvider {
     static var previews: some View {

@@ -40,6 +40,7 @@ struct SwiftUIAndReduxExampleApp: App {
         newNavigationAppearance.backgroundColor = AppConstants.ColorPalette.mint
         newNavigationAppearance.titleTextAttributes = titleTextAttributes
         UINavigationBar.appearance().standardAppearance = newNavigationAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = newNavigationAppearance
     }
 
     private func setupTabBarAppearances() {

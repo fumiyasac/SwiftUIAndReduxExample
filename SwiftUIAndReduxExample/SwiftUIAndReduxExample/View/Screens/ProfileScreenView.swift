@@ -8,10 +8,19 @@
 import SwiftUI
 
 struct ProfileScreenView: View {
+
+    // MARK: - body
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            Text("ProfileScreenView")
+                .navigationBarTitle(Text("Profile"), displayMode: .inline)
+        }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
+
+// MARK: - Preview
 
 struct ProfileScreenView_Previews: PreviewProvider {
     static var previews: some View {

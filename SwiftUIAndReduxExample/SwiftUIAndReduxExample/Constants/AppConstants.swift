@@ -33,7 +33,7 @@ struct AppConstants {
     struct FontSetting {
         static let navigationTitle = UIFont(
             name: FontFamily.helveticaNeueBold,
-            size: 14.0
+            size: 15.0
         )!
     }
 }

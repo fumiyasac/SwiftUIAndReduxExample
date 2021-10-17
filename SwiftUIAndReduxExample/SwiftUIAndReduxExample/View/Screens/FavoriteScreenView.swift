@@ -8,10 +8,19 @@
 import SwiftUI
 
 struct FavoriteScreenView: View {
+
+    // MARK: - body
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            Text("FavoriteScreenView")
+                .navigationBarTitle(Text("Favorite"), displayMode: .inline)
+        }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
+
+// MARK: - Preview
 
 struct FavoriteScreenView_Previews: PreviewProvider {
     static var previews: some View {
