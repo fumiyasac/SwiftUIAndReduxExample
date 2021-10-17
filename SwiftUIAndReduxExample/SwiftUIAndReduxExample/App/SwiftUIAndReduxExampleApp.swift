@@ -32,7 +32,7 @@ struct SwiftUIAndReduxExampleApp: App {
 
         // MEMO: NavigationBarのタイトル色を白色に合わせる対応
         var titleTextAttributes: [NSAttributedString.Key : Any] = [:]
-        titleTextAttributes[NSAttributedString.Key.font] = UIFont(name: "HelveticaNeue-Bold", size: 14.0)
+        titleTextAttributes[NSAttributedString.Key.font] = AppConstants.FontSetting.navigationTitle
         titleTextAttributes[NSAttributedString.Key.foregroundColor] = UIColor.white
         // MEMO: NavigationBarの色をColorPalette.mintに合わせる対応
         let newNavigationAppearance = UINavigationBarAppearance()
