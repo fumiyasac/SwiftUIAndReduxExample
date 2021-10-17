@@ -45,20 +45,16 @@ struct SwiftUIAndReduxExampleApp: App {
     private func setupTabBarAppearances() {
 
         // MEMO: UITabBarItemの選択時と非選択時の文字色の装飾設定
-        if #available(iOS 15.0, *) {
-            let tabBarAppearance = UITabBarAppearance()
-            let tabBarItemAppearance = UITabBarItemAppearance()
-            tabBarItemAppearance.normal.titleTextAttributes = [
-                NSAttributedString.Key.foregroundColor : UIColor.lightGray
-            ]
-            tabBarItemAppearance.selected.titleTextAttributes = [
-                NSAttributedString.Key.foregroundColor : AppConstants.ColorPalette.mint
-            ]
-            tabBarAppearance.stackedLayoutAppearance = tabBarItemAppearance
-            UITabBar.appearance().standardAppearance = tabBarAppearance
-            UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
-        } else {
-            // Do Nothing.
-        }
+        let tabBarAppearance = UITabBarAppearance()
+        let tabBarItemAppearance = UITabBarItemAppearance()
+        tabBarItemAppearance.normal.titleTextAttributes = [
+            NSAttributedString.Key.foregroundColor : UIColor.lightGray
+        ]
+        tabBarItemAppearance.selected.titleTextAttributes = [
+            NSAttributedString.Key.foregroundColor : AppConstants.ColorPalette.mint
+        ]
+        tabBarAppearance.stackedLayoutAppearance = tabBarItemAppearance
+        UITabBar.appearance().standardAppearance = tabBarAppearance
+        UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
     }
 }
