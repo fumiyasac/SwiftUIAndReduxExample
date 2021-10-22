@@ -22,8 +22,6 @@
 		DE0BFBD5271B35D100FC0F32 /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = DE0BFBD4271B35D100FC0F32 /* GRDB */; };
 		DE0BFBD7271B38BD00FC0F32 /* ArchiveEntityResponseJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBD6271B38BD00FC0F32 /* ArchiveEntityResponseJson.swift */; };
 		DE0BFBD9271B38CF00FC0F32 /* ArchiveEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBD8271B38CF00FC0F32 /* ArchiveEntity.swift */; };
-		DE0BFBDC271C758800FC0F32 /* Markdown in Frameworks */ = {isa = PBXBuildFile; productRef = DE0BFBDB271C758800FC0F32 /* Markdown */; };
-		DE0BFBDE271C758800FC0F32 /* markdown-tool in Frameworks */ = {isa = PBXBuildFile; productRef = DE0BFBDD271C758800FC0F32 /* markdown-tool */; };
 		DEE257C4271F1DD900751B67 /* SQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE257C3271F1DD900751B67 /* SQLiteManager.swift */; };
 		DEE257C6271F1E6500751B67 /* APIClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE257C5271F1E6500751B67 /* APIClientManager.swift */; };
 		DEE9C6F626E8308700190505 /* SwiftUIAndReduxExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE9C6F526E8308700190505 /* SwiftUIAndReduxExampleApp.swift */; };
@@ -88,8 +86,6 @@
 				DE0BFBD5271B35D100FC0F32 /* GRDB in Frameworks */,
 				DE0BFBD2271B356D00FC0F32 /* Cosmos in Frameworks */,
 				DE0BFBCF271B354800FC0F32 /* SDWebImage in Frameworks */,
-				DE0BFBDE271C758800FC0F32 /* markdown-tool in Frameworks */,
-				DE0BFBDC271C758800FC0F32 /* Markdown in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,8 +318,6 @@
 				DE0BFBCE271B354800FC0F32 /* SDWebImage */,
 				DE0BFBD1271B356D00FC0F32 /* Cosmos */,
 				DE0BFBD4271B35D100FC0F32 /* GRDB */,
-				DE0BFBDB271C758800FC0F32 /* Markdown */,
-				DE0BFBDD271C758800FC0F32 /* markdown-tool */,
 			);
 			productName = SwiftUIAndReduxExample;
 			productReference = DEE9C6F226E8308700190505 /* SwiftUIAndReduxExample.app */;
@@ -400,7 +394,6 @@
 				DE0BFBCD271B354800FC0F32 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				DE0BFBD0271B356D00FC0F32 /* XCRemoteSwiftPackageReference "Cosmos" */,
 				DE0BFBD3271B35D100FC0F32 /* XCRemoteSwiftPackageReference "GRDB.swift" */,
-				DE0BFBDA271C758800FC0F32 /* XCRemoteSwiftPackageReference "swift-markdown" */,
 			);
 			productRefGroup = DEE9C6F326E8308700190505 /* Products */;
 			projectDirPath = "";
@@ -805,14 +798,6 @@
 				kind = branch;
 			};
 		};
-		DE0BFBDA271C758800FC0F32 /* XCRemoteSwiftPackageReference "swift-markdown" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/apple/swift-markdown";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -830,16 +815,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DE0BFBD3271B35D100FC0F32 /* XCRemoteSwiftPackageReference "GRDB.swift" */;
 			productName = GRDB;
-		};
-		DE0BFBDB271C758800FC0F32 /* Markdown */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DE0BFBDA271C758800FC0F32 /* XCRemoteSwiftPackageReference "swift-markdown" */;
-			productName = Markdown;
-		};
-		DE0BFBDD271C758800FC0F32 /* markdown-tool */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DE0BFBDA271C758800FC0F32 /* XCRemoteSwiftPackageReference "swift-markdown" */;
-			productName = "markdown-tool";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
