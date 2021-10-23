@@ -13,7 +13,7 @@ services:
     container_name: swiftui_and_redux_example_container
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: swiftui_and_redux_example_database
+      MYSQL_DATABASE: swiftui_and_redux_example
       MYSQL_USER: just1factory
       MYSQL_PASSWORD: just1factory
       TZ: 'Asia/Tokyo'
