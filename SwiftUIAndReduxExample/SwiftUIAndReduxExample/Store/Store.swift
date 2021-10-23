@@ -21,7 +21,7 @@ protocol Action {}
 
 // MARK: - Store
 
-actor Store<StoreState: ReduxState>: ObservableObject {
+final class Store<StoreState: ReduxState>: ObservableObject {
 
     // MARK: - Property
 
@@ -46,7 +46,15 @@ actor Store<StoreState: ReduxState>: ObservableObject {
     func dispatch(action: Action) {
 
         // MEMO: Actionを発行するDispatcherの定義
-        state = reducer(state, action)
+        DispatchQueue.main.async { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+            weakSelf.state = weakSelf.reducer(
+                weakSelf.state,
+                action
+            )
+        }
 
         // MEMO: 利用するMiddlewareを適用
         middlewares.forEach { middleware in
