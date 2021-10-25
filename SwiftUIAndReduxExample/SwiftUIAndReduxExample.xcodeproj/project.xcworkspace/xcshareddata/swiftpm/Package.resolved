@@ -11,15 +11,6 @@
         }
       },
       {
-        "package": "GRDB",
-        "repositoryURL": "https://github.com/groue/GRDB.swift.git",
-        "state": {
-          "branch": "master",
-          "revision": "32b2923e890df320906e64cbd0faca22a8bfda14",
-          "version": null
-        }
-      },
-      {
         "package": "SDWebImage",
         "repositoryURL": "https://github.com/SDWebImage/SDWebImage.git",
         "state": {
