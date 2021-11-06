@@ -64,7 +64,7 @@ final class ApiClientManager {
     // MARK: - Properties
 
     // MEMO: API ServerへのURLに関する情報
-    private static let host = "http://localhost:4000/api"
+    private static let host = "http://localhost:8080/api"
     private static let version = "v1"
 
     // MARK: - Function
