@@ -6,17 +6,12 @@
 //
 
 import SwiftUI
-import UIKit
 
 @main
 struct SwiftUIAndReduxExampleApp: App {
 
-    // MARK: - Initialzer
-
-    init() {
-        setupNavigationAppearnces()
-        setupTabBarAppearances()
-    }
+    // MEMO: AppDelegate
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
     // MARK: - body
 
@@ -24,38 +19,5 @@ struct SwiftUIAndReduxExampleApp: App {
         WindowGroup {
             ContentView()
         }
-    }
-
-    // MARK: - Private Function
-
-    private func setupNavigationAppearnces() {
-
-        // MEMO: NavigationBarのタイトル色を白色に合わせる対応
-        var titleTextAttributes: [NSAttributedString.Key : Any] = [:]
-        titleTextAttributes[NSAttributedString.Key.font] = AppConstants.FontSetting.navigationTitle
-        titleTextAttributes[NSAttributedString.Key.foregroundColor] = UIColor.white
-        // MEMO: NavigationBarの色をColorPalette.mintに合わせる対応
-        let newNavigationAppearance = UINavigationBarAppearance()
-        newNavigationAppearance.configureWithTransparentBackground()
-        newNavigationAppearance.backgroundColor = AppConstants.ColorPalette.mint
-        newNavigationAppearance.titleTextAttributes = titleTextAttributes
-        UINavigationBar.appearance().standardAppearance = newNavigationAppearance
-        UINavigationBar.appearance().scrollEdgeAppearance = newNavigationAppearance
-    }
-
-    private func setupTabBarAppearances() {
-
-        // MEMO: UITabBarItemの選択時と非選択時の文字色の装飾設定
-        let tabBarAppearance = UITabBarAppearance()
-        let tabBarItemAppearance = UITabBarItemAppearance()
-        tabBarItemAppearance.normal.titleTextAttributes = [
-            NSAttributedString.Key.foregroundColor : UIColor.lightGray
-        ]
-        tabBarItemAppearance.selected.titleTextAttributes = [
-            NSAttributedString.Key.foregroundColor : AppConstants.ColorPalette.mint
-        ]
-        tabBarAppearance.stackedLayoutAppearance = tabBarItemAppearance
-        UITabBar.appearance().standardAppearance = tabBarAppearance
-        UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
     }
 }
