@@ -7,9 +7,17 @@
 
 import Foundation
 
+// MEMO: Store部分はasync/awaitで書くなら、MainActorで良いんじゃないかという仮説
+// https://developer.apple.com/forums/thread/690957
+
+// FYI: 他にも全体的にCombineを利用した書き方も可能 (※他にも事例は探してみると面白そう)
+// https://wojciechkulik.pl/ios/redux-architecture-and-mind-blowing-features
+// https://kazaimazai.com/redux-in-ios/
+// https://www.raywenderlich.com/22096649-getting-a-redux-vibe-into-swiftui
+
 // MARK: - Typealias
 
-typealias Dispatcher = (Action) -> Void
+typealias Dispatcher = @MainActor (Action) -> Void
 typealias Reducer<State: ReduxState> = (_ state: State, _ action: Action) -> State
 typealias Middleware<StoreState: ReduxState> = (StoreState, Action, @escaping Dispatcher) -> Void
 
@@ -21,13 +29,14 @@ protocol Action {}
 
 // MARK: - Store
 
+@MainActor
 final class Store<StoreState: ReduxState>: ObservableObject {
 
     // MARK: - Property
 
-    @Published var state: StoreState
-    var reducer: Reducer<StoreState>
-    var middlewares: [Middleware<StoreState>]
+    @Published private(set) var state: StoreState
+    private var reducer: Reducer<StoreState>
+    private var middlewares: [Middleware<StoreState>]
 
     // MARK: - Initialzer
 
@@ -46,15 +55,10 @@ final class Store<StoreState: ReduxState>: ObservableObject {
     func dispatch(action: Action) {
 
         // MEMO: Actionを発行するDispatcherの定義
-        DispatchQueue.main.async { [weak self] in
-            guard let weakSelf = self else {
-                return
-            }
-            weakSelf.state = weakSelf.reducer(
-                weakSelf.state,
-                action
-            )
-        }
+        state = reducer(
+            state,
+            action
+        )
 
         // MEMO: 利用するMiddlewareを適用
         middlewares.forEach { middleware in
