@@ -1,5 +1,5 @@
 //
-//  RatingView.swift
+//  RatingViewRepresentable.swift
 //  SwiftUIAndReduxExample
 //
 //  Created by 酒井文也 on 2022/01/09.
@@ -11,7 +11,7 @@ import Cosmos
 // MEMO: UIKit製ライブラリ「CosmosView」をSwiftUIで利用する
 // https://github.com/evgenyneu/Cosmos/wiki/Using-Cosmos-with-SwiftUI
 
-struct RatingView: UIViewRepresentable {
+struct RatingViewRepresentable: UIViewRepresentable {
 
     // MARK: - Property
 
