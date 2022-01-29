@@ -2,12 +2,30 @@
   "object": {
     "pins": [
       {
+        "package": "ASCollectionView",
+        "repositoryURL": "https://github.com/apptekstudios/ASCollectionView",
+        "state": {
+          "branch": null,
+          "revision": "4288744ba484c1062c109c0f28d72b629d321d55",
+          "version": "2.1.1"
+        }
+      },
+      {
         "package": "Cosmos",
         "repositoryURL": "https://github.com/evgenyneu/Cosmos.git",
         "state": {
           "branch": "master",
           "revision": "cce521e734d0090494bd4afab5fd2e2f2465c1af",
           "version": null
+        }
+      },
+      {
+        "package": "DifferenceKit",
+        "repositoryURL": "https://github.com/ra1028/DifferenceKit",
+        "state": {
+          "branch": null,
+          "revision": "62745d7780deef4a023a792a1f8f763ec7bf9705",
+          "version": "1.2.0"
         }
       },
       {
