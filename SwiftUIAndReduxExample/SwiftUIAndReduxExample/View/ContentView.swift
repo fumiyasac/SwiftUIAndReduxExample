@@ -9,11 +9,15 @@ import SwiftUI
 
 struct ContentView: View {
 
+    // MARK: - Propety
+
+    private let contentRouter = ContentRouter()
+
     // MARK: - body
 
     var body: some View {
         TabView {
-            HomeScreenView()
+            contentRouter.routeToHome()
                 .tabItem {
                     VStack {
                         Image(systemName: "house.fill")
@@ -21,21 +25,21 @@ struct ContentView: View {
                     }
                 }
                 .tag(0)
-            ArchiveScreenView()
+            contentRouter.routeToArchive()
                 .tabItem {
                     VStack {
                         Image(systemName: "archivebox.fill")
                         Text("Archive")
                     }
                 }.tag(1)
-            FavoriteScreenView()
+            contentRouter.routeToFavorite()
                 .tabItem {
                     VStack {
                         Image(systemName: "bookmark.square.fill")
                         Text("Favorite")
                     }
                 }.tag(2)
-            ProfileScreenView()
+            contentRouter.routeToProfile()
                 .tabItem {
                     VStack {
                         Image(systemName: "person.crop.circle.fill")
