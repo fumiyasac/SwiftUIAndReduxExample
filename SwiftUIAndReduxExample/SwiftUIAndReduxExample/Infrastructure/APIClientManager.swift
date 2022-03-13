@@ -31,6 +31,7 @@ enum APIRequestState {
 protocol APIClientManagerProtocol {
     
     // TODO: 表示内容が決まり次第正しいものに書き直す
+    // → APIClientManagerはasync/awaitを利用して書く
     /*
     ※ Archivesは一番下まで読み込んだらページネーションを実行したい
      
