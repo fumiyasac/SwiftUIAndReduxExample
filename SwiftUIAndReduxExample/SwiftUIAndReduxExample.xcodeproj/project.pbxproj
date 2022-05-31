@@ -18,14 +18,13 @@
 		DE0BFBC8271B20FA00FC0F32 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBC7271B20FA00FC0F32 /* AppReducer.swift */; };
 		DE0BFBCA271B21B400FC0F32 /* ApiClientMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBC9271B21B400FC0F32 /* ApiClientMiddleware.swift */; };
 		DE0BFBCF271B354800FC0F32 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = DE0BFBCE271B354800FC0F32 /* SDWebImage */; };
-		DE0BFBD2271B356D00FC0F32 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = DE0BFBD1271B356D00FC0F32 /* Cosmos */; };
 		DE0BFBD7271B38BD00FC0F32 /* ArchiveEntityResponseJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBD6271B38BD00FC0F32 /* ArchiveEntityResponseJson.swift */; };
 		DE0BFBD9271B38CF00FC0F32 /* ArchiveEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBD8271B38CF00FC0F32 /* ArchiveEntity.swift */; };
 		DE136BE827227525007F6808 /* SwiftyUserDefaults in Frameworks */ = {isa = PBXBuildFile; productRef = DE136BE727227525007F6808 /* SwiftyUserDefaults */; };
 		DE2098692787025D000272B9 /* SwiftUIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2098682787025D000272B9 /* SwiftUIColorExtension.swift */; };
 		DE20986B278B0F35000272B9 /* RatingViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE20986A278B0F34000272B9 /* RatingViewRepresentable.swift */; };
+		DE43244028463B4F001ECA85 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = DE43243F28463B4F001ECA85 /* Cosmos */; };
 		DE9F9A1927867A5F00EF32BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9F9A1827867A5F00EF32BB /* AppDelegate.swift */; };
-		DECBF3B327A0B13F001D078B /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DECBF3B227A0B13F001D078B /* RealmSwift */; };
 		DEDA9CCE27B6B5190067578E /* ContentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDA9CCD27B6B5190067578E /* ContentRouter.swift */; };
 		DEE257C6271F1E6500751B67 /* APIClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE257C5271F1E6500751B67 /* APIClientManager.swift */; };
 		DEE9C6F626E8308700190505 /* SwiftUIAndReduxExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE9C6F526E8308700190505 /* SwiftUIAndReduxExampleApp.swift */; };
@@ -90,8 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DECBF3B327A0B13F001D078B /* RealmSwift in Frameworks */,
-				DE0BFBD2271B356D00FC0F32 /* Cosmos in Frameworks */,
+				DE43244028463B4F001ECA85 /* Cosmos in Frameworks */,
 				DE0BFBCF271B354800FC0F32 /* SDWebImage in Frameworks */,
 				DE136BE827227525007F6808 /* SwiftyUserDefaults in Frameworks */,
 			);
@@ -335,9 +333,8 @@
 			name = SwiftUIAndReduxExample;
 			packageProductDependencies = (
 				DE0BFBCE271B354800FC0F32 /* SDWebImage */,
-				DE0BFBD1271B356D00FC0F32 /* Cosmos */,
 				DE136BE727227525007F6808 /* SwiftyUserDefaults */,
-				DECBF3B227A0B13F001D078B /* RealmSwift */,
+				DE43243F28463B4F001ECA85 /* Cosmos */,
 			);
 			productName = SwiftUIAndReduxExample;
 			productReference = DEE9C6F226E8308700190505 /* SwiftUIAndReduxExample.app */;
@@ -412,10 +409,10 @@
 			mainGroup = DEE9C6E926E8308700190505;
 			packageReferences = (
 				DE0BFBCD271B354800FC0F32 /* XCRemoteSwiftPackageReference "SDWebImage" */,
-				DE0BFBD0271B356D00FC0F32 /* XCRemoteSwiftPackageReference "Cosmos" */,
 				DE136BE627227525007F6808 /* XCRemoteSwiftPackageReference "SwiftyUserDefaults" */,
-				DECBF3B127A0B13F001D078B /* XCRemoteSwiftPackageReference "realm-swift" */,
 				DECBF3B427A57864001D078B /* XCRemoteSwiftPackageReference "ASCollectionView" */,
+				DE43243D28463AE2001ECA85 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				DE43243E28463B4E001ECA85 /* XCRemoteSwiftPackageReference "Cosmos" */,
 			);
 			productRefGroup = DEE9C6F326E8308700190505 /* Products */;
 			projectDirPath = "";
@@ -803,16 +800,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
 			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		DE0BFBD0271B356D00FC0F32 /* XCRemoteSwiftPackageReference "Cosmos" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/evgenyneu/Cosmos.git";
-			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.12.0;
 			};
 		};
 		DE136BE627227525007F6808 /* XCRemoteSwiftPackageReference "SwiftyUserDefaults" */ = {
@@ -823,9 +812,17 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		DECBF3B127A0B13F001D078B /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+		DE43243D28463AE2001ECA85 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		DE43243E28463B4E001ECA85 /* XCRemoteSwiftPackageReference "Cosmos" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/Cosmos.git";
 			requirement = {
 				branch = master;
 				kind = branch;
@@ -835,7 +832,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apptekstudios/ASCollectionView";
 			requirement = {
-				kind = upToNextMinorVersion;
+				kind = upToNextMajorVersion;
 				minimumVersion = 2.1.0;
 			};
 		};
@@ -847,20 +844,15 @@
 			package = DE0BFBCD271B354800FC0F32 /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
 		};
-		DE0BFBD1271B356D00FC0F32 /* Cosmos */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DE0BFBD0271B356D00FC0F32 /* XCRemoteSwiftPackageReference "Cosmos" */;
-			productName = Cosmos;
-		};
 		DE136BE727227525007F6808 /* SwiftyUserDefaults */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DE136BE627227525007F6808 /* XCRemoteSwiftPackageReference "SwiftyUserDefaults" */;
 			productName = SwiftyUserDefaults;
 		};
-		DECBF3B227A0B13F001D078B /* RealmSwift */ = {
+		DE43243F28463B4F001ECA85 /* Cosmos */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DECBF3B127A0B13F001D078B /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = RealmSwift;
+			package = DE43243E28463B4E001ECA85 /* XCRemoteSwiftPackageReference "Cosmos" */;
+			productName = Cosmos;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
