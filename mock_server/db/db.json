@@ -1,0 +1,9 @@
+{
+	"posts": [
+		{ 
+			"id": 1, 
+			"title": "Welcome to the SwiftUI & Redux !", 
+			"author": "typicode"
+		}
+	]
+}
