@@ -23,4 +23,4 @@ DerivedData
 
 # このプロジェクト独自のもの
 /SwiftUIAndReduxExample/Pods/*
-/Backend/docker/db/data/*
+/Backend/node_modules/*
