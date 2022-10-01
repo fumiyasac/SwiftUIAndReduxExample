@@ -6,7 +6,7 @@
 // https://deep.tacoskingdom.com/blog/151
 
 // Mock用のJSONレスポンスサーバーの初期化設定
-const jsonServer = require('json-server');
+import jsonServer from 'json-server';
 const server = jsonServer.create();
 
 // Database構築用のJSONファイル
