@@ -17,7 +17,7 @@ import Foundation
 
 // MARK: - Typealias
 
-typealias Dispatcher = @MainActor (Action) -> Void
+typealias Dispatcher = (Action) -> Void
 typealias Reducer<State: ReduxState> = (_ state: State, _ action: Action) -> State
 typealias Middleware<StoreState: ReduxState> = (StoreState, Action, @escaping Dispatcher) -> Void
 
@@ -29,7 +29,6 @@ protocol Action {}
 
 // MARK: - Store
 
-@MainActor
 final class Store<StoreState: ReduxState>: ObservableObject {
 
     // MARK: - Property
@@ -55,12 +54,15 @@ final class Store<StoreState: ReduxState>: ObservableObject {
     func dispatch(action: Action) {
 
         // MEMO: Actionを発行するDispatcherの定義
-        state = reducer(
-            state,
-            action
-        )
+        // 👉 新しいstateに差し替える処理については、メインスレッドで操作したいのでMainActor内で実行する
+        Task { @MainActor in
+            self.state = reducer(
+                self.state,
+                action
+            )
+        }
 
-        // MEMO: 利用するMiddlewareを適用
+        // MEMO: 利用する全てのMiddlewareを適用
         middlewares.forEach { middleware in
             middleware(state, action, dispatch)
         }

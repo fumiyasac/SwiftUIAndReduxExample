@@ -125,9 +125,10 @@
 			isa = PBXGroup;
 			children = (
 				DEE9C6F726E8308700190505 /* ContentView.swift */,
+				DED73F7E28E82C2D00A7F811 /* Components */,
 				DE0BFBB4271A9D1900FC0F32 /* Representable */,
-				DE0BFBB3271A9B3F00FC0F32 /* Components */,
 				DE0BFBB2271A9B3500FC0F32 /* Screens */,
+				DED73F7F28E82C3E00A7F811 /* ViewObject */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -144,19 +145,12 @@
 			isa = PBXGroup;
 			children = (
 				DE0BFBC3271B1EA400FC0F32 /* Store.swift */,
+				DED73F8028E833B900A7F811 /* Actions */,
 				DE0BFBB1271A9B0A00FC0F32 /* States */,
 				DE0BFBB0271A9B0000FC0F32 /* Reducers */,
 				DE0BFBAF271A9AF600FC0F32 /* Middlewares */,
-				DE0BFBAE271A9AE900FC0F32 /* Actions */,
 			);
 			path = Store;
-			sourceTree = "<group>";
-		};
-		DE0BFBAE271A9AE900FC0F32 /* Actions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Actions;
 			sourceTree = "<group>";
 		};
 		DE0BFBAF271A9AF600FC0F32 /* Middlewares */ = {
@@ -192,13 +186,6 @@
 				DE0BFBC1271B170B00FC0F32 /* ProfileScreenView.swift */,
 			);
 			path = Screens;
-			sourceTree = "<group>";
-		};
-		DE0BFBB3271A9B3F00FC0F32 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 		DE0BFBB4271A9D1900FC0F32 /* Representable */ = {
@@ -243,6 +230,27 @@
 			path = EntityJson;
 			sourceTree = "<group>";
 		};
+		DED73F7E28E82C2D00A7F811 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		DED73F7F28E82C3E00A7F811 /* ViewObject */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewObject;
+			sourceTree = "<group>";
+		};
+		DED73F8028E833B900A7F811 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
 		DEDA9CCC27B6B4E60067578E /* Router */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,16 +282,16 @@
 		DEE9C6F426E8308700190505 /* SwiftUIAndReduxExample */ = {
 			isa = PBXGroup;
 			children = (
+				DEE9C6FE26E8308800190505 /* Info.plist */,
+				DEE9C6F926E8308800190505 /* Assets.xcassets */,
 				DE0BFBAA271A99E700FC0F32 /* App */,
 				DE0BFBB8271B151F00FC0F32 /* Constants */,
-				DE0BFBB5271B07ED00FC0F32 /* Extension */,
 				DE0BFBAC271A9A1800FC0F32 /* Entity */,
+				DE0BFBB5271B07ED00FC0F32 /* Extension */,
 				DE0BFBCB271B21C000FC0F32 /* Infrastructure */,
 				DEDA9CCC27B6B4E60067578E /* Router */,
 				DE0BFBAD271A9AD600FC0F32 /* Store */,
 				DE0BFBAB271A99F200FC0F32 /* View */,
-				DEE9C6F926E8308800190505 /* Assets.xcassets */,
-				DEE9C6FE26E8308800190505 /* Info.plist */,
 				DEE9C6FB26E8308800190505 /* Preview Content */,
 			);
 			path = SwiftUIAndReduxExample;
