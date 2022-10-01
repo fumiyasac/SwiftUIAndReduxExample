@@ -18,8 +18,8 @@
 		DE0BFBC8271B20FA00FC0F32 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBC7271B20FA00FC0F32 /* AppReducer.swift */; };
 		DE0BFBCA271B21B400FC0F32 /* ApiClientMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBC9271B21B400FC0F32 /* ApiClientMiddleware.swift */; };
 		DE0BFBCF271B354800FC0F32 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = DE0BFBCE271B354800FC0F32 /* SDWebImage */; };
-		DE0BFBD7271B38BD00FC0F32 /* ArchiveEntityResponseJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBD6271B38BD00FC0F32 /* ArchiveEntityResponseJson.swift */; };
-		DE0BFBD9271B38CF00FC0F32 /* ArchiveEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBD8271B38CF00FC0F32 /* ArchiveEntity.swift */; };
+		DE0BFBD7271B38BD00FC0F32 /* CampaignBannerEntityResponseJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBD6271B38BD00FC0F32 /* CampaignBannerEntityResponseJson.swift */; };
+		DE0BFBD9271B38CF00FC0F32 /* CampaignBannerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBD8271B38CF00FC0F32 /* CampaignBannerEntity.swift */; };
 		DE136BE827227525007F6808 /* SwiftyUserDefaults in Frameworks */ = {isa = PBXBuildFile; productRef = DE136BE727227525007F6808 /* SwiftyUserDefaults */; };
 		DE2098692787025D000272B9 /* SwiftUIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2098682787025D000272B9 /* SwiftUIColorExtension.swift */; };
 		DE20986B278B0F35000272B9 /* RatingViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE20986A278B0F34000272B9 /* RatingViewRepresentable.swift */; };
@@ -63,8 +63,8 @@
 		DE0BFBC5271B20D200FC0F32 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		DE0BFBC7271B20FA00FC0F32 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		DE0BFBC9271B21B400FC0F32 /* ApiClientMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClientMiddleware.swift; sourceTree = "<group>"; };
-		DE0BFBD6271B38BD00FC0F32 /* ArchiveEntityResponseJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveEntityResponseJson.swift; sourceTree = "<group>"; };
-		DE0BFBD8271B38CF00FC0F32 /* ArchiveEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveEntity.swift; sourceTree = "<group>"; };
+		DE0BFBD6271B38BD00FC0F32 /* CampaignBannerEntityResponseJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignBannerEntityResponseJson.swift; sourceTree = "<group>"; };
+		DE0BFBD8271B38CF00FC0F32 /* CampaignBannerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignBannerEntity.swift; sourceTree = "<group>"; };
 		DE2098682787025D000272B9 /* SwiftUIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIColorExtension.swift; sourceTree = "<group>"; };
 		DE20986A278B0F34000272B9 /* RatingViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewRepresentable.swift; sourceTree = "<group>"; };
 		DE9F9A1827867A5F00EF32BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +136,7 @@
 		DE0BFBAC271A9A1800FC0F32 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				DE0BFBD8271B38CF00FC0F32 /* CampaignBannerEntity.swift */,
 				DE0BFBCC271B349600FC0F32 /* EntityJson */,
 			);
 			path = Entity;
@@ -224,8 +225,7 @@
 		DE0BFBCC271B349600FC0F32 /* EntityJson */ = {
 			isa = PBXGroup;
 			children = (
-				DE0BFBD6271B38BD00FC0F32 /* ArchiveEntityResponseJson.swift */,
-				DE0BFBD8271B38CF00FC0F32 /* ArchiveEntity.swift */,
+				DE0BFBD6271B38BD00FC0F32 /* CampaignBannerEntityResponseJson.swift */,
 			);
 			path = EntityJson;
 			sourceTree = "<group>";
@@ -474,8 +474,8 @@
 				DE0BFBBC271B16AB00FC0F32 /* HomeScreenView.swift in Sources */,
 				DE0BFBC6271B20D200FC0F32 /* AppState.swift in Sources */,
 				DE9F9A1927867A5F00EF32BB /* AppDelegate.swift in Sources */,
-				DE0BFBD9271B38CF00FC0F32 /* ArchiveEntity.swift in Sources */,
-				DE0BFBD7271B38BD00FC0F32 /* ArchiveEntityResponseJson.swift in Sources */,
+				DE0BFBD9271B38CF00FC0F32 /* CampaignBannerEntity.swift in Sources */,
+				DE0BFBD7271B38BD00FC0F32 /* CampaignBannerEntityResponseJson.swift in Sources */,
 				DEE9C6F626E8308700190505 /* SwiftUIAndReduxExampleApp.swift in Sources */,
 				DE0BFBBA271B154900FC0F32 /* AppConstants.swift in Sources */,
 				DE2098692787025D000272B9 /* SwiftUIColorExtension.swift in Sources */,

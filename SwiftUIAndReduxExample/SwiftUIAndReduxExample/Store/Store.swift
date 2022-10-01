@@ -17,6 +17,8 @@ import Foundation
 
 // MARK: - Typealias
 
+// 👉 Dispatcher・Reducer・Middlewareのtypealiasを定義する
+// ※おそらくエッセンスとしてはReact等の感じに近くなるイメージとなる
 typealias Dispatcher = (Action) -> Void
 typealias Reducer<State: ReduxState> = (_ state: State, _ action: Action) -> State
 typealias Middleware<StoreState: ReduxState> = (StoreState, Action, @escaping Dispatcher) -> Void

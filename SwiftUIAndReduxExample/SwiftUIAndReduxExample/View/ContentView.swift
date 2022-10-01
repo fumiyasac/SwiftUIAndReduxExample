@@ -16,8 +16,10 @@ struct ContentView: View {
     // MARK: - body
 
     var body: some View {
+
         // MEMO: Routerを介して画面を表示させる形にする
-        // → ContentViewを起点とする場合にはContentRouterクラスを定義し、その中に実際の画面生成処理を書く方針としています。
+        // 👉 ContentViewを起点とする場合にはContentRouterクラスを定義し、その中に実際の画面生成処理を書く方針としています。
+        // ※ .environmentObjectを利用したStoreオブジェクトの注入はContentRouter内部で実施する
         TabView {
             contentRouter.routeToHome()
                 .tabItem {

@@ -7,6 +7,8 @@
 
 import Foundation
 
+// MARK: - Function
+
 func appReducer(_ state: AppState, _ action: Action) -> AppState {
 
     // TODO: それぞれの画面に応じたReducerを定義する
