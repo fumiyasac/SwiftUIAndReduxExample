@@ -25,6 +25,7 @@
 		DE20986B278B0F35000272B9 /* RatingViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE20986A278B0F34000272B9 /* RatingViewRepresentable.swift */; };
 		DE43244028463B4F001ECA85 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = DE43243F28463B4F001ECA85 /* Cosmos */; };
 		DE9F9A1927867A5F00EF32BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9F9A1827867A5F00EF32BB /* AppDelegate.swift */; };
+		DED73F8328F451DA00A7F811 /* CollectionViewPagingLayout in Frameworks */ = {isa = PBXBuildFile; productRef = DED73F8228F451DA00A7F811 /* CollectionViewPagingLayout */; };
 		DEDA9CCE27B6B5190067578E /* ContentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDA9CCD27B6B5190067578E /* ContentRouter.swift */; };
 		DEE257C6271F1E6500751B67 /* APIClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE257C5271F1E6500751B67 /* APIClientManager.swift */; };
 		DEE9C6F626E8308700190505 /* SwiftUIAndReduxExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE9C6F526E8308700190505 /* SwiftUIAndReduxExampleApp.swift */; };
@@ -90,6 +91,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE43244028463B4F001ECA85 /* Cosmos in Frameworks */,
+				DED73F8328F451DA00A7F811 /* CollectionViewPagingLayout in Frameworks */,
 				DE0BFBCF271B354800FC0F32 /* SDWebImage in Frameworks */,
 				DE136BE827227525007F6808 /* SwiftyUserDefaults in Frameworks */,
 			);
@@ -343,6 +345,7 @@
 				DE0BFBCE271B354800FC0F32 /* SDWebImage */,
 				DE136BE727227525007F6808 /* SwiftyUserDefaults */,
 				DE43243F28463B4F001ECA85 /* Cosmos */,
+				DED73F8228F451DA00A7F811 /* CollectionViewPagingLayout */,
 			);
 			productName = SwiftUIAndReduxExample;
 			productReference = DEE9C6F226E8308700190505 /* SwiftUIAndReduxExample.app */;
@@ -421,6 +424,7 @@
 				DECBF3B427A57864001D078B /* XCRemoteSwiftPackageReference "ASCollectionView" */,
 				DE43243D28463AE2001ECA85 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				DE43243E28463B4E001ECA85 /* XCRemoteSwiftPackageReference "Cosmos" */,
+				DED73F8128F451DA00A7F811 /* XCRemoteSwiftPackageReference "CollectionViewPagingLayout" */,
 			);
 			productRefGroup = DEE9C6F326E8308700190505 /* Products */;
 			projectDirPath = "";
@@ -844,6 +848,14 @@
 				minimumVersion = 2.1.0;
 			};
 		};
+		DED73F8128F451DA00A7F811 /* XCRemoteSwiftPackageReference "CollectionViewPagingLayout" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/amirdew/CollectionViewPagingLayout.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -861,6 +873,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DE43243E28463B4E001ECA85 /* XCRemoteSwiftPackageReference "Cosmos" */;
 			productName = Cosmos;
+		};
+		DED73F8228F451DA00A7F811 /* CollectionViewPagingLayout */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DED73F8128F451DA00A7F811 /* XCRemoteSwiftPackageReference "CollectionViewPagingLayout" */;
+			productName = CollectionViewPagingLayout;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

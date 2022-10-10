@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "collectionviewpaginglayout",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/amirdew/CollectionViewPagingLayout.git",
+      "state" : {
+        "revision" : "4bdec327535470c8d9765d190625b13e99b87db5",
+        "version" : "1.1.0"
+      }
+    },
+    {
       "identity" : "cosmos",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/evgenyneu/Cosmos.git",
