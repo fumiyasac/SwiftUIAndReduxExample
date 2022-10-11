@@ -65,6 +65,8 @@ final class Store<StoreState: ReduxState>: ObservableObject {
         }
 
         // MEMO: 利用する全てのMiddlewareを適用
+        // 補足: MiddlewareにAPI通信処理等を全て寄せずに実装したい場合には別途ActionCreatorの様なStructを用意する方法もある
+        // https://qiita.com/fumiyasac@github/items/f25465a955afdcb795a2
         middlewares.forEach { middleware in
             middleware(state, action, dispatch)
         }
