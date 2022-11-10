@@ -10,7 +10,9 @@ SwiftUIとReduxを組み合わせたUI実装サンプルになります。
 
 __【Reduxに関する基本事項の整理】__
 
-- [SwiftUI & Redux](https://zenn.dev/fumiyasac/scraps/8cb8ab4a108f74)
+- [Composable SwiftUI Architecture Using Redux ※Udemy講座](https://www.udemy.com/course/composable-swiftui-architecture-using-redux/)
+- [取り組んだ講座の要点をまとめたノート](https://twitter.com/fumiyasac/status/1582883611681861632)
+
 
 __【Mockサーバー環境構築】__
 
