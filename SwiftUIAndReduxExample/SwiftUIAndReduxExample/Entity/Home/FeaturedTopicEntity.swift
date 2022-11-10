@@ -1,30 +1,30 @@
 //
-//  CampaignBannerEntity.swift
+//  FeaturedTopicEntity.swift
 //  SwiftUIAndReduxExample
 //
-//  Created by 酒井文也 on 2021/10/17.
+//  Created by 酒井文也 on 2022/11/11.
 //
 
 import Foundation
 
-struct CampaignBannerEntity: Hashable, Decodable {
+struct FeaturedTopicEntity: Hashable, Decodable {
 
     let id: Int
-    let bannerContentsId: Int
-    let bannerUrl: String
+    let featuredTopicsId: Int
+    let thumbnailUrl: String
     let title: String
     let caption: String
-    let announcementAt: String
+    let publishedAt: String
 
     // MARK: - Enum
 
     private enum Keys: String, CodingKey {
         case id
-        case bannerContentsId
-        case bannerUrl
+        case featuredTopicsId = "featured_topics_id"
+        case thumbnailUrl = "thumbnail_url"
         case title
         case caption
-        case announcementAt
+        case publishedAt = "published_at"
     }
 
     // MARK: - Initializer
@@ -36,11 +36,11 @@ struct CampaignBannerEntity: Hashable, Decodable {
 
         // JSONの配列内の要素にある値をDecodeして初期化する
         self.id = try container.decode(Int.self, forKey: .id)
-        self.bannerContentsId = try container.decode(Int.self, forKey: .bannerContentsId)
-        self.bannerUrl = try container.decode(String.self, forKey: .bannerUrl)
+        self.featuredTopicsId = try container.decode(Int.self, forKey: .featuredTopicsId)
+        self.thumbnailUrl = try container.decode(String.self, forKey: .thumbnailUrl)
         self.title = try container.decode(String.self, forKey: .title)
         self.caption = try container.decode(String.self, forKey: .caption)
-        self.announcementAt = try container.decode(String.self, forKey: .announcementAt)
+        self.publishedAt = try container.decode(String.self, forKey: .publishedAt)
     }
 
     // MARK: - Hashable
@@ -50,7 +50,7 @@ struct CampaignBannerEntity: Hashable, Decodable {
         hasher.combine(id)
     }
 
-    static func == (lhs: CampaignBannerEntity, rhs: CampaignBannerEntity) -> Bool {
+    static func == (lhs: FeaturedTopicEntity, rhs: FeaturedTopicEntity) -> Bool {
         return lhs.id == rhs.id
     }
 }
