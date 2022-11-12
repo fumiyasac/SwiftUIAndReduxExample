@@ -16,7 +16,7 @@
 		DE0BFBC4271B1EA400FC0F32 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBC3271B1EA400FC0F32 /* Store.swift */; };
 		DE0BFBC6271B20D200FC0F32 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBC5271B20D200FC0F32 /* AppState.swift */; };
 		DE0BFBC8271B20FA00FC0F32 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBC7271B20FA00FC0F32 /* AppReducer.swift */; };
-		DE0BFBCA271B21B400FC0F32 /* ApiClientMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBC9271B21B400FC0F32 /* ApiClientMiddleware.swift */; };
+		DE0BFBCA271B21B400FC0F32 /* HomeMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBC9271B21B400FC0F32 /* HomeMiddleware.swift */; };
 		DE0BFBCF271B354800FC0F32 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = DE0BFBCE271B354800FC0F32 /* SDWebImage */; };
 		DE0BFBD7271B38BD00FC0F32 /* CampaignBannersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBD6271B38BD00FC0F32 /* CampaignBannersResponse.swift */; };
 		DE0BFBD9271B38CF00FC0F32 /* CampaignBannerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBD8271B38CF00FC0F32 /* CampaignBannerEntity.swift */; };
@@ -30,6 +30,9 @@
 		DE1833C5291DB41F00E3E885 /* PickupPhotoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1833C4291DB41F00E3E885 /* PickupPhotoEntity.swift */; };
 		DE1833C7291DB70D00E3E885 /* PickupPhotoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1833C6291DB70D00E3E885 /* PickupPhotoResponse.swift */; };
 		DE1833C9291DB77800E3E885 /* HomeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1833C8291DB77800E3E885 /* HomeResponse.swift */; };
+		DE1833CB291F910200E3E885 /* HomeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1833CA291F910200E3E885 /* HomeState.swift */; };
+		DE1833CD291F911000E3E885 /* HomeReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1833CC291F911000E3E885 /* HomeReducer.swift */; };
+		DE1833CF291F972900E3E885 /* HomeActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1833CE291F972900E3E885 /* HomeActions.swift */; };
 		DE2098692787025D000272B9 /* SwiftUIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2098682787025D000272B9 /* SwiftUIColorExtension.swift */; };
 		DE20986B278B0F35000272B9 /* RatingViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE20986A278B0F34000272B9 /* RatingViewRepresentable.swift */; };
 		DE43244028463B4F001ECA85 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = DE43243F28463B4F001ECA85 /* Cosmos */; };
@@ -72,7 +75,7 @@
 		DE0BFBC3271B1EA400FC0F32 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		DE0BFBC5271B20D200FC0F32 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		DE0BFBC7271B20FA00FC0F32 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
-		DE0BFBC9271B21B400FC0F32 /* ApiClientMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClientMiddleware.swift; sourceTree = "<group>"; };
+		DE0BFBC9271B21B400FC0F32 /* HomeMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMiddleware.swift; sourceTree = "<group>"; };
 		DE0BFBD6271B38BD00FC0F32 /* CampaignBannersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignBannersResponse.swift; sourceTree = "<group>"; };
 		DE0BFBD8271B38CF00FC0F32 /* CampaignBannerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignBannerEntity.swift; sourceTree = "<group>"; };
 		DE1833B6291DA39F00E3E885 /* RecentNewsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentNewsEntity.swift; sourceTree = "<group>"; };
@@ -84,6 +87,9 @@
 		DE1833C4291DB41F00E3E885 /* PickupPhotoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupPhotoEntity.swift; sourceTree = "<group>"; };
 		DE1833C6291DB70D00E3E885 /* PickupPhotoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupPhotoResponse.swift; sourceTree = "<group>"; };
 		DE1833C8291DB77800E3E885 /* HomeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeResponse.swift; sourceTree = "<group>"; };
+		DE1833CA291F910200E3E885 /* HomeState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeState.swift; sourceTree = "<group>"; };
+		DE1833CC291F911000E3E885 /* HomeReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeReducer.swift; sourceTree = "<group>"; };
+		DE1833CE291F972900E3E885 /* HomeActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeActions.swift; sourceTree = "<group>"; };
 		DE2098682787025D000272B9 /* SwiftUIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIColorExtension.swift; sourceTree = "<group>"; };
 		DE20986A278B0F34000272B9 /* RatingViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewRepresentable.swift; sourceTree = "<group>"; };
 		DE9F9A1827867A5F00EF32BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -176,7 +182,7 @@
 		DE0BFBAF271A9AF600FC0F32 /* Middlewares */ = {
 			isa = PBXGroup;
 			children = (
-				DE0BFBC9271B21B400FC0F32 /* ApiClientMiddleware.swift */,
+				DE0BFBC9271B21B400FC0F32 /* HomeMiddleware.swift */,
 			);
 			path = Middlewares;
 			sourceTree = "<group>";
@@ -185,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				DE0BFBC7271B20FA00FC0F32 /* AppReducer.swift */,
+				DE1833CC291F911000E3E885 /* HomeReducer.swift */,
 			);
 			path = Reducers;
 			sourceTree = "<group>";
@@ -193,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				DE0BFBC5271B20D200FC0F32 /* AppState.swift */,
+				DE1833CA291F910200E3E885 /* HomeState.swift */,
 			);
 			path = States;
 			sourceTree = "<group>";
@@ -306,6 +314,7 @@
 		DED73F8028E833B900A7F811 /* Actions */ = {
 			isa = PBXGroup;
 			children = (
+				DE1833CE291F972900E3E885 /* HomeActions.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -531,7 +540,7 @@
 				DE0BFBC0271B16FD00FC0F32 /* FavoriteScreenView.swift in Sources */,
 				DEE9C6F826E8308700190505 /* ContentView.swift in Sources */,
 				DE20986B278B0F35000272B9 /* RatingViewRepresentable.swift in Sources */,
-				DE0BFBCA271B21B400FC0F32 /* ApiClientMiddleware.swift in Sources */,
+				DE0BFBCA271B21B400FC0F32 /* HomeMiddleware.swift in Sources */,
 				DE1833C9291DB77800E3E885 /* HomeResponse.swift in Sources */,
 				DE0BFBC4271B1EA400FC0F32 /* Store.swift in Sources */,
 				DEE257C6271F1E6500751B67 /* APIClientManager.swift in Sources */,
@@ -544,16 +553,19 @@
 				DE0BFBBA271B154900FC0F32 /* AppConstants.swift in Sources */,
 				DE1833BF291DAABF00E3E885 /* FeaturedTopicsResponse.swift in Sources */,
 				DE1833BD291DA8BD00E3E885 /* FeaturedTopicEntity.swift in Sources */,
+				DE1833CD291F911000E3E885 /* HomeReducer.swift in Sources */,
 				DE1833BB291DA7E800E3E885 /* RecentNewsResponse.swift in Sources */,
 				DE1833C1291DAD9900E3E885 /* TrendArticleEntity.swift in Sources */,
 				DE1833C3291DAF8100E3E885 /* TrendArticleResponse.swift in Sources */,
 				DE2098692787025D000272B9 /* SwiftUIColorExtension.swift in Sources */,
 				DE1833C7291DB70D00E3E885 /* PickupPhotoResponse.swift in Sources */,
+				DE1833CB291F910200E3E885 /* HomeState.swift in Sources */,
 				DE0BFBC2271B170B00FC0F32 /* ProfileScreenView.swift in Sources */,
 				DE0BFBC8271B20FA00FC0F32 /* AppReducer.swift in Sources */,
 				DE1833B7291DA3A000E3E885 /* RecentNewsEntity.swift in Sources */,
 				DEDA9CCE27B6B5190067578E /* ContentRouter.swift in Sources */,
 				DE0BFBBE271B16E300FC0F32 /* ArchiveScreenView.swift in Sources */,
+				DE1833CF291F972900E3E885 /* HomeActions.swift in Sources */,
 				DE1833C5291DB41F00E3E885 /* PickupPhotoEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

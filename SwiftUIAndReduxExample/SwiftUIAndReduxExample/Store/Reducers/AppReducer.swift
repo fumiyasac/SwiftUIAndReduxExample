@@ -11,8 +11,10 @@ import Foundation
 
 func appReducer(_ state: AppState, _ action: Action) -> AppState {
 
-    // TODO: それぞれの画面に応じたReducerを定義する
-
     var state = state
+
+    // MEMO: HomeReducerの適用
+    state.homeState = homeReducer(state.homeState, action)
+
     return state
 }
