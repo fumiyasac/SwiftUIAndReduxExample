@@ -16,7 +16,7 @@ struct ShowHomeSectionsAction: Action {
     // MARK: - typealias
 
     // MEMO: 受け取ったResponseを格納するためのTypealiasを定義する
-    typealias HomeResponse = (
+    typealias HomeResponseResults = (
         campaignBanners: [CampaignBannerEntity],
         featuredTopics: [FeaturedTopicEntity],
         recentNews: [RecentNewsEntity],
@@ -24,5 +24,9 @@ struct ShowHomeSectionsAction: Action {
         pickupPhotos: [PickupPhotoEntity]
     )
 
-    let homeResponse: HomeResponse
+    let homeResponseResults: HomeResponseResults
 }
+
+struct ShowGuidanceAction: Action {}
+
+struct CloseGuidanceAction: Action {}
