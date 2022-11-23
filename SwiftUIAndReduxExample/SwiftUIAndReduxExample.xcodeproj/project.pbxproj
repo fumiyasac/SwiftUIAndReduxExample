@@ -40,6 +40,9 @@
 		DE1833DC29210BF600E3E885 /* ApplicationStatusLocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1833DB29210BF600E3E885 /* ApplicationStatusLocalStore.swift */; };
 		DE1833E129210DB700E3E885 /* FavoriteRealmEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1833E029210DB700E3E885 /* FavoriteRealmEntity.swift */; };
 		DE1833E42928D51D00E3E885 /* WaterfallGrid in Frameworks */ = {isa = PBXBuildFile; productRef = DE1833E32928D51D00E3E885 /* WaterfallGrid */; };
+		DE1833E82928D91F00E3E885 /* CampaignBannersCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1833E72928D91F00E3E885 /* CampaignBannersCarouselView.swift */; };
+		DE1833EA292CC8E300E3E885 /* CampaignBannerCarouselPrototypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1833E9292CC8E300E3E885 /* CampaignBannerCarouselPrototypeView.swift */; };
+		DE1833EC292DC86800E3E885 /* CampaignBannerCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1833EB292DC86800E3E885 /* CampaignBannerCarouselView.swift */; };
 		DE2098692787025D000272B9 /* SwiftUIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2098682787025D000272B9 /* SwiftUIColorExtension.swift */; };
 		DE20986B278B0F35000272B9 /* RatingViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE20986A278B0F34000272B9 /* RatingViewRepresentable.swift */; };
 		DE43244028463B4F001ECA85 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = DE43243F28463B4F001ECA85 /* Cosmos */; };
@@ -101,6 +104,9 @@
 		DE1833D8291FABCD00E3E885 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		DE1833DB29210BF600E3E885 /* ApplicationStatusLocalStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationStatusLocalStore.swift; sourceTree = "<group>"; };
 		DE1833E029210DB700E3E885 /* FavoriteRealmEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRealmEntity.swift; sourceTree = "<group>"; };
+		DE1833E72928D91F00E3E885 /* CampaignBannersCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignBannersCarouselView.swift; sourceTree = "<group>"; };
+		DE1833E9292CC8E300E3E885 /* CampaignBannerCarouselPrototypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignBannerCarouselPrototypeView.swift; sourceTree = "<group>"; };
+		DE1833EB292DC86800E3E885 /* CampaignBannerCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignBannerCarouselView.swift; sourceTree = "<group>"; };
 		DE2098682787025D000272B9 /* SwiftUIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIColorExtension.swift; sourceTree = "<group>"; };
 		DE20986A278B0F34000272B9 /* RatingViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewRepresentable.swift; sourceTree = "<group>"; };
 		DE9F9A1827867A5F00EF32BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -165,6 +171,9 @@
 			isa = PBXGroup;
 			children = (
 				DEE9C6F726E8308700190505 /* ContentView.swift */,
+				DE1833EB292DC86800E3E885 /* CampaignBannerCarouselView.swift */,
+				DE1833E9292CC8E300E3E885 /* CampaignBannerCarouselPrototypeView.swift */,
+				DE1833E72928D91F00E3E885 /* CampaignBannersCarouselView.swift */,
 				DED73F7E28E82C2D00A7F811 /* Components */,
 				DE0BFBB4271A9D1900FC0F32 /* Representable */,
 				DE0BFBB2271A9B3500FC0F32 /* Screens */,
@@ -581,6 +590,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE1833E82928D91F00E3E885 /* CampaignBannersCarouselView.swift in Sources */,
 				DE1833D9291FABCD00E3E885 /* UserDefaultManager.swift in Sources */,
 				DE1833D2291FAA3C00E3E885 /* RealmAccessManager.swift in Sources */,
 				DE0BFBB7271B080900FC0F32 /* UIColorExtension.swift in Sources */,
@@ -600,6 +610,7 @@
 				DE0BFBBA271B154900FC0F32 /* AppConstants.swift in Sources */,
 				DE1833BF291DAABF00E3E885 /* FeaturedTopicsResponse.swift in Sources */,
 				DE1833BD291DA8BD00E3E885 /* FeaturedTopicEntity.swift in Sources */,
+				DE1833EA292CC8E300E3E885 /* CampaignBannerCarouselPrototypeView.swift in Sources */,
 				DE1833CD291F911000E3E885 /* HomeReducer.swift in Sources */,
 				DE1833BB291DA7E800E3E885 /* RecentNewsResponse.swift in Sources */,
 				DE1833C1291DAD9900E3E885 /* TrendArticleEntity.swift in Sources */,
@@ -607,6 +618,7 @@
 				DE2098692787025D000272B9 /* SwiftUIColorExtension.swift in Sources */,
 				DE1833C7291DB70D00E3E885 /* PickupPhotoResponse.swift in Sources */,
 				DE1833CB291F910200E3E885 /* HomeState.swift in Sources */,
+				DE1833EC292DC86800E3E885 /* CampaignBannerCarouselView.swift in Sources */,
 				DE0BFBC2271B170B00FC0F32 /* ProfileScreenView.swift in Sources */,
 				DE0BFBC8271B20FA00FC0F32 /* AppReducer.swift in Sources */,
 				DE1833B7291DA3A000E3E885 /* RecentNewsEntity.swift in Sources */,
