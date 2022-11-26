@@ -11,6 +11,7 @@ struct FeaturedTopicEntity: Hashable, Decodable {
 
     let id: Int
     let featuredTopicsId: Int
+    let rating: Double
     let thumbnailUrl: String
     let title: String
     let caption: String
@@ -21,6 +22,7 @@ struct FeaturedTopicEntity: Hashable, Decodable {
     private enum Keys: String, CodingKey {
         case id
         case featuredTopicsId = "featured_topics_id"
+        case rating
         case thumbnailUrl = "thumbnail_url"
         case title
         case caption
@@ -37,6 +39,7 @@ struct FeaturedTopicEntity: Hashable, Decodable {
         // JSONの配列内の要素にある値をDecodeして初期化する
         self.id = try container.decode(Int.self, forKey: .id)
         self.featuredTopicsId = try container.decode(Int.self, forKey: .featuredTopicsId)
+        self.rating = try container.decode(Double.self, forKey: .rating)
         self.thumbnailUrl = try container.decode(String.self, forKey: .thumbnailUrl)
         self.title = try container.decode(String.self, forKey: .title)
         self.caption = try container.decode(String.self, forKey: .caption)

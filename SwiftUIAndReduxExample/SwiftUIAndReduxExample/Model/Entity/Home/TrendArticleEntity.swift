@@ -12,7 +12,7 @@ struct TrendArticleEntity: Hashable, Decodable {
     let id: Int
     let thumbnailUrl: String
     let title: String
-    let newsCategory: String
+    let introduction: String
     let publishedAt: String
 
     // MARK: - Enum
@@ -21,7 +21,7 @@ struct TrendArticleEntity: Hashable, Decodable {
         case id
         case thumbnailUrl = "thumbnail_url"
         case title
-        case newsCategory = "news_category"
+        case introduction
         case publishedAt = "published_at"
     }
 
@@ -36,7 +36,7 @@ struct TrendArticleEntity: Hashable, Decodable {
         self.id = try container.decode(Int.self, forKey: .id)
         self.thumbnailUrl = try container.decode(String.self, forKey: .thumbnailUrl)
         self.title = try container.decode(String.self, forKey: .title)
-        self.newsCategory = try container.decode(String.self, forKey: .newsCategory)
+        self.introduction = try container.decode(String.self, forKey: .introduction)
         self.publishedAt = try container.decode(String.self, forKey: .publishedAt)
     }
 
