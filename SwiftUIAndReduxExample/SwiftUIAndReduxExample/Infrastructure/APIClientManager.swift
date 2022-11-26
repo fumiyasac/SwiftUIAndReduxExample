@@ -30,15 +30,13 @@ enum APIRequestState {
 
 protocol APIClientManagerProtocol {
     
-    // TODO: 表示内容が決まり次第正しいものに書き直す
-    // → APIClientManagerはasync/awaitを利用して書く
-    /*
-    ※ Archivesは一番下まで読み込んだらページネーションを実行したい
-     
-    func getMainContents() async throws -> [MainContentsAPIResponse]
-    func getArchives() async throws -> [ArchivesAPIResponse]
-    func getProfile() async throws -> [ProfileAPIResponse]
-    */
+    // MEMO: APIClientManagerはasync/awaitを利用して書く
+    // ※ Archivesは一番下まで読み込んだらページネーションを実行したい
+    func getCampaignBanners() async throws -> CampaignBannersResponse
+    func getRecentNews() async throws -> RecentNewsResponse
+    func getFeaturedTopics() async throws -> FeaturedTopicsResponse
+    func getTrendArticles() async throws -> TrendArticleResponse
+    func getPickupPhotos() async throws -> PickupPhotoResponse
 }
 
 final class ApiClientManager {
@@ -52,7 +50,12 @@ final class ApiClientManager {
     // MARK: - Enum
 
     private enum EndPoint: String {
-        case mainContents = "main_contents"
+        // MEMO: Home画面用
+        case campaignBanners = "campaign_banners"
+        case recentNews = "recent_news"
+        case featuredTopics = "featured_topics"
+        case trendArticles = "trend_articles"
+        case pickupPhotos = "pickup_photos"
         case archives = "archives"
         case comments = "comments"
         case profile = "profile"
@@ -179,31 +182,44 @@ final class ApiClientManager {
 // MARK: - ApiClientManagerProtocol
 
 extension ApiClientManager: APIClientManagerProtocol {
-
-    // TODO: 表示内容が決まり次第正しいものに書き直す
-    /*
-    func getMainContents() async throws -> [MainContentsAPIResponse] {
+    
+    func getCampaignBanners() async throws -> CampaignBannersResponse {
         return try await executeAPIRequest(
-            endpointUrl: EndPoint.mainContents.getBaseUrl(),
+            endpointUrl: EndPoint.campaignBanners.getBaseUrl(),
             httpMethod: HTTPMethod.GET,
-            responseFormat: [MainContentsAPIResponse].self
+            responseFormat: CampaignBannersResponse.self
+        )
+    }
+    
+    func getRecentNews() async throws -> RecentNewsResponse {
+        return try await executeAPIRequest(
+            endpointUrl: EndPoint.recentNews.getBaseUrl(),
+            httpMethod: HTTPMethod.GET,
+            responseFormat: RecentNewsResponse.self
+        )
+    }
+    
+    func getFeaturedTopics() async throws -> FeaturedTopicsResponse {
+        return try await executeAPIRequest(
+            endpointUrl: EndPoint.featuredTopics.getBaseUrl(),
+            httpMethod: HTTPMethod.GET,
+            responseFormat: FeaturedTopicsResponse.self
+        )
+    }
+    
+    func getTrendArticles() async throws -> TrendArticleResponse {
+        return try await executeAPIRequest(
+            endpointUrl: EndPoint.trendArticles.getBaseUrl(),
+            httpMethod: HTTPMethod.GET,
+            responseFormat: TrendArticleResponse.self
         )
     }
 
-    func getArchives() async throws -> [ArchivesAPIResponse] {
+    func getPickupPhotos() async throws -> PickupPhotoResponse {
         return try await executeAPIRequest(
-            endpointUrl: EndPoint.archives.getBaseUrl(),
+            endpointUrl: EndPoint.pickupPhotos.getBaseUrl(),
             httpMethod: HTTPMethod.GET,
-            responseFormat: [ArchivesAPIResponse].self
+            responseFormat: PickupPhotoResponse.self
         )
     }
-
-    func getProfile() async throws -> [ProfileAPIResponse] {
-        return try await executeAPIRequest(
-            endpointUrl: EndPoint.profile.getBaseUrl(),
-            httpMethod: HTTPMethod.GET,
-            responseFormat: [ProfileAPIResponse].self
-        )
-    }
-    */
 }

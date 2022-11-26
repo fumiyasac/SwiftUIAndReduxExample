@@ -1,9 +1,384 @@
 {
-	"posts": [
-		{ 
-			"id": 1, 
-			"title": "Welcome to the SwiftUI & Redux !", 
-			"author": "typicode"
+    "get_recent_news": [
+		{
+			"id": 1,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail1.jpg",
+			"title": "美味しい玉ねぎの年末年始の対応について",
+            "news_category": "生産者からのお知らせ",
+            "published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 2,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail2.jpg",
+			"title": "私共のぶどう園が作った渾身のデザートワイン販売",
+            "news_category": "生産者からのお知らせ",
+            "published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 3,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail3.jpg",
+			"title": "お正月にもう一品!伊勢海老＆鮑のお刺身セット",
+            "news_category": "新商品のご紹介",
+            "published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 4,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail4.jpg",
+			"title": "甘さと酸っぱさのハーモニー「いよかんジュース」のご紹介",
+            "news_category": "生産者からのお知らせ",
+            "published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 5,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail5.jpg",
+			"title": "美味しいさつまいもの年末年始の対応について",
+            "news_category": "生産者からのお知らせ",
+            "published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 6,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail6.jpg",
+			"title": "余った梨を活用した簡単デザートレシピ紹介",
+            "news_category": "家庭での楽しみ方Tips",
+            "published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 7,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail7.jpg",
+			"title": "おうち時間を彩るテイクアウトメニュー達",
+            "news_category": "おうちでも楽しめるテイクアウト",
+            "published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 8,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail8.jpg",
+			"title": "家庭の強い味方!野菜がたっぷり献立セットのご紹介",
+            "news_category": "新商品のご紹介",
+            "published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 9,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail9.jpg",
+			"title": "簡単な手順でも美味しいご馳走レシピのご紹介",
+            "news_category": "家庭での楽しみ方Tips",
+            "published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 10,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail10.jpg",
+			"title": "偏った食生活におさらばできる具沢山のお味噌汁集",
+            "news_category": "家庭での楽しみ方Tips",
+            "published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 11,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail11.jpg",
+			"title": "農家の愛が詰まった新米の年末年始の対応について",
+            "news_category": "生産者からのお知らせ",
+            "published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 12,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail12.jpg",
+			"title": "美味しいみかんの年末年始の対応について",
+            "news_category": "生産者からのお知らせ",
+            "published_at": "2022-12-01T07:30:00.000+0000"
+		}
+	],
+	"get_campaign_banners": [
+		{
+			"id": 1,
+			"banner_contents_id": 1001,
+			"banner_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/campaign_banner1.jpg",
+			"title": "産地直送の「秋の味覚」特集(1)",
+            "caption": "この季節だから食べたくて甘くて美味しいさつまいもの魅力紹介",
+            "announcement_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 2,
+			"banner_contents_id": 1002,
+			"banner_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/campaign_banner2.jpg",
+			"title": "産地直送の「秋の味覚」特集(2)",
+            "caption": "秋を代表するフルーツといえばコレ!甘くて素敵な柿特集",
+            "announcement_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 3,
+			"banner_contents_id": 1003,
+			"banner_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/campaign_banner3.jpg",
+			"title": "産地直送の「秋の味覚」特集(3)",
+            "caption": "秋は海の幸を美味しい季節。旬の魚たちを一挙ご紹介",
+            "announcement_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 4,
+			"banner_contents_id": 1004,
+			"banner_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/campaign_banner4.jpg",
+			"title": "産地直送の「秋の味覚」特集(4)",
+            "caption": "新鮮なお米で炊いたご飯はモノが違う。感動する新米を是非",
+            "announcement_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 5,
+			"banner_contents_id": 1005,
+			"banner_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/campaign_banner5.jpg",
+			"title": "産地直送の「秋の味覚」特集(5)",
+            "caption": "秋は新しいスイーツが誕生する季節。一味違ったスイーツ集",
+            "announcement_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 6,
+			"banner_contents_id": 1006,
+			"banner_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/campaign_banner6.jpg",
+			"title": "産地直送の「秋の味覚」特集(6)",
+            "caption": "冷え込む季節の強い味方。自宅でも嬉しいお取り寄せ鍋紹介",
+            "announcement_at": "2022-12-01T07:30:00.000+0000"
+		}
+	],
+	"get_trend_articles": [
+		{
+			"id": 1,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/trend_article1.jpg",
+			"title": "クリスマスの料理に関する思い出(1)",
+            "introduction": "子供の頃はクリスマスを楽しみにしていた思い出を大人になった今でも覚えている方は沢山いらっしゃるかもしれません。また、家族と一緒に料理をする機会が多いご家庭の中ではこの機会が貴重な一家団欒の場となっていたことでしょう。今回はクリスマスが近いシーズンにピッタリな「心温まるクリスマスに因んだストーリー」をいくつかご紹介できればと思います🎄",
+            "published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 2,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/trend_article2.jpg",
+			"title": "クリスマスの料理に関する思い出(2)",
+            "introduction": "クリスマスには人それぞれに様々な人生の忘れられない1ページの瞬間はあるものです。プロポーズの瞬間、愛の告白、子供達へのプレゼント、クリスマスケーキを囲んでの家族の時間等、何かきっかけが生まれる瞬間をきっと頭の片隅に記憶として残っているものがきっとあるものです。そんな思い出の1ページを集めたものをここではピックアップしています🎂",
+            "published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 3,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/trend_article3.jpg",
+			"title": "おせち料理の験担ぎ、ご存じですか？(1)",
+            "introduction": "おせち料理は日本古来から親しまれ現在でもお正月にふるまわれる料理でもあります。最近では家庭でも作る機会は減っていることもあり、「なぜこの料理が入っているの？」という素朴な疑問を持つかもしれません。ところが実は1つ1つの料理の中にはしっかりとした「験担ぎ」が込められている事はご存じでしようか？今回はそんなおせち料理の世界に触れてみることにしましょう😏",
+            "published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 4,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/trend_article4.jpg",
+			"title": "おせち料理の験担ぎ、ご存じですか？(2)",
+            "introduction": "こちらは前回の続きで「おせち料理の験担ぎ」に関するものの中でもかなりマニアック？と思われるものをピックアップしています。前回は皆様にとっても馴染みのあるものに関するラインナップでしたが今回はなかなか難しいですよ😁",
+            "published_at": "2022-12-01T07:30:00.000+0000"
+		}
+	],
+	"get_featured_topics": [
+		{
+			"id": 1,
+			"featured_topics_id": 90001,
+			"rating": 3.7,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/featured_topic1.jpg",
+			"title": "ボリューム満点の洋食セット",
+            "caption": "この満足感はそう簡単には味わえないがうまい😆",
+            "published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 2,
+			"featured_topics_id": 90002,
+			"rating": 3.4,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/featured_topic2.jpg",
+			"title": "ランチのお寿司セット",
+            "caption": "こんなに豪華ラインナップなのにこのお値段👀",
+            "published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 3,
+			"featured_topics_id": 90003,
+			"rating": 3.9,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/featured_topic3.jpg",
+			"title": "カキフライ＆焼きはまぐり",
+            "caption": "貝料理の王道が2つ揃って出てくる幸せ😄",
+            "published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 4,
+			"featured_topics_id": 90004,
+			"rating": 3.7,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/featured_topic4.jpg",
+			"title": "洋食の王道ハンバーグ",
+            "caption": "濃厚なデミグラスソースと肉汁のハーモニー👍",
+            "published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 5,
+			"featured_topics_id": 90005,
+			"rating": 3.4,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/featured_topic5.jpg",
+			"title": "おしゃれな巻き寿司",
+            "caption": "海苔ではなくお肉ときゅうりで巻いた変り種",
+            "published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 6,
+			"featured_topics_id": 90006,
+			"rating": 3.9,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/featured_topic6.jpg",
+			"title": "野菜たっぷり焼きカレー",
+            "caption": "ヘルシーな野菜達がカレーと相性抜群😊",
+            "published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 7,
+			"featured_topics_id": 90007,
+			"rating": 3.2,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/featured_topic7.jpg",
+			"title": "うなぎの蒲焼き",
+            "caption": "そのままでもご飯と一緒でも美味しい",
+            "published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 8,
+			"featured_topics_id": 90008,
+			"rating": 4.3,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/featured_topic8.jpg",
+			"title": "黒毛和牛のすき焼き",
+            "caption": "贅沢で脂の上品なお肉を使った逸品",
+            "published_at": "2022-12-01T07:30:00.000+0000"
+		}
+	],
+	"get_pickup_photos": [
+		{
+			"id": 1,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo1.jpg",
+			"title": "Pickup Photo No.1",
+			"caption": "Premium Gourmet Photo No.1",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 2,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo2.jpg",
+			"title": "Pickup Photo No.2",
+			"caption": "Premium Gourmet Photo No.2",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 3,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo3.jpg",
+			"title": "Pickup Photo No.3",
+			"caption": "Premium Gourmet Photo No.3",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 4,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo4.jpg",
+			"title": "Pickup Photo No.4",
+			"caption": "Premium Gourmet Photo No.4",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 5,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo5.jpg",
+			"title": "Pickup Photo No.5",
+			"caption": "Premium Gourmet Photo No.5",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 6,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo6.jpg",
+			"title": "Pickup Photo No.6",
+			"caption": "Premium Gourmet Photo No.6",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 7,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo7.jpg",
+			"title": "Pickup Photo No.7",
+			"caption": "Premium Gourmet Photo No.7",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 8,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo8.jpg",
+			"title": "Pickup Photo No.8",
+			"caption": "Premium Gourmet Photo No.8",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 9,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo9.jpg",
+			"title": "Pickup Photo No.9",
+			"caption": "Premium Gourmet Photo No.9",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 10,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo10.jpg",
+			"title": "Pickup Photo No.10",
+			"caption": "Premium Gourmet Photo No.10",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 11,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo11.jpg",
+			"title": "Pickup Photo No.11",
+			"caption": "Premium Gourmet Photo No.11",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 12,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo12.jpg",
+			"title": "Pickup Photo No.12",
+			"caption": "Premium Gourmet Photo No.12",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 13,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo13.jpg",
+			"title": "Pickup Photo No.13",
+			"caption": "Premium Gourmet Photo No.13",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 14,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo14.jpg",
+			"title": "Pickup Photo No.14",
+			"caption": "Premium Gourmet Photo No.14",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 15,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo15.jpg",
+			"title": "Pickup Photo No.15",
+			"caption": "Premium Gourmet Photo No.15",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 16,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo16.jpg",
+			"title": "Pickup Photo No.16",
+			"caption": "Premium Gourmet Photo No.16",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 17,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo17.jpg",
+			"title": "Pickup Photo No.17",
+			"caption": "Premium Gourmet Photo No.17",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 18,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo18.jpg",
+			"title": "Pickup Photo No.18",
+			"caption": "Premium Gourmet Photo No.18",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 19,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo19.jpg",
+			"title": "Pickup Photo No.19",
+			"caption": "Premium Gourmet Photo No.19",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 20,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo20.jpg",
+			"title": "Pickup Photo No.20",
+			"caption": "Premium Gourmet Photo No.20",
+			"published_at": "2022-12-01T07:30:00.000+0000"
 		}
 	]
 }
