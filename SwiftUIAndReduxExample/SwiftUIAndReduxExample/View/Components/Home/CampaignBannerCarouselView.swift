@@ -9,7 +9,9 @@ import SwiftUI
 
 struct CampaignBannerCarouselView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+
+        // TODO: キャンペーンバナー用のCarousel表示Viewを構築する
+        Text("てすと")
     }
 }
 
@@ -17,4 +19,8 @@ struct CampaignBannerCarouselView_Previews: PreviewProvider {
     static var previews: some View {
         CampaignBannerCarouselView()
     }
+}
+
+extension CampaignBannerCarouselView_Previews {
+    
 }
