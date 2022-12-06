@@ -1,86 +1,88 @@
-[
-    {
-        "id": 1,
-        "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail1.jpg",
-        "title": "美味しい玉ねぎの年末年始の対応について",
-        "news_category": "生産者からのお知らせ",
-        "published_at": "2022-12-01T07:30:00.000+0000"
-    },
-    {
-        "id": 2,
-        "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail2.jpg",
-        "title": "私共のぶどう園が作った渾身のデザートワイン販売",
-        "news_category": "生産者からのお知らせ",
-        "published_at": "2022-12-01T07:30:00.000+0000"
-    },
-    {
-        "id": 3,
-        "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail3.jpg",
-        "title": "お正月にもう一品!伊勢海老＆鮑のお刺身セット",
-        "news_category": "新商品のご紹介",
-        "published_at": "2022-12-01T07:30:00.000+0000"
-    },
-    {
-        "id": 4,
-        "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail4.jpg",
-        "title": "甘さと酸っぱさのハーモニー「いよかんジュース」のご紹介",
-        "news_category": "生産者からのお知らせ",
-        "published_at": "2022-12-01T07:30:00.000+0000"
-    },
-    {
-        "id": 5,
-        "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail5.jpg",
-        "title": "美味しいさつまいもの年末年始の対応について",
-        "news_category": "生産者からのお知らせ",
-        "published_at": "2022-12-01T07:30:00.000+0000"
-    },
-    {
-        "id": 6,
-        "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail6.jpg",
-        "title": "余った梨を活用した簡単デザートレシピ紹介",
-        "news_category": "家庭での楽しみ方Tips",
-        "published_at": "2022-12-01T07:30:00.000+0000"
-    },
-    {
-        "id": 7,
-        "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail7.jpg",
-        "title": "おうち時間を彩るテイクアウトメニュー達",
-        "news_category": "おうちでも楽しめるテイクアウト",
-        "published_at": "2022-12-01T07:30:00.000+0000"
-    },
-    {
-        "id": 8,
-        "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail8.jpg",
-        "title": "家庭の強い味方!野菜がたっぷり献立セットのご紹介",
-        "news_category": "新商品のご紹介",
-        "published_at": "2022-12-01T07:30:00.000+0000"
-    },
-    {
-        "id": 9,
-        "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail9.jpg",
-        "title": "簡単な手順でも美味しいご馳走レシピのご紹介",
-        "news_category": "家庭での楽しみ方Tips",
-        "published_at": "2022-12-01T07:30:00.000+0000"
-    },
-    {
-        "id": 10,
-        "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail10.jpg",
-        "title": "偏った食生活におさらばできる具沢山のお味噌汁集",
-        "news_category": "家庭での楽しみ方Tips",
-        "published_at": "2022-12-01T07:30:00.000+0000"
-    },
-    {
-        "id": 11,
-        "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail11.jpg",
-        "title": "農家の愛が詰まった新米の年末年始の対応について",
-        "news_category": "生産者からのお知らせ",
-        "published_at": "2022-12-01T07:30:00.000+0000"
-    },
-    {
-        "id": 12,
-        "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail12.jpg",
-        "title": "美味しいみかんの年末年始の対応について",
-        "news_category": "生産者からのお知らせ",
-        "published_at": "2022-12-01T07:30:00.000+0000"
-    }
-]
+{
+    "result": [
+        {
+            "id": 1,
+            "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail1.jpg",
+            "title": "美味しい玉ねぎの年末年始の対応について",
+            "news_category": "生産者からのお知らせ",
+            "published_at": "2022-12-01T07:30:00.000+0000"
+        },
+        {
+            "id": 2,
+            "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail2.jpg",
+            "title": "私共のぶどう園が作った渾身のデザートワイン販売",
+            "news_category": "生産者からのお知らせ",
+            "published_at": "2022-12-01T07:30:00.000+0000"
+        },
+        {
+            "id": 3,
+            "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail3.jpg",
+            "title": "お正月にもう一品!伊勢海老＆鮑のお刺身セット",
+            "news_category": "新商品のご紹介",
+            "published_at": "2022-12-01T07:30:00.000+0000"
+        },
+        {
+            "id": 4,
+            "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail4.jpg",
+            "title": "甘さと酸っぱさのハーモニー「いよかんジュース」のご紹介",
+            "news_category": "生産者からのお知らせ",
+            "published_at": "2022-12-01T07:30:00.000+0000"
+        },
+        {
+            "id": 5,
+            "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail5.jpg",
+            "title": "美味しいさつまいもの年末年始の対応について",
+            "news_category": "生産者からのお知らせ",
+            "published_at": "2022-12-01T07:30:00.000+0000"
+        },
+        {
+            "id": 6,
+            "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail6.jpg",
+            "title": "余った梨を活用した簡単デザートレシピ紹介",
+            "news_category": "家庭での楽しみ方Tips",
+            "published_at": "2022-12-01T07:30:00.000+0000"
+        },
+        {
+            "id": 7,
+            "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail7.jpg",
+            "title": "おうち時間を彩るテイクアウトメニュー達",
+            "news_category": "おうちでも楽しめるテイクアウト",
+            "published_at": "2022-12-01T07:30:00.000+0000"
+        },
+        {
+            "id": 8,
+            "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail8.jpg",
+            "title": "家庭の強い味方!野菜がたっぷり献立セットのご紹介",
+            "news_category": "新商品のご紹介",
+            "published_at": "2022-12-01T07:30:00.000+0000"
+        },
+        {
+            "id": 9,
+            "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail9.jpg",
+            "title": "簡単な手順でも美味しいご馳走レシピのご紹介",
+            "news_category": "家庭での楽しみ方Tips",
+            "published_at": "2022-12-01T07:30:00.000+0000"
+        },
+        {
+            "id": 10,
+            "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail10.jpg",
+            "title": "偏った食生活におさらばできる具沢山のお味噌汁集",
+            "news_category": "家庭での楽しみ方Tips",
+            "published_at": "2022-12-01T07:30:00.000+0000"
+        },
+        {
+            "id": 11,
+            "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail11.jpg",
+            "title": "農家の愛が詰まった新米の年末年始の対応について",
+            "news_category": "生産者からのお知らせ",
+            "published_at": "2022-12-01T07:30:00.000+0000"
+        },
+        {
+            "id": 12,
+            "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail12.jpg",
+            "title": "美味しいみかんの年末年始の対応について",
+            "news_category": "生産者からのお知らせ",
+            "published_at": "2022-12-01T07:30:00.000+0000"
+        }
+    ]
+}
