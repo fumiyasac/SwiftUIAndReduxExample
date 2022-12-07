@@ -107,6 +107,10 @@ struct PickupPhotosCellView: View {
         return CGFloat(Int(ceil(standardWidth / viewObject.photoWidth * viewObject.photoHeight)))
     }
 
+    private var bottomAreaBackground: Color {
+        return Color.black.opacity(0.36)
+    }
+
     private var viewObject: PickupPhotosGridViewObject
 
     // MARK: - Initializer
@@ -141,7 +145,7 @@ struct PickupPhotosCellView: View {
                 }
                 // MEMO: テキスト要素のまわりに余白を与える
                 .frame(maxWidth: .infinity)
-                .background(Color.black.opacity(0.36))
+                .background(bottomAreaBackground)
             }
         }
         // MEMO: タップ領域の確保とタップ時の処理
@@ -149,7 +153,7 @@ struct PickupPhotosCellView: View {
         .onTapGesture(perform: {
             print("想定: Tap処理を実行した際に何らかの処理を実行する (ID:\(viewObject.id))")
         })
-        // MEMO: 表示要素全体に付与する角丸と背景を設定している部分
+        // MEMO: 表示要素全体に付与する角丸と配色を設定している部分
         .cornerRadius(4)
         .frame(width: standardWidth, height: standardHeight)
         .background(
