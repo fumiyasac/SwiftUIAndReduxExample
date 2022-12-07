@@ -60,6 +60,9 @@ struct HomeCommonSectionView: View {
 
 struct HomeCommonSectionView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeCommonSectionView(title: "ピックアップ写真集", subTitle: "Let's Enjoy Pickup Gourmet Photo Archives.")
+        VStack {
+            HomeCommonSectionView(title: "季節の特集コンテンツ一覧", subTitle: "Introduce seasonal shopping and features.")
+            HomeCommonSectionView(title: "ピックアップ写真集", subTitle: "Let's Enjoy Pickup Gourmet Photo Archives.")
+        }
     }
 }
