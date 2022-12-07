@@ -13,6 +13,15 @@ struct HomeScreenView: View {
     
     var body: some View {
         NavigationView {
+            let campaignBannersResponse = getCampaignBannersDummyResponse()
+            let campaignBannerCarouselViewObjects = campaignBannersResponse.result
+                .map {
+                    CampaignBannerCarouselViewObject(
+                        id: $0.id,
+                        bannerContentsId: $0.bannerContentsId,
+                        bannerUrl: URL(string: $0.bannerUrl) ?? nil
+                    )
+                }
             let pickupPhotoResponse = getPickupPhotoResponse()
             let pickupPhotoGridViewObjects = pickupPhotoResponse.result
                 .map {
@@ -25,20 +34,12 @@ struct HomeScreenView: View {
                         photoHeight: CGFloat($0.photoHeight)
                     )
                 }
+
             ScrollView {
+                CampaignBannerCarouselView(campaignBannersCarouselViewObjects: campaignBannerCarouselViewObjects)
                 PickupPhotosGridView(pickupPhotosGridViewObjects: pickupPhotoGridViewObjects)
             }
-//            let campaignBannersResponse = getCampaignBannersDummyResponse()
-//            let campaignBannerCarouselViewObjects = campaignBannersResponse.result
-//                .map {
-//                    CampaignBannerCarouselViewObject(
-//                        id: $0.id,
-//                        bannerContentsId: $0.bannerContentsId,
-//                        bannerUrl: URL(string: $0.bannerUrl) ?? nil
-//                    )
-//                }
-//            CampaignBannerCarouselView(campaignBannersCarouselViewObjects: campaignBannerCarouselViewObjects)
-                .navigationBarTitle(Text("Home"), displayMode: .inline)
+            .navigationBarTitle(Text("Home"), displayMode: .inline)
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }
@@ -58,18 +59,18 @@ struct HomeScreenView: View {
         return pickupPhotoResponse
     }
 
-//    private func getCampaignBannersDummyResponse() -> CampaignBannersResponse {
-//        guard let path = Bundle.main.path(forResource: "campaign_banners", ofType: "json") else {
-//            fatalError()
-//        }
-//        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
-//            fatalError()
-//        }
-//        guard let campaignBannersResponse = try? JSONDecoder().decode(CampaignBannersResponse.self, from: data) else {
-//            fatalError()
-//        }
-//        return campaignBannersResponse
-//    }
+    private func getCampaignBannersDummyResponse() -> CampaignBannersResponse {
+        guard let path = Bundle.main.path(forResource: "campaign_banners", ofType: "json") else {
+            fatalError()
+        }
+        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
+            fatalError()
+        }
+        guard let campaignBannersResponse = try? JSONDecoder().decode(CampaignBannersResponse.self, from: data) else {
+            fatalError()
+        }
+        return campaignBannersResponse
+    }
 }
 
 // MARK: - Preview
