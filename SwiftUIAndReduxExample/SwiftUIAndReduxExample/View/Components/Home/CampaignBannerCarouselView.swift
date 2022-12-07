@@ -58,6 +58,7 @@ struct CampaignBannerCarouselView: View {
                 .opacity(getCarouselElementModifierValueBy(itemId: viewObject.id, ratio: 0.3))
                 .zIndex(getCarouselElementModifierValueBy(itemId: viewObject.id, ratio: 0.1))
                 .offset(x: calculateHorizontalOffsetBy(itemId: viewObject.id), y: 0.0)
+                // MEMO: タップ領域の確保とタップ時の処理
                 .contentShape(Rectangle())
                 .onTapGesture(perform: {
                     print("想定: Tap処理を実行した際に何らかの処理を実行する (ID:\(viewObject.id))")
