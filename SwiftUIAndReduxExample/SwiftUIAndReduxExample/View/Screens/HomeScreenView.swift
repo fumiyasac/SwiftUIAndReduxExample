@@ -36,8 +36,14 @@ struct HomeScreenView: View {
                 }
 
             ScrollView {
-                CampaignBannerCarouselView(campaignBannersCarouselViewObjects: campaignBannerCarouselViewObjects)
-                PickupPhotosGridView(pickupPhotosGridViewObjects: pickupPhotoGridViewObjects)
+                Group {
+                    HomeCommonSectionView(title: "季節の特集コンテンツ一覧", subTitle: "Introduce seasonal shopping and features.")
+                    CampaignBannerCarouselView(campaignBannersCarouselViewObjects: campaignBannerCarouselViewObjects)
+                }
+                Group {
+                    HomeCommonSectionView(title: "ピックアップ写真集", subTitle: "Let's Enjoy Pickup Gourmet Photo Archives.")
+                    PickupPhotosGridView(pickupPhotosGridViewObjects: pickupPhotoGridViewObjects)
+                }
             }
             .navigationBarTitle(Text("Home"), displayMode: .inline)
         }

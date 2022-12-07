@@ -37,12 +37,12 @@ struct PickupPhotosGridView: View {
         // MEMO: StaggeredGridの様な表現をするために、VStackを縦に2つ並べて表現する
         // 👉 LazyVGridにすると表示がおかしくなったのでこの形としています。
         HStack(alignment: .top) {
-            VStack(spacing: 8) {
+            VStack(spacing: 8.0) {
                 ForEach(splittedPickupPhotosGridViewObjects.leftPhotosGridViewObjects) { viewObject in
                     PickupPhotosCellView(viewObject: viewObject)
                 }
             }
-            VStack(spacing: 8) {
+            VStack(spacing: 8.0) {
                 ForEach(splittedPickupPhotosGridViewObjects.rightPhotosGridViewObjects) { viewObject in
                     PickupPhotosCellView(viewObject: viewObject)
                 }
@@ -100,7 +100,8 @@ struct PickupPhotosCellView: View {
     }
 
     private var standardWidth: CGFloat {
-        return CGFloat(UIScreen.main.bounds.width / 2)
+        // MEMO: 間隔は8.0×3=24.0と想定しています
+        return CGFloat((UIScreen.main.bounds.width - 24.0) / 2)
     }
 
     private var standardHeight: CGFloat {
