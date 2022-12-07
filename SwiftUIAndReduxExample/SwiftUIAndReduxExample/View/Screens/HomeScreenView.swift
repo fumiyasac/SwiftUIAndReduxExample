@@ -13,35 +13,63 @@ struct HomeScreenView: View {
     
     var body: some View {
         NavigationView {
-            let campaignBannersResponse = getCampaignBannersDummyResponse()
-            let campaignBannerCarouselViewObjects = campaignBannersResponse.result
+            let pickupPhotoResponse = getPickupPhotoResponse()
+            let pickupPhotoGridViewObjects = pickupPhotoResponse.result
                 .map {
-                    CampaignBannerCarouselViewObject(
+                    PickupPhotosGridViewObject(
                         id: $0.id,
-                        bannerContentsId: $0.bannerContentsId,
-                        bannerUrl: URL(string: $0.bannerUrl) ?? nil
+                        title: $0.title,
+                        caption: $0.caption,
+                        photoUrl: URL(string: $0.photoUrl) ?? nil,
+                        photoWidth: CGFloat($0.photoWidth),
+                        photoHeight: CGFloat($0.photoHeight)
                     )
                 }
-            CampaignBannerCarouselView(campaignBannersCarouselViewObjects: campaignBannerCarouselViewObjects)
+            ScrollView {
+                PickupPhotosGridView(pickupPhotosGridViewObjects: pickupPhotoGridViewObjects)
+            }
+//            let campaignBannersResponse = getCampaignBannersDummyResponse()
+//            let campaignBannerCarouselViewObjects = campaignBannersResponse.result
+//                .map {
+//                    CampaignBannerCarouselViewObject(
+//                        id: $0.id,
+//                        bannerContentsId: $0.bannerContentsId,
+//                        bannerUrl: URL(string: $0.bannerUrl) ?? nil
+//                    )
+//                }
+//            CampaignBannerCarouselView(campaignBannersCarouselViewObjects: campaignBannerCarouselViewObjects)
                 .navigationBarTitle(Text("Home"), displayMode: .inline)
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }
 
-    // MARK: - Private Static Function
+    // MARK: - Private Function
 
-    private func getCampaignBannersDummyResponse() -> CampaignBannersResponse {
-        guard let path = Bundle.main.path(forResource: "campaign_banners", ofType: "json") else {
+    private func getPickupPhotoResponse() -> PickupPhotoResponse {
+        guard let path = Bundle.main.path(forResource: "pickup_photos", ofType: "json") else {
             fatalError()
         }
         guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
             fatalError()
         }
-        guard let campaignBannersResponse = try? JSONDecoder().decode(CampaignBannersResponse.self, from: data) else {
+        guard let pickupPhotoResponse = try? JSONDecoder().decode(PickupPhotoResponse.self, from: data) else {
             fatalError()
         }
-        return campaignBannersResponse
+        return pickupPhotoResponse
     }
+
+//    private func getCampaignBannersDummyResponse() -> CampaignBannersResponse {
+//        guard let path = Bundle.main.path(forResource: "campaign_banners", ofType: "json") else {
+//            fatalError()
+//        }
+//        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
+//            fatalError()
+//        }
+//        guard let campaignBannersResponse = try? JSONDecoder().decode(CampaignBannersResponse.self, from: data) else {
+//            fatalError()
+//        }
+//        return campaignBannersResponse
+//    }
 }
 
 // MARK: - Preview

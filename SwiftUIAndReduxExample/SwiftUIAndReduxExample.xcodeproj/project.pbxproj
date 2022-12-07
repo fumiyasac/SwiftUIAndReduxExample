@@ -38,7 +38,6 @@
 		DE1833D9291FABCD00E3E885 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1833D8291FABCD00E3E885 /* UserDefaultManager.swift */; };
 		DE1833DC29210BF600E3E885 /* ApplicationStatusLocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1833DB29210BF600E3E885 /* ApplicationStatusLocalStore.swift */; };
 		DE1833E129210DB700E3E885 /* FavoriteRealmEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1833E029210DB700E3E885 /* FavoriteRealmEntity.swift */; };
-		DE1833E42928D51D00E3E885 /* WaterfallGrid in Frameworks */ = {isa = PBXBuildFile; productRef = DE1833E32928D51D00E3E885 /* WaterfallGrid */; };
 		DE1833EA292CC8E300E3E885 /* CampaignBannerCarouselPrototypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1833E9292CC8E300E3E885 /* CampaignBannerCarouselPrototypeView.swift */; };
 		DE1833EC292DC86800E3E885 /* CampaignBannerCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1833EB292DC86800E3E885 /* CampaignBannerCarouselView.swift */; };
 		DE1834162932174900E3E885 /* campaign_banners.json in Resources */ = {isa = PBXBuildFile; fileRef = DE1834152932174900E3E885 /* campaign_banners.json */; };
@@ -48,6 +47,7 @@
 		DE1834202932833000E3E885 /* featured_topics.json in Resources */ = {isa = PBXBuildFile; fileRef = DE18341F2932833000E3E885 /* featured_topics.json */; };
 		DE1834222932887900E3E885 /* pickup_photos.json in Resources */ = {isa = PBXBuildFile; fileRef = DE1834212932887900E3E885 /* pickup_photos.json */; };
 		DE183429293FDC5000E3E885 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DE183428293FDC5000E3E885 /* Kingfisher */; };
+		DE18342B293FF87400E3E885 /* PickupPhotosGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE18342A293FF87400E3E885 /* PickupPhotosGridView.swift */; };
 		DE2098692787025D000272B9 /* SwiftUIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2098682787025D000272B9 /* SwiftUIColorExtension.swift */; };
 		DE20986B278B0F35000272B9 /* RatingViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE20986A278B0F34000272B9 /* RatingViewRepresentable.swift */; };
 		DE43244028463B4F001ECA85 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = DE43243F28463B4F001ECA85 /* Cosmos */; };
@@ -117,6 +117,7 @@
 		DE18341C2932829900E3E885 /* ArchivePhotoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivePhotoEntity.swift; sourceTree = "<group>"; };
 		DE18341F2932833000E3E885 /* featured_topics.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = featured_topics.json; sourceTree = "<group>"; };
 		DE1834212932887900E3E885 /* pickup_photos.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pickup_photos.json; sourceTree = "<group>"; };
+		DE18342A293FF87400E3E885 /* PickupPhotosGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupPhotosGridView.swift; sourceTree = "<group>"; };
 		DE2098682787025D000272B9 /* SwiftUIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIColorExtension.swift; sourceTree = "<group>"; };
 		DE20986A278B0F34000272B9 /* RatingViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewRepresentable.swift; sourceTree = "<group>"; };
 		DE9F9A1827867A5F00EF32BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -146,7 +147,6 @@
 				DE183429293FDC5000E3E885 /* Kingfisher in Frameworks */,
 				DED73F8328F451DA00A7F811 /* CollectionViewPagingLayout in Frameworks */,
 				DE136BE827227525007F6808 /* SwiftyUserDefaults in Frameworks */,
-				DE1833E42928D51D00E3E885 /* WaterfallGrid in Frameworks */,
 				DE1833D5291FAB6700E3E885 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -388,6 +388,7 @@
 			isa = PBXGroup;
 			children = (
 				DE1833EB292DC86800E3E885 /* CampaignBannerCarouselView.swift */,
+				DE18342A293FF87400E3E885 /* PickupPhotosGridView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -505,7 +506,6 @@
 				DED73F8228F451DA00A7F811 /* CollectionViewPagingLayout */,
 				DE1833D4291FAB6700E3E885 /* Realm */,
 				DE1833D6291FAB6700E3E885 /* RealmSwift */,
-				DE1833E32928D51D00E3E885 /* WaterfallGrid */,
 				DE183428293FDC5000E3E885 /* Kingfisher */,
 			);
 			productName = SwiftUIAndReduxExample;
@@ -584,7 +584,6 @@
 				DE43243E28463B4E001ECA85 /* XCRemoteSwiftPackageReference "Cosmos" */,
 				DED73F8128F451DA00A7F811 /* XCRemoteSwiftPackageReference "CollectionViewPagingLayout" */,
 				DE1833D3291FAB6700E3E885 /* XCRemoteSwiftPackageReference "realm-swift" */,
-				DE1833E22928D51D00E3E885 /* XCRemoteSwiftPackageReference "WaterfallGrid" */,
 				DE183427293FDC5000E3E885 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = DEE9C6F326E8308700190505 /* Products */;
@@ -639,6 +638,7 @@
 				DE0BFBB7271B080900FC0F32 /* UIColorExtension.swift in Sources */,
 				DE0BFBC0271B16FD00FC0F32 /* FavoriteScreenView.swift in Sources */,
 				DEE9C6F826E8308700190505 /* ContentView.swift in Sources */,
+				DE18342B293FF87400E3E885 /* PickupPhotosGridView.swift in Sources */,
 				DE20986B278B0F35000272B9 /* RatingViewRepresentable.swift in Sources */,
 				DE0BFBCA271B21B400FC0F32 /* HomeMiddleware.swift in Sources */,
 				DE1833C9291DB77800E3E885 /* HomeResponse.swift in Sources */,
@@ -1009,14 +1009,6 @@
 				minimumVersion = 10.32.3;
 			};
 		};
-		DE1833E22928D51D00E3E885 /* XCRemoteSwiftPackageReference "WaterfallGrid" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/paololeonardi/WaterfallGrid.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
 		DE183427293FDC5000E3E885 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -1058,11 +1050,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DE1833D3291FAB6700E3E885 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
-		};
-		DE1833E32928D51D00E3E885 /* WaterfallGrid */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DE1833E22928D51D00E3E885 /* XCRemoteSwiftPackageReference "WaterfallGrid" */;
-			productName = WaterfallGrid;
 		};
 		DE183428293FDC5000E3E885 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
