@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 // MEMO: 中央寄せCarousel方式でのバナー表示の参考
 // https://levelup.gitconnected.com/snap-to-item-scrolling-debccdcbb22f
@@ -14,34 +15,183 @@ struct RecentNewsCarouselView: View {
 
     // MARK: - Property
 
-    // TODO: News要素を定義する
-    var colors: [Color] = [.blue, .green, .red, .orange]
-
     private let screen = UIScreen.main.bounds
     private let baseSpacing: CGFloat = 16.0
     private let sectionSpacing: CGFloat = 16.0
-    private let sectionHeight: CGFloat = 450.0
+    private let sectionHeight: CGFloat = 375.0
 
     private var sectionWidth: CGFloat {
         return screen.width - sectionSpacing
+    }
+
+    private var recentNewsCarouselViewObjects: [RecentNewsCarouselViewObject] = []
+
+    // MEMO: Grid表示View要素に表示する内容を格納するための変数
+    @State private var groupedRecentNewsCarouselViewObjects: [GroupedRecentNewsCarouselViewObject] = []
+
+    // MARK: - Initializer
+
+    init(recentNewsCarouselViewObjects: [RecentNewsCarouselViewObject]) {
+        self.recentNewsCarouselViewObjects = recentNewsCarouselViewObjects
+
+        // イニシャライザ内で「_(変数名)」値を代入することでState値の初期化を実行する
+        // 👉 ここでは引数で受け取ったpickupPhotosGridViewObject配列を2つに分割する
+        _groupedRecentNewsCarouselViewObjects = State(initialValue: getGroupedRecentNewsCarouselViewObjects())
     }
 
     // MARK: - Body
 
     var body: some View {
         HStack(alignment: .center, spacing: baseSpacing) {
-            // TODO: 1Sectionに3要素表示する形のViewを定義する
-            ForEach(0..<colors.count) { i in
-                 colors[i]
-                     .frame(width: sectionWidth, height: sectionHeight, alignment: .leading)
+            // MEMO: 1つのCarousel用Sectionに対して3つのRecentNewsCellViewを上寄せで表示するためにForEachの入れ子構想にしている
+            ForEach(groupedRecentNewsCarouselViewObjects) { groupedRecentNewsCarouselViewObject in
+                VStack {
+                    ForEach(0 ..< groupedRecentNewsCarouselViewObject.recentNewsCarouselViewObjects.count, id: \.self) { index in
+                        let viewObject = groupedRecentNewsCarouselViewObject.recentNewsCarouselViewObjects[index]
+                        RecentNewsCellView(viewObject: viewObject)
+                        // MEMO: VStack内部で等間隔に並べたいので最後以外にはSpacerを追加する
+                        if index < 2 {
+                            Spacer()
+                        }
+                    }
+                }
+                .frame(width: sectionWidth, height: sectionHeight, alignment: .leading)
             }
         }
         // MEMO: DragGestureの値変化を利用したCarousel表示用のModifier定義
         // 👉 CampaignBannerCarouselViewとは異なりCarouselにまつわる処理のほとんどをModifierで実行するイメージ
         .modifier(
-            RecentNewsCarouselViewModifier(sections: colors.count, sectionWidth: sectionWidth, sectionSpacing: sectionSpacing)
+            RecentNewsCarouselViewModifier(sections: groupedRecentNewsCarouselViewObjects.count, sectionWidth: sectionWidth, sectionSpacing: sectionSpacing)
         )
     }
+
+    // MARK: - Private Function
+
+    private func getGroupedRecentNewsCarouselViewObjects() -> [GroupedRecentNewsCarouselViewObject] {
+        var groupedArray: [GroupedRecentNewsCarouselViewObject] = []
+        var temporaryArray: [RecentNewsCarouselViewObject] = []
+        for (i, recentNewsCarouselViewObject) in recentNewsCarouselViewObjects.enumerated() {
+            if i % 3 == 2 || i == recentNewsCarouselViewObjects.count - 1 {
+                temporaryArray.append(recentNewsCarouselViewObject)
+                let recentNewsCarouselViewObjects = temporaryArray
+                temporaryArray = []
+                groupedArray.append(GroupedRecentNewsCarouselViewObject(id: UUID(), recentNewsCarouselViewObjects: recentNewsCarouselViewObjects))
+            } else {
+                temporaryArray.append(recentNewsCarouselViewObject)
+            }
+        }
+        return groupedArray
+    }
+}
+
+// MARK: - RecentNewsCellView
+
+struct RecentNewsCellView: View {
+
+    // MARK: - Property
+
+    private var cellCategoryFont: Font {
+        return Font.custom("AvenirNext-Bold", size: 12)
+    }
+
+    private var cellDateFont: Font {
+        return Font.custom("AvenirNext-Bold", size: 14)
+    }
+
+    private var cellTitleFont: Font {
+        return Font.custom("AvenirNext-Bold", size: 14)
+    }
+
+    private var cellCategoryColor: Color {
+        return Color.white
+    }
+
+    private var cellDateColor: Color {
+        return Color.secondary
+    }
+
+    private var cellTitleColor: Color {
+        return Color.primary
+    }
+
+    private var viewObject: RecentNewsCarouselViewObject
+
+    // MARK: - Initializer
+
+    init(viewObject: RecentNewsCarouselViewObject) {
+        self.viewObject = viewObject
+    }
+
+    // MARK: - Body
+
+    var body: some View {
+        // MEMO: ちょっとこの辺は構造が強引で申し訳ないです...😢
+        VStack(alignment: .leading) {
+            // (1) VStackでTextを左寄せしている
+            VStack(alignment: .leading) {
+                Text(viewObject.title)
+                    .font(cellTitleFont)
+                    .foregroundColor(cellTitleColor)
+                    .lineLimit(1)
+                    .padding([.leading, .trailing], 8.0)
+                    .padding([.bottom], -8.0)
+                    .padding([.top], 2.0)
+            }
+            // (2) HStackで左寄せのサムネイル画像とカテゴリーと日付を入れたVStackを組み合わせている
+            HStack(alignment: .top) {
+                VStack(alignment: .leading) {
+                    KFImage(viewObject.thumbnailUrl)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .clipped()
+                        .frame(width: 64.0, height: 64.0)
+                        .border(.gray, width: 1)
+                }
+                .padding([.leading, .top], 8.0)
+                VStack(alignment: .leading) {
+                    Text(viewObject.newsCategory)
+                        .font(cellCategoryFont)
+                        .foregroundColor(cellCategoryColor)
+                        .padding(6.0)
+                        .background(.orange)
+                    Text(DateLabelFormatter.getDateStringFromAPI(apiDateString: viewObject.publishedAt))
+                        .font(cellDateFont)
+                        .foregroundColor(cellDateColor)
+                        .padding([.top], 3.0)
+                    Spacer()
+                }
+                .padding([.top], 8.0)
+                .frame(height: 80.0)
+            }
+            // (3) Divider
+            Divider()
+                .frame(maxWidth: .infinity)
+                .background(.gray)
+                .padding([.leading, .trailing], 8.0)
+                .padding([.top], -6.0)
+        }
+        // MEMO: タップ領域の確保とタップ時の処理
+        .contentShape(Rectangle())
+        .onTapGesture(perform: {
+            print("想定: Tap処理を実行した際に何らかの処理を実行する (ID:\(viewObject.id))")
+        })
+        .frame(height: 120.0)
+    }
+}
+
+// MARK: - ViewObject
+
+struct GroupedRecentNewsCarouselViewObject: Identifiable {
+    let id: UUID
+    let recentNewsCarouselViewObjects: [RecentNewsCarouselViewObject]
+}
+
+struct RecentNewsCarouselViewObject: Identifiable {
+    let id: Int
+    let thumbnailUrl: URL?
+    let title: String
+    let newsCategory: String
+    let publishedAt: String
 }
 
 // MARK: - Modifier
@@ -85,7 +235,7 @@ struct RecentNewsCarouselViewModifier: ViewModifier {
             // MEMO: (scrollOffset + draggingOffset) とすることで表示対象が中央にピッタリと合うようにしている
             .offset(x: scrollOffset + draggingOffset, y: 0)
             .gesture(
-                DragGesture()
+                DragGesture(minimumDistance: 20)
                 // 👉 Carousel要素の移動中はStateと連動するdraggingOffset値を更新する
                 .onChanged({ event in
                     draggingOffset = event.translation.width
@@ -134,6 +284,33 @@ struct RecentNewsCarouselViewModifier: ViewModifier {
 
 struct RecentNewsCarouselView_Previews: PreviewProvider {
     static var previews: some View {
-        RecentNewsCarouselView()
+        // MEMO: Preview表示用にレスポンスを想定したJsonを読み込んで画面に表示させる
+        let recentNewsResponse = getRecentNewsResponse()
+        let recentNewsCarouselViewObjects = recentNewsResponse.result
+            .map {
+                RecentNewsCarouselViewObject(
+                    id: $0.id,
+                    thumbnailUrl: URL(string: $0.thumbnailUrl) ?? nil,
+                    title: $0.title,
+                    newsCategory: $0.newsCategory,
+                    publishedAt: $0.publishedAt
+                )
+            }
+        RecentNewsCarouselView(recentNewsCarouselViewObjects: recentNewsCarouselViewObjects)
+    }
+
+    // MARK: - Private Static Function
+
+    private static func getRecentNewsResponse() -> RecentNewsResponse {
+        guard let path = Bundle.main.path(forResource: "recent_news", ofType: "json") else {
+            fatalError()
+        }
+        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
+            fatalError()
+        }
+        guard let recentNewsResponse = try? JSONDecoder().decode(RecentNewsResponse.self, from: data) else {
+            fatalError()
+        }
+        return recentNewsResponse
     }
 }
