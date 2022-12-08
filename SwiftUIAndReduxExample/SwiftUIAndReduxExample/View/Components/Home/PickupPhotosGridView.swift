@@ -63,7 +63,7 @@ struct PickupPhotosGridView: View {
             let standardWidth = UIScreen.main.bounds.width / 2
             let standardHeight = Int(ceil(standardWidth / viewObject.photoWidth * viewObject.photoHeight))
             // Debug.
-            print("ID:\(viewObject.id) / leftHeightSum:\(leftHeightSum) /  rightHeightSum:\(rightHeightSum) / standardHeight:\(standardHeight)")
+            print("ID:\(viewObject.id) / leftHeightSum:\(leftHeightSum) / rightHeightSum:\(rightHeightSum) / standardHeight:\(standardHeight)")
             // 左右の配置決定と左右高さ合計値加算処理を実行する
             if leftHeightSum > rightHeightSum {
                 rightPhotosGridViewObjects.append(viewObject)
