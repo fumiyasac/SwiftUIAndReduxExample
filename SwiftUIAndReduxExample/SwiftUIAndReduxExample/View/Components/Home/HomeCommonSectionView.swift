@@ -11,6 +11,12 @@ struct HomeCommonSectionView: View {
 
     // MARK: - Property
 
+    private let screen = UIScreen.main.bounds
+
+    private var headerWidth: CGFloat {
+        return screen.width
+    }
+
     private var sectionTitleFont: Font {
         return Font.custom("AvenirNext-Bold", size: 18)
     }
@@ -39,22 +45,20 @@ struct HomeCommonSectionView: View {
 
     var body: some View {
         HStack {
-            VStack {
+            VStack(alignment: .leading) {
                 Text(titleTextSet.title)
                     .font(sectionTitleFont)
                     .foregroundColor(sectionTitleColor)
                     .lineLimit(1)
-                    .frame(maxWidth: .infinity, alignment: .leading)
                 Text(titleTextSet.subTitle)
                     .font(sectionSubtitleFont)
                     .foregroundColor(sectionSubtitleColor)
                     .lineLimit(1)
-                    .frame(maxWidth: .infinity, alignment: .leading)
             }
-            .padding(12.0)
-            .frame(maxWidth: .infinity)
+            Spacer()
         }
-        .frame(maxWidth: .infinity)
+        .padding(12.0)
+        .frame(width: headerWidth)
     }
 }
 
@@ -63,6 +67,7 @@ struct HomeCommonSectionView_Previews: PreviewProvider {
         VStack {
             HomeCommonSectionView(title: "季節の特集コンテンツ一覧", subTitle: "Introduce seasonal shopping and features.")
             HomeCommonSectionView(title: "ピックアップ写真集", subTitle: "Let's Enjoy Pickup Gourmet Photo Archives.")
+            HomeCommonSectionView(title: "最新のおしらせ", subTitle: "Let's Check Here for App-only Notifications.")
         }
     }
 }
