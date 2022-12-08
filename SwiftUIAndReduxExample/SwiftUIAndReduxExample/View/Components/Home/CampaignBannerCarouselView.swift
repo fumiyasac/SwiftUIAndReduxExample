@@ -132,7 +132,7 @@ struct CampaignBannerCarouselViewModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .gesture(
-                DragGesture()
+                DragGesture(minimumDistance: 20)
                 .onChanged({ value in
                     // 👉 Carousel要素の移動中はStateと連動するdraggingOffset値を更新する
                     draggingOffset = snappedOffset + value.translation.width / 250
@@ -163,7 +163,7 @@ struct CampaignBannerCarouselView_Previews: PreviewProvider {
     
     static var previews: some View {
         // MEMO: Preview表示用にレスポンスを想定したJsonを読み込んで画面に表示させる
-        let campaignBannersResponse = getCampaignBannersDummyResponse()
+        let campaignBannersResponse = getCampaignBannersResponse()
         let campaignBannerCarouselViewObjects = campaignBannersResponse.result
             .map {
                 CampaignBannerCarouselViewObject(
@@ -177,7 +177,7 @@ struct CampaignBannerCarouselView_Previews: PreviewProvider {
 
     // MARK: - Private Static Function
 
-    private static func getCampaignBannersDummyResponse() -> CampaignBannersResponse {
+    private static func getCampaignBannersResponse() -> CampaignBannersResponse {
         guard let path = Bundle.main.path(forResource: "campaign_banners", ofType: "json") else {
             fatalError()
         }
