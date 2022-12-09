@@ -35,9 +35,9 @@ struct CampaignBannerCarouselView: View {
     // MARK: - Initializer
     
     init(campaignBannersCarouselViewObjects: [CampaignBannerCarouselViewObject]) {
-        self.campaignBannersCarouselViewObjects = campaignBannersCarouselViewObjects
 
         // イニシャライザ内で「_(変数名)」値を代入することでState値の初期化を実行する
+        _campaignBannersCarouselViewObjects = State(initialValue: campaignBannersCarouselViewObjects)
         _snappedOffset = State(initialValue: 0.0)
         _draggingOffset = State(initialValue: 0.0)
     }
