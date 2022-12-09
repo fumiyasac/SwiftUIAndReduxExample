@@ -124,6 +124,8 @@ struct TrendArticlesCellView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
+            // (1) 上部の画面要素とテキストを重ねて表示する部分
+            // 👉 ZStack内部の要素についてはサムネイル表示のサイズと合わせています。
             ZStack {
                 KFImage(viewObject.thumbnailUrl)
                     .resizable()
@@ -143,6 +145,7 @@ struct TrendArticlesCellView: View {
                 }
                 .frame(width: thumbnailWidth, height: thumbnailHeight)
             }
+            // (2) 下部のテキスト表示
             VStack {
                 Text(viewObject.introduction)
                     .font(cellIntroductionFont)
@@ -153,6 +156,7 @@ struct TrendArticlesCellView: View {
                     .lineSpacing(2.0)
                     .lineLimit(4)
             }
+            // (3) 上に要素を詰めるためのSpacer
             Spacer()
         }
         // MEMO: タップ領域の確保とタップ時の処理
