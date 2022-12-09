@@ -82,7 +82,9 @@ struct PickupPhotosGridView: View {
 struct PickupPhotosCellView: View {
 
     // MARK: - Property
-    
+
+    private let screen = UIScreen.main.bounds
+
     private var cellTitleFont: Font {
         return Font.custom("AvenirNext-Bold", size: 14)
     }
@@ -101,7 +103,7 @@ struct PickupPhotosCellView: View {
 
     private var standardWidth: CGFloat {
         // MEMO: 間隔は8.0×3=24.0と想定しています
-        return CGFloat((UIScreen.main.bounds.width - 24.0) / 2)
+        return CGFloat((screen.width - 24.0) / 2)
     }
 
     private var standardHeight: CGFloat {
@@ -110,6 +112,10 @@ struct PickupPhotosCellView: View {
 
     private var bottomAreaBackground: Color {
         return Color.black.opacity(0.36)
+    }
+
+    private var cellRoundRectangleColor: Color {
+        return Color.secondary.opacity(0.5)
     }
 
     private var viewObject: PickupPhotosGridViewObject
@@ -132,7 +138,7 @@ struct PickupPhotosCellView: View {
             VStack {
                 Spacer()
                 HStack {
-                    VStack(alignment: .leading) {
+                    VStack {
                         Text(viewObject.title)
                             .font(cellTitleFont)
                             .foregroundColor(cellTitleColor)
@@ -155,11 +161,11 @@ struct PickupPhotosCellView: View {
             print("想定: Tap処理を実行した際に何らかの処理を実行する (ID:\(viewObject.id))")
         })
         // MEMO: 表示要素全体に付与する角丸と配色を設定している部分
-        .cornerRadius(4)
+        .cornerRadius(4.0)
         .frame(width: standardWidth, height: standardHeight)
         .background(
-            RoundedRectangle(cornerRadius: 4)
-                .stroke(Color.secondary.opacity(0.5))
+            RoundedRectangle(cornerRadius: 4.0)
+                .stroke(cellRoundRectangleColor)
         )
     }
 }

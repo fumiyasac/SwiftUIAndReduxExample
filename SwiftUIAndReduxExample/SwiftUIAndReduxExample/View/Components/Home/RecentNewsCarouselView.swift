@@ -10,6 +10,7 @@ import Kingfisher
 
 // MEMO: 中央寄せCarousel方式でのバナー表示の参考
 // https://levelup.gitconnected.com/snap-to-item-scrolling-debccdcbb22f
+// ※ 基本の骨格はこの記事で解説されているサンプルの通りではありますが、内部に表示する内容を応用しているイメージです。
 
 struct RecentNewsCarouselView: View {
 
@@ -106,12 +107,20 @@ struct RecentNewsCellView: View {
         return Color.white
     }
 
+    private var cellCategoryBackgroundColor: Color {
+        return Color(uiColor: UIColor(code: "#ff9900"))
+    }
+
     private var cellDateColor: Color {
         return Color.secondary
     }
 
     private var cellTitleColor: Color {
         return Color.primary
+    }
+
+    private var cellThumbnailRoundRectangleColor: Color {
+        return Color.secondary.opacity(0.5)
     }
 
     private var viewObject: RecentNewsCarouselViewObject
@@ -128,7 +137,7 @@ struct RecentNewsCellView: View {
         // MEMO: ちょっとこの辺は構造が強引で申し訳ないです...😢
         VStack(alignment: .leading) {
             // (1) VStackでTextを左寄せしている
-            VStack(alignment: .leading) {
+            VStack {
                 Text(viewObject.title)
                     .font(cellTitleFont)
                     .foregroundColor(cellTitleColor)
@@ -145,7 +154,10 @@ struct RecentNewsCellView: View {
                         .aspectRatio(contentMode: .fit)
                         .clipped()
                         .frame(width: 64.0, height: 64.0)
-                        .border(.gray, width: 1)
+                        .background(
+                            RoundedRectangle(cornerRadius: 4.0)
+                                .stroke(cellThumbnailRoundRectangleColor)
+                        )
                 }
                 .padding([.leading, .top], 8.0)
                 VStack(alignment: .leading) {
@@ -153,7 +165,7 @@ struct RecentNewsCellView: View {
                         .font(cellCategoryFont)
                         .foregroundColor(cellCategoryColor)
                         .padding(6.0)
-                        .background(.orange)
+                        .background(cellCategoryBackgroundColor)
                     Text(DateLabelFormatter.getDateStringFromAPI(apiDateString: viewObject.publishedAt))
                         .font(cellDateFont)
                         .foregroundColor(cellDateColor)
