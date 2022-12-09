@@ -33,6 +33,17 @@ struct HomeScreenView: View {
                         publishedAt: $0.publishedAt
                     )
                 }
+            let trendArticleResponse = getTrendArticleResponse()
+            let trendArticlesGridViewObjects = trendArticleResponse.result
+                .map {
+                    TrendArticlesGridViewObject(
+                        id: $0.id,
+                        thumbnailUrl: URL(string: $0.thumbnailUrl) ?? nil,
+                        title: $0.title,
+                        introduction:$0.introduction,
+                        publishedAt: $0.publishedAt
+                    )
+                }
             let pickupPhotoResponse = getPickupPhotoResponse()
             let pickupPhotoGridViewObjects = pickupPhotoResponse.result
                 .map {
@@ -50,6 +61,8 @@ struct HomeScreenView: View {
                 CampaignBannerCarouselView(campaignBannersCarouselViewObjects: campaignBannerCarouselViewObjects)
                 HomeCommonSectionView(title: "最新のおしらせ", subTitle: "Let's Check Here for App-only Notifications.")
                 RecentNewsCarouselView(recentNewsCarouselViewObjects: recentNewsCarouselViewObjects)
+                HomeCommonSectionView(title: "トレンド記事紹介", subTitle: "Memorial Articles about Special Season.")
+                TrendArticlesGridView(trendArticlesGridViewObjects: trendArticlesGridViewObjects)
                 HomeCommonSectionView(title: "ピックアップ写真集", subTitle: "Let's Enjoy Pickup Gourmet Photo Archives.")
                 PickupPhotosGridView(pickupPhotosGridViewObjects: pickupPhotoGridViewObjects)
             }
@@ -97,6 +110,19 @@ struct HomeScreenView: View {
             fatalError()
         }
         return recentNewsResponse
+    }
+
+    private func getTrendArticleResponse() -> TrendArticleResponse {
+        guard let path = Bundle.main.path(forResource: "trend_articles", ofType: "json") else {
+            fatalError()
+        }
+        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
+            fatalError()
+        }
+        guard let trendArticleResponse = try? JSONDecoder().decode(TrendArticleResponse.self, from: data) else {
+            fatalError()
+        }
+        return trendArticleResponse
     }
 }
 
