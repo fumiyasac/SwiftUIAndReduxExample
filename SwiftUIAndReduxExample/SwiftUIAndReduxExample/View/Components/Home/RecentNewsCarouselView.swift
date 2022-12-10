@@ -246,8 +246,11 @@ struct RecentNewsCarouselViewModifier: ViewModifier {
         content
             // MEMO: (scrollOffset + draggingOffset) とすることで表示対象が中央にピッタリと合うようにしている
             .offset(x: scrollOffset + draggingOffset, y: 0)
-            .gesture(
-                DragGesture(minimumDistance: 20)
+            // MEMO: highPriorityGestureを利用してScrollView内で使用しても上下スクロールとの競合を発生しにくくする（とはいえ出てしまう時はあるかもしれない...）
+            // 参考リンク:
+            // https://www.hackingwithswift.com/quick-start/swiftui/how-to-force-one-gesture-to-recognize-before-another-using-highprioritygesture
+            .highPriorityGesture(
+                DragGesture(minimumDistance: 0)
                 // 👉 Carousel要素の移動中はStateと連動するdraggingOffset値を更新する
                 .onChanged({ event in
                     draggingOffset = event.translation.width
@@ -284,7 +287,7 @@ struct RecentNewsCarouselViewModifier: ViewModifier {
                     let newOffset = index * sectionWidth + (index - 1) * sectionSpacing - (contentWidth / 2.0) + (screenWidth / 2.0) - ((screenWidth - sectionWidth) / 2.0) + sectionSpacing
 
                     // これまでの処理で算出したオフセット値を反映する際にアニメーション処理を伴うようにする
-                    withAnimation {
+                    withAnimation(.linear(duration: 0.24)) {
                         scrollOffset = newOffset
                     }
                 })
