@@ -53,6 +53,7 @@
 		DE20986B278B0F35000272B9 /* RatingViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE20986A278B0F34000272B9 /* RatingViewRepresentable.swift */; };
 		DE42E19A29423C52007E462F /* DateLabelFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42E19929423C52007E462F /* DateLabelFormatter.swift */; };
 		DE42E19E2943B02F007E462F /* TrendArticlesGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42E19D2943B02F007E462F /* TrendArticlesGridView.swift */; };
+		DE42E1A02943EF00007E462F /* FeaturedTopicsCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42E19F2943EF00007E462F /* FeaturedTopicsCarouselView.swift */; };
 		DE43244028463B4F001ECA85 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = DE43243F28463B4F001ECA85 /* Cosmos */; };
 		DE9F9A1927867A5F00EF32BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9F9A1827867A5F00EF32BB /* AppDelegate.swift */; };
 		DED73F8328F451DA00A7F811 /* CollectionViewPagingLayout in Frameworks */ = {isa = PBXBuildFile; productRef = DED73F8228F451DA00A7F811 /* CollectionViewPagingLayout */; };
@@ -126,6 +127,7 @@
 		DE20986A278B0F34000272B9 /* RatingViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewRepresentable.swift; sourceTree = "<group>"; };
 		DE42E19929423C52007E462F /* DateLabelFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateLabelFormatter.swift; sourceTree = "<group>"; };
 		DE42E19D2943B02F007E462F /* TrendArticlesGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendArticlesGridView.swift; sourceTree = "<group>"; };
+		DE42E19F2943EF00007E462F /* FeaturedTopicsCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedTopicsCarouselView.swift; sourceTree = "<group>"; };
 		DE9F9A1827867A5F00EF32BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEDA9CCD27B6B5190067578E /* ContentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentRouter.swift; sourceTree = "<group>"; };
 		DEE257C5271F1E6500751B67 /* APIClientManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientManager.swift; sourceTree = "<group>"; };
@@ -398,6 +400,7 @@
 				DE18342A293FF87400E3E885 /* PickupPhotosGridView.swift */,
 				DE18342C29404A5E00E3E885 /* RecentNewsCarouselView.swift */,
 				DE42E19D2943B02F007E462F /* TrendArticlesGridView.swift */,
+				DE42E19F2943EF00007E462F /* FeaturedTopicsCarouselView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -672,6 +675,7 @@
 				DE1833C3291DAF8100E3E885 /* TrendArticleResponse.swift in Sources */,
 				DE2098692787025D000272B9 /* SwiftUIColorExtension.swift in Sources */,
 				DE1833C7291DB70D00E3E885 /* PickupPhotoResponse.swift in Sources */,
+				DE42E1A02943EF00007E462F /* FeaturedTopicsCarouselView.swift in Sources */,
 				DE1833CB291F910200E3E885 /* HomeState.swift in Sources */,
 				DE1833EC292DC86800E3E885 /* CampaignBannerCarouselView.swift in Sources */,
 				DE18342D29404A5E00E3E885 /* RecentNewsCarouselView.swift in Sources */,

@@ -39,12 +39,14 @@ struct RatingViewRepresentable: UIViewRepresentable {
     }
 
     private func setupCosmosViewSettings(_ uiView: CosmosView) {
-        uiView.settings.starSize = 40
+
+        // MEMO:
+        uiView.settings.fillMode = .precise
+        uiView.settings.starSize = 26
+        uiView.settings.emptyBorderWidth = 1.0
+        uiView.settings.filledBorderWidth = 1.0
+        uiView.settings.emptyBorderColor = .systemYellow
+        uiView.settings.filledColor = .systemYellow
+        uiView.settings.filledBorderColor = .systemYellow
     }
 }
-
-//struct RatingView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        RatingView()
-//    }
-//}
