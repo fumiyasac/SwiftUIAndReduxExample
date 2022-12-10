@@ -195,7 +195,7 @@ struct TrendArticlesGridView_Previews: PreviewProvider {
                     id: $0.id,
                     thumbnailUrl: URL(string: $0.thumbnailUrl) ?? nil,
                     title: $0.title,
-                    introduction:$0.introduction,
+                    introduction: $0.introduction,
                     publishedAt: $0.publishedAt
                 )
             }
