@@ -129,7 +129,7 @@ struct TrendArticlesCellView: View {
             ZStack {
                 KFImage(viewObject.thumbnailUrl)
                     .resizable()
-                    .aspectRatio(contentMode: .fill)
+                    .aspectRatio(contentMode: .fit)
                     .frame(width: thumbnailWidth, height: thumbnailHeight)
                 Rectangle()
                     .foregroundColor(cellThumbnailMaskColor)
@@ -187,6 +187,7 @@ struct TrendArticlesGridViewObject: Identifiable {
 
 struct TrendArticlesGridView_Previews: PreviewProvider {
     static var previews: some View {
+
         // MEMO: Preview表示用にレスポンスを想定したJsonを読み込んで画面に表示させる
         let trendArticleResponse = getTrendArticleResponse()
         let trendArticlesGridViewObjects = trendArticleResponse.result
@@ -199,7 +200,23 @@ struct TrendArticlesGridView_Previews: PreviewProvider {
                     publishedAt: $0.publishedAt
                 )
             }
+
+        // Preview: TrendArticlesGridView
         TrendArticlesGridView(trendArticlesGridViewObjects: trendArticlesGridViewObjects)
+            .previewDisplayName("TrendArticlesGridView Preview")
+
+        // MEMO: 部品1つあたりを表示するためのViewObject
+        let viewObject = TrendArticlesGridViewObject(
+            id: 1,
+            thumbnailUrl: URL(string: "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/trend_article1.jpg") ?? nil,
+            title: "クリスマスの料理に関する思い出(1)",
+            introduction: "子供の頃はクリスマスを楽しみにしていた思い出を大人になった今でも覚えている方は沢山いらっしゃるかもしれません。また、家族と一緒に料理をする機会が多いご家庭の中ではこの機会が貴重な一家団欒の場となっていたことでしょう。今回はクリスマスが近いシーズンにピッタリな「心温まるクリスマスに因んだストーリー」をいくつかご紹介できればと思います🎄",
+            publishedAt: "2022-12-01T07:30:00.000+0000"
+        )
+
+        // Preview: TrendArticlesCellView
+        TrendArticlesCellView(viewObject: viewObject)
+            .previewDisplayName("TrendArticlesCellView Preview")
     }
     
     // MARK: - Private Static Function

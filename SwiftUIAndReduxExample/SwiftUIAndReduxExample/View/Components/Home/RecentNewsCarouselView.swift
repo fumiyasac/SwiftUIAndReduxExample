@@ -299,6 +299,7 @@ struct RecentNewsCarouselViewModifier: ViewModifier {
 
 struct RecentNewsCarouselView_Previews: PreviewProvider {
     static var previews: some View {
+
         // MEMO: Preview表示用にレスポンスを想定したJsonを読み込んで画面に表示させる
         let recentNewsResponse = getRecentNewsResponse()
         let recentNewsCarouselViewObjects = recentNewsResponse.result
@@ -311,7 +312,23 @@ struct RecentNewsCarouselView_Previews: PreviewProvider {
                     publishedAt: $0.publishedAt
                 )
             }
+
+        // Preview: RecentNewsCarouselView
         RecentNewsCarouselView(recentNewsCarouselViewObjects: recentNewsCarouselViewObjects)
+            .previewDisplayName("RecentNewsCarouselView Preview")
+        
+        // MEMO: 部品1つあたりを表示するためのViewObject
+        let viewObject = RecentNewsCarouselViewObject(
+            id: 1,
+            thumbnailUrl: URL(string: "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail1.jpg") ?? nil,
+            title: "美味しい玉ねぎの年末年始の対応について",
+            newsCategory: "生産者からのお知らせ",
+            publishedAt: "2022-12-01T07:30:00.000+0000"
+        )
+
+        // Preview: RecentNewsCellView
+        RecentNewsCellView(viewObject: viewObject)
+            .previewDisplayName("RecentNewsCellView Preview")
     }
 
     // MARK: - Private Static Function

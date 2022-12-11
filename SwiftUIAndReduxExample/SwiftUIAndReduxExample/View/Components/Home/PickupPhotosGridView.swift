@@ -185,6 +185,7 @@ struct PickupPhotosGridViewObject: Identifiable {
 
 struct PickupPhotosGridView_Previews: PreviewProvider {
     static var previews: some View {
+
         // MEMO: Preview表示用にレスポンスを想定したJsonを読み込んで画面に表示させる
         let pickupPhotoResponse = getPickupPhotoResponse()
         let pickupPhotoGridViewObjects = pickupPhotoResponse.result
@@ -198,10 +199,47 @@ struct PickupPhotosGridView_Previews: PreviewProvider {
                     photoHeight: CGFloat($0.photoHeight)
                 )
             }
+
+        // Preview: PickupPhotosGridView
         // MEMO: 全体を表示させたいのでScrollViewを仕込んでいる
         ScrollView {
             PickupPhotosGridView(pickupPhotosGridViewObjects: pickupPhotoGridViewObjects)
         }
+        .previewDisplayName("PickupPhotosGridView Preview")
+
+        // MEMO: 部品1つあたりを表示するためのViewObject
+        let viewObject1 = PickupPhotosGridViewObject(
+            id: 1,
+            title: "Pickup Photo No.1",
+            caption: "Premium Gourmet Photo No.1",
+            photoUrl: URL(string: "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo1.jpg") ?? nil,
+            photoWidth: 960,
+            photoHeight: 960
+        )
+        let viewObject2 = PickupPhotosGridViewObject(
+            id: 2,
+            title: "Pickup Photo No.2",
+            caption: "Premium Gourmet Photo No.2",
+            photoUrl: URL(string: "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo2.jpg") ?? nil,
+            photoWidth: 960,
+            photoHeight: 1280
+        )
+        let viewObject3 = PickupPhotosGridViewObject(
+            id: 3,
+            title: "Pickup Photo No.3",
+            caption: "Premium Gourmet Photo No.3",
+            photoUrl: URL(string: "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo3.jpg") ?? nil,
+            photoWidth: 1200,
+            photoHeight: 800
+        )
+
+        // Preview: PickupPhotosCellView
+        PickupPhotosCellView(viewObject: viewObject1)
+            .previewDisplayName("PickupPhotosCellView1 Preview")
+        PickupPhotosCellView(viewObject: viewObject2)
+            .previewDisplayName("PickupPhotosCellView2 Preview")
+        PickupPhotosCellView(viewObject: viewObject3)
+            .previewDisplayName("PickupPhotosCellView3 Preview")
     }
 
     // MARK: - Private Static Function

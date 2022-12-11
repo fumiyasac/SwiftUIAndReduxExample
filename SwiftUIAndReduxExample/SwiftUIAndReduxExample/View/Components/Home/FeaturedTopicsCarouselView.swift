@@ -7,7 +7,6 @@
 
 import SwiftUI
 import Kingfisher
-import Cosmos
 
 struct FeaturedTopicsCarouselView: View {
     
@@ -19,7 +18,7 @@ struct FeaturedTopicsCarouselView: View {
         return screen.width
     }
 
-    // MEMO: LazyVGridに表示する内容を格納するための変数
+    // MEMO: LazyHStackに表示する内容を格納するための変数
     @State private var featuredTopicsCarouselViewObjects: [FeaturedTopicsCarouselViewObject] = []
 
     // MARK: - Initializer
@@ -240,6 +239,7 @@ struct FeaturedTopicsCarouselViewObject: Identifiable {
 
 struct FeaturedTopicsCarouselView_Previews: PreviewProvider {
     static var previews: some View {
+
         // MEMO: Preview表示用にレスポンスを想定したJsonを読み込んで画面に表示させる
         let featuredTopicsResponse = getFeaturedTopicsResponse()
         let featuredTopicsCarouselViewObjects = featuredTopicsResponse.result
@@ -253,7 +253,28 @@ struct FeaturedTopicsCarouselView_Previews: PreviewProvider {
                     publishedAt: $0.publishedAt
                 )
             }
+
+        // Preview: FeaturedTopicsCarouselView
         FeaturedTopicsCarouselView(featuredTopicsCarouselViewObjects: featuredTopicsCarouselViewObjects)
+            .previewDisplayName("FeaturedTopicsCarouselView Preview")
+    
+        // MEMO: 部品1つあたりを表示するためのViewObject
+        let viewObject = FeaturedTopicsCarouselViewObject(
+            id: 1,
+            rating: 3.7,
+            thumbnailUrl: URL(string: "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/featured_topic1.jpg") ?? nil,
+            title: "ボリューム満点の洋食セット",
+            caption: "この満足感はそう簡単には味わえないがうまい😆",
+            publishedAt: "2022-12-01T07:30:00.000+0000"
+        )
+
+        // Preview: FeaturedTopicsCellView
+        FeaturedTopicsCellView(viewObject: viewObject)
+            .previewDisplayName("FeaturedTopicsCellView Preview")
+
+        // MEMO: Preview表示用にレスポンスを想定したJsonを読み込んで画面に表示させる
+        StarRatingView(rating: 3.76)
+            .previewDisplayName("StarRatingView Preview")
     }
     
     // MARK: - Private Static Function
