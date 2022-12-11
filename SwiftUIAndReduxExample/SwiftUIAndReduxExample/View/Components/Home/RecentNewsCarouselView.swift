@@ -44,7 +44,7 @@ struct RecentNewsCarouselView: View {
 
     var body: some View {
         HStack(alignment: .center, spacing: baseSpacing) {
-            // MEMO: 1つのCarousel用Sectionに対して3つのRecentNewsCellViewを上寄せで表示するためにForEachの入れ子構想にしている
+            // MEMO: 1つのCarousel用Sectionに対して3つのRecentNewsCellViewを上寄せで表示するためにForEachの入れ子構造にしている
             ForEach(groupedRecentNewsCarouselViewObjects) { groupedRecentNewsCarouselViewObject in
                 VStack {
                     ForEach(0 ..< groupedRecentNewsCarouselViewObject.recentNewsCarouselViewObjects.count, id: \.self) { index in
