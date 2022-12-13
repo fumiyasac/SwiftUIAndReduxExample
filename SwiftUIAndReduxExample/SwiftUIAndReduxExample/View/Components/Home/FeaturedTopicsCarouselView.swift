@@ -36,8 +36,13 @@ struct FeaturedTopicsCarouselView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 // MEMO: 表示要素の間に8.0の行間をつけるためにSpacing値を8.0としています。
                 LazyHStack(spacing: 8.0) {
-                    ForEach(featuredTopicsCarouselViewObjects) { viewObjects in
-                        FeaturedTopicsCellView(viewObject: viewObjects)
+                    ForEach(featuredTopicsCarouselViewObjects) { viewObject in
+                        FeaturedTopicsCellView(
+                            viewObject: viewObject,
+                            tapCellAction: {
+                                print("想定: Tap処理を実行した際に何らかの処理を実行する (ID:\(viewObject.id))")
+                            }
+                        )
                     }
                 }
             }
@@ -118,11 +123,20 @@ struct FeaturedTopicsCellView: View {
     }
 
     private var viewObject: FeaturedTopicsCarouselViewObject
+    private var tapCellAction: TapCellAction
+
+    // MARK: - Typealias
+
+    typealias TapCellAction = () -> Void
 
     // MARK: - Initializer
 
-    init(viewObject: FeaturedTopicsCarouselViewObject) {
+    init(
+        viewObject: FeaturedTopicsCarouselViewObject,
+        tapCellAction: @escaping TapCellAction
+    ) {
         self.viewObject = viewObject
+        self.tapCellAction = tapCellAction
     }
 
     var body: some View {
@@ -190,9 +204,7 @@ struct FeaturedTopicsCellView: View {
         }
         // MEMO: タップ領域の確保とタップ時の処理
         .contentShape(Rectangle())
-        .onTapGesture(perform: {
-            print("想定: Tap処理を実行した際に何らかの処理を実行する (ID:\(viewObject.id))")
-        })
+        .onTapGesture(perform: tapCellAction)
         .frame(width: standardWidth, height: standardHeight)
         .background(
             RoundedRectangle(cornerRadius: 8.0)
@@ -269,7 +281,7 @@ struct FeaturedTopicsCarouselView_Previews: PreviewProvider {
         )
 
         // Preview: FeaturedTopicsCellView
-        FeaturedTopicsCellView(viewObject: viewObject)
+        FeaturedTopicsCellView(viewObject: viewObject, tapCellAction: {})
             .previewDisplayName("FeaturedTopicsCellView Preview")
 
         // MEMO: Preview表示用にレスポンスを想定したJsonを読み込んで画面に表示させる

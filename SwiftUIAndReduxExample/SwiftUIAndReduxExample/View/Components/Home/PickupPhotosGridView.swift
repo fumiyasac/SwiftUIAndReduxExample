@@ -13,7 +13,7 @@ import Kingfisher
 // https://stackoverflow.com/questions/66101176/how-could-i-use-a-swiftui-lazyvgrid-to-create-a-staggered-grid
 
 struct PickupPhotosGridView: View {
-    
+
     // MARK: - Property
 
     private var pickupPhotosGridViewObjects: [PickupPhotosGridViewObject] = []
@@ -39,12 +39,22 @@ struct PickupPhotosGridView: View {
         HStack(alignment: .top) {
             VStack(spacing: 8.0) {
                 ForEach(splittedPickupPhotosGridViewObjects.leftPhotosGridViewObjects) { viewObject in
-                    PickupPhotosCellView(viewObject: viewObject)
+                    PickupPhotosCellView(
+                        viewObject: viewObject,
+                        tapCellAction: {
+                            print("想定: Tap処理を実行した際に何らかの処理を実行する (ID:\(viewObject.id))")
+                        }
+                    )
                 }
             }
             VStack(spacing: 8.0) {
                 ForEach(splittedPickupPhotosGridViewObjects.rightPhotosGridViewObjects) { viewObject in
-                    PickupPhotosCellView(viewObject: viewObject)
+                    PickupPhotosCellView(
+                        viewObject: viewObject,
+                        tapCellAction: {
+                            print("想定: Tap処理を実行した際に何らかの処理を実行する (ID:\(viewObject.id))")
+                        }
+                    )
                 }
             }
         }
@@ -119,11 +129,20 @@ struct PickupPhotosCellView: View {
     }
 
     private var viewObject: PickupPhotosGridViewObject
+    private var tapCellAction: TapCellAction
+
+    // MARK: - Typealias
+
+    typealias TapCellAction = () -> Void
 
     // MARK: - Initializer
 
-    init(viewObject: PickupPhotosGridViewObject) {
+    init(
+        viewObject: PickupPhotosGridViewObject,
+        tapCellAction: @escaping TapCellAction
+    ) {
         self.viewObject = viewObject
+        self.tapCellAction = tapCellAction
     }
     
     var body: some View {
@@ -157,9 +176,7 @@ struct PickupPhotosCellView: View {
         }
         // MEMO: タップ領域の確保とタップ時の処理
         .contentShape(Rectangle())
-        .onTapGesture(perform: {
-            print("想定: Tap処理を実行した際に何らかの処理を実行する (ID:\(viewObject.id))")
-        })
+        .onTapGesture(perform: tapCellAction)
         // MEMO: 表示要素全体に付与する角丸と配色を設定している部分
         .cornerRadius(4.0)
         .frame(width: standardWidth, height: standardHeight)
@@ -234,11 +251,11 @@ struct PickupPhotosGridView_Previews: PreviewProvider {
         )
 
         // Preview: PickupPhotosCellView
-        PickupPhotosCellView(viewObject: viewObject1)
+        PickupPhotosCellView(viewObject: viewObject1, tapCellAction: {})
             .previewDisplayName("PickupPhotosCellView1 Preview")
-        PickupPhotosCellView(viewObject: viewObject2)
+        PickupPhotosCellView(viewObject: viewObject2, tapCellAction: {})
             .previewDisplayName("PickupPhotosCellView2 Preview")
-        PickupPhotosCellView(viewObject: viewObject3)
+        PickupPhotosCellView(viewObject: viewObject3, tapCellAction: {})
             .previewDisplayName("PickupPhotosCellView3 Preview")
     }
 

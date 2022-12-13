@@ -52,8 +52,10 @@ struct TrendArticlesGridView: View {
             LazyVGrid(columns: gridColumns, spacing: 8.0) {
                 ForEach(trendArticlesGridViewObjects) { viewObject in
                     // MEMO: TrendArticlesGridViewTrendとTrendArticlesCellViewのstandardWidthとstandardHeightは合わせています。
-                    TrendArticlesCellView(viewObject: viewObject)
-                        .frame(height: standardHeight)
+                    TrendArticlesCellView(viewObject: viewObject, tapCellAction: {
+                        print("想定: Tap処理を実行した際に何らかの処理を実行する (ID:\(viewObject.id))")
+                    })
+                    .frame(height: standardHeight)
                 }
             }
             // MEMO: 全体の左右にもそれぞれ8.0の行間をつけるためVStackの中にLazyVGridを入れて左右のpadding値を8.0としています。
@@ -113,11 +115,20 @@ struct TrendArticlesCellView: View {
     }
 
     private var viewObject: TrendArticlesGridViewObject
+    private var tapCellAction: TapCellAction
+
+    // MARK: - Typealias
+
+    typealias TapCellAction = () -> Void
 
     // MARK: - Initializer
 
-    init(viewObject: TrendArticlesGridViewObject) {
+    init(
+        viewObject: TrendArticlesGridViewObject,
+        tapCellAction: @escaping TapCellAction
+    ) {
         self.viewObject = viewObject
+        self.tapCellAction = tapCellAction
     }
 
     // MARK: - Body
@@ -161,9 +172,7 @@ struct TrendArticlesCellView: View {
         }
         // MEMO: タップ領域の確保とタップ時の処理
         .contentShape(Rectangle())
-        .onTapGesture(perform: {
-            print("想定: Tap処理を実行した際に何らかの処理を実行する (ID:\(viewObject.id))")
-        })
+        .onTapGesture(perform: tapCellAction)
         .cornerRadius(8.0)
         .frame(width: standardWidth, height: standardHeight)
         .background(
@@ -215,7 +224,7 @@ struct TrendArticlesGridView_Previews: PreviewProvider {
         )
 
         // Preview: TrendArticlesCellView
-        TrendArticlesCellView(viewObject: viewObject)
+        TrendArticlesCellView(viewObject: viewObject, tapCellAction: {})
             .previewDisplayName("TrendArticlesCellView Preview")
     }
     

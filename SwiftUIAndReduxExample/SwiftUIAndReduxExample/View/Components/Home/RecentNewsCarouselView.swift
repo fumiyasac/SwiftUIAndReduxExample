@@ -49,7 +49,12 @@ struct RecentNewsCarouselView: View {
                 VStack {
                     ForEach(0 ..< groupedRecentNewsCarouselViewObject.recentNewsCarouselViewObjects.count, id: \.self) { index in
                         let viewObject = groupedRecentNewsCarouselViewObject.recentNewsCarouselViewObjects[index]
-                        RecentNewsCellView(viewObject: viewObject)
+                        RecentNewsCellView(
+                            viewObject: viewObject,
+                            tapCellAction: {
+                                print("想定: Tap処理を実行した際に何らかの処理を実行する (ID:\(viewObject.id))")
+                            }
+                        )
                         // MEMO: VStack内部で等間隔に並べたいので最後以外にはSpacerを追加する
                         if index < 2 {
                             Spacer()
@@ -214,11 +219,20 @@ struct RecentNewsCellView: View {
     }
 
     private var viewObject: RecentNewsCarouselViewObject
+    private var tapCellAction: TapCellAction
+
+    // MARK: - Typealias
+
+    typealias TapCellAction = () -> Void
 
     // MARK: - Initializer
 
-    init(viewObject: RecentNewsCarouselViewObject) {
+    init(
+        viewObject: RecentNewsCarouselViewObject,
+        tapCellAction: @escaping TapCellAction
+    ) {
         self.viewObject = viewObject
+        self.tapCellAction = tapCellAction
     }
 
     // MARK: - Body
@@ -273,9 +287,7 @@ struct RecentNewsCellView: View {
         }
         // MEMO: タップ領域の確保とタップ時の処理
         .contentShape(Rectangle())
-        .onTapGesture(perform: {
-            print("想定: Tap処理を実行した際に何らかの処理を実行する (ID:\(viewObject.id))")
-        })
+        .onTapGesture(perform: tapCellAction)
         .frame(height: 74.0)
     }
 }
@@ -327,7 +339,7 @@ struct RecentNewsCarouselView_Previews: PreviewProvider {
         )
 
         // Preview: RecentNewsCellView
-        RecentNewsCellView(viewObject: viewObject)
+        RecentNewsCellView(viewObject: viewObject, tapCellAction: {})
             .previewDisplayName("RecentNewsCellView Preview")
     }
 
