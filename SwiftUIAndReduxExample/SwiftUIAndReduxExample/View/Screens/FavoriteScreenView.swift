@@ -28,13 +28,23 @@ struct FavoriteScreenView: View {
                 .background(.red)
                 .frame(height: 66.0)
                 .frame(maxWidth: .infinity)
+//                VStack {
+//                    Text("aaaaa")
+//                    Spacer()
+//                }
+                .background(.red)
+                .frame(height: 66.0)
+                .frame(maxWidth: .infinity)
                 StackPageView(items) { item in
                     // Build your view here
                     ZStack {
                         Rectangle().fill(Color.orange)
                         Text("\(item.number)")
                     }
-                    .frame(width: UIScreen.main.bounds.width - 64.0)
+                    .frame(
+                        width: (UIScreen.main.bounds.width - 64.0),
+                        height: (UIScreen.main.bounds.width - 64.0) * 1120 / 840
+                    )
                 }
                 //.options(options)
                 // The padding around each page
@@ -44,13 +54,6 @@ struct FavoriteScreenView: View {
                     vertical: .absolute(60),
                     horizontal: .absolute(60)
                 )
-                VStack {
-                    Text("aaaaa")
-                    Spacer()
-                }
-                .background(.red)
-                .frame(height: 66.0)
-                .frame(maxWidth: .infinity)
             }
             .navigationBarTitle(Text("Favorite"), displayMode: .inline)
         }

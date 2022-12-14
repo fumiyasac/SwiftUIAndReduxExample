@@ -418,6 +418,22 @@
 			path = Favorite;
 			sourceTree = "<group>";
 		};
+		DE527ECD294A489C009894FA /* InternalData */ = {
+			isa = PBXGroup;
+			children = (
+				DE527ECE294A48B1009894FA /* BundleRealm */,
+				DE183401292FC76E00E3E885 /* Testing */,
+			);
+			path = InternalData;
+			sourceTree = "<group>";
+		};
+		DE527ECE294A48B1009894FA /* BundleRealm */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BundleRealm;
+			sourceTree = "<group>";
+		};
 		DED73F7E28E82C2D00A7F811 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -472,11 +488,11 @@
 				DE0BFBB8271B151F00FC0F32 /* Constants */,
 				DE0BFBB5271B07ED00FC0F32 /* Extension */,
 				DE0BFBCB271B21C000FC0F32 /* Infrastructure */,
+				DE527ECD294A489C009894FA /* InternalData */,
 				DE1833DE29210CB100E3E885 /* Model */,
 				DE1833B3291D9DD500E3E885 /* Repository */,
 				DEDA9CCC27B6B4E60067578E /* Router */,
 				DE0BFBAD271A9AD600FC0F32 /* Store */,
-				DE183401292FC76E00E3E885 /* Testing */,
 				DE18341B2932719500E3E885 /* UsefulFunction */,
 				DE0BFBAB271A99F200FC0F32 /* View */,
 				DEE9C6FB26E8308800190505 /* Preview Content */,
