@@ -55,6 +55,8 @@
 		DE42E19E2943B02F007E462F /* TrendArticlesGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42E19D2943B02F007E462F /* TrendArticlesGridView.swift */; };
 		DE42E1A02943EF00007E462F /* FeaturedTopicsCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42E19F2943EF00007E462F /* FeaturedTopicsCarouselView.swift */; };
 		DE43244028463B4F001ECA85 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = DE43243F28463B4F001ECA85 /* Cosmos */; };
+		DE527ECA29493FDE009894FA /* FavoriteCommonSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE527EC929493FDE009894FA /* FavoriteCommonSectionView.swift */; };
+		DE527ECC29495DA7009894FA /* FavoriteSwipePagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE527ECB29495DA7009894FA /* FavoriteSwipePagingView.swift */; };
 		DE9F9A1927867A5F00EF32BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9F9A1827867A5F00EF32BB /* AppDelegate.swift */; };
 		DED73F8328F451DA00A7F811 /* CollectionViewPagingLayout in Frameworks */ = {isa = PBXBuildFile; productRef = DED73F8228F451DA00A7F811 /* CollectionViewPagingLayout */; };
 		DEDA9CCE27B6B5190067578E /* ContentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDA9CCD27B6B5190067578E /* ContentRouter.swift */; };
@@ -128,6 +130,8 @@
 		DE42E19929423C52007E462F /* DateLabelFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateLabelFormatter.swift; sourceTree = "<group>"; };
 		DE42E19D2943B02F007E462F /* TrendArticlesGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendArticlesGridView.swift; sourceTree = "<group>"; };
 		DE42E19F2943EF00007E462F /* FeaturedTopicsCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedTopicsCarouselView.swift; sourceTree = "<group>"; };
+		DE527EC929493FDE009894FA /* FavoriteCommonSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCommonSectionView.swift; sourceTree = "<group>"; };
+		DE527ECB29495DA7009894FA /* FavoriteSwipePagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSwipePagingView.swift; sourceTree = "<group>"; };
 		DE9F9A1827867A5F00EF32BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEDA9CCD27B6B5190067578E /* ContentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentRouter.swift; sourceTree = "<group>"; };
 		DEE257C5271F1E6500751B67 /* APIClientManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientManager.swift; sourceTree = "<group>"; };
@@ -405,9 +409,19 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		DE527EC829493FB3009894FA /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				DE527EC929493FDE009894FA /* FavoriteCommonSectionView.swift */,
+				DE527ECB29495DA7009894FA /* FavoriteSwipePagingView.swift */,
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
 		DED73F7E28E82C2D00A7F811 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				DE527EC829493FB3009894FA /* Favorite */,
 				DE1834232934EF3C00E3E885 /* Home */,
 			);
 			path = Components;
@@ -656,6 +670,7 @@
 				DE1833C9291DB77800E3E885 /* HomeResponse.swift in Sources */,
 				DE0BFBC4271B1EA400FC0F32 /* Store.swift in Sources */,
 				DEE257C6271F1E6500751B67 /* APIClientManager.swift in Sources */,
+				DE527ECA29493FDE009894FA /* FavoriteCommonSectionView.swift in Sources */,
 				DE0BFBBC271B16AB00FC0F32 /* HomeScreenView.swift in Sources */,
 				DE42E19A29423C52007E462F /* DateLabelFormatter.swift in Sources */,
 				DE18341D2932829900E3E885 /* ArchivePhotoEntity.swift in Sources */,
@@ -671,6 +686,7 @@
 				DE1833CD291F911000E3E885 /* HomeReducer.swift in Sources */,
 				DE18342F29407DC900E3E885 /* HomeCommonSectionView.swift in Sources */,
 				DE1833BB291DA7E800E3E885 /* RecentNewsResponse.swift in Sources */,
+				DE527ECC29495DA7009894FA /* FavoriteSwipePagingView.swift in Sources */,
 				DE1833C1291DAD9900E3E885 /* TrendArticleEntity.swift in Sources */,
 				DE1833C3291DAF8100E3E885 /* TrendArticleResponse.swift in Sources */,
 				DE2098692787025D000272B9 /* SwiftUIColorExtension.swift in Sources */,
