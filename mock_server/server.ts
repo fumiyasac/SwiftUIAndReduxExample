@@ -21,6 +21,7 @@ const rewrite_rules = jsonServer.rewriter({
     "/api/v1/featured_topics" : "/get_featured_topics",
     "/api/v1/trend_articles" : "/get_trend_articles",
     "/api/v1/pickup_photos" : "/get_pickup_photos",
+    "/api/v1/favorite_scenes" : "/get_favorite_scenes"
 });
 // リクエストのルールを設定する
 server.use(rewrite_rules);
