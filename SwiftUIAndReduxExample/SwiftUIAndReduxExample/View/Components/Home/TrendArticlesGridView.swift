@@ -206,7 +206,7 @@ struct TrendArticlesGridView_Previews: PreviewProvider {
                     thumbnailUrl: URL(string: $0.thumbnailUrl) ?? nil,
                     title: $0.title,
                     introduction: $0.introduction,
-                    publishedAt: $0.publishedAt
+                    publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: $0.publishedAt)
                 )
             }
 
@@ -220,7 +220,7 @@ struct TrendArticlesGridView_Previews: PreviewProvider {
             thumbnailUrl: URL(string: "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/trend_article1.jpg") ?? nil,
             title: "クリスマスの料理に関する思い出(1)",
             introduction: "子供の頃はクリスマスを楽しみにしていた思い出を大人になった今でも覚えている方は沢山いらっしゃるかもしれません。また、家族と一緒に料理をする機会が多いご家庭の中ではこの機会が貴重な一家団欒の場となっていたことでしょう。今回はクリスマスが近いシーズンにピッタリな「心温まるクリスマスに因んだストーリー」をいくつかご紹介できればと思います🎄",
-            publishedAt: "2022-12-01T07:30:00.000+0000"
+            publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: "2022-12-01T07:30:00.000+0000")
         )
 
         // Preview: TrendArticlesCellView

@@ -103,7 +103,7 @@ extension HomeScreenView {
                     thumbnailUrl: URL(string: $0.thumbnailUrl) ?? nil,
                     title: $0.title,
                     caption: $0.caption,
-                    publishedAt: $0.publishedAt
+                    publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: $0.publishedAt)
                 )
             }
         return featuredTopicsCarouselViewObjects
@@ -131,7 +131,7 @@ extension HomeScreenView {
                     thumbnailUrl: URL(string: $0.thumbnailUrl) ?? nil,
                     title: $0.title,
                     newsCategory: $0.newsCategory,
-                    publishedAt: $0.publishedAt
+                    publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: $0.publishedAt)
                 )
             }
         return recentNewsCarouselViewObjects
@@ -159,7 +159,7 @@ extension HomeScreenView {
                     thumbnailUrl: URL(string: $0.thumbnailUrl) ?? nil,
                     title: $0.title,
                     introduction:$0.introduction,
-                    publishedAt: $0.publishedAt
+                    publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: $0.publishedAt)
                 )
             }
         return trendArticlesGridViewObjects

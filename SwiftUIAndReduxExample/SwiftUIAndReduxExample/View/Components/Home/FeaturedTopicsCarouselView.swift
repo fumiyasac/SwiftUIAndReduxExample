@@ -192,7 +192,7 @@ struct FeaturedTopicsCellView: View {
             // (4) 下部のテキスト表示（日付表示）
             HStack {
                 Spacer()
-                Text(DateLabelFormatter.getDateStringFromAPI(apiDateString: viewObject.publishedAt))
+                Text(viewObject.publishedAt)
                     .font(cellDateFont)
                     .foregroundColor(cellDateColor)
                     .padding([.top], -6.0)
@@ -262,7 +262,7 @@ struct FeaturedTopicsCarouselView_Previews: PreviewProvider {
                     thumbnailUrl: URL(string: $0.thumbnailUrl) ?? nil,
                     title: $0.title,
                     caption: $0.caption,
-                    publishedAt: $0.publishedAt
+                    publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: $0.publishedAt)
                 )
             }
 
@@ -277,7 +277,7 @@ struct FeaturedTopicsCarouselView_Previews: PreviewProvider {
             thumbnailUrl: URL(string: "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/featured_topic1.jpg") ?? nil,
             title: "ボリューム満点の洋食セット",
             caption: "この満足感はそう簡単には味わえないがうまい😆",
-            publishedAt: "2022-12-01T07:30:00.000+0000"
+            publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: "2022-12-01T07:30:00.000+0000")
         )
 
         // Preview: FeaturedTopicsCellView

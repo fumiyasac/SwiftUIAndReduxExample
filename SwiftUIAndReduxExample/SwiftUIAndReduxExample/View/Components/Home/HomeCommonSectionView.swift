@@ -62,6 +62,8 @@ struct HomeCommonSectionView: View {
     }
 }
 
+// MARK: - Preview
+
 struct HomeCommonSectionView_Previews: PreviewProvider {
     static var previews: some View {
 

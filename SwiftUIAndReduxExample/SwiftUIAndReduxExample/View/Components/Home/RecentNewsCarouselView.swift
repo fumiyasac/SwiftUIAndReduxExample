@@ -271,7 +271,7 @@ struct RecentNewsCellView: View {
                         .foregroundColor(cellCategoryColor)
                         .padding(3.0)
                         .background(cellCategoryBackgroundColor)
-                    Text(DateLabelFormatter.getDateStringFromAPI(apiDateString: viewObject.publishedAt))
+                    Text(viewObject.publishedAt)
                         .font(cellDateFont)
                         .foregroundColor(cellDateColor)
                 }
@@ -321,7 +321,7 @@ struct RecentNewsCarouselView_Previews: PreviewProvider {
                     thumbnailUrl: URL(string: $0.thumbnailUrl) ?? nil,
                     title: $0.title,
                     newsCategory: $0.newsCategory,
-                    publishedAt: $0.publishedAt
+                    publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: $0.publishedAt)
                 )
             }
 
@@ -335,7 +335,7 @@ struct RecentNewsCarouselView_Previews: PreviewProvider {
             thumbnailUrl: URL(string: "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail1.jpg") ?? nil,
             title: "美味しい玉ねぎの年末年始の対応について",
             newsCategory: "生産者からのお知らせ",
-            publishedAt: "2022-12-01T07:30:00.000+0000"
+            publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: "2022-12-01T07:30:00.000+0000")
         )
 
         // Preview: RecentNewsCellView
