@@ -37,6 +37,7 @@ protocol APIClientManagerProtocol {
     func getFeaturedTopics() async throws -> FeaturedTopicsResponse
     func getTrendArticles() async throws -> TrendArticleResponse
     func getPickupPhotos() async throws -> PickupPhotoResponse
+    func getFavoriteScenes() async throws -> FavoriteSceneResponse
 }
 
 final class ApiClientManager {
@@ -56,9 +57,7 @@ final class ApiClientManager {
         case featuredTopics = "featured_topics"
         case trendArticles = "trend_articles"
         case pickupPhotos = "pickup_photos"
-        case archives = "archives"
-        case comments = "comments"
-        case profile = "profile"
+        case favoriteScenes = "favorite_scenes"
 
         func getBaseUrl() -> String {
             return [host, version, self.rawValue].joined(separator: "/")
@@ -220,6 +219,14 @@ extension ApiClientManager: APIClientManagerProtocol {
             endpointUrl: EndPoint.pickupPhotos.getBaseUrl(),
             httpMethod: HTTPMethod.GET,
             responseFormat: PickupPhotoResponse.self
+        )
+    }
+
+    func getFavoriteScenes() async throws -> FavoriteSceneResponse {
+        return try await executeAPIRequest(
+            endpointUrl: EndPoint.favoriteScenes.getBaseUrl(),
+            httpMethod: HTTPMethod.GET,
+            responseFormat: FavoriteSceneResponse.self
         )
     }
 }

@@ -51,6 +51,10 @@
 		DE18342F29407DC900E3E885 /* HomeCommonSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE18342E29407DC900E3E885 /* HomeCommonSectionView.swift */; };
 		DE2098692787025D000272B9 /* SwiftUIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2098682787025D000272B9 /* SwiftUIColorExtension.swift */; };
 		DE20986B278B0F35000272B9 /* RatingViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE20986A278B0F34000272B9 /* RatingViewRepresentable.swift */; };
+		DE27BFA629512A8D00CF96AC /* favorite_scenes.json in Resources */ = {isa = PBXBuildFile; fileRef = DE27BFA529512A8D00CF96AC /* favorite_scenes.json */; };
+		DE27BFA929512B6B00CF96AC /* FavoriteSceneEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27BFA829512B6B00CF96AC /* FavoriteSceneEntity.swift */; };
+		DE27BFAB29512D1600CF96AC /* FavoriteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27BFAA29512D1600CF96AC /* FavoriteResponse.swift */; };
+		DE27BFAE29512D6200CF96AC /* FavoriteSceneResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27BFAD29512D6200CF96AC /* FavoriteSceneResponse.swift */; };
 		DE42E19A29423C52007E462F /* DateLabelFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42E19929423C52007E462F /* DateLabelFormatter.swift */; };
 		DE42E19E2943B02F007E462F /* TrendArticlesGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42E19D2943B02F007E462F /* TrendArticlesGridView.swift */; };
 		DE42E1A02943EF00007E462F /* FeaturedTopicsCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42E19F2943EF00007E462F /* FeaturedTopicsCarouselView.swift */; };
@@ -127,6 +131,10 @@
 		DE18342E29407DC900E3E885 /* HomeCommonSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCommonSectionView.swift; sourceTree = "<group>"; };
 		DE2098682787025D000272B9 /* SwiftUIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIColorExtension.swift; sourceTree = "<group>"; };
 		DE20986A278B0F34000272B9 /* RatingViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewRepresentable.swift; sourceTree = "<group>"; };
+		DE27BFA529512A8D00CF96AC /* favorite_scenes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = favorite_scenes.json; sourceTree = "<group>"; };
+		DE27BFA829512B6B00CF96AC /* FavoriteSceneEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSceneEntity.swift; sourceTree = "<group>"; };
+		DE27BFAA29512D1600CF96AC /* FavoriteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteResponse.swift; sourceTree = "<group>"; };
+		DE27BFAD29512D6200CF96AC /* FavoriteSceneResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSceneResponse.swift; sourceTree = "<group>"; };
 		DE42E19929423C52007E462F /* DateLabelFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateLabelFormatter.swift; sourceTree = "<group>"; };
 		DE42E19D2943B02F007E462F /* TrendArticlesGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendArticlesGridView.swift; sourceTree = "<group>"; };
 		DE42E19F2943EF00007E462F /* FeaturedTopicsCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedTopicsCarouselView.swift; sourceTree = "<group>"; };
@@ -203,6 +211,7 @@
 		DE0BFBAC271A9A1800FC0F32 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				DE27BFA729512AF600CF96AC /* Favorite */,
 				DE18341E2932829F00E3E885 /* Archive */,
 				DE1833B9291DA7CE00E3E885 /* Home */,
 			);
@@ -312,7 +321,9 @@
 			isa = PBXGroup;
 			children = (
 				DE1833C8291DB77800E3E885 /* HomeResponse.swift */,
+				DE27BFAA29512D1600CF96AC /* FavoriteResponse.swift */,
 				DE1833B8291DA7C300E3E885 /* Home */,
+				DE27BFAC29512D3300CF96AC /* Favorite */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -371,6 +382,7 @@
 		DE183401292FC76E00E3E885 /* Testing */ = {
 			isa = PBXGroup;
 			children = (
+				DE27BFA529512A8D00CF96AC /* favorite_scenes.json */,
 				DE1834152932174900E3E885 /* campaign_banners.json */,
 				DE18341F2932833000E3E885 /* featured_topics.json */,
 				DE1834212932887900E3E885 /* pickup_photos.json */,
@@ -407,6 +419,22 @@
 				DE42E19F2943EF00007E462F /* FeaturedTopicsCarouselView.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		DE27BFA729512AF600CF96AC /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				DE27BFA829512B6B00CF96AC /* FavoriteSceneEntity.swift */,
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
+		DE27BFAC29512D3300CF96AC /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				DE27BFAD29512D6200CF96AC /* FavoriteSceneResponse.swift */,
+			);
+			path = Favorite;
 			sourceTree = "<group>";
 		};
 		DE527EC829493FB3009894FA /* Favorite */ = {
@@ -648,6 +676,7 @@
 				DE1834162932174900E3E885 /* campaign_banners.json in Resources */,
 				DE183418293223E600E3E885 /* recent_news.json in Resources */,
 				DE1834222932887900E3E885 /* pickup_photos.json in Resources */,
+				DE27BFA629512A8D00CF96AC /* favorite_scenes.json in Resources */,
 				DEE9C6FD26E8308800190505 /* Preview Assets.xcassets in Resources */,
 				DEE9C6FA26E8308800190505 /* Assets.xcassets in Resources */,
 				DE1834202932833000E3E885 /* featured_topics.json in Resources */,
@@ -678,6 +707,7 @@
 				DE1833D9291FABCD00E3E885 /* UserDefaultManager.swift in Sources */,
 				DE1833D2291FAA3C00E3E885 /* RealmAccessManager.swift in Sources */,
 				DE0BFBB7271B080900FC0F32 /* UIColorExtension.swift in Sources */,
+				DE27BFAE29512D6200CF96AC /* FavoriteSceneResponse.swift in Sources */,
 				DE0BFBC0271B16FD00FC0F32 /* FavoriteScreenView.swift in Sources */,
 				DEE9C6F826E8308700190505 /* ContentView.swift in Sources */,
 				DE18342B293FF87400E3E885 /* PickupPhotosGridView.swift in Sources */,
@@ -688,6 +718,7 @@
 				DEE257C6271F1E6500751B67 /* APIClientManager.swift in Sources */,
 				DE527ECA29493FDE009894FA /* FavoriteCommonSectionView.swift in Sources */,
 				DE0BFBBC271B16AB00FC0F32 /* HomeScreenView.swift in Sources */,
+				DE27BFA929512B6B00CF96AC /* FavoriteSceneEntity.swift in Sources */,
 				DE42E19A29423C52007E462F /* DateLabelFormatter.swift in Sources */,
 				DE18341D2932829900E3E885 /* ArchivePhotoEntity.swift in Sources */,
 				DE0BFBC6271B20D200FC0F32 /* AppState.swift in Sources */,
@@ -708,6 +739,7 @@
 				DE2098692787025D000272B9 /* SwiftUIColorExtension.swift in Sources */,
 				DE1833C7291DB70D00E3E885 /* PickupPhotoResponse.swift in Sources */,
 				DE42E1A02943EF00007E462F /* FeaturedTopicsCarouselView.swift in Sources */,
+				DE27BFAB29512D1600CF96AC /* FavoriteResponse.swift in Sources */,
 				DE1833CB291F910200E3E885 /* HomeState.swift in Sources */,
 				DE1833EC292DC86800E3E885 /* CampaignBannerCarouselView.swift in Sources */,
 				DE18342D29404A5E00E3E885 /* RecentNewsCarouselView.swift in Sources */,
