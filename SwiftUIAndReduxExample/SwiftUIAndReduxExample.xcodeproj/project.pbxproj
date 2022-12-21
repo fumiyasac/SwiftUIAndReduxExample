@@ -55,6 +55,7 @@
 		DE27BFA929512B6B00CF96AC /* FavoriteSceneEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27BFA829512B6B00CF96AC /* FavoriteSceneEntity.swift */; };
 		DE27BFAB29512D1600CF96AC /* FavoriteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27BFAA29512D1600CF96AC /* FavoriteResponse.swift */; };
 		DE27BFAE29512D6200CF96AC /* FavoriteSceneResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27BFAD29512D6200CF96AC /* FavoriteSceneResponse.swift */; };
+		DE27BFB02952CECB00CF96AC /* SampleScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27BFAF2952CECB00CF96AC /* SampleScreenView.swift */; };
 		DE42E19A29423C52007E462F /* DateLabelFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42E19929423C52007E462F /* DateLabelFormatter.swift */; };
 		DE42E19E2943B02F007E462F /* TrendArticlesGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42E19D2943B02F007E462F /* TrendArticlesGridView.swift */; };
 		DE42E1A02943EF00007E462F /* FeaturedTopicsCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42E19F2943EF00007E462F /* FeaturedTopicsCarouselView.swift */; };
@@ -135,6 +136,7 @@
 		DE27BFA829512B6B00CF96AC /* FavoriteSceneEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSceneEntity.swift; sourceTree = "<group>"; };
 		DE27BFAA29512D1600CF96AC /* FavoriteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteResponse.swift; sourceTree = "<group>"; };
 		DE27BFAD29512D6200CF96AC /* FavoriteSceneResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSceneResponse.swift; sourceTree = "<group>"; };
+		DE27BFAF2952CECB00CF96AC /* SampleScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleScreenView.swift; sourceTree = "<group>"; };
 		DE42E19929423C52007E462F /* DateLabelFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateLabelFormatter.swift; sourceTree = "<group>"; };
 		DE42E19D2943B02F007E462F /* TrendArticlesGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendArticlesGridView.swift; sourceTree = "<group>"; };
 		DE42E19F2943EF00007E462F /* FeaturedTopicsCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedTopicsCarouselView.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				DE0BFBBD271B16E300FC0F32 /* ArchiveScreenView.swift */,
 				DE0BFBBF271B16FD00FC0F32 /* FavoriteScreenView.swift */,
 				DE0BFBC1271B170B00FC0F32 /* ProfileScreenView.swift */,
+				DE27BFAF2952CECB00CF96AC /* SampleScreenView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -729,6 +732,7 @@
 				DEE9C6F626E8308700190505 /* SwiftUIAndReduxExampleApp.swift in Sources */,
 				DE0BFBBA271B154900FC0F32 /* AppConstants.swift in Sources */,
 				DE1833BF291DAABF00E3E885 /* FeaturedTopicsResponse.swift in Sources */,
+				DE27BFB02952CECB00CF96AC /* SampleScreenView.swift in Sources */,
 				DE1833BD291DA8BD00E3E885 /* FeaturedTopicEntity.swift in Sources */,
 				DE1833CD291F911000E3E885 /* HomeReducer.swift in Sources */,
 				DE18342F29407DC900E3E885 /* HomeCommonSectionView.swift in Sources */,
