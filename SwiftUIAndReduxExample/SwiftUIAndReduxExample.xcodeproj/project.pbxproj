@@ -56,6 +56,7 @@
 		DE27BFAB29512D1600CF96AC /* FavoriteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27BFAA29512D1600CF96AC /* FavoriteResponse.swift */; };
 		DE27BFAE29512D6200CF96AC /* FavoriteSceneResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27BFAD29512D6200CF96AC /* FavoriteSceneResponse.swift */; };
 		DE27BFB02952CECB00CF96AC /* SampleScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27BFAF2952CECB00CF96AC /* SampleScreenView.swift */; };
+		DE27BFBC295981D900CF96AC /* ProfileContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27BFBB295981D900CF96AC /* ProfileContentsView.swift */; };
 		DE42E19A29423C52007E462F /* DateLabelFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42E19929423C52007E462F /* DateLabelFormatter.swift */; };
 		DE42E19E2943B02F007E462F /* TrendArticlesGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42E19D2943B02F007E462F /* TrendArticlesGridView.swift */; };
 		DE42E1A02943EF00007E462F /* FeaturedTopicsCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42E19F2943EF00007E462F /* FeaturedTopicsCarouselView.swift */; };
@@ -137,6 +138,7 @@
 		DE27BFAA29512D1600CF96AC /* FavoriteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteResponse.swift; sourceTree = "<group>"; };
 		DE27BFAD29512D6200CF96AC /* FavoriteSceneResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSceneResponse.swift; sourceTree = "<group>"; };
 		DE27BFAF2952CECB00CF96AC /* SampleScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleScreenView.swift; sourceTree = "<group>"; };
+		DE27BFBB295981D900CF96AC /* ProfileContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContentsView.swift; sourceTree = "<group>"; };
 		DE42E19929423C52007E462F /* DateLabelFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateLabelFormatter.swift; sourceTree = "<group>"; };
 		DE42E19D2943B02F007E462F /* TrendArticlesGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendArticlesGridView.swift; sourceTree = "<group>"; };
 		DE42E19F2943EF00007E462F /* FeaturedTopicsCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedTopicsCarouselView.swift; sourceTree = "<group>"; };
@@ -440,6 +442,14 @@
 			path = Favorite;
 			sourceTree = "<group>";
 		};
+		DE27BFBA295981BF00CF96AC /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				DE27BFBB295981D900CF96AC /* ProfileContentsView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		DE527EC829493FB3009894FA /* Favorite */ = {
 			isa = PBXGroup;
 			children = (
@@ -468,6 +478,7 @@
 		DED73F7E28E82C2D00A7F811 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				DE27BFBA295981BF00CF96AC /* Profile */,
 				DE527EC829493FB3009894FA /* Favorite */,
 				DE1834232934EF3C00E3E885 /* Home */,
 			);
@@ -715,6 +726,7 @@
 				DEE9C6F826E8308700190505 /* ContentView.swift in Sources */,
 				DE18342B293FF87400E3E885 /* PickupPhotosGridView.swift in Sources */,
 				DE20986B278B0F35000272B9 /* RatingViewRepresentable.swift in Sources */,
+				DE27BFBC295981D900CF96AC /* ProfileContentsView.swift in Sources */,
 				DE0BFBCA271B21B400FC0F32 /* HomeMiddleware.swift in Sources */,
 				DE1833C9291DB77800E3E885 /* HomeResponse.swift in Sources */,
 				DE0BFBC4271B1EA400FC0F32 /* Store.swift in Sources */,
