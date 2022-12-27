@@ -43,7 +43,7 @@ $ yarn add @types/json-server -D
 {
   "name": "mock_server",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.ts",
   "license": "MIT",
   "dependencies": {
     "json-server": "^0.17.0",
