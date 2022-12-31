@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "profile_background_sample.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

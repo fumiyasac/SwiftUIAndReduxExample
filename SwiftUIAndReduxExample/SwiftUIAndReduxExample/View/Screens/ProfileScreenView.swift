@@ -13,8 +13,11 @@ struct ProfileScreenView: View {
 
     var body: some View {
         NavigationView {
-            Text("ProfileScreenView")
+            ProfileContentsView()
                 .navigationBarTitle(Text("Profile"), displayMode: .inline)
+                // 👉 NavigationBarを隠すか否か際の設定
+                // ※ GeometryReaderを用いたParallax表現時には、NavigationBarで上部が隠れてしまうため、この様な形としています。
+                .navigationBarHidden(true)
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }

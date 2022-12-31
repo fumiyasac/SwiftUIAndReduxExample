@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE03CFE7295F10C10054BCF1 /* ProfilePersonalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE03CFE6295F10C10054BCF1 /* ProfilePersonalView.swift */; };
+		DE03CFE9295F118C0054BCF1 /* ProfileCommonSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE03CFE8295F118C0054BCF1 /* ProfileCommonSectionView.swift */; };
+		DE03CFED29601D640054BCF1 /* ProfileSelfIntroductionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE03CFEC29601D640054BCF1 /* ProfileSelfIntroductionView.swift */; };
+		DE03CFEF296028900054BCF1 /* ProfilePointsAndHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE03CFEE296028900054BCF1 /* ProfilePointsAndHistoryView.swift */; };
 		DE0BFBB7271B080900FC0F32 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBB6271B080900FC0F32 /* UIColorExtension.swift */; };
 		DE0BFBBA271B154900FC0F32 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBB9271B154900FC0F32 /* AppConstants.swift */; };
 		DE0BFBBC271B16AB00FC0F32 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBBB271B16AB00FC0F32 /* HomeScreenView.swift */; };
@@ -95,6 +99,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DE03CFE6295F10C10054BCF1 /* ProfilePersonalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePersonalView.swift; sourceTree = "<group>"; };
+		DE03CFE8295F118C0054BCF1 /* ProfileCommonSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCommonSectionView.swift; sourceTree = "<group>"; };
+		DE03CFEC29601D640054BCF1 /* ProfileSelfIntroductionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSelfIntroductionView.swift; sourceTree = "<group>"; };
+		DE03CFEE296028900054BCF1 /* ProfilePointsAndHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePointsAndHistoryView.swift; sourceTree = "<group>"; };
 		DE0BFBB6271B080900FC0F32 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		DE0BFBB9271B154900FC0F32 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		DE0BFBBB271B16AB00FC0F32 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
@@ -449,7 +457,11 @@
 		DE27BFBA295981BF00CF96AC /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				DE03CFE8295F118C0054BCF1 /* ProfileCommonSectionView.swift */,
 				DE27BFBB295981D900CF96AC /* ProfileContentsView.swift */,
+				DE03CFE6295F10C10054BCF1 /* ProfilePersonalView.swift */,
+				DE03CFEC29601D640054BCF1 /* ProfileSelfIntroductionView.swift */,
+				DE03CFEE296028900054BCF1 /* ProfilePointsAndHistoryView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -733,6 +745,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE1833D9291FABCD00E3E885 /* UserDefaultManager.swift in Sources */,
+				DE03CFE7295F10C10054BCF1 /* ProfilePersonalView.swift in Sources */,
 				DE1833D2291FAA3C00E3E885 /* RealmAccessManager.swift in Sources */,
 				DE0BFBB7271B080900FC0F32 /* UIColorExtension.swift in Sources */,
 				DE27BFAE29512D6200CF96AC /* FavoriteSceneResponse.swift in Sources */,
@@ -753,6 +766,7 @@
 				DE42E19A29423C52007E462F /* DateLabelFormatter.swift in Sources */,
 				DE18341D2932829900E3E885 /* ArchivePhotoEntity.swift in Sources */,
 				DE0BFBC6271B20D200FC0F32 /* AppState.swift in Sources */,
+				DE03CFEF296028900054BCF1 /* ProfilePointsAndHistoryView.swift in Sources */,
 				DE42E19E2943B02F007E462F /* TrendArticlesGridView.swift in Sources */,
 				DE9F9A1927867A5F00EF32BB /* AppDelegate.swift in Sources */,
 				DE0BFBD9271B38CF00FC0F32 /* CampaignBannerEntity.swift in Sources */,
@@ -779,9 +793,11 @@
 				DE0BFBC8271B20FA00FC0F32 /* AppReducer.swift in Sources */,
 				DE1833B7291DA3A000E3E885 /* RecentNewsEntity.swift in Sources */,
 				DEDA9CCE27B6B5190067578E /* ContentRouter.swift in Sources */,
+				DE03CFED29601D640054BCF1 /* ProfileSelfIntroductionView.swift in Sources */,
 				DE1833E129210DB700E3E885 /* FavoriteRealmEntity.swift in Sources */,
 				DE0BFBBE271B16E300FC0F32 /* ArchiveScreenView.swift in Sources */,
 				DE1833CF291F972900E3E885 /* HomeActions.swift in Sources */,
+				DE03CFE9295F118C0054BCF1 /* ProfileCommonSectionView.swift in Sources */,
 				DE1833DC29210BF600E3E885 /* ApplicationStatusLocalStore.swift in Sources */,
 				DE1833C5291DB41F00E3E885 /* PickupPhotoEntity.swift in Sources */,
 			);
