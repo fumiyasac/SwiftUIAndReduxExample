@@ -11,6 +11,7 @@
 		DE03CFE9295F118C0054BCF1 /* ProfileCommonSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE03CFE8295F118C0054BCF1 /* ProfileCommonSectionView.swift */; };
 		DE03CFED29601D640054BCF1 /* ProfileSelfIntroductionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE03CFEC29601D640054BCF1 /* ProfileSelfIntroductionView.swift */; };
 		DE03CFEF296028900054BCF1 /* ProfilePointsAndHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE03CFEE296028900054BCF1 /* ProfilePointsAndHistoryView.swift */; };
+		DE03CFF5296155390054BCF1 /* ProfileSocialMediaLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE03CFF4296155390054BCF1 /* ProfileSocialMediaLinkView.swift */; };
 		DE0BFBB7271B080900FC0F32 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBB6271B080900FC0F32 /* UIColorExtension.swift */; };
 		DE0BFBBA271B154900FC0F32 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBB9271B154900FC0F32 /* AppConstants.swift */; };
 		DE0BFBBC271B16AB00FC0F32 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBBB271B16AB00FC0F32 /* HomeScreenView.swift */; };
@@ -102,6 +103,7 @@
 		DE03CFE8295F118C0054BCF1 /* ProfileCommonSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCommonSectionView.swift; sourceTree = "<group>"; };
 		DE03CFEC29601D640054BCF1 /* ProfileSelfIntroductionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSelfIntroductionView.swift; sourceTree = "<group>"; };
 		DE03CFEE296028900054BCF1 /* ProfilePointsAndHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePointsAndHistoryView.swift; sourceTree = "<group>"; };
+		DE03CFF4296155390054BCF1 /* ProfileSocialMediaLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSocialMediaLinkView.swift; sourceTree = "<group>"; };
 		DE0BFBB6271B080900FC0F32 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		DE0BFBB9271B154900FC0F32 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		DE0BFBBB271B16AB00FC0F32 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
@@ -459,6 +461,7 @@
 				DE03CFE6295F10C10054BCF1 /* ProfilePersonalView.swift */,
 				DE03CFEC29601D640054BCF1 /* ProfileSelfIntroductionView.swift */,
 				DE03CFEE296028900054BCF1 /* ProfilePointsAndHistoryView.swift */,
+				DE03CFF4296155390054BCF1 /* ProfileSocialMediaLinkView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -757,6 +760,7 @@
 				DE27BFC4295D152200CF96AC /* ArchiveSearchView.swift in Sources */,
 				DE0BFBC4271B1EA400FC0F32 /* Store.swift in Sources */,
 				DEE257C6271F1E6500751B67 /* APIClientManager.swift in Sources */,
+				DE03CFF5296155390054BCF1 /* ProfileSocialMediaLinkView.swift in Sources */,
 				DE527ECA29493FDE009894FA /* FavoriteCommonSectionView.swift in Sources */,
 				DE0BFBBC271B16AB00FC0F32 /* HomeScreenView.swift in Sources */,
 				DE27BFA929512B6B00CF96AC /* FavoriteSceneEntity.swift in Sources */,

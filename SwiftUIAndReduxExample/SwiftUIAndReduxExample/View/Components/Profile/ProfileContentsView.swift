@@ -37,7 +37,7 @@ struct ProfileContentsView: View {
 
             // MEMO: このままだと隙間ができてしまうので、ScrollView直下にVStackを入れてspacingの値を0として調整しています。
             // 参考: https://qiita.com/masa7351/items/3f169b65f38da29fbf76
-            VStack(spacing: 0) {
+            VStack(spacing: 0.0) {
 
                 // 1. GrometryReaderを利用した背景用サムネイル画像Parallax表現部分
                 GeometryReader { geometry in
@@ -45,6 +45,7 @@ struct ProfileContentsView: View {
                     getBackgroundViewBy(geometry: geometry)
                 }
                 .frame(height: parallaxHeaderHeight)
+                .padding([.bottom], 12.0)
             
                 // 2. ユーザーの基本情報を表示部分
                 ProfilePersonalView()
@@ -60,17 +61,14 @@ struct ProfileContentsView: View {
                     ProfileCommonSectionView(title: "現在の保有ポイントや履歴", subTitle: "Self Points & Histories")
                     ProfilePointsAndHistoryView()
                 }
-                
+
                 // 5. SocialMedia等のリンク表示部分
+                Group {
+                    ProfileCommonSectionView(title: "ソーシャルメディア等リンク", subTitle: "Social Media Links")
+                    ProfileSocialMediaLinkView()
+                }
             }
             
-            
-
-
-            
-
-            
-            // 5. SocialMedia等のリンク表示部分
             
             // 6. パーソナル向け情報タブ表示部分
             
