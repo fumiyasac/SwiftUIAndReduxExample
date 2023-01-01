@@ -67,13 +67,18 @@ struct ProfileContentsView: View {
                     ProfileCommonSectionView(title: "ソーシャルメディア等リンク", subTitle: "Social Media Links")
                     ProfileSocialMediaLinkView()
                 }
+
+                // 6. パーソナル向け情報タブ表示部分
+                Group {
+                    
+                }
+
+                // 7. スペシャルコンテンツ表示部分
+                Group {
+                    ProfileCommonSectionView(title: "特集コンテンツへの招待", subTitle: "Special Contents")
+                    ProfileSpecialContentsView(tapButtonAction: {})
+                }
             }
-            
-            
-            // 6. パーソナル向け情報タブ表示部分
-            
-            // 7. スペシャルコンテンツ表示部分
-            
         }
     }
 
