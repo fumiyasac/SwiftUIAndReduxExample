@@ -18,7 +18,7 @@ struct ProfileCommonSectionView: View {
     }
 
     private var headerHeight: CGFloat {
-        return 56.0
+        return 68.0
     }
 
     private var sectionTitleFont: Font {

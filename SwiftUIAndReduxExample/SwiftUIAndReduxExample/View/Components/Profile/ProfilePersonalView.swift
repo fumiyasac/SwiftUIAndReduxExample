@@ -12,7 +12,7 @@ struct ProfilePersonalView: View {
     // MARK: - Property
 
     private var personNameFont: Font {
-        return Font.custom("AvenirNext-Bold", size: 16)
+        return Font.custom("AvenirNext-Bold", size: 14)
     }
 
     private var personNameColor: Color {

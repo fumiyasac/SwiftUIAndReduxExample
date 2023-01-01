@@ -7,12 +7,34 @@
 
 import SwiftUI
 
-// TODO: ポイント履歴画面の作成
 struct ProfilePointsAndHistoryView: View {
 
     // MARK: - Property
 
-    private let nutrients: [String] = ["Energy", "Sugar", "Fat", "Protein", "Vitamins", "Minerals"]
+    private var pointAndHistoryTitleFont: Font {
+        return Font.custom("AvenirNext-Bold", size: 12)
+    }
+
+    private var pointAndHistoryValueFont: Font {
+        return Font.custom("AvenirNext-Regular", size: 12)
+    }
+
+    private var pointAndHistoryTitleColor: Color {
+        return Color.secondary
+    }
+
+    private var pointAndHistoryValueColor: Color {
+        return Color.gray
+    }
+
+    private let pointAndHistoryTitles: [String] = [
+        "😁 Profile訪問数:",
+        "📝 記事投稿数:",
+        "✨ 総合PV数:",
+        "💰 獲得ポイント:",
+        "🎫 クーポン利用回数:",
+        "🍔 お店に行った回数:"
+    ]
 
     // MARK: - Initializer
 
@@ -21,28 +43,36 @@ struct ProfilePointsAndHistoryView: View {
     // MARK: - Body
 
     var body: some View {
-        GroupBox {
-            DisclosureGroup("Nutritional value per 100g") {
-                ForEach(0..<nutrients.count, id: \.self) { item in
-                    Divider().padding(.vertical, 2)
-              
-                    HStack {
-                        Group {
-                            Image(systemName: "info.circle")
-                            Text(nutrients[item])
-                        }
-                        //.foregroundColor(fruit.gradientColors[1])
+        VStack(spacing: 0.0) {
+            // 上側Divider
+            Divider()
+                .background(.gray)
+
+            // TODO: 変数pointAndHistoryTitlesとModelデータより取得した値を合わせて表示する
+            ForEach(0..<pointAndHistoryTitles.count, id: \.self) { index in
+                // 1. 数値及びポイント表示部分
+                HStack {
+                    // 1-(1). タイトル表示
+                    Text("\(pointAndHistoryTitles[index])")
+                        .font(pointAndHistoryTitleFont)
+                        .foregroundColor(pointAndHistoryTitleColor)
+                        .padding(8.0)
+                        .lineLimit(1)
                         .font(Font.system(.body).bold())
-                
-                        Spacer(minLength: 25)
-                
-                        Text("あああ")
-                            .multilineTextAlignment(.trailing)
-                    }
+                    // 1-(2). Spacer
+                    Spacer(minLength: 16.0)
+                    // 1-(3). データ表示
+                    Text("0")
+                        .font(pointAndHistoryValueFont)
+                        .foregroundColor(pointAndHistoryValueColor)
+                        .padding(8.0)
+                        .frame(alignment: .trailing)
                 }
+                .frame(height: 48.0)
+                // 2. 下側Divider
+                Divider()
+                    .background(.gray)
             }
-            .font(Font.system(.body).bold())
-            .accentColor(Color.orange)
         }
         .padding([.leading, .trailing], 8.0)
     }

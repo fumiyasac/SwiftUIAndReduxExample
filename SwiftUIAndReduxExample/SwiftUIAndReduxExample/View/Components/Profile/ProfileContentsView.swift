@@ -58,7 +58,10 @@ struct ProfileContentsView: View {
                 // 4. 現在の取得ポイント等の履歴部分
                 Group {
                     ProfileCommonSectionView(title: "現在の保有ポイントや履歴", subTitle: "Self Points & Histories")
+                    ProfilePointsAndHistoryView()
                 }
+                
+                // 5. SocialMedia等のリンク表示部分
             }
             
             
