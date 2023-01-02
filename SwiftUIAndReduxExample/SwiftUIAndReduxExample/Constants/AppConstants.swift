@@ -8,6 +8,8 @@
 import Foundation
 import SwiftUI
 
+// TODO: FontやColorまわりの部分を集約する
+
 struct AppConstants {
 
     // MARK: - Struct (ColorPalette)

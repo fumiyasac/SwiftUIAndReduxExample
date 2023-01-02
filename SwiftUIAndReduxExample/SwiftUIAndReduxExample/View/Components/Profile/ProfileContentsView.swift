@@ -70,7 +70,8 @@ struct ProfileContentsView: View {
 
                 // 6. パーソナル向け情報タブ表示部分
                 Group {
-                    
+                    ProfileCommonSectionView(title: "パーソナル向け情報一覧", subTitle: "Personal Information List")
+                    ProfileInformationView()
                 }
 
                 // 7. スペシャルコンテンツ表示部分

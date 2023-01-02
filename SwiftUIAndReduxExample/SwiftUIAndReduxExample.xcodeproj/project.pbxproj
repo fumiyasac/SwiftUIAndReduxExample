@@ -13,6 +13,12 @@
 		DE03CFEF296028900054BCF1 /* ProfilePointsAndHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE03CFEE296028900054BCF1 /* ProfilePointsAndHistoryView.swift */; };
 		DE03CFF5296155390054BCF1 /* ProfileSocialMediaLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE03CFF4296155390054BCF1 /* ProfileSocialMediaLinkView.swift */; };
 		DE03CFF72961748F0054BCF1 /* ProfileSpecialContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE03CFF62961748F0054BCF1 /* ProfileSpecialContentsView.swift */; };
+		DE03CFF92961C4740054BCF1 /* ProfileInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE03CFF82961C4740054BCF1 /* ProfileInformationView.swift */; };
+		DE03CFFC2962B4D40054BCF1 /* ProfileInformationTabSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE03CFFB2962B4D40054BCF1 /* ProfileInformationTabSwitcher.swift */; };
+		DE03CFFE2962B6090054BCF1 /* ProfileInformationCommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE03CFFD2962B6090054BCF1 /* ProfileInformationCommentView.swift */; };
+		DE03D0002962B6210054BCF1 /* ProfileInformationAnnouncementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE03CFFF2962B6210054BCF1 /* ProfileInformationAnnouncementView.swift */; };
+		DE03D0062962BF840054BCF1 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE03D0052962BF840054BCF1 /* StringExtension.swift */; };
+		DE03D00A2962D2CA0054BCF1 /* ProfileInformationRecentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE03D0092962D2CA0054BCF1 /* ProfileInformationRecentView.swift */; };
 		DE0BFBB7271B080900FC0F32 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBB6271B080900FC0F32 /* UIColorExtension.swift */; };
 		DE0BFBBA271B154900FC0F32 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBB9271B154900FC0F32 /* AppConstants.swift */; };
 		DE0BFBBC271B16AB00FC0F32 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBBB271B16AB00FC0F32 /* HomeScreenView.swift */; };
@@ -106,6 +112,12 @@
 		DE03CFEE296028900054BCF1 /* ProfilePointsAndHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePointsAndHistoryView.swift; sourceTree = "<group>"; };
 		DE03CFF4296155390054BCF1 /* ProfileSocialMediaLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSocialMediaLinkView.swift; sourceTree = "<group>"; };
 		DE03CFF62961748F0054BCF1 /* ProfileSpecialContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSpecialContentsView.swift; sourceTree = "<group>"; };
+		DE03CFF82961C4740054BCF1 /* ProfileInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInformationView.swift; sourceTree = "<group>"; };
+		DE03CFFB2962B4D40054BCF1 /* ProfileInformationTabSwitcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInformationTabSwitcher.swift; sourceTree = "<group>"; };
+		DE03CFFD2962B6090054BCF1 /* ProfileInformationCommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInformationCommentView.swift; sourceTree = "<group>"; };
+		DE03CFFF2962B6210054BCF1 /* ProfileInformationAnnouncementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInformationAnnouncementView.swift; sourceTree = "<group>"; };
+		DE03D0052962BF840054BCF1 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		DE03D0092962D2CA0054BCF1 /* ProfileInformationRecentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInformationRecentView.swift; sourceTree = "<group>"; };
 		DE0BFBB6271B080900FC0F32 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		DE0BFBB9271B154900FC0F32 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		DE0BFBBB271B16AB00FC0F32 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
@@ -206,6 +218,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE03CFFA2962B3920054BCF1 /* ProfileInformationTabComponent */ = {
+			isa = PBXGroup;
+			children = (
+				DE03CFFF2962B6210054BCF1 /* ProfileInformationAnnouncementView.swift */,
+				DE03CFFD2962B6090054BCF1 /* ProfileInformationCommentView.swift */,
+				DE03D0092962D2CA0054BCF1 /* ProfileInformationRecentView.swift */,
+				DE03CFFB2962B4D40054BCF1 /* ProfileInformationTabSwitcher.swift */,
+			);
+			path = ProfileInformationTabComponent;
+			sourceTree = "<group>";
+		};
 		DE0BFBAA271A99E700FC0F32 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -298,6 +321,7 @@
 			children = (
 				DE0BFBB6271B080900FC0F32 /* UIColorExtension.swift */,
 				DE2098682787025D000272B9 /* SwiftUIColorExtension.swift */,
+				DE03D0052962BF840054BCF1 /* StringExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -458,8 +482,10 @@
 		DE27BFBA295981BF00CF96AC /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				DE03CFFA2962B3920054BCF1 /* ProfileInformationTabComponent */,
 				DE03CFE8295F118C0054BCF1 /* ProfileCommonSectionView.swift */,
 				DE27BFBB295981D900CF96AC /* ProfileContentsView.swift */,
+				DE03CFF82961C4740054BCF1 /* ProfileInformationView.swift */,
 				DE03CFE6295F10C10054BCF1 /* ProfilePersonalView.swift */,
 				DE03CFEC29601D640054BCF1 /* ProfileSelfIntroductionView.swift */,
 				DE03CFEE296028900054BCF1 /* ProfilePointsAndHistoryView.swift */,
@@ -749,10 +775,12 @@
 			files = (
 				DE1833D9291FABCD00E3E885 /* UserDefaultManager.swift in Sources */,
 				DE03CFE7295F10C10054BCF1 /* ProfilePersonalView.swift in Sources */,
+				DE03D0002962B6210054BCF1 /* ProfileInformationAnnouncementView.swift in Sources */,
 				DE1833D2291FAA3C00E3E885 /* RealmAccessManager.swift in Sources */,
 				DE0BFBB7271B080900FC0F32 /* UIColorExtension.swift in Sources */,
 				DE27BFAE29512D6200CF96AC /* FavoriteSceneResponse.swift in Sources */,
 				DE0BFBC0271B16FD00FC0F32 /* FavoriteScreenView.swift in Sources */,
+				DE03D00A2962D2CA0054BCF1 /* ProfileInformationRecentView.swift in Sources */,
 				DE27BFC6295D153700CF96AC /* ArchiveCellView.swift in Sources */,
 				DEE9C6F826E8308700190505 /* ContentView.swift in Sources */,
 				DE18342B293FF87400E3E885 /* PickupPhotosGridView.swift in Sources */,
@@ -770,6 +798,7 @@
 				DE42E19A29423C52007E462F /* DateLabelFormatter.swift in Sources */,
 				DE18341D2932829900E3E885 /* ArchivePhotoEntity.swift in Sources */,
 				DE0BFBC6271B20D200FC0F32 /* AppState.swift in Sources */,
+				DE03CFFE2962B6090054BCF1 /* ProfileInformationCommentView.swift in Sources */,
 				DE03CFEF296028900054BCF1 /* ProfilePointsAndHistoryView.swift in Sources */,
 				DE42E19E2943B02F007E462F /* TrendArticlesGridView.swift in Sources */,
 				DE9F9A1927867A5F00EF32BB /* AppDelegate.swift in Sources */,
@@ -777,12 +806,15 @@
 				DE0BFBD7271B38BD00FC0F32 /* CampaignBannersResponse.swift in Sources */,
 				DEE9C6F626E8308700190505 /* SwiftUIAndReduxExampleApp.swift in Sources */,
 				DE0BFBBA271B154900FC0F32 /* AppConstants.swift in Sources */,
+				DE03D0062962BF840054BCF1 /* StringExtension.swift in Sources */,
 				DE03CFF72961748F0054BCF1 /* ProfileSpecialContentsView.swift in Sources */,
 				DE1833BF291DAABF00E3E885 /* FeaturedTopicsResponse.swift in Sources */,
 				DE1833BD291DA8BD00E3E885 /* FeaturedTopicEntity.swift in Sources */,
 				DE1833CD291F911000E3E885 /* HomeReducer.swift in Sources */,
 				DE18342F29407DC900E3E885 /* HomeCommonSectionView.swift in Sources */,
+				DE03CFF92961C4740054BCF1 /* ProfileInformationView.swift in Sources */,
 				DE1833BB291DA7E800E3E885 /* RecentNewsResponse.swift in Sources */,
+				DE03CFFC2962B4D40054BCF1 /* ProfileInformationTabSwitcher.swift in Sources */,
 				DE527ECC29495DA7009894FA /* FavoriteSwipePagingView.swift in Sources */,
 				DE1833C1291DAD9900E3E885 /* TrendArticleEntity.swift in Sources */,
 				DE1833C3291DAF8100E3E885 /* TrendArticleResponse.swift in Sources */,
