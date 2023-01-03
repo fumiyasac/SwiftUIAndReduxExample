@@ -36,7 +36,7 @@ struct ProfileInformationView: View {
             .padding([.bottom], 16.0)
             // 2. タブ型コンテンツ表示
             ProfileInformationTabSwitcher()
-                .padding([.bottom], 24.0)
+                .padding([.bottom], 8.0)
         }
         .padding([.leading, .trailing], 8.0)
     }

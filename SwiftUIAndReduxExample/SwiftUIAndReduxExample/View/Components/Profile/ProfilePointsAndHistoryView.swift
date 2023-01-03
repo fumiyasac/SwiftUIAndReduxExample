@@ -27,6 +27,10 @@ struct ProfilePointsAndHistoryView: View {
         return Color.gray
     }
 
+    private var pointAndHistoryBorderColor: Color {
+        return Color(uiColor: .lightGray)
+    }
+
     private let pointAndHistoryTitles: [String] = [
         "😁 Profile訪問数:",
         "📝 記事投稿数:",
@@ -58,7 +62,6 @@ struct ProfilePointsAndHistoryView: View {
                         .foregroundColor(pointAndHistoryTitleColor)
                         .padding(8.0)
                         .lineLimit(1)
-                        .font(Font.system(.body).bold())
                     // 1-(2). Spacer
                     Spacer(minLength: 16.0)
                     // 1-(3). データ表示
@@ -71,7 +74,7 @@ struct ProfilePointsAndHistoryView: View {
                 .frame(height: 48.0)
                 // 2. 下側Divider
                 Divider()
-                    .background(.gray)
+                    .background(pointAndHistoryBorderColor)
             }
         }
         .padding([.leading, .trailing], 8.0)
