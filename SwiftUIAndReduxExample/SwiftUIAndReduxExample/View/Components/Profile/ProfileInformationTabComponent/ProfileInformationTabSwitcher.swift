@@ -19,7 +19,7 @@ struct ProfileInformationTabSwitcher: View {
     
     // MARK: - Property
     
-    private var personNameFont: Font {
+    private var tabNameFont: Font {
         return Font.custom("AvenirNext-Bold", size: 14)
     }
 
@@ -44,10 +44,10 @@ struct ProfileInformationTabSwitcher: View {
     // MARK: - Body
     
     var body: some View {
-        VStack(spacing: 0) {
+        VStack(spacing: 0.0) {
             // MEMO: 水平Scrollを利用したTab型切り替え表示部分
             ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 20) {
+                HStack(spacing: 20.0) {
                     ForEach(profileInformationTabs, id: \.self) { tab in
                         VStack {
                             // (1) 現在位置を指し示す上部バー部分
@@ -63,16 +63,16 @@ struct ProfileInformationTabSwitcher: View {
                                 currentProfileInformationTab = tab
                             }, label: {
                                 Text(tab.rawValue)
-                                    .font(personNameFont)
+                                    .font(tabNameFont)
                                     .foregroundColor(getForegroundColorForTabText(tab))
                             })
                             .buttonStyle(PlainButtonStyle())
-                            .frame(width: getWidthForTabText(tab), height: 30)
+                            .frame(width: getWidthForTabText(tab), height: 30.0)
                         }
                     }
                 }
-                .padding([.leading, .trailing], 8.0)
             }
+            .padding([.bottom], 8.0)
             // MEMO: 定義したEnum要素に対応した画面要素表示
             switch currentProfileInformationTab {
             case .announcement:

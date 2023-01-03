@@ -11,7 +11,13 @@ struct ProfileInformationView: View {
 
     // MARK: - Property
 
-    
+    private var personalInformationDescriptionFont: Font {
+        return Font.custom("AvenirNext-Regular", size: 12)
+    }
+
+    private var personalInformationDescriptionColor: Color {
+        return Color.secondary
+    }
 
     // MARK: - Initializer
 
@@ -20,8 +26,19 @@ struct ProfileInformationView: View {
     // MARK: - Body
 
     var body: some View {
-        ProfileInformationTabSwitcher()
-            .padding([.bottom], 24.0)
+        VStack(alignment: .leading, spacing: 0.0) {
+            // 1. 概要文テキスト表示
+            HStack {
+                Text("気になっている店舗からの最新情報やあなた宛のコメント等を表示しています。定期的に更新されるので是非ともお見逃しなく確認してみて下さいね！")
+                    .font(personalInformationDescriptionFont)
+                    .foregroundColor(personalInformationDescriptionColor)
+            }
+            .padding([.bottom], 16.0)
+            // 2. タブ型コンテンツ表示
+            ProfileInformationTabSwitcher()
+                .padding([.bottom], 24.0)
+        }
+        .padding([.leading, .trailing], 8.0)
     }
 }
 
