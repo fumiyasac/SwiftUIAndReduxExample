@@ -14,7 +14,10 @@ struct ProfileScreenView: View {
     var body: some View {
         NavigationView {
             ProfileContentsView()
-                .navigationBarTitle(Text("Profile"), displayMode: .inline)
+                .navigationTitle("Profile")
+                .navigationBarTitleDisplayMode(.inline)
+                // 👉 SafeAreaまで表示領域を伸ばす（これをするとサムネイル画像が綺麗に収まる）
+                .edgesIgnoringSafeArea(.top)
                 // 👉 NavigationBarを隠すか否か際の設定
                 // ※ GeometryReaderを用いたParallax表現時には、NavigationBarで上部が隠れてしまうため、この様な形としています。
                 .navigationBarHidden(true)

@@ -14,7 +14,8 @@ struct ArchiveScreenView: View {
     var body: some View {
         NavigationView {
             Text("ArchiveScreenView")
-                .navigationBarTitle(Text("Archive"), displayMode: .inline)
+                .navigationTitle("Archive")
+                .navigationBarTitleDisplayMode(.inline)
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }

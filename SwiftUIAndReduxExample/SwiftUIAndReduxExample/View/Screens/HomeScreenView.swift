@@ -55,7 +55,8 @@ struct HomeScreenView: View {
                     pickupPhotosGridViewObjects: getPickupPhotosGridViewObjects()
                 )
             }
-            .navigationBarTitle(Text("Home"), displayMode: .inline)
+            .navigationTitle("Home")
+            .navigationBarTitleDisplayMode(.inline)
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }

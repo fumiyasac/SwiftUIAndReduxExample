@@ -19,7 +19,8 @@ struct FavoriteScreenView: View {
                 FavoriteCommonSectionView()
                 FavoriteSwipePagingView(favoritePhotosCardViewObjects: getFavoritePhotosCardViewObjects())
             }
-            .navigationBarTitle(Text("Favorite"), displayMode: .inline)
+            .navigationTitle("Favorite")
+            .navigationBarTitleDisplayMode(.inline)
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }
