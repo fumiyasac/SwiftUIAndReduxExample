@@ -1,20 +1,20 @@
 //
-//  ArchiveCellView.swift
+//  ArchiveFreewordView.swift
 //  SwiftUIAndReduxExample
 //
-//  Created by 酒井文也 on 2022/12/29.
+//  Created by 酒井文也 on 2023/01/04.
 //
 
 import SwiftUI
 
-struct ArchiveCellView: View {
+struct ArchiveFreewordView: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
-struct ArchiveCellView_Previews: PreviewProvider {
+struct ArchiveFreewordView_Previews: PreviewProvider {
     static var previews: some View {
-        ArchiveCellView()
+        ArchiveFreewordView()
     }
 }
