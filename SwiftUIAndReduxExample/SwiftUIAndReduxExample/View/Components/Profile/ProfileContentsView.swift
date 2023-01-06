@@ -122,7 +122,6 @@ struct ProfileContentsView: View {
                 height: geometry.size.height + geometry.frame(in: .global).minY
             )
         }
-
     }
 }
 
