@@ -23,58 +23,77 @@ struct ArchiveFreewordView: View {
         return Color.primary
     }
 
-    //
-    @Binding var text: String
-    @Binding var isLoading: Bool
+    private var cancelButtonTintColor: Color {
+        return Color.gray
+    }
 
-    //
+    // フリーワード検索用のTextFieldと連動する
+    // 👉 この値が変化すると配置元のView要素の @State と連動して処理が実行される
+    @Binding var inputText: String
+
+    // テキスト編集モードの判定フラグ
+    // 👉 キャンセルボタン表示やキーボード状態のハンドリングで利用する
     @State private var isEditing = false
 
     // MARK: - Body
 
     var body: some View {
-        //
+        // MEMO: ベースをZStackで作っているのはデザイン調整のため
         ZStack(alignment: .leading) {
             searchBarBackgroundColor
                 .frame(width: 270.0)
                 .frame(height: 36.0)
                 .cornerRadius(8.0)
-            //
+            // 検索バーに関連する部分
             HStack {
-                //
+                // (1) 虫眼鏡アイコン表示
                 Image(systemName: "magnifyingglass")
                     .foregroundColor(glassIconColor)
                     .padding([.leading], 8.0)
-                //
-                TextField("Search", text: $text)
+                // (2) 入力用テキストフィールド表示
+                TextField("Search", text: $inputText)
                     .padding(7.0)
                     .padding(.leading, -8.0)
                     .background(searchBarBackgroundColor)
                     .cornerRadius(8.0)
                     .foregroundColor(textFieldTextColor)
                     .onTapGesture(perform: {
+                        // 👉 TextFieldがタップされると入力モードに変化し、Viewの再レンダリングが実行されます
                         isEditing = true
                     })
                 
-                //
-                if isEditing {
-                    //
-                    Button(action: {
-                        //
-                        text = ""
-                        isEditing = false
-                        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-                    }, label: {
-                        Text("Cancel")
-                            .foregroundColor(.gray)
-                    })
-                    .padding([.leading], 4.0)
-                    .padding([.trailing], 8.0)
-                    .transition(.move(edge: .trailing))
-                }
+                // (3) キャンセルボタン表示（※入力モードの場合のみ）
+                showCancelButtonIfNeeded()
             }
         }
         .padding([.leading, .trailing], 12.0)
+    }
+    
+    // MARK: - Private Function
+
+    // @ViewBuilderを利用してViewを出し分けています
+    // 参考: https://yanamura.hatenablog.com/entry/2019/09/05/150849
+    @ViewBuilder
+    private func showCancelButtonIfNeeded() -> some View {
+        // 入力モードの場合のみキャンセルボタンを表示する様な形にする
+        // ※ UIKitのUITextFieldに近い形にする
+        if isEditing {
+            Button(action: {
+                // inputTextを空にする＆入力モードをキャンセルする
+                // 👉 このタイミングでは配置元のViewでも何らかの処理を行う
+                // 例. テキストの入力に合わせてAPIリクエストが実行される
+                inputText = ""
+                isEditing = false
+                // キーボードを閉じるための処理
+                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+            }, label: {
+                Text("Cancel")
+                    .foregroundColor(cancelButtonTintColor)
+            })
+            .padding([.leading], 4.0)
+            .padding([.trailing], 8.0)
+            .transition(.move(edge: .trailing))
+        }
     }
 }
 
@@ -82,6 +101,6 @@ struct ArchiveFreewordView: View {
 
 struct ArchiveFreewordView_Previews: PreviewProvider {
     static var previews: some View {
-        ArchiveFreewordView(text: .constant(""), isLoading: .constant(false))
+        ArchiveFreewordView(inputText: .constant(""))
     }
 }
