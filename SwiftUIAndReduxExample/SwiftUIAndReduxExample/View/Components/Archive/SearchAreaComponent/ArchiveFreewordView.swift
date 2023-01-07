@@ -11,15 +11,15 @@ struct ArchiveFreewordView: View {
 
     // MARK: - Property
 
-    private var searchBarTitleFont: Font {
+    private var freewordTitleFont: Font {
         return Font.custom("AvenirNext-Regular", size: 12)
     }
 
-    private var searchBarTitleColor: Color {
+    private var freewordTitleColor: Color {
         return Color.primary
     }
 
-    private var searchBarBackgroundColor: Color {
+    private var freewordBackgroundColor: Color {
         return Color(uiColor: UIColor(code: "#e7e7e7"))
     }
 
@@ -48,16 +48,16 @@ struct ArchiveFreewordView: View {
     var body: some View {
         VStack(spacing: 0.0) {
             HStack {
-                Text("キーワード検索:")
-                    .font(searchBarTitleFont)
-                    .foregroundColor(searchBarTitleColor)
+                Text("フリーワード検索:")
+                    .font(freewordTitleFont)
+                    .foregroundColor(freewordTitleColor)
                     .padding([.top, .bottom], 8.0)
                 Spacer()
             }
             .padding([.leading, .trailing], 12.0)
             // MEMO: ベースをZStackで作っているのはデザイン調整のため
             ZStack(alignment: .leading) {
-                searchBarBackgroundColor
+                freewordBackgroundColor
                     .frame(width: 270.0)
                     .frame(height: 36.0)
                     .cornerRadius(8.0)
@@ -71,7 +71,7 @@ struct ArchiveFreewordView: View {
                     TextField("Search", text: $inputText)
                         .padding(7.0)
                         .padding(.leading, -8.0)
-                        .background(searchBarBackgroundColor)
+                        .background(freewordBackgroundColor)
                         .cornerRadius(8.0)
                         // MEMO: Cursorの配色を変更する際には.accentColorを利用する
                         .accentColor(textFieldTextColor)
