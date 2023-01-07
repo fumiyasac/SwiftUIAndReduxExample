@@ -56,12 +56,13 @@ struct ArchiveFreewordView: View {
                     .padding(.leading, -8.0)
                     .background(searchBarBackgroundColor)
                     .cornerRadius(8.0)
+                    // MEMO: Cursorの配色を変更する際には.accentColorを利用する
+                    .accentColor(textFieldTextColor)
                     .foregroundColor(textFieldTextColor)
                     .onTapGesture(perform: {
                         // 👉 TextFieldがタップされると入力モードに変化し、Viewの再レンダリングが実行されます
                         isEditing = true
                     })
-                
                 // (3) キャンセルボタン表示（※入力モードの場合のみ）
                 showCancelButtonIfNeeded()
             }
