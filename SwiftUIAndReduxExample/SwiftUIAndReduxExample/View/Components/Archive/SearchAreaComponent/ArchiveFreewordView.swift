@@ -11,6 +11,14 @@ struct ArchiveFreewordView: View {
 
     // MARK: - Property
 
+    private var searchBarTitleFont: Font {
+        return Font.custom("AvenirNext-Regular", size: 12)
+    }
+
+    private var searchBarTitleColor: Color {
+        return Color.primary
+    }
+
     private var searchBarBackgroundColor: Color {
         return Color(uiColor: UIColor(code: "#e7e7e7"))
     }
@@ -38,36 +46,46 @@ struct ArchiveFreewordView: View {
     // MARK: - Body
 
     var body: some View {
-        // MEMO: ベースをZStackで作っているのはデザイン調整のため
-        ZStack(alignment: .leading) {
-            searchBarBackgroundColor
-                .frame(width: 270.0)
-                .frame(height: 36.0)
-                .cornerRadius(8.0)
-            // 検索バーに関連する部分
+        VStack(spacing: 0.0) {
             HStack {
-                // (1) 虫眼鏡アイコン表示
-                Image(systemName: "magnifyingglass")
-                    .foregroundColor(glassIconColor)
-                    .padding([.leading], 8.0)
-                // (2) 入力用テキストフィールド表示
-                TextField("Search", text: $inputText)
-                    .padding(7.0)
-                    .padding(.leading, -8.0)
-                    .background(searchBarBackgroundColor)
-                    .cornerRadius(8.0)
-                    // MEMO: Cursorの配色を変更する際には.accentColorを利用する
-                    .accentColor(textFieldTextColor)
-                    .foregroundColor(textFieldTextColor)
-                    .onTapGesture(perform: {
-                        // 👉 TextFieldがタップされると入力モードに変化し、Viewの再レンダリングが実行されます
-                        isEditing = true
-                    })
-                // (3) キャンセルボタン表示（※入力モードの場合のみ）
-                showCancelButtonIfNeeded()
+                Text("キーワード検索:")
+                    .font(searchBarTitleFont)
+                    .foregroundColor(searchBarTitleColor)
+                    .padding([.top, .bottom], 8.0)
+                Spacer()
             }
+            .padding([.leading, .trailing], 12.0)
+            // MEMO: ベースをZStackで作っているのはデザイン調整のため
+            ZStack(alignment: .leading) {
+                searchBarBackgroundColor
+                    .frame(width: 270.0)
+                    .frame(height: 36.0)
+                    .cornerRadius(8.0)
+                // 検索バーに関連する部分
+                HStack {
+                    // (1) 虫眼鏡アイコン表示
+                    Image(systemName: "magnifyingglass")
+                        .foregroundColor(glassIconColor)
+                        .padding([.leading], 8.0)
+                    // (2) 入力用テキストフィールド表示
+                    TextField("Search", text: $inputText)
+                        .padding(7.0)
+                        .padding(.leading, -8.0)
+                        .background(searchBarBackgroundColor)
+                        .cornerRadius(8.0)
+                        // MEMO: Cursorの配色を変更する際には.accentColorを利用する
+                        .accentColor(textFieldTextColor)
+                        .foregroundColor(textFieldTextColor)
+                        .onTapGesture(perform: {
+                            // 👉 TextFieldがタップされると入力モードに変化し、Viewの再レンダリングが実行されます
+                            isEditing = true
+                        })
+                    // (3) キャンセルボタン表示（※入力モードの場合のみ）
+                    showCancelButtonIfNeeded()
+                }
+            }
+            .padding([.leading, .trailing], 12.0)
         }
-        .padding([.leading, .trailing], 12.0)
     }
     
     // MARK: - Private Function
