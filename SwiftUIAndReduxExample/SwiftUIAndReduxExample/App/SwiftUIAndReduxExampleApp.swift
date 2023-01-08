@@ -13,7 +13,7 @@ struct SwiftUIAndReduxExampleApp: App {
     // MEMO: AppDelegate
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
-    // MARK: - body
+    // MARK: - Body
 
     var body: some Scene {
         WindowGroup {

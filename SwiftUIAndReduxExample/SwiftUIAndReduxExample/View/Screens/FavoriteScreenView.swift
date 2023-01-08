@@ -11,7 +11,7 @@ import CollectionViewPagingLayout
 struct FavoriteScreenView: View {
 
     
-    // MARK: - body
+    // MARK: - Body
 
     var body: some View {
         NavigationView {

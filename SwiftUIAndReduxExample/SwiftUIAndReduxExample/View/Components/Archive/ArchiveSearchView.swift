@@ -8,10 +8,25 @@
 import SwiftUI
 
 struct ArchiveSearchView: View {
+
+    // MARK: - Body
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading, spacing: 0.0) {
+            // (1) 検索機能部分
+            Group {
+                ArchiveFreewordView(inputText: .constant(""))
+                ArchiveCategoryView(selectedCategory: .constant("Category1"))
+            }
+            // (2) 一覧データ表示部分
+            ScrollView {
+                
+            }
+        }
     }
 }
+
+// MARK: - Preview
 
 struct ArchiveSearchView_Previews: PreviewProvider {
     static var previews: some View {

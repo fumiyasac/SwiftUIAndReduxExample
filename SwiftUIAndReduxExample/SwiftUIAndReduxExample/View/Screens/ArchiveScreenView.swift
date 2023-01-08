@@ -9,11 +9,11 @@ import SwiftUI
 
 struct ArchiveScreenView: View {
 
-    // MARK: - body
+    // MARK: - Body
 
     var body: some View {
         NavigationView {
-            Text("ArchiveScreenView")
+            ArchiveSearchView()
                 .navigationTitle("Archive")
                 .navigationBarTitleDisplayMode(.inline)
         }

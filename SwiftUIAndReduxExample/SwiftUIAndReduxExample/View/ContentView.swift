@@ -13,7 +13,7 @@ struct ContentView: View {
 
     private let contentRouter = ContentRouter()
 
-    // MARK: - body
+    // MARK: - Body
 
     var body: some View {
 
