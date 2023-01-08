@@ -58,7 +58,7 @@ struct ArchiveCategoryView: View {
                 Text("カテゴリー検索:")
                     .font(categorySliderTitleFont)
                     .foregroundColor(categorySliderTitleColor)
-                    .padding([.top, .bottom], 8.0)
+                    .padding([.top], 8.0)
                 Spacer()
             }
             // カテゴリー一覧表示に関連する部分
@@ -89,7 +89,7 @@ struct ArchiveCategoryView: View {
                     }
                 }
             }
-            .frame(height: 36.0)
+            .frame(height: 44.0)
         }
         .padding([.leading, .trailing], 12.0)
     }

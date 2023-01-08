@@ -46,7 +46,7 @@ struct ProfilePersonalView: View {
     // MARK: - Body
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
+        VStack(alignment: .leading, spacing: 0.0) {
             HStack {
                 // 1. プロフィール用アバター表示
                 Image("profile_avatar_sample")
