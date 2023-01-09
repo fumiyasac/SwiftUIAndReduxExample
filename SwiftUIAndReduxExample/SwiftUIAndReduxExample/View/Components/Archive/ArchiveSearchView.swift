@@ -17,6 +17,7 @@ struct ArchiveSearchView: View {
             Group {
                 ArchiveFreewordView(inputText: .constant(""))
                 ArchiveCategoryView(selectedCategory: .constant("Category1"))
+                ArchiveCurrentCountView(currentCount: .constant(36))
             }
             // (2) 一覧データ表示部分
             ScrollView {
