@@ -11,9 +11,8 @@ import UIKit
 struct LoadingIndicatorViewRepresentable: UIViewRepresentable {
     
     // MARK: - Property
-    
-    let style: UIActivityIndicatorView.Style
-    
+
+    // 👉 親のView要素から受け取ったRatingの値をこの構造体の中で利用していく。
     @Binding var isLoading: Bool
     
     // MARK: - Function
