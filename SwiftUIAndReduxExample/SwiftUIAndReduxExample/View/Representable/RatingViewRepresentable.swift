@@ -15,17 +15,18 @@ struct RatingViewRepresentable: UIViewRepresentable {
 
     // MARK: - Property
 
+    // 👉 親のView要素から受け取ったRatingの値をこの構造体の中で利用していく。
     @Binding var rating: Double
     
     // MARK: - Function
 
     func makeUIView(context: Context) -> CosmosView {
-        CosmosView()
+        return CosmosView()
     }
 
     func updateUIView(_ uiView: CosmosView, context: Context) {
 
-        // @BindingでRatingの数値を反映する
+        // @Bindingで設定されたRatingの数値を反映する
         uiView.rating = rating
 
         // 内在サイズに則って自動でCosmosViewをリサイズする
