@@ -64,6 +64,14 @@ struct ArchiveCellView: View {
         return Color(uiColor: .lightGray)
     }
 
+    private var cellStockInactiveButtonColor: Color {
+        return Color(uiColor: .lightGray)
+    }
+    
+    private var cellStockActiveButtonColor: Color {
+        return Color.pink
+    }
+
     // MARK: - Body
 
     var body: some View {
@@ -96,7 +104,17 @@ struct ArchiveCellView: View {
                         .background(cellBorderColor)
                 }
                 .padding([.leading], 12.0)
+                // 3. Spacer
                 Spacer()
+                // 4. お気に入りボタン
+                Button(action: {
+                    //
+                }, label: {
+                    Image(systemName: "heart")
+                })
+                .foregroundColor(cellStockActiveButtonColor)
+                .buttonStyle(PlainButtonStyle())
+                .frame(width: 24.0, height: 32.0)
             }
         }
         .padding([.top], 4.0)
