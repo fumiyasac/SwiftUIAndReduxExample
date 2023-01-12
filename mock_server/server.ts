@@ -14,21 +14,6 @@ const router = jsonServer.router('db/db.json');
 
 // 各種設定用
 const middlewares = jsonServer.defaults();
-// リライトルールを設定する
-const rewrite_rules = jsonServer.rewriter({
-    // Home画面で利用するエンドポイント
-    "/api/v1/campaign_banners" : "/get_campaign_banners",
-    "/api/v1/recent_news" : "/get_recent_news",
-    "/api/v1/featured_topics" : "/get_featured_topics",
-    "/api/v1/trend_articles" : "/get_trend_articles",
-    "/api/v1/pickup_photos" : "/get_pickup_photos",
-    // Favorite画面で利用するエンドポイント
-    "/api/v1/favorite_scenes" : "/get_favorite_scenes",
-    // Archive画面で利用するエンドポイント
-    "/api/v1/achive_images" : "/get_achive_images"
-});
-// リクエストのルールを設定する
-server.use(rewrite_rules);
 
 // ミドルウェアを設定する (※コンソール出力するロガーやキャッシュの設定等)
 server.use(middlewares);

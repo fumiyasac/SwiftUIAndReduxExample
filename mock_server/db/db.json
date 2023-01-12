@@ -1,850 +1,836 @@
 {
-    "get_recent_news": {
-		"result": [
-			{
-				"id": 1,
-				"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail1.jpg",
-				"title": "美味しい玉ねぎの年末年始の対応について",
-				"news_category": "生産者からのお知らせ",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 2,
-				"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail2.jpg",
-				"title": "私共のぶどう園が作った渾身のデザートワイン販売",
-				"news_category": "生産者からのお知らせ",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 3,
-				"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail3.jpg",
-				"title": "お正月にもう一品!伊勢海老＆鮑のお刺身セット",
-				"news_category": "新商品のご紹介",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 4,
-				"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail4.jpg",
-				"title": "甘さと酸っぱさのハーモニー「いよかんジュース」のご紹介",
-				"news_category": "生産者からのお知らせ",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 5,
-				"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail5.jpg",
-				"title": "美味しいさつまいもの年末年始の対応について",
-				"news_category": "生産者からのお知らせ",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 6,
-				"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail6.jpg",
-				"title": "余った梨を活用した簡単デザートレシピ紹介",
-				"news_category": "家庭での楽しみ方Tips",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 7,
-				"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail7.jpg",
-				"title": "おうち時間を彩るテイクアウトメニュー達",
-				"news_category": "おうちでも楽しめるテイクアウト",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 8,
-				"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail8.jpg",
-				"title": "家庭の強い味方!野菜がたっぷり献立セットのご紹介",
-				"news_category": "新商品のご紹介",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 9,
-				"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail9.jpg",
-				"title": "簡単な手順でも美味しいご馳走レシピのご紹介",
-				"news_category": "家庭での楽しみ方Tips",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 10,
-				"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail10.jpg",
-				"title": "偏った食生活におさらばできる具沢山のお味噌汁集",
-				"news_category": "家庭での楽しみ方Tips",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 11,
-				"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail11.jpg",
-				"title": "農家の愛が詰まった新米の年末年始の対応について",
-				"news_category": "生産者からのお知らせ",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 12,
-				"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail12.jpg",
-				"title": "美味しいみかんの年末年始の対応について",
-				"news_category": "生産者からのお知らせ",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			}
-		]
-	},
-	"get_campaign_banners": {
-		"result": [
-			{
-				"id": 1,
-				"banner_contents_id": 1001,
-				"banner_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/campaign_banner1.jpg",
-				"title": "産地直送の「秋の味覚」特集(1)",
-				"caption": "この季節だから食べたくて甘くて美味しいさつまいもの魅力紹介",
-				"announcement_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 2,
-				"banner_contents_id": 1002,
-				"banner_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/campaign_banner2.jpg",
-				"title": "産地直送の「秋の味覚」特集(2)",
-				"caption": "秋を代表するフルーツといえばコレ!甘くて素敵な柿特集",
-				"announcement_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 3,
-				"banner_contents_id": 1003,
-				"banner_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/campaign_banner3.jpg",
-				"title": "産地直送の「秋の味覚」特集(3)",
-				"caption": "秋は海の幸を美味しい季節。旬の魚たちを一挙ご紹介",
-				"announcement_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 4,
-				"banner_contents_id": 1004,
-				"banner_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/campaign_banner4.jpg",
-				"title": "産地直送の「秋の味覚」特集(4)",
-				"caption": "新鮮なお米で炊いたご飯はモノが違う。感動する新米を是非",
-				"announcement_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 5,
-				"banner_contents_id": 1005,
-				"banner_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/campaign_banner5.jpg",
-				"title": "産地直送の「秋の味覚」特集(5)",
-				"caption": "秋は新しいスイーツが誕生する季節。一味違ったスイーツ集",
-				"announcement_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 6,
-				"banner_contents_id": 1006,
-				"banner_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/campaign_banner6.jpg",
-				"title": "産地直送の「秋の味覚」特集(6)",
-				"caption": "冷え込む季節の強い味方。自宅でも嬉しいお取り寄せ鍋紹介",
-				"announcement_at": "2022-12-01T07:30:00.000+0000"
-			}
-		]
-	},
-	"get_trend_articles": {
-		"result": [
-			{
-				"id": 1,
-				"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/trend_article1.jpg",
-				"title": "クリスマスの料理に関する思い出(1)",
-				"introduction": "子供の頃はクリスマスを楽しみにしていた思い出を大人になった今でも覚えている方は沢山いらっしゃるかもしれません。また、家族と一緒に料理をする機会が多いご家庭の中ではこの機会が貴重な一家団欒の場となっていたことでしょう。今回はクリスマスが近いシーズンにピッタリな「心温まるクリスマスに因んだストーリー」をいくつかご紹介できればと思います🎄",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 2,
-				"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/trend_article2.jpg",
-				"title": "クリスマスの料理に関する思い出(2)",
-				"introduction": "クリスマスには人それぞれに様々な人生の忘れられない1ページの瞬間はあるものです。プロポーズの瞬間、愛の告白、子供達へのプレゼント、クリスマスケーキを囲んでの家族の時間等、何かきっかけが生まれる瞬間をきっと頭の片隅に記憶として残っているものがきっとあるものです。そんな思い出の1ページを集めたものをここではピックアップしています🎂",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 3,
-				"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/trend_article3.jpg",
-				"title": "おせち料理の験担ぎ、ご存じですか？(1)",
-				"introduction": "おせち料理は日本古来から親しまれ現在でもお正月にふるまわれる料理でもあります。最近では家庭でも作る機会は減っていることもあり、「なぜこの料理が入っているの？」という素朴な疑問を持つかもしれません。ところが実は1つ1つの料理の中にはしっかりとした「験担ぎ」が込められている事はご存じでしようか？今回はそんなおせち料理の世界に触れてみることにしましょう😏",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 4,
-				"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/trend_article4.jpg",
-				"title": "おせち料理の験担ぎ、ご存じですか？(2)",
-				"introduction": "こちらは前回の続きで「おせち料理の験担ぎ」に関するものの中でもかなりマニアック？と思われるものをピックアップしています。前回は皆様にとっても馴染みのあるものに関するラインナップでしたが今回はなかなか難しいですよ😁",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			}
-		]
-	},
-	"get_featured_topics": {
-		"result": [
-			{
-				"id": 1,
-				"featured_topics_id": 90001,
-				"rating": 3.7,
-				"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/featured_topic1.jpg",
-				"title": "ボリューム満点の洋食セット",
-				"caption": "この満足感はそう簡単には味わえないがうまい😆",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 2,
-				"featured_topics_id": 90002,
-				"rating": 3.4,
-				"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/featured_topic2.jpg",
-				"title": "ランチのお寿司セット",
-				"caption": "こんなに豪華ラインナップなのにこのお値段👀",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 3,
-				"featured_topics_id": 90003,
-				"rating": 3.9,
-				"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/featured_topic3.jpg",
-				"title": "カキフライ＆焼きはまぐり",
-				"caption": "貝料理の王道が2つ揃って出てくる幸せ😄",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 4,
-				"featured_topics_id": 90004,
-				"rating": 3.7,
-				"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/featured_topic4.jpg",
-				"title": "洋食の王道ハンバーグ",
-				"caption": "濃厚なデミグラスソースと肉汁のハーモニー👍",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 5,
-				"featured_topics_id": 90005,
-				"rating": 3.4,
-				"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/featured_topic5.jpg",
-				"title": "おしゃれな巻き寿司",
-				"caption": "海苔ではなくお肉ときゅうりで巻いた変り種",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 6,
-				"featured_topics_id": 90006,
-				"rating": 3.9,
-				"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/featured_topic6.jpg",
-				"title": "野菜たっぷり焼きカレー",
-				"caption": "ヘルシーな野菜達がカレーと相性抜群😊",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 7,
-				"featured_topics_id": 90007,
-				"rating": 3.2,
-				"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/featured_topic7.jpg",
-				"title": "うなぎの蒲焼き",
-				"caption": "そのままでもご飯と一緒でも美味しい",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 8,
-				"featured_topics_id": 90008,
-				"rating": 4.3,
-				"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/featured_topic8.jpg",
-				"title": "黒毛和牛のすき焼き",
-				"caption": "贅沢で脂の上品なお肉を使った逸品",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			}
-		]
-	},
-	"get_pickup_photos": {
-		"result": [
-			{
-				"id": 1,
-				"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo1.jpg",
-				"photo_width": 960,
-				"photo_height": 960,
-				"title": "Pickup Photo No.1",
-				"caption": "Premium Gourmet Photo No.1",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 2,
-				"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo2.jpg",
-				"photo_width": 960,
-				"photo_height": 1280,
-				"title": "Pickup Photo No.2",
-				"caption": "Premium Gourmet Photo No.2",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 3,
-				"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo3.jpg",
-				"photo_width": 1200,
-				"photo_height": 800,
-				"title": "Pickup Photo No.3",
-				"caption": "Premium Gourmet Photo No.3",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 4,
-				"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo4.jpg",
-				"photo_width": 1200,
-				"photo_height": 800,
-				"title": "Pickup Photo No.4",
-				"caption": "Premium Gourmet Photo No.4",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 5,
-				"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo5.jpg",
-				"photo_width": 960,
-				"photo_height": 640,
-				"title": "Pickup Photo No.5",
-				"caption": "Premium Gourmet Photo No.5",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 6,
-				"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo6.jpg",
-				"photo_width": 960,
-				"photo_height": 640,
-				"title": "Pickup Photo No.6",
-				"caption": "Premium Gourmet Photo No.6",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 7,
-				"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo7.jpg",
-				"photo_width": 900,
-				"photo_height": 1200,
-				"title": "Pickup Photo No.7",
-				"caption": "Premium Gourmet Photo No.7",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 8,
-				"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo8.jpg",
-				"photo_width": 960,
-				"photo_height": 640,
-				"title": "Pickup Photo No.8",
-				"caption": "Premium Gourmet Photo No.8",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 9,
-				"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo9.jpg",
-				"photo_width": 960,
-				"photo_height": 960,
-				"title": "Pickup Photo No.9",
-				"caption": "Premium Gourmet Photo No.9",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 10,
-				"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo10.jpg",
-				"photo_width": 900,
-				"photo_height": 1200,
-				"title": "Pickup Photo No.10",
-				"caption": "Premium Gourmet Photo No.10",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 11,
-				"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo11.jpg",
-				"photo_width": 960,
-				"photo_height": 960,
-				"title": "Pickup Photo No.11",
-				"caption": "Premium Gourmet Photo No.11",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 12,
-				"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo12.jpg",
-				"photo_width": 960,
-				"photo_height": 720,
-				"title": "Pickup Photo No.12",
-				"caption": "Premium Gourmet Photo No.12",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 13,
-				"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo13.jpg",
-				"photo_width": 1200,
-				"photo_height": 900,
-				"title": "Pickup Photo No.13",
-				"caption": "Premium Gourmet Photo No.13",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 14,
-				"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo14.jpg",
-				"photo_width": 900,
-				"photo_height": 1200,
-				"title": "Pickup Photo No.14",
-				"caption": "Premium Gourmet Photo No.14",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 15,
-				"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo15.jpg",
-				"photo_width": 960,
-				"photo_height": 960,
-				"title": "Pickup Photo No.15",
-				"caption": "Premium Gourmet Photo No.15",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 16,
-				"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo16.jpg",
-				"photo_width": 1280,
-				"photo_height": 720,
-				"title": "Pickup Photo No.16",
-				"caption": "Premium Gourmet Photo No.16",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 17,
-				"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo17.jpg",
-				"photo_width": 960,
-				"photo_height": 640,
-				"title": "Pickup Photo No.17",
-				"caption": "Premium Gourmet Photo No.17",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 18,
-				"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo18.jpg",
-				"photo_width": 960,
-				"photo_height": 1280,
-				"title": "Pickup Photo No.18",
-				"caption": "Premium Gourmet Photo No.18",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 19,
-				"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo19.jpg",
-				"photo_width": 960,
-				"photo_height": 960,
-				"title": "Pickup Photo No.19",
-				"caption": "Premium Gourmet Photo No.19",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 20,
-				"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo20.jpg",
-				"photo_width": 960,
-				"photo_height": 720,
-				"title": "Pickup Photo No.20",
-				"caption": "Premium Gourmet Photo No.20",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			}
-		]
-	},
-	"get_favorite_scenes": {
-		"result": [
-			{
-				"id": 1,
-				"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/favorite_scene1.jpg",
-				"author": "編集部●●●●",
-				"title": "気になる一皿シリーズNo.1",
-				"category": "Special Contents",
-				"shop_name": "サンプル店舗 No.1",
-				"comment": "（※このコメントはサンプルになります!）気になる一皿シリーズでは、読者の皆様がお店で「思わず感動を覚えてしまった思い出の一皿」をテーマに、美味しかったお料理の写真とコメントを掲載しています。行きつけのお店でのお気に入りの一品から、ちょっと贅沢をしたい時に仕事帰りに立ち寄るお店での思い出、大切な人と行く勝負レストランでの是非とも食べて欲しいお料理の思い出等、あなたとお料理のストーリーを是非とも教えてください！",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 2,
-				"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/favorite_scene2.jpg",
-				"author": "編集部●●●●",
-				"title": "気になる一皿シリーズNo.2",
-				"category": "Special Contents",
-				"shop_name": "サンプル店舗 No.2",
-				"comment": "（※このコメントはサンプルになります!）気になる一皿シリーズでは、読者の皆様がお店で「思わず感動を覚えてしまった思い出の一皿」をテーマに、美味しかったお料理の写真とコメントを掲載しています。行きつけのお店でのお気に入りの一品から、ちょっと贅沢をしたい時に仕事帰りに立ち寄るお店での思い出、大切な人と行く勝負レストランでの是非とも食べて欲しいお料理の思い出等、あなたとお料理のストーリーを是非とも教えてください！",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 3,
-				"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/favorite_scene3.jpg",
-				"author": "編集部●●●●",
-				"title": "気になる一皿シリーズNo.3",
-				"category": "Special Contents",
-				"shop_name": "サンプル店舗 No.3",
-				"comment": "（※このコメントはサンプルになります!）気になる一皿シリーズでは、読者の皆様がお店で「思わず感動を覚えてしまった思い出の一皿」をテーマに、美味しかったお料理の写真とコメントを掲載しています。行きつけのお店でのお気に入りの一品から、ちょっと贅沢をしたい時に仕事帰りに立ち寄るお店での思い出、大切な人と行く勝負レストランでの是非とも食べて欲しいお料理の思い出等、あなたとお料理のストーリーを是非とも教えてください！",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 4,
-				"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/favorite_scene4.jpg",
-				"author": "編集部●●●●",
-				"title": "気になる一皿シリーズNo.4",
-				"category": "Special Contents",
-				"shop_name": "サンプル店舗 No.4",
-				"comment": "（※このコメントはサンプルになります!）気になる一皿シリーズでは、読者の皆様がお店で「思わず感動を覚えてしまった思い出の一皿」をテーマに、美味しかったお料理の写真とコメントを掲載しています。行きつけのお店でのお気に入りの一品から、ちょっと贅沢をしたい時に仕事帰りに立ち寄るお店での思い出、大切な人と行く勝負レストランでの是非とも食べて欲しいお料理の思い出等、あなたとお料理のストーリーを是非とも教えてください！",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 5,
-				"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/favorite_scene5.jpg",
-				"author": "編集部●●●●",
-				"title": "気になる一皿シリーズNo.5",
-				"category": "Special Contents",
-				"shop_name": "サンプル店舗 No.5",
-				"comment": "（※このコメントはサンプルになります!）気になる一皿シリーズでは、読者の皆様がお店で「思わず感動を覚えてしまった思い出の一皿」をテーマに、美味しかったお料理の写真とコメントを掲載しています。行きつけのお店でのお気に入りの一品から、ちょっと贅沢をしたい時に仕事帰りに立ち寄るお店での思い出、大切な人と行く勝負レストランでの是非とも食べて欲しいお料理の思い出等、あなたとお料理のストーリーを是非とも教えてください！",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 6,
-				"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/favorite_scene6.jpg",
-				"author": "編集部●●●●",
-				"title": "気になる一皿シリーズNo.6",
-				"category": "Special Contents",
-				"shop_name": "サンプル店舗 No.6",
-				"comment": "（※このコメントはサンプルになります!）気になる一皿シリーズでは、読者の皆様がお店で「思わず感動を覚えてしまった思い出の一皿」をテーマに、美味しかったお料理の写真とコメントを掲載しています。行きつけのお店でのお気に入りの一品から、ちょっと贅沢をしたい時に仕事帰りに立ち寄るお店での思い出、大切な人と行く勝負レストランでの是非とも食べて欲しいお料理の思い出等、あなたとお料理のストーリーを是非とも教えてください！",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 7,
-				"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/favorite_scene7.jpg",
-				"author": "編集部●●●●",
-				"title": "気になる一皿シリーズNo.7",
-				"category": "Special Contents",
-				"shop_name": "サンプル店舗 No.7",
-				"comment": "（※このコメントはサンプルになります!）気になる一皿シリーズでは、読者の皆様がお店で「思わず感動を覚えてしまった思い出の一皿」をテーマに、美味しかったお料理の写真とコメントを掲載しています。行きつけのお店でのお気に入りの一品から、ちょっと贅沢をしたい時に仕事帰りに立ち寄るお店での思い出、大切な人と行く勝負レストランでの是非とも食べて欲しいお料理の思い出等、あなたとお料理のストーリーを是非とも教えてください！",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 8,
-				"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/favorite_scene8.jpg",
-				"author": "編集部●●●●",
-				"title": "気になる一皿シリーズNo.8",
-				"category": "Special Contents",
-				"shop_name": "サンプル店舗 No.8",
-				"comment": "（※このコメントはサンプルになります!）気になる一皿シリーズでは、読者の皆様がお店で「思わず感動を覚えてしまった思い出の一皿」をテーマに、美味しかったお料理の写真とコメントを掲載しています。行きつけのお店でのお気に入りの一品から、ちょっと贅沢をしたい時に仕事帰りに立ち寄るお店での思い出、大切な人と行く勝負レストランでの是非とも食べて欲しいお料理の思い出等、あなたとお料理のストーリーを是非とも教えてください！",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 9,
-				"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/favorite_scene9.jpg",
-				"author": "編集部●●●●",
-				"title": "気になる一皿シリーズNo.9",
-				"category": "Special Contents",
-				"shop_name": "サンプル店舗 No.9",
-				"comment": "（※このコメントはサンプルになります!）気になる一皿シリーズでは、読者の皆様がお店で「思わず感動を覚えてしまった思い出の一皿」をテーマに、美味しかったお料理の写真とコメントを掲載しています。行きつけのお店でのお気に入りの一品から、ちょっと贅沢をしたい時に仕事帰りに立ち寄るお店での思い出、大切な人と行く勝負レストランでの是非とも食べて欲しいお料理の思い出等、あなたとお料理のストーリーを是非とも教えてください！",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 10,
-				"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/favorite_scene10.jpg",
-				"author": "編集部●●●●",
-				"title": "気になる一皿シリーズNo.10",
-				"category": "Special Contents",
-				"shop_name": "サンプル店舗 No.10",
-				"comment": "（※このコメントはサンプルになります!）気になる一皿シリーズでは、読者の皆様がお店で「思わず感動を覚えてしまった思い出の一皿」をテーマに、美味しかったお料理の写真とコメントを掲載しています。行きつけのお店でのお気に入りの一品から、ちょっと贅沢をしたい時に仕事帰りに立ち寄るお店での思い出、大切な人と行く勝負レストランでの是非とも食べて欲しいお料理の思い出等、あなたとお料理のストーリーを是非とも教えてください！",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 11,
-				"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/favorite_scene11.jpg",
-				"author": "編集部●●●●",
-				"title": "気になる一皿シリーズNo.11",
-				"category": "Special Contents",
-				"shop_name": "サンプル店舗 No.11",
-				"comment": "（※このコメントはサンプルになります!）気になる一皿シリーズでは、読者の皆様がお店で「思わず感動を覚えてしまった思い出の一皿」をテーマに、美味しかったお料理の写真とコメントを掲載しています。行きつけのお店でのお気に入りの一品から、ちょっと贅沢をしたい時に仕事帰りに立ち寄るお店での思い出、大切な人と行く勝負レストランでの是非とも食べて欲しいお料理の思い出等、あなたとお料理のストーリーを是非とも教えてください！",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			},
-			{
-				"id": 12,
-				"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/favorite_scene12.jpg",
-				"author": "編集部●●●●",
-				"title": "気になる一皿シリーズNo.12",
-				"category": "Special Contents",
-				"shop_name": "サンプル店舗 No.12",
-				"comment": "（※このコメントはサンプルになります!）気になる一皿シリーズでは、読者の皆様がお店で「思わず感動を覚えてしまった思い出の一皿」をテーマに、美味しかったお料理の写真とコメントを掲載しています。行きつけのお店でのお気に入りの一品から、ちょっと贅沢をしたい時に仕事帰りに立ち寄るお店での思い出、大切な人と行く勝負レストランでの是非とも食べて欲しいお料理の思い出等、あなたとお料理のストーリーを是非とも教えてください！",
-				"published_at": "2022-12-01T07:30:00.000+0000"
-			}
-		]
-	},
-	"get_achive_images": {
-		"result": [
-			 {
-				 "id": 1,
-				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image1.jpg",
-				 "category": "エスニック料理",
-				 "dish_name": "ベトナム風生春巻き",
-				 "shop_name": "美味しいベトナム料理のお店",
-				 "introduction": "エスニック料理の定番メニュー！ちょっと甘酸っぱいピリ辛のソースとの相性が抜群です。"
-			 },
-			 {
-				 "id": 2,
-				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image2.jpg",
-				 "category": "エスニック料理",
-				 "dish_name": "シーフードと春雨のサラダ",
-				 "shop_name": "美味しいベトナム料理のお店",
-				 "introduction": "お口の中をさっぱりしてくれて満足度の高いサラダ。前菜といえども侮るなかれ。"
-			 },
-			 {
-				 "id": 3,
-				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image3.jpg",
-				 "category": "韓国料理",
-				 "dish_name": "カンジャンケジャン",
-				 "shop_name": "韓国家庭料理のお店",
-				 "introduction": "新鮮な生のワタリガニを漬け込み、醤油ダレに漬けて熟成させた一皿です。カニミソや内子も絶品でこれがまさしく「ご飯泥棒」です。"
-			 },
-			 {
-				 "id": 4,
-				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image4.jpg",
-				 "category": "エスニック料理",
-				 "dish_name": "シーフード入りトムヤムクン",
-				 "shop_name": "絶品アジア料理のお店",
-				 "introduction": "世界三代スープの1つであるトムヤムクンに新鮮な魚介をミックスした豪華な一皿です。"
-			 },
-			 {
-				 "id": 5,
-				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image5.jpg",
-				 "category": "エスニック料理",
-				 "dish_name": "えびたっぷりのグリーンカレー",
-				 "shop_name": "絶品アジア料理のお店",
-				 "introduction": "ココナッツの甘さとエビの食感、そしてスパイシーな青唐辛子が生み出す美味しさを味わって欲しい。"
-			 },
-			 {
-				 "id": 6,
-				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image6.jpg",
-				 "category": "エスニック料理",
-				 "dish_name": "ガパオライス",
-				 "shop_name": "絶品アジア料理のお店",
-				 "introduction": "ナムプラーの風味とバジルの香りがとても食欲をそそるタイ料理の定番メニュー。"
-			 },
-			 {
-				 "id": 7,
-				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image7.jpg",
-				 "category": "エスニック料理",
-				 "dish_name": "ベトナム風生春巻き",
-				 "shop_name": "絶品アジア料理のお店",
-				 "introduction": "おつまみにも嬉しい生春巻き。野菜もたくさん入ってとてもヘルシーな一皿です。"
-			 },
-			 {
-				 "id": 8,
-				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image8.jpg",
-				 "category": "韓国料理",
-				 "dish_name": "ヤンニョムチキン",
-				 "shop_name": "韓国家庭料理のお店",
-				 "introduction": "濃いめでスパイシーな甘辛タレとジューシーなチキンでビールが進むこと請け合いです。"
-			 },
-			 {
-				 "id": 9,
-				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image9.jpg",
-				 "category": "韓国料理",
-				 "dish_name": "チーズタッカルビ",
-				 "shop_name": "韓国家庭料理のお店",
-				 "introduction": "甘辛い味付けのお肉とチーズのまろやかさが合わさった女性にも大人気メニューの1つです。"
-			 },
-			 {
-				 "id": 10,
-				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image10.jpg",
-				 "category": "韓国料理",
-				 "dish_name": "納豆入り豆腐チゲ",
-				 "shop_name": "韓国家庭料理のお店",
-				 "introduction": "キムチ、納豆、豆腐、味噌が合わさってできる味わいは文句の付けようがない美味しさです。"
-			 },
-			 {
-				 "id": 11,
-				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image11.jpg",
-				 "category": "エスニック料理",
-				 "dish_name": "ベトナム風フォー麺の焼きそば",
-				 "shop_name": "絶品アジア料理のお店",
-				 "introduction": "日本での焼きそばの感覚とは少し違った新感覚の焼きそば。フォー麺の味わいとハーブでさっぱりと食べられます。"
-			 },
-			 {
-				 "id": 12,
-				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image12.jpg",
-				 "category": "カレー",
-				 "dish_name": "キーマカレー",
-				 "shop_name": "カレーハウス",
-				 "introduction": "スパイスが効いたさわやかな辛さとひき肉の美味しさがご飯にとても良くマッチしています。"
-			 },
-			 {
-				 "id": 13,
-				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image13.jpg",
-				 "category": "韓国料理",
-				 "dish_name": "スンドゥブチゲ",
-				 "shop_name": "韓国家庭料理のお店",
-				 "introduction": "シンプルだけど美味しい家庭料理の定番メニュー。まさに旨辛というのに相応しい一品です。"
-			 },
-			 {
-				 "id": 14,
-				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image14.jpg",
-				 "category": "中華料理",
-				 "dish_name": "チンジャオロースー",
-				 "shop_name": "本格中華料理のお店",
-				 "introduction": "ご飯にもビールにもとてもよく合う中華の定番メニュー。"
-			 },
-			 {
-				 "id": 15,
-				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image15.jpg",
-				 "category": "韓国料理",
-				 "dish_name": "サムギョプサル",
-				 "shop_name": "本格韓国焼肉のお店",
-				 "introduction": "豪華に豚バラの三枚肉を豪快に焼き上げる！韓国焼肉の代名詞とも言えるメニューです。"
-			 },
-			 {
-				 "id": 16,
-				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image16.jpg",
-				 "category": "和食",
-				 "dish_name": "豪華盛り贅沢海鮮丼",
-				 "shop_name": "海鮮丼のお店",
-				 "introduction": "ホタテ・マグロ・サーモン・ブリ・イクラを贅沢に盛り付けた豪華な一品です。"
-			 },
-			 {
-				 "id": 17,
-				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image17.jpg",
-				 "category": "洋食",
-				 "dish_name": "熱々が嬉しいマカロニグラタン",
-				 "shop_name": "洋食レストラン",
-				 "introduction": "まろやかなベシャメルソースの味わいととろけるチーズの感じがたまらない洋食の王道メニュー。"
-			 },
-			 {
-				 "id": 18,
-				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image18.jpg",
-				 "category": "韓国料理",
-				 "dish_name": "ビビンバ",
-				 "shop_name": "本格韓国焼肉のお店",
-				 "introduction": "こちらも韓国料理では定番中の定番メニュー。焼肉にもよく合うお供です。"
-			 },
-			 {
-				 "id": 19,
-				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image19.jpg",
-				 "category": "和食",
-				 "dish_name": "鰹のたたき",
-				 "shop_name": "鮮魚居酒屋",
-				 "introduction": "もっちりした歯応えと香ばしさが嬉しい高知が生んだ美味しさ。"
-			 },
-			 {
-				 "id": 20,
-				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image20.jpg",
-				 "category": "中華料理",
-				 "dish_name": "天津飯",
-				 "shop_name": "本格中華料理のお店",
-				 "introduction": "ふっくらとしたたまごと味わい深い中華あんが食欲をそそる一品です。"
-			 },
-			 {
-				 "id": 21,
-				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image21.jpg",
-				 "category": "中華料理",
-				 "dish_name": "中華飯",
-				 "shop_name": "本格中華料理のお店",
-				 "introduction": "海鮮と野菜をたくさん入って醤油味の中華あんでまとめたボリューム満点の一皿。"
-			 },
-			 {
-				 "id": 22,
-				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image22.jpg",
-				 "category": "韓国料理",
-				 "dish_name": "激辛チーズタッカルビ",
-				 "shop_name": "本格韓国焼肉のお店",
-				 "introduction": "濃厚なチーズの味わいとパンチが効いた肉を合わせた嬉しい一品です。"
-			 },
-			 {
-				 "id": 23,
-				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image23.jpg",
-				 "category": "和食",
-				 "dish_name": "とんかつ",
-				 "shop_name": "とんかつ専門店",
-				 "introduction": "肉厚のとんかつと濃厚なソースとの味わいでご飯が思わず進んでしまいます。"
-			 },
-			 {
-				 "id": 24,
-				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image24.jpg",
-				 "category": "韓国料理",
-				 "dish_name": "カクテキ",
-				 "shop_name": "本格韓国焼肉のお店",
-				 "introduction": "焼肉の合間のお口直しには最適なさっぱり味のキムチです。"
-			 },
-			 {
-				 "id": 25,
-				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image25.jpg",
-				 "category": "和食",
-				 "dish_name": "博多名物もつ鍋",
-				 "shop_name": "博多料理専門店",
-				 "introduction": "こだわり抜いた旨味たっぷりの味わい深いもつをじっくりと煮込んだ一品です。"
-			 },
-			 {
-				 "id": 26,
-				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image26.jpg",
-				 "category": "韓国料理",
-				 "dish_name": "野菜チヂミ",
-				 "shop_name": "韓国家庭料理のお店",
-				 "introduction": "外はカリカリで香ばしく中はモチモチで野菜の甘みを楽しむ嬉しい一皿です。"
-			 },
-			 {
-				 "id": 27,
-				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image27.jpg",
-				 "category": "和食",
-				 "dish_name": "のどぐろの炙り",
-				 "shop_name": "鮮魚居酒屋",
-				 "introduction": "高級魚のどぐろを豪華に皮目だけ炙った一品。ごちそうに相応しい一品です。"
-			 },
-			 {
-				 "id": 28,
-				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image28.jpg",
-				 "category": "和食",
-				 "dish_name": "のどぐろの炙り",
-				 "shop_name": "鮮魚居酒屋",
-				 "introduction": "高級魚のどぐろを豪華に皮目だけ炙った一品。ごちそうに相応しい一品です。"
-			 },
-			 {
-				 "id": 29,
-				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image29.jpg",
-				 "category": "洋食",
-				 "dish_name": "ハンバーグステーキ",
-				 "shop_name": "洋食レストラン",
-				 "introduction": "塊で仕入れた牛肉を丁寧に叩いて作られたシェフのこだわりを感じる一品です。"
-			 },
-			 {
-				 "id": 30,
-				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image30.jpg",
-				 "category": "和食",
-				 "dish_name": "フグのちり鍋",
-				 "shop_name": "鮮魚居酒屋",
-				 "introduction": "濃厚なフグの味わいを余す事なく味わう事ができる贅沢なメニューです。"
-			 },
-			 {
-				 "id": 31,
-				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image31.jpg",
-				 "category": "和食",
-				 "dish_name": "チキン南蛮",
-				 "shop_name": "鮮魚居酒屋",
-				 "introduction": "鶏胸肉を豪快に使って自家製のタルタルソースと甘辛タレを絡めた定番メニューです。"
-			 },
-			 {
-				 "id": 32,
-				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image32.jpg",
-				 "category": "洋食",
-				 "dish_name": "スパゲッティナポリタン",
-				 "shop_name": "洋食レストラン",
-				 "introduction": "子供から大人まで愛されている、ケチャップの甘みと酸味のバランスが嬉しいパスタの定番メニュー。"
-			 },
-			 {
-				 "id": 33,
-				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image33.jpg",
-				 "category": "洋食",
-				 "dish_name": "シーフードミックスピザ",
-				 "shop_name": "洋食レストラン",
-				 "introduction": "豪華な海の幸とトマトソースとチーズを組み合わせた王道のピザ。"
-			 },
-			 {
-				 "id": 34,
-				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image34.jpg",
-				 "category": "洋食",
-				 "dish_name": "サーロインステーキ",
-				 "shop_name": "ステーキハウス",
-				 "introduction": "ジューシーさと味わいのバランス感が完璧！永遠のご馳走と言えるラインナップです。"
-			 },
-			 {
-				 "id": 35,
-				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image35.jpg",
-				 "category": "和食",
-				 "dish_name": "焼きうどんいくらのせ",
-				 "shop_name": "麺どころ",
-				 "introduction": "シンプルな味付けの焼きうどんにいくらを乗せたプチ贅沢を味わえる一皿です。"
-			 },
-			 {
-				 "id": 36,
-				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image36.jpg",
-				 "category": "和食",
-				 "dish_name": "焼き鳥ねぎま",
-				 "shop_name": "鮮魚居酒屋",
-				 "introduction": "シンプルだけどいつも食べたくなってしまうビールのお供の定番。"
-			 }
-		]
-	}
+    "recent_news": [
+		{
+			"id": 1,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail1.jpg",
+			"title": "美味しい玉ねぎの年末年始の対応について",
+			"news_category": "生産者からのお知らせ",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 2,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail2.jpg",
+			"title": "私共のぶどう園が作った渾身のデザートワイン販売",
+			"news_category": "生産者からのお知らせ",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 3,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail3.jpg",
+			"title": "お正月にもう一品!伊勢海老＆鮑のお刺身セット",
+			"news_category": "新商品のご紹介",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 4,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail4.jpg",
+			"title": "甘さと酸っぱさのハーモニー「いよかんジュース」のご紹介",
+			"news_category": "生産者からのお知らせ",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 5,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail5.jpg",
+			"title": "美味しいさつまいもの年末年始の対応について",
+			"news_category": "生産者からのお知らせ",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 6,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail6.jpg",
+			"title": "余った梨を活用した簡単デザートレシピ紹介",
+			"news_category": "家庭での楽しみ方Tips",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 7,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail7.jpg",
+			"title": "おうち時間を彩るテイクアウトメニュー達",
+			"news_category": "おうちでも楽しめるテイクアウト",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 8,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail8.jpg",
+			"title": "家庭の強い味方!野菜がたっぷり献立セットのご紹介",
+			"news_category": "新商品のご紹介",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 9,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail9.jpg",
+			"title": "簡単な手順でも美味しいご馳走レシピのご紹介",
+			"news_category": "家庭での楽しみ方Tips",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 10,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail10.jpg",
+			"title": "偏った食生活におさらばできる具沢山のお味噌汁集",
+			"news_category": "家庭での楽しみ方Tips",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 11,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail11.jpg",
+			"title": "農家の愛が詰まった新米の年末年始の対応について",
+			"news_category": "生産者からのお知らせ",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 12,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail12.jpg",
+			"title": "美味しいみかんの年末年始の対応について",
+			"news_category": "生産者からのお知らせ",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		}
+	],
+	"campaign_banners": [
+		{
+			"id": 1,
+			"banner_contents_id": 1001,
+			"banner_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/campaign_banner1.jpg",
+			"title": "産地直送の「秋の味覚」特集(1)",
+			"caption": "この季節だから食べたくて甘くて美味しいさつまいもの魅力紹介",
+			"announcement_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 2,
+			"banner_contents_id": 1002,
+			"banner_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/campaign_banner2.jpg",
+			"title": "産地直送の「秋の味覚」特集(2)",
+			"caption": "秋を代表するフルーツといえばコレ!甘くて素敵な柿特集",
+			"announcement_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 3,
+			"banner_contents_id": 1003,
+			"banner_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/campaign_banner3.jpg",
+			"title": "産地直送の「秋の味覚」特集(3)",
+			"caption": "秋は海の幸を美味しい季節。旬の魚たちを一挙ご紹介",
+			"announcement_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 4,
+			"banner_contents_id": 1004,
+			"banner_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/campaign_banner4.jpg",
+			"title": "産地直送の「秋の味覚」特集(4)",
+			"caption": "新鮮なお米で炊いたご飯はモノが違う。感動する新米を是非",
+			"announcement_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 5,
+			"banner_contents_id": 1005,
+			"banner_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/campaign_banner5.jpg",
+			"title": "産地直送の「秋の味覚」特集(5)",
+			"caption": "秋は新しいスイーツが誕生する季節。一味違ったスイーツ集",
+			"announcement_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 6,
+			"banner_contents_id": 1006,
+			"banner_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/campaign_banner6.jpg",
+			"title": "産地直送の「秋の味覚」特集(6)",
+			"caption": "冷え込む季節の強い味方。自宅でも嬉しいお取り寄せ鍋紹介",
+			"announcement_at": "2022-12-01T07:30:00.000+0000"
+		}
+	],
+	"trend_articles": [
+		{
+			"id": 1,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/trend_article1.jpg",
+			"title": "クリスマスの料理に関する思い出(1)",
+			"introduction": "子供の頃はクリスマスを楽しみにしていた思い出を大人になった今でも覚えている方は沢山いらっしゃるかもしれません。また、家族と一緒に料理をする機会が多いご家庭の中ではこの機会が貴重な一家団欒の場となっていたことでしょう。今回はクリスマスが近いシーズンにピッタリな「心温まるクリスマスに因んだストーリー」をいくつかご紹介できればと思います🎄",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 2,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/trend_article2.jpg",
+			"title": "クリスマスの料理に関する思い出(2)",
+			"introduction": "クリスマスには人それぞれに様々な人生の忘れられない1ページの瞬間はあるものです。プロポーズの瞬間、愛の告白、子供達へのプレゼント、クリスマスケーキを囲んでの家族の時間等、何かきっかけが生まれる瞬間をきっと頭の片隅に記憶として残っているものがきっとあるものです。そんな思い出の1ページを集めたものをここではピックアップしています🎂",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 3,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/trend_article3.jpg",
+			"title": "おせち料理の験担ぎ、ご存じですか？(1)",
+			"introduction": "おせち料理は日本古来から親しまれ現在でもお正月にふるまわれる料理でもあります。最近では家庭でも作る機会は減っていることもあり、「なぜこの料理が入っているの？」という素朴な疑問を持つかもしれません。ところが実は1つ1つの料理の中にはしっかりとした「験担ぎ」が込められている事はご存じでしようか？今回はそんなおせち料理の世界に触れてみることにしましょう😏",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 4,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/trend_article4.jpg",
+			"title": "おせち料理の験担ぎ、ご存じですか？(2)",
+			"introduction": "こちらは前回の続きで「おせち料理の験担ぎ」に関するものの中でもかなりマニアック？と思われるものをピックアップしています。前回は皆様にとっても馴染みのあるものに関するラインナップでしたが今回はなかなか難しいですよ😁",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		}
+	],
+	"featured_topics": [
+		{
+			"id": 1,
+			"featured_topics_id": 90001,
+			"rating": 3.7,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/featured_topic1.jpg",
+			"title": "ボリューム満点の洋食セット",
+			"caption": "この満足感はそう簡単には味わえないがうまい😆",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 2,
+			"featured_topics_id": 90002,
+			"rating": 3.4,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/featured_topic2.jpg",
+			"title": "ランチのお寿司セット",
+			"caption": "こんなに豪華ラインナップなのにこのお値段👀",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 3,
+			"featured_topics_id": 90003,
+			"rating": 3.9,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/featured_topic3.jpg",
+			"title": "カキフライ＆焼きはまぐり",
+			"caption": "貝料理の王道が2つ揃って出てくる幸せ😄",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 4,
+			"featured_topics_id": 90004,
+			"rating": 3.7,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/featured_topic4.jpg",
+			"title": "洋食の王道ハンバーグ",
+			"caption": "濃厚なデミグラスソースと肉汁のハーモニー👍",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 5,
+			"featured_topics_id": 90005,
+			"rating": 3.4,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/featured_topic5.jpg",
+			"title": "おしゃれな巻き寿司",
+			"caption": "海苔ではなくお肉ときゅうりで巻いた変り種",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 6,
+			"featured_topics_id": 90006,
+			"rating": 3.9,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/featured_topic6.jpg",
+			"title": "野菜たっぷり焼きカレー",
+			"caption": "ヘルシーな野菜達がカレーと相性抜群😊",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 7,
+			"featured_topics_id": 90007,
+			"rating": 3.2,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/featured_topic7.jpg",
+			"title": "うなぎの蒲焼き",
+			"caption": "そのままでもご飯と一緒でも美味しい",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 8,
+			"featured_topics_id": 90008,
+			"rating": 4.3,
+			"thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/featured_topic8.jpg",
+			"title": "黒毛和牛のすき焼き",
+			"caption": "贅沢で脂の上品なお肉を使った逸品",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		}
+	],
+	"get_pickup_photos": [
+		{
+			"id": 1,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo1.jpg",
+			"photo_width": 960,
+			"photo_height": 960,
+			"title": "Pickup Photo No.1",
+			"caption": "Premium Gourmet Photo No.1",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 2,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo2.jpg",
+			"photo_width": 960,
+			"photo_height": 1280,
+			"title": "Pickup Photo No.2",
+			"caption": "Premium Gourmet Photo No.2",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 3,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo3.jpg",
+			"photo_width": 1200,
+			"photo_height": 800,
+			"title": "Pickup Photo No.3",
+			"caption": "Premium Gourmet Photo No.3",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 4,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo4.jpg",
+			"photo_width": 1200,
+			"photo_height": 800,
+			"title": "Pickup Photo No.4",
+			"caption": "Premium Gourmet Photo No.4",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 5,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo5.jpg",
+			"photo_width": 960,
+			"photo_height": 640,
+			"title": "Pickup Photo No.5",
+			"caption": "Premium Gourmet Photo No.5",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 6,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo6.jpg",
+			"photo_width": 960,
+			"photo_height": 640,
+			"title": "Pickup Photo No.6",
+			"caption": "Premium Gourmet Photo No.6",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 7,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo7.jpg",
+			"photo_width": 900,
+			"photo_height": 1200,
+			"title": "Pickup Photo No.7",
+			"caption": "Premium Gourmet Photo No.7",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 8,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo8.jpg",
+			"photo_width": 960,
+			"photo_height": 640,
+			"title": "Pickup Photo No.8",
+			"caption": "Premium Gourmet Photo No.8",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 9,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo9.jpg",
+			"photo_width": 960,
+			"photo_height": 960,
+			"title": "Pickup Photo No.9",
+			"caption": "Premium Gourmet Photo No.9",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 10,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo10.jpg",
+			"photo_width": 900,
+			"photo_height": 1200,
+			"title": "Pickup Photo No.10",
+			"caption": "Premium Gourmet Photo No.10",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 11,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo11.jpg",
+			"photo_width": 960,
+			"photo_height": 960,
+			"title": "Pickup Photo No.11",
+			"caption": "Premium Gourmet Photo No.11",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 12,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo12.jpg",
+			"photo_width": 960,
+			"photo_height": 720,
+			"title": "Pickup Photo No.12",
+			"caption": "Premium Gourmet Photo No.12",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 13,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo13.jpg",
+			"photo_width": 1200,
+			"photo_height": 900,
+			"title": "Pickup Photo No.13",
+			"caption": "Premium Gourmet Photo No.13",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 14,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo14.jpg",
+			"photo_width": 900,
+			"photo_height": 1200,
+			"title": "Pickup Photo No.14",
+			"caption": "Premium Gourmet Photo No.14",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 15,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo15.jpg",
+			"photo_width": 960,
+			"photo_height": 960,
+			"title": "Pickup Photo No.15",
+			"caption": "Premium Gourmet Photo No.15",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 16,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo16.jpg",
+			"photo_width": 1280,
+			"photo_height": 720,
+			"title": "Pickup Photo No.16",
+			"caption": "Premium Gourmet Photo No.16",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 17,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo17.jpg",
+			"photo_width": 960,
+			"photo_height": 640,
+			"title": "Pickup Photo No.17",
+			"caption": "Premium Gourmet Photo No.17",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 18,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo18.jpg",
+			"photo_width": 960,
+			"photo_height": 1280,
+			"title": "Pickup Photo No.18",
+			"caption": "Premium Gourmet Photo No.18",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 19,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo19.jpg",
+			"photo_width": 960,
+			"photo_height": 960,
+			"title": "Pickup Photo No.19",
+			"caption": "Premium Gourmet Photo No.19",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 20,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo20.jpg",
+			"photo_width": 960,
+			"photo_height": 720,
+			"title": "Pickup Photo No.20",
+			"caption": "Premium Gourmet Photo No.20",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		}
+	],
+	"favorite_scenes": [
+		{
+			"id": 1,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/favorite_scene1.jpg",
+			"author": "編集部●●●●",
+			"title": "気になる一皿シリーズNo.1",
+			"category": "Special Contents",
+			"shop_name": "サンプル店舗 No.1",
+			"comment": "（※このコメントはサンプルになります!）気になる一皿シリーズでは、読者の皆様がお店で「思わず感動を覚えてしまった思い出の一皿」をテーマに、美味しかったお料理の写真とコメントを掲載しています。行きつけのお店でのお気に入りの一品から、ちょっと贅沢をしたい時に仕事帰りに立ち寄るお店での思い出、大切な人と行く勝負レストランでの是非とも食べて欲しいお料理の思い出等、あなたとお料理のストーリーを是非とも教えてください！",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 2,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/favorite_scene2.jpg",
+			"author": "編集部●●●●",
+			"title": "気になる一皿シリーズNo.2",
+			"category": "Special Contents",
+			"shop_name": "サンプル店舗 No.2",
+			"comment": "（※このコメントはサンプルになります!）気になる一皿シリーズでは、読者の皆様がお店で「思わず感動を覚えてしまった思い出の一皿」をテーマに、美味しかったお料理の写真とコメントを掲載しています。行きつけのお店でのお気に入りの一品から、ちょっと贅沢をしたい時に仕事帰りに立ち寄るお店での思い出、大切な人と行く勝負レストランでの是非とも食べて欲しいお料理の思い出等、あなたとお料理のストーリーを是非とも教えてください！",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 3,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/favorite_scene3.jpg",
+			"author": "編集部●●●●",
+			"title": "気になる一皿シリーズNo.3",
+			"category": "Special Contents",
+			"shop_name": "サンプル店舗 No.3",
+			"comment": "（※このコメントはサンプルになります!）気になる一皿シリーズでは、読者の皆様がお店で「思わず感動を覚えてしまった思い出の一皿」をテーマに、美味しかったお料理の写真とコメントを掲載しています。行きつけのお店でのお気に入りの一品から、ちょっと贅沢をしたい時に仕事帰りに立ち寄るお店での思い出、大切な人と行く勝負レストランでの是非とも食べて欲しいお料理の思い出等、あなたとお料理のストーリーを是非とも教えてください！",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 4,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/favorite_scene4.jpg",
+			"author": "編集部●●●●",
+			"title": "気になる一皿シリーズNo.4",
+			"category": "Special Contents",
+			"shop_name": "サンプル店舗 No.4",
+			"comment": "（※このコメントはサンプルになります!）気になる一皿シリーズでは、読者の皆様がお店で「思わず感動を覚えてしまった思い出の一皿」をテーマに、美味しかったお料理の写真とコメントを掲載しています。行きつけのお店でのお気に入りの一品から、ちょっと贅沢をしたい時に仕事帰りに立ち寄るお店での思い出、大切な人と行く勝負レストランでの是非とも食べて欲しいお料理の思い出等、あなたとお料理のストーリーを是非とも教えてください！",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 5,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/favorite_scene5.jpg",
+			"author": "編集部●●●●",
+			"title": "気になる一皿シリーズNo.5",
+			"category": "Special Contents",
+			"shop_name": "サンプル店舗 No.5",
+			"comment": "（※このコメントはサンプルになります!）気になる一皿シリーズでは、読者の皆様がお店で「思わず感動を覚えてしまった思い出の一皿」をテーマに、美味しかったお料理の写真とコメントを掲載しています。行きつけのお店でのお気に入りの一品から、ちょっと贅沢をしたい時に仕事帰りに立ち寄るお店での思い出、大切な人と行く勝負レストランでの是非とも食べて欲しいお料理の思い出等、あなたとお料理のストーリーを是非とも教えてください！",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 6,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/favorite_scene6.jpg",
+			"author": "編集部●●●●",
+			"title": "気になる一皿シリーズNo.6",
+			"category": "Special Contents",
+			"shop_name": "サンプル店舗 No.6",
+			"comment": "（※このコメントはサンプルになります!）気になる一皿シリーズでは、読者の皆様がお店で「思わず感動を覚えてしまった思い出の一皿」をテーマに、美味しかったお料理の写真とコメントを掲載しています。行きつけのお店でのお気に入りの一品から、ちょっと贅沢をしたい時に仕事帰りに立ち寄るお店での思い出、大切な人と行く勝負レストランでの是非とも食べて欲しいお料理の思い出等、あなたとお料理のストーリーを是非とも教えてください！",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 7,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/favorite_scene7.jpg",
+			"author": "編集部●●●●",
+			"title": "気になる一皿シリーズNo.7",
+			"category": "Special Contents",
+			"shop_name": "サンプル店舗 No.7",
+			"comment": "（※このコメントはサンプルになります!）気になる一皿シリーズでは、読者の皆様がお店で「思わず感動を覚えてしまった思い出の一皿」をテーマに、美味しかったお料理の写真とコメントを掲載しています。行きつけのお店でのお気に入りの一品から、ちょっと贅沢をしたい時に仕事帰りに立ち寄るお店での思い出、大切な人と行く勝負レストランでの是非とも食べて欲しいお料理の思い出等、あなたとお料理のストーリーを是非とも教えてください！",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 8,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/favorite_scene8.jpg",
+			"author": "編集部●●●●",
+			"title": "気になる一皿シリーズNo.8",
+			"category": "Special Contents",
+			"shop_name": "サンプル店舗 No.8",
+			"comment": "（※このコメントはサンプルになります!）気になる一皿シリーズでは、読者の皆様がお店で「思わず感動を覚えてしまった思い出の一皿」をテーマに、美味しかったお料理の写真とコメントを掲載しています。行きつけのお店でのお気に入りの一品から、ちょっと贅沢をしたい時に仕事帰りに立ち寄るお店での思い出、大切な人と行く勝負レストランでの是非とも食べて欲しいお料理の思い出等、あなたとお料理のストーリーを是非とも教えてください！",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 9,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/favorite_scene9.jpg",
+			"author": "編集部●●●●",
+			"title": "気になる一皿シリーズNo.9",
+			"category": "Special Contents",
+			"shop_name": "サンプル店舗 No.9",
+			"comment": "（※このコメントはサンプルになります!）気になる一皿シリーズでは、読者の皆様がお店で「思わず感動を覚えてしまった思い出の一皿」をテーマに、美味しかったお料理の写真とコメントを掲載しています。行きつけのお店でのお気に入りの一品から、ちょっと贅沢をしたい時に仕事帰りに立ち寄るお店での思い出、大切な人と行く勝負レストランでの是非とも食べて欲しいお料理の思い出等、あなたとお料理のストーリーを是非とも教えてください！",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 10,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/favorite_scene10.jpg",
+			"author": "編集部●●●●",
+			"title": "気になる一皿シリーズNo.10",
+			"category": "Special Contents",
+			"shop_name": "サンプル店舗 No.10",
+			"comment": "（※このコメントはサンプルになります!）気になる一皿シリーズでは、読者の皆様がお店で「思わず感動を覚えてしまった思い出の一皿」をテーマに、美味しかったお料理の写真とコメントを掲載しています。行きつけのお店でのお気に入りの一品から、ちょっと贅沢をしたい時に仕事帰りに立ち寄るお店での思い出、大切な人と行く勝負レストランでの是非とも食べて欲しいお料理の思い出等、あなたとお料理のストーリーを是非とも教えてください！",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 11,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/favorite_scene11.jpg",
+			"author": "編集部●●●●",
+			"title": "気になる一皿シリーズNo.11",
+			"category": "Special Contents",
+			"shop_name": "サンプル店舗 No.11",
+			"comment": "（※このコメントはサンプルになります!）気になる一皿シリーズでは、読者の皆様がお店で「思わず感動を覚えてしまった思い出の一皿」をテーマに、美味しかったお料理の写真とコメントを掲載しています。行きつけのお店でのお気に入りの一品から、ちょっと贅沢をしたい時に仕事帰りに立ち寄るお店での思い出、大切な人と行く勝負レストランでの是非とも食べて欲しいお料理の思い出等、あなたとお料理のストーリーを是非とも教えてください！",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		},
+		{
+			"id": 12,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/favorite_scene12.jpg",
+			"author": "編集部●●●●",
+			"title": "気になる一皿シリーズNo.12",
+			"category": "Special Contents",
+			"shop_name": "サンプル店舗 No.12",
+			"comment": "（※このコメントはサンプルになります!）気になる一皿シリーズでは、読者の皆様がお店で「思わず感動を覚えてしまった思い出の一皿」をテーマに、美味しかったお料理の写真とコメントを掲載しています。行きつけのお店でのお気に入りの一品から、ちょっと贅沢をしたい時に仕事帰りに立ち寄るお店での思い出、大切な人と行く勝負レストランでの是非とも食べて欲しいお料理の思い出等、あなたとお料理のストーリーを是非とも教えてください！",
+			"published_at": "2022-12-01T07:30:00.000+0000"
+		}
+	],
+	"achive_images": [
+		{
+			"id": 1,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image1.jpg",
+			"category": "エスニック料理",
+			"dish_name": "ベトナム風生春巻き",
+			"shop_name": "美味しいベトナム料理のお店",
+			"introduction": "エスニック料理の定番メニュー！ちょっと甘酸っぱいピリ辛のソースとの相性が抜群です。"
+		},
+		{
+			"id": 2,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image2.jpg",
+			"category": "エスニック料理",
+			"dish_name": "シーフードと春雨のサラダ",
+			"shop_name": "美味しいベトナム料理のお店",
+			"introduction": "お口の中をさっぱりしてくれて満足度の高いサラダ。前菜といえども侮るなかれ。"
+		},
+		{
+			"id": 3,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image3.jpg",
+			"category": "韓国料理",
+			"dish_name": "カンジャンケジャン",
+			"shop_name": "韓国家庭料理のお店",
+			"introduction": "新鮮な生のワタリガニを漬け込み、醤油ダレに漬けて熟成させた一皿です。カニミソや内子も絶品でこれがまさしく「ご飯泥棒」です。"
+		},
+		{
+			"id": 4,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image4.jpg",
+			"category": "エスニック料理",
+			"dish_name": "シーフード入りトムヤムクン",
+			"shop_name": "絶品アジア料理のお店",
+			"introduction": "世界三代スープの1つであるトムヤムクンに新鮮な魚介をミックスした豪華な一皿です。"
+		},
+		{
+			"id": 5,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image5.jpg",
+			"category": "エスニック料理",
+			"dish_name": "えびたっぷりのグリーンカレー",
+			"shop_name": "絶品アジア料理のお店",
+			"introduction": "ココナッツの甘さとエビの食感、そしてスパイシーな青唐辛子が生み出す美味しさを味わって欲しい。"
+		},
+		{
+			"id": 6,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image6.jpg",
+			"category": "エスニック料理",
+			"dish_name": "ガパオライス",
+			"shop_name": "絶品アジア料理のお店",
+			"introduction": "ナムプラーの風味とバジルの香りがとても食欲をそそるタイ料理の定番メニュー。"
+		},
+		{
+			"id": 7,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image7.jpg",
+			"category": "エスニック料理",
+			"dish_name": "ベトナム風生春巻き",
+			"shop_name": "絶品アジア料理のお店",
+			"introduction": "おつまみにも嬉しい生春巻き。野菜もたくさん入ってとてもヘルシーな一皿です。"
+		},
+		{
+			"id": 8,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image8.jpg",
+			"category": "韓国料理",
+			"dish_name": "ヤンニョムチキン",
+			"shop_name": "韓国家庭料理のお店",
+			"introduction": "濃いめでスパイシーな甘辛タレとジューシーなチキンでビールが進むこと請け合いです。"
+		},
+		{
+			"id": 9,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image9.jpg",
+			"category": "韓国料理",
+			"dish_name": "チーズタッカルビ",
+			"shop_name": "韓国家庭料理のお店",
+			"introduction": "甘辛い味付けのお肉とチーズのまろやかさが合わさった女性にも大人気メニューの1つです。"
+		},
+		{
+			"id": 10,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image10.jpg",
+			"category": "韓国料理",
+			"dish_name": "納豆入り豆腐チゲ",
+			"shop_name": "韓国家庭料理のお店",
+			"introduction": "キムチ、納豆、豆腐、味噌が合わさってできる味わいは文句の付けようがない美味しさです。"
+		},
+		{
+			"id": 11,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image11.jpg",
+			"category": "エスニック料理",
+			"dish_name": "ベトナム風フォー麺の焼きそば",
+			"shop_name": "絶品アジア料理のお店",
+			"introduction": "日本での焼きそばの感覚とは少し違った新感覚の焼きそば。フォー麺の味わいとハーブでさっぱりと食べられます。"
+		},
+		{
+			"id": 12,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image12.jpg",
+			"category": "カレー",
+			"dish_name": "キーマカレー",
+			"shop_name": "カレーハウス",
+			"introduction": "スパイスが効いたさわやかな辛さとひき肉の美味しさがご飯にとても良くマッチしています。"
+		},
+		{
+			"id": 13,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image13.jpg",
+			"category": "韓国料理",
+			"dish_name": "スンドゥブチゲ",
+			"shop_name": "韓国家庭料理のお店",
+			"introduction": "シンプルだけど美味しい家庭料理の定番メニュー。まさに旨辛というのに相応しい一品です。"
+		},
+		{
+			"id": 14,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image14.jpg",
+			"category": "中華料理",
+			"dish_name": "チンジャオロースー",
+			"shop_name": "本格中華料理のお店",
+			"introduction": "ご飯にもビールにもとてもよく合う中華の定番メニュー。"
+		},
+		{
+			"id": 15,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image15.jpg",
+			"category": "韓国料理",
+			"dish_name": "サムギョプサル",
+			"shop_name": "本格韓国焼肉のお店",
+			"introduction": "豪華に豚バラの三枚肉を豪快に焼き上げる！韓国焼肉の代名詞とも言えるメニューです。"
+		},
+		{
+			"id": 16,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image16.jpg",
+			"category": "和食",
+			"dish_name": "豪華盛り贅沢海鮮丼",
+			"shop_name": "海鮮丼のお店",
+			"introduction": "ホタテ・マグロ・サーモン・ブリ・イクラを贅沢に盛り付けた豪華な一品です。"
+		},
+		{
+			"id": 17,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image17.jpg",
+			"category": "洋食",
+			"dish_name": "熱々が嬉しいマカロニグラタン",
+			"shop_name": "洋食レストラン",
+			"introduction": "まろやかなベシャメルソースの味わいととろけるチーズの感じがたまらない洋食の王道メニュー。"
+		},
+		{
+			"id": 18,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image18.jpg",
+			"category": "韓国料理",
+			"dish_name": "ビビンバ",
+			"shop_name": "本格韓国焼肉のお店",
+			"introduction": "こちらも韓国料理では定番中の定番メニュー。焼肉にもよく合うお供です。"
+		},
+		{
+			"id": 19,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image19.jpg",
+			"category": "和食",
+			"dish_name": "鰹のたたき",
+			"shop_name": "鮮魚居酒屋",
+			"introduction": "もっちりした歯応えと香ばしさが嬉しい高知が生んだ美味しさ。"
+		},
+		{
+			"id": 20,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image20.jpg",
+			"category": "中華料理",
+			"dish_name": "天津飯",
+			"shop_name": "本格中華料理のお店",
+			"introduction": "ふっくらとしたたまごと味わい深い中華あんが食欲をそそる一品です。"
+		},
+		{
+			"id": 21,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image21.jpg",
+			"category": "中華料理",
+			"dish_name": "中華飯",
+			"shop_name": "本格中華料理のお店",
+			"introduction": "海鮮と野菜をたくさん入って醤油味の中華あんでまとめたボリューム満点の一皿。"
+		},
+		{
+			"id": 22,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image22.jpg",
+			"category": "韓国料理",
+			"dish_name": "激辛チーズタッカルビ",
+			"shop_name": "本格韓国焼肉のお店",
+			"introduction": "濃厚なチーズの味わいとパンチが効いた肉を合わせた嬉しい一品です。"
+		},
+		{
+			"id": 23,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image23.jpg",
+			"category": "和食",
+			"dish_name": "とんかつ",
+			"shop_name": "とんかつ専門店",
+			"introduction": "肉厚のとんかつと濃厚なソースとの味わいでご飯が思わず進んでしまいます。"
+		},
+		{
+			"id": 24,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image24.jpg",
+			"category": "韓国料理",
+			"dish_name": "カクテキ",
+			"shop_name": "本格韓国焼肉のお店",
+			"introduction": "焼肉の合間のお口直しには最適なさっぱり味のキムチです。"
+		},
+		{
+			"id": 25,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image25.jpg",
+			"category": "和食",
+			"dish_name": "博多名物もつ鍋",
+			"shop_name": "博多料理専門店",
+			"introduction": "こだわり抜いた旨味たっぷりの味わい深いもつをじっくりと煮込んだ一品です。"
+		},
+		{
+			"id": 26,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image26.jpg",
+			"category": "韓国料理",
+			"dish_name": "野菜チヂミ",
+			"shop_name": "韓国家庭料理のお店",
+			"introduction": "外はカリカリで香ばしく中はモチモチで野菜の甘みを楽しむ嬉しい一皿です。"
+		},
+		{
+			"id": 27,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image27.jpg",
+			"category": "和食",
+			"dish_name": "のどぐろの炙り",
+			"shop_name": "鮮魚居酒屋",
+			"introduction": "高級魚のどぐろを豪華に皮目だけ炙った一品。ごちそうに相応しい一品です。"
+		},
+		{
+			"id": 28,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image28.jpg",
+			"category": "和食",
+			"dish_name": "のどぐろの炙り",
+			"shop_name": "鮮魚居酒屋",
+			"introduction": "高級魚のどぐろを豪華に皮目だけ炙った一品。ごちそうに相応しい一品です。"
+		},
+		{
+			"id": 29,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image29.jpg",
+			"category": "洋食",
+			"dish_name": "ハンバーグステーキ",
+			"shop_name": "洋食レストラン",
+			"introduction": "塊で仕入れた牛肉を丁寧に叩いて作られたシェフのこだわりを感じる一品です。"
+		},
+		{
+			"id": 30,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image30.jpg",
+			"category": "和食",
+			"dish_name": "フグのちり鍋",
+			"shop_name": "鮮魚居酒屋",
+			"introduction": "濃厚なフグの味わいを余す事なく味わう事ができる贅沢なメニューです。"
+		},
+		{
+			"id": 31,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image31.jpg",
+			"category": "和食",
+			"dish_name": "チキン南蛮",
+			"shop_name": "鮮魚居酒屋",
+			"introduction": "鶏胸肉を豪快に使って自家製のタルタルソースと甘辛タレを絡めた定番メニューです。"
+		},
+		{
+			"id": 32,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image32.jpg",
+			"category": "洋食",
+			"dish_name": "スパゲッティナポリタン",
+			"shop_name": "洋食レストラン",
+			"introduction": "子供から大人まで愛されている、ケチャップの甘みと酸味のバランスが嬉しいパスタの定番メニュー。"
+		},
+		{
+			"id": 33,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image33.jpg",
+			"category": "洋食",
+			"dish_name": "シーフードミックスピザ",
+			"shop_name": "洋食レストラン",
+			"introduction": "豪華な海の幸とトマトソースとチーズを組み合わせた王道のピザ。"
+		},
+		{
+			"id": 34,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image34.jpg",
+			"category": "洋食",
+			"dish_name": "サーロインステーキ",
+			"shop_name": "ステーキハウス",
+			"introduction": "ジューシーさと味わいのバランス感が完璧！永遠のご馳走と言えるラインナップです。"
+		},
+		{
+			"id": 35,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image35.jpg",
+			"category": "和食",
+			"dish_name": "焼きうどんいくらのせ",
+			"shop_name": "麺どころ",
+			"introduction": "シンプルな味付けの焼きうどんにいくらを乗せたプチ贅沢を味わえる一皿です。"
+		},
+		{
+			"id": 36,
+			"photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image36.jpg",
+			"category": "和食",
+			"dish_name": "焼き鳥ねぎま",
+			"shop_name": "鮮魚居酒屋",
+			"introduction": "シンプルだけどいつも食べたくなってしまうビールのお供の定番。"
+		}
+	]
 }
