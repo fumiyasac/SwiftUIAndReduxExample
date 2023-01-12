@@ -24,12 +24,6 @@ struct ArchiveSceneResponse: ArchiveResponse, Decodable, Equatable {
         self.result = result
     }
 
-    // JSONの配列内の要素を取得する → JSONの配列内の要素にある値をDecodeして初期化する
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: Keys.self)
-        self.result = try container.decode([ArchiveSceneEntity].self, forKey: .result)
-    }
-
     // MARK: - Equatable
 
     // MEMO: Equatableプロトコルに適合させるための処理

@@ -31,13 +31,13 @@ enum APIRequestState {
 protocol APIClientManagerProtocol {
     
     // MEMO: APIClientManagerはasync/awaitを利用して書く
-    // ※ Archivesは一番下まで読み込んだらページネーションを実行したい
     func getCampaignBanners() async throws -> CampaignBannersResponse
     func getRecentNews() async throws -> RecentNewsResponse
     func getFeaturedTopics() async throws -> FeaturedTopicsResponse
     func getTrendArticles() async throws -> TrendArticleResponse
     func getPickupPhotos() async throws -> PickupPhotoResponse
     func getFavoriteScenes() async throws -> FavoriteSceneResponse
+    func getAchiveImages(keyword: String, category: String) async throws -> ArchiveSceneResponse
 }
 
 final class ApiClientManager {
@@ -58,17 +58,17 @@ final class ApiClientManager {
         case trendArticles = "trend_articles"
         case pickupPhotos = "pickup_photos"
         case favoriteScenes = "favorite_scenes"
+        case achiveImages = "achive_images"
 
         func getBaseUrl() -> String {
-            return [host, version, self.rawValue].joined(separator: "/")
+            return [host, self.rawValue].joined(separator: "/")
         }
     }
 
     // MARK: - Properties
 
     // MEMO: API ServerへのURLに関する情報
-    private static let host = "http://localhost:8080/api"
-    private static let version = "v1"
+    private static let host = "http://localhost:8080"
 
     // MARK: - Function
 
@@ -183,50 +183,67 @@ final class ApiClientManager {
 extension ApiClientManager: APIClientManagerProtocol {
     
     func getCampaignBanners() async throws -> CampaignBannersResponse {
-        return try await executeAPIRequest(
+        let result = try await executeAPIRequest(
             endpointUrl: EndPoint.campaignBanners.getBaseUrl(),
             httpMethod: HTTPMethod.GET,
-            responseFormat: CampaignBannersResponse.self
+            responseFormat: [CampaignBannerEntity].self
         )
+        return CampaignBannersResponse(result: result)
     }
     
     func getRecentNews() async throws -> RecentNewsResponse {
-        return try await executeAPIRequest(
+        let result = try await executeAPIRequest(
             endpointUrl: EndPoint.recentNews.getBaseUrl(),
             httpMethod: HTTPMethod.GET,
-            responseFormat: RecentNewsResponse.self
+            responseFormat: [RecentNewsEntity].self
         )
+        return RecentNewsResponse(result: result)
     }
     
     func getFeaturedTopics() async throws -> FeaturedTopicsResponse {
-        return try await executeAPIRequest(
+        let result = try await executeAPIRequest(
             endpointUrl: EndPoint.featuredTopics.getBaseUrl(),
             httpMethod: HTTPMethod.GET,
-            responseFormat: FeaturedTopicsResponse.self
+            responseFormat: [FeaturedTopicEntity].self
         )
+        return FeaturedTopicsResponse(result: result)
     }
     
     func getTrendArticles() async throws -> TrendArticleResponse {
-        return try await executeAPIRequest(
+        let result = try await executeAPIRequest(
             endpointUrl: EndPoint.trendArticles.getBaseUrl(),
             httpMethod: HTTPMethod.GET,
-            responseFormat: TrendArticleResponse.self
+            responseFormat: [TrendArticleEntity].self
         )
+        return TrendArticleResponse(result: result)
     }
 
     func getPickupPhotos() async throws -> PickupPhotoResponse {
-        return try await executeAPIRequest(
+        let result = try await executeAPIRequest(
             endpointUrl: EndPoint.pickupPhotos.getBaseUrl(),
             httpMethod: HTTPMethod.GET,
-            responseFormat: PickupPhotoResponse.self
+            responseFormat: [PickupPhotoEntity].self
         )
+        return PickupPhotoResponse(result: result)
     }
 
     func getFavoriteScenes() async throws -> FavoriteSceneResponse {
-        return try await executeAPIRequest(
+        let result = try await executeAPIRequest(
             endpointUrl: EndPoint.favoriteScenes.getBaseUrl(),
             httpMethod: HTTPMethod.GET,
-            responseFormat: FavoriteSceneResponse.self
+            responseFormat: [FavoriteSceneEntity].self
         )
+        return FavoriteSceneResponse(result: result)
+    }
+
+    func getAchiveImages(keyword: String, category: String) async throws -> ArchiveSceneResponse {
+        let result = try await executeAPIRequest(
+            endpointUrl: EndPoint.achiveImages.getBaseUrl(),
+            // MEMO: json-serverで作成したAPI側のパラメーターと合わせる
+            withParameters: ["q": keyword, "category": category],
+            httpMethod: HTTPMethod.GET,
+            responseFormat: [ArchiveSceneEntity].self
+        )
+        return ArchiveSceneResponse(result: result)
     }
 }
