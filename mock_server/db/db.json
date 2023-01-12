@@ -554,5 +554,297 @@
 				"published_at": "2022-12-01T07:30:00.000+0000"
 			}
 		]
+	},
+	"get_achive_images": {
+		"result": [
+			 {
+				 "id": 1,
+				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image1.jpg",
+				 "category": "エスニック料理",
+				 "dish_name": "ベトナム風生春巻き",
+				 "shop_name": "美味しいベトナム料理のお店",
+				 "introduction": "エスニック料理の定番メニュー！ちょっと甘酸っぱいピリ辛のソースとの相性が抜群です。"
+			 },
+			 {
+				 "id": 2,
+				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image2.jpg",
+				 "category": "エスニック料理",
+				 "dish_name": "シーフードと春雨のサラダ",
+				 "shop_name": "美味しいベトナム料理のお店",
+				 "introduction": "お口の中をさっぱりしてくれて満足度の高いサラダ。前菜といえども侮るなかれ。"
+			 },
+			 {
+				 "id": 3,
+				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image3.jpg",
+				 "category": "韓国料理",
+				 "dish_name": "カンジャンケジャン",
+				 "shop_name": "韓国家庭料理のお店",
+				 "introduction": "新鮮な生のワタリガニを漬け込み、醤油ダレに漬けて熟成させた一皿です。カニミソや内子も絶品でこれがまさしく「ご飯泥棒」です。"
+			 },
+			 {
+				 "id": 4,
+				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image4.jpg",
+				 "category": "エスニック料理",
+				 "dish_name": "シーフード入りトムヤムクン",
+				 "shop_name": "絶品アジア料理のお店",
+				 "introduction": "世界三代スープの1つであるトムヤムクンに新鮮な魚介をミックスした豪華な一皿です。"
+			 },
+			 {
+				 "id": 5,
+				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image5.jpg",
+				 "category": "エスニック料理",
+				 "dish_name": "えびたっぷりのグリーンカレー",
+				 "shop_name": "絶品アジア料理のお店",
+				 "introduction": "ココナッツの甘さとエビの食感、そしてスパイシーな青唐辛子が生み出す美味しさを味わって欲しい。"
+			 },
+			 {
+				 "id": 6,
+				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image6.jpg",
+				 "category": "エスニック料理",
+				 "dish_name": "ガパオライス",
+				 "shop_name": "絶品アジア料理のお店",
+				 "introduction": "ナムプラーの風味とバジルの香りがとても食欲をそそるタイ料理の定番メニュー。"
+			 },
+			 {
+				 "id": 7,
+				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image7.jpg",
+				 "category": "エスニック料理",
+				 "dish_name": "ベトナム風生春巻き",
+				 "shop_name": "絶品アジア料理のお店",
+				 "introduction": "おつまみにも嬉しい生春巻き。野菜もたくさん入ってとてもヘルシーな一皿です。"
+			 },
+			 {
+				 "id": 8,
+				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image8.jpg",
+				 "category": "韓国料理",
+				 "dish_name": "ヤンニョムチキン",
+				 "shop_name": "韓国家庭料理のお店",
+				 "introduction": "濃いめでスパイシーな甘辛タレとジューシーなチキンでビールが進むこと請け合いです。"
+			 },
+			 {
+				 "id": 9,
+				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image9.jpg",
+				 "category": "韓国料理",
+				 "dish_name": "チーズタッカルビ",
+				 "shop_name": "韓国家庭料理のお店",
+				 "introduction": "甘辛い味付けのお肉とチーズのまろやかさが合わさった女性にも大人気メニューの1つです。"
+			 },
+			 {
+				 "id": 10,
+				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image10.jpg",
+				 "category": "韓国料理",
+				 "dish_name": "納豆入り豆腐チゲ",
+				 "shop_name": "韓国家庭料理のお店",
+				 "introduction": "キムチ、納豆、豆腐、味噌が合わさってできる味わいは文句の付けようがない美味しさです。"
+			 },
+			 {
+				 "id": 11,
+				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image11.jpg",
+				 "category": "エスニック料理",
+				 "dish_name": "ベトナム風フォー麺の焼きそば",
+				 "shop_name": "絶品アジア料理のお店",
+				 "introduction": "日本での焼きそばの感覚とは少し違った新感覚の焼きそば。フォー麺の味わいとハーブでさっぱりと食べられます。"
+			 },
+			 {
+				 "id": 12,
+				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image12.jpg",
+				 "category": "カレー",
+				 "dish_name": "キーマカレー",
+				 "shop_name": "カレーハウス",
+				 "introduction": "スパイスが効いたさわやかな辛さとひき肉の美味しさがご飯にとても良くマッチしています。"
+			 },
+			 {
+				 "id": 13,
+				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image13.jpg",
+				 "category": "韓国料理",
+				 "dish_name": "スンドゥブチゲ",
+				 "shop_name": "韓国家庭料理のお店",
+				 "introduction": "シンプルだけど美味しい家庭料理の定番メニュー。まさに旨辛というのに相応しい一品です。"
+			 },
+			 {
+				 "id": 14,
+				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image14.jpg",
+				 "category": "中華料理",
+				 "dish_name": "チンジャオロースー",
+				 "shop_name": "本格中華料理のお店",
+				 "introduction": "ご飯にもビールにもとてもよく合う中華の定番メニュー。"
+			 },
+			 {
+				 "id": 15,
+				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image15.jpg",
+				 "category": "韓国料理",
+				 "dish_name": "サムギョプサル",
+				 "shop_name": "本格韓国焼肉のお店",
+				 "introduction": "豪華に豚バラの三枚肉を豪快に焼き上げる！韓国焼肉の代名詞とも言えるメニューです。"
+			 },
+			 {
+				 "id": 16,
+				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image16.jpg",
+				 "category": "和食",
+				 "dish_name": "豪華盛り贅沢海鮮丼",
+				 "shop_name": "海鮮丼のお店",
+				 "introduction": "ホタテ・マグロ・サーモン・ブリ・イクラを贅沢に盛り付けた豪華な一品です。"
+			 },
+			 {
+				 "id": 17,
+				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image17.jpg",
+				 "category": "洋食",
+				 "dish_name": "熱々が嬉しいマカロニグラタン",
+				 "shop_name": "洋食レストラン",
+				 "introduction": "まろやかなベシャメルソースの味わいととろけるチーズの感じがたまらない洋食の王道メニュー。"
+			 },
+			 {
+				 "id": 18,
+				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image18.jpg",
+				 "category": "韓国料理",
+				 "dish_name": "ビビンバ",
+				 "shop_name": "本格韓国焼肉のお店",
+				 "introduction": "こちらも韓国料理では定番中の定番メニュー。焼肉にもよく合うお供です。"
+			 },
+			 {
+				 "id": 19,
+				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image19.jpg",
+				 "category": "和食",
+				 "dish_name": "鰹のたたき",
+				 "shop_name": "鮮魚居酒屋",
+				 "introduction": "もっちりした歯応えと香ばしさが嬉しい高知が生んだ美味しさ。"
+			 },
+			 {
+				 "id": 20,
+				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image20.jpg",
+				 "category": "中華料理",
+				 "dish_name": "天津飯",
+				 "shop_name": "本格中華料理のお店",
+				 "introduction": "ふっくらとしたたまごと味わい深い中華あんが食欲をそそる一品です。"
+			 },
+			 {
+				 "id": 21,
+				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image21.jpg",
+				 "category": "中華料理",
+				 "dish_name": "中華飯",
+				 "shop_name": "本格中華料理のお店",
+				 "introduction": "海鮮と野菜をたくさん入って醤油味の中華あんでまとめたボリューム満点の一皿。"
+			 },
+			 {
+				 "id": 22,
+				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image22.jpg",
+				 "category": "韓国料理",
+				 "dish_name": "激辛チーズタッカルビ",
+				 "shop_name": "本格韓国焼肉のお店",
+				 "introduction": "濃厚なチーズの味わいとパンチが効いた肉を合わせた嬉しい一品です。"
+			 },
+			 {
+				 "id": 23,
+				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image23.jpg",
+				 "category": "和食",
+				 "dish_name": "とんかつ",
+				 "shop_name": "とんかつ専門店",
+				 "introduction": "肉厚のとんかつと濃厚なソースとの味わいでご飯が思わず進んでしまいます。"
+			 },
+			 {
+				 "id": 24,
+				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image24.jpg",
+				 "category": "韓国料理",
+				 "dish_name": "カクテキ",
+				 "shop_name": "本格韓国焼肉のお店",
+				 "introduction": "焼肉の合間のお口直しには最適なさっぱり味のキムチです。"
+			 },
+			 {
+				 "id": 25,
+				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image25.jpg",
+				 "category": "和食",
+				 "dish_name": "博多名物もつ鍋",
+				 "shop_name": "博多料理専門店",
+				 "introduction": "こだわり抜いた旨味たっぷりの味わい深いもつをじっくりと煮込んだ一品です。"
+			 },
+			 {
+				 "id": 26,
+				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image26.jpg",
+				 "category": "韓国料理",
+				 "dish_name": "野菜チヂミ",
+				 "shop_name": "韓国家庭料理のお店",
+				 "introduction": "外はカリカリで香ばしく中はモチモチで野菜の甘みを楽しむ嬉しい一皿です。"
+			 },
+			 {
+				 "id": 27,
+				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image27.jpg",
+				 "category": "和食",
+				 "dish_name": "のどぐろの炙り",
+				 "shop_name": "鮮魚居酒屋",
+				 "introduction": "高級魚のどぐろを豪華に皮目だけ炙った一品。ごちそうに相応しい一品です。"
+			 },
+			 {
+				 "id": 28,
+				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image28.jpg",
+				 "category": "和食",
+				 "dish_name": "のどぐろの炙り",
+				 "shop_name": "鮮魚居酒屋",
+				 "introduction": "高級魚のどぐろを豪華に皮目だけ炙った一品。ごちそうに相応しい一品です。"
+			 },
+			 {
+				 "id": 29,
+				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image29.jpg",
+				 "category": "洋食",
+				 "dish_name": "ハンバーグステーキ",
+				 "shop_name": "洋食レストラン",
+				 "introduction": "塊で仕入れた牛肉を丁寧に叩いて作られたシェフのこだわりを感じる一品です。"
+			 },
+			 {
+				 "id": 30,
+				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image30.jpg",
+				 "category": "和食",
+				 "dish_name": "フグのちり鍋",
+				 "shop_name": "鮮魚居酒屋",
+				 "introduction": "濃厚なフグの味わいを余す事なく味わう事ができる贅沢なメニューです。"
+			 },
+			 {
+				 "id": 31,
+				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image31.jpg",
+				 "category": "和食",
+				 "dish_name": "チキン南蛮",
+				 "shop_name": "鮮魚居酒屋",
+				 "introduction": "鶏胸肉を豪快に使って自家製のタルタルソースと甘辛タレを絡めた定番メニューです。"
+			 },
+			 {
+				 "id": 32,
+				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image32.jpg",
+				 "category": "洋食",
+				 "dish_name": "スパゲッティナポリタン",
+				 "shop_name": "洋食レストラン",
+				 "introduction": "子供から大人まで愛されている、ケチャップの甘みと酸味のバランスが嬉しいパスタの定番メニュー。"
+			 },
+			 {
+				 "id": 33,
+				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image33.jpg",
+				 "category": "洋食",
+				 "dish_name": "シーフードミックスピザ",
+				 "shop_name": "洋食レストラン",
+				 "introduction": "豪華な海の幸とトマトソースとチーズを組み合わせた王道のピザ。"
+			 },
+			 {
+				 "id": 34,
+				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image34.jpg",
+				 "category": "洋食",
+				 "dish_name": "サーロインステーキ",
+				 "shop_name": "ステーキハウス",
+				 "introduction": "ジューシーさと味わいのバランス感が完璧！永遠のご馳走と言えるラインナップです。"
+			 },
+			 {
+				 "id": 35,
+				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image35.jpg",
+				 "category": "和食",
+				 "dish_name": "焼きうどんいくらのせ",
+				 "shop_name": "麺どころ",
+				 "introduction": "シンプルな味付けの焼きうどんにいくらを乗せたプチ贅沢を味わえる一皿です。"
+			 },
+			 {
+				 "id": 36,
+				 "photo_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image36.jpg",
+				 "category": "和食",
+				 "dish_name": "焼き鳥ねぎま",
+				 "shop_name": "鮮魚居酒屋",
+				 "introduction": "シンプルだけどいつも食べたくなってしまうビールのお供の定番。"
+			 }
+		]
 	}
 }
