@@ -53,6 +53,10 @@ struct ArchiveCellView: View {
 
     // MARK: - Property
 
+    private var cellThumbnailRoundRectangleColor: Color {
+        return Color.secondary.opacity(0.5)
+    }
+
     private var cellTitleFont: Font {
         return Font.custom("AvenirNext-Bold", size: 13)
     }
@@ -66,7 +70,7 @@ struct ArchiveCellView: View {
     }
 
     private var cellCategoryColor: Color {
-        return Color.gray
+        return Color.secondary
     }
 
     private var cellShopNameFont: Font {
@@ -74,7 +78,7 @@ struct ArchiveCellView: View {
     }
 
     private var cellShopNameColor: Color {
-        return Color.gray
+        return Color.secondary
     }
 
     private var cellIntroductionFont: Font {
@@ -82,7 +86,7 @@ struct ArchiveCellView: View {
     }
 
     private var cellIntroductionColor: Color {
-        return Color.gray
+        return Color.secondary
     }
 
     private var cellBorderColor: Color {
@@ -118,7 +122,12 @@ struct ArchiveCellView: View {
                 KFImage(viewObject.photoUrl)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
+                    .clipped()
                     .frame(width: 64.0, height: 64.0)
+                    .background(
+                        RoundedRectangle(cornerRadius: 4.0)
+                            .stroke(cellThumbnailRoundRectangleColor)
+                    )
                 // 1-(2). プロフィール用基本情報表示
                 VStack(alignment: .leading) {
                     // 1-(2)-①. 料理名表示
