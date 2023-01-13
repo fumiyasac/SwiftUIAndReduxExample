@@ -76,13 +76,14 @@ struct ArchiveCellView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0.0) {
+            // メインの情報表示部分
             HStack(spacing: 0.0) {
                 // 1. サムネイル用画像表示
                 // TODO: KingFisherベースの設定に変更する
                 Image("archive_sample_image")
                     .resizable()
                     .scaledToFill()
-                    .frame(width: 70.0, height: 70.0)
+                    .frame(width: 64.0, height: 64.0)
                 // 2. プロフィール用基本情報表示
                 VStack(alignment: .leading) {
                     // 2-(1). 料理名表示
@@ -99,16 +100,13 @@ struct ArchiveCellView: View {
                         .font(cellDateFont)
                         .foregroundColor(cellDateColor)
                         .padding([.top], -8.0)
-                    // 2-(4). 下側Divider
-                    Divider()
-                        .background(cellBorderColor)
                 }
                 .padding([.leading], 12.0)
                 // 3. Spacer
                 Spacer()
                 // 4. お気に入りボタン
                 Button(action: {
-                    //
+                    // TODO: ボタン押下時の処理
                 }, label: {
                     Image(systemName: "heart")
                 })
@@ -116,6 +114,18 @@ struct ArchiveCellView: View {
                 .buttonStyle(PlainButtonStyle())
                 .frame(width: 24.0, height: 32.0)
             }
+            // 概要テキストの情報表示部分
+            HStack(spacing: 0.0) {
+                Text("説明文が入ります。")
+                    .font(cellDateFont)
+                    .foregroundColor(cellDateColor)
+                    .padding([.vertical], 6.0)
+
+            }
+            // 下側Divider
+            Divider()
+                .background(cellBorderColor)
+
         }
         .padding([.top], 4.0)
         .padding([.leading, .trailing], 12.0)
