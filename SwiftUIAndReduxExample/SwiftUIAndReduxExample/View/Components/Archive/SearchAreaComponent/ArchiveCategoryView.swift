@@ -46,12 +46,15 @@ struct ArchiveCategoryView: View {
     private var selectedCategoryBackgroudColor: Color {
         return Color(uiColor: AppConstants.ColorPalette.mint)
     }
-    
+
+    private let categories: [String] = [
+        "エスニック料理", "韓国料理", "カレー", "中華料理", "和食", "洋食"
+    ]
+
     @Binding var selectedCategory: String
 
     // MARK: - Body
 
-    // TODO: 実際のデータを入れた上での本実装が必要
     var body: some View {
         VStack(spacing: 0.0) {
             HStack {
@@ -65,14 +68,12 @@ struct ArchiveCategoryView: View {
             HStack {
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHStack(spacing: 8.0) {
-                        ForEach(0 ..< 6, id: \.self) { index in
-                            // TODO: 表示のための仮ロジック
-                            let number = index + 1
-                            let categoryName = "Category\(number)"
-                            let selected = (selectedCategory == categoryName)
+                        ForEach(0 ..< categories.count, id: \.self) { index in
+                            let targetCategoryName = categories[index]
+                            let selected = (selectedCategory == targetCategoryName)
                             // Category表示用のChip型部分
                             VStack(alignment: .leading) {
-                                Text(categoryName)
+                                Text(targetCategoryName)
                                     .font(selected ? selectedCategoryFont : normalCategoryFont)
                                     .foregroundColor(selected ? selectedCategoryTintColor : normalCategoryTintColor)
                                     .padding([.leading, .trailing], 12.0)
@@ -85,6 +86,9 @@ struct ArchiveCategoryView: View {
                                 RoundedRectangle(cornerRadius: 24.0)
                                     .stroke(categoryBorderColor, lineWidth: 1.0)
                             )
+                            .onTapGesture(perform: {
+                                selectedCategory = targetCategoryName
+                            })
                         }
                     }
                 }
@@ -99,6 +103,6 @@ struct ArchiveCategoryView: View {
 
 struct ArchiveCategoryView_Previews: PreviewProvider {
     static var previews: some View {
-        ArchiveCategoryView(selectedCategory: .constant("Category1"))
+        ArchiveCategoryView(selectedCategory: .constant("エスニック料理"))
     }
 }

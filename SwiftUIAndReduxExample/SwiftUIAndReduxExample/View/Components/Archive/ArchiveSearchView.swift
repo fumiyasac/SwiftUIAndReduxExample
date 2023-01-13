@@ -10,6 +10,8 @@ import Kingfisher
 
 struct ArchiveSearchView: View {
 
+    // MARK: - Property
+
     // MEMO: 画面に表示する内容を格納するための変数
     @State private var archiveCellViewObjects: [ArchiveCellViewObject] = []
 
@@ -27,8 +29,8 @@ struct ArchiveSearchView: View {
         VStack(alignment: .leading, spacing: 0.0) {
             // (1) 検索機能部分
             Group {
-                ArchiveFreewordView(inputText: .constant(""))
-                ArchiveCategoryView(selectedCategory: .constant("Category1"))
+                ArchiveFreewordView(inputText: .constant(""), isLoading: .constant(false))
+                ArchiveCategoryView(selectedCategory: .constant("エスニック料理"))
                 ArchiveCurrentCountView(currentCount: .constant(36))
             }
             // (2) 一覧データ表示部分

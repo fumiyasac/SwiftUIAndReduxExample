@@ -27,6 +27,10 @@ struct ArchiveFreewordView: View {
         return Color.gray
     }
 
+    private var textFieldTextFont: Font {
+        return Font.custom("AvenirNext-Regular", size: 14)
+    }
+
     private var textFieldTextColor: Color {
         return Color.primary
     }
@@ -39,9 +43,13 @@ struct ArchiveFreewordView: View {
     // 👉 この値が変化すると配置元のView要素の @State と連動して処理が実行される
     @Binding var inputText: String
 
+    // フリーワード検索用のisLoadingと連動する
+    // 👉 この値が変化すると配置元のView要素の @State と連動して処理が実行される
+    @Binding var isLoading: Bool
+
     // テキスト編集モードの判定フラグ
     // 👉 キャンセルボタン表示やキーボード状態のハンドリングで利用する
-    @State private var isEditing = false
+    @State private var isEditing: Bool = false
 
     // MARK: - Body
 
@@ -58,19 +66,17 @@ struct ArchiveFreewordView: View {
             // MEMO: ベースをZStackで作っているのはデザイン調整のため
             ZStack(alignment: .leading) {
                 freewordBackgroundColor
-                    .frame(width: 270.0)
-                    .frame(height: 36.0)
+                    .frame(width: 270.0, height: 36.0)
                     .cornerRadius(8.0)
                 // 検索バーに関連する部分
                 HStack {
-                    // (1) 虫眼鏡アイコン表示
-                    Image(systemName: "magnifyingglass")
-                        .foregroundColor(glassIconColor)
-                        .padding([.leading], 8.0)
+                    // (1) 虫眼鏡アイコンまたはインジケーター表示
+                    showLoadingIndicatorIfNeeded()
                     // (2) 入力用テキストフィールド表示
-                    TextField("Search", text: $inputText)
+                    TextField("キーワードを入力して下さい", text: $inputText)
                         .padding(7.0)
                         .padding(.leading, -8.0)
+                        .font(textFieldTextFont)
                         .background(freewordBackgroundColor)
                         .cornerRadius(8.0)
                         // MEMO: Cursorの配色を変更する際には.accentColorを利用する
@@ -92,6 +98,19 @@ struct ArchiveFreewordView: View {
 
     // @ViewBuilderを利用してViewを出し分けています
     // 参考: https://yanamura.hatenablog.com/entry/2019/09/05/150849
+    @ViewBuilder
+    private func showLoadingIndicatorIfNeeded() -> some View {
+        if isLoading {
+            LoadingIndicatorViewRepresentable(isLoading: .constant(true))
+                .frame(width: 24.0, height: 24.0)
+                .padding([.leading], 4.0)
+        } else {
+            Image(systemName: "magnifyingglass")
+                .foregroundColor(glassIconColor)
+                .padding([.leading], 8.0)
+        }
+    }
+
     @ViewBuilder
     private func showCancelButtonIfNeeded() -> some View {
         // 入力モードの場合のみキャンセルボタンを表示する様な形にする
@@ -120,6 +139,6 @@ struct ArchiveFreewordView: View {
 
 struct ArchiveFreewordView_Previews: PreviewProvider {
     static var previews: some View {
-        ArchiveFreewordView(inputText: .constant(""))
+        ArchiveFreewordView(inputText: .constant("韓国調理"), isLoading: .constant(false))
     }
 }
