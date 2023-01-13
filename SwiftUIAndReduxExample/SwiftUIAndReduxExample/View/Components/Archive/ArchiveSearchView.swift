@@ -76,35 +76,35 @@ struct ArchiveCellView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0.0) {
-            // メインの情報表示部分
+            // 1. メインの情報表示部分
             HStack(spacing: 0.0) {
-                // 1. サムネイル用画像表示
+                // 1-(1). サムネイル用画像表示
                 // TODO: KingFisherベースの設定に変更する
                 Image("archive_sample_image")
                     .resizable()
                     .scaledToFill()
                     .frame(width: 64.0, height: 64.0)
-                // 2. プロフィール用基本情報表示
+                // 1-(2). プロフィール用基本情報表示
                 VStack(alignment: .leading) {
-                    // 2-(1). 料理名表示
+                    // 1-(2)-①. 料理名表示
                     Text("料理名が入ります")
                         .font(cellTitleFont)
                         .foregroundColor(cellTitleColor)
-                    // 2-(2). 料理カテゴリー表示
+                    // 1-(2)-②. 料理カテゴリー表示
                     Text("カテゴリー名: Category")
                         .font(cellCategoryFont)
                         .foregroundColor(cellCategoryColor)
                         .padding([.top], -8.0)
-                    // 2-(3). ユーザー最終ログイン日時表示
+                    // 1-(2)-③. お店名表示
                     Text("お店名: 美味しいお店")
                         .font(cellDateFont)
                         .foregroundColor(cellDateColor)
                         .padding([.top], -8.0)
                 }
                 .padding([.leading], 12.0)
-                // 3. Spacer
+                // 1-(3). Spacer
                 Spacer()
-                // 4. お気に入りボタン
+                // 1-(4). お気に入りボタン
                 Button(action: {
                     // TODO: ボタン押下時の処理
                 }, label: {
@@ -114,7 +114,7 @@ struct ArchiveCellView: View {
                 .buttonStyle(PlainButtonStyle())
                 .frame(width: 24.0, height: 32.0)
             }
-            // 概要テキストの情報表示部分
+            // 2. 概要テキストの情報表示部分
             HStack(spacing: 0.0) {
                 Text("説明文が入ります。")
                     .font(cellDateFont)
@@ -122,10 +122,9 @@ struct ArchiveCellView: View {
                     .padding([.vertical], 6.0)
 
             }
-            // 下側Divider
+            // 3. 下側Divider
             Divider()
                 .background(cellBorderColor)
-
         }
         .padding([.top], 4.0)
         .padding([.leading, .trailing], 12.0)
