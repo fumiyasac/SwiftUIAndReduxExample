@@ -77,7 +77,7 @@ struct ProfilePointsAndHistoryView: View {
                     .background(pointAndHistoryBorderColor)
             }
         }
-        .padding([.leading, .trailing], 8.0)
+        .padding([.leading, .trailing], 12.0)
     }
 }
 

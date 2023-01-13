@@ -57,7 +57,7 @@ struct ProfileSocialMediaLinkView: View {
                 .padding([.top, .bottom], 10.0)
             }
         }
-        .padding([.leading, .trailing], 8.0)
+        .padding([.leading, .trailing], 12.0)
     }
 }
 

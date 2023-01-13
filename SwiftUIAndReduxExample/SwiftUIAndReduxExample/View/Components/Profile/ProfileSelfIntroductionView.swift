@@ -33,7 +33,7 @@ struct ProfileSelfIntroductionView: View {
                     .foregroundColor(selfIntroductionColor)
             }
         }
-        .padding([.leading, .trailing], 8.0)
+        .padding([.leading, .trailing], 12.0)
     }
 }
 

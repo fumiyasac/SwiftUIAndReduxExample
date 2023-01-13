@@ -67,7 +67,7 @@ struct ProfileSpecialContentsView: View {
             }
             .padding([.top, .bottom], 24.0)
         }
-        .padding([.leading, .trailing], 8.0)
+        .padding([.leading, .trailing], 12.0)
     }
 }
 

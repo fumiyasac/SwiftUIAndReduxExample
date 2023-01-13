@@ -61,7 +61,7 @@ struct ProfileCommonSectionView: View {
             }
             Spacer()
         }
-        .padding(8.0)
+        .padding(12.0)
         .frame(width: headerWidth, height: headerHeight)
     }
 }
