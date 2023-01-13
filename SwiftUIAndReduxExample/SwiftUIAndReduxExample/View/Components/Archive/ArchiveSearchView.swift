@@ -6,8 +6,20 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct ArchiveSearchView: View {
+
+    // MEMO: 画面に表示する内容を格納するための変数
+    @State private var archiveCellViewObjects: [ArchiveCellViewObject] = []
+
+    // MARK: - Initializer
+
+    init(archiveCellViewObjects: [ArchiveCellViewObject]) {
+
+        // イニシャライザ内で「_(変数名)」値を代入することでState値の初期化を実行する
+        _archiveCellViewObjects = State(initialValue: archiveCellViewObjects)
+    }
 
     // MARK: - Body
 
@@ -21,9 +33,10 @@ struct ArchiveSearchView: View {
             }
             // (2) 一覧データ表示部分
             ScrollView {
-                // TODO: 実際のデータを入れた上での本実装が必要
-                ForEach(0 ..< 16 , id: \.self) { _ in
-                    ArchiveCellView()
+                ForEach(archiveCellViewObjects) { viewObject in
+                    ArchiveCellView(viewObject: viewObject, tapButtonAction: {
+                        print("想定: Tap処理を実行した際に何らかの処理を実行する (ID:\(viewObject.id))")
+                    })
                 }
             }
         }
@@ -33,6 +46,10 @@ struct ArchiveSearchView: View {
 // MARK: - ArchiveCellView
 
 struct ArchiveCellView: View {
+
+    // MARK: - Typealias
+
+    typealias TapButtonAction = () -> Void
 
     // MARK: - Property
 
@@ -52,11 +69,19 @@ struct ArchiveCellView: View {
         return Color.gray
     }
 
-    private var cellDateFont: Font {
+    private var cellShopNameFont: Font {
         return Font.custom("AvenirNext-Bold", size: 11)
     }
 
-    private var cellDateColor: Color {
+    private var cellShopNameColor: Color {
+        return Color.gray
+    }
+
+    private var cellIntroductionFont: Font {
+        return Font.custom("AvenirNext-Regular", size: 11)
+    }
+
+    private var cellIntroductionColor: Color {
         return Color.gray
     }
 
@@ -72,6 +97,17 @@ struct ArchiveCellView: View {
         return Color.pink
     }
 
+    private var viewObject: ArchiveCellViewObject
+
+    private var tapButtonAction: ArchiveCellView.TapButtonAction
+
+    // MARK: - Initializer
+    
+    init(viewObject: ArchiveCellViewObject, tapButtonAction: @escaping ArchiveCellView.TapButtonAction) {
+        self.viewObject = viewObject
+        self.tapButtonAction = tapButtonAction
+    }
+
     // MARK: - Body
 
     var body: some View {
@@ -79,35 +115,36 @@ struct ArchiveCellView: View {
             // 1. メインの情報表示部分
             HStack(spacing: 0.0) {
                 // 1-(1). サムネイル用画像表示
-                // TODO: KingFisherベースの設定に変更する
-                Image("archive_sample_image")
+                KFImage(viewObject.photoUrl)
                     .resizable()
-                    .scaledToFill()
+                    .aspectRatio(contentMode: .fit)
                     .frame(width: 64.0, height: 64.0)
                 // 1-(2). プロフィール用基本情報表示
                 VStack(alignment: .leading) {
                     // 1-(2)-①. 料理名表示
-                    Text("料理名が入ります")
+                    Text(viewObject.dishName)
                         .font(cellTitleFont)
                         .foregroundColor(cellTitleColor)
                     // 1-(2)-②. 料理カテゴリー表示
-                    Text("カテゴリー名: Category")
-                        .font(cellCategoryFont)
-                        .foregroundColor(cellCategoryColor)
-                        .padding([.top], -8.0)
+                    Group {
+                        Text("Category: ") + Text(viewObject.category)
+                    }
+                    .font(cellCategoryFont)
+                    .foregroundColor(cellCategoryColor)
+                    .padding([.top], -8.0)
                     // 1-(2)-③. お店名表示
-                    Text("お店名: 美味しいお店")
-                        .font(cellDateFont)
-                        .foregroundColor(cellDateColor)
-                        .padding([.top], -8.0)
+                    Group {
+                        Text("Shop: ") + Text(viewObject.shopName)
+                    }
+                    .font(cellShopNameFont)
+                    .foregroundColor(cellShopNameColor)
+                    .padding([.top], -8.0)
                 }
                 .padding([.leading], 12.0)
                 // 1-(3). Spacer
                 Spacer()
                 // 1-(4). お気に入りボタン
-                Button(action: {
-                    // TODO: ボタン押下時の処理
-                }, label: {
+                Button(action: tapButtonAction, label: {
                     Image(systemName: "heart")
                 })
                 .foregroundColor(cellStockActiveButtonColor)
@@ -116,9 +153,9 @@ struct ArchiveCellView: View {
             }
             // 2. 概要テキストの情報表示部分
             HStack(spacing: 0.0) {
-                Text("説明文が入ります。")
-                    .font(cellDateFont)
-                    .foregroundColor(cellDateColor)
+                Text(viewObject.introduction)
+                    .font(cellIntroductionFont)
+                    .foregroundColor(cellIntroductionColor)
                     .padding([.vertical], 6.0)
 
             }
@@ -131,10 +168,67 @@ struct ArchiveCellView: View {
     }
 }
 
+// MARK: - ViewObject
+
+struct ArchiveCellViewObject: Identifiable {
+    let id: Int
+    let photoUrl: URL?
+    let category: String
+    let dishName: String
+    let shopName: String
+    let introduction: String
+}
+
 // MARK: - Preview
 
 struct ArchiveSearchView_Previews: PreviewProvider {
     static var previews: some View {
-        ArchiveSearchView()
+
+        // MEMO: Preview表示用にレスポンスを想定したJsonを読み込んで画面に表示させる
+        let achiveSceneResponse = getArchiveSceneResponse()
+        let archiveCellViewObjects = achiveSceneResponse.result
+            .map {
+                ArchiveCellViewObject(
+                    id: $0.id,
+                    photoUrl: URL(string: $0.photoUrl) ?? nil,
+                    category: $0.category,
+                    dishName: $0.dishName,
+                    shopName: $0.shopName,
+                    introduction: $0.introduction
+                )
+            }
+
+        // Preview: ArchiveSearchView
+        ArchiveSearchView(archiveCellViewObjects: archiveCellViewObjects)
+            .previewDisplayName("ArchiveSearchView Preview")
+
+        // MEMO: 部品1つあたりを表示するためのViewObject
+        let viewObject = ArchiveCellViewObject(
+            id: 1,
+            photoUrl: URL(string: "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image1.jpg") ?? nil,
+            category: "エスニック料理",
+            dishName: "ベトナム風生春巻き",
+            shopName: "美味しいベトナム料理のお店",
+            introduction: "エスニック料理の定番メニュー！ちょっと甘酸っぱいピリ辛のソースとの相性が抜群です。"
+        )
+
+        // Preview: ArchiveCellView
+        ArchiveCellView(viewObject: viewObject, tapButtonAction: {})
+            .previewDisplayName("ArchiveCellView Preview")
+    }
+
+    // MARK: - Private Static Function
+
+    private static func getArchiveSceneResponse() -> ArchiveSceneResponse {
+        guard let path = Bundle.main.path(forResource: "achive_images", ofType: "json") else {
+            fatalError()
+        }
+        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
+            fatalError()
+        }
+        guard let achiveSceneResponse = try? JSONDecoder().decode(ArchiveSceneResponse.self, from: data) else {
+            fatalError()
+        }
+        return achiveSceneResponse
     }
 }
