@@ -36,7 +36,7 @@ struct ArchiveSearchView: View {
             // (2) 一覧データ表示部分
             ScrollView {
                 ForEach(archiveCellViewObjects) { viewObject in
-                    ArchiveCellView(viewObject: viewObject, tapButtonAction: {
+                    ArchiveCellView(viewObject: viewObject, targetKeyword: "", tapButtonAction: {
                         print("想定: Tap処理を実行した際に何らかの処理を実行する (ID:\(viewObject.id))")
                     })
                 }
@@ -103,14 +103,29 @@ struct ArchiveCellView: View {
         return Color.pink
     }
 
+    private var highlightTextColor: Color {
+        return Color.primary
+    }
+
+    private var highlightTextBackgroundColor: Color {
+        return Color.yellow
+    }
+
     private var viewObject: ArchiveCellViewObject
+
+    private var targetKeyword: String = ""
 
     private var tapButtonAction: ArchiveCellView.TapButtonAction
 
     // MARK: - Initializer
     
-    init(viewObject: ArchiveCellViewObject, tapButtonAction: @escaping ArchiveCellView.TapButtonAction) {
+    init(
+        viewObject: ArchiveCellViewObject,
+        targetKeyword: String,
+        tapButtonAction: @escaping ArchiveCellView.TapButtonAction
+    ) {
         self.viewObject = viewObject
+        self.targetKeyword = targetKeyword
         self.tapButtonAction = tapButtonAction
     }
 
@@ -133,19 +148,19 @@ struct ArchiveCellView: View {
                 // 1-(2). プロフィール用基本情報表示
                 VStack(alignment: .leading) {
                     // 1-(2)-①. 料理名表示
-                    Text(viewObject.dishName)
+                    Text(getAttributeBy(taregtText: viewObject.dishName, targetKeyword: targetKeyword))
                         .font(cellTitleFont)
                         .foregroundColor(cellTitleColor)
                     // 1-(2)-②. 料理カテゴリー表示
                     Group {
-                        Text("Category: ") + Text(viewObject.category)
+                        Text("Category: ") + Text(getAttributeBy(taregtText: viewObject.category, targetKeyword: targetKeyword))
                     }
                     .font(cellCategoryFont)
                     .foregroundColor(cellCategoryColor)
                     .padding([.top], -8.0)
                     // 1-(2)-③. お店名表示
                     Group {
-                        Text("Shop: ") + Text(viewObject.shopName)
+                        Text("Shop: ") + Text(getAttributeBy(taregtText: viewObject.shopName, targetKeyword: targetKeyword))
                     }
                     .font(cellShopNameFont)
                     .foregroundColor(cellShopNameColor)
@@ -164,7 +179,7 @@ struct ArchiveCellView: View {
             }
             // 2. 概要テキストの情報表示部分
             HStack(spacing: 0.0) {
-                Text(viewObject.introduction)
+                Text(getAttributeBy(taregtText: viewObject.introduction, targetKeyword: targetKeyword))
                     .font(cellIntroductionFont)
                     .foregroundColor(cellIntroductionColor)
                     .padding([.vertical], 6.0)
@@ -176,6 +191,19 @@ struct ArchiveCellView: View {
         }
         .padding([.top], 4.0)
         .padding([.leading, .trailing], 12.0)
+    }
+
+    // MARK: - Private Function
+
+    // 対象キーワードが含まれている文字列に対してテキストハイライトを指定する（json-serverの仕様に則った検索）
+    // 参考: https://ios-docs.dev/attributedstring/
+    private func getAttributeBy(taregtText: String, targetKeyword: String) -> AttributedString {
+        var attributedString = AttributedString(taregtText)
+        if let range = attributedString.range(of: targetKeyword) {
+            attributedString[range].foregroundColor = highlightTextColor
+            attributedString[range].backgroundColor = highlightTextBackgroundColor
+        }
+        return attributedString
     }
 }
 
@@ -224,7 +252,7 @@ struct ArchiveSearchView_Previews: PreviewProvider {
         )
 
         // Preview: ArchiveCellView
-        ArchiveCellView(viewObject: viewObject, tapButtonAction: {})
+        ArchiveCellView(viewObject: viewObject, targetKeyword: "ベトナム", tapButtonAction: {})
             .previewDisplayName("ArchiveCellView Preview")
     }
 
