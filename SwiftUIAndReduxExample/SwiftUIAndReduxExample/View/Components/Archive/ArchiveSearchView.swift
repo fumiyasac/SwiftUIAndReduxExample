@@ -253,7 +253,11 @@ struct ArchiveSearchView_Previews: PreviewProvider {
 
         // Preview: ArchiveCellView
         ArchiveCellView(viewObject: viewObject, targetKeyword: "ベトナム", tapButtonAction: {})
-            .previewDisplayName("ArchiveCellView Preview")
+            .previewDisplayName("ArchiveCellView (with Search Keyword) Preview")
+
+        // Preview: ArchiveCellView
+        ArchiveCellView(viewObject: viewObject, targetKeyword: "", tapButtonAction: {})
+            .previewDisplayName("ArchiveCellView (without Search Keyword) Preview")
     }
 
     // MARK: - Private Static Function
