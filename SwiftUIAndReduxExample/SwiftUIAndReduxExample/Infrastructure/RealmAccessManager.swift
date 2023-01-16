@@ -66,6 +66,8 @@ extension RealmAccessManager: RealmAccessProtocol {
 
     func getAllStockArchiveRealmEntities() -> [StockArchiveRealmEntity] {
         if let stockArchiveRealmEntities = getAllObjects(StockArchiveRealmEntity.self) {
+            // MEMO: Results<T>をArrayに変換をしたい場合には下記の様な形とする
+            // 参考: https://stackoverflow.com/questions/31100011/realmswift-convert-results-to-swift-array
             return Array(stockArchiveRealmEntities)
         } else {
             return []
