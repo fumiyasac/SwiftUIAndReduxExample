@@ -8,6 +8,20 @@
 import Foundation
 import RealmSwift
 
+// MARK: - Protocol
+
+protocol RealmAccessProtocol {
+
+    // StockArchiveRealmEntityオブジェクトの一覧を取得する
+    func getAllStockArchiveRealmEntities() -> [StockArchiveRealmEntity]
+
+    // 新規にStockArchiveRealmEntityオブジェクトを追加する
+    func saveStockArchiveRealmEntity(_ stockArchiveRealmEntity: StockArchiveRealmEntity)
+
+    // 既存のStockArchiveRealmEntityオブジェクトを削除する
+    func deleteStockArchiveRealmEntity(_ stockArchiveRealmEntity: StockArchiveRealmEntity)
+}
+
 final class RealmAccessManager {
 
     // MEMO: 下記の様なイメージでRealmを利用するにあたって基本的な操作となる部分を定義する
@@ -43,5 +57,26 @@ final class RealmAccessManager {
         try! realm.write() {
             realm.delete(realmObject)
         }
+    }
+}
+
+// MARK: - RealmAccessProtocol
+
+extension RealmAccessManager: RealmAccessProtocol {
+
+    func getAllStockArchiveRealmEntities() -> [StockArchiveRealmEntity] {
+        if let stockArchiveRealmEntities = getAllObjects(StockArchiveRealmEntity.self) {
+            return Array(stockArchiveRealmEntities)
+        } else {
+            return []
+        }
+    }
+    
+    func saveStockArchiveRealmEntity(_ stockArchiveRealmEntity: StockArchiveRealmEntity) {
+        save(stockArchiveRealmEntity)
+    }
+    
+    func deleteStockArchiveRealmEntity(_ stockArchiveRealmEntity: StockArchiveRealmEntity) {
+        delete(stockArchiveRealmEntity)
     }
 }

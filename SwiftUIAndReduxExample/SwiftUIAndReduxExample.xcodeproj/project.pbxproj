@@ -51,7 +51,6 @@
 		DE1833D7291FAB6700E3E885 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DE1833D6291FAB6700E3E885 /* RealmSwift */; };
 		DE1833D9291FABCD00E3E885 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1833D8291FABCD00E3E885 /* UserDefaultManager.swift */; };
 		DE1833DC29210BF600E3E885 /* ApplicationStatusLocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1833DB29210BF600E3E885 /* ApplicationStatusLocalStore.swift */; };
-		DE1833E129210DB700E3E885 /* FavoriteRealmEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1833E029210DB700E3E885 /* FavoriteRealmEntity.swift */; };
 		DE1833EC292DC86800E3E885 /* CampaignBannerCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1833EB292DC86800E3E885 /* CampaignBannerCarouselView.swift */; };
 		DE1834162932174900E3E885 /* campaign_banners.json in Resources */ = {isa = PBXBuildFile; fileRef = DE1834152932174900E3E885 /* campaign_banners.json */; };
 		DE183418293223E600E3E885 /* recent_news.json in Resources */ = {isa = PBXBuildFile; fileRef = DE183417293223E600E3E885 /* recent_news.json */; };
@@ -83,6 +82,7 @@
 		DEAACE8D296ECE0000F436F5 /* achive_images.json in Resources */ = {isa = PBXBuildFile; fileRef = DEAACE8C296ECE0000F436F5 /* achive_images.json */; };
 		DEAACE8F296EFC0B00F436F5 /* ArchiveResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAACE8E296EFC0B00F436F5 /* ArchiveResponse.swift */; };
 		DEAACE92296EFC3400F436F5 /* ArchiveSceneResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAACE91296EFC3400F436F5 /* ArchiveSceneResponse.swift */; };
+		DEAACE94297595E200F436F5 /* StockArchiveRealmEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAACE93297595E200F436F5 /* StockArchiveRealmEntity.swift */; };
 		DED73F8328F451DA00A7F811 /* CollectionViewPagingLayout in Frameworks */ = {isa = PBXBuildFile; productRef = DED73F8228F451DA00A7F811 /* CollectionViewPagingLayout */; };
 		DEDA9CCE27B6B5190067578E /* ContentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDA9CCD27B6B5190067578E /* ContentRouter.swift */; };
 		DEE257C6271F1E6500751B67 /* APIClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE257C5271F1E6500751B67 /* APIClientManager.swift */; };
@@ -153,7 +153,6 @@
 		DE1833D1291FAA3C00E3E885 /* RealmAccessManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmAccessManager.swift; sourceTree = "<group>"; };
 		DE1833D8291FABCD00E3E885 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		DE1833DB29210BF600E3E885 /* ApplicationStatusLocalStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationStatusLocalStore.swift; sourceTree = "<group>"; };
-		DE1833E029210DB700E3E885 /* FavoriteRealmEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRealmEntity.swift; sourceTree = "<group>"; };
 		DE1833EB292DC86800E3E885 /* CampaignBannerCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignBannerCarouselView.swift; sourceTree = "<group>"; };
 		DE1834152932174900E3E885 /* campaign_banners.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = campaign_banners.json; sourceTree = "<group>"; };
 		DE183417293223E600E3E885 /* recent_news.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recent_news.json; sourceTree = "<group>"; };
@@ -183,6 +182,7 @@
 		DEAACE8C296ECE0000F436F5 /* achive_images.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = achive_images.json; sourceTree = "<group>"; };
 		DEAACE8E296EFC0B00F436F5 /* ArchiveResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveResponse.swift; sourceTree = "<group>"; };
 		DEAACE91296EFC3400F436F5 /* ArchiveSceneResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveSceneResponse.swift; sourceTree = "<group>"; };
+		DEAACE93297595E200F436F5 /* StockArchiveRealmEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockArchiveRealmEntity.swift; sourceTree = "<group>"; };
 		DEDA9CCD27B6B5190067578E /* ContentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentRouter.swift; sourceTree = "<group>"; };
 		DEE257C5271F1E6500751B67 /* APIClientManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientManager.swift; sourceTree = "<group>"; };
 		DEE9C6F226E8308700190505 /* SwiftUIAndReduxExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIAndReduxExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -441,7 +441,7 @@
 		DE1833DF29210D3C00E3E885 /* RealmObject */ = {
 			isa = PBXGroup;
 			children = (
-				DE1833E029210DB700E3E885 /* FavoriteRealmEntity.swift */,
+				DEAACE93297595E200F436F5 /* StockArchiveRealmEntity.swift */,
 			);
 			path = RealmObject;
 			sourceTree = "<group>";
@@ -808,6 +808,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEAACE94297595E200F436F5 /* StockArchiveRealmEntity.swift in Sources */,
 				DEAACE8B296D941F00F436F5 /* LoadingIndicatorViewRepresentable.swift in Sources */,
 				DE1833D9291FABCD00E3E885 /* UserDefaultManager.swift in Sources */,
 				DE03CFE7295F10C10054BCF1 /* ProfilePersonalView.swift in Sources */,
@@ -870,7 +871,6 @@
 				DE1833B7291DA3A000E3E885 /* RecentNewsEntity.swift in Sources */,
 				DEDA9CCE27B6B5190067578E /* ContentRouter.swift in Sources */,
 				DE03CFED29601D640054BCF1 /* ProfileSelfIntroductionView.swift in Sources */,
-				DE1833E129210DB700E3E885 /* FavoriteRealmEntity.swift in Sources */,
 				DE0BFBBE271B16E300FC0F32 /* ArchiveScreenView.swift in Sources */,
 				DE1833CF291F972900E3E885 /* HomeActions.swift in Sources */,
 				DE03CFE9295F118C0054BCF1 /* ProfileCommonSectionView.swift in Sources */,

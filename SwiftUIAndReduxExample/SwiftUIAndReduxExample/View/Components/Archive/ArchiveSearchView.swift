@@ -172,6 +172,7 @@ struct ArchiveCellView: View {
                 // 1-(4). お気に入りボタン
                 Button(action: tapButtonAction, label: {
                     Image(systemName: "heart")
+                    // TODO: Realm内に登録されている場合には"heart.fill"を適用する
                 })
                 .foregroundColor(cellStockActiveButtonColor)
                 .buttonStyle(PlainButtonStyle())
