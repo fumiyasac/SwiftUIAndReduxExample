@@ -64,6 +64,7 @@ final class RealmAccessManager {
 
 extension RealmAccessManager: RealmAccessProtocol {
 
+    // StockしたArchiveデータの一覧を取得する
     func getAllStockArchiveRealmEntities() -> [StockArchiveRealmEntity] {
         if let stockArchiveRealmEntities = getAllObjects(StockArchiveRealmEntity.self) {
             // MEMO: Results<T>をArrayに変換をしたい場合には下記の様な形とする
@@ -73,11 +74,13 @@ extension RealmAccessManager: RealmAccessProtocol {
             return []
         }
     }
-    
+
+    // 該当するEntityをRealmへ追加する
     func saveStockArchiveRealmEntity(_ stockArchiveRealmEntity: StockArchiveRealmEntity) {
         save(stockArchiveRealmEntity)
     }
-    
+
+    // 該当するEntityをRealmから削除する
     func deleteStockArchiveRealmEntity(_ stockArchiveRealmEntity: StockArchiveRealmEntity) {
         delete(stockArchiveRealmEntity)
     }
