@@ -8,7 +8,7 @@
 import Foundation
 
 // MEMO: キャンペーンバナー一覧表示用のAPIレスポンス定義
-struct CampaignBannersResponse: HomeResponse, Decodable, Equatable {
+struct CampaignBannersResponse: Decodable, Equatable {
     
     let result: [CampaignBannerEntity]
 

@@ -8,7 +8,7 @@
 import Foundation
 
 // MEMO: 最新ニュース一覧表示用のAPIレスポンス定義
-struct RecentNewsResponse: HomeResponse, Decodable, Equatable {
+struct RecentNewsResponse: Decodable, Equatable {
 
     let result: [RecentNewsEntity]
 

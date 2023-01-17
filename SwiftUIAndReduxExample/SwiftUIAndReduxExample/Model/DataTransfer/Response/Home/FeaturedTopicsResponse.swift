@@ -8,7 +8,7 @@
 import Foundation
 
 // MEMO: 特集コンテンツ一覧表示用のAPIレスポンス定義
-struct FeaturedTopicsResponse: HomeResponse, Decodable, Equatable {
+struct FeaturedTopicsResponse: Decodable, Equatable {
 
     let result: [FeaturedTopicEntity]
 
