@@ -20,6 +20,7 @@ final class HomeRepositoryImpl: HomeRepository {
     func getHomeResponses() async throws -> [HomeResponse] {
         var responses: [HomeResponse] = []
         // 👉 エンドポイントの並び順を担保しながらの並列処理を実行する
+        // 参考: https://zenn.dev/akkyie/articles/swift-concurrency#%E3%82%BF%E3%82%B9%E3%82%AF%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97-(task-group)
         try await withThrowingTaskGroup(of: HomeResponse.self, body: { group in
             group.addTask {
                 return try await ApiClientManager.shared.getCampaignBanners()
