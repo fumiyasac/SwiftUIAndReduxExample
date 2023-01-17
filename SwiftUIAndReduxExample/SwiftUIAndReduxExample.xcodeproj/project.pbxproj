@@ -42,7 +42,6 @@
 		DE1833C3291DAF8100E3E885 /* TrendArticleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1833C2291DAF8100E3E885 /* TrendArticleResponse.swift */; };
 		DE1833C5291DB41F00E3E885 /* PickupPhotoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1833C4291DB41F00E3E885 /* PickupPhotoEntity.swift */; };
 		DE1833C7291DB70D00E3E885 /* PickupPhotoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1833C6291DB70D00E3E885 /* PickupPhotoResponse.swift */; };
-		DE1833C9291DB77800E3E885 /* HomeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1833C8291DB77800E3E885 /* HomeResponse.swift */; };
 		DE1833CB291F910200E3E885 /* HomeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1833CA291F910200E3E885 /* HomeState.swift */; };
 		DE1833CD291F911000E3E885 /* HomeReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1833CC291F911000E3E885 /* HomeReducer.swift */; };
 		DE1833CF291F972900E3E885 /* HomeActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1833CE291F972900E3E885 /* HomeActions.swift */; };
@@ -83,6 +82,7 @@
 		DEAACE8F296EFC0B00F436F5 /* ArchiveResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAACE8E296EFC0B00F436F5 /* ArchiveResponse.swift */; };
 		DEAACE92296EFC3400F436F5 /* ArchiveSceneResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAACE91296EFC3400F436F5 /* ArchiveSceneResponse.swift */; };
 		DEAACE94297595E200F436F5 /* StockArchiveRealmEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAACE93297595E200F436F5 /* StockArchiveRealmEntity.swift */; };
+		DEAACE9B2977068100F436F5 /* CampaignBannersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAACE9A2977068100F436F5 /* CampaignBannersRepository.swift */; };
 		DED73F8328F451DA00A7F811 /* CollectionViewPagingLayout in Frameworks */ = {isa = PBXBuildFile; productRef = DED73F8228F451DA00A7F811 /* CollectionViewPagingLayout */; };
 		DEDA9CCE27B6B5190067578E /* ContentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDA9CCD27B6B5190067578E /* ContentRouter.swift */; };
 		DEE257C6271F1E6500751B67 /* APIClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE257C5271F1E6500751B67 /* APIClientManager.swift */; };
@@ -146,7 +146,6 @@
 		DE1833C2291DAF8100E3E885 /* TrendArticleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendArticleResponse.swift; sourceTree = "<group>"; };
 		DE1833C4291DB41F00E3E885 /* PickupPhotoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupPhotoEntity.swift; sourceTree = "<group>"; };
 		DE1833C6291DB70D00E3E885 /* PickupPhotoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupPhotoResponse.swift; sourceTree = "<group>"; };
-		DE1833C8291DB77800E3E885 /* HomeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeResponse.swift; sourceTree = "<group>"; };
 		DE1833CA291F910200E3E885 /* HomeState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeState.swift; sourceTree = "<group>"; };
 		DE1833CC291F911000E3E885 /* HomeReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeReducer.swift; sourceTree = "<group>"; };
 		DE1833CE291F972900E3E885 /* HomeActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeActions.swift; sourceTree = "<group>"; };
@@ -183,6 +182,7 @@
 		DEAACE8E296EFC0B00F436F5 /* ArchiveResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveResponse.swift; sourceTree = "<group>"; };
 		DEAACE91296EFC3400F436F5 /* ArchiveSceneResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveSceneResponse.swift; sourceTree = "<group>"; };
 		DEAACE93297595E200F436F5 /* StockArchiveRealmEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockArchiveRealmEntity.swift; sourceTree = "<group>"; };
+		DEAACE9A2977068100F436F5 /* CampaignBannersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignBannersRepository.swift; sourceTree = "<group>"; };
 		DEDA9CCD27B6B5190067578E /* ContentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentRouter.swift; sourceTree = "<group>"; };
 		DEE257C5271F1E6500751B67 /* APIClientManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientManager.swift; sourceTree = "<group>"; };
 		DEE9C6F226E8308700190505 /* SwiftUIAndReduxExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIAndReduxExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -370,6 +370,7 @@
 		DE1833B3291D9DD500E3E885 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				DEAACE9A2977068100F436F5 /* CampaignBannersRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -386,7 +387,6 @@
 			isa = PBXGroup;
 			children = (
 				DEAACE8E296EFC0B00F436F5 /* ArchiveResponse.swift */,
-				DE1833C8291DB77800E3E885 /* HomeResponse.swift */,
 				DE27BFAA29512D1600CF96AC /* FavoriteResponse.swift */,
 				DEAACE90296EFC1800F436F5 /* Archive */,
 				DE1833B8291DA7C300E3E885 /* Home */,
@@ -815,6 +815,7 @@
 				DE03D0002962B6210054BCF1 /* ProfileInformationAnnouncementView.swift in Sources */,
 				DE1833D2291FAA3C00E3E885 /* RealmAccessManager.swift in Sources */,
 				DE0BFBB7271B080900FC0F32 /* UIColorExtension.swift in Sources */,
+				DEAACE9B2977068100F436F5 /* CampaignBannersRepository.swift in Sources */,
 				DE27BFAE29512D6200CF96AC /* FavoriteSceneResponse.swift in Sources */,
 				DE0BFBC0271B16FD00FC0F32 /* FavoriteScreenView.swift in Sources */,
 				DE03D00A2962D2CA0054BCF1 /* ProfileInformationRecentView.swift in Sources */,
@@ -823,7 +824,6 @@
 				DE20986B278B0F35000272B9 /* RatingViewRepresentable.swift in Sources */,
 				DE27BFBC295981D900CF96AC /* ProfileContentsView.swift in Sources */,
 				DE0BFBCA271B21B400FC0F32 /* HomeMiddleware.swift in Sources */,
-				DE1833C9291DB77800E3E885 /* HomeResponse.swift in Sources */,
 				DE03D00C29655DDB0054BCF1 /* ArchiveCategoryView.swift in Sources */,
 				DE27BFC4295D152200CF96AC /* ArchiveSearchView.swift in Sources */,
 				DE0BFBC4271B1EA400FC0F32 /* Store.swift in Sources */,
