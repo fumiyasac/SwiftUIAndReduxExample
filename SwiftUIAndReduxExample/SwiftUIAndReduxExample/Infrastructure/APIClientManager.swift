@@ -68,7 +68,7 @@ final class ApiClientManager {
     // MARK: - Properties
 
     // MEMO: API ServerへのURLに関する情報
-    private static let host = "http://localhost:8080"
+    private static let host = "http://localhost:3000"
 
     // MARK: - Function
 
@@ -183,6 +183,7 @@ final class ApiClientManager {
 extension ApiClientManager: APIClientManagerProtocol {
     
     func getCampaignBanners() async throws -> CampaignBannersResponse {
+        print(EndPoint.campaignBanners.getBaseUrl())
         let result = try await executeAPIRequest(
             endpointUrl: EndPoint.campaignBanners.getBaseUrl(),
             httpMethod: HTTPMethod.GET,
