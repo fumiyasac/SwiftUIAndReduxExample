@@ -92,7 +92,7 @@ final class ApiClientManager {
         // Step1: API Mock Serverへのリクエストを実行する
         let (data, response) = try await executeUrlSession(urlRequest: urlRequest)
         // Step2: 受け取ったResponseを元にハンドリングする
-        let _ = try handleErrorByStatusCode(response: response)
+        let _ = try handleErrorByStatusCode(urlRequest: urlRequest, response: response)
         // Step3: JSONをEntityへMappingする
         return try decodeDataToJson(data: data)
     }
@@ -108,23 +108,24 @@ final class ApiClientManager {
     }
 
     // レスポンスで受け取ったStatusCodeを元にエラーか否かをハンドリングする
-    private func handleErrorByStatusCode(response: URLResponse) throws {
+    private func handleErrorByStatusCode(urlRequest: URLRequest, response: URLResponse) throws {
+        let urlString = String(describing: urlRequest.url?.absoluteString)
         guard let httpResponse = response as? HTTPURLResponse else {
-            throw APIError.error(message: "No http response.")
+            throw APIError.error(message: "No http response (\(urlString)).")
         }
         switch httpResponse.statusCode {
         case 200...399:
             break
         case 400:
-            throw APIError.error(message: "Bad Request.")
+            throw APIError.error(message: "Bad Request (\(urlString)).")
         case 401:
-            throw APIError.error(message: "Unauthorized.")
+            throw APIError.error(message: "Unauthorized (\(urlString)).")
         case 403:
-            throw APIError.error(message: "Forbidden.")
+            throw APIError.error(message: "Forbidden (\(urlString)).")
         case 404:
-            throw APIError.error(message: "Not Found.")
+            throw APIError.error(message: "Not Found (\(urlString)).")
         default:
-            throw APIError.error(message: "Unknown.")
+            throw APIError.error(message: "Unknown (\(urlString)).")
         }
     }
 
@@ -183,7 +184,6 @@ final class ApiClientManager {
 extension ApiClientManager: APIClientManagerProtocol {
     
     func getCampaignBanners() async throws -> CampaignBannersResponse {
-        print(EndPoint.campaignBanners.getBaseUrl())
         let result = try await executeAPIRequest(
             endpointUrl: EndPoint.campaignBanners.getBaseUrl(),
             httpMethod: HTTPMethod.GET,
