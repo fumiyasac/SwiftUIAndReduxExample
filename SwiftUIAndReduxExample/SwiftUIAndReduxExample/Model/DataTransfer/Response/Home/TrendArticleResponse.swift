@@ -8,7 +8,7 @@
 import Foundation
 
 // MEMO: トレンド入り記事一覧表示用のAPIレスポンス定義
-struct TrendArticleResponse: Decodable, Equatable {
+struct TrendArticleResponse: HomeResponse, Decodable, Equatable {
 
     let result: [TrendArticleEntity]
 

@@ -8,7 +8,7 @@
 import Foundation
 
 // MEMO: ピックアップ写真一覧表示用のAPIレスポンス定義
-struct PickupPhotoResponse: Decodable, Equatable {
+struct PickupPhotoResponse: HomeResponse, Decodable, Equatable {
 
     let result: [PickupPhotoEntity]
 
