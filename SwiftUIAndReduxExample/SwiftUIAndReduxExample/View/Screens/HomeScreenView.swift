@@ -58,9 +58,8 @@ struct HomeScreenView: View {
             .navigationTitle("Home")
             .navigationBarTitleDisplayMode(.inline)
             // Debug. APIとの疎通確認（※後程削除する）
-            /*
-            .onAppear {
-                Task { @MainActor in
+            .onFirstAppear {
+                Task {
                     do {
                         let result = try await HomeRepositoryFactory.create().getHomeResponses()
                         print("成功")
@@ -71,7 +70,6 @@ struct HomeScreenView: View {
                     }
                 }
             }
-            */
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }
