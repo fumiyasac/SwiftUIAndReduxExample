@@ -84,6 +84,7 @@
 		DEAACE94297595E200F436F5 /* StockArchiveRealmEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAACE93297595E200F436F5 /* StockArchiveRealmEntity.swift */; };
 		DEAACEA22977448D00F436F5 /* HomeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAACEA12977448D00F436F5 /* HomeResponse.swift */; };
 		DEAACEA4297744D900F436F5 /* HomeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAACEA3297744D900F436F5 /* HomeRepository.swift */; };
+		DEAACEA629797DF800F436F5 /* FirstAppearExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAACEA529797DF800F436F5 /* FirstAppearExtension.swift */; };
 		DED73F8328F451DA00A7F811 /* CollectionViewPagingLayout in Frameworks */ = {isa = PBXBuildFile; productRef = DED73F8228F451DA00A7F811 /* CollectionViewPagingLayout */; };
 		DEDA9CCE27B6B5190067578E /* ContentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDA9CCD27B6B5190067578E /* ContentRouter.swift */; };
 		DEE257C6271F1E6500751B67 /* APIClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE257C5271F1E6500751B67 /* APIClientManager.swift */; };
@@ -185,6 +186,7 @@
 		DEAACE93297595E200F436F5 /* StockArchiveRealmEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockArchiveRealmEntity.swift; sourceTree = "<group>"; };
 		DEAACEA12977448D00F436F5 /* HomeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeResponse.swift; sourceTree = "<group>"; };
 		DEAACEA3297744D900F436F5 /* HomeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepository.swift; sourceTree = "<group>"; };
+		DEAACEA529797DF800F436F5 /* FirstAppearExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstAppearExtension.swift; sourceTree = "<group>"; };
 		DEDA9CCD27B6B5190067578E /* ContentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentRouter.swift; sourceTree = "<group>"; };
 		DEE257C5271F1E6500751B67 /* APIClientManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientManager.swift; sourceTree = "<group>"; };
 		DEE9C6F226E8308700190505 /* SwiftUIAndReduxExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIAndReduxExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -347,6 +349,7 @@
 				DE0BFBB6271B080900FC0F32 /* UIColorExtension.swift */,
 				DE2098682787025D000272B9 /* SwiftUIColorExtension.swift */,
 				DE03D0052962BF840054BCF1 /* StringExtension.swift */,
+				DEAACEA529797DF800F436F5 /* FirstAppearExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -874,6 +877,7 @@
 				DE0BFBC8271B20FA00FC0F32 /* AppReducer.swift in Sources */,
 				DE1833B7291DA3A000E3E885 /* RecentNewsEntity.swift in Sources */,
 				DEDA9CCE27B6B5190067578E /* ContentRouter.swift in Sources */,
+				DEAACEA629797DF800F436F5 /* FirstAppearExtension.swift in Sources */,
 				DE03CFED29601D640054BCF1 /* ProfileSelfIntroductionView.swift in Sources */,
 				DE0BFBBE271B16E300FC0F32 /* ArchiveScreenView.swift in Sources */,
 				DE1833CF291F972900E3E885 /* HomeActions.swift in Sources */,
