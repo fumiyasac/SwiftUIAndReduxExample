@@ -832,5 +832,26 @@
 			"shop_name": "鮮魚居酒屋",
 			"introduction": "シンプルだけどいつも食べたくなってしまうビールのお供の定番。"
 		}
-	]
+	],
+	"profile_personal": {
+		"id": 100,
+		"nickname": "謎多き料理人",
+		"created_at": "2022-11-16T07:30:00.000+0000",
+		"avatar_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/profile_avatar_sample.jpg",
+		"background_image_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/profile_background_sample.jpg",
+		"introduction": "普段は東京でイタリアンレストランのシェフをしていますが、その傍らで自宅でも美味しく食べられる本格イタリアンデザート等のプロデュース等も手掛けております。普段は仕事が忙しいのもあって外食が多くなりがちではあるので、ジャンル問わずに幅広く食べ歩くのが趣味です。ただ最近は運動不足もあってちょっと体重が増えかけているので、自分でもヘルシーな食事を心がけたり、お酒を控えめにしています。よろしくお願いします。",
+		"histories": {
+			"profile_view_count": 6083,
+			"article_post_count": 37,
+			"total_page_view_count": 103570,
+			"total_available_points": 4000,
+			"total_use_coupon_count": 24,
+			"total_visit_shop_count": 58
+		},
+		"social_media": {
+			"twitter_url": "https://twitter.com/",
+			"facebook_url": "https://facebook.com/",
+			"instagram_url": "https://instagram.com/"		
+		}
+	}
 }
