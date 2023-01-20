@@ -237,9 +237,9 @@ struct TrendArticlesGridView_Previews: PreviewProvider {
         guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
             fatalError()
         }
-        guard let trendArticleResponse = try? JSONDecoder().decode(TrendArticleResponse.self, from: data) else {
+        guard let result = try? JSONDecoder().decode([TrendArticleEntity].self, from: data) else {
             fatalError()
         }
-        return trendArticleResponse
+        return TrendArticleResponse(result: result)
     }
 }

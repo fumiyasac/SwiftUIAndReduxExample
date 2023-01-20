@@ -188,9 +188,9 @@ struct CampaignBannerCarouselView_Previews: PreviewProvider {
         guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
             fatalError()
         }
-        guard let campaignBannersResponse = try? JSONDecoder().decode(CampaignBannersResponse.self, from: data) else {
+        guard let result = try? JSONDecoder().decode([CampaignBannerEntity].self, from: data) else {
             fatalError()
         }
-        return campaignBannersResponse
+        return CampaignBannersResponse(result: result)
     }
 }

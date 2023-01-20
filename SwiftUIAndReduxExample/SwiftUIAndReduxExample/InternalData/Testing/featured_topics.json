@@ -1,76 +1,74 @@
-{
-    "result": [
-        {
-            "id": 1,
-            "featured_topics_id": 90001,
-            "rating": 3.7,
-            "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/featured_topic1.jpg",
-            "title": "ボリューム満点の洋食セット",
-            "caption": "この満足感はそう簡単には味わえないがうまい😆",
-            "published_at": "2022-12-01T07:30:00.000+0000"
-        },
-        {
-            "id": 2,
-            "featured_topics_id": 90002,
-            "rating": 3.4,
-            "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/featured_topic2.jpg",
-            "title": "ランチのお寿司セット",
-            "caption": "こんなに豪華ラインナップなのにこのお値段👀",
-            "published_at": "2022-12-01T07:30:00.000+0000"
-        },
-        {
-            "id": 3,
-            "featured_topics_id": 90003,
-            "rating": 3.9,
-            "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/featured_topic3.jpg",
-            "title": "カキフライ＆焼きはまぐり",
-            "caption": "貝料理の王道が2つ揃って出てくる幸せ😄",
-            "published_at": "2022-12-01T07:30:00.000+0000"
-        },
-        {
-            "id": 4,
-            "featured_topics_id": 90004,
-            "rating": 3.7,
-            "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/featured_topic4.jpg",
-            "title": "洋食の王道ハンバーグ",
-            "caption": "濃厚なデミグラスソースと肉汁のハーモニー👍",
-            "published_at": "2022-12-01T07:30:00.000+0000"
-        },
-        {
-            "id": 5,
-            "featured_topics_id": 90005,
-            "rating": 3.4,
-            "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/featured_topic5.jpg",
-            "title": "おしゃれな巻き寿司",
-            "caption": "海苔ではなくお肉ときゅうりで巻いた変り種",
-            "published_at": "2022-12-01T07:30:00.000+0000"
-        },
-        {
-            "id": 6,
-            "featured_topics_id": 90006,
-            "rating": 3.9,
-            "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/featured_topic6.jpg",
-            "title": "野菜たっぷり焼きカレー",
-            "caption": "ヘルシーな野菜達がカレーと相性抜群😊",
-            "published_at": "2022-12-01T07:30:00.000+0000"
-        },
-        {
-            "id": 7,
-            "featured_topics_id": 90007,
-            "rating": 3.2,
-            "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/featured_topic7.jpg",
-            "title": "うなぎの蒲焼き",
-            "caption": "そのままでもご飯と一緒でも美味しい",
-            "published_at": "2022-12-01T07:30:00.000+0000"
-        },
-        {
-            "id": 8,
-            "featured_topics_id": 90008,
-            "rating": 4.3,
-            "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/featured_topic8.jpg",
-            "title": "黒毛和牛のすき焼き",
-            "caption": "贅沢で脂の上品なお肉を使った逸品",
-            "published_at": "2022-12-01T07:30:00.000+0000"
-        }
-    ]
-}
+[
+    {
+        "id": 1,
+        "featured_topics_id": 90001,
+        "rating": 3.7,
+        "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/featured_topic1.jpg",
+        "title": "ボリューム満点の洋食セット",
+        "caption": "この満足感はそう簡単には味わえないがうまい😆",
+        "published_at": "2022-12-01T07:30:00.000+0000"
+    },
+    {
+        "id": 2,
+        "featured_topics_id": 90002,
+        "rating": 3.4,
+        "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/featured_topic2.jpg",
+        "title": "ランチのお寿司セット",
+        "caption": "こんなに豪華ラインナップなのにこのお値段👀",
+        "published_at": "2022-12-01T07:30:00.000+0000"
+    },
+    {
+        "id": 3,
+        "featured_topics_id": 90003,
+        "rating": 3.9,
+        "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/featured_topic3.jpg",
+        "title": "カキフライ＆焼きはまぐり",
+        "caption": "貝料理の王道が2つ揃って出てくる幸せ😄",
+        "published_at": "2022-12-01T07:30:00.000+0000"
+    },
+    {
+        "id": 4,
+        "featured_topics_id": 90004,
+        "rating": 3.7,
+        "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/featured_topic4.jpg",
+        "title": "洋食の王道ハンバーグ",
+        "caption": "濃厚なデミグラスソースと肉汁のハーモニー👍",
+        "published_at": "2022-12-01T07:30:00.000+0000"
+    },
+    {
+        "id": 5,
+        "featured_topics_id": 90005,
+        "rating": 3.4,
+        "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/featured_topic5.jpg",
+        "title": "おしゃれな巻き寿司",
+        "caption": "海苔ではなくお肉ときゅうりで巻いた変り種",
+        "published_at": "2022-12-01T07:30:00.000+0000"
+    },
+    {
+        "id": 6,
+        "featured_topics_id": 90006,
+        "rating": 3.9,
+        "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/featured_topic6.jpg",
+        "title": "野菜たっぷり焼きカレー",
+        "caption": "ヘルシーな野菜達がカレーと相性抜群😊",
+        "published_at": "2022-12-01T07:30:00.000+0000"
+    },
+    {
+        "id": 7,
+        "featured_topics_id": 90007,
+        "rating": 3.2,
+        "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/featured_topic7.jpg",
+        "title": "うなぎの蒲焼き",
+        "caption": "そのままでもご飯と一緒でも美味しい",
+        "published_at": "2022-12-01T07:30:00.000+0000"
+    },
+    {
+        "id": 8,
+        "featured_topics_id": 90008,
+        "rating": 4.3,
+        "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/featured_topic8.jpg",
+        "title": "黒毛和牛のすき焼き",
+        "caption": "贅沢で脂の上品なお肉を使った逸品",
+        "published_at": "2022-12-01T07:30:00.000+0000"
+    }
+]

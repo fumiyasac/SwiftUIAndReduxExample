@@ -1,52 +1,50 @@
-{
-    "result": [
-        {
-            "id": 1,
-            "banner_contents_id": 1001,
-            "banner_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/campaign_banner1.jpg",
-            "title": "産地直送の「秋の味覚」特集(1)",
-            "caption": "この季節だから食べたくて甘くて美味しいさつまいもの魅力紹介",
-            "announcement_at": "2022-12-01T07:30:00.000+0000"
-        },
-        {
-            "id": 2,
-            "banner_contents_id": 1002,
-            "banner_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/campaign_banner2.jpg",
-            "title": "産地直送の「秋の味覚」特集(2)",
-            "caption": "秋を代表するフルーツといえばコレ!甘くて素敵な柿特集",
-            "announcement_at": "2022-12-01T07:30:00.000+0000"
-        },
-        {
-            "id": 3,
-            "banner_contents_id": 1003,
-            "banner_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/campaign_banner3.jpg",
-            "title": "産地直送の「秋の味覚」特集(3)",
-            "caption": "秋は海の幸を美味しい季節。旬の魚たちを一挙ご紹介",
-            "announcement_at": "2022-12-01T07:30:00.000+0000"
-        },
-        {
-            "id": 4,
-            "banner_contents_id": 1004,
-            "banner_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/campaign_banner4.jpg",
-            "title": "産地直送の「秋の味覚」特集(4)",
-            "caption": "新鮮なお米で炊いたご飯はモノが違う。感動する新米を是非",
-            "announcement_at": "2022-12-01T07:30:00.000+0000"
-        },
-        {
-            "id": 5,
-            "banner_contents_id": 1005,
-            "banner_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/campaign_banner5.jpg",
-            "title": "産地直送の「秋の味覚」特集(5)",
-            "caption": "秋は新しいスイーツが誕生する季節。一味違ったスイーツ集",
-            "announcement_at": "2022-12-01T07:30:00.000+0000"
-        },
-        {
-            "id": 6,
-            "banner_contents_id": 1006,
-            "banner_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/campaign_banner6.jpg",
-            "title": "産地直送の「秋の味覚」特集(6)",
-            "caption": "冷え込む季節の強い味方。自宅でも嬉しいお取り寄せ鍋紹介",
-            "announcement_at": "2022-12-01T07:30:00.000+0000"
-        }
-    ]
-}
+[
+    {
+        "id": 1,
+        "banner_contents_id": 1001,
+        "banner_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/campaign_banner1.jpg",
+        "title": "産地直送の「秋の味覚」特集(1)",
+        "caption": "この季節だから食べたくて甘くて美味しいさつまいもの魅力紹介",
+        "announcement_at": "2022-12-01T07:30:00.000+0000"
+    },
+    {
+        "id": 2,
+        "banner_contents_id": 1002,
+        "banner_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/campaign_banner2.jpg",
+        "title": "産地直送の「秋の味覚」特集(2)",
+        "caption": "秋を代表するフルーツといえばコレ!甘くて素敵な柿特集",
+        "announcement_at": "2022-12-01T07:30:00.000+0000"
+    },
+    {
+        "id": 3,
+        "banner_contents_id": 1003,
+        "banner_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/campaign_banner3.jpg",
+        "title": "産地直送の「秋の味覚」特集(3)",
+        "caption": "秋は海の幸を美味しい季節。旬の魚たちを一挙ご紹介",
+        "announcement_at": "2022-12-01T07:30:00.000+0000"
+    },
+    {
+        "id": 4,
+        "banner_contents_id": 1004,
+        "banner_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/campaign_banner4.jpg",
+        "title": "産地直送の「秋の味覚」特集(4)",
+        "caption": "新鮮なお米で炊いたご飯はモノが違う。感動する新米を是非",
+        "announcement_at": "2022-12-01T07:30:00.000+0000"
+    },
+    {
+        "id": 5,
+        "banner_contents_id": 1005,
+        "banner_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/campaign_banner5.jpg",
+        "title": "産地直送の「秋の味覚」特集(5)",
+        "caption": "秋は新しいスイーツが誕生する季節。一味違ったスイーツ集",
+        "announcement_at": "2022-12-01T07:30:00.000+0000"
+    },
+    {
+        "id": 6,
+        "banner_contents_id": 1006,
+        "banner_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/campaign_banner6.jpg",
+        "title": "産地直送の「秋の味覚」特集(6)",
+        "caption": "冷え込む季節の強い味方。自宅でも嬉しいお取り寄せ鍋紹介",
+        "announcement_at": "2022-12-01T07:30:00.000+0000"
+    }
+]

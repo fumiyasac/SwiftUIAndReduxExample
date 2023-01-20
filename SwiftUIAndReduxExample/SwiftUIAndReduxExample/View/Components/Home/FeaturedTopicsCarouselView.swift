@@ -298,9 +298,9 @@ struct FeaturedTopicsCarouselView_Previews: PreviewProvider {
         guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
             fatalError()
         }
-        guard let featuredTopicsResponse = try? JSONDecoder().decode(FeaturedTopicsResponse.self, from: data) else {
+        guard let result = try? JSONDecoder().decode([FeaturedTopicEntity].self, from: data) else {
             fatalError()
         }
-        return featuredTopicsResponse
+        return FeaturedTopicsResponse(result: result)
     }
 }

@@ -268,9 +268,9 @@ struct PickupPhotosGridView_Previews: PreviewProvider {
         guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
             fatalError()
         }
-        guard let pickupPhotoResponse = try? JSONDecoder().decode(PickupPhotoResponse.self, from: data) else {
+        guard let result = try? JSONDecoder().decode([PickupPhotoEntity].self, from: data) else {
             fatalError()
         }
-        return pickupPhotoResponse
+        return PickupPhotoResponse(result: result)
     }
 }

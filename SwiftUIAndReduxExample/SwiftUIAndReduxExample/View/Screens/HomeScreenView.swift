@@ -101,10 +101,10 @@ extension HomeScreenView {
         guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
             fatalError()
         }
-        guard let campaignBannersResponse = try? JSONDecoder().decode(CampaignBannersResponse.self, from: data) else {
+        guard let result = try? JSONDecoder().decode([CampaignBannerEntity].self, from: data) else {
             fatalError()
         }
-        return campaignBannersResponse
+        return CampaignBannersResponse(result: result)
     }
 
     private func getFeaturedTopicsCarouselViewObjects() -> [FeaturedTopicsCarouselViewObject] {
@@ -130,10 +130,10 @@ extension HomeScreenView {
         guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
             fatalError()
         }
-        guard let featuredTopicsResponse = try? JSONDecoder().decode(FeaturedTopicsResponse.self, from: data) else {
+        guard let result = try? JSONDecoder().decode([FeaturedTopicEntity].self, from: data) else {
             fatalError()
         }
-        return featuredTopicsResponse
+        return FeaturedTopicsResponse(result: result)
     }
 
     private func getRecentNewsCarouselViewObjects() -> [RecentNewsCarouselViewObject] {
@@ -158,10 +158,10 @@ extension HomeScreenView {
         guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
             fatalError()
         }
-        guard let recentNewsResponse = try? JSONDecoder().decode(RecentNewsResponse.self, from: data) else {
+        guard let result = try? JSONDecoder().decode([RecentNewsEntity].self, from: data) else {
             fatalError()
         }
-        return recentNewsResponse
+        return RecentNewsResponse(result: result)
     }
 
     private func getTrendArticlesGridViewObjects() -> [TrendArticlesGridViewObject] {
@@ -186,10 +186,10 @@ extension HomeScreenView {
         guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
             fatalError()
         }
-        guard let trendArticleResponse = try? JSONDecoder().decode(TrendArticleResponse.self, from: data) else {
+        guard let result = try? JSONDecoder().decode([TrendArticleEntity].self, from: data) else {
             fatalError()
         }
-        return trendArticleResponse
+        return TrendArticleResponse(result: result)
     }
 
     private func getPickupPhotosGridViewObjects() -> [PickupPhotosGridViewObject] {
@@ -215,10 +215,10 @@ extension HomeScreenView {
         guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
             fatalError()
         }
-        guard let pickupPhotoResponse = try? JSONDecoder().decode(PickupPhotoResponse.self, from: data) else {
+        guard let result = try? JSONDecoder().decode([PickupPhotoEntity].self, from: data) else {
             fatalError()
         }
-        return pickupPhotoResponse
+        return PickupPhotoResponse(result: result)
     }
 }
 
