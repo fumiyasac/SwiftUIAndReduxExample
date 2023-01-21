@@ -69,6 +69,7 @@
 		DE27BFAE29512D6200CF96AC /* FavoriteSceneResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27BFAD29512D6200CF96AC /* FavoriteSceneResponse.swift */; };
 		DE27BFBC295981D900CF96AC /* ProfileContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27BFBB295981D900CF96AC /* ProfileContentsView.swift */; };
 		DE27BFC4295D152200CF96AC /* ArchiveSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27BFC3295D152200CF96AC /* ArchiveSearchView.swift */; };
+		DE42742B297C355B0003DCE3 /* ProfileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42742A297C355B0003DCE3 /* ProfileRepository.swift */; };
 		DE42E19A29423C52007E462F /* DateLabelFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42E19929423C52007E462F /* DateLabelFormatter.swift */; };
 		DE42E19E2943B02F007E462F /* TrendArticlesGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42E19D2943B02F007E462F /* TrendArticlesGridView.swift */; };
 		DE42E1A02943EF00007E462F /* FeaturedTopicsCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42E19F2943EF00007E462F /* FeaturedTopicsCarouselView.swift */; };
@@ -186,6 +187,7 @@
 		DE27BFAD29512D6200CF96AC /* FavoriteSceneResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSceneResponse.swift; sourceTree = "<group>"; };
 		DE27BFBB295981D900CF96AC /* ProfileContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContentsView.swift; sourceTree = "<group>"; };
 		DE27BFC3295D152200CF96AC /* ArchiveSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveSearchView.swift; sourceTree = "<group>"; };
+		DE42742A297C355B0003DCE3 /* ProfileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRepository.swift; sourceTree = "<group>"; };
 		DE42E19929423C52007E462F /* DateLabelFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateLabelFormatter.swift; sourceTree = "<group>"; };
 		DE42E19D2943B02F007E462F /* TrendArticlesGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendArticlesGridView.swift; sourceTree = "<group>"; };
 		DE42E19F2943EF00007E462F /* FeaturedTopicsCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedTopicsCarouselView.swift; sourceTree = "<group>"; };
@@ -406,6 +408,7 @@
 			children = (
 				DEAACEA3297744D900F436F5 /* HomeRepository.swift */,
 				DEAACEA72979818800F436F5 /* FavioriteRepository.swift */,
+				DE42742A297C355B0003DCE3 /* ProfileRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -909,6 +912,7 @@
 				DE42E19A29423C52007E462F /* DateLabelFormatter.swift in Sources */,
 				DE18341D2932829900E3E885 /* ArchiveSceneEntity.swift in Sources */,
 				DE0BFBC6271B20D200FC0F32 /* AppState.swift in Sources */,
+				DE42742B297C355B0003DCE3 /* ProfileRepository.swift in Sources */,
 				DEAACE89296C5B9300F436F5 /* ArchiveCurrentCountView.swift in Sources */,
 				DE03CFFE2962B6090054BCF1 /* ProfileInformationCommentView.swift in Sources */,
 				DEAACE92296EFC3400F436F5 /* ArchiveSceneResponse.swift in Sources */,

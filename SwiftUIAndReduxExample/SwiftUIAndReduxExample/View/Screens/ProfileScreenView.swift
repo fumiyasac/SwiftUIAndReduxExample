@@ -21,6 +21,19 @@ struct ProfileScreenView: View {
                 // 👉 NavigationBarを隠すか否か際の設定
                 // ※ GeometryReaderを用いたParallax表現時には、NavigationBarで上部が隠れてしまうため、この様な形としています。
                 .navigationBarHidden(true)
+                // Debug. APIとの疎通確認（※後程削除する）
+                .onFirstAppear {
+                    Task {
+                        do {
+                            let result = try await ProfileRepositoryFactory.create().getProfileResponses()
+                            print("成功")
+                            dump(result)
+                        } catch APIError.error(let message) {
+                            print("失敗")
+                            print(message)
+                        }
+                    }
+                }
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }

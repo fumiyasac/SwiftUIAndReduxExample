@@ -38,6 +38,10 @@ protocol APIClientManagerProtocol {
     func getPickupPhotos() async throws -> PickupPhotoResponse
     func getFavoriteScenes() async throws -> FavoriteSceneResponse
     func getAchiveImages(keyword: String, category: String) async throws -> ArchiveSceneResponse
+    func getProfilePersonal() async throws -> ProfilePersonalResponse
+    func getProfileAnnoucement() async throws -> ProfileAnnoucementResponse
+    func getProfileComment() async throws -> ProfileCommentResponse
+    func getProfileRecentFavorite() async throws -> ProfileRecentFavoriteResponse
 }
 
 final class ApiClientManager {
@@ -59,6 +63,10 @@ final class ApiClientManager {
         case pickupPhotos = "pickup_photos"
         case favoriteScenes = "favorite_scenes"
         case achiveImages = "achive_images"
+        case profilePersonal = "profile_personal"
+        case profileAnnouncement = "profile_announcement"
+        case profileComment = "profile_comment"
+        case profileRecentFavorite = "profile_recent_favorite"
 
         func getBaseUrl() -> String {
             return [host, self.rawValue].joined(separator: "/")
@@ -182,7 +190,7 @@ final class ApiClientManager {
 // MARK: - ApiClientManagerProtocol
 
 extension ApiClientManager: APIClientManagerProtocol {
-    
+
     func getCampaignBanners() async throws -> CampaignBannersResponse {
         let result = try await executeAPIRequest(
             endpointUrl: EndPoint.campaignBanners.getBaseUrl(),
@@ -191,7 +199,7 @@ extension ApiClientManager: APIClientManagerProtocol {
         )
         return CampaignBannersResponse(result: result)
     }
-    
+
     func getRecentNews() async throws -> RecentNewsResponse {
         let result = try await executeAPIRequest(
             endpointUrl: EndPoint.recentNews.getBaseUrl(),
@@ -200,7 +208,7 @@ extension ApiClientManager: APIClientManagerProtocol {
         )
         return RecentNewsResponse(result: result)
     }
-    
+
     func getFeaturedTopics() async throws -> FeaturedTopicsResponse {
         let result = try await executeAPIRequest(
             endpointUrl: EndPoint.featuredTopics.getBaseUrl(),
@@ -209,7 +217,7 @@ extension ApiClientManager: APIClientManagerProtocol {
         )
         return FeaturedTopicsResponse(result: result)
     }
-    
+
     func getTrendArticles() async throws -> TrendArticleResponse {
         let result = try await executeAPIRequest(
             endpointUrl: EndPoint.trendArticles.getBaseUrl(),
@@ -246,5 +254,41 @@ extension ApiClientManager: APIClientManagerProtocol {
             responseFormat: [ArchiveSceneEntity].self
         )
         return ArchiveSceneResponse(result: result)
+    }
+
+    func getProfilePersonal() async throws -> ProfilePersonalResponse {
+        let result = try await executeAPIRequest(
+            endpointUrl: EndPoint.profilePersonal.getBaseUrl(),
+            httpMethod: HTTPMethod.GET,
+            responseFormat: ProfilePersonalEntity.self
+        )
+        return ProfilePersonalResponse(result: result)
+    }
+
+    func getProfileAnnoucement() async throws -> ProfileAnnoucementResponse {
+        let result = try await executeAPIRequest(
+            endpointUrl: EndPoint.profileAnnouncement.getBaseUrl(),
+            httpMethod: HTTPMethod.GET,
+            responseFormat: [ProfileAnnoucementEntity].self
+        )
+        return ProfileAnnoucementResponse(result: result)
+    }
+
+    func getProfileComment() async throws -> ProfileCommentResponse {
+        let result = try await executeAPIRequest(
+            endpointUrl: EndPoint.profileComment.getBaseUrl(),
+            httpMethod: HTTPMethod.GET,
+            responseFormat: [ProfileCommentEntity].self
+        )
+        return ProfileCommentResponse(result: result)
+    }
+
+    func getProfileRecentFavorite() async throws -> ProfileRecentFavoriteResponse {
+        let result = try await executeAPIRequest(
+            endpointUrl: EndPoint.profileRecentFavorite.getBaseUrl(),
+            httpMethod: HTTPMethod.GET,
+            responseFormat: [ProfileRecentFavoriteEntity].self
+        )
+        return ProfileRecentFavoriteResponse(result: result)
     }
 }

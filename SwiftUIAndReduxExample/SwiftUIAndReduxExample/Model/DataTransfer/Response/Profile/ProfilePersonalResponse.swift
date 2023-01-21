@@ -10,7 +10,7 @@ import Foundation
 // MEMO: プロフィール表示情報用のAPIレスポンス定義
 struct ProfilePersonalResponse: ProfileResponse, Decodable, Equatable {
 
-    let result: [ProfilePersonalEntity]
+    let result: ProfilePersonalEntity
 
     // MARK: - Enum
 
@@ -20,7 +20,7 @@ struct ProfilePersonalResponse: ProfileResponse, Decodable, Equatable {
 
     // MARK: - Initializer
 
-    init(result: [ProfilePersonalEntity]) {
+    init(result: ProfilePersonalEntity) {
         self.result = result
     }
 
