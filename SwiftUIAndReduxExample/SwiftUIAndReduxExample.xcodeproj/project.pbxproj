@@ -91,6 +91,8 @@
 		DEAACEAF297AFD7A00F436F5 /* profile_recent_favorite.json in Resources */ = {isa = PBXBuildFile; fileRef = DEAACEAC297AFD7A00F436F5 /* profile_recent_favorite.json */; };
 		DEAACEB0297AFD7A00F436F5 /* profile_announcement.json in Resources */ = {isa = PBXBuildFile; fileRef = DEAACEAD297AFD7A00F436F5 /* profile_announcement.json */; };
 		DEAACEB3297BBEC800F436F5 /* ProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAACEB2297BBEC800F436F5 /* ProfileResponse.swift */; };
+		DEAACEB5297BEAE000F436F5 /* ProfilePersonalResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAACEB4297BEAE000F436F5 /* ProfilePersonalResponse.swift */; };
+		DEAACEB8297BEE3200F436F5 /* ProfilePersonalEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAACEB7297BEE3200F436F5 /* ProfilePersonalEntity.swift */; };
 		DED73F8328F451DA00A7F811 /* CollectionViewPagingLayout in Frameworks */ = {isa = PBXBuildFile; productRef = DED73F8228F451DA00A7F811 /* CollectionViewPagingLayout */; };
 		DEDA9CCE27B6B5190067578E /* ContentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDA9CCD27B6B5190067578E /* ContentRouter.swift */; };
 		DEE257C6271F1E6500751B67 /* APIClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE257C5271F1E6500751B67 /* APIClientManager.swift */; };
@@ -199,6 +201,8 @@
 		DEAACEAC297AFD7A00F436F5 /* profile_recent_favorite.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = profile_recent_favorite.json; sourceTree = "<group>"; };
 		DEAACEAD297AFD7A00F436F5 /* profile_announcement.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = profile_announcement.json; sourceTree = "<group>"; };
 		DEAACEB2297BBEC800F436F5 /* ProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileResponse.swift; sourceTree = "<group>"; };
+		DEAACEB4297BEAE000F436F5 /* ProfilePersonalResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePersonalResponse.swift; sourceTree = "<group>"; };
+		DEAACEB7297BEE3200F436F5 /* ProfilePersonalEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePersonalEntity.swift; sourceTree = "<group>"; };
 		DEDA9CCD27B6B5190067578E /* ContentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentRouter.swift; sourceTree = "<group>"; };
 		DEE257C5271F1E6500751B67 /* APIClientManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientManager.swift; sourceTree = "<group>"; };
 		DEE9C6F226E8308700190505 /* SwiftUIAndReduxExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIAndReduxExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -293,6 +297,7 @@
 				DE27BFA729512AF600CF96AC /* Favorite */,
 				DE18341E2932829F00E3E885 /* Archive */,
 				DE1833B9291DA7CE00E3E885 /* Home */,
+				DEAACEB6297BEAF300F436F5 /* Profile */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -591,6 +596,15 @@
 		DEAACEB1297BBE9900F436F5 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				DEAACEB4297BEAE000F436F5 /* ProfilePersonalResponse.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		DEAACEB6297BEAF300F436F5 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				DEAACEB7297BEE3200F436F5 /* ProfilePersonalEntity.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -865,6 +879,7 @@
 				DE0BFBC4271B1EA400FC0F32 /* Store.swift in Sources */,
 				DEE257C6271F1E6500751B67 /* APIClientManager.swift in Sources */,
 				DE03CFF5296155390054BCF1 /* ProfileSocialMediaLinkView.swift in Sources */,
+				DEAACEB5297BEAE000F436F5 /* ProfilePersonalResponse.swift in Sources */,
 				DE527ECA29493FDE009894FA /* FavoriteCommonSectionView.swift in Sources */,
 				DE0BFBBC271B16AB00FC0F32 /* HomeScreenView.swift in Sources */,
 				DE27BFA929512B6B00CF96AC /* FavoriteSceneEntity.swift in Sources */,
@@ -891,6 +906,7 @@
 				DE03CFF92961C4740054BCF1 /* ProfileInformationView.swift in Sources */,
 				DE1833BB291DA7E800E3E885 /* RecentNewsResponse.swift in Sources */,
 				DE03CFFC2962B4D40054BCF1 /* ProfileInformationTabSwitcher.swift in Sources */,
+				DEAACEB8297BEE3200F436F5 /* ProfilePersonalEntity.swift in Sources */,
 				DE527ECC29495DA7009894FA /* FavoriteSwipePagingView.swift in Sources */,
 				DE1833C1291DAD9900E3E885 /* TrendArticleEntity.swift in Sources */,
 				DEAACEA4297744D900F436F5 /* HomeRepository.swift in Sources */,
