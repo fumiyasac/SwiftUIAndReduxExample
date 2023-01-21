@@ -136,7 +136,7 @@ struct CampaignBannerCarouselViewModifier: ViewModifier {
             // https://www.hackingwithswift.com/quick-start/swiftui/how-to-force-one-gesture-to-recognize-before-another-using-highprioritygesture
             .highPriorityGesture(
                 // 👉 minimumDistanceの値を0よりも少し大きな値にしておく（縦方向スクロールのための配慮）
-                DragGesture(minimumDistance: 10)
+                DragGesture(minimumDistance: 5)
                 .onChanged({ value in
                     // 👉 Carousel要素の移動中はStateと連動するdraggingOffset値を更新する
                     draggingOffset = snappedOffset + value.translation.width / 250

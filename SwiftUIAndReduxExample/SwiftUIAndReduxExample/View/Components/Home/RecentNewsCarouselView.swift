@@ -136,7 +136,7 @@ struct RecentNewsCarouselViewModifier: ViewModifier {
             // https://www.hackingwithswift.com/quick-start/swiftui/how-to-make-two-gestures-recognize-at-the-same-time-using-simultaneousgesture
             .simultaneousGesture(
                 // 👉 minimumDistanceの値を0よりも少し大きな値にしておく（縦方向スクロールのための配慮）
-                DragGesture(minimumDistance: 10)
+                DragGesture(minimumDistance: 5)
                 // 👉 Carousel要素の移動中はStateと連動するdraggingOffset値を更新する
                 .onChanged({ event in
                     draggingOffset = event.translation.width
