@@ -9,7 +9,6 @@ import SwiftUI
 import CollectionViewPagingLayout
 
 struct FavoriteScreenView: View {
-
     
     // MARK: - Body
 

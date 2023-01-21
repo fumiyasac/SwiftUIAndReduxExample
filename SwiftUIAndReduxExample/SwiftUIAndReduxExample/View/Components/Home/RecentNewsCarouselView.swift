@@ -258,6 +258,7 @@ struct RecentNewsCellView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .clipped()
+                        .cornerRadius(4.0)
                         .frame(width: 48.0, height: 48.0)
                         .background(
                             RoundedRectangle(cornerRadius: 4.0)

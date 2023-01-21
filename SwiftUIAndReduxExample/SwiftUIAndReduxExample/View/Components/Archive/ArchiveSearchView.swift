@@ -140,6 +140,7 @@ struct ArchiveCellView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .clipped()
+                    .cornerRadius(4.0)
                     .frame(width: 64.0, height: 64.0)
                     .background(
                         RoundedRectangle(cornerRadius: 4.0)
