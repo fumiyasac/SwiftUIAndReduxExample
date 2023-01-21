@@ -298,9 +298,9 @@ struct FavoriteSwipePagingView_Previews: PreviewProvider {
         guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
             fatalError()
         }
-        guard let favoriteSceneResponse = try? JSONDecoder().decode(FavoriteSceneResponse.self, from: data) else {
+        guard let result = try? JSONDecoder().decode([FavoriteSceneEntity].self, from: data) else {
             fatalError()
         }
-        return favoriteSceneResponse
+        return FavoriteSceneResponse(result: result)
     }
 }
