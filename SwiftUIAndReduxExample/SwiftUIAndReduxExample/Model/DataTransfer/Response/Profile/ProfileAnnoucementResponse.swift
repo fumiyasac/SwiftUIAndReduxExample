@@ -1,5 +1,5 @@
 //
-//  ProfilePersonalResponse.swift
+//  ProfileAnnoucementResponse.swift
 //  SwiftUIAndReduxExample
 //
 //  Created by 酒井文也 on 2023/01/21.
@@ -7,10 +7,10 @@
 
 import Foundation
 
-// MEMO: プロフィール表示情報用のAPIレスポンス定義
-struct ProfilePersonalResponse: ProfileResponse, Decodable, Equatable {
+// MEMO: プロフィール画面内の運営からのお知らせ部分のAPIレスポンス定義
+struct ProfileAnnoucementResponse: ProfileResponse, Decodable, Equatable {
 
-    let result: [ProfilePersonalEntity]
+    let result: [ProfileAnnoucementEntity]
 
     // MARK: - Enum
 
@@ -20,7 +20,7 @@ struct ProfilePersonalResponse: ProfileResponse, Decodable, Equatable {
 
     // MARK: - Initializer
 
-    init(result: [ProfilePersonalEntity]) {
+    init(result: [ProfileAnnoucementEntity]) {
         self.result = result
     }
 
@@ -28,7 +28,7 @@ struct ProfilePersonalResponse: ProfileResponse, Decodable, Equatable {
 
     // MEMO: Equatableプロトコルに適合させるための処理
 
-    static func == (lhs: ProfilePersonalResponse, rhs: ProfilePersonalResponse) -> Bool {
+    static func == (lhs: ProfileAnnoucementResponse, rhs: ProfileAnnoucementResponse) -> Bool {
         return lhs.result == rhs.result
     }
 }
