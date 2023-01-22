@@ -9,19 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
 
-    // MARK: - Propety
+    // MARK: - EnvironmentObject
 
-    private let contentRouter = ContentRouter()
+    // 👉 画面全体用のView要素についても同様に.environmentObjectを利用してstoreを適用する
+    @EnvironmentObject var store: Store<AppState>
 
     // MARK: - Body
 
     var body: some View {
-
-        // MEMO: Routerを介して画面を表示させる形にする
-        // 👉 ContentViewを起点とする場合にはContentRouterクラスを定義し、その中に実際の画面生成処理を書く方針としています。
-        // ※ .environmentObjectを利用したStoreオブジェクトの注入はContentRouter内部で実施する
         TabView {
-            contentRouter.routeToHome()
+            HomeScreenView()
+                .environmentObject(store)
                 .tabItem {
                     VStack {
                         Image(systemName: "house.fill")
@@ -29,21 +27,24 @@ struct ContentView: View {
                     }
                 }
                 .tag(0)
-            contentRouter.routeToArchive()
+            ArchiveScreenView()
+                .environmentObject(store)
                 .tabItem {
                     VStack {
                         Image(systemName: "archivebox.fill")
                         Text("Archive")
                     }
                 }.tag(1)
-            contentRouter.routeToFavorite()
+            FavoriteScreenView()
+                .environmentObject(store)
                 .tabItem {
                     VStack {
                         Image(systemName: "bookmark.square.fill")
                         Text("Favorite")
                     }
                 }.tag(2)
-            contentRouter.routeToProfile()
+            ProfileScreenView()
+                .environmentObject(store)
                 .tabItem {
                     VStack {
                         Image(systemName: "person.crop.circle.fill")
@@ -59,6 +60,12 @@ struct ContentView: View {
 
 //struct ContentView_Previews: PreviewProvider {
 //    static var previews: some View {
+//        let store = Store(
+//            reducer: appReducer,
+//            state: AppState(),
+//            middlewares: []
+//        )
 //        ContentView()
+//            .environmentObject(store)
 //    }
 //}

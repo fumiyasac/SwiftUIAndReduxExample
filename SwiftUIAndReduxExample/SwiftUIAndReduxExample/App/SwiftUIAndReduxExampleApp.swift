@@ -16,8 +16,18 @@ struct SwiftUIAndReduxExampleApp: App {
     // MARK: - Body
 
     var body: some Scene {
+        // 👉 このアプリで利用するStoreを初期化する
+        // ※ middlewaresの配列内にAPI通信/Realm/UserDefaultを操作するための関数を追加する
+        // ※ TestCodeやPreview画面ではmiddlewaresの関数にはMockを適用する形にすればさらに良いかもしれない...
+        let store = Store(
+            reducer: appReducer,
+            state: AppState(),
+            middlewares: []
+        )
+        // 👉 ContentViewには.environmentObjectを経由してstoreを適用する
         WindowGroup {
             ContentView()
+                .environmentObject(store)
         }
     }
 }
