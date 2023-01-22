@@ -12,7 +12,7 @@ struct HomeScreenView: View {
     // MARK: - body
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ScrollView {
                 // (1) 季節の特集コンテンツ一覧
                 HomeCommonSectionView(
@@ -71,7 +71,6 @@ struct HomeScreenView: View {
                 }
             }
         }
-        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

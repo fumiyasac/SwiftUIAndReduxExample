@@ -12,12 +12,11 @@ struct ArchiveScreenView: View {
     // MARK: - Body
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ArchiveSearchView(archiveCellViewObjects: getArchiveCellViewObjects())
                 .navigationTitle("Archive")
                 .navigationBarTitleDisplayMode(.inline)
         }
-        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

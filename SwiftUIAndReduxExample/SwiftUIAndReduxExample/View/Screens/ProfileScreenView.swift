@@ -12,7 +12,7 @@ struct ProfileScreenView: View {
     // MARK: - body
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ProfileContentsView()
                 .navigationTitle("Profile")
                 .navigationBarTitleDisplayMode(.inline)
@@ -35,7 +35,6 @@ struct ProfileScreenView: View {
                     }
                 }
         }
-        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
