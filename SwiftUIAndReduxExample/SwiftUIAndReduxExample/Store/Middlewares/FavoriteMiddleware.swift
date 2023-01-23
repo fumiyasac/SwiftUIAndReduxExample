@@ -13,7 +13,7 @@ func favoriteMiddleware() -> Middleware<AppState> {
     return { state, action, dispatch in
         switch action {
             case let action as RequestFavoriteAction:
-            // 👉 RequestFavoriteScenesActionを受け取ったらその後にAPIリクエスト処理を実行する
+            // 👉 RequestFavoriteActionを受け取ったらその後にAPIリクエスト処理を実行する
             requestFavoriteScenes(action: action, dispatch: dispatch)
             default:
                 break
