@@ -17,13 +17,13 @@ struct FavoriteState: ReduxState, Equatable {
     var isError: Bool = false
 
     // MEMO: Favorite画面で利用する情報として必要なEntity情報
-    var FavoriteScenes: [FavoriteSceneEntity] = []
+    var favoriteScenes: [FavoriteSceneEntity] = []
 
     // MARK: - Equatable
 
     static func == (lhs: FavoriteState, rhs: FavoriteState) -> Bool {
         return lhs.isLoading == rhs.isLoading
             && lhs.isError == rhs.isError
-            && lhs.FavoriteScenes == rhs.FavoriteScenes
+            && lhs.favoriteScenes == rhs.favoriteScenes
     }
 }

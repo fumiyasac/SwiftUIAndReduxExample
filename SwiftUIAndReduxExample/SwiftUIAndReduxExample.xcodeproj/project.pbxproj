@@ -72,6 +72,9 @@
 		DE42742B297C355B0003DCE3 /* ProfileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42742A297C355B0003DCE3 /* ProfileRepository.swift */; };
 		DE42742D297DF7F50003DCE3 /* FavoriteState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42742C297DF7F50003DCE3 /* FavoriteState.swift */; };
 		DE42742F297DF8910003DCE3 /* ProfileState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42742E297DF8910003DCE3 /* ProfileState.swift */; };
+		DE427432297EC4650003DCE3 /* FavoriteActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE427431297EC4650003DCE3 /* FavoriteActions.swift */; };
+		DE427434297EC62E0003DCE3 /* FavoriteReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE427433297EC62E0003DCE3 /* FavoriteReducer.swift */; };
+		DE427436297EC6520003DCE3 /* FavoriteMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE427435297EC6520003DCE3 /* FavoriteMiddleware.swift */; };
 		DE42E19A29423C52007E462F /* DateLabelFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42E19929423C52007E462F /* DateLabelFormatter.swift */; };
 		DE42E19E2943B02F007E462F /* TrendArticlesGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42E19D2943B02F007E462F /* TrendArticlesGridView.swift */; };
 		DE42E1A02943EF00007E462F /* FeaturedTopicsCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42E19F2943EF00007E462F /* FeaturedTopicsCarouselView.swift */; };
@@ -191,6 +194,9 @@
 		DE42742A297C355B0003DCE3 /* ProfileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRepository.swift; sourceTree = "<group>"; };
 		DE42742C297DF7F50003DCE3 /* FavoriteState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteState.swift; sourceTree = "<group>"; };
 		DE42742E297DF8910003DCE3 /* ProfileState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileState.swift; sourceTree = "<group>"; };
+		DE427431297EC4650003DCE3 /* FavoriteActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteActions.swift; sourceTree = "<group>"; };
+		DE427433297EC62E0003DCE3 /* FavoriteReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteReducer.swift; sourceTree = "<group>"; };
+		DE427435297EC6520003DCE3 /* FavoriteMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMiddleware.swift; sourceTree = "<group>"; };
 		DE42E19929423C52007E462F /* DateLabelFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateLabelFormatter.swift; sourceTree = "<group>"; };
 		DE42E19D2943B02F007E462F /* TrendArticlesGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendArticlesGridView.swift; sourceTree = "<group>"; };
 		DE42E19F2943EF00007E462F /* FeaturedTopicsCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedTopicsCarouselView.swift; sourceTree = "<group>"; };
@@ -334,6 +340,7 @@
 			isa = PBXGroup;
 			children = (
 				DE0BFBC9271B21B400FC0F32 /* HomeMiddleware.swift */,
+				DE427435297EC6520003DCE3 /* FavoriteMiddleware.swift */,
 			);
 			path = Middlewares;
 			sourceTree = "<group>";
@@ -343,6 +350,7 @@
 			children = (
 				DE0BFBC7271B20FA00FC0F32 /* AppReducer.swift */,
 				DE1833CC291F911000E3E885 /* HomeReducer.swift */,
+				DE427433297EC62E0003DCE3 /* FavoriteReducer.swift */,
 			);
 			path = Reducers;
 			sourceTree = "<group>";
@@ -579,6 +587,13 @@
 			path = Archive;
 			sourceTree = "<group>";
 		};
+		DE427430297EC2C40003DCE3 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		DE527EC829493FB3009894FA /* Favorite */ = {
 			isa = PBXGroup;
 			children = (
@@ -637,6 +652,7 @@
 		DED73F7E28E82C2D00A7F811 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				DE427430297EC2C40003DCE3 /* Common */,
 				DE27BFC2295D14F600CF96AC /* Archive */,
 				DE27BFBA295981BF00CF96AC /* Profile */,
 				DE527EC829493FB3009894FA /* Favorite */,
@@ -649,6 +665,7 @@
 			isa = PBXGroup;
 			children = (
 				DE1833CE291F972900E3E885 /* HomeActions.swift */,
+				DE427431297EC4650003DCE3 /* FavoriteActions.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -889,6 +906,7 @@
 				DE03D00A2962D2CA0054BCF1 /* ProfileInformationRecentView.swift in Sources */,
 				DEAACEBC297BF51700F436F5 /* ProfileCommentEntity.swift in Sources */,
 				DEE9C6F826E8308700190505 /* ContentView.swift in Sources */,
+				DE427436297EC6520003DCE3 /* FavoriteMiddleware.swift in Sources */,
 				DE18342B293FF87400E3E885 /* PickupPhotosGridView.swift in Sources */,
 				DE20986B278B0F35000272B9 /* RatingViewRepresentable.swift in Sources */,
 				DE27BFBC295981D900CF96AC /* ProfileContentsView.swift in Sources */,
@@ -905,6 +923,7 @@
 				DE0BFBBC271B16AB00FC0F32 /* HomeScreenView.swift in Sources */,
 				DE27BFA929512B6B00CF96AC /* FavoriteSceneEntity.swift in Sources */,
 				DE42E19A29423C52007E462F /* DateLabelFormatter.swift in Sources */,
+				DE427432297EC4650003DCE3 /* FavoriteActions.swift in Sources */,
 				DE18341D2932829900E3E885 /* ArchiveSceneEntity.swift in Sources */,
 				DE0BFBC6271B20D200FC0F32 /* AppState.swift in Sources */,
 				DE42742B297C355B0003DCE3 /* ProfileRepository.swift in Sources */,
@@ -943,6 +962,7 @@
 				DEAACEB3297BBEC800F436F5 /* ProfileResponse.swift in Sources */,
 				DE1833CB291F910200E3E885 /* HomeState.swift in Sources */,
 				DE1833EC292DC86800E3E885 /* CampaignBannerCarouselView.swift in Sources */,
+				DE427434297EC62E0003DCE3 /* FavoriteReducer.swift in Sources */,
 				DE18342D29404A5E00E3E885 /* RecentNewsCarouselView.swift in Sources */,
 				DEAACE8F296EFC0B00F436F5 /* ArchiveResponse.swift in Sources */,
 				DE0BFBC2271B170B00FC0F32 /* ProfileScreenView.swift in Sources */,
