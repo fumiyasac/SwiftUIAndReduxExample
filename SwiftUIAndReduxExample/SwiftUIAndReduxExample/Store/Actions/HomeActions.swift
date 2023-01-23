@@ -7,25 +7,17 @@
 
 import Foundation
 
-// MARK: - Struct
+struct RequestHomeAction: Action {}
 
-struct RequestHomeSectionsAction: Action {}
-
-struct ShowHomeSectionsAction: Action {
-
-    // MARK: - typealias
-
-    // MEMO: 受け取ったResponseを格納するためのTypealiasを定義する
-    typealias HomeResponseResults = (
-        campaignBanners: [CampaignBannerEntity],
-        featuredTopics: [FeaturedTopicEntity],
-        recentNews: [RecentNewsEntity],
-        trendArticles: [TrendArticleEntity],
-        pickupPhotos: [PickupPhotoEntity]
-    )
-
-    let homeResponseResults: HomeResponseResults
+struct SuccessHomeAction: Action {
+    let campaignBannerEntities: [CampaignBannerEntity]
+    let recentNewsEntities: [RecentNewsEntity]
+    let featuredTopicEntities: [FeaturedTopicEntity]
+    let trendArticleEntities: [TrendArticleEntity]
+    let pickupPhotoEntities: [PickupPhotoEntity]
 }
+
+struct FailureHomeAction: Action {}
 
 struct ShowGuidanceAction: Action {}
 
