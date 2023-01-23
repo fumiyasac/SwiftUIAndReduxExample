@@ -7,7 +7,10 @@
 
 import Foundation
 
-struct HomeState: ReduxState {
+struct HomeState: ReduxState, Equatable {
+
+    // MARK: - Property
+
     // MEMO: 読み込み中¥状態
     var isLoading: Bool = false
     // MEMO: エラー状態
@@ -20,4 +23,16 @@ struct HomeState: ReduxState {
     var recentNews: [RecentNewsEntity] = []
     var trendArticles: [TrendArticleEntity] = []
     var pickupPhotos: [PickupPhotoEntity] = []
+    
+    // MARK: - Equatable
+
+    static func == (lhs: HomeState, rhs: HomeState) -> Bool {
+        return lhs.isLoading == rhs.isLoading
+        && lhs.isError == rhs.isError
+        && lhs.campaignBanners == rhs.campaignBanners
+        && lhs.featuredTopics == rhs.featuredTopics
+        && lhs.recentNews == rhs.recentNews
+        && lhs.trendArticles == rhs.trendArticles
+        && lhs.pickupPhotos == rhs.pickupPhotos
+    }
 }
