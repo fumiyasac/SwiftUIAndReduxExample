@@ -7,7 +7,10 @@
 
 import Foundation
 
-struct FavoriteState: ReduxState {
+struct FavoriteState: ReduxState, Equatable {
+
+    // MARK: - Property
+
     // MEMO: 読み込み中¥状態
     var isLoading: Bool = false
     // MEMO: エラー状態
@@ -15,4 +18,12 @@ struct FavoriteState: ReduxState {
 
     // MEMO: Favorite画面で利用する情報として必要なEntity情報
     var FavoriteScenes: [FavoriteSceneEntity] = []
+
+    // MARK: - Equatable
+
+    static func == (lhs: FavoriteState, rhs: FavoriteState) -> Bool {
+        return lhs.isLoading == rhs.isLoading
+            && lhs.isError == rhs.isError
+            && lhs.FavoriteScenes == rhs.FavoriteScenes
+    }
 }
