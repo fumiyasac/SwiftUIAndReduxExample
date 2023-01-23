@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct RequestFavoriteScenesAction: Action {}
+struct RequestFavoriteAction: Action {}
 
-struct SuccessFavoriteScenesAction: Action {
+struct SuccessFavoriteAction: Action {
     let favoriteSceneEntities: [FavoriteSceneEntity]
 }
 
-struct FailureFavoriteScenesAction: Action {}
+struct FailureFavoriteAction: Action {}

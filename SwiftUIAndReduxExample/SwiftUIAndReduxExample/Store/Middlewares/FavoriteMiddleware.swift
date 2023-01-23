@@ -12,7 +12,7 @@ import Foundation
 func favoriteMiddleware() -> Middleware<AppState> {
     return { state, action, dispatch in
         switch action {
-            case let action as RequestFavoriteScenesAction:
+            case let action as RequestFavoriteAction:
             // 👉 RequestFavoriteScenesActionを受け取ったらその後にAPIリクエスト処理を実行する
             requestFavoriteScenes(action: action, dispatch: dispatch)
             default:
@@ -21,14 +21,15 @@ func favoriteMiddleware() -> Middleware<AppState> {
     }
 }
 
-// 👉 APIリクエスト処理を実行するためのメソッド（）
-private func requestFavoriteScenes(action: RequestFavoriteScenesAction, dispatch: @escaping Dispatcher) {
+// 👉 APIリクエスト処理を実行するためのメソッド
+// ※テストコードの場合は想定するStubデータを返すものに差し替える想定
+private func requestFavoriteScenes(action: RequestFavoriteAction, dispatch: @escaping Dispatcher) {
     Task { @MainActor in
         do {
             let favoriteResponse = try await FavioriteRepositoryFactory.create().getFavioriteResponse()
             if let favoriteSceneResponse = favoriteResponse as? FavoriteSceneResponse {
                 // お望みのレスポンスが取得できた場合は成功時のActionを発行する
-                dispatch(SuccessFavoriteScenesAction(favoriteSceneEntities: favoriteSceneResponse.result))
+                dispatch(SuccessFavoriteAction(favoriteSceneEntities: favoriteSceneResponse.result))
             } else {
                 // お望みのレスポンスが取得できなかった場合はErrorをthrowして失敗時のActionを発行する
                 throw APIError.error(message: "No FavoriteSceneResponse exists.")
@@ -36,7 +37,7 @@ private func requestFavoriteScenes(action: RequestFavoriteScenesAction, dispatch
             dump(favoriteResponse)
         } catch APIError.error(let message) {
             // 通信エラーないしはお望みのレスポンスが取得できなかった場合は成功時のActionを発行する
-            dispatch(FailureFavoriteScenesAction())
+            dispatch(FailureFavoriteAction())
             print(message)
         }
     }
