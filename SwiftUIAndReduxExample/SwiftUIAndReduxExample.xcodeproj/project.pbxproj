@@ -71,6 +71,7 @@
 		DE27BFC4295D152200CF96AC /* ArchiveSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27BFC3295D152200CF96AC /* ArchiveSearchView.swift */; };
 		DE42742B297C355B0003DCE3 /* ProfileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42742A297C355B0003DCE3 /* ProfileRepository.swift */; };
 		DE42742D297DF7F50003DCE3 /* FavoriteState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42742C297DF7F50003DCE3 /* FavoriteState.swift */; };
+		DE42742F297DF8910003DCE3 /* ProfileState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42742E297DF8910003DCE3 /* ProfileState.swift */; };
 		DE42E19A29423C52007E462F /* DateLabelFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42E19929423C52007E462F /* DateLabelFormatter.swift */; };
 		DE42E19E2943B02F007E462F /* TrendArticlesGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42E19D2943B02F007E462F /* TrendArticlesGridView.swift */; };
 		DE42E1A02943EF00007E462F /* FeaturedTopicsCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42E19F2943EF00007E462F /* FeaturedTopicsCarouselView.swift */; };
@@ -189,6 +190,7 @@
 		DE27BFC3295D152200CF96AC /* ArchiveSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveSearchView.swift; sourceTree = "<group>"; };
 		DE42742A297C355B0003DCE3 /* ProfileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRepository.swift; sourceTree = "<group>"; };
 		DE42742C297DF7F50003DCE3 /* FavoriteState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteState.swift; sourceTree = "<group>"; };
+		DE42742E297DF8910003DCE3 /* ProfileState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileState.swift; sourceTree = "<group>"; };
 		DE42E19929423C52007E462F /* DateLabelFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateLabelFormatter.swift; sourceTree = "<group>"; };
 		DE42E19D2943B02F007E462F /* TrendArticlesGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendArticlesGridView.swift; sourceTree = "<group>"; };
 		DE42E19F2943EF00007E462F /* FeaturedTopicsCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedTopicsCarouselView.swift; sourceTree = "<group>"; };
@@ -351,6 +353,7 @@
 				DE0BFBC5271B20D200FC0F32 /* AppState.swift */,
 				DE1833CA291F910200E3E885 /* HomeState.swift */,
 				DE42742C297DF7F50003DCE3 /* FavoriteState.swift */,
+				DE42742E297DF8910003DCE3 /* ProfileState.swift */,
 			);
 			path = States;
 			sourceTree = "<group>";
@@ -914,6 +917,7 @@
 				DE9F9A1927867A5F00EF32BB /* AppDelegate.swift in Sources */,
 				DE0BFBD9271B38CF00FC0F32 /* CampaignBannerEntity.swift in Sources */,
 				DE0BFBD7271B38BD00FC0F32 /* CampaignBannersResponse.swift in Sources */,
+				DE42742F297DF8910003DCE3 /* ProfileState.swift in Sources */,
 				DEE9C6F626E8308700190505 /* SwiftUIAndReduxExampleApp.swift in Sources */,
 				DE42742D297DF7F50003DCE3 /* FavoriteState.swift in Sources */,
 				DE0BFBBA271B154900FC0F32 /* AppConstants.swift in Sources */,
