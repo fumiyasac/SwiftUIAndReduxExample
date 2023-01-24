@@ -79,6 +79,7 @@
 		DE42747B29801C220003DCE3 /* ProfileReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42747A29801C220003DCE3 /* ProfileReducer.swift */; };
 		DE42747D298021020003DCE3 /* ProfileMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42747C298021020003DCE3 /* ProfileMiddleware.swift */; };
 		DE42747F2980255F0003DCE3 /* ConnectionErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42747E2980255F0003DCE3 /* ConnectionErrorView.swift */; };
+		DE427481298031580003DCE3 /* ExecutingConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE427480298031580003DCE3 /* ExecutingConnectionView.swift */; };
 		DE42E19A29423C52007E462F /* DateLabelFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42E19929423C52007E462F /* DateLabelFormatter.swift */; };
 		DE42E19E2943B02F007E462F /* TrendArticlesGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42E19D2943B02F007E462F /* TrendArticlesGridView.swift */; };
 		DE42E1A02943EF00007E462F /* FeaturedTopicsCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42E19F2943EF00007E462F /* FeaturedTopicsCarouselView.swift */; };
@@ -205,6 +206,7 @@
 		DE42747A29801C220003DCE3 /* ProfileReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileReducer.swift; sourceTree = "<group>"; };
 		DE42747C298021020003DCE3 /* ProfileMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMiddleware.swift; sourceTree = "<group>"; };
 		DE42747E2980255F0003DCE3 /* ConnectionErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionErrorView.swift; sourceTree = "<group>"; };
+		DE427480298031580003DCE3 /* ExecutingConnectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecutingConnectionView.swift; sourceTree = "<group>"; };
 		DE42E19929423C52007E462F /* DateLabelFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateLabelFormatter.swift; sourceTree = "<group>"; };
 		DE42E19D2943B02F007E462F /* TrendArticlesGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendArticlesGridView.swift; sourceTree = "<group>"; };
 		DE42E19F2943EF00007E462F /* FeaturedTopicsCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedTopicsCarouselView.swift; sourceTree = "<group>"; };
@@ -601,6 +603,7 @@
 			isa = PBXGroup;
 			children = (
 				DE42747E2980255F0003DCE3 /* ConnectionErrorView.swift */,
+				DE427480298031580003DCE3 /* ExecutingConnectionView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -960,6 +963,7 @@
 				DE1833BD291DA8BD00E3E885 /* FeaturedTopicEntity.swift in Sources */,
 				DE1833CD291F911000E3E885 /* HomeReducer.swift in Sources */,
 				DE18342F29407DC900E3E885 /* HomeCommonSectionView.swift in Sources */,
+				DE427481298031580003DCE3 /* ExecutingConnectionView.swift in Sources */,
 				DE03CFF92961C4740054BCF1 /* ProfileInformationView.swift in Sources */,
 				DE1833BB291DA7E800E3E885 /* RecentNewsResponse.swift in Sources */,
 				DE03CFFC2962B4D40054BCF1 /* ProfileInformationTabSwitcher.swift in Sources */,
