@@ -75,6 +75,9 @@
 		DE427432297EC4650003DCE3 /* FavoriteActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE427431297EC4650003DCE3 /* FavoriteActions.swift */; };
 		DE427434297EC62E0003DCE3 /* FavoriteReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE427433297EC62E0003DCE3 /* FavoriteReducer.swift */; };
 		DE427436297EC6520003DCE3 /* FavoriteMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE427435297EC6520003DCE3 /* FavoriteMiddleware.swift */; };
+		DE4274792980180C0003DCE3 /* ProfileActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4274782980180C0003DCE3 /* ProfileActions.swift */; };
+		DE42747B29801C220003DCE3 /* ProfileReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42747A29801C220003DCE3 /* ProfileReducer.swift */; };
+		DE42747D298021020003DCE3 /* ProfileMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42747C298021020003DCE3 /* ProfileMiddleware.swift */; };
 		DE42E19A29423C52007E462F /* DateLabelFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42E19929423C52007E462F /* DateLabelFormatter.swift */; };
 		DE42E19E2943B02F007E462F /* TrendArticlesGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42E19D2943B02F007E462F /* TrendArticlesGridView.swift */; };
 		DE42E1A02943EF00007E462F /* FeaturedTopicsCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42E19F2943EF00007E462F /* FeaturedTopicsCarouselView.swift */; };
@@ -197,6 +200,9 @@
 		DE427431297EC4650003DCE3 /* FavoriteActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteActions.swift; sourceTree = "<group>"; };
 		DE427433297EC62E0003DCE3 /* FavoriteReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteReducer.swift; sourceTree = "<group>"; };
 		DE427435297EC6520003DCE3 /* FavoriteMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMiddleware.swift; sourceTree = "<group>"; };
+		DE4274782980180C0003DCE3 /* ProfileActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileActions.swift; sourceTree = "<group>"; };
+		DE42747A29801C220003DCE3 /* ProfileReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileReducer.swift; sourceTree = "<group>"; };
+		DE42747C298021020003DCE3 /* ProfileMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMiddleware.swift; sourceTree = "<group>"; };
 		DE42E19929423C52007E462F /* DateLabelFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateLabelFormatter.swift; sourceTree = "<group>"; };
 		DE42E19D2943B02F007E462F /* TrendArticlesGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendArticlesGridView.swift; sourceTree = "<group>"; };
 		DE42E19F2943EF00007E462F /* FeaturedTopicsCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedTopicsCarouselView.swift; sourceTree = "<group>"; };
@@ -341,6 +347,7 @@
 			children = (
 				DE0BFBC9271B21B400FC0F32 /* HomeMiddleware.swift */,
 				DE427435297EC6520003DCE3 /* FavoriteMiddleware.swift */,
+				DE42747C298021020003DCE3 /* ProfileMiddleware.swift */,
 			);
 			path = Middlewares;
 			sourceTree = "<group>";
@@ -351,6 +358,7 @@
 				DE0BFBC7271B20FA00FC0F32 /* AppReducer.swift */,
 				DE1833CC291F911000E3E885 /* HomeReducer.swift */,
 				DE427433297EC62E0003DCE3 /* FavoriteReducer.swift */,
+				DE42747A29801C220003DCE3 /* ProfileReducer.swift */,
 			);
 			path = Reducers;
 			sourceTree = "<group>";
@@ -666,6 +674,7 @@
 			children = (
 				DE1833CE291F972900E3E885 /* HomeActions.swift */,
 				DE427431297EC4650003DCE3 /* FavoriteActions.swift */,
+				DE4274782980180C0003DCE3 /* ProfileActions.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -922,6 +931,7 @@
 				DEAACEBE297BF70600F436F5 /* ProfileAnnoucementEntity.swift in Sources */,
 				DE0BFBBC271B16AB00FC0F32 /* HomeScreenView.swift in Sources */,
 				DE27BFA929512B6B00CF96AC /* FavoriteSceneEntity.swift in Sources */,
+				DE42747B29801C220003DCE3 /* ProfileReducer.swift in Sources */,
 				DE42E19A29423C52007E462F /* DateLabelFormatter.swift in Sources */,
 				DE427432297EC4650003DCE3 /* FavoriteActions.swift in Sources */,
 				DE18341D2932829900E3E885 /* ArchiveSceneEntity.swift in Sources */,
@@ -930,6 +940,7 @@
 				DEAACE89296C5B9300F436F5 /* ArchiveCurrentCountView.swift in Sources */,
 				DE03CFFE2962B6090054BCF1 /* ProfileInformationCommentView.swift in Sources */,
 				DEAACE92296EFC3400F436F5 /* ArchiveSceneResponse.swift in Sources */,
+				DE4274792980180C0003DCE3 /* ProfileActions.swift in Sources */,
 				DE03CFEF296028900054BCF1 /* ProfilePointsAndHistoryView.swift in Sources */,
 				DE42E19E2943B02F007E462F /* TrendArticlesGridView.swift in Sources */,
 				DE03D00E29655DFA0054BCF1 /* ArchiveFreewordView.swift in Sources */,
@@ -970,6 +981,7 @@
 				DE1833B7291DA3A000E3E885 /* RecentNewsEntity.swift in Sources */,
 				DEAACEC6297BFC5400F436F5 /* ProfileRecentFavoriteResponse.swift in Sources */,
 				DEAACEA629797DF800F436F5 /* FirstAppearExtension.swift in Sources */,
+				DE42747D298021020003DCE3 /* ProfileMiddleware.swift in Sources */,
 				DE03CFED29601D640054BCF1 /* ProfileSelfIntroductionView.swift in Sources */,
 				DE0BFBBE271B16E300FC0F32 /* ArchiveScreenView.swift in Sources */,
 				DE1833CF291F972900E3E885 /* HomeActions.swift in Sources */,
