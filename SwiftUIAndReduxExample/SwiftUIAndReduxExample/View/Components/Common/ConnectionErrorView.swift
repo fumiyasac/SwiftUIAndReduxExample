@@ -51,17 +51,19 @@ struct ConnectionErrorView: View {
 
     var body: some View {
         VStack(spacing: 0.0) {
+            // (1) エラータイトル表示
             Text("エラー: 画面表示に失敗しました")
-
                 .font(connectionErrorTitleFont)
                 .foregroundColor(connectionErrorTitleColor)
                 .padding([.bottom], 16.0)
+            // (2) エラー文言表示
             HStack {
                 Text("ネットワークの接続エラー等の要因でデータを取得することができなかった可能性があります。通信の良い環境等で再度のリクエスト実行をお試し下さい。またそれでも解決しない場合には、運営へのお問い合わせをお手数ですが宜しくお願い致します。")
                     .font(connectionErrorDescriptionFont)
                     .foregroundColor(connectionErrorDescriptionColor)
                     .multilineTextAlignment(.leading)
             }
+            // (3) リクエスト再実行ボタン表示
             HStack {
                 Spacer()
                 Button(action: tapButtonAction, label: {
