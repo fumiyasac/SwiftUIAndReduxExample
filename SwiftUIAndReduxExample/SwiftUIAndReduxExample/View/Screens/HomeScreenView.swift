@@ -64,7 +64,8 @@ struct HomeScreenView: View {
             }
             .navigationTitle("Home")
             .navigationBarTitleDisplayMode(.inline)
-            .onAppear(perform: props.requestHome)
+            // 画面が表示された際に一度だけAPIリクエストを実行する形にしています。
+            .onFirstAppear(props.requestHome)
         }
     }
     
