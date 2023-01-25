@@ -37,6 +37,8 @@ struct ExecutingConnectionView: View {
                 LoadingIndicatorViewRepresentable(isLoading: .constant(true))
             }
             .frame(width: 122.0, height: 88.0)
+            // MEMO: VStack自体に囲み線をつける対応
+            // https://ios-docs.dev/stack-border/
             .overlay(
                 RoundedRectangle(cornerRadius: 8.0)
                     .stroke(executingConnectionBoxColor, lineWidth: 1.0)
