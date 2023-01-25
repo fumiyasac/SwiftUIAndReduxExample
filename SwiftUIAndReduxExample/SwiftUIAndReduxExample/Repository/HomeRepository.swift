@@ -13,6 +13,8 @@ protocol HomeRepository {
     func getHomeResponses() async throws -> [HomeResponse]
 }
 
+// MARK: - HomeRepositoryImpl
+
 final class HomeRepositoryImpl: HomeRepository {
 
     // MARK: - Function
@@ -55,10 +57,95 @@ final class HomeRepositoryImpl: HomeRepository {
     }
 }
 
+final class MockSuccessHomeRepositoryImpl: HomeRepository {
+    func getHomeResponses() async throws -> [HomeResponse] {
+        return [
+            getCampaignBannersResponse(),
+            getRecentNewsResponse(),
+            getFeaturedTopicsResponse(),
+            getTrendArticleResponse(),
+            getPickupPhotoResponse()
+        ]
+    }
+
+    // MARK: - Private Function
+
+    private func getCampaignBannersResponse() -> CampaignBannersResponse {
+        guard let path = Bundle.main.path(forResource: "campaign_banners", ofType: "json") else {
+            fatalError()
+        }
+        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
+            fatalError()
+        }
+        guard let result = try? JSONDecoder().decode([CampaignBannerEntity].self, from: data) else {
+            fatalError()
+        }
+        return CampaignBannersResponse(result: result)
+    }
+
+    private func getRecentNewsResponse() -> RecentNewsResponse {
+        guard let path = Bundle.main.path(forResource: "recent_news", ofType: "json") else {
+            fatalError()
+        }
+        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
+            fatalError()
+        }
+        guard let result = try? JSONDecoder().decode([RecentNewsEntity].self, from: data) else {
+            fatalError()
+        }
+        return RecentNewsResponse(result: result)
+    }
+
+    private func getFeaturedTopicsResponse() -> FeaturedTopicsResponse {
+        guard let path = Bundle.main.path(forResource: "featured_topics", ofType: "json") else {
+            fatalError()
+        }
+        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
+            fatalError()
+        }
+        guard let result = try? JSONDecoder().decode([FeaturedTopicEntity].self, from: data) else {
+            fatalError()
+        }
+        return FeaturedTopicsResponse(result: result)
+    }
+
+    private func getTrendArticleResponse() -> TrendArticleResponse {
+        guard let path = Bundle.main.path(forResource: "trend_articles", ofType: "json") else {
+            fatalError()
+        }
+        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
+            fatalError()
+        }
+        guard let result = try? JSONDecoder().decode([TrendArticleEntity].self, from: data) else {
+            fatalError()
+        }
+        return TrendArticleResponse(result: result)
+    }
+
+    private func getPickupPhotoResponse() -> PickupPhotoResponse {
+        guard let path = Bundle.main.path(forResource: "pickup_photos", ofType: "json") else {
+            fatalError()
+        }
+        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
+            fatalError()
+        }
+        guard let result = try? JSONDecoder().decode([PickupPhotoEntity].self, from: data) else {
+            fatalError()
+        }
+        return PickupPhotoResponse(result: result)
+    }
+}
+
 // MARK: - Factory
 
 struct HomeRepositoryFactory {
     static func create() -> HomeRepository {
         return HomeRepositoryImpl()
+    }
+}
+
+struct MockSuccessHomeRepositoryFactory {
+    static func create() -> HomeRepository {
+        return MockSuccessHomeRepositoryImpl()
     }
 }
