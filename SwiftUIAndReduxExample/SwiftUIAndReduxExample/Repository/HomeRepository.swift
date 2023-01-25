@@ -57,6 +57,8 @@ final class HomeRepositoryImpl: HomeRepository {
     }
 }
 
+// MARK: - MockSuccessHomeRepositoryImpl
+
 final class MockSuccessHomeRepositoryImpl: HomeRepository {
     func getHomeResponses() async throws -> [HomeResponse] {
         return [
