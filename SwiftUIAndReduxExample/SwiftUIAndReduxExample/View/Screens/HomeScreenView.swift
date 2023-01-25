@@ -69,9 +69,7 @@ struct HomeScreenView: View {
     }
     
     // MARK: - Private Function
-    
-    // @ViewBuilderを利用してViewを出し分けています
-    // 参考: https://yanamura.hatenablog.com/entry/2019/09/05/150849
+
     @ViewBuilder
     private func showHomeScreen(props: Props) -> some View {
         // Propsの値を表示用のViewObjectにマッピングし直す
@@ -186,157 +184,31 @@ struct HomeScreenView: View {
     }
 }
 
-// MARK: HomeScreenView Extension
-
-extension HomeScreenView {
-
-    // MARK: - Private Function
-
-    private func getCampaignBannersCarouselViewObjects() -> [CampaignBannerCarouselViewObject] {
-        let campaignBannersResponse = getCampaignBannersResponse()
-        let campaignBannerCarouselViewObjects = campaignBannersResponse.result
-            .map {
-                CampaignBannerCarouselViewObject(
-                    id: $0.id,
-                    bannerContentsId: $0.bannerContentsId,
-                    bannerUrl: URL(string: $0.bannerUrl) ?? nil
-                )
-            }
-        return campaignBannerCarouselViewObjects
-    }
-
-    private func getCampaignBannersResponse() -> CampaignBannersResponse {
-        guard let path = Bundle.main.path(forResource: "campaign_banners", ofType: "json") else {
-            fatalError()
-        }
-        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
-            fatalError()
-        }
-        guard let result = try? JSONDecoder().decode([CampaignBannerEntity].self, from: data) else {
-            fatalError()
-        }
-        return CampaignBannersResponse(result: result)
-    }
-
-    private func getFeaturedTopicsCarouselViewObjects() -> [FeaturedTopicsCarouselViewObject] {
-        let featuredTopicsResponse = getFeaturedTopicsResponse()
-        let featuredTopicsCarouselViewObjects = featuredTopicsResponse.result
-            .map {
-                FeaturedTopicsCarouselViewObject(
-                    id: $0.id,
-                    rating: $0.rating,
-                    thumbnailUrl: URL(string: $0.thumbnailUrl) ?? nil,
-                    title: $0.title,
-                    caption: $0.caption,
-                    publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: $0.publishedAt)
-                )
-            }
-        return featuredTopicsCarouselViewObjects
-    }
-    
-    private func getFeaturedTopicsResponse() -> FeaturedTopicsResponse {
-        guard let path = Bundle.main.path(forResource: "featured_topics", ofType: "json") else {
-            fatalError()
-        }
-        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
-            fatalError()
-        }
-        guard let result = try? JSONDecoder().decode([FeaturedTopicEntity].self, from: data) else {
-            fatalError()
-        }
-        return FeaturedTopicsResponse(result: result)
-    }
-
-    private func getRecentNewsCarouselViewObjects() -> [RecentNewsCarouselViewObject] {
-        let recentNewsResponse = getRecentNewsResponse()
-        let recentNewsCarouselViewObjects = recentNewsResponse.result
-            .map {
-                RecentNewsCarouselViewObject(
-                    id: $0.id,
-                    thumbnailUrl: URL(string: $0.thumbnailUrl) ?? nil,
-                    title: $0.title,
-                    newsCategory: $0.newsCategory,
-                    publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: $0.publishedAt)
-                )
-            }
-        return recentNewsCarouselViewObjects
-    }
-
-    private func getRecentNewsResponse() -> RecentNewsResponse {
-        guard let path = Bundle.main.path(forResource: "recent_news", ofType: "json") else {
-            fatalError()
-        }
-        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
-            fatalError()
-        }
-        guard let result = try? JSONDecoder().decode([RecentNewsEntity].self, from: data) else {
-            fatalError()
-        }
-        return RecentNewsResponse(result: result)
-    }
-
-    private func getTrendArticlesGridViewObjects() -> [TrendArticlesGridViewObject] {
-        let trendArticleResponse = getTrendArticleResponse()
-        let trendArticlesGridViewObjects = trendArticleResponse.result
-            .map {
-                TrendArticlesGridViewObject(
-                    id: $0.id,
-                    thumbnailUrl: URL(string: $0.thumbnailUrl) ?? nil,
-                    title: $0.title,
-                    introduction:$0.introduction,
-                    publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: $0.publishedAt)
-                )
-            }
-        return trendArticlesGridViewObjects
-    }
-
-    private func getTrendArticleResponse() -> TrendArticleResponse {
-        guard let path = Bundle.main.path(forResource: "trend_articles", ofType: "json") else {
-            fatalError()
-        }
-        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
-            fatalError()
-        }
-        guard let result = try? JSONDecoder().decode([TrendArticleEntity].self, from: data) else {
-            fatalError()
-        }
-        return TrendArticleResponse(result: result)
-    }
-
-    private func getPickupPhotosGridViewObjects() -> [PickupPhotosGridViewObject] {
-        let pickupPhotoResponse = getPickupPhotoResponse()
-        let pickupPhotoGridViewObjects = pickupPhotoResponse.result
-            .map {
-                PickupPhotosGridViewObject(
-                    id: $0.id,
-                    title: $0.title,
-                    caption: $0.caption,
-                    photoUrl: URL(string: $0.photoUrl) ?? nil,
-                    photoWidth: CGFloat($0.photoWidth),
-                    photoHeight: CGFloat($0.photoHeight)
-                )
-            }
-        return pickupPhotoGridViewObjects
-    }
-
-    private func getPickupPhotoResponse() -> PickupPhotoResponse {
-        guard let path = Bundle.main.path(forResource: "pickup_photos", ofType: "json") else {
-            fatalError()
-        }
-        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
-            fatalError()
-        }
-        guard let result = try? JSONDecoder().decode([PickupPhotoEntity].self, from: data) else {
-            fatalError()
-        }
-        return PickupPhotoResponse(result: result)
-    }
-}
-
 // MARK: - Preview
 
-//struct HomeScreenView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        HomeScreenView()
-//    }
-//}
+struct HomeScreenView_Previews: PreviewProvider {
+    static var previews: some View {
+        // Success時の画面表示
+        let homeSuccessStore = Store(
+            reducer: appReducer,
+            state: AppState(),
+            middlewares: [
+                homeMockSuccessMiddleware()
+            ]
+        )
+        HomeScreenView()
+            .environmentObject(homeSuccessStore)
+            .previewDisplayName("Home Secreen Success Preview")
+        // Failure時の画面表示
+        let homeFailureStore = Store(
+            reducer: appReducer,
+            state: AppState(),
+            middlewares: [
+                homeMockFailureMiddleware()
+            ]
+        )
+        HomeScreenView()
+            .environmentObject(homeFailureStore)
+            .previewDisplayName("Home Secreen Failure Preview")
+    }
+}
