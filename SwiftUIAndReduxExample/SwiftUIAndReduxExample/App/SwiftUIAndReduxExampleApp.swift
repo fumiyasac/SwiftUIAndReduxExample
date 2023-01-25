@@ -22,7 +22,9 @@ struct SwiftUIAndReduxExampleApp: App {
         let store = Store(
             reducer: appReducer,
             state: AppState(),
-            middlewares: []
+            middlewares: [
+                homeMiddleware()
+            ]
         )
         // 👉 ContentViewには.environmentObjectを経由してstoreを適用する
         WindowGroup {
