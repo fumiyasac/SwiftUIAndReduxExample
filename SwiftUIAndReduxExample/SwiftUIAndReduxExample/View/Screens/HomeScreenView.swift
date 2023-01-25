@@ -14,16 +14,16 @@ struct HomeScreenView: View {
     @EnvironmentObject var store: Store<AppState>
 
     struct Props {
-        // ✨ Immutableに扱うProperty 👉 画面状態管理用
+        // Immutableに扱うProperty 👉 画面状態管理用
         let isLoading: Bool
         let isError: Bool
-        // ✨ Immutableに扱うProperty 👉 画面表示要素用
+        // Immutableに扱うProperty 👉 画面表示要素用
         let campaignBanners: [CampaignBannerEntity]
         let featuredTopics: [FeaturedTopicEntity]
         let recentNews: [RecentNewsEntity]
         let trendArticles: [TrendArticleEntity]
         let pickupPhotos: [PickupPhotoEntity]
-        // ✨ Action発行用のClosure
+        // Action発行用のClosure
         let requestHome: () -> Void
         let retryHome: () -> Void
     }
@@ -55,10 +55,13 @@ struct HomeScreenView: View {
         NavigationStack {
             Group {
                 if props.isLoading {
+                    // ローディング画面を表示
                     ExecutingConnectionView()
                 } else if props.isError {
+                    // エラー画面を表示
                     ConnectionErrorView(tapButtonAction: props.retryHome)
                 } else {
+                    // Home画面を表示
                     showHomeScreen(props: props)
                 }
             }
