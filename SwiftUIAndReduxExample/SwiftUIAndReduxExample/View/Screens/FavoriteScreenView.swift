@@ -9,70 +9,88 @@ import SwiftUI
 import CollectionViewPagingLayout
 
 struct FavoriteScreenView: View {
-    
+
+    // MARK: - Redux
+
+    @EnvironmentObject var store: Store<AppState>
+
+    private struct Props {
+        // Immutableに扱うProperty 👉 画面状態管理用
+        let isLoading: Bool
+        let isError: Bool
+        // Immutableに扱うProperty 👉 画面表示要素用
+        let favoriteScenes: [FavoriteSceneEntity]
+        // Action発行用のClosure
+        let requestFavorite: () -> Void
+        let retryFavorite: () -> Void
+    }
+
+    private func mapStateToProps(state: FavoriteState) -> Props {
+        Props(
+            isLoading: state.isLoading,
+            isError: state.isError,
+            favoriteScenes: state.favoriteScenes,
+            requestFavorite: {
+                store.dispatch(action: RequestFavoriteAction())
+            },
+            retryFavorite: {
+                store.dispatch(action: RequestFavoriteAction())
+            }
+        )
+    }
+
     // MARK: - Body
 
     var body: some View {
+        // 該当画面で利用するState(ここではHomeState)をこの画面用のPropsにマッピングする
+        let props = mapStateToProps(state: store.state.favoriteState)
+        // 画面用のPropsに応じた画面要素表示処理を実行する
         NavigationStack {
-            VStack(spacing: 0) {
-                FavoriteCommonSectionView()
-                FavoriteSwipePagingView(favoritePhotosCardViewObjects: getFavoritePhotosCardViewObjects())
+            Group {
+                if props.isLoading {
+                    // ローディング画面を表示
+                    ExecutingConnectionView()
+                } else if props.isError {
+                    // エラー画面を表示
+                    ConnectionErrorView(tapButtonAction: props.retryFavorite)
+                } else {
+                    // Favorite画面を表示
+                    showFavoriteScreen(props: props)
+                }
             }
             .navigationTitle("Favorite")
             .navigationBarTitleDisplayMode(.inline)
-            // Debug. APIとの疎通確認（※後程削除する）
-            .onFirstAppear {
-                Task {
-                    do {
-                        let result = try await FavioriteRepositoryFactory.create().getFavioriteResponse()
-                        print("成功")
-                        dump(result)
-                    } catch APIError.error(let message) {
-                        print("失敗")
-                        print(message)
-                    }
-                }
-            }
+            // 画面が表示された際に一度だけAPIリクエストを実行する形にしています。
+            .onFirstAppear(props.requestFavorite)
         }
     }
-}
 
-// MARK: FavoriteScreenView Extension
-
-extension FavoriteScreenView {
-    
     // MARK: - Private Function
 
-    private func getFavoritePhotosCardViewObjects() -> [FavoritePhotosCardViewObject] {
-        // MEMO: Preview表示用にレスポンスを想定したJsonを読み込んで画面に表示させる
-        let favoriteSceneResponse = getFavoriteSceneResponse()
-        let favoritePhotosCardViewObjects = favoriteSceneResponse.result
-            .map {
-                FavoritePhotosCardViewObject(
-                    id: $0.id,
-                    photoUrl: URL(string: $0.photoUrl) ?? nil,
-                    author: $0.author,
-                    title: $0.title,
-                    category: $0.category,
-                    shopName: $0.shopName,
-                    comment: $0.comment,
-                    publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: $0.publishedAt)
-                )
-            }
-        return favoritePhotosCardViewObjects
+    @ViewBuilder
+    private func showFavoriteScreen(props: Props) -> some View {
+        // Propsの値を表示用のViewObjectにマッピングし直す
+        let favoritePhotosCardViewObjects = mapToFavoritePhotosCardViewObjects(props: props)
+        // 該当するView要素に表示に必要なViewObjectを反映する
+        VStack(spacing: 0) {
+            FavoriteCommonSectionView()
+            FavoriteSwipePagingView(favoritePhotosCardViewObjects: favoritePhotosCardViewObjects)
+        }
     }
 
-    private func getFavoriteSceneResponse() -> FavoriteSceneResponse {
-        guard let path = Bundle.main.path(forResource: "favorite_scenes", ofType: "json") else {
-            fatalError()
+    private func mapToFavoritePhotosCardViewObjects(props: Props) -> [FavoritePhotosCardViewObject] {
+        return props.favoriteScenes.map {
+            FavoritePhotosCardViewObject(
+                id: $0.id,
+                photoUrl: URL(string: $0.photoUrl) ?? nil,
+                author: $0.author,
+                title: $0.title,
+                category: $0.category,
+                shopName: $0.shopName,
+                comment: $0.comment,
+                publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: $0.publishedAt)
+            )
         }
-        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
-            fatalError()
-        }
-        guard let result = try? JSONDecoder().decode([FavoriteSceneEntity].self, from: data) else {
-            fatalError()
-        }
-        return FavoriteSceneResponse(result: result)
     }
 }
 
@@ -80,6 +98,27 @@ extension FavoriteScreenView {
 
 struct FavoriteScreenView_Previews: PreviewProvider {
     static var previews: some View {
+        // Success時の画面表示
+        let favoriteSuccessStore = Store(
+            reducer: appReducer,
+            state: AppState(),
+            middlewares: [
+                favoriteMockSuccessMiddleware()
+            ]
+        )
         FavoriteScreenView()
+            .environmentObject(favoriteSuccessStore)
+            .previewDisplayName("Favorite Secreen Success Preview")
+        // Failure時の画面表示
+        let favoriteFailureStore = Store(
+            reducer: appReducer,
+            state: AppState(),
+            middlewares: [
+                favoriteMockFailureMiddleware()
+            ]
+        )
+        FavoriteScreenView()
+            .environmentObject(favoriteFailureStore)
+            .previewDisplayName("Favorite Secreen Failure Preview")
     }
 }
