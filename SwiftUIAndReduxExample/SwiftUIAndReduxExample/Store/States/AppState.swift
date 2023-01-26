@@ -15,4 +15,6 @@ struct AppState: ReduxState {
     var homeState: HomeState = HomeState()
     // MEMO: Favorite画面表示で利用するState
     var favoriteState: FavoriteState = FavoriteState()
+    // MEMO: Profile画面表示で利用するState
+    var profileState: ProfileState = ProfileState()
 }
