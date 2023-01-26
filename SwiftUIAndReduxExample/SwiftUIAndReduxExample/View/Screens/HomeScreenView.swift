@@ -13,7 +13,7 @@ struct HomeScreenView: View {
 
     @EnvironmentObject var store: Store<AppState>
 
-    struct Props {
+    private struct Props {
         // Immutableに扱うProperty 👉 画面状態管理用
         let isLoading: Bool
         let isError: Bool
@@ -71,7 +71,7 @@ struct HomeScreenView: View {
             .onFirstAppear(props.requestHome)
         }
     }
-    
+
     // MARK: - Private Function
 
     @ViewBuilder
