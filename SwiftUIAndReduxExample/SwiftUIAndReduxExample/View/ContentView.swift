@@ -17,42 +17,53 @@ struct ContentView: View {
     // MARK: - Body
 
     var body: some View {
-        TabView {
-            HomeScreenView()
-                .environmentObject(store)
-                .tabItem {
-                    VStack {
-                        Image(systemName: "house.fill")
-                        Text("Home")
+        ZStack {
+            // (1) TabView表示要素の配置
+            TabView {
+                HomeScreenView()
+                    .environmentObject(store)
+                    .tabItem {
+                        VStack {
+                            Image(systemName: "house.fill")
+                            Text("Home")
+                        }
                     }
+                    .tag(0)
+                ArchiveScreenView()
+                    .environmentObject(store)
+                    .tabItem {
+                        VStack {
+                            Image(systemName: "archivebox.fill")
+                            Text("Archive")
+                        }
+                    }.tag(1)
+                FavoriteScreenView()
+                    .environmentObject(store)
+                    .tabItem {
+                        VStack {
+                            Image(systemName: "bookmark.square.fill")
+                            Text("Favorite")
+                        }
+                    }.tag(2)
+                ProfileScreenView()
+                    .environmentObject(store)
+                    .tabItem {
+                        VStack {
+                            Image(systemName: "person.crop.circle.fill")
+                            Text("Profile")
+                        }
+                    }.tag(3)
+            }
+            .accentColor(Color(AppConstants.ColorPalette.mint))
+            // (2) 初回起動ダイアログ表示要素の配置
+            // TODO: この部分もContentView用のRedux処理を利用してハンドリングができる様にする
+            if false {
+                Group {
+                    Color.black.opacity(0.3)
                 }
-                .tag(0)
-            ArchiveScreenView()
-                .environmentObject(store)
-                .tabItem {
-                    VStack {
-                        Image(systemName: "archivebox.fill")
-                        Text("Archive")
-                    }
-                }.tag(1)
-            FavoriteScreenView()
-                .environmentObject(store)
-                .tabItem {
-                    VStack {
-                        Image(systemName: "bookmark.square.fill")
-                        Text("Favorite")
-                    }
-                }.tag(2)
-            ProfileScreenView()
-                .environmentObject(store)
-                .tabItem {
-                    VStack {
-                        Image(systemName: "person.crop.circle.fill")
-                        Text("Profile")
-                    }
-                }.tag(3)
+                .edgesIgnoringSafeArea(.all)
+            }
         }
-        .accentColor(Color(AppConstants.ColorPalette.mint))
     }
 }
 

@@ -26,7 +26,6 @@ func homeReducer(_ state: HomeState, _ action: Action) -> HomeState {
     case _ as FailureHomeAction:
         state.isLoading = false
         state.isError = true
-    // TODO: 画面ダイアログ表示用のcaseも入れること！
     default:
         break
     }
