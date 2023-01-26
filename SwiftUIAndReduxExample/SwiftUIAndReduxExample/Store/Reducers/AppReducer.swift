@@ -10,11 +10,10 @@ import Foundation
 // MARK: - Function
 
 func appReducer(_ state: AppState, _ action: Action) -> AppState {
-
     var state = state
-
     // MEMO: HomeReducerの適用
     state.homeState = homeReducer(state.homeState, action)
-
+    // MEMO: FavoriteReducerの適用
+    state.favoriteState = favoriteReducer(state.favoriteState, action)
     return state
 }
