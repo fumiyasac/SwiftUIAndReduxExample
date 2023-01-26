@@ -23,7 +23,9 @@ struct SwiftUIAndReduxExampleApp: App {
             reducer: appReducer,
             state: AppState(),
             middlewares: [
-                homeMiddleware()
+                // MEMO: 正規の処理を実行するMiddlewareを登録する
+                homeMiddleware(),
+                favoriteMiddleware()
             ]
         )
         // 👉 ContentViewには.environmentObjectを経由してstoreを適用する
