@@ -13,27 +13,29 @@ struct ProfileScreenView: View {
 
     var body: some View {
         NavigationStack {
-            ProfileContentsView()
-                .navigationTitle("Profile")
-                .navigationBarTitleDisplayMode(.inline)
-                // 👉 SafeAreaまで表示領域を伸ばす（これをするとサムネイル画像が綺麗に収まる）
-                .edgesIgnoringSafeArea(.top)
-                // 👉 NavigationBarを隠すか否か際の設定
-                // ※ GeometryReaderを用いたParallax表現時には、NavigationBarで上部が隠れてしまうため、この様な形としています。
-                .navigationBarHidden(true)
-                // Debug. APIとの疎通確認（※後程削除する）
-                .onFirstAppear {
-                    Task {
-                        do {
-                            let result = try await ProfileRepositoryFactory.create().getProfileResponses()
-                            print("成功")
-                            dump(result)
-                        } catch APIError.error(let message) {
-                            print("失敗")
-                            print(message)
-                        }
+            Group {
+                ProfileContentsView()
+            }
+            .navigationTitle("Profile")
+            .navigationBarTitleDisplayMode(.inline)
+            // 👉 SafeAreaまで表示領域を伸ばす（これをするとサムネイル画像が綺麗に収まる）
+            .edgesIgnoringSafeArea(.top)
+            // 👉 NavigationBarを隠すか否か際の設定
+            // ※ GeometryReaderを用いたParallax表現時には、NavigationBarで上部が隠れてしまうため、この様な形としています。
+            .navigationBarHidden(true)
+            // Debug. APIとの疎通確認（※後程削除する）
+            .onFirstAppear {
+                Task {
+                    do {
+                        let result = try await ProfileRepositoryFactory.create().getProfileResponses()
+                        print("成功")
+                        dump(result)
+                    } catch APIError.error(let message) {
+                        print("失敗")
+                        print(message)
                     }
                 }
+            }
         }
     }
 }
