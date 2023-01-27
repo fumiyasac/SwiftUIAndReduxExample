@@ -52,10 +52,83 @@ final class ProfileRepositoryImpl: ProfileRepository {
     }
 }
 
+// MARK: - MockSuccessProfileRepositoryImpl
+
+final class MockSuccessProfileRepositoryImpl: ProfileRepository {
+    func getProfileResponses() async throws -> [ProfileResponse] {
+        return [
+            getProfilePersonalResponse(),
+            getProfileAnnoucementResponse(),
+            getProfileCommentResponse(),
+            getProfileRecentFavoriteResponse()
+        ]
+    }
+
+    // MARK: - Private Function
+
+    private func getProfilePersonalResponse() -> ProfilePersonalResponse {
+        guard let path = Bundle.main.path(forResource: "profile_personal", ofType: "json") else {
+            fatalError()
+        }
+        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
+            fatalError()
+        }
+        guard let result = try? JSONDecoder().decode(ProfilePersonalEntity.self, from: data) else {
+            fatalError()
+        }
+        return ProfilePersonalResponse(result: result)
+    }
+
+    private func getProfileAnnoucementResponse() -> ProfileAnnoucementResponse {
+        guard let path = Bundle.main.path(forResource: "profile_announcement", ofType: "json") else {
+            fatalError()
+        }
+        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
+            fatalError()
+        }
+        guard let result = try? JSONDecoder().decode([ProfileAnnoucementEntity].self, from: data) else {
+            fatalError()
+        }
+        return ProfileAnnoucementResponse(result: result)
+    }
+
+    private func getProfileCommentResponse() -> ProfileCommentResponse {
+        guard let path = Bundle.main.path(forResource: "profile_comment", ofType: "json") else {
+            fatalError()
+        }
+        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
+            fatalError()
+        }
+        guard let result = try? JSONDecoder().decode([ProfileCommentEntity].self, from: data) else {
+            fatalError()
+        }
+        return ProfileCommentResponse(result: result)
+    }
+
+    private func getProfileRecentFavoriteResponse() -> ProfileRecentFavoriteResponse {
+        guard let path = Bundle.main.path(forResource: "profile_recent_favorite", ofType: "json") else {
+            fatalError()
+        }
+        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
+            fatalError()
+        }
+        guard let result = try? JSONDecoder().decode([ProfileRecentFavoriteEntity].self, from: data) else {
+            fatalError()
+        }
+        return ProfileRecentFavoriteResponse(result: result)
+    }
+}
+
 // MARK: - Factory
 
 struct ProfileRepositoryFactory {
     static func create() -> ProfileRepository {
         return ProfileRepositoryImpl()
+    }
+}
+
+struct MockProfileRepositoryFactory {
+    static func create() -> ProfileRepository {
+        return MockSuccessProfileRepositoryImpl()
     }
 }
