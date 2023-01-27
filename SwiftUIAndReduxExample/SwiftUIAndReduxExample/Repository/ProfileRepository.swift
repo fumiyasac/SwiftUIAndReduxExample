@@ -127,7 +127,7 @@ struct ProfileRepositoryFactory {
     }
 }
 
-struct MockProfileRepositoryFactory {
+struct MockSuccessProfileRepositoryFactory {
     static func create() -> ProfileRepository {
         return MockSuccessProfileRepositoryImpl()
     }
