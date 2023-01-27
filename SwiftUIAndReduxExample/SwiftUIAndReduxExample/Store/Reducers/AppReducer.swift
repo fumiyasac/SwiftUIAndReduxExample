@@ -9,6 +9,8 @@ import Foundation
 
 // MARK: - Function
 
+// 👉 AppReducerはそれぞれの画面で利用するReducerを集約している部分
+
 func appReducer(_ state: AppState, _ action: Action) -> AppState {
     var state = state
     // MEMO: HomeReducerの適用
