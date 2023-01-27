@@ -55,6 +55,42 @@ private func requestProfileSections(action: RequestProfileAction, dispatch: @esc
     }
 }
 
+// MARK: - Function (Mock for Success)
+
+// テストコードで利用するAPIリクエスト結果に応じたActionを発行する（Success時）
+func profileMockSuccessMiddleware() -> Middleware<AppState> {
+    return { state, action, dispatch in
+        switch action {
+            case let action as RequestProfileAction:
+            // 👉 RequestProfileActionを受け取ったらその後にAPIリクエスト処理を実行する
+            mockSuccessRequestProfileSections(action: action, dispatch: dispatch)
+            default:
+                break
+        }
+    }
+}
+
+// MARK: - Private Function (Dispatch Action Success/Failure)
+
+// 👉 成功時のAPIリクエストを想定した処理を実行するためのメソッド
+private func mockSuccessRequestProfileSections(action: RequestProfileAction, dispatch: @escaping Dispatcher) {
+    Task { @MainActor in
+        let _ = try await Task.sleep(for: .seconds(0.64))
+        let profileResponses = try await MockSuccessProfileRepositoryFactory.create().getProfileResponses()
+        let profileSectionResponses = try convertProfileSectionResponse(profileResponses: profileResponses)
+        dispatch(
+            SuccessProfileAction(
+                profilePersonalEntity: profileSectionResponses.profilePersonalResponse.result,
+                profileAnnoucementEntities: profileSectionResponses.profileAnnoucementResponse.result,
+                profileCommentEntities: profileSectionResponses.profileCommentResponse.result,
+                profileRecentFavoriteEntities: profileSectionResponses.profileRecentFavoriteResponse.result
+            )
+        )
+    }
+}
+
+// MARK: - Private Function (Convert from [ProfileResponse])
+
 private func convertProfileSectionResponse(profileResponses: [ProfileResponse]) throws -> ProfileSectionResponse {
     var profilePersonalResponse: ProfilePersonalResponse?
     var profileAnnoucementResponse: ProfileAnnoucementResponse?
