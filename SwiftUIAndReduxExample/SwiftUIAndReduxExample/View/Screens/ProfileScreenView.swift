@@ -14,6 +14,7 @@ struct ProfileScreenView: View {
     var body: some View {
         NavigationStack {
             Group {
+                // TODO: ProfileContentsViewは後で消す
                 ProfileContentsView()
             }
             .navigationTitle("Profile")

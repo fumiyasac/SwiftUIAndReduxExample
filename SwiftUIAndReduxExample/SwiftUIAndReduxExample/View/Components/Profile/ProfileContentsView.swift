@@ -77,7 +77,9 @@ struct ProfileContentsView: View {
                 // 7. スペシャルコンテンツ表示部分
                 Group {
                     ProfileCommonSectionView(title: "特集コンテンツへの招待", subTitle: "Special Contents")
-                    ProfileSpecialContentsView(tapButtonAction: {})
+                    ProfileSpecialContentsView(tapButtonAction: {
+                        print("想定: Tap処理を実行した際に何らかの処理を実行する (スペシャルコンテンツ表示部分)")
+                    })
                 }
             }
         }
