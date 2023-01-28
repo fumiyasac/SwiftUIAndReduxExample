@@ -182,16 +182,6 @@ struct TrendArticlesCellView: View {
     }
 }
 
-// MARK: - ViewObject
-
-struct TrendArticlesGridViewObject: Identifiable {
-    let id: Int
-    let thumbnailUrl: URL?
-    let title: String
-    let introduction: String
-    let publishedAt: String
-}
-
 // MARK: - Preview
 
 struct TrendArticlesGridView_Previews: PreviewProvider {

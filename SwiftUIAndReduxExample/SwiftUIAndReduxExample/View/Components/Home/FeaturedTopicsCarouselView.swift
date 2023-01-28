@@ -236,17 +236,6 @@ struct StarRatingView: View {
     }
 }
 
-// MARK: - ViewObject
-
-struct FeaturedTopicsCarouselViewObject: Identifiable {
-    let id: Int
-    let rating: Double
-    let thumbnailUrl: URL?
-    let title: String
-    let caption: String
-    let publishedAt: String
-}
-
 // MARK: - Preview
 
 struct FeaturedTopicsCarouselView_Previews: PreviewProvider {

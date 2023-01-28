@@ -294,21 +294,6 @@ struct RecentNewsCellView: View {
     }
 }
 
-// MARK: - ViewObject
-
-struct GroupedRecentNewsCarouselViewObject: Identifiable {
-    let id: UUID
-    let recentNewsCarouselViewObjects: [RecentNewsCarouselViewObject]
-}
-
-struct RecentNewsCarouselViewObject: Identifiable {
-    let id: Int
-    let thumbnailUrl: URL?
-    let title: String
-    let newsCategory: String
-    let publishedAt: String
-}
-
 // MARK: - Preview
 
 struct RecentNewsCarouselView_Previews: PreviewProvider {

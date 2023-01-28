@@ -187,17 +187,6 @@ struct PickupPhotosCellView: View {
     }
 }
 
-// MARK: - ViewObject
-
-struct PickupPhotosGridViewObject: Identifiable {
-    let id: Int
-    let title: String
-    let caption: String
-    let photoUrl: URL?
-    let photoWidth: CGFloat
-    let photoHeight: CGFloat
-}
-
 // MARK: - Preview
 
 struct PickupPhotosGridView_Previews: PreviewProvider {

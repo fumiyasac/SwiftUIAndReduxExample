@@ -87,6 +87,11 @@
 		DE527ECA29493FDE009894FA /* FavoriteCommonSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE527EC929493FDE009894FA /* FavoriteCommonSectionView.swift */; };
 		DE527ECC29495DA7009894FA /* FavoriteSwipePagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE527ECB29495DA7009894FA /* FavoriteSwipePagingView.swift */; };
 		DE9F9A1927867A5F00EF32BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9F9A1827867A5F00EF32BB /* AppDelegate.swift */; };
+		DEA57BA4298502EA00872964 /* CampaignBannerCarouselViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BA3298502EA00872964 /* CampaignBannerCarouselViewObject.swift */; };
+		DEA57BA6298503DA00872964 /* PickupPhotosGridViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BA5298503DA00872964 /* PickupPhotosGridViewObject.swift */; };
+		DEA57BA82985045700872964 /* RecentNewsCarouselViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BA72985045700872964 /* RecentNewsCarouselViewObject.swift */; };
+		DEA57BAA2985052700872964 /* TrendArticlesGridViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BA92985052700872964 /* TrendArticlesGridViewObject.swift */; };
+		DEA57BAC2985059F00872964 /* FeaturedTopicsCarouselViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BAB2985059F00872964 /* FeaturedTopicsCarouselViewObject.swift */; };
 		DEAACE89296C5B9300F436F5 /* ArchiveCurrentCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAACE88296C5B9300F436F5 /* ArchiveCurrentCountView.swift */; };
 		DEAACE8B296D941F00F436F5 /* LoadingIndicatorViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAACE8A296D941F00F436F5 /* LoadingIndicatorViewRepresentable.swift */; };
 		DEAACE8D296ECE0000F436F5 /* achive_images.json in Resources */ = {isa = PBXBuildFile; fileRef = DEAACE8C296ECE0000F436F5 /* achive_images.json */; };
@@ -213,6 +218,11 @@
 		DE527EC929493FDE009894FA /* FavoriteCommonSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCommonSectionView.swift; sourceTree = "<group>"; };
 		DE527ECB29495DA7009894FA /* FavoriteSwipePagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSwipePagingView.swift; sourceTree = "<group>"; };
 		DE9F9A1827867A5F00EF32BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DEA57BA3298502EA00872964 /* CampaignBannerCarouselViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignBannerCarouselViewObject.swift; sourceTree = "<group>"; };
+		DEA57BA5298503DA00872964 /* PickupPhotosGridViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupPhotosGridViewObject.swift; sourceTree = "<group>"; };
+		DEA57BA72985045700872964 /* RecentNewsCarouselViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentNewsCarouselViewObject.swift; sourceTree = "<group>"; };
+		DEA57BA92985052700872964 /* TrendArticlesGridViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendArticlesGridViewObject.swift; sourceTree = "<group>"; };
+		DEA57BAB2985059F00872964 /* FeaturedTopicsCarouselViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedTopicsCarouselViewObject.swift; sourceTree = "<group>"; };
 		DEAACE88296C5B9300F436F5 /* ArchiveCurrentCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveCurrentCountView.swift; sourceTree = "<group>"; };
 		DEAACE8A296D941F00F436F5 /* LoadingIndicatorViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorViewRepresentable.swift; sourceTree = "<group>"; };
 		DEAACE8C296ECE0000F436F5 /* achive_images.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = achive_images.json; sourceTree = "<group>"; };
@@ -550,10 +560,10 @@
 			children = (
 				DE18342E29407DC900E3E885 /* HomeCommonSectionView.swift */,
 				DE1833EB292DC86800E3E885 /* CampaignBannerCarouselView.swift */,
-				DE18342A293FF87400E3E885 /* PickupPhotosGridView.swift */,
 				DE18342C29404A5E00E3E885 /* RecentNewsCarouselView.swift */,
-				DE42E19D2943B02F007E462F /* TrendArticlesGridView.swift */,
 				DE42E19F2943EF00007E462F /* FeaturedTopicsCarouselView.swift */,
+				DE42E19D2943B02F007E462F /* TrendArticlesGridView.swift */,
+				DE18342A293FF87400E3E885 /* PickupPhotosGridView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -633,6 +643,50 @@
 			path = BundleRealm;
 			sourceTree = "<group>";
 		};
+		DEA57B9D298475EB00872964 /* ViewObject */ = {
+			isa = PBXGroup;
+			children = (
+				DEA57BA0298501FE00872964 /* Archive */,
+				DEA57BA22985023100872964 /* Favorite */,
+				DEA57B9F298501EC00872964 /* Home */,
+				DEA57BA12985020B00872964 /* Profile */,
+			);
+			path = ViewObject;
+			sourceTree = "<group>";
+		};
+		DEA57B9F298501EC00872964 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				DEA57BA3298502EA00872964 /* CampaignBannerCarouselViewObject.swift */,
+				DEA57BA72985045700872964 /* RecentNewsCarouselViewObject.swift */,
+				DEA57BAB2985059F00872964 /* FeaturedTopicsCarouselViewObject.swift */,
+				DEA57BA92985052700872964 /* TrendArticlesGridViewObject.swift */,
+				DEA57BA5298503DA00872964 /* PickupPhotosGridViewObject.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		DEA57BA0298501FE00872964 /* Archive */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Archive;
+			sourceTree = "<group>";
+		};
+		DEA57BA12985020B00872964 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		DEA57BA22985023100872964 /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
 		DEAACE90296EFC1800F436F5 /* Archive */ = {
 			isa = PBXGroup;
 			children = (
@@ -668,9 +722,9 @@
 			children = (
 				DE427430297EC2C40003DCE3 /* Common */,
 				DE27BFC2295D14F600CF96AC /* Archive */,
-				DE27BFBA295981BF00CF96AC /* Profile */,
-				DE527EC829493FB3009894FA /* Favorite */,
 				DE1834232934EF3C00E3E885 /* Home */,
+				DE527EC829493FB3009894FA /* Favorite */,
+				DE27BFBA295981BF00CF96AC /* Profile */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -720,6 +774,7 @@
 				DE0BFBAD271A9AD600FC0F32 /* Store */,
 				DE18341B2932719500E3E885 /* UsefulFunction */,
 				DE0BFBAB271A99F200FC0F32 /* View */,
+				DEA57B9D298475EB00872964 /* ViewObject */,
 				DEE9C6FB26E8308800190505 /* Preview Content */,
 			);
 			path = SwiftUIAndReduxExample;
@@ -921,6 +976,7 @@
 				DE03D00A2962D2CA0054BCF1 /* ProfileInformationRecentView.swift in Sources */,
 				DEAACEBC297BF51700F436F5 /* ProfileCommentEntity.swift in Sources */,
 				DEE9C6F826E8308700190505 /* ContentView.swift in Sources */,
+				DEA57BA4298502EA00872964 /* CampaignBannerCarouselViewObject.swift in Sources */,
 				DE427436297EC6520003DCE3 /* FavoriteMiddleware.swift in Sources */,
 				DE18342B293FF87400E3E885 /* PickupPhotosGridView.swift in Sources */,
 				DE20986B278B0F35000272B9 /* RatingViewRepresentable.swift in Sources */,
@@ -955,6 +1011,7 @@
 				DE0BFBD7271B38BD00FC0F32 /* CampaignBannersResponse.swift in Sources */,
 				DE42742F297DF8910003DCE3 /* ProfileState.swift in Sources */,
 				DEE9C6F626E8308700190505 /* SwiftUIAndReduxExampleApp.swift in Sources */,
+				DEA57BAA2985052700872964 /* TrendArticlesGridViewObject.swift in Sources */,
 				DE42742D297DF7F50003DCE3 /* FavoriteState.swift in Sources */,
 				DE0BFBBA271B154900FC0F32 /* AppConstants.swift in Sources */,
 				DE03D0062962BF840054BCF1 /* StringExtension.swift in Sources */,
@@ -970,13 +1027,16 @@
 				DEAACEB8297BEE3200F436F5 /* ProfilePersonalEntity.swift in Sources */,
 				DE527ECC29495DA7009894FA /* FavoriteSwipePagingView.swift in Sources */,
 				DE1833C1291DAD9900E3E885 /* TrendArticleEntity.swift in Sources */,
+				DEA57BAC2985059F00872964 /* FeaturedTopicsCarouselViewObject.swift in Sources */,
 				DEAACEA4297744D900F436F5 /* HomeRepository.swift in Sources */,
 				DE1833C3291DAF8100E3E885 /* TrendArticleResponse.swift in Sources */,
 				DE2098692787025D000272B9 /* SwiftUIColorExtension.swift in Sources */,
 				DEAACEA82979818800F436F5 /* FavioriteRepository.swift in Sources */,
 				DE1833C7291DB70D00E3E885 /* PickupPhotoResponse.swift in Sources */,
+				DEA57BA82985045700872964 /* RecentNewsCarouselViewObject.swift in Sources */,
 				DE42E1A02943EF00007E462F /* FeaturedTopicsCarouselView.swift in Sources */,
 				DE27BFAB29512D1600CF96AC /* FavoriteResponse.swift in Sources */,
+				DEA57BA6298503DA00872964 /* PickupPhotosGridViewObject.swift in Sources */,
 				DEAACEB3297BBEC800F436F5 /* ProfileResponse.swift in Sources */,
 				DE1833CB291F910200E3E885 /* HomeState.swift in Sources */,
 				DE1833EC292DC86800E3E885 /* CampaignBannerCarouselView.swift in Sources */,

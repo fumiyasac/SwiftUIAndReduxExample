@@ -153,14 +153,6 @@ struct CampaignBannerCarouselViewModifier: ViewModifier {
     }
 }
 
-// MARK: - ViewObject
-
-struct CampaignBannerCarouselViewObject: Identifiable {
-    let id: Int
-    let bannerContentsId: Int
-    let bannerUrl: URL?
-}
-
 // MARK: - Preview
 
 struct CampaignBannerCarouselView_Previews: PreviewProvider {
