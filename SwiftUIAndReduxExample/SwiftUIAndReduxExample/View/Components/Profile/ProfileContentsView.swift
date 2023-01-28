@@ -40,41 +40,44 @@ struct ProfileContentsView: View {
             VStack(spacing: 0.0) {
 
                 // 1. GrometryReaderを利用した背景用サムネイル画像Parallax表現部分
-                GeometryReader { geometry in
-                    // 👉 GeometryReaderで返されるGeometryProxyの値を元にして
-                    getBackgroundViewBy(geometry: geometry)
-                }
-                .frame(height: parallaxHeaderHeight)
-                .padding([.bottom], 12.0)
-            
-                // 2. ユーザーの基本情報を表示部分
-                ProfilePersonalView()
+                Group {
+                    // 1-(1). GrometryReaderを利用した背景用サムネイル画像Parallax表現部分
+                    GeometryReader { geometry in
+                        // 👉 GeometryReaderで返されるGeometryProxyの値を元にして
+                        getBackgroundViewBy(geometry: geometry)
+                    }
+                    .frame(height: parallaxHeaderHeight)
+                    .padding([.bottom], 12.0)
 
-                // 3. 自己紹介本文表示部分
+                    // 1-(2). ユーザーの基本情報を表示部分
+                    ProfilePersonalView()
+                }
+
+                // 2. 自己紹介本文表示部分
                 Group {
                     ProfileCommonSectionView(title: "自己紹介文", subTitle: "Self Inftoduction")
                     ProfileSelfIntroductionView()
                 }
 
-                // 4. 現在の取得ポイント等の履歴部分
+                // 3. 現在の取得ポイント等の履歴部分
                 Group {
                     ProfileCommonSectionView(title: "現在の保有ポイントや履歴", subTitle: "Self Points & Histories")
                     ProfilePointsAndHistoryView()
                 }
 
-                // 5. SocialMedia等のリンク表示部分
+                // 4. SocialMedia等のリンク表示部分
                 Group {
                     ProfileCommonSectionView(title: "ソーシャルメディア等リンク", subTitle: "Social Media Links")
                     ProfileSocialMediaLinkView()
                 }
 
-                // 6. パーソナル向け情報タブ表示部分
+                // 5. パーソナル向け情報タブ表示部分
                 Group {
                     ProfileCommonSectionView(title: "パーソナル向け情報一覧", subTitle: "Personal Information List")
                     ProfileInformationView()
                 }
 
-                // 7. スペシャルコンテンツ表示部分
+                // 6. スペシャルコンテンツ表示部分
                 Group {
                     ProfileCommonSectionView(title: "特集コンテンツへの招待", subTitle: "Special Contents")
                     ProfileSpecialContentsView(tapButtonAction: {
