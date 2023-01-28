@@ -25,10 +25,31 @@ struct ProfileContentsView: View {
         return Color.black.opacity(0.12)
     }
 
+    private let backgroundImageUrl: URL
+    private let profilePersonalViewObject: ProfilePersonalViewObject
+    private let profileSelfIntroductionViewObject: ProfileSelfIntroductionViewObject
+    private let profilePointsAndHistoryViewObject: ProfilePointsAndHistoryViewObject
+    private let profileSocialMediaViewObject: ProfileSocialMediaViewObject
+    private let profileInformationViewObject: ProfileInformationViewObject
+
     // MARK: - Initializer
 
-    init() {}
-    
+    init(
+        backgroundImageUrl: URL,
+        profilePersonalViewObject: ProfilePersonalViewObject,
+        profileSelfIntroductionViewObject: ProfileSelfIntroductionViewObject,
+        profilePointsAndHistoryViewObject: ProfilePointsAndHistoryViewObject,
+        profileSocialMediaViewObject: ProfileSocialMediaViewObject,
+        profileInformationViewObject: ProfileInformationViewObject
+    ) {
+        self.backgroundImageUrl = backgroundImageUrl
+        self.profilePersonalViewObject = profilePersonalViewObject
+        self.profileSelfIntroductionViewObject = profileSelfIntroductionViewObject
+        self.profilePointsAndHistoryViewObject = profilePointsAndHistoryViewObject
+        self.profileSocialMediaViewObject = profileSocialMediaViewObject
+        self.profileInformationViewObject = profileInformationViewObject
+    }
+
     // MARK: - Body
 
     var body: some View {
@@ -127,13 +148,5 @@ struct ProfileContentsView: View {
                 height: geometry.size.height + geometry.frame(in: .global).minY
             )
         }
-    }
-}
-
-// MARK: - Preview
-
-struct ProfileContentsView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileContentsView()
     }
 }
