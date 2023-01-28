@@ -97,6 +97,7 @@
 		DEA57BB229852C3D00872964 /* ProfileSelfIntroductionViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BB129852C3D00872964 /* ProfileSelfIntroductionViewObject.swift */; };
 		DEA57BB429852D4800872964 /* ProfileSocialMediaViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BB329852D4800872964 /* ProfileSocialMediaViewObject.swift */; };
 		DEA57BB629852E4B00872964 /* ProfileInformationViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BB529852E4B00872964 /* ProfileInformationViewObject.swift */; };
+		DEA57BB8298535A600872964 /* ProfilePointsAndHistoryViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BB7298535A600872964 /* ProfilePointsAndHistoryViewObject.swift */; };
 		DEAACE89296C5B9300F436F5 /* ArchiveCurrentCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAACE88296C5B9300F436F5 /* ArchiveCurrentCountView.swift */; };
 		DEAACE8B296D941F00F436F5 /* LoadingIndicatorViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAACE8A296D941F00F436F5 /* LoadingIndicatorViewRepresentable.swift */; };
 		DEAACE8D296ECE0000F436F5 /* achive_images.json in Resources */ = {isa = PBXBuildFile; fileRef = DEAACE8C296ECE0000F436F5 /* achive_images.json */; };
@@ -233,6 +234,7 @@
 		DEA57BB129852C3D00872964 /* ProfileSelfIntroductionViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSelfIntroductionViewObject.swift; sourceTree = "<group>"; };
 		DEA57BB329852D4800872964 /* ProfileSocialMediaViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSocialMediaViewObject.swift; sourceTree = "<group>"; };
 		DEA57BB529852E4B00872964 /* ProfileInformationViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInformationViewObject.swift; sourceTree = "<group>"; };
+		DEA57BB7298535A600872964 /* ProfilePointsAndHistoryViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePointsAndHistoryViewObject.swift; sourceTree = "<group>"; };
 		DEAACE88296C5B9300F436F5 /* ArchiveCurrentCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveCurrentCountView.swift; sourceTree = "<group>"; };
 		DEAACE8A296D941F00F436F5 /* LoadingIndicatorViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorViewRepresentable.swift; sourceTree = "<group>"; };
 		DEAACE8C296ECE0000F436F5 /* achive_images.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = achive_images.json; sourceTree = "<group>"; };
@@ -688,6 +690,7 @@
 			children = (
 				DEA57BAF298525FE00872964 /* ProfilePersonalViewObject.swift */,
 				DEA57BB129852C3D00872964 /* ProfileSelfIntroductionViewObject.swift */,
+				DEA57BB7298535A600872964 /* ProfilePointsAndHistoryViewObject.swift */,
 				DEA57BB329852D4800872964 /* ProfileSocialMediaViewObject.swift */,
 				DEA57BB529852E4B00872964 /* ProfileInformationViewObject.swift */,
 			);
@@ -997,6 +1000,7 @@
 				DE427436297EC6520003DCE3 /* FavoriteMiddleware.swift in Sources */,
 				DE18342B293FF87400E3E885 /* PickupPhotosGridView.swift in Sources */,
 				DE20986B278B0F35000272B9 /* RatingViewRepresentable.swift in Sources */,
+				DEA57BB8298535A600872964 /* ProfilePointsAndHistoryViewObject.swift in Sources */,
 				DE27BFBC295981D900CF96AC /* ProfileContentsView.swift in Sources */,
 				DE0BFBCA271B21B400FC0F32 /* HomeMiddleware.swift in Sources */,
 				DE03D00C29655DDB0054BCF1 /* ArchiveCategoryView.swift in Sources */,

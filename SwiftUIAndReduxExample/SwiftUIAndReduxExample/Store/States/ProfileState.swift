@@ -20,6 +20,7 @@ struct ProfileState: ReduxState, Equatable {
     var backgroundImageUrl: String?
     var profilePersonalViewObject: ProfilePersonalViewObject?
     var profileSelfIntroductionViewObject: ProfileSelfIntroductionViewObject?
+    var profilePointsAndHistoryViewObject: ProfilePointsAndHistoryViewObject?
     var profileSocialMediaViewObject: ProfileSocialMediaViewObject?
     var profileInformationViewObject: ProfileInformationViewObject?
 
@@ -32,6 +33,7 @@ struct ProfileState: ReduxState, Equatable {
             && lhs.profilePersonalViewObject == rhs.profilePersonalViewObject
             && lhs.profileSelfIntroductionViewObject == rhs.profileSelfIntroductionViewObject
             && lhs.profileSocialMediaViewObject == rhs.profileSocialMediaViewObject
+            && lhs.profilePointsAndHistoryViewObject == rhs.profilePointsAndHistoryViewObject
             && lhs.profileInformationViewObject == rhs.profileInformationViewObject
     }
 }

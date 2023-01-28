@@ -39,10 +39,10 @@ struct ProfileCommentViewObject: Identifiable {
     // MARK: - Property
 
     let id: Int
-    let category: String
+    let emotion: String
     let title: String
     let publishedAt: String
-    let description: String
+    let comment: String
 }
 
 struct ProfileRecentFavoriteViewObject: Identifiable {
