@@ -27,7 +27,8 @@ struct ProfileSocialMediaLinkView: View {
 
     private let socialMediaTitleAndColors: [SocialMediaColorSet] = [
         (name: "Twitter", color: Color(uiColor: UIColor(code: "#00aced"))),
-        (name: "Facebook", color: Color(uiColor: UIColor(code: "#3b5998")))
+        (name: "Facebook", color: Color(uiColor: UIColor(code: "#3b5998"))),
+        (name: "Instagram", color: Color(uiColor: UIColor(code: "#dd2a7b")))
     ]
 
     // MARK: - Initializer
