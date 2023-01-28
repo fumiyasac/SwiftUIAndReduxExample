@@ -70,6 +70,21 @@ func profileMockSuccessMiddleware() -> Middleware<AppState> {
     }
 }
 
+// MARK: - Function (Mock for Failure)
+
+// テストコードで利用するAPIリクエスト結果に応じたActionを発行する（Failure時）
+func profileMockFailureMiddleware() -> Middleware<AppState> {
+    return { state, action, dispatch in
+        switch action {
+            case let action as RequestProfileAction:
+            // 👉 RequestProfileActionを受け取ったらその後にAPIリクエスト処理を実行する
+            mockFailureRequestProfileSections(action: action, dispatch: dispatch)
+            default:
+                break
+        }
+    }
+}
+
 // MARK: - Private Function (Dispatch Action Success/Failure)
 
 // 👉 成功時のAPIリクエストを想定した処理を実行するためのメソッド
@@ -86,6 +101,14 @@ private func mockSuccessRequestProfileSections(action: RequestProfileAction, dis
                 profileRecentFavoriteEntities: profileSectionResponses.profileRecentFavoriteResponse.result
             )
         )
+    }
+}
+
+// 👉 失敗時のAPIリクエストを想定した処理を実行するためのメソッド
+private func mockFailureRequestProfileSections(action: RequestProfileAction, dispatch: @escaping Dispatcher) {
+    Task { @MainActor in
+        let _ = try await Task.sleep(for: .seconds(0.64))
+        dispatch(FailureProfileAction())
     }
 }
 
