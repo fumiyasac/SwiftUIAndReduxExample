@@ -61,8 +61,8 @@ struct HomeScreenView: View {
                     // エラー画面を表示
                     ConnectionErrorView(tapButtonAction: props.retryHome)
                 } else {
-                    // Home画面を表示
-                    showHomeScreen(props: props)
+                    // HomeContentsView(それぞれのSection要素を集約している画面要素)を表示
+                    showHomeContentsView(props: props)
                 }
             }
             .navigationTitle("Home")
@@ -75,59 +75,24 @@ struct HomeScreenView: View {
     // MARK: - Private Function
 
     @ViewBuilder
-    private func showHomeScreen(props: Props) -> some View {
-        // Propsの値を表示用のViewObjectにマッピングし直す
-        let campaignBannersCarouselViewObjects = mapToCampaignBannersCarouselViewObjects(props: props)
+    private func showHomeContentsView(props: Props) -> some View {
+        // Propsから各Section表示用のViewObjectを取り出す
+        let campaignBannerCarouselViewObjects = mapToCampaignBannerCarouselViewObjects(props: props)
         let recentNewsCarouselViewObjects = mapToRecentNewsCarouselViewObjects(props: props)
         let featuredTopicsCarouselViewObjects = mapToFeaturedTopicsCarouselViewObjects(props: props)
         let trendArticlesGridViewObjects = mapToTrendArticlesGridViewObjects(props: props)
         let pickupPhotoGridViewObjects = mapToPickupPhotosGridViewObjects(props: props)
         // 各Sectionに該当するView要素に表示に必要なViewObjectを反映する
-        ScrollView {
-            // (1) 季節の特集コンテンツ一覧
-            HomeCommonSectionView(
-                title: "季節の特集コンテンツ一覧",
-                subTitle: "Introduce seasonal shopping and features."
-            )
-            CampaignBannerCarouselView(
-                campaignBannersCarouselViewObjects: campaignBannersCarouselViewObjects
-            )
-            // (2) 最新のおしらせ
-            HomeCommonSectionView(
-                title: "最新のおしらせ",
-                subTitle: "Let's Check Here for App-only Notifications."
-            )
-            RecentNewsCarouselView(
-                recentNewsCarouselViewObjects: recentNewsCarouselViewObjects
-            )
-            // (3) 特集掲載店舗
-            HomeCommonSectionView(
-                title: "特集掲載店舗",
-                subTitle: "Please Teach Us Your Favorite Gourmet."
-            )
-            FeaturedTopicsCarouselView(
-                featuredTopicsCarouselViewObjects: featuredTopicsCarouselViewObjects
-            )
-            // (4) トレンド記事紹介
-            HomeCommonSectionView(
-                title: "トレンド記事紹介",
-                subTitle: "Memorial Articles about Special Season."
-            )
-            TrendArticlesGridView(
-                trendArticlesGridViewObjects: trendArticlesGridViewObjects
-            )
-            // (5) ピックアップ写真集
-            HomeCommonSectionView(
-                title: "ピックアップ写真集",
-                subTitle: "Let's Enjoy Pickup Gourmet Photo Archives."
-            )
-            PickupPhotosGridView(
-                pickupPhotosGridViewObjects: pickupPhotoGridViewObjects
-            )
-        }
+        HomeContentsView(
+            campaignBannerCarouselViewObjects: campaignBannerCarouselViewObjects,
+            recentNewsCarouselViewObjects: recentNewsCarouselViewObjects,
+            featuredTopicsCarouselViewObjects: featuredTopicsCarouselViewObjects,
+            trendArticlesGridViewObjects: trendArticlesGridViewObjects,
+            pickupPhotosGridViewObjects: pickupPhotoGridViewObjects
+        )
     }
 
-    private func mapToCampaignBannersCarouselViewObjects(props: Props) -> [CampaignBannerCarouselViewObject] {
+    private func mapToCampaignBannerCarouselViewObjects(props: Props) -> [CampaignBannerCarouselViewObject] {
         return props.campaignBannerCarouselViewObjects
     }
 

@@ -55,7 +55,7 @@ struct FavoriteScreenView: View {
                     ConnectionErrorView(tapButtonAction: props.retryFavorite)
                 } else {
                     // Favorite画面を表示
-                    showFavoriteScreen(props: props)
+                    showFavoriteContentsView(props: props)
                 }
             }
             .navigationTitle("Favorite")
@@ -68,14 +68,10 @@ struct FavoriteScreenView: View {
     // MARK: - Private Function
 
     @ViewBuilder
-    private func showFavoriteScreen(props: Props) -> some View {
-        // Propsの値を表示用のViewObjectにマッピングし直す
+    private func showFavoriteContentsView(props: Props) -> some View {
+        // Propsから表示用のViewObjectを取り出す
         let favoritePhotosCardViewObjects = mapToFavoritePhotosCardViewObjects(props: props)
-        // 該当するView要素に表示に必要なViewObjectを反映する
-        VStack(spacing: 0) {
-            FavoriteCommonSectionView()
-            FavoriteSwipePagingView(favoritePhotosCardViewObjects: favoritePhotosCardViewObjects)
-        }
+        FavoriteContentsView(favoritePhotosCardViewObjects: favoritePhotosCardViewObjects)
     }
 
     private func mapToFavoritePhotosCardViewObjects(props: Props) -> [FavoritePhotosCardViewObject] {

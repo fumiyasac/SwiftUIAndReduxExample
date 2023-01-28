@@ -83,7 +83,7 @@ struct ProfileScreenView: View {
 
     @ViewBuilder
     private func showProfileContentsView(props: Props) -> some View {
-        // Propsから各表示用のViewObjectを取り出す
+        // Propsから各Section表示用のViewObjectを取り出す
         if let backgroundImageUrl = mapToBackgroundImageUrl(props: props),
            let profilePersonalViewObject = mapToProfilePersonalViewObject(props: props),
            let profileSelfIntroductionViewObject = mapToProfileSelfIntroductionViewObject(props: props),

@@ -30,14 +30,14 @@ struct CampaignBannerCarouselView: View {
     @State private var draggingOffset: CGFloat
 
     // MEMO: Carouselに表示する内容を格納するための変数
-    @State private var campaignBannersCarouselViewObjects: [CampaignBannerCarouselViewObject] = []
+    @State private var campaignBannerCarouselViewObjects: [CampaignBannerCarouselViewObject] = []
 
     // MARK: - Initializer
     
-    init(campaignBannersCarouselViewObjects: [CampaignBannerCarouselViewObject]) {
+    init(campaignBannerCarouselViewObjects: [CampaignBannerCarouselViewObject]) {
 
         // イニシャライザ内で「_(変数名)」値を代入することでState値の初期化を実行する
-        _campaignBannersCarouselViewObjects = State(initialValue: campaignBannersCarouselViewObjects)
+        _campaignBannerCarouselViewObjects = State(initialValue: campaignBannerCarouselViewObjects)
         _snappedOffset = State(initialValue: 0.0)
         _draggingOffset = State(initialValue: 0.0)
     }
@@ -46,7 +46,7 @@ struct CampaignBannerCarouselView: View {
     
     var body: some View {
         ZStack {
-            ForEach(campaignBannersCarouselViewObjects) { viewObject in
+            ForEach(campaignBannerCarouselViewObjects) { viewObject in
                 ZStack {
                     KFImage(viewObject.bannerUrl)
                         .resizable()
@@ -71,7 +71,7 @@ struct CampaignBannerCarouselView: View {
             CampaignBannerCarouselViewModifier(
                 snappedOffset: $snappedOffset,
                 draggingOffset: $draggingOffset,
-                viewObjectsCount: campaignBannersCarouselViewObjects.count
+                viewObjectsCount: campaignBannerCarouselViewObjects.count
             )
         )
     }
@@ -87,7 +87,7 @@ struct CampaignBannerCarouselView: View {
     private func calculateDistanceBy(itemId: Int) -> CGFloat {
         // MEMO: remainderを利用して間隔値を算出する
         // 参考: https://dev.classmethod.jp/articles/utility-extension-remainder/
-        let allItemsCount = campaignBannersCarouselViewObjects.count
+        let allItemsCount = campaignBannerCarouselViewObjects.count
         let draggingOffsetByItemId = (draggingOffset - CGFloat(itemId))
         return draggingOffsetByItemId
             .remainder(dividingBy: CGFloat(allItemsCount))
@@ -95,7 +95,7 @@ struct CampaignBannerCarouselView: View {
 
     private func calculateHorizontalOffsetBy(itemId: Int) -> CGFloat {
         // MEMO: 三角関数(この場合はsinθ)を利用して角度を算出し、奥行きのある重なりを表現する
-        let allItemsCount = campaignBannersCarouselViewObjects.count
+        let allItemsCount = campaignBannerCarouselViewObjects.count
         let angle = Double.pi * 2 / Double(allItemsCount) * calculateDistanceBy(itemId: itemId)
         return sin(angle) * 200
     }
@@ -168,7 +168,7 @@ struct CampaignBannerCarouselView_Previews: PreviewProvider {
                     bannerUrl: URL(string: $0.bannerUrl) ?? nil
                 )
             }
-        CampaignBannerCarouselView(campaignBannersCarouselViewObjects: campaignBannerCarouselViewObjects)
+        CampaignBannerCarouselView(campaignBannerCarouselViewObjects: campaignBannerCarouselViewObjects)
     }
 
     // MARK: - Private Static Function
