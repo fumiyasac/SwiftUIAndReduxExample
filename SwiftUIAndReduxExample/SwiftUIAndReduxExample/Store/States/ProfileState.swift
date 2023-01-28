@@ -16,20 +16,22 @@ struct ProfileState: ReduxState, Equatable {
     // MEMO: エラー状態
     var isError: Bool = false
 
-    // MEMO: Profile画面で利用する情報として必要なEntity情報
-    var profilePersonal: ProfilePersonalEntity?
-    var profileAnnoucements: [ProfileAnnoucementEntity] = []
-    var profileComments: [ProfileCommentEntity] = []
-    var profileRecentFavorites: [ProfileRecentFavoriteEntity] = []
+    // MEMO: Profile画面で利用する情報として必要なViewObject等の情報
+    var backgroundImageUrl: String?
+    var profilePersonalViewObject: ProfilePersonalViewObject?
+    var profileSelfIntroductionViewObject: ProfileSelfIntroductionViewObject?
+    var profileSocialMediaViewObject: ProfileSocialMediaViewObject?
+    var profileInformationViewObject: ProfileInformationViewObject?
 
     // MARK: - Equatable
 
     static func == (lhs: ProfileState, rhs: ProfileState) -> Bool {
         return lhs.isLoading == rhs.isLoading
             && lhs.isError == rhs.isError
-            && lhs.profilePersonal == rhs.profilePersonal
-            && lhs.profileAnnoucements == rhs.profileAnnoucements
-            && lhs.profileComments == rhs.profileComments
-            && lhs.profileRecentFavorites == rhs.profileRecentFavorites
+            && lhs.backgroundImageUrl == rhs.backgroundImageUrl
+            && lhs.profilePersonalViewObject == rhs.profilePersonalViewObject
+            && lhs.profileSelfIntroductionViewObject == rhs.profileSelfIntroductionViewObject
+            && lhs.profileSocialMediaViewObject == rhs.profileSocialMediaViewObject
+            && lhs.profileInformationViewObject == rhs.profileInformationViewObject
     }
 }
