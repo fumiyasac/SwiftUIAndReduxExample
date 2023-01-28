@@ -94,6 +94,9 @@
 		DEA57BAC2985059F00872964 /* FeaturedTopicsCarouselViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BAB2985059F00872964 /* FeaturedTopicsCarouselViewObject.swift */; };
 		DEA57BAE2985095C00872964 /* FavoritePhotosCardViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BAD2985095C00872964 /* FavoritePhotosCardViewObject.swift */; };
 		DEA57BB0298525FE00872964 /* ProfilePersonalViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BAF298525FE00872964 /* ProfilePersonalViewObject.swift */; };
+		DEA57BB229852C3D00872964 /* ProfileSelfIntroductionViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BB129852C3D00872964 /* ProfileSelfIntroductionViewObject.swift */; };
+		DEA57BB429852D4800872964 /* ProfileSocialMediaViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BB329852D4800872964 /* ProfileSocialMediaViewObject.swift */; };
+		DEA57BB629852E4B00872964 /* ProfileInformationViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BB529852E4B00872964 /* ProfileInformationViewObject.swift */; };
 		DEAACE89296C5B9300F436F5 /* ArchiveCurrentCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAACE88296C5B9300F436F5 /* ArchiveCurrentCountView.swift */; };
 		DEAACE8B296D941F00F436F5 /* LoadingIndicatorViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAACE8A296D941F00F436F5 /* LoadingIndicatorViewRepresentable.swift */; };
 		DEAACE8D296ECE0000F436F5 /* achive_images.json in Resources */ = {isa = PBXBuildFile; fileRef = DEAACE8C296ECE0000F436F5 /* achive_images.json */; };
@@ -227,6 +230,9 @@
 		DEA57BAB2985059F00872964 /* FeaturedTopicsCarouselViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedTopicsCarouselViewObject.swift; sourceTree = "<group>"; };
 		DEA57BAD2985095C00872964 /* FavoritePhotosCardViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePhotosCardViewObject.swift; sourceTree = "<group>"; };
 		DEA57BAF298525FE00872964 /* ProfilePersonalViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePersonalViewObject.swift; sourceTree = "<group>"; };
+		DEA57BB129852C3D00872964 /* ProfileSelfIntroductionViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSelfIntroductionViewObject.swift; sourceTree = "<group>"; };
+		DEA57BB329852D4800872964 /* ProfileSocialMediaViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSocialMediaViewObject.swift; sourceTree = "<group>"; };
+		DEA57BB529852E4B00872964 /* ProfileInformationViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInformationViewObject.swift; sourceTree = "<group>"; };
 		DEAACE88296C5B9300F436F5 /* ArchiveCurrentCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveCurrentCountView.swift; sourceTree = "<group>"; };
 		DEAACE8A296D941F00F436F5 /* LoadingIndicatorViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorViewRepresentable.swift; sourceTree = "<group>"; };
 		DEAACE8C296ECE0000F436F5 /* achive_images.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = achive_images.json; sourceTree = "<group>"; };
@@ -681,6 +687,9 @@
 			isa = PBXGroup;
 			children = (
 				DEA57BAF298525FE00872964 /* ProfilePersonalViewObject.swift */,
+				DEA57BB129852C3D00872964 /* ProfileSelfIntroductionViewObject.swift */,
+				DEA57BB329852D4800872964 /* ProfileSocialMediaViewObject.swift */,
+				DEA57BB529852E4B00872964 /* ProfileInformationViewObject.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -972,10 +981,12 @@
 				DEAACEC0297BF9B600F436F5 /* ProfileRecentFavoriteEntity.swift in Sources */,
 				DEAACE8B296D941F00F436F5 /* LoadingIndicatorViewRepresentable.swift in Sources */,
 				DE1833D9291FABCD00E3E885 /* UserDefaultManager.swift in Sources */,
+				DEA57BB229852C3D00872964 /* ProfileSelfIntroductionViewObject.swift in Sources */,
 				DE03CFE7295F10C10054BCF1 /* ProfilePersonalView.swift in Sources */,
 				DE03D0002962B6210054BCF1 /* ProfileInformationAnnouncementView.swift in Sources */,
 				DE1833D2291FAA3C00E3E885 /* RealmAccessManager.swift in Sources */,
 				DE0BFBB7271B080900FC0F32 /* UIColorExtension.swift in Sources */,
+				DEA57BB429852D4800872964 /* ProfileSocialMediaViewObject.swift in Sources */,
 				DE27BFAE29512D6200CF96AC /* FavoriteSceneResponse.swift in Sources */,
 				DE0BFBC0271B16FD00FC0F32 /* FavoriteScreenView.swift in Sources */,
 				DEAACEA22977448D00F436F5 /* HomeResponse.swift in Sources */,
@@ -1047,6 +1058,7 @@
 				DE1833CB291F910200E3E885 /* HomeState.swift in Sources */,
 				DE1833EC292DC86800E3E885 /* CampaignBannerCarouselView.swift in Sources */,
 				DE427434297EC62E0003DCE3 /* FavoriteReducer.swift in Sources */,
+				DEA57BB629852E4B00872964 /* ProfileInformationViewObject.swift in Sources */,
 				DE18342D29404A5E00E3E885 /* RecentNewsCarouselView.swift in Sources */,
 				DEAACE8F296EFC0B00F436F5 /* ArchiveResponse.swift in Sources */,
 				DE0BFBC2271B170B00FC0F32 /* ProfileScreenView.swift in Sources */,
