@@ -234,19 +234,6 @@ struct FavoritePhotosCardView: View {
     }
 }
 
-// MARK: - ViewObject
-
-struct FavoritePhotosCardViewObject: Identifiable {
-    let id: Int
-    let photoUrl: URL?
-    let author: String
-    let title: String
-    let category: String
-    let shopName: String
-    let comment: String
-    let publishedAt: String
-}
-
 // MARK: - Preview
 
 struct FavoriteSwipePagingView_Previews: PreviewProvider {
