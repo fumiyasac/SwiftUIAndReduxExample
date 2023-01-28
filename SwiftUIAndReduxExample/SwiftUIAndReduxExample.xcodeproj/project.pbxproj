@@ -599,15 +599,9 @@
 		DE27BFBA295981BF00CF96AC /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				DE03CFFA2962B3920054BCF1 /* ProfileInformationTabComponent */,
+				DEA57BBC29857B8600872964 /* Section */,
 				DE03CFE8295F118C0054BCF1 /* ProfileCommonSectionView.swift */,
 				DE27BFBB295981D900CF96AC /* ProfileContentsView.swift */,
-				DE03CFF82961C4740054BCF1 /* ProfileInformationView.swift */,
-				DE03CFE6295F10C10054BCF1 /* ProfilePersonalView.swift */,
-				DE03CFEC29601D640054BCF1 /* ProfileSelfIntroductionView.swift */,
-				DE03CFEE296028900054BCF1 /* ProfilePointsAndHistoryView.swift */,
-				DE03CFF4296155390054BCF1 /* ProfileSocialMediaLinkView.swift */,
-				DE03CFF62961748F0054BCF1 /* ProfileSpecialContentsView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -703,6 +697,68 @@
 				DEA57BAD2985095C00872964 /* FavoritePhotosCardViewObject.swift */,
 			);
 			path = Favorite;
+			sourceTree = "<group>";
+		};
+		DEA57BBC29857B8600872964 /* Section */ = {
+			isa = PBXGroup;
+			children = (
+				DEA57BBD29857B8F00872964 /* ProfilePersonal */,
+				DEA57BBE29857BB800872964 /* ProfileSelfIntroduction */,
+				DEA57BBF29857BE800872964 /* ProfilePointAndHistory */,
+				DEA57BC029857C2A00872964 /* ProfileSocialMediaLink */,
+				DEA57BC129857C6300872964 /* ProfileInformation */,
+				DEA57BC229857C8D00872964 /* ProfileSpecialContents */,
+			);
+			path = Section;
+			sourceTree = "<group>";
+		};
+		DEA57BBD29857B8F00872964 /* ProfilePersonal */ = {
+			isa = PBXGroup;
+			children = (
+				DE03CFE6295F10C10054BCF1 /* ProfilePersonalView.swift */,
+			);
+			path = ProfilePersonal;
+			sourceTree = "<group>";
+		};
+		DEA57BBE29857BB800872964 /* ProfileSelfIntroduction */ = {
+			isa = PBXGroup;
+			children = (
+				DE03CFEC29601D640054BCF1 /* ProfileSelfIntroductionView.swift */,
+			);
+			path = ProfileSelfIntroduction;
+			sourceTree = "<group>";
+		};
+		DEA57BBF29857BE800872964 /* ProfilePointAndHistory */ = {
+			isa = PBXGroup;
+			children = (
+				DE03CFEE296028900054BCF1 /* ProfilePointsAndHistoryView.swift */,
+			);
+			path = ProfilePointAndHistory;
+			sourceTree = "<group>";
+		};
+		DEA57BC029857C2A00872964 /* ProfileSocialMediaLink */ = {
+			isa = PBXGroup;
+			children = (
+				DE03CFF4296155390054BCF1 /* ProfileSocialMediaLinkView.swift */,
+			);
+			path = ProfileSocialMediaLink;
+			sourceTree = "<group>";
+		};
+		DEA57BC129857C6300872964 /* ProfileInformation */ = {
+			isa = PBXGroup;
+			children = (
+				DE03CFFA2962B3920054BCF1 /* ProfileInformationTabComponent */,
+				DE03CFF82961C4740054BCF1 /* ProfileInformationView.swift */,
+			);
+			path = ProfileInformation;
+			sourceTree = "<group>";
+		};
+		DEA57BC229857C8D00872964 /* ProfileSpecialContents */ = {
+			isa = PBXGroup;
+			children = (
+				DE03CFF62961748F0054BCF1 /* ProfileSpecialContentsView.swift */,
+			);
+			path = ProfileSpecialContents;
 			sourceTree = "<group>";
 		};
 		DEAACE90296EFC1800F436F5 /* Archive */ = {
