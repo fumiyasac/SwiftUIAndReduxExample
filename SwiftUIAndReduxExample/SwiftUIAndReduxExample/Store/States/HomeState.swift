@@ -16,23 +16,23 @@ struct HomeState: ReduxState, Equatable {
     // MEMO: エラー状態
     var isError: Bool = false
 
-    // MEMO: Home画面で利用する情報として必要なEntity情報
-    // ※ このコードではEntityとView表示要素のComponentが1:1対応となる想定で作っています。
-    var campaignBanners: [CampaignBannerEntity] = []
-    var featuredTopics: [FeaturedTopicEntity] = []
-    var recentNews: [RecentNewsEntity] = []
-    var trendArticles: [TrendArticleEntity] = []
-    var pickupPhotos: [PickupPhotoEntity] = []
+    // MEMO: Home画面で利用する情報として必要なViewObject情報
+    // ※ このコードではViewObjectとView表示要素のComponentが1:1対応となる想定で作っています。
+    var campaignBannerCarouselViewObjects: [CampaignBannerCarouselViewObject] = []
+    var recentNewsCarouselViewObjects: [RecentNewsCarouselViewObject] = []
+    var reaturedTopicsCarouselViewObjects: [FeaturedTopicsCarouselViewObject] = []
+    var trendArticlesGridViewObjects: [TrendArticlesGridViewObject] = []
+    var pickupPhotosGridViewObjects: [PickupPhotosGridViewObject] = []
     
     // MARK: - Equatable
 
     static func == (lhs: HomeState, rhs: HomeState) -> Bool {
         return lhs.isLoading == rhs.isLoading
         && lhs.isError == rhs.isError
-        && lhs.campaignBanners == rhs.campaignBanners
-        && lhs.featuredTopics == rhs.featuredTopics
-        && lhs.recentNews == rhs.recentNews
-        && lhs.trendArticles == rhs.trendArticles
-        && lhs.pickupPhotos == rhs.pickupPhotos
+        && lhs.campaignBannerCarouselViewObjects == rhs.campaignBannerCarouselViewObjects
+        && lhs.recentNewsCarouselViewObjects == rhs.recentNewsCarouselViewObjects
+        && lhs.reaturedTopicsCarouselViewObjects == rhs.reaturedTopicsCarouselViewObjects
+        && lhs.trendArticlesGridViewObjects == rhs.trendArticlesGridViewObjects
+        && lhs.pickupPhotosGridViewObjects == rhs.pickupPhotosGridViewObjects
     }
 }

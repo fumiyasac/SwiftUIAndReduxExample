@@ -19,7 +19,7 @@ struct FavoriteScreenView: View {
         let isLoading: Bool
         let isError: Bool
         // Immutableに扱うProperty 👉 画面表示要素用
-        let favoriteScenes: [FavoriteSceneEntity]
+        let favoritePhotosCardViewObjects: [FavoritePhotosCardViewObject]
         // Action発行用のClosure
         let requestFavorite: () -> Void
         let retryFavorite: () -> Void
@@ -29,7 +29,7 @@ struct FavoriteScreenView: View {
         Props(
             isLoading: state.isLoading,
             isError: state.isError,
-            favoriteScenes: state.favoriteScenes,
+            favoritePhotosCardViewObjects: state.favoritePhotosCardViewObjects,
             requestFavorite: {
                 store.dispatch(action: RequestFavoriteAction())
             },
@@ -79,18 +79,7 @@ struct FavoriteScreenView: View {
     }
 
     private func mapToFavoritePhotosCardViewObjects(props: Props) -> [FavoritePhotosCardViewObject] {
-        return props.favoriteScenes.map {
-            FavoritePhotosCardViewObject(
-                id: $0.id,
-                photoUrl: URL(string: $0.photoUrl) ?? nil,
-                author: $0.author,
-                title: $0.title,
-                category: $0.category,
-                shopName: $0.shopName,
-                comment: $0.comment,
-                publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: $0.publishedAt)
-            )
-        }
+        return props.favoritePhotosCardViewObjects
     }
 }
 

@@ -14,7 +14,19 @@ func favoriteReducer(_ state: FavoriteState, _ action: Action) -> FavoriteState 
         state.isLoading = true
         state.isError = false
     case let action as SuccessFavoriteAction:
-        state.favoriteScenes = action.favoriteSceneEntities
+        // MEMO: 画面要素表示用
+        state.favoritePhotosCardViewObjects = action.favoriteSceneEntities.map {
+            FavoritePhotosCardViewObject(
+                id: $0.id,
+                photoUrl: URL(string: $0.photoUrl) ?? nil,
+                author: $0.author,
+                title: $0.title,
+                category: $0.category,
+                shopName: $0.shopName,
+                comment: $0.comment,
+                publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: $0.publishedAt)
+            )
+        }
         state.isLoading = false
         state.isError = false
     case _ as FailureFavoriteAction:

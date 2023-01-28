@@ -18,11 +18,11 @@ struct HomeScreenView: View {
         let isLoading: Bool
         let isError: Bool
         // Immutableに扱うProperty 👉 画面表示要素用
-        let campaignBanners: [CampaignBannerEntity]
-        let featuredTopics: [FeaturedTopicEntity]
-        let recentNews: [RecentNewsEntity]
-        let trendArticles: [TrendArticleEntity]
-        let pickupPhotos: [PickupPhotoEntity]
+        let campaignBannerCarouselViewObjects: [CampaignBannerCarouselViewObject]
+        let recentNewsCarouselViewObjects: [RecentNewsCarouselViewObject]
+        let reaturedTopicsCarouselViewObjects: [FeaturedTopicsCarouselViewObject]
+        let trendArticlesGridViewObjects: [TrendArticlesGridViewObject]
+        let pickupPhotosGridViewObjects: [PickupPhotosGridViewObject]
         // Action発行用のClosure
         let requestHome: () -> Void
         let retryHome: () -> Void
@@ -32,11 +32,11 @@ struct HomeScreenView: View {
         Props(
             isLoading: state.isLoading,
             isError: state.isError,
-            campaignBanners: state.campaignBanners,
-            featuredTopics: state.featuredTopics,
-            recentNews: state.recentNews,
-            trendArticles: state.trendArticles,
-            pickupPhotos: state.pickupPhotos,
+            campaignBannerCarouselViewObjects: state.campaignBannerCarouselViewObjects,
+            recentNewsCarouselViewObjects: state.recentNewsCarouselViewObjects,
+            reaturedTopicsCarouselViewObjects: state.reaturedTopicsCarouselViewObjects,
+            trendArticlesGridViewObjects: state.trendArticlesGridViewObjects,
+            pickupPhotosGridViewObjects: state.pickupPhotosGridViewObjects,
             requestHome: {
                 store.dispatch(action: RequestHomeAction())
             },
@@ -128,63 +128,23 @@ struct HomeScreenView: View {
     }
 
     private func mapToCampaignBannersCarouselViewObjects(props: Props) -> [CampaignBannerCarouselViewObject] {
-        return props.campaignBanners.map {
-            CampaignBannerCarouselViewObject(
-                id: $0.id,
-                bannerContentsId: $0.bannerContentsId,
-                bannerUrl: URL(string: $0.bannerUrl) ?? nil
-            )
-        }
+        return props.campaignBannerCarouselViewObjects
     }
 
     private func mapToRecentNewsCarouselViewObjects(props: Props) -> [RecentNewsCarouselViewObject] {
-        return props.recentNews.map {
-            RecentNewsCarouselViewObject(
-                id: $0.id,
-                thumbnailUrl: URL(string: $0.thumbnailUrl) ?? nil,
-                title: $0.title,
-                newsCategory: $0.newsCategory,
-                publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: $0.publishedAt)
-            )
-        }
+        return props.recentNewsCarouselViewObjects
     }
 
     private func mapToFeaturedTopicsCarouselViewObjects(props: Props) -> [FeaturedTopicsCarouselViewObject] {
-        return props.featuredTopics.map {
-            FeaturedTopicsCarouselViewObject(
-                id: $0.id,
-                rating: $0.rating,
-                thumbnailUrl: URL(string: $0.thumbnailUrl) ?? nil,
-                title: $0.title,
-                caption: $0.caption,
-                publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: $0.publishedAt)
-            )
-        }
+        return props.reaturedTopicsCarouselViewObjects
     }
 
     private func mapToTrendArticlesGridViewObjects(props: Props) -> [TrendArticlesGridViewObject] {
-        return props.trendArticles.map {
-            TrendArticlesGridViewObject(
-                id: $0.id,
-                thumbnailUrl: URL(string: $0.thumbnailUrl) ?? nil,
-                title: $0.title,
-                introduction:$0.introduction,
-                publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: $0.publishedAt)
-            )
-        }
+        return props.trendArticlesGridViewObjects
     }
 
     private func mapToPickupPhotosGridViewObjects(props: Props) -> [PickupPhotosGridViewObject] {
-        return props.pickupPhotos.map {
-            PickupPhotosGridViewObject(
-                id: $0.id,
-                title: $0.title,
-                caption: $0.caption,
-                photoUrl: URL(string: $0.photoUrl) ?? nil,
-                photoWidth: CGFloat($0.photoWidth),
-                photoHeight: CGFloat($0.photoHeight)
-            )
-        }
+        return props.pickupPhotosGridViewObjects
     }
 }
 

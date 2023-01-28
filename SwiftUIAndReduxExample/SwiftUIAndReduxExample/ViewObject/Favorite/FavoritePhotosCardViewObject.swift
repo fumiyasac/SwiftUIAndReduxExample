@@ -9,7 +9,10 @@ import Foundation
 
 // MARK: - ViewObject
 
-struct FavoritePhotosCardViewObject: Identifiable {
+struct FavoritePhotosCardViewObject: Identifiable, Equatable {
+    
+    // MARK: - Property
+
     let id: Int
     let photoUrl: URL?
     let author: String
@@ -18,4 +21,10 @@ struct FavoritePhotosCardViewObject: Identifiable {
     let shopName: String
     let comment: String
     let publishedAt: String
+
+    // MARK: - Equatable
+
+    static func == (lhs: FavoritePhotosCardViewObject, rhs: FavoritePhotosCardViewObject) -> Bool {
+        return lhs.id == rhs.id
+    }
 }

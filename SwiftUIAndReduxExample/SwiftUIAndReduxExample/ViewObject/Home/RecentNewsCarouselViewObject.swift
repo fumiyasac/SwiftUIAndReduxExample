@@ -9,15 +9,27 @@ import Foundation
 
 // MARK: - ViewObject
 
-struct GroupedRecentNewsCarouselViewObject: Identifiable {
-    let id: UUID
-    let recentNewsCarouselViewObjects: [RecentNewsCarouselViewObject]
-}
+struct RecentNewsCarouselViewObject: Identifiable, Equatable {
 
-struct RecentNewsCarouselViewObject: Identifiable {
+    // MARK: - Property
+    
     let id: Int
     let thumbnailUrl: URL?
     let title: String
     let newsCategory: String
     let publishedAt: String
+
+    // MARK: - Equatable
+
+    static func == (lhs: RecentNewsCarouselViewObject, rhs: RecentNewsCarouselViewObject) -> Bool {
+        return lhs.id == rhs.id
+    }
+}
+
+struct GroupedRecentNewsCarouselViewObject: Identifiable {
+
+    // MARK: - Property
+
+    let id: UUID
+    let recentNewsCarouselViewObjects: [RecentNewsCarouselViewObject]
 }

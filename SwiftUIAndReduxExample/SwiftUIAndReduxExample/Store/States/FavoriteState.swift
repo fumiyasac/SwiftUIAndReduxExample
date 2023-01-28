@@ -16,14 +16,14 @@ struct FavoriteState: ReduxState, Equatable {
     // MEMO: エラー状態
     var isError: Bool = false
 
-    // MEMO: Favorite画面で利用する情報として必要なEntity情報
-    var favoriteScenes: [FavoriteSceneEntity] = []
+    // MEMO: Favorite画面で利用する情報として必要なViewObject情報
+    var favoritePhotosCardViewObjects: [FavoritePhotosCardViewObject] = []
 
     // MARK: - Equatable
 
     static func == (lhs: FavoriteState, rhs: FavoriteState) -> Bool {
         return lhs.isLoading == rhs.isLoading
             && lhs.isError == rhs.isError
-            && lhs.favoriteScenes == rhs.favoriteScenes
+            && lhs.favoritePhotosCardViewObjects == rhs.favoritePhotosCardViewObjects
     }
 }

@@ -9,8 +9,17 @@ import Foundation
 
 // MARK: - ViewObject
 
-struct CampaignBannerCarouselViewObject: Identifiable {
+struct CampaignBannerCarouselViewObject: Identifiable, Equatable {
+
+    // MARK: - Property
+
     let id: Int
     let bannerContentsId: Int
     let bannerUrl: URL?
+
+    // MARK: - Equatable
+
+    static func == (lhs: CampaignBannerCarouselViewObject, rhs: CampaignBannerCarouselViewObject) -> Bool {
+        return lhs.id == rhs.id
+    }
 }
