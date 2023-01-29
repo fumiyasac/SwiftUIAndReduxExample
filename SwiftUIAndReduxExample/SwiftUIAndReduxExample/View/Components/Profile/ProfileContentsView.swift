@@ -90,19 +90,25 @@ struct ProfileContentsView: View {
                 // 3. 現在の取得ポイント等の履歴部分
                 Group {
                     ProfileCommonSectionView(title: "現在の保有ポイントや履歴", subTitle: "Self Points & Histories")
-                    ProfilePointsAndHistoryView()
+                    ProfilePointsAndHistoryView(
+                        profilePointsAndHistoryViewObject: profilePointsAndHistoryViewObject
+                    )
                 }
 
                 // 4. SocialMedia等のリンク表示部分
                 Group {
                     ProfileCommonSectionView(title: "ソーシャルメディア等リンク", subTitle: "Social Media Links")
-                    ProfileSocialMediaLinkView()
+                    ProfileSocialMediaLinkView(
+                        profileSocialMediaViewObject: profileSocialMediaViewObject
+                    )
                 }
 
                 // 5. パーソナル向け情報タブ表示部分
                 Group {
                     ProfileCommonSectionView(title: "パーソナル向け情報一覧", subTitle: "Personal Information List")
-                    ProfileInformationView()
+                    ProfileInformationView(
+                        profileInformationViewObject: profileInformationViewObject
+                    )
                 }
 
                 // 6. スペシャルコンテンツ表示部分

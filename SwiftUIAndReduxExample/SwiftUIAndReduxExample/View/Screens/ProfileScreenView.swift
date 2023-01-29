@@ -18,7 +18,7 @@ struct ProfileScreenView: View {
         let isLoading: Bool
         let isError: Bool
         // Immutableに扱うProperty 👉 画面表示要素用
-        let backgroundImageUrl: String?
+        let backgroundImageUrl: URL?
         let profilePersonalViewObject: ProfilePersonalViewObject?
         let profileSelfIntroductionViewObject: ProfileSelfIntroductionViewObject?
         let profilePointsAndHistoryViewObject: ProfilePointsAndHistoryViewObject?
@@ -108,7 +108,7 @@ struct ProfileScreenView: View {
     }
 
     private func mapToBackgroundImageUrl(props: Props) -> URL? {
-        return URL(string: props.backgroundImageUrl ?? "")
+        return props.backgroundImageUrl
     }
 
     private func mapToProfilePersonalViewObject(props: Props) -> ProfilePersonalViewObject? {
