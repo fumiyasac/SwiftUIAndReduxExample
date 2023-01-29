@@ -14,7 +14,7 @@ struct ProfilePersonalViewObject: Identifiable, Equatable {
     let id: Int
     let nickname: String
     let createdAt: String
-    let avatarUrl: String
+    let avatarUrl: URL?
 
     // MARK: - Equatable
 
