@@ -49,7 +49,7 @@ func profileReducer(_ state: ProfileState, _ action: Action) -> ProfileState {
                     id: $0.id,
                     category: $0.category,
                     title: $0.title,
-                    publishedAt: $0.publishedAt,
+                    publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: $0.publishedAt),
                     description: $0.description
                 )
             },
@@ -58,7 +58,7 @@ func profileReducer(_ state: ProfileState, _ action: Action) -> ProfileState {
                     id: $0.id,
                     emotion: $0.emotion,
                     title: $0.title,
-                    publishedAt: $0.publishedAt,
+                    publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: $0.publishedAt),
                     comment: $0.comment
                 )
             },
@@ -67,7 +67,7 @@ func profileReducer(_ state: ProfileState, _ action: Action) -> ProfileState {
                     id: $0.id,
                     category: $0.category,
                     title: $0.title,
-                    publishedAt: $0.publishedAt,
+                    publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: $0.publishedAt),
                     description: $0.description
                 )
             }
