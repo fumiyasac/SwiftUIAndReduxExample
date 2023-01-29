@@ -65,7 +65,9 @@ struct ProfileContentsView: View {
                 Group {
                     // 1-(1). GrometryReaderを利用した背景用サムネイル画像Parallax表現部分
                     GeometryReader { geometry in
-                        // 👉 GeometryReaderで返されるGeometryProxyの値を元にして
+                        // 👉 GeometryReaderで返されるGeometryProxyの値を元にしている点がポイントになります。
+                        // （記事）https://blckbirds.com/post/stretchy-header-and-parallax-scrolling-in-swiftui/
+                        // （サンプル）https://github.com/BLCKBIRDS/StretchyHeaderAndParallaxScrollingInSwiftUI
                         getBackgroundViewBy(
                             geometry: geometry,
                             backgroundImageUrl: backgroundImageUrl
