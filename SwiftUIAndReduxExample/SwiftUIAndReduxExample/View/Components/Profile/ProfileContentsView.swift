@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct ProfileContentsView: View {
 
@@ -22,10 +23,11 @@ struct ProfileContentsView: View {
     }
 
     private var cellThumbnailMaskColor: Color {
-        return Color.black.opacity(0.12)
+        // 👉 alphaを0.0にしないと背景画像読み込み時に影だけ伸びて表示されてしまった😢
+        return Color.black.opacity(0.0)
     }
 
-    private let backgroundImageUrl: URL
+    private let backgroundImageUrl: URL?
     private let profilePersonalViewObject: ProfilePersonalViewObject
     private let profileSelfIntroductionViewObject: ProfileSelfIntroductionViewObject
     private let profilePointsAndHistoryViewObject: ProfilePointsAndHistoryViewObject
@@ -35,7 +37,7 @@ struct ProfileContentsView: View {
     // MARK: - Initializer
 
     init(
-        backgroundImageUrl: URL,
+        backgroundImageUrl: URL?,
         profilePersonalViewObject: ProfilePersonalViewObject,
         profileSelfIntroductionViewObject: ProfileSelfIntroductionViewObject,
         profilePointsAndHistoryViewObject: ProfilePointsAndHistoryViewObject,
@@ -55,7 +57,6 @@ struct ProfileContentsView: View {
     var body: some View {
         // View要素のベース部分はScrollViewで構成する
         ScrollView {
-
             // MEMO: このままだと隙間ができてしまうので、ScrollView直下にVStackを入れてspacingの値を0として調整しています。
             // 参考: https://qiita.com/masa7351/items/3f169b65f38da29fbf76
             VStack(spacing: 0.0) {
@@ -65,19 +66,25 @@ struct ProfileContentsView: View {
                     // 1-(1). GrometryReaderを利用した背景用サムネイル画像Parallax表現部分
                     GeometryReader { geometry in
                         // 👉 GeometryReaderで返されるGeometryProxyの値を元にして
-                        getBackgroundViewBy(geometry: geometry)
+                        getBackgroundViewBy(
+                            geometry: geometry,
+                            backgroundImageUrl: backgroundImageUrl
+                        )
                     }
                     .frame(height: parallaxHeaderHeight)
                     .padding([.bottom], 12.0)
-
                     // 1-(2). ユーザーの基本情報を表示部分
-                    ProfilePersonalView()
+                    ProfilePersonalView(
+                        profilePersonalViewObject: profilePersonalViewObject
+                    )
                 }
 
                 // 2. 自己紹介本文表示部分
                 Group {
                     ProfileCommonSectionView(title: "自己紹介文", subTitle: "Self Inftoduction")
-                    ProfileSelfIntroductionView()
+                    ProfileSelfIntroductionView(
+                        profileSelfIntroductionViewObject: profileSelfIntroductionViewObject
+                    )
                 }
 
                 // 3. 現在の取得ポイント等の履歴部分
@@ -116,12 +123,15 @@ struct ProfileContentsView: View {
     // @ViewBuilderを利用してViewを出し分けています
     // 参考: https://yanamura.hatenablog.com/entry/2019/09/05/150849
     @ViewBuilder
-    private func getBackgroundViewBy(geometry: GeometryProxy) -> some View {
+    private func getBackgroundViewBy(
+        geometry: GeometryProxy,
+        backgroundImageUrl: URL?
+    ) -> some View {
         if geometry.frame(in: .global).minY <= 0 {
             // (1) ScrollViewにおいて一番上にある状態から更に下方向へスクロールした場合
             // 👉 Header用のサムネイル画像が拡大される様な形の表現をするための処理
             ZStack {
-                Image("profile_header_sample")
+                KFImage(backgroundImageUrl)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                 Rectangle()
@@ -136,7 +146,7 @@ struct ProfileContentsView: View {
             // (2) 上方向へスクロールした場合
             // 👉 画像の比率を維持してピッタリと画面にはまる大きさを保持した状態でスクロールに追従させるための処理
             ZStack {
-                Image("profile_header_sample")
+                KFImage(backgroundImageUrl)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                 Rectangle()
