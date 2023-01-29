@@ -16,12 +16,12 @@ func profileReducer(_ state: ProfileState, _ action: Action) -> ProfileState {
     case let action as SuccessProfileAction:
         // MEMO: 画面要素表示用
         let profileId = action.profilePersonalEntity.id
-        state.backgroundImageUrl = action.profilePersonalEntity.backgroundImageUrl
+        state.backgroundImageUrl = URL(string: action.profilePersonalEntity.backgroundImageUrl) ?? nil
         state.profilePersonalViewObject = ProfilePersonalViewObject(
             id: profileId,
             nickname: action.profilePersonalEntity.nickname,
-            createdAt: action.profilePersonalEntity.createdAt,
-            avatarUrl: action.profilePersonalEntity.avatarUrl
+            createdAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: action.profilePersonalEntity.createdAt),
+            avatarUrl: URL(string: action.profilePersonalEntity.avatarUrl) ?? nil
         )
         state.profileSelfIntroductionViewObject = ProfileSelfIntroductionViewObject(
             id: profileId,

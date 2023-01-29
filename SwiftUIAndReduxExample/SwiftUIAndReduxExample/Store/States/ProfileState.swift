@@ -17,7 +17,7 @@ struct ProfileState: ReduxState, Equatable {
     var isError: Bool = false
 
     // MEMO: Profile画面で利用する情報として必要なViewObject等の情報
-    var backgroundImageUrl: String?
+    var backgroundImageUrl: URL?
     var profilePersonalViewObject: ProfilePersonalViewObject?
     var profileSelfIntroductionViewObject: ProfileSelfIntroductionViewObject?
     var profilePointsAndHistoryViewObject: ProfilePointsAndHistoryViewObject?
