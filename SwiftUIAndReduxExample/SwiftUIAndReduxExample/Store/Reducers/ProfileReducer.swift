@@ -38,9 +38,9 @@ func profileReducer(_ state: ProfileState, _ action: Action) -> ProfileState {
         )
         state.profileSocialMediaViewObject = ProfileSocialMediaViewObject(
             id: profileId,
-            twitterUrl: action.profilePersonalEntity.socialMedia.twitterUrl,
-            facebookUrl: action.profilePersonalEntity.socialMedia.facebookUrl,
-            instagramUrl: action.profilePersonalEntity.socialMedia.instagramUrl
+            twitterUrl: URL(string: action.profilePersonalEntity.socialMedia.twitterUrl) ?? nil,
+            facebookUrl: URL(string: action.profilePersonalEntity.socialMedia.facebookUrl) ?? nil,
+            instagramUrl: URL(string: action.profilePersonalEntity.socialMedia.instagramUrl) ?? nil
         )
         state.profileInformationViewObject = ProfileInformationViewObject(
             id: profileId,
