@@ -9,22 +9,29 @@ import SwiftUI
 
 struct ProfileInformationAnnouncementView: View {
 
+    // MARK: - Property
+
+    private var profileAnnoucementViewObjects: [ProfileAnnoucementViewObject]
+
     // MARK: - Initializer
 
-    init() {}
+    init(profileAnnoucementViewObjects: [ProfileAnnoucementViewObject]) {
+        self.profileAnnoucementViewObjects = profileAnnoucementViewObjects
+    }
     
     // MARK: - Body
 
     var body: some View {
         VStack(alignment: .leading) {
-            ForEach(0 ..< 5 , id: \.self) { _ in
-                ProfileInformationAnnouncementCellView()
+            ForEach(profileAnnoucementViewObjects) { viewObject in
+                ProfileInformationAnnouncementCellView(viewObject: viewObject)
             }
         }
     }
 }
 
-// TODO: ViewObject込みのリファクタリングを実施する
+// MARK: - ProfileInformationAnnouncementCellView
+
 struct ProfileInformationAnnouncementCellView: View {
 
     // MARK: - Property
@@ -65,31 +72,35 @@ struct ProfileInformationAnnouncementCellView: View {
         return Color(uiColor: .lightGray)
     }
 
+    private var viewObject: ProfileAnnoucementViewObject
+
     // MARK: - Initializer
 
-    init() {}
-    
+    init(viewObject: ProfileAnnoucementViewObject) {
+        self.viewObject = viewObject
+    }
+
     // MARK: - Body
 
     var body: some View {
         VStack(alignment: .leading) {
-            Text("App運営事務局からのお知らせ")
+            Text(viewObject.title)
                 .font(cellTitleFont)
                 .foregroundColor(cellTitleColor)
                 .lineLimit(1)
                 .padding([.top], 4.0)
-            Text("カテゴリー: 公式情報")
+            Text(viewObject.category)
                 .font(cellCategoryFont)
                 .foregroundColor(cellCategoryColor)
                 .lineLimit(1)
                 .padding([.top], -8.0)
-            Text("公開日: \(DateLabelFormatter.getDateStringFromAPI(apiDateString: "2022-12-01T07:30:00.000+0000"))")
+            Text("公開日: \(viewObject.publishedAt)")
                 .font(cellDateFont)
                 .foregroundColor(cellDateColor)
                 .lineLimit(1)
                 .padding([.top], -8.0)
             HStack {
-                Text("最新バージョンでは細かなアプリ内の機能改善対応と新たに加入をして下さった生産者様と店舗様の情報が閲覧できる様になりました！今後ともよろしくお願いします。")
+                Text(viewObject.description)
                     .lineLimit(2)
                     .font(cellDescriptionFont)
                     .foregroundColor(cellDescriptionColor)
@@ -105,6 +116,45 @@ struct ProfileInformationAnnouncementCellView: View {
 
 struct ProfileInformationAnnouncementView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileInformationAnnouncementView()
+        // MEMO: Section要素全体を表示するためのViewObject
+        let profileAnnoucementViewObjects = getProfileAnnoucementResponse().result.map {
+            ProfileAnnoucementViewObject(
+                id: $0.id,
+                category: $0.category,
+                title: $0.title,
+                publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: $0.publishedAt),
+                description: $0.description
+            )
+        }
+        // Preview: ProfileInformationAnnouncementView
+        ProfileInformationAnnouncementView(profileAnnoucementViewObjects: profileAnnoucementViewObjects)
+            .previewDisplayName("ProfileInformationAnnouncementView Preview")
+
+        // MEMO: 部品1つあたりを表示するためのViewObject
+        let viewObject = ProfileAnnoucementViewObject(
+            id: 1,
+            category: "公式情報",
+            title: "クリスマスシーズンキャンペーンの結果報告",
+            publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: "2022-12-25T07:30:00.000+0000"),
+            description: "2022.12.01〜2022.12.25に開催されたクリスマスシーズンキャンペーンの結果を公開しております。今後の記事執筆やキャンペーン参加をご検討されているユーザー様はご一読頂けますと嬉しく思います。"
+        )
+        // Preview: ProfileInformationAnnouncementCellView
+        ProfileInformationAnnouncementCellView(viewObject: viewObject)
+            .previewDisplayName("ProfileInformationAnnouncementCellView Preview")
+    }
+
+    // MARK: - Private Static Function
+
+    private static func getProfileAnnoucementResponse() -> ProfileAnnoucementResponse {
+        guard let path = Bundle.main.path(forResource: "profile_announcement", ofType: "json") else {
+            fatalError()
+        }
+        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
+            fatalError()
+        }
+        guard let result = try? JSONDecoder().decode([ProfileAnnoucementEntity].self, from: data) else {
+            fatalError()
+        }
+        return ProfileAnnoucementResponse(result: result)
     }
 }

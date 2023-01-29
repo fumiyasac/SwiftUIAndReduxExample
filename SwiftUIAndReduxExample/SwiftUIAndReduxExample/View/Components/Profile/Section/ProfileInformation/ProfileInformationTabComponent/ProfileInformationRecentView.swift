@@ -9,22 +9,29 @@ import SwiftUI
 
 struct ProfileInformationRecentView: View {
 
+    // MARK: - Property
+
+    private var profileRecentFavoriteViewObjects: [ProfileRecentFavoriteViewObject]
+
     // MARK: - Initializer
 
-    init() {}
-    
+    init(profileRecentFavoriteViewObjects: [ProfileRecentFavoriteViewObject]) {
+        self.profileRecentFavoriteViewObjects = profileRecentFavoriteViewObjects
+    }
+
     // MARK: - Body
 
     var body: some View {
         VStack(alignment: .leading) {
-            ForEach(0 ..< 5 , id: \.self) { _ in
-                ProfileInformationRecentCellView()
+            ForEach(profileRecentFavoriteViewObjects) { viewObject in
+                ProfileInformationRecentCellView(viewObject: viewObject)
             }
         }
     }
 }
 
-// TODO: ViewObject込みのリファクタリングを実施する
+// MARK: - ProfileInformationRecentCellView
+
 struct ProfileInformationRecentCellView: View {
 
     // MARK: - Property
@@ -65,31 +72,35 @@ struct ProfileInformationRecentCellView: View {
         return Color(uiColor: .lightGray)
     }
 
+    private var viewObject: ProfileRecentFavoriteViewObject
+
     // MARK: - Initializer
 
-    init() {}
-    
+    init(viewObject: ProfileRecentFavoriteViewObject) {
+        self.viewObject = viewObject
+    }
+
     // MARK: - Body
 
     var body: some View {
         VStack(alignment: .leading) {
-            Text("和牛を使ったハンバーガーを40%OFFで販売中です✨")
+            Text(viewObject.title)
                 .font(cellTitleFont)
                 .foregroundColor(cellTitleColor)
                 .lineLimit(1)
                 .padding([.top], 4.0)
-            Text("カテゴリー: 新商品のご案内🍔")
+            Text(viewObject.category)
                 .font(cellCategoryFont)
                 .foregroundColor(cellCategoryColor)
                 .lineLimit(1)
                 .padding([.top], -8.0)
-            Text("公開日: \(DateLabelFormatter.getDateStringFromAPI(apiDateString: "2022-12-01T07:30:00.000+0000"))")
+            Text("公開日: \(viewObject.publishedAt)")
                 .font(cellDateFont)
                 .foregroundColor(cellDateColor)
                 .lineLimit(1)
                 .padding([.top], -8.0)
             HStack {
-                Text("厚さ7.5cmの食べ応え十分のハンバーガーに固まりで仕入れた和牛を丁寧に叩いて作ったハンバーグを豪快にサンドした一品です！溢れんばかりの肉汁と当店で焼き上げているバンズのハーモニーを存分にお楽しみ下さい😊")
+                Text(viewObject.description)
                     .lineLimit(2)
                     .font(cellDescriptionFont)
                     .foregroundColor(cellDescriptionColor)
@@ -105,6 +116,45 @@ struct ProfileInformationRecentCellView: View {
 
 struct ProfileInformationRecentView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileInformationRecentView()
+        // MEMO: Section要素全体を表示するためのViewObject
+        let profileRecentFavoriteViewObjects = getProfileRecentFavoriteResponse().result.map {
+            ProfileRecentFavoriteViewObject(
+                id: $0.id,
+                category: $0.category,
+                title: $0.title,
+                publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: $0.publishedAt),
+                description: $0.description
+            )
+        }
+        // Preview: ProfileInformationRecentView
+        ProfileInformationRecentView(profileRecentFavoriteViewObjects: profileRecentFavoriteViewObjects)
+            .previewDisplayName("ProfileInformationRecentView Preview")
+
+        // MEMO: 部品1つあたりを表示するためのViewObject
+        let viewObject = ProfileRecentFavoriteViewObject(
+            id: 1,
+            category: "新商品のご案内🍣",
+            title: "にぎり寿司のランチテイクアウトはじめました✨",
+            publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: "2023-01-01T07:30:00.000+0000"),
+            description: "おまかせにぎり12貫セットをランチテイクアウトスタイルで1500円にて販売することにしました！ちょっと贅沢なお弁当としてもピッタリですので、是非とも一度お試し下さいませ😊"
+        )
+        // Preview: ProfileInformationRecentCellView
+        ProfileInformationRecentCellView(viewObject: viewObject)
+            .previewDisplayName("ProfileInformationRecentCellView Preview")
+    }
+
+    // MARK: - Private Static Function
+
+    private static func getProfileRecentFavoriteResponse() -> ProfileRecentFavoriteResponse {
+        guard let path = Bundle.main.path(forResource: "profile_recent_favorite", ofType: "json") else {
+            fatalError()
+        }
+        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
+            fatalError()
+        }
+        guard let result = try? JSONDecoder().decode([ProfileRecentFavoriteEntity].self, from: data) else {
+            fatalError()
+        }
+        return ProfileRecentFavoriteResponse(result: result)
     }
 }

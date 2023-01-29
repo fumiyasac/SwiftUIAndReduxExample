@@ -9,22 +9,29 @@ import SwiftUI
 
 struct ProfileInformationCommentView: View {
 
+    // MARK: - Property
+
+    private var profileCommentViewObjects: [ProfileCommentViewObject]
+
     // MARK: - Initializer
 
-    init() {}
-    
+    init(profileCommentViewObjects: [ProfileCommentViewObject]) {
+        self.profileCommentViewObjects = profileCommentViewObjects
+    }
+
     // MARK: - Body
 
     var body: some View {
         VStack(alignment: .leading) {
-            ForEach(0 ..< 5 , id: \.self) { _ in
-                ProfileInformationCommentCellView()
+            ForEach(profileCommentViewObjects) { viewObject in
+                ProfileInformationCommentCellView(viewObject: viewObject)
             }
         }
     }
 }
 
-// TODO: ViewObject込みのリファクタリングを実施する
+// MARK: - ProfileInformationCommentCellView
+
 struct ProfileInformationCommentCellView: View {
 
     // MARK: - Property
@@ -65,31 +72,35 @@ struct ProfileInformationCommentCellView: View {
         return Color(uiColor: .lightGray)
     }
 
+    private var viewObject: ProfileCommentViewObject
+
     // MARK: - Initializer
 
-    init() {}
-    
+    init(viewObject: ProfileCommentViewObject) {
+        self.viewObject = viewObject
+    }
+
     // MARK: - Body
 
     var body: some View {
         VStack(alignment: .leading) {
-            Text("ご来店頂きありがとうございました！")
+            Text(viewObject.title)
                 .font(cellTitleFont)
                 .foregroundColor(cellTitleColor)
                 .lineLimit(1)
                 .padding([.top], 4.0)
-            Text("お気持ち: 😊感謝！")
+            Text(viewObject.emotion)
                 .font(cellEmotionFont)
                 .foregroundColor(cellEmotionColor)
                 .lineLimit(1)
                 .padding([.top], -8.0)
-            Text("公開日: \(DateLabelFormatter.getDateStringFromAPI(apiDateString: "2022-12-01T07:30:00.000+0000"))")
+            Text("公開日: \(viewObject.publishedAt)")
                 .font(cellDateFont)
                 .foregroundColor(cellDateColor)
                 .lineLimit(1)
                 .padding([.top], -8.0)
             HStack {
-                Text("この度はご来店頂きまして本当にありがとうございました。当店のお料理はご堪能頂けましたでしょうか？今後ともお客様に驚きと感動をご提供できる様に精進して参りますので、是非店舗の方もフォロー頂けますと嬉しく思います。")
+                Text(viewObject.comment)
                     .lineLimit(2)
                     .font(cellCommentFont)
                     .foregroundColor(cellCommentColor)
@@ -105,6 +116,45 @@ struct ProfileInformationCommentCellView: View {
 
 struct ProfileInformationCommentView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileInformationCommentView()
+        // MEMO: Section要素全体を表示するためのViewObject
+        let profileCommentViewObjects = getProfileCommentResponse().result.map {
+            ProfileCommentViewObject(
+                id: $0.id,
+                emotion: $0.emotion,
+                title: $0.title,
+                publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: $0.publishedAt),
+                comment: $0.comment
+            )
+        }
+        // Preview: ProfileInformationCommentView
+        ProfileInformationCommentView(profileCommentViewObjects: profileCommentViewObjects)
+            .previewDisplayName("ProfileInformationCommentView Preview")
+
+        // MEMO: 部品1つあたりを表示するためのViewObject
+        let viewObject = ProfileCommentViewObject(
+            id: 1,
+            emotion: "📝お知らせ",
+            title: "年末年始の営業とTake Outについて",
+            publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: "2022-12-25T07:30:00.000+0000"),
+            comment: "誠に勝手ながら店舗営業につきましては、年末年始期間は2022.12.27〜2023.01.05までとなりますが、お料理のTake Outにつきましては、年末:2022.12.29まで・年始:2023.01.03から開始致しますのでお間違えのない様にお願い致します。"
+        )
+        // Preview: ProfileInformationCommentCellView
+        ProfileInformationCommentCellView(viewObject: viewObject)
+            .previewDisplayName("ProfileInformationAnnouncementCellView Preview")
+    }
+
+    // MARK: - Private Static Function
+
+    private static func getProfileCommentResponse() -> ProfileCommentResponse {
+        guard let path = Bundle.main.path(forResource: "profile_comment", ofType: "json") else {
+            fatalError()
+        }
+        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
+            fatalError()
+        }
+        guard let result = try? JSONDecoder().decode([ProfileCommentEntity].self, from: data) else {
+            fatalError()
+        }
+        return ProfileCommentResponse(result: result)
     }
 }

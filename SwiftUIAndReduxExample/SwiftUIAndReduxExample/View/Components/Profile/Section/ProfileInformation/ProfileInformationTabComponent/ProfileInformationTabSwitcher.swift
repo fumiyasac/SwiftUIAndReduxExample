@@ -27,22 +27,28 @@ struct ProfileInformationTabSwitcher: View {
         return Color(uiColor: AppConstants.ColorPalette.mint)
     }
 
+    private var profileInformationViewObject: ProfileInformationViewObject
+
+    // 👉 有効にしたいTab要素を格納するための設けている
     private var profileInformationTabs: [ProfileInformationTab]
-    
+
+    // 👉 現在のTab位置を保持するためのState値
     @State private var currentProfileInformationTab: ProfileInformationTab
 
     // MARK: - Initializer
-    
-    init() {
+
+    init(profileInformationViewObject: ProfileInformationViewObject) {
+        self.profileInformationViewObject = profileInformationViewObject
+
         // Tab要素として表示したい全てのケースを設定するための変数
         profileInformationTabs = ProfileInformationTab.allCases
         
         // イニシャライザ内で「_(変数名)」値を代入することでState値の初期化を実行する
         _currentProfileInformationTab = State(initialValue: .announcement)
     }
-    
+
     // MARK: - Body
-    
+
     var body: some View {
         VStack(spacing: 0.0) {
             // MEMO: 水平Scrollを利用したTab型切り替え表示部分
@@ -76,17 +82,23 @@ struct ProfileInformationTabSwitcher: View {
             // MEMO: 定義したEnum要素に対応した画面要素表示
             switch currentProfileInformationTab {
             case .announcement:
-                ProfileInformationAnnouncementView()
+                ProfileInformationAnnouncementView(
+                    profileAnnoucementViewObjects: profileInformationViewObject.profileAnnoucementViewObjects
+                )
             case .comment:
-                ProfileInformationCommentView()
+                ProfileInformationCommentView(
+                    profileCommentViewObjects: profileInformationViewObject.profileCommentViewObjects
+                )
             case .recent:
-                ProfileInformationRecentView()
+                ProfileInformationRecentView(
+                    profileRecentFavoriteViewObjects: profileInformationViewObject.profileRecentFavoriteViewObjects
+                )
             }
         }
     }
 
     // MARK: - Private Function
-    
+
     private func getForegroundColorForTabRectangle(_ tab: ProfileInformationTab) -> Color {
         if tab == currentProfileInformationTab {
             return tabRectangleColor
@@ -113,6 +125,82 @@ struct ProfileInformationTabSwitcher: View {
 
 struct ProfileInformationTabSwitcher_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileInformationTabSwitcher()
+        // MEMO: 部品1つあたりを表示するためのViewObject
+        let profileAnnoucementViewObjects = getProfileAnnoucementResponse().result.map {
+            ProfileAnnoucementViewObject(
+                id: $0.id,
+                category: $0.category,
+                title: $0.title,
+                publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: $0.publishedAt),
+                description: $0.description
+            )
+        }
+        let profileCommentViewObjects = getProfileCommentResponse().result.map {
+            ProfileCommentViewObject(
+                id: $0.id,
+                emotion: $0.emotion,
+                title: $0.title,
+                publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: $0.publishedAt),
+                comment: $0.comment
+            )
+        }
+        let profileRecentFavoriteViewObjects = getProfileRecentFavoriteResponse().result.map {
+            ProfileRecentFavoriteViewObject(
+                id: $0.id,
+                category: $0.category,
+                title: $0.title,
+                publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: $0.publishedAt),
+                description: $0.description
+            )
+        }
+        let profileInformationViewObject = ProfileInformationViewObject(
+            id: 100,
+            profileAnnoucementViewObjects: profileAnnoucementViewObjects,
+            profileCommentViewObjects: profileCommentViewObjects,
+            profileRecentFavoriteViewObjects: profileRecentFavoriteViewObjects
+        )
+        // Preview: ProfileInformationTabSwitcher
+        ProfileInformationTabSwitcher(profileInformationViewObject: profileInformationViewObject)
+    }
+
+    // MARK: - Private Static Function
+
+    private static func getProfileAnnoucementResponse() -> ProfileAnnoucementResponse {
+        guard let path = Bundle.main.path(forResource: "profile_announcement", ofType: "json") else {
+            fatalError()
+        }
+        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
+            fatalError()
+        }
+        guard let result = try? JSONDecoder().decode([ProfileAnnoucementEntity].self, from: data) else {
+            fatalError()
+        }
+        return ProfileAnnoucementResponse(result: result)
+    }
+
+    private static func getProfileCommentResponse() -> ProfileCommentResponse {
+        guard let path = Bundle.main.path(forResource: "profile_comment", ofType: "json") else {
+            fatalError()
+        }
+        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
+            fatalError()
+        }
+        guard let result = try? JSONDecoder().decode([ProfileCommentEntity].self, from: data) else {
+            fatalError()
+        }
+        return ProfileCommentResponse(result: result)
+    }
+
+    private static func getProfileRecentFavoriteResponse() -> ProfileRecentFavoriteResponse {
+        guard let path = Bundle.main.path(forResource: "profile_recent_favorite", ofType: "json") else {
+            fatalError()
+        }
+        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
+            fatalError()
+        }
+        guard let result = try? JSONDecoder().decode([ProfileRecentFavoriteEntity].self, from: data) else {
+            fatalError()
+        }
+        return ProfileRecentFavoriteResponse(result: result)
     }
 }
