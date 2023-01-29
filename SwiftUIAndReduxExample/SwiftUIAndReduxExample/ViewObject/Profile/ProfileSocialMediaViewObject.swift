@@ -12,9 +12,9 @@ struct ProfileSocialMediaViewObject: Identifiable, Equatable {
     // MARK: - Property
 
     let id: Int
-    let twitterUrl: String
-    let facebookUrl: String
-    let instagramUrl: String
+    let twitterUrl: URL?
+    let facebookUrl: URL?
+    let instagramUrl: URL?
 
     // MARK: - Equatable
 
