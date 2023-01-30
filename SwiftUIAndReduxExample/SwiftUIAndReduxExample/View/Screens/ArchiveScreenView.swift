@@ -13,7 +13,7 @@ struct ArchiveScreenView: View {
 
     var body: some View {
         NavigationStack {
-            ArchiveSearchView(archiveCellViewObjects: getArchiveCellViewObjects())
+            ArchiveContentsView(archiveCellViewObjects: getArchiveCellViewObjects())
                 .navigationTitle("Archive")
                 .navigationBarTitleDisplayMode(.inline)
         }

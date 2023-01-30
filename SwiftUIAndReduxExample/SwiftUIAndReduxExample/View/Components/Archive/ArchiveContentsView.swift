@@ -1,5 +1,5 @@
 //
-//  ArchiveSearchView.swift
+//  ArchiveContentsView.swift
 //  SwiftUIAndReduxExample
 //
 //  Created by 酒井文也 on 2022/12/29.
@@ -8,7 +8,7 @@
 import SwiftUI
 import Kingfisher
 
-struct ArchiveSearchView: View {
+struct ArchiveContentsView: View {
 
     // MARK: - Property
 
@@ -222,7 +222,7 @@ struct ArchiveCellViewObject: Identifiable {
 
 // MARK: - Preview
 
-struct ArchiveSearchView_Previews: PreviewProvider {
+struct ArchiveContentsView_Previews: PreviewProvider {
     static var previews: some View {
 
         // MEMO: Preview表示用にレスポンスを想定したJsonを読み込んで画面に表示させる
@@ -239,9 +239,9 @@ struct ArchiveSearchView_Previews: PreviewProvider {
                 )
             }
 
-        // Preview: ArchiveSearchView
-        ArchiveSearchView(archiveCellViewObjects: archiveCellViewObjects)
-            .previewDisplayName("ArchiveSearchView Preview")
+        // Preview: ArchiveContentsView
+        ArchiveContentsView(archiveCellViewObjects: archiveCellViewObjects)
+            .previewDisplayName("ArchiveContentsView Preview")
 
         // MEMO: 部品1つあたりを表示するためのViewObject
         let viewObject = ArchiveCellViewObject(

@@ -68,7 +68,7 @@
 		DE27BFAB29512D1600CF96AC /* FavoriteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27BFAA29512D1600CF96AC /* FavoriteResponse.swift */; };
 		DE27BFAE29512D6200CF96AC /* FavoriteSceneResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27BFAD29512D6200CF96AC /* FavoriteSceneResponse.swift */; };
 		DE27BFBC295981D900CF96AC /* ProfileContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27BFBB295981D900CF96AC /* ProfileContentsView.swift */; };
-		DE27BFC4295D152200CF96AC /* ArchiveSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27BFC3295D152200CF96AC /* ArchiveSearchView.swift */; };
+		DE27BFC4295D152200CF96AC /* ArchiveContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27BFC3295D152200CF96AC /* ArchiveContentsView.swift */; };
 		DE42742B297C355B0003DCE3 /* ProfileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42742A297C355B0003DCE3 /* ProfileRepository.swift */; };
 		DE42742D297DF7F50003DCE3 /* FavoriteState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42742C297DF7F50003DCE3 /* FavoriteState.swift */; };
 		DE42742F297DF8910003DCE3 /* ProfileState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42742E297DF8910003DCE3 /* ProfileState.swift */; };
@@ -208,7 +208,7 @@
 		DE27BFAA29512D1600CF96AC /* FavoriteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteResponse.swift; sourceTree = "<group>"; };
 		DE27BFAD29512D6200CF96AC /* FavoriteSceneResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSceneResponse.swift; sourceTree = "<group>"; };
 		DE27BFBB295981D900CF96AC /* ProfileContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContentsView.swift; sourceTree = "<group>"; };
-		DE27BFC3295D152200CF96AC /* ArchiveSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveSearchView.swift; sourceTree = "<group>"; };
+		DE27BFC3295D152200CF96AC /* ArchiveContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveContentsView.swift; sourceTree = "<group>"; };
 		DE42742A297C355B0003DCE3 /* ProfileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRepository.swift; sourceTree = "<group>"; };
 		DE42742C297DF7F50003DCE3 /* FavoriteState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteState.swift; sourceTree = "<group>"; };
 		DE42742E297DF8910003DCE3 /* ProfileState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileState.swift; sourceTree = "<group>"; };
@@ -319,14 +319,14 @@
 			path = ProfileInformationTabComponent;
 			sourceTree = "<group>";
 		};
-		DE03D00F29655E0F0054BCF1 /* SearchAreaComponent */ = {
+		DE03D00F29655E0F0054BCF1 /* Section */ = {
 			isa = PBXGroup;
 			children = (
-				DE03D00B29655DDB0054BCF1 /* ArchiveCategoryView.swift */,
 				DE03D00D29655DFA0054BCF1 /* ArchiveFreewordView.swift */,
+				DE03D00B29655DDB0054BCF1 /* ArchiveCategoryView.swift */,
 				DEAACE88296C5B9300F436F5 /* ArchiveCurrentCountView.swift */,
 			);
-			path = SearchAreaComponent;
+			path = Section;
 			sourceTree = "<group>";
 		};
 		DE0BFBAA271A99E700FC0F32 /* App */ = {
@@ -610,8 +610,8 @@
 		DE27BFC2295D14F600CF96AC /* Archive */ = {
 			isa = PBXGroup;
 			children = (
-				DE03D00F29655E0F0054BCF1 /* SearchAreaComponent */,
-				DE27BFC3295D152200CF96AC /* ArchiveSearchView.swift */,
+				DE03D00F29655E0F0054BCF1 /* Section */,
+				DE27BFC3295D152200CF96AC /* ArchiveContentsView.swift */,
 			);
 			path = Archive;
 			sourceTree = "<group>";
@@ -1130,7 +1130,7 @@
 				DE27BFBC295981D900CF96AC /* ProfileContentsView.swift in Sources */,
 				DE0BFBCA271B21B400FC0F32 /* HomeMiddleware.swift in Sources */,
 				DE03D00C29655DDB0054BCF1 /* ArchiveCategoryView.swift in Sources */,
-				DE27BFC4295D152200CF96AC /* ArchiveSearchView.swift in Sources */,
+				DE27BFC4295D152200CF96AC /* ArchiveContentsView.swift in Sources */,
 				DEA57BC629857E6600872964 /* FavoriteContentsView.swift in Sources */,
 				DEAACEC2297BFB8B00F436F5 /* ProfileAnnoucementResponse.swift in Sources */,
 				DE0BFBC4271B1EA400FC0F32 /* Store.swift in Sources */,
