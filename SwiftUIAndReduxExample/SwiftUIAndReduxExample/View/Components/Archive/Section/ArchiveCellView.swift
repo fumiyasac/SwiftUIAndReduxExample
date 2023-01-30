@@ -12,7 +12,7 @@ struct ArchiveCellView: View {
 
     // MARK: - Typealias
 
-    typealias TapButtonAction = () -> Void
+    typealias TapFavioriteButtonAction = () -> Void
 
     // MARK: - Property
 
@@ -76,18 +76,18 @@ struct ArchiveCellView: View {
 
     private var targetKeyword: String = ""
 
-    private var tapButtonAction: ArchiveCellView.TapButtonAction
+    private var tapFavioriteButtonAction: ArchiveCellView.TapFavioriteButtonAction
 
     // MARK: - Initializer
     
     init(
         viewObject: ArchiveCellViewObject,
         targetKeyword: String,
-        tapButtonAction: @escaping ArchiveCellView.TapButtonAction
+        tapFavioriteButtonAction: @escaping ArchiveCellView.TapFavioriteButtonAction
     ) {
         self.viewObject = viewObject
         self.targetKeyword = targetKeyword
-        self.tapButtonAction = tapButtonAction
+        self.tapFavioriteButtonAction = tapFavioriteButtonAction
     }
 
     // MARK: - Body
@@ -132,7 +132,7 @@ struct ArchiveCellView: View {
                 // 1-(3). Spacer
                 Spacer()
                 // 1-(4). お気に入りボタン
-                Button(action: tapButtonAction, label: {
+                Button(action: tapFavioriteButtonAction, label: {
                     Image(systemName: "heart")
                     // TODO: Realm内に登録されている場合には"heart.fill"を適用する
                 })
@@ -183,11 +183,11 @@ struct ArchiveCellView_Previews: PreviewProvider {
         )
 
         // Preview: ArchiveCellView
-        ArchiveCellView(viewObject: viewObject, targetKeyword: "ベトナム", tapButtonAction: {})
+        ArchiveCellView(viewObject: viewObject, targetKeyword: "ベトナム", tapFavioriteButtonAction: {})
             .previewDisplayName("ArchiveCellView (with Search Keyword) Preview")
 
         // Preview: ArchiveCellView
-        ArchiveCellView(viewObject: viewObject, targetKeyword: "", tapButtonAction: {})
+        ArchiveCellView(viewObject: viewObject, targetKeyword: "", tapFavioriteButtonAction: {})
             .previewDisplayName("ArchiveCellView (without Search Keyword) Preview")
     }
 }

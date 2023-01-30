@@ -14,7 +14,15 @@ struct ArchiveScreenView: View {
     var body: some View {
         NavigationStack {
             Group {
-                ArchiveContentsView(archiveCellViewObjects: getArchiveCellViewObjects())
+                ArchiveContentsView(
+                    archiveCellViewObjects: getArchiveCellViewObjects(),
+                    tapCategoryChipAction: { _ in
+                        // TODO: Category表示Chipを謳歌した際のアクション伝播処理を記載する
+                    },
+                    tapFavioriteButtonAction: { viewObject in
+                        print("想定: Tap処理を実行した際に何らかの処理を実行する (ID:\(viewObject.id))")
+                    }
+                )
             }
             .navigationTitle("Archive")
             .navigationBarTitleDisplayMode(.inline)

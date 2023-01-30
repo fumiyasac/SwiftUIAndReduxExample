@@ -9,22 +9,33 @@ import SwiftUI
 
 struct ArchiveContentsView: View {
 
+    // MARK: - Typealias
+
+    typealias TapCategoryChipAction = (String) -> Void
+    typealias TapFavioriteButtonAction = (ArchiveCellViewObject) -> Void
+
     // MARK: - Property
 
     // MEMO: 画面に表示する内容を格納するための変数
     @State private var archiveCellViewObjects: [ArchiveCellViewObject] = []
 
-    // MARK: - Typealias
-
-    typealias TapCategoryChipAction = () -> Void
-    typealias TapFavioriteButtonAction = () -> Void
+    // ボタンタップ時に
+    private var tapCategoryChipAction: ArchiveContentsView.TapCategoryChipAction
+    private var tapFavioriteButtonAction: ArchiveContentsView.TapFavioriteButtonAction
 
     // MARK: - Initializer
 
-    init(archiveCellViewObjects: [ArchiveCellViewObject]) {
-
+    init(
+        archiveCellViewObjects: [ArchiveCellViewObject],
+        tapCategoryChipAction: @escaping TapCategoryChipAction,
+        tapFavioriteButtonAction: @escaping TapFavioriteButtonAction
+    ) {
         // イニシャライザ内で「_(変数名)」値を代入することでState値の初期化を実行する
         _archiveCellViewObjects = State(initialValue: archiveCellViewObjects)
+
+        //　ボタンタップ時のClosure
+        self.tapCategoryChipAction = tapCategoryChipAction
+        self.tapFavioriteButtonAction = tapFavioriteButtonAction
     }
 
     // MARK: - Body
@@ -40,8 +51,8 @@ struct ArchiveContentsView: View {
             // (2) 一覧データ表示部分
             ScrollView {
                 ForEach(archiveCellViewObjects) { viewObject in
-                    ArchiveCellView(viewObject: viewObject, targetKeyword: "", tapButtonAction: {
-                        print("想定: Tap処理を実行した際に何らかの処理を実行する (ID:\(viewObject.id))")
+                    ArchiveCellView(viewObject: viewObject, targetKeyword: "", tapFavioriteButtonAction: {
+                        tapFavioriteButtonAction(viewObject)
                     })
                 }
             }
@@ -69,8 +80,12 @@ struct ArchiveContentsView_Previews: PreviewProvider {
             }
 
         // Preview: ArchiveContentsView
-        ArchiveContentsView(archiveCellViewObjects: archiveCellViewObjects)
-            .previewDisplayName("ArchiveContentsView Preview")
+        ArchiveContentsView(
+            archiveCellViewObjects: archiveCellViewObjects,
+            tapCategoryChipAction: { _ in },
+            tapFavioriteButtonAction: { _ in }
+        )
+        .previewDisplayName("ArchiveContentsView Preview")
     }
 
     // MARK: - Private Static Function
