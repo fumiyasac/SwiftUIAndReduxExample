@@ -214,17 +214,6 @@ struct ArchiveCellView: View {
     }
 }
 
-// MARK: - ViewObject
-
-struct ArchiveCellViewObject: Identifiable {
-    let id: Int
-    let photoUrl: URL?
-    let category: String
-    let dishName: String
-    let shopName: String
-    let introduction: String
-}
-
 // MARK: - Preview
 
 struct ArchiveContentsView_Previews: PreviewProvider {

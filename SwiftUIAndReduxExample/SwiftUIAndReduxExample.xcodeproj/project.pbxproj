@@ -100,6 +100,7 @@
 		DEA57BB8298535A600872964 /* ProfilePointsAndHistoryViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BB7298535A600872964 /* ProfilePointsAndHistoryViewObject.swift */; };
 		DEA57BC629857E6600872964 /* FavoriteContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BC529857E6600872964 /* FavoriteContentsView.swift */; };
 		DEA57BCE2985816200872964 /* HomeContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BCD2985816200872964 /* HomeContentsView.swift */; };
+		DEA57BD22987F98B00872964 /* ArchiveCellViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BD12987F98B00872964 /* ArchiveCellViewObject.swift */; };
 		DEAACE89296C5B9300F436F5 /* ArchiveCurrentCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAACE88296C5B9300F436F5 /* ArchiveCurrentCountView.swift */; };
 		DEAACE8B296D941F00F436F5 /* LoadingIndicatorViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAACE8A296D941F00F436F5 /* LoadingIndicatorViewRepresentable.swift */; };
 		DEAACE8D296ECE0000F436F5 /* achive_images.json in Resources */ = {isa = PBXBuildFile; fileRef = DEAACE8C296ECE0000F436F5 /* achive_images.json */; };
@@ -239,6 +240,7 @@
 		DEA57BB7298535A600872964 /* ProfilePointsAndHistoryViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePointsAndHistoryViewObject.swift; sourceTree = "<group>"; };
 		DEA57BC529857E6600872964 /* FavoriteContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteContentsView.swift; sourceTree = "<group>"; };
 		DEA57BCD2985816200872964 /* HomeContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContentsView.swift; sourceTree = "<group>"; };
+		DEA57BD12987F98B00872964 /* ArchiveCellViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveCellViewObject.swift; sourceTree = "<group>"; };
 		DEAACE88296C5B9300F436F5 /* ArchiveCurrentCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveCurrentCountView.swift; sourceTree = "<group>"; };
 		DEAACE8A296D941F00F436F5 /* LoadingIndicatorViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorViewRepresentable.swift; sourceTree = "<group>"; };
 		DEAACE8C296ECE0000F436F5 /* achive_images.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = achive_images.json; sourceTree = "<group>"; };
@@ -677,6 +679,7 @@
 		DEA57BA0298501FE00872964 /* Archive */ = {
 			isa = PBXGroup;
 			children = (
+				DEA57BD12987F98B00872964 /* ArchiveCellViewObject.swift */,
 			);
 			path = Archive;
 			sourceTree = "<group>";
@@ -1163,6 +1166,7 @@
 				DE42742D297DF7F50003DCE3 /* FavoriteState.swift in Sources */,
 				DE0BFBBA271B154900FC0F32 /* AppConstants.swift in Sources */,
 				DE03D0062962BF840054BCF1 /* StringExtension.swift in Sources */,
+				DEA57BD22987F98B00872964 /* ArchiveCellViewObject.swift in Sources */,
 				DE03CFF72961748F0054BCF1 /* ProfileSpecialContentsView.swift in Sources */,
 				DE1833BF291DAABF00E3E885 /* FeaturedTopicsResponse.swift in Sources */,
 				DE1833BD291DA8BD00E3E885 /* FeaturedTopicEntity.swift in Sources */,
