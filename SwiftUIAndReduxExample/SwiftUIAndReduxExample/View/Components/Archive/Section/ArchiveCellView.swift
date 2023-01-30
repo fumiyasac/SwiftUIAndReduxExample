@@ -12,7 +12,7 @@ struct ArchiveCellView: View {
 
     // MARK: - Typealias
 
-    typealias TapFavioriteButtonAction = () -> Void
+    typealias TapFavioriteButtonAction = (Bool) -> Void
 
     // MARK: - Property
 
@@ -73,13 +73,13 @@ struct ArchiveCellView: View {
     }
 
     private var viewObject: ArchiveCellViewObject
-
     private var targetKeyword: String = ""
-
     private var tapFavioriteButtonAction: ArchiveCellView.TapFavioriteButtonAction
 
+    @State private var shouldFavorite: Bool = false
+
     // MARK: - Initializer
-    
+
     init(
         viewObject: ArchiveCellViewObject,
         targetKeyword: String,
@@ -88,6 +88,9 @@ struct ArchiveCellView: View {
         self.viewObject = viewObject
         self.targetKeyword = targetKeyword
         self.tapFavioriteButtonAction = tapFavioriteButtonAction
+        
+        // イニシャライザ内で「_(変数名)」値を代入することでState値の初期化を実行する
+        _shouldFavorite = State(initialValue: viewObject.shouldFavorite)
     }
 
     // MARK: - Body
@@ -132,9 +135,16 @@ struct ArchiveCellView: View {
                 // 1-(3). Spacer
                 Spacer()
                 // 1-(4). お気に入りボタン
-                Button(action: tapFavioriteButtonAction, label: {
-                    Image(systemName: "heart")
-                    // TODO: Realm内に登録されている場合には"heart.fill"を適用する
+                Button(action: {
+                    //
+                    shouldFavorite = !shouldFavorite
+                    tapFavioriteButtonAction(shouldFavorite)
+                }, label: {
+                    if shouldFavorite {
+                        Image(systemName: "heart.fill")
+                    } else {
+                        Image(systemName: "heart")
+                    }
                 })
                 .foregroundColor(cellStockActiveButtonColor)
                 .buttonStyle(PlainButtonStyle())
@@ -183,11 +193,11 @@ struct ArchiveCellView_Previews: PreviewProvider {
         )
 
         // Preview: ArchiveCellView
-        ArchiveCellView(viewObject: viewObject, targetKeyword: "ベトナム", tapFavioriteButtonAction: {})
+        ArchiveCellView(viewObject: viewObject, targetKeyword: "ベトナム", tapFavioriteButtonAction: { _ in })
             .previewDisplayName("ArchiveCellView (with Search Keyword) Preview")
 
         // Preview: ArchiveCellView
-        ArchiveCellView(viewObject: viewObject, targetKeyword: "", tapFavioriteButtonAction: {})
+        ArchiveCellView(viewObject: viewObject, targetKeyword: "", tapFavioriteButtonAction: { _ in })
             .previewDisplayName("ArchiveCellView (without Search Keyword) Preview")
     }
 }

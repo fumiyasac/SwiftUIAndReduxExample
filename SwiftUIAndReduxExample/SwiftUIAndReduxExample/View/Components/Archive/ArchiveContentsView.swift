@@ -12,7 +12,7 @@ struct ArchiveContentsView: View {
     // MARK: - Typealias
 
     typealias TapCategoryChipAction = (String) -> Void
-    typealias TapFavioriteButtonAction = (ArchiveCellViewObject) -> Void
+    typealias TapFavioriteButtonAction = (ArchiveCellViewObject, Bool) -> Void
 
     // MARK: - Property
 
@@ -51,8 +51,8 @@ struct ArchiveContentsView: View {
             // (2) 一覧データ表示部分
             ScrollView {
                 ForEach(archiveCellViewObjects) { viewObject in
-                    ArchiveCellView(viewObject: viewObject, targetKeyword: "", tapFavioriteButtonAction: {
-                        tapFavioriteButtonAction(viewObject)
+                    ArchiveCellView(viewObject: viewObject, targetKeyword: "", tapFavioriteButtonAction: { shouldFavorite in
+                        tapFavioriteButtonAction(viewObject, shouldFavorite)
                     })
                 }
             }
@@ -83,7 +83,7 @@ struct ArchiveContentsView_Previews: PreviewProvider {
         ArchiveContentsView(
             archiveCellViewObjects: archiveCellViewObjects,
             tapCategoryChipAction: { _ in },
-            tapFavioriteButtonAction: { _ in }
+            tapFavioriteButtonAction: { _,_  in }
         )
         .previewDisplayName("ArchiveContentsView Preview")
     }
