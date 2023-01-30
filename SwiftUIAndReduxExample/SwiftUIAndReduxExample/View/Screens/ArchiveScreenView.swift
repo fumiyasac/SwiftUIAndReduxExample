@@ -13,9 +13,24 @@ struct ArchiveScreenView: View {
 
     var body: some View {
         NavigationStack {
-            ArchiveContentsView(archiveCellViewObjects: getArchiveCellViewObjects())
-                .navigationTitle("Archive")
-                .navigationBarTitleDisplayMode(.inline)
+            Group {
+                ArchiveContentsView(archiveCellViewObjects: getArchiveCellViewObjects())
+            }
+            .navigationTitle("Archive")
+            .navigationBarTitleDisplayMode(.inline)
+            // Debug. APIとの疎通確認（※後程削除する）
+            .onFirstAppear {
+                Task {
+                    do {
+                        let result = try await ApiClientManager.shared.getAchiveImages(keyword: "", category: "")
+                        print("成功")
+                        dump(result)
+                    } catch APIError.error(let message) {
+                        print("失敗")
+                        print(message)
+                    }
+                }
+            }
         }
     }
 }
