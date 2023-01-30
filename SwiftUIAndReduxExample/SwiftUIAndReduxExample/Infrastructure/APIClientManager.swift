@@ -86,7 +86,7 @@ final class ApiClientManager {
         var urlRequest: URLRequest
         switch httpMethod {
         case .GET:
-            urlRequest = makeGetRequest(endpointUrl)
+            urlRequest = makeGetRequest(endpointUrl, withParameters: withParameters)
         case .POST:
             urlRequest = makePostRequest(endpointUrl, withParameters: withParameters)
         }
@@ -147,9 +147,19 @@ final class ApiClientManager {
     }
 
     // GETリクエストを作成する
-    private func makeGetRequest(_ urlString: String) -> URLRequest {
+    private func makeGetRequest(_ urlString: String, withParameters: [String : Any] = [:]) -> URLRequest {
 
-        guard let url = URL(string: urlString) else {
+        // withParametersから受け取った値をクエリパラメータで処理する
+        var urlComponents = URLComponents(string: urlString)
+        var targetQueryItems: [URLQueryItem] = []
+        for (key, value) in withParameters {
+            targetQueryItems.append(URLQueryItem(name: key, value: String(describing: value)))
+        }
+        if !targetQueryItems.isEmpty {
+            urlComponents?.queryItems = targetQueryItems
+        }
+
+        guard let url = urlComponents?.url else {
             fatalError("Invalid URL strings.")
         }
         var urlRequest = URLRequest(url: url)
