@@ -15,6 +15,11 @@ struct ArchiveContentsView: View {
     // MEMO: 画面に表示する内容を格納するための変数
     @State private var archiveCellViewObjects: [ArchiveCellViewObject] = []
 
+    // MARK: - Typealias
+
+    typealias TapCategoryChipAction = () -> Void
+    typealias TapFavioriteButtonAction = () -> Void
+
     // MARK: - Initializer
 
     init(archiveCellViewObjects: [ArchiveCellViewObject]) {
