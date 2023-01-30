@@ -22,7 +22,7 @@ struct ArchiveScreenView: View {
             .onFirstAppear {
                 Task {
                     do {
-                        let result = try await ApiClientManager.shared.getAchiveImages(keyword: "", category: "")
+                        let result = try await ApiClientManager.shared.getAchiveImages(keyword: "ベトナム", category: "エスニック料理")
                         print("成功")
                         dump(result)
                     } catch APIError.error(let message) {
