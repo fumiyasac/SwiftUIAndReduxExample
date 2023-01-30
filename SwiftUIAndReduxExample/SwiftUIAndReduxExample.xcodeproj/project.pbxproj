@@ -101,6 +101,7 @@
 		DEA57BC629857E6600872964 /* FavoriteContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BC529857E6600872964 /* FavoriteContentsView.swift */; };
 		DEA57BCE2985816200872964 /* HomeContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BCD2985816200872964 /* HomeContentsView.swift */; };
 		DEA57BD22987F98B00872964 /* ArchiveCellViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BD12987F98B00872964 /* ArchiveCellViewObject.swift */; };
+		DEA57BD42988769B00872964 /* ArchiveCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BD32988769B00872964 /* ArchiveCellView.swift */; };
 		DEAACE89296C5B9300F436F5 /* ArchiveCurrentCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAACE88296C5B9300F436F5 /* ArchiveCurrentCountView.swift */; };
 		DEAACE8B296D941F00F436F5 /* LoadingIndicatorViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAACE8A296D941F00F436F5 /* LoadingIndicatorViewRepresentable.swift */; };
 		DEAACE8D296ECE0000F436F5 /* achive_images.json in Resources */ = {isa = PBXBuildFile; fileRef = DEAACE8C296ECE0000F436F5 /* achive_images.json */; };
@@ -241,6 +242,7 @@
 		DEA57BC529857E6600872964 /* FavoriteContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteContentsView.swift; sourceTree = "<group>"; };
 		DEA57BCD2985816200872964 /* HomeContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContentsView.swift; sourceTree = "<group>"; };
 		DEA57BD12987F98B00872964 /* ArchiveCellViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveCellViewObject.swift; sourceTree = "<group>"; };
+		DEA57BD32988769B00872964 /* ArchiveCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveCellView.swift; sourceTree = "<group>"; };
 		DEAACE88296C5B9300F436F5 /* ArchiveCurrentCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveCurrentCountView.swift; sourceTree = "<group>"; };
 		DEAACE8A296D941F00F436F5 /* LoadingIndicatorViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorViewRepresentable.swift; sourceTree = "<group>"; };
 		DEAACE8C296ECE0000F436F5 /* achive_images.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = achive_images.json; sourceTree = "<group>"; };
@@ -327,6 +329,7 @@
 				DE03D00D29655DFA0054BCF1 /* ArchiveFreewordView.swift */,
 				DE03D00B29655DDB0054BCF1 /* ArchiveCategoryView.swift */,
 				DEAACE88296C5B9300F436F5 /* ArchiveCurrentCountView.swift */,
+				DEA57BD32988769B00872964 /* ArchiveCellView.swift */,
 			);
 			path = Section;
 			sourceTree = "<group>";
@@ -1210,6 +1213,7 @@
 				DEA57BB0298525FE00872964 /* ProfilePersonalViewObject.swift in Sources */,
 				DE03CFE9295F118C0054BCF1 /* ProfileCommonSectionView.swift in Sources */,
 				DE1833DC29210BF600E3E885 /* ApplicationStatusLocalStore.swift in Sources */,
+				DEA57BD42988769B00872964 /* ArchiveCellView.swift in Sources */,
 				DEA57BAE2985095C00872964 /* FavoritePhotosCardViewObject.swift in Sources */,
 				DE1833C5291DB41F00E3E885 /* PickupPhotoEntity.swift in Sources */,
 			);
