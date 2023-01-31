@@ -9,6 +9,10 @@ import SwiftUI
 
 struct ArchiveCategoryView: View {
 
+    // MARK: - Typealias
+
+    typealias TapCategoryChipAction = (String) -> Void
+
     // MARK: - Property
 
     private var categorySliderTitleFont: Font {
