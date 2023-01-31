@@ -17,7 +17,9 @@ struct ArchiveScreenView: View {
                 // (1) 検索機能部分
                 Group {
                     ArchiveFreewordView(inputText: .constant(""), isLoading: .constant(false))
-                    ArchiveCategoryView(selectedCategory: .constant("エスニック料理"))
+                    ArchiveCategoryView(tapCategoryChipAction: { selectedCategory in
+                        print("想定: 取得されたCategory (\(selectedCategory))")
+                    })
                     ArchiveCurrentCountView(currentCount: .constant(36))
                 }
                 // (2) 一覧データ表示部分

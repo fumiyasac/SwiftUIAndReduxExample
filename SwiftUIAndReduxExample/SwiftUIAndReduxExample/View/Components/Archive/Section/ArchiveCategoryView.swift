@@ -62,16 +62,17 @@ struct ArchiveCategoryView: View {
         return Color(uiColor: AppConstants.ColorPalette.mint)
     }
 
-    // TODO: 値の渡し方は再考の余地あり
-    //@Binding var selectedCategory: String
+    private var tapCategoryChipAction: ArchiveCategoryView.TapCategoryChipAction
 
-    @State private var selectedCategory: String?
+    @State var selectedCategory: String = ""
 
     // MARK: - Initializer
 
-    // TODO: 値の渡し方は再考の余地あり
-    init() {
-        _selectedCategory = State(initialValue: nil)
+    init(tapCategoryChipAction: @escaping ArchiveCategoryView.TapCategoryChipAction) {
+        self.tapCategoryChipAction = tapCategoryChipAction
+
+        // イニシャライザ内で「_(変数名)」値を代入することでState値の初期化を実行する
+        _selectedCategory = State(initialValue: "")
     }
 
     // MARK: - Body
@@ -108,7 +109,13 @@ struct ArchiveCategoryView: View {
                                     .stroke(categoryBorderColor, lineWidth: 1.0)
                             )
                             .onTapGesture(perform: {
-                                selectedCategory = targetCategoryName
+                                if selected {
+                                    selectedCategory = ""
+                                    tapCategoryChipAction("")
+                                } else {
+                                    selectedCategory = targetCategoryName
+                                    tapCategoryChipAction(targetCategoryName)
+                                }
                             })
                         }
                     }
@@ -124,8 +131,6 @@ struct ArchiveCategoryView: View {
 
 struct ArchiveCategoryView_Previews: PreviewProvider {
     static var previews: some View {
-        // TODO: 値の渡し方は再考の余地あり
-        ArchiveCategoryView()
-        //ArchiveCategoryView(selectedCategory: .constant("エスニック料理"))
+        ArchiveCategoryView(tapCategoryChipAction: { _ in })
     }
 }
