@@ -11,7 +11,6 @@ struct ArchiveContentsView: View {
 
     // MARK: - Typealias
 
-    typealias TapCategoryChipAction = (String) -> Void
     typealias TapFavioriteButtonAction = (ArchiveCellViewObject, Bool) -> Void
 
     // MARK: - Property
@@ -19,42 +18,48 @@ struct ArchiveContentsView: View {
     // MEMO: 画面に表示する内容を格納するための変数
     @State private var archiveCellViewObjects: [ArchiveCellViewObject] = []
 
-    // ボタンタップ時に
-    private var tapCategoryChipAction: ArchiveContentsView.TapCategoryChipAction
+    // 親のViewから受け取った検索キーワードを格納するための変数
+    private var targetKeyword: String
+
+    // 親のViewから受け取ったカテゴリー名を格納するための変数
+    private var targetCategory: String
+
+    // Favoriteボタン（ハート型ボタン要素）タップ時にArchiveCellViewに引き渡すClosure変数
     private var tapFavioriteButtonAction: ArchiveContentsView.TapFavioriteButtonAction
 
     // MARK: - Initializer
 
     init(
         archiveCellViewObjects: [ArchiveCellViewObject],
-        tapCategoryChipAction: @escaping TapCategoryChipAction,
+        targetKeyword: String = "",
+        targetCategory: String = "",
         tapFavioriteButtonAction: @escaping TapFavioriteButtonAction
     ) {
         // イニシャライザ内で「_(変数名)」値を代入することでState値の初期化を実行する
         _archiveCellViewObjects = State(initialValue: archiveCellViewObjects)
 
-        //　ボタンタップ時のClosure
-        self.tapCategoryChipAction = tapCategoryChipAction
+        // ArchiveCellViewに検索キーワードをハイライトする文字列の初期化
+        self.targetKeyword = targetKeyword
+        // ArchiveCellViewにカテゴリーをハイライトする文字列の初期化
+        self.targetCategory = targetCategory
+        //　Favoriteボタン（ハート型ボタン要素）タップ時のClosureの初期化
         self.tapFavioriteButtonAction = tapFavioriteButtonAction
     }
 
     // MARK: - Body
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 0.0) {
-            // (1) 検索機能部分
-            Group {
-                ArchiveFreewordView(inputText: .constant(""), isLoading: .constant(false))
-                ArchiveCategoryView(selectedCategory: .constant("エスニック料理"))
-                ArchiveCurrentCountView(currentCount: .constant(36))
-            }
-            // (2) 一覧データ表示部分
-            ScrollView {
-                ForEach(archiveCellViewObjects) { viewObject in
-                    ArchiveCellView(viewObject: viewObject, targetKeyword: "", tapFavioriteButtonAction: { shouldFavorite in
+        ScrollView {
+            ForEach(archiveCellViewObjects) { viewObject in
+                ArchiveCellView(
+                    viewObject: viewObject,
+                    targetKeyword: targetKeyword,
+                    targetCategory: targetCategory,
+                    tapFavioriteButtonAction: { shouldFavorite in
+                        // 👉 Favoriteボタン（ハート型ボタン要素）タップ時に実行されるClosure
                         tapFavioriteButtonAction(viewObject, shouldFavorite)
-                    })
-                }
+                    }
+                )
             }
         }
     }
@@ -82,7 +87,8 @@ struct ArchiveContentsView_Previews: PreviewProvider {
         // Preview: ArchiveContentsView
         ArchiveContentsView(
             archiveCellViewObjects: archiveCellViewObjects,
-            tapCategoryChipAction: { _ in },
+            targetKeyword: "",
+            targetCategory: "",
             tapFavioriteButtonAction: { _,_  in }
         )
         .previewDisplayName("ArchiveContentsView Preview")
