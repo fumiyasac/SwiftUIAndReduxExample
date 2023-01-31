@@ -13,6 +13,17 @@ struct ArchiveCategoryView: View {
 
     typealias TapCategoryChipAction = (String) -> Void
 
+    // MARK: - Enum
+
+    private enum searchCategories: String, CaseIterable {
+        case ethnic = "エスニック料理"
+        case korean = "韓国料理"
+        case curry = "カレー"
+        case chinese = "中華料理"
+        case japanese = "和食"
+        case western = "洋食"
+    }
+
     // MARK: - Property
 
     private var categorySliderTitleFont: Font {
@@ -51,11 +62,17 @@ struct ArchiveCategoryView: View {
         return Color(uiColor: AppConstants.ColorPalette.mint)
     }
 
-    private let categories: [String] = [
-        "エスニック料理", "韓国料理", "カレー", "中華料理", "和食", "洋食"
-    ]
+    // TODO: 値の渡し方は再考の余地あり
+    //@Binding var selectedCategory: String
 
-    @Binding var selectedCategory: String
+    @State private var selectedCategory: String?
+
+    // MARK: - Initializer
+
+    // TODO: 値の渡し方は再考の余地あり
+    init() {
+        _selectedCategory = State(initialValue: nil)
+    }
 
     // MARK: - Body
 
@@ -72,8 +89,8 @@ struct ArchiveCategoryView: View {
             HStack {
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHStack(spacing: 8.0) {
-                        ForEach(0 ..< categories.count, id: \.self) { index in
-                            let targetCategoryName = categories[index]
+                        ForEach(0 ..< searchCategories.allCases.count, id: \.self) { index in
+                            let targetCategoryName = searchCategories.allCases[index].rawValue
                             let selected = (selectedCategory == targetCategoryName)
                             // Category表示用のChip型部分
                             VStack(alignment: .leading) {
@@ -107,6 +124,8 @@ struct ArchiveCategoryView: View {
 
 struct ArchiveCategoryView_Previews: PreviewProvider {
     static var previews: some View {
-        ArchiveCategoryView(selectedCategory: .constant("エスニック料理"))
+        // TODO: 値の渡し方は再考の余地あり
+        ArchiveCategoryView()
+        //ArchiveCategoryView(selectedCategory: .constant("エスニック料理"))
     }
 }
