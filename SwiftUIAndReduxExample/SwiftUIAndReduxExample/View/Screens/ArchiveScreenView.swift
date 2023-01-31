@@ -13,30 +13,38 @@ struct ArchiveScreenView: View {
 
     var body: some View {
         NavigationStack {
-            Group {
-                ArchiveContentsView(
-                    archiveCellViewObjects: getArchiveCellViewObjects(),
-                    tapCategoryChipAction: { _ in
-                        // TODO: Category表示Chipを謳歌した際のアクション伝播処理を記載する
-                    },
-                    tapFavioriteButtonAction: { viewObject, shouldFavorite in
-                        print("想定: Tap処理を実行した際に何らかの処理を実行する (ID:\(viewObject.id))")
-                        print("想定: お気に入りから登録[true] or 削除[false] (ID:\(shouldFavorite))")
-                    }
-                )
-            }
-            .navigationTitle("Archive")
-            .navigationBarTitleDisplayMode(.inline)
-            // Debug. APIとの疎通確認（※後程削除する）
-            .onFirstAppear {
-                Task {
-                    do {
-                        let result = try await ApiClientManager.shared.getAchiveImages(keyword: "ベトナム", category: "エスニック料理")
-                        print("成功")
-                        dump(result)
-                    } catch APIError.error(let message) {
-                        print("失敗")
-                        print(message)
+            VStack(alignment: .leading, spacing: 0.0) {
+                // (1) 検索機能部分
+                Group {
+                    ArchiveFreewordView(inputText: .constant(""), isLoading: .constant(false))
+                    ArchiveCategoryView(selectedCategory: .constant("エスニック料理"))
+                    ArchiveCurrentCountView(currentCount: .constant(36))
+                }
+                // (2) 一覧データ表示部分
+                Group {
+                    ArchiveContentsView(
+                        archiveCellViewObjects: getArchiveCellViewObjects(),
+                        targetKeyword: "",
+                        targetCategory: "",
+                        tapFavioriteButtonAction: { viewObject, shouldFavorite in
+                            print("想定: Tap処理を実行した際に何らかの処理を実行する (ID:\(viewObject.id))")
+                            print("想定: お気に入りから登録[true] or 削除[false] (ID:\(shouldFavorite))")
+                        }
+                    )
+                }
+                .navigationTitle("Archive")
+                .navigationBarTitleDisplayMode(.inline)
+                // Debug. APIとの疎通確認（※後程削除する）
+                .onFirstAppear {
+                    Task {
+                        do {
+                            let result = try await ApiClientManager.shared.getAchiveImages(keyword: "ベトナム", category: "エスニック料理")
+                            print("成功")
+                            dump(result)
+                        } catch APIError.error(let message) {
+                            print("失敗")
+                            print(message)
+                        }
                     }
                 }
             }
