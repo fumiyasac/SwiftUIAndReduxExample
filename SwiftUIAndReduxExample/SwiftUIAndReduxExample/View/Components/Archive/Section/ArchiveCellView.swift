@@ -136,7 +136,10 @@ struct ArchiveCellView: View {
                 Spacer()
                 // 1-(4). お気に入りボタン
                 Button(action: {
-                    //
+                    // 処理概要
+                    // 👉 引き渡されたViewObject(ArchiveCellViewObject)のshouldFavoriteを @State に入れる
+                    // 👉 ButtonがタップされたらshouldFavoriteのBool値が反転する
+                    // 👉 このViewの @State が更新されるのでこのView内のお気に入り要素が変化する（全体の再レンダリングは実施しない）
                     shouldFavorite = !shouldFavorite
                     tapFavioriteButtonAction(shouldFavorite)
                 }, label: {
