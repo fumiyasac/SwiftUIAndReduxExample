@@ -68,14 +68,20 @@ struct ArchiveCellView: View {
         return Color.primary
     }
 
-    private var highlightTextBackgroundColor: Color {
+    private var highlightTextKeywordBackgroundColor: Color {
         return Color.yellow
     }
 
+    private var highlightTextCategoryBackgroundColor: Color {
+        return Color(uiColor: UIColor(code: "#ffc9d2"))
+    }
+
     private var viewObject: ArchiveCellViewObject
-    private var targetKeyword: String = ""
+    private var targetKeyword: String
+    private var targetCategory: String
     private var tapFavioriteButtonAction: ArchiveCellView.TapFavioriteButtonAction
 
+    // Favoriteボタン（ハート型ボタン要素）の状態を管理するための変数
     @State private var shouldFavorite: Bool = false
 
     // MARK: - Initializer
@@ -83,10 +89,12 @@ struct ArchiveCellView: View {
     init(
         viewObject: ArchiveCellViewObject,
         targetKeyword: String,
+        targetCategory: String,
         tapFavioriteButtonAction: @escaping ArchiveCellView.TapFavioriteButtonAction
     ) {
         self.viewObject = viewObject
         self.targetKeyword = targetKeyword
+        self.targetCategory = targetCategory
         self.tapFavioriteButtonAction = tapFavioriteButtonAction
         
         // イニシャライザ内で「_(変数名)」値を代入することでState値の初期化を実行する
@@ -177,7 +185,16 @@ struct ArchiveCellView: View {
         var attributedString = AttributedString(taregtText)
         if let range = attributedString.range(of: targetKeyword) {
             attributedString[range].foregroundColor = highlightTextColor
-            attributedString[range].backgroundColor = highlightTextBackgroundColor
+            attributedString[range].backgroundColor = highlightTextKeywordBackgroundColor
+        }
+        return attributedString
+    }
+
+    private func getAttributeBy(taregtText: String, targetCategory: String) -> AttributedString {
+        var attributedString = AttributedString(taregtText)
+        if let range = attributedString.range(of: targetCategory) {
+            attributedString[range].foregroundColor = highlightTextColor
+            attributedString[range].backgroundColor = highlightTextCategoryBackgroundColor
         }
         return attributedString
     }
@@ -196,11 +213,14 @@ struct ArchiveCellView_Previews: PreviewProvider {
         )
 
         // Preview: ArchiveCellView
-        ArchiveCellView(viewObject: viewObject, targetKeyword: "ベトナム", tapFavioriteButtonAction: { _ in })
+        ArchiveCellView(viewObject: viewObject, targetKeyword: "ベトナム", targetCategory: "", tapFavioriteButtonAction: { _ in })
             .previewDisplayName("ArchiveCellView (with Search Keyword) Preview")
 
+        ArchiveCellView(viewObject: viewObject, targetKeyword: "", targetCategory: "エスニック料理", tapFavioriteButtonAction: { _ in })
+            .previewDisplayName("ArchiveCellView (with Search Category) Preview")
+
         // Preview: ArchiveCellView
-        ArchiveCellView(viewObject: viewObject, targetKeyword: "", tapFavioriteButtonAction: { _ in })
+        ArchiveCellView(viewObject: viewObject, targetKeyword: "", targetCategory: "", tapFavioriteButtonAction: { _ in })
             .previewDisplayName("ArchiveCellView (without Search Keyword) Preview")
     }
 }
