@@ -90,7 +90,7 @@ struct ArchiveCellView: View {
         self.tapFavioriteButtonAction = tapFavioriteButtonAction
         
         // イニシャライザ内で「_(変数名)」値を代入することでState値の初期化を実行する
-        _shouldFavorite = State(initialValue: viewObject.shouldFavorite)
+        _shouldFavorite = State(initialValue: viewObject.currentFavoriteState)
     }
 
     // MARK: - Body

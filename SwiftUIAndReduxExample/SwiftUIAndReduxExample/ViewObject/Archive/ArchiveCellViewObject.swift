@@ -19,14 +19,8 @@ struct ArchiveCellViewObject: Identifiable, Equatable {
     let dishName: String
     let shopName: String
     let introduction: String
-    // MEMO: ハートマークの状態を示すための変数
-    var shouldFavorite: Bool = false
-
-    // MARK: - Equatable
-
-    mutating func toggleShouldFavorite() {
-        shouldFavorite = !shouldFavorite
-    }
+    // MEMO: 表示処理時点でのハートマークの状態を示す
+    var currentFavoriteState: Bool = false
 
     // MARK: - Equatable
 
