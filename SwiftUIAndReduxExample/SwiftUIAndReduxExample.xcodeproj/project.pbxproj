@@ -102,7 +102,6 @@
 		DEA57BCE2985816200872964 /* HomeContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BCD2985816200872964 /* HomeContentsView.swift */; };
 		DEA57BD22987F98B00872964 /* ArchiveCellViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BD12987F98B00872964 /* ArchiveCellViewObject.swift */; };
 		DEA57BD42988769B00872964 /* ArchiveCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BD32988769B00872964 /* ArchiveCellView.swift */; };
-		DEA57BD7298AA90600872964 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = DEA57BD6298AA90600872964 /* Algorithms */; };
 		DEAACE89296C5B9300F436F5 /* ArchiveCurrentCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAACE88296C5B9300F436F5 /* ArchiveCurrentCountView.swift */; };
 		DEAACE8B296D941F00F436F5 /* LoadingIndicatorViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAACE8A296D941F00F436F5 /* LoadingIndicatorViewRepresentable.swift */; };
 		DEAACE8D296ECE0000F436F5 /* achive_images.json in Resources */ = {isa = PBXBuildFile; fileRef = DEAACE8C296ECE0000F436F5 /* achive_images.json */; };
@@ -288,7 +287,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE1833D7291FAB6700E3E885 /* RealmSwift in Frameworks */,
-				DEA57BD7298AA90600872964 /* Algorithms in Frameworks */,
 				DE43244028463B4F001ECA85 /* Cosmos in Frameworks */,
 				DE183429293FDC5000E3E885 /* Kingfisher in Frameworks */,
 				DED73F8328F451DA00A7F811 /* CollectionViewPagingLayout in Frameworks */,
@@ -981,7 +979,6 @@
 				DE1833D4291FAB6700E3E885 /* Realm */,
 				DE1833D6291FAB6700E3E885 /* RealmSwift */,
 				DE183428293FDC5000E3E885 /* Kingfisher */,
-				DEA57BD6298AA90600872964 /* Algorithms */,
 			);
 			productName = SwiftUIAndReduxExample;
 			productReference = DEE9C6F226E8308700190505 /* SwiftUIAndReduxExample.app */;
@@ -1060,7 +1057,6 @@
 				DED73F8128F451DA00A7F811 /* XCRemoteSwiftPackageReference "CollectionViewPagingLayout" */,
 				DE1833D3291FAB6700E3E885 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				DE183427293FDC5000E3E885 /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				DEA57BD5298AA90600872964 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
 			);
 			productRefGroup = DEE9C6F326E8308700190505 /* Products */;
 			projectDirPath = "";
@@ -1573,14 +1569,6 @@
 				kind = branch;
 			};
 		};
-		DEA57BD5298AA90600872964 /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/apple/swift-algorithms.git";
-			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
 		DED73F8128F451DA00A7F811 /* XCRemoteSwiftPackageReference "CollectionViewPagingLayout" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/amirdew/CollectionViewPagingLayout.git";
@@ -1616,11 +1604,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DE43243E28463B4E001ECA85 /* XCRemoteSwiftPackageReference "Cosmos" */;
 			productName = Cosmos;
-		};
-		DEA57BD6298AA90600872964 /* Algorithms */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DEA57BD5298AA90600872964 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
-			productName = Algorithms;
 		};
 		DED73F8228F451DA00A7F811 /* CollectionViewPagingLayout */ = {
 			isa = XCSwiftPackageProductDependency;
