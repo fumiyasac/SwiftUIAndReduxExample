@@ -102,6 +102,7 @@
 		DEA57BCE2985816200872964 /* HomeContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BCD2985816200872964 /* HomeContentsView.swift */; };
 		DEA57BD22987F98B00872964 /* ArchiveCellViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BD12987F98B00872964 /* ArchiveCellViewObject.swift */; };
 		DEA57BD42988769B00872964 /* ArchiveCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BD32988769B00872964 /* ArchiveCellView.swift */; };
+		DEA57BD9298B179D00872964 /* ArchiveEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BD8298B179D00872964 /* ArchiveEmptyView.swift */; };
 		DEAACE89296C5B9300F436F5 /* ArchiveCurrentCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAACE88296C5B9300F436F5 /* ArchiveCurrentCountView.swift */; };
 		DEAACE8B296D941F00F436F5 /* LoadingIndicatorViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAACE8A296D941F00F436F5 /* LoadingIndicatorViewRepresentable.swift */; };
 		DEAACE8D296ECE0000F436F5 /* achive_images.json in Resources */ = {isa = PBXBuildFile; fileRef = DEAACE8C296ECE0000F436F5 /* achive_images.json */; };
@@ -243,6 +244,7 @@
 		DEA57BCD2985816200872964 /* HomeContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContentsView.swift; sourceTree = "<group>"; };
 		DEA57BD12987F98B00872964 /* ArchiveCellViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveCellViewObject.swift; sourceTree = "<group>"; };
 		DEA57BD32988769B00872964 /* ArchiveCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveCellView.swift; sourceTree = "<group>"; };
+		DEA57BD8298B179D00872964 /* ArchiveEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveEmptyView.swift; sourceTree = "<group>"; };
 		DEAACE88296C5B9300F436F5 /* ArchiveCurrentCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveCurrentCountView.swift; sourceTree = "<group>"; };
 		DEAACE8A296D941F00F436F5 /* LoadingIndicatorViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorViewRepresentable.swift; sourceTree = "<group>"; };
 		DEAACE8C296ECE0000F436F5 /* achive_images.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = achive_images.json; sourceTree = "<group>"; };
@@ -330,6 +332,7 @@
 				DE03D00B29655DDB0054BCF1 /* ArchiveCategoryView.swift */,
 				DEAACE88296C5B9300F436F5 /* ArchiveCurrentCountView.swift */,
 				DEA57BD32988769B00872964 /* ArchiveCellView.swift */,
+				DEA57BD8298B179D00872964 /* ArchiveEmptyView.swift */,
 			);
 			path = Section;
 			sourceTree = "<group>";
@@ -1198,6 +1201,7 @@
 				DE1833EC292DC86800E3E885 /* CampaignBannerCarouselView.swift in Sources */,
 				DE427434297EC62E0003DCE3 /* FavoriteReducer.swift in Sources */,
 				DEA57BB629852E4B00872964 /* ProfileInformationViewObject.swift in Sources */,
+				DEA57BD9298B179D00872964 /* ArchiveEmptyView.swift in Sources */,
 				DE18342D29404A5E00E3E885 /* RecentNewsCarouselView.swift in Sources */,
 				DEAACE8F296EFC0B00F436F5 /* ArchiveResponse.swift in Sources */,
 				DE0BFBC2271B170B00FC0F32 /* ProfileScreenView.swift in Sources */,
