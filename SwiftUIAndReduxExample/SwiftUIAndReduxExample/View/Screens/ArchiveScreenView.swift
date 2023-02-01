@@ -20,7 +20,9 @@ struct ArchiveScreenView: View {
                     ArchiveCategoryView(tapCategoryChipAction: { selectedCategory in
                         print("想定: 取得されたCategory (\(selectedCategory))")
                     })
-                    ArchiveCurrentCountView(currentCount: .constant(36))
+                    ArchiveCurrentCountView(currentCount: 36, tapAllClearAction: {
+                        print("想定: 現在の検索条件をリセットする")
+                    })
                 }
                 // (2) 一覧データ表示部分
                 Group {
