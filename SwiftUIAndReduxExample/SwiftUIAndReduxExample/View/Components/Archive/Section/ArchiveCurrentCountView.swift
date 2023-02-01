@@ -9,6 +9,10 @@ import SwiftUI
 
 struct ArchiveCurrentCountView: View {
 
+    // MARK: - Typealias
+
+    typealias TapAllClearAction = () -> Void
+
     // MARK: - Property
 
     private var currentCountTitleFont: Font {
@@ -19,9 +23,26 @@ struct ArchiveCurrentCountView: View {
         return Color.primary
     }
 
-    // フリーワード検索用のTextFieldと連動する
-    // 👉 この値が変化すると配置元のView要素の @State と連動して処理が実行される
-    @Binding var currentCount: Int
+    private var allClearButtonTitleFont: Font {
+        return Font.custom("AvenirNext-Regular", size: 12)
+    }
+
+    private var allClearButtonTitleColor: Color {
+        return Color.primary
+    }
+
+    private var currentCount: Int
+    private var tapAllClearAction: ArchiveCurrentCountView.TapAllClearAction
+
+    // MARK: - Initializer
+
+    init(
+        currentCount: Int,
+        tapAllClearAction: @escaping ArchiveCurrentCountView.TapAllClearAction
+    ) {
+        self.currentCount = currentCount
+        self.tapAllClearAction = tapAllClearAction
+    }
 
     // MARK: - Body
 
@@ -34,6 +55,12 @@ struct ArchiveCurrentCountView: View {
                     .padding([.top], 2.0)
                     .padding([.bottom], 6.0)
                 Spacer()
+                Button(action: tapAllClearAction, label: {
+                    Text("▶︎条件をクリア")
+                        .font(allClearButtonTitleFont)
+                        .foregroundColor(allClearButtonTitleColor)
+                        .underline()
+                })
             }
             .padding([.leading, .trailing], 12.0)
         }
@@ -42,6 +69,6 @@ struct ArchiveCurrentCountView: View {
 
 struct ArchiveCurrentCountView_Previews: PreviewProvider {
     static var previews: some View {
-        ArchiveCurrentCountView(currentCount: .constant(36))
+        ArchiveCurrentCountView(currentCount: 36, tapAllClearAction: {})
     }
 }
