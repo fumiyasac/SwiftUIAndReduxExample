@@ -16,13 +16,27 @@ struct ArchiveScreenView: View {
             VStack(alignment: .leading, spacing: 0.0) {
                 // (1) 検索機能部分
                 Group {
-                    ArchiveFreewordView(inputText: .constant(""), isLoading: .constant(false))
-                    ArchiveCategoryView(tapCategoryChipAction: { selectedCategory in
-                        print("想定: 取得されたCategory (\(selectedCategory))")
-                    })
-                    ArchiveCurrentCountView(currentCount: 36, tapAllClearAction: {
-                        print("想定: 現在の検索条件をリセットする")
-                    })
+                    ArchiveFreewordView(
+                        inputText: "",
+                        isLoading: false,
+                        submitAction: { inputText in
+                            print("想定: 取得されたFreeword (\(inputText))")
+                        },
+                        cancelAction: {
+                            print("想定: キャンセルボタン押下時")
+                        }
+                    )
+                    ArchiveCategoryView(
+                        tapCategoryChipAction: { selectedCategory in
+                            print("想定: 取得されたCategory (\(selectedCategory))")
+                        }
+                    )
+                    ArchiveCurrentCountView(
+                        currentCount: 36,
+                        tapAllClearAction: {
+                            print("想定: 現在の検索条件をリセットする")
+                        }
+                    )
                 }
                 // (2) 一覧データ表示部分
                 Group {
