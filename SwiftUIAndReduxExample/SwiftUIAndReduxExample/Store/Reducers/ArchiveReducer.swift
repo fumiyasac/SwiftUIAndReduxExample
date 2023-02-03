@@ -25,6 +25,7 @@ func archiveReducer(_ state: ArchiveState, _ action: Action) -> ArchiveState {
         state.selectedCategory = ""
     case let action as SuccessArchiveAction:
         // MEMO: 画面要素表示用
+        // 👉 currentFavoriteStateについてはRealmより取得する（MockではDictionaryを設けて代わりとする）
         let currentFavoriteState = action.isFavorite
         state.archiveCellViewObjects = action.archiveSceneEntities.map {
             ArchiveCellViewObject(
