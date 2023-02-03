@@ -13,6 +13,8 @@ import Foundation
 struct AppState: ReduxState {
     // MEMO: Home画面表示で利用するState
     var homeState: HomeState = HomeState()
+    // MEMO: Archive画面表示で利用するState
+    var archiveState: ArchiveState = ArchiveState()
     // MEMO: Favorite画面表示で利用するState
     var favoriteState: FavoriteState = FavoriteState()
     // MEMO: Profile画面表示で利用するState
