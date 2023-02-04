@@ -58,23 +58,20 @@ final class StoredArchiveDataRepositoryImpl: StoredArchiveDataRepository {
 
 final class MockStoredArchiveDataRepositoryImpl: StoredArchiveDataRepository {
 
-    // MARK: - Property
-
-    // 👉 Mockでは実際にRealmに登録するのではなく、内部のDictionaryで管理する
-    private var mockDataStore: [Int : StockArchiveRealmEntity] = [:]
-
     // MARK: - Function
 
     func getAllObjectsFromRealm() -> [StockArchiveRealmEntity] {
-        return mockDataStore.values.map({ $0 })
+        return RealmMockAccessManager.shared.mockDataStore.values.map({ $0 })
     }
 
     func createToRealm(archiveCellViewObject: ArchiveCellViewObject) {
-        mockDataStore[archiveCellViewObject.id] = convertToRealmObject(archiveCellViewObject: archiveCellViewObject)
+        RealmMockAccessManager.shared.mockDataStore[archiveCellViewObject.id] = convertToRealmObject(archiveCellViewObject: archiveCellViewObject)
+        print(RealmMockAccessManager.shared.mockDataStore)
     }
 
     func deleteFromRealm(archiveCellViewObject: ArchiveCellViewObject) {
-        mockDataStore.removeValue(forKey: archiveCellViewObject.id)
+        RealmMockAccessManager.shared.mockDataStore.removeValue(forKey: archiveCellViewObject.id)
+        print(RealmMockAccessManager.shared.mockDataStore)
     }
 
     // MARK: - Private Function
