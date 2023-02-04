@@ -15,8 +15,8 @@ struct ArchiveContentsView: View {
 
     // MARK: - Property
 
-    // MEMO: 画面に表示する内容を格納するための変数
-    @State private var archiveCellViewObjects: [ArchiveCellViewObject] = []
+    // 画面表示内容を格納するための変数
+    private var archiveCellViewObjects: [ArchiveCellViewObject]
 
     // 親のViewから受け取った検索キーワードを格納するための変数
     private var targetKeyword: String
@@ -35,12 +35,10 @@ struct ArchiveContentsView: View {
         targetCategory: String = "",
         tapIsStoredButtonAction: @escaping ArchiveContentsView.TapIsStoredButtonAction
     ) {
-        // イニシャライザ内で「_(変数名)」値を代入することでState値の初期化を実行する
-        _archiveCellViewObjects = State(initialValue: archiveCellViewObjects)
-
-        // ArchiveCellViewに検索キーワードをハイライトする文字列の初期化
+        // 画面表示内容を格納する配列の初期化
+        self.archiveCellViewObjects = archiveCellViewObjects
+        // ArchiveCellViewにカテゴリー及び検索キーワードをハイライトする文字列の初期化
         self.targetKeyword = targetKeyword
-        // ArchiveCellViewにカテゴリーをハイライトする文字列の初期化
         self.targetCategory = targetCategory
         //　Storeボタン（ハート型ボタン要素）タップ時のClosureの初期化
         self.tapIsStoredButtonAction = tapIsStoredButtonAction
@@ -103,9 +101,9 @@ struct ArchiveContentsView_Previews: PreviewProvider {
         guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
             fatalError()
         }
-        guard let achiveSceneResponse = try? JSONDecoder().decode(ArchiveSceneResponse.self, from: data) else {
+        guard let result = try? JSONDecoder().decode([ArchiveSceneEntity].self, from: data) else {
             fatalError()
         }
-        return achiveSceneResponse
+        return ArchiveSceneResponse(result: result)
     }
 }
