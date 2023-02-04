@@ -44,13 +44,12 @@ struct ArchiveFreewordView: View {
         return Color.gray
     }
 
-    // フリーワード検索用のTextFieldと連動する
-    @State private var inputText: String
-    // フリーワード検索用のisLoadingと連動する
-    @State private var isLoading: Bool
-    // テキスト編集モードの判定フラグ
+    // フリーワード検索用のTextFieldと連動する変数
+    @State private var currentInputText: String
+    // テキスト編集モードの判定フラグ変数
     @State private var isEditing: Bool
 
+    private var isLoading: Bool
     private var submitAction: ArchiveFreewordView.SubmitAction
     private var cancelAction: ArchiveFreewordView.CancelAction
 
@@ -62,15 +61,15 @@ struct ArchiveFreewordView: View {
         submitAction: @escaping ArchiveFreewordView.SubmitAction,
         cancelAction: @escaping ArchiveFreewordView.CancelAction
     ) {
+        self.isLoading = isLoading
         self.submitAction = submitAction
         self.cancelAction = cancelAction
 
         // イニシャライザ内で「_(変数名)」値を代入することでState値の初期化を実行する
-        _inputText = State(initialValue: inputText)
-        _isLoading = State(initialValue: false)
+        _currentInputText = State(initialValue: inputText)
         _isEditing = State(initialValue: false)
     }
-    
+
     // MARK: - Body
 
     var body: some View {
@@ -93,7 +92,7 @@ struct ArchiveFreewordView: View {
                     // (1) 虫眼鏡アイコンまたはインジケーター表示
                     showLoadingIndicatorIfNeeded()
                     // (2) 入力用テキストフィールド表示
-                    TextField("キーワードを入力して下さい", text: $inputText)
+                    TextField("キーワードを入力して下さい", text: $currentInputText)
                         .padding(7.0)
                         .padding(.leading, -8.0)
                         .font(textFieldTextFont)
@@ -108,7 +107,8 @@ struct ArchiveFreewordView: View {
                         })
                         .onSubmit({
                             // 👉 Submit（キーボードの確定またはreturnボタンを押下時の処理）を親のView要素へ伝える
-                            submitAction(inputText)
+                            isEditing = false
+                            submitAction(currentInputText)
                         })
                     // (3) キャンセルボタン表示（※入力モードの場合のみ）
                     showCancelButtonIfNeeded()
@@ -117,7 +117,7 @@ struct ArchiveFreewordView: View {
             .padding([.leading, .trailing], 12.0)
         }
     }
-    
+
     // MARK: - Private Function
 
     // @ViewBuilderを利用してViewを出し分けています
@@ -144,11 +144,11 @@ struct ArchiveFreewordView: View {
                 // inputTextを空にする＆入力モードをキャンセルする
                 // 👉 このタイミングでは配置元のViewでも何らかの処理を行う
                 // 例. テキストの入力に合わせてAPIリクエストが実行される
-                inputText = ""
+                currentInputText = ""
                 isEditing = false
                 // 👉 キャンセルを親のView要素へ伝える
                 cancelAction()
-                // キーボードを閉じるための処理
+                // 👉 キーボードを閉じるための処理
                 UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
             }, label: {
                 Text("Cancel")
