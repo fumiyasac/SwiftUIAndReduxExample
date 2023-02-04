@@ -15,6 +15,8 @@ func appReducer(_ state: AppState, _ action: Action) -> AppState {
     var state = state
     // MEMO: HomeReducerの適用
     state.homeState = homeReducer(state.homeState, action)
+    // MEMO: ArchiveReducerの適用
+    state.archiveState = archiveReducer(state.archiveState, action)
     // MEMO: FavoriteReducerの適用
     state.favoriteState = favoriteReducer(state.favoriteState, action)
     // MEMO: ProfileReducerの適用
