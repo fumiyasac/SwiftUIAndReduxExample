@@ -66,12 +66,10 @@ final class MockStoredArchiveDataRepositoryImpl: StoredArchiveDataRepository {
 
     func createToRealm(archiveCellViewObject: ArchiveCellViewObject) {
         RealmMockAccessManager.shared.mockDataStore[archiveCellViewObject.id] = convertToRealmObject(archiveCellViewObject: archiveCellViewObject)
-        print(RealmMockAccessManager.shared.mockDataStore)
     }
 
     func deleteFromRealm(archiveCellViewObject: ArchiveCellViewObject) {
         RealmMockAccessManager.shared.mockDataStore.removeValue(forKey: archiveCellViewObject.id)
-        print(RealmMockAccessManager.shared.mockDataStore)
     }
 
     // MARK: - Private Function
