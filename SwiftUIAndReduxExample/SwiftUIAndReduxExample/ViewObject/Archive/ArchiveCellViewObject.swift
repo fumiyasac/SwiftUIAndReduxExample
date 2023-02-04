@@ -20,7 +20,7 @@ struct ArchiveCellViewObject: Identifiable, Equatable {
     let shopName: String
     let introduction: String
     // MEMO: 表示処理時点でのハートマークの状態を示す
-    var currentFavoriteState: Bool = false
+    var isStored: Bool = false
 
     // MARK: - Equatable
 

@@ -19,7 +19,7 @@ struct RequestArchiveWithNoConditionsAction: Action {}
 
 struct SuccessArchiveAction: Action {
     let archiveSceneEntities: [ArchiveSceneEntity]
-    let isFavorite: Bool
+    let isStored: Bool
 }
 
 struct FailureArchiveAction: Action {}

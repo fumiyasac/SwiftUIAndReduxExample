@@ -82,7 +82,7 @@ struct ArchiveCellView: View {
     private var tapFavioriteButtonAction: ArchiveCellView.TapFavioriteButtonAction
 
     // Favoriteボタン（ハート型ボタン要素）の状態を管理するための変数
-    @State private var shouldFavorite: Bool = false
+    @State private var isStored: Bool = false
 
     // MARK: - Initializer
 
@@ -98,7 +98,7 @@ struct ArchiveCellView: View {
         self.tapFavioriteButtonAction = tapFavioriteButtonAction
         
         // イニシャライザ内で「_(変数名)」値を代入することでState値の初期化を実行する
-        _shouldFavorite = State(initialValue: viewObject.currentFavoriteState)
+        _isStored = State(initialValue: viewObject.isStored)
     }
 
     // MARK: - Body
@@ -145,13 +145,13 @@ struct ArchiveCellView: View {
                 // 1-(4). お気に入りボタン
                 Button(action: {
                     // 処理概要
-                    // 👉 引き渡されたViewObject(ArchiveCellViewObject)のshouldFavoriteを @State に入れる
-                    // 👉 ButtonがタップされたらshouldFavoriteのBool値が反転する
+                    // 👉 引き渡されたViewObject(ArchiveCellViewObject)のisStoredを @State に入れる
+                    // 👉 ButtonがタップされたらisStoredのBool値が反転する
                     // 👉 このViewの @State が更新されるのでこのView内のお気に入り要素が変化する（全体の再レンダリングは実施しない）
-                    shouldFavorite = !shouldFavorite
-                    tapFavioriteButtonAction(shouldFavorite)
+                    isStored = !isStored
+                    tapFavioriteButtonAction(isStored)
                 }, label: {
-                    if shouldFavorite {
+                    if isStored {
                         Image(systemName: "heart.fill")
                     } else {
                         Image(systemName: "heart")
