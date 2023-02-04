@@ -26,10 +26,10 @@ struct FailureArchiveAction: Action {}
 
 // MEMO: 下記2つのActionはStateの変化をさせない（Realmへの追加or削除を実行するだけ）のAction
 
-struct AddFavoriteAboutAcrchiveAction: Action {
+struct AddArchiveObjectAction: Action {
     let archiveCellViewObject: ArchiveCellViewObject
 }
 
-struct RemoveFromFavoriteAboutAcrchiveAction: Action {
+struct DeleteArchiveObjectAction: Action {
     let archiveCellViewObject: ArchiveCellViewObject
 }
