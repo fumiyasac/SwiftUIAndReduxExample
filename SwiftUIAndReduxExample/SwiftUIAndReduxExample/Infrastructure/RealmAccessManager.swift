@@ -85,3 +85,16 @@ extension RealmAccessManager: RealmAccessProtocol {
         delete(stockArchiveRealmEntity)
     }
 }
+
+// MEMO: RealmのMockとして利用するAccessManager
+// 👉 実際はただのSingletonInstanceでRealmのフリをするためのもの
+
+final class RealmMockAccessManager {
+
+    // MARK: - Singleton Instance
+    
+    static let shared = RealmMockAccessManager()
+
+    // MEMO: Mockで利用する仮のDBを模したDictionary
+    var mockDataStore: [Int : StockArchiveRealmEntity] = [:]
+}
