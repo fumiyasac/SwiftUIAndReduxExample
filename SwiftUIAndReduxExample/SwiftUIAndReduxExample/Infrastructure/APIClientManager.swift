@@ -256,10 +256,18 @@ extension ApiClientManager: APIClientManagerProtocol {
     }
 
     func getAchiveImages(keyword: String, category: String) async throws -> ArchiveSceneResponse {
+        // 👉 json-serverの仕様でこの様な形としている
+        var withParameters: [String : String] = [:]
+        if !keyword.isEmpty {
+            withParameters["q"] = keyword
+        }
+        if !category.isEmpty {
+            withParameters["category"] = category
+        }
         let result = try await executeAPIRequest(
             endpointUrl: EndPoint.achiveImages.getBaseUrl(),
             // MEMO: json-serverで作成したAPI側のパラメーターと合わせる
-            withParameters: ["q": keyword, "category": category],
+            withParameters: withParameters,
             httpMethod: HTTPMethod.GET,
             responseFormat: [ArchiveSceneEntity].self
         )
