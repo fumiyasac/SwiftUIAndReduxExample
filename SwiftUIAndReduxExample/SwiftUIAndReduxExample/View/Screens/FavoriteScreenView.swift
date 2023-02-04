@@ -44,13 +44,18 @@ struct FavoriteScreenView: View {
     var body: some View {
         // 該当画面で利用するState(ここではHomeState)をこの画面用のPropsにマッピングする
         let props = mapStateToProps(state: store.state.favoriteState)
+
+        // 表示に必要な値をPropsから取得する
+        let isLoading = mapToIsLoading(props: props)
+        let isError = mapToIsError(props: props)
+
         // 画面用のPropsに応じた画面要素表示処理を実行する
         NavigationStack {
             Group {
-                if props.isLoading {
+                if isLoading {
                     // ローディング画面を表示
                     ExecutingConnectionView()
-                } else if props.isError {
+                } else if isError {
                     // エラー画面を表示
                     ConnectionErrorView(tapButtonAction: props.retryFavorite)
                 } else {
@@ -76,6 +81,14 @@ struct FavoriteScreenView: View {
 
     private func mapToFavoritePhotosCardViewObjects(props: Props) -> [FavoritePhotosCardViewObject] {
         return props.favoritePhotosCardViewObjects
+    }
+
+    private func mapToIsError(props: Props) -> Bool {
+        return props.isError
+    }
+
+    private func mapToIsLoading(props: Props) -> Bool {
+        return props.isLoading
     }
 }
 

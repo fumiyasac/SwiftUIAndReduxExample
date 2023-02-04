@@ -53,13 +53,18 @@ struct ProfileScreenView: View {
     var body: some View {
         // 該当画面で利用するState(ここではHomeState)をこの画面用のPropsにマッピングする
         let props = mapStateToProps(state: store.state.profileState)
+
+        // 表示に必要な値をPropsから取得する
+        let isLoading = mapToIsLoading(props: props)
+        let isError = mapToIsError(props: props)
+
         // 画面用のPropsに応じた画面要素表示処理を実行する
         NavigationStack {
             Group {
-                if props.isLoading {
+                if isLoading {
                     // ローディング画面を表示
                     ExecutingConnectionView()
-                } else if props.isError {
+                } else if isError {
                     // エラー画面を表示
                     ConnectionErrorView(tapButtonAction: props.retryProfile)
                 } else {
@@ -129,6 +134,14 @@ struct ProfileScreenView: View {
 
     private func mapToProfileInformationViewObject(props: Props) -> ProfileInformationViewObject? {
         return props.profileInformationViewObject
+    }
+
+    private func mapToIsError(props: Props) -> Bool {
+        return props.isError
+    }
+
+    private func mapToIsLoading(props: Props) -> Bool {
+        return props.isLoading
     }
 }
 
