@@ -12,7 +12,7 @@ struct ArchiveCellView: View {
 
     // MARK: - Typealias
 
-    typealias TapFavioriteButtonAction = (Bool) -> Void
+    typealias TapIsStoredButtonAction = (Bool) -> Void
 
     // MARK: - Property
 
@@ -79,7 +79,7 @@ struct ArchiveCellView: View {
     private var viewObject: ArchiveCellViewObject
     private var targetKeyword: String
     private var targetCategory: String
-    private var tapFavioriteButtonAction: ArchiveCellView.TapFavioriteButtonAction
+    private var tapIsStoredButtonAction: ArchiveCellView.TapIsStoredButtonAction
 
     // Favoriteボタン（ハート型ボタン要素）の状態を管理するための変数
     @State private var isStored: Bool = false
@@ -90,12 +90,12 @@ struct ArchiveCellView: View {
         viewObject: ArchiveCellViewObject,
         targetKeyword: String,
         targetCategory: String,
-        tapFavioriteButtonAction: @escaping ArchiveCellView.TapFavioriteButtonAction
+        tapIsStoredButtonAction: @escaping ArchiveCellView.TapIsStoredButtonAction
     ) {
         self.viewObject = viewObject
         self.targetKeyword = targetKeyword
         self.targetCategory = targetCategory
-        self.tapFavioriteButtonAction = tapFavioriteButtonAction
+        self.tapIsStoredButtonAction = tapIsStoredButtonAction
         
         // イニシャライザ内で「_(変数名)」値を代入することでState値の初期化を実行する
         _isStored = State(initialValue: viewObject.isStored)
@@ -149,7 +149,7 @@ struct ArchiveCellView: View {
                     // 👉 ButtonがタップされたらisStoredのBool値が反転する
                     // 👉 このViewの @State が更新されるのでこのView内のお気に入り要素が変化する（全体の再レンダリングは実施しない）
                     isStored = !isStored
-                    tapFavioriteButtonAction(isStored)
+                    tapIsStoredButtonAction(isStored)
                 }, label: {
                     if isStored {
                         Image(systemName: "heart.fill")
@@ -213,14 +213,14 @@ struct ArchiveCellView_Previews: PreviewProvider {
         )
 
         // Preview: ArchiveCellView
-        ArchiveCellView(viewObject: viewObject, targetKeyword: "ベトナム", targetCategory: "", tapFavioriteButtonAction: { _ in })
+        ArchiveCellView(viewObject: viewObject, targetKeyword: "ベトナム", targetCategory: "", tapIsStoredButtonAction: { _ in })
             .previewDisplayName("ArchiveCellView (with Search Keyword) Preview")
 
-        ArchiveCellView(viewObject: viewObject, targetKeyword: "", targetCategory: "エスニック料理", tapFavioriteButtonAction: { _ in })
+        ArchiveCellView(viewObject: viewObject, targetKeyword: "", targetCategory: "エスニック料理", tapIsStoredButtonAction: { _ in })
             .previewDisplayName("ArchiveCellView (with Search Category) Preview")
 
         // Preview: ArchiveCellView
-        ArchiveCellView(viewObject: viewObject, targetKeyword: "", targetCategory: "", tapFavioriteButtonAction: { _ in })
+        ArchiveCellView(viewObject: viewObject, targetKeyword: "", targetCategory: "", tapIsStoredButtonAction: { _ in })
             .previewDisplayName("ArchiveCellView (without Search Keyword) Preview")
     }
 }

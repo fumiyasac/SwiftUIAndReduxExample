@@ -44,9 +44,9 @@ struct ArchiveScreenView: View {
                         archiveCellViewObjects: getArchiveCellViewObjects(),
                         targetKeyword: "",
                         targetCategory: "",
-                        tapFavioriteButtonAction: { viewObject, shouldFavorite in
+                        tapIsStoredButtonAction: { viewObject, isStored in
                             print("想定: Tap処理を実行した際に何らかの処理を実行する (ID:\(viewObject.id))")
-                            print("想定: お気に入りから登録[true] or 削除[false] (ID:\(shouldFavorite))")
+                            print("想定: お気に入りから登録[true] or 削除[false] (ID:\(isStored))")
                         }
                     )
                 }

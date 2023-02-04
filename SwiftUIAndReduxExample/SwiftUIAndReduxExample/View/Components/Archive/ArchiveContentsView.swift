@@ -11,7 +11,7 @@ struct ArchiveContentsView: View {
 
     // MARK: - Typealias
 
-    typealias TapFavioriteButtonAction = (ArchiveCellViewObject, Bool) -> Void
+    typealias TapIsStoredButtonAction = (ArchiveCellViewObject, Bool) -> Void
 
     // MARK: - Property
 
@@ -24,8 +24,8 @@ struct ArchiveContentsView: View {
     // 親のViewから受け取ったカテゴリー名を格納するための変数
     private var targetCategory: String
 
-    // Favoriteボタン（ハート型ボタン要素）タップ時にArchiveCellViewに引き渡すClosure変数
-    private var tapFavioriteButtonAction: ArchiveContentsView.TapFavioriteButtonAction
+    // Storeボタン（ハート型ボタン要素）タップ時にArchiveCellViewに引き渡すClosure変数
+    private var tapIsStoredButtonAction: ArchiveContentsView.TapIsStoredButtonAction
 
     // MARK: - Initializer
 
@@ -33,7 +33,7 @@ struct ArchiveContentsView: View {
         archiveCellViewObjects: [ArchiveCellViewObject],
         targetKeyword: String = "",
         targetCategory: String = "",
-        tapFavioriteButtonAction: @escaping TapFavioriteButtonAction
+        tapIsStoredButtonAction: @escaping ArchiveContentsView.TapIsStoredButtonAction
     ) {
         // イニシャライザ内で「_(変数名)」値を代入することでState値の初期化を実行する
         _archiveCellViewObjects = State(initialValue: archiveCellViewObjects)
@@ -42,8 +42,8 @@ struct ArchiveContentsView: View {
         self.targetKeyword = targetKeyword
         // ArchiveCellViewにカテゴリーをハイライトする文字列の初期化
         self.targetCategory = targetCategory
-        //　Favoriteボタン（ハート型ボタン要素）タップ時のClosureの初期化
-        self.tapFavioriteButtonAction = tapFavioriteButtonAction
+        //　Storeボタン（ハート型ボタン要素）タップ時のClosureの初期化
+        self.tapIsStoredButtonAction = tapIsStoredButtonAction
     }
 
     // MARK: - Body
@@ -55,9 +55,9 @@ struct ArchiveContentsView: View {
                     viewObject: viewObject,
                     targetKeyword: targetKeyword,
                     targetCategory: targetCategory,
-                    tapFavioriteButtonAction: { shouldFavorite in
+                    tapIsStoredButtonAction: { isStored in
                         // 👉 Favoriteボタン（ハート型ボタン要素）タップ時に実行されるClosure
-                        tapFavioriteButtonAction(viewObject, shouldFavorite)
+                        tapIsStoredButtonAction(viewObject, isStored)
                     }
                 )
             }
@@ -89,7 +89,7 @@ struct ArchiveContentsView_Previews: PreviewProvider {
             archiveCellViewObjects: archiveCellViewObjects,
             targetKeyword: "",
             targetCategory: "",
-            tapFavioriteButtonAction: { _,_  in }
+            tapIsStoredButtonAction: { _,_  in }
         )
         .previewDisplayName("ArchiveContentsView Preview")
     }
