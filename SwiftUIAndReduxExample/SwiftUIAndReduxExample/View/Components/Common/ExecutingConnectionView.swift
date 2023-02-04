@@ -27,6 +27,9 @@ struct ExecutingConnectionView: View {
 
     var body: some View {
         VStack(spacing: 0.0) {
+            // 1. Spacer
+            Spacer()
+            // 2. コンテンツ表示部分
             VStack {
                 // (1) 読み込み中文言表示
                 Text("読み込み中です...")
@@ -44,6 +47,8 @@ struct ExecutingConnectionView: View {
                     .stroke(executingConnectionBoxColor, lineWidth: 1.0)
             )
             .clipShape(RoundedRectangle(cornerRadius: 8.0))
+            // 3. Spacer
+            Spacer()
         }
     }
 }
