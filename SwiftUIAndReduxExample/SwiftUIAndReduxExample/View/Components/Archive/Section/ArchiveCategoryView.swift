@@ -62,17 +62,17 @@ struct ArchiveCategoryView: View {
         return Color(uiColor: AppConstants.ColorPalette.mint)
     }
 
+    private var selectedCategory: String = ""
     private var tapCategoryChipAction: ArchiveCategoryView.TapCategoryChipAction
-
-    @State var selectedCategory: String = ""
 
     // MARK: - Initializer
 
-    init(tapCategoryChipAction: @escaping ArchiveCategoryView.TapCategoryChipAction) {
+    init(
+        selectedCategory: String,
+        tapCategoryChipAction: @escaping ArchiveCategoryView.TapCategoryChipAction
+    ) {
+        self.selectedCategory = selectedCategory
         self.tapCategoryChipAction = tapCategoryChipAction
-
-        // イニシャライザ内で「_(変数名)」値を代入することでState値の初期化を実行する
-        _selectedCategory = State(initialValue: "")
     }
 
     // MARK: - Body
@@ -110,10 +110,8 @@ struct ArchiveCategoryView: View {
                             )
                             .onTapGesture(perform: {
                                 if selected {
-                                    selectedCategory = ""
                                     tapCategoryChipAction("")
                                 } else {
-                                    selectedCategory = targetCategoryName
                                     tapCategoryChipAction(targetCategoryName)
                                 }
                             })
@@ -131,6 +129,9 @@ struct ArchiveCategoryView: View {
 
 struct ArchiveCategoryView_Previews: PreviewProvider {
     static var previews: some View {
-        ArchiveCategoryView(tapCategoryChipAction: { _ in })
+        ArchiveCategoryView(selectedCategory: "", tapCategoryChipAction: { _ in })
+            .previewDisplayName("ArchiveCategoryView (Default) Preview")
+        ArchiveCategoryView(selectedCategory: "カレー", tapCategoryChipAction: { _ in })
+            .previewDisplayName("ArchiveFreewordView (Selected) Preview")
     }
 }
