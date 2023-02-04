@@ -118,7 +118,7 @@ struct ArchiveCellView: View {
                         RoundedRectangle(cornerRadius: 4.0)
                             .stroke(cellThumbnailRoundRectangleColor)
                     )
-                // 1-(2). プロフィール用基本情報表示
+                // 1-(2). 基本情報表示
                 VStack(alignment: .leading) {
                     // 1-(2)-①. 料理名表示
                     Text(getAttributeBy(taregtText: viewObject.dishName, targetKeyword: targetKeyword))
@@ -126,7 +126,7 @@ struct ArchiveCellView: View {
                         .foregroundColor(cellTitleColor)
                     // 1-(2)-②. 料理カテゴリー表示
                     Group {
-                        Text("Category: ") + Text(getAttributeBy(taregtText: viewObject.category, targetKeyword: targetKeyword))
+                        Text("Category: ") + Text(getAttributeBy(taregtText: viewObject.category, targetCategory: targetCategory))
                     }
                     .font(cellCategoryFont)
                     .foregroundColor(cellCategoryColor)
