@@ -31,18 +31,25 @@ struct ArchiveEmptyView: View {
 
     var body: some View {
         VStack(spacing: 0.0) {
-            // (1) エラータイトル表示
-            Text("エラー: 該当データがありません")
-                .font(archiveEmptyTitleFont)
-                .foregroundColor(archiveEmptyTitleColor)
-                .padding([.bottom], 16.0)
-            // (2) エラー文言表示
-            HStack {
-                Text("指定したカテゴリーや検索キーワードに合致するデータがありませんでした。カテゴリーの選択肢を変更したり、検索キーワードを変えて再度お試し下さい。")
-                    .font(archiveEmptyDescriptionFont)
-                    .foregroundColor(archiveEmptyDescriptionColor)
-                    .multilineTextAlignment(.leading)
+            // 1. Spacer
+            Spacer()
+            // 2. コンテンツ表示部分
+            VStack {
+                // (1) エラータイトル表示
+                Text("エラー: 該当データがありません")
+                    .font(archiveEmptyTitleFont)
+                    .foregroundColor(archiveEmptyTitleColor)
+                    .padding([.bottom], 16.0)
+                // (2) エラー文言表示
+                HStack {
+                    Text("指定したカテゴリーや検索キーワードに合致するデータがありませんでした。カテゴリーの選択肢を変更したり、検索キーワードを変えて再度お試し下さい。")
+                        .font(archiveEmptyDescriptionFont)
+                        .foregroundColor(archiveEmptyDescriptionColor)
+                        .multilineTextAlignment(.leading)
+                }
             }
+            // 3. Spacer
+            Spacer()
         }
         .padding([.leading, .trailing], 12.0)
     }
