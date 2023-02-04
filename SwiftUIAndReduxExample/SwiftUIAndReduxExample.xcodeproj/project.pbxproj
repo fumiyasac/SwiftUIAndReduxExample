@@ -479,11 +479,10 @@
 		DE1833B3291D9DD500E3E885 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				DEAACEA3297744D900F436F5 /* HomeRepository.swift */,
-				DEA57BE2298DE7A100872964 /* RequestArchiveRepository.swift */,
-				DEA57BE4298DEB2300872964 /* StoredArchiveDataRepository.swift */,
-				DEAACEA72979818800F436F5 /* FavioriteRepository.swift */,
-				DE42742A297C355B0003DCE3 /* ProfileRepository.swift */,
+				DEA57BE6298DEBE900872964 /* Home */,
+				DEA57BE7298DEBF100872964 /* Archive */,
+				DEA57BE8298DEBFF00872964 /* Favorite */,
+				DEA57BE9298DEC0E00872964 /* Profile */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -855,6 +854,39 @@
 				DE18342A293FF87400E3E885 /* PickupPhotosGridView.swift */,
 			);
 			path = PickupPhotosGrid;
+			sourceTree = "<group>";
+		};
+		DEA57BE6298DEBE900872964 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				DEAACEA3297744D900F436F5 /* HomeRepository.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		DEA57BE7298DEBF100872964 /* Archive */ = {
+			isa = PBXGroup;
+			children = (
+				DEA57BE2298DE7A100872964 /* RequestArchiveRepository.swift */,
+				DEA57BE4298DEB2300872964 /* StoredArchiveDataRepository.swift */,
+			);
+			path = Archive;
+			sourceTree = "<group>";
+		};
+		DEA57BE8298DEBFF00872964 /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				DEAACEA72979818800F436F5 /* FavioriteRepository.swift */,
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
+		DEA57BE9298DEC0E00872964 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				DE42742A297C355B0003DCE3 /* ProfileRepository.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		DEAACE90296EFC1800F436F5 /* Archive */ = {
