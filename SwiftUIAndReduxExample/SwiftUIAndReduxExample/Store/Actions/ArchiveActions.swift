@@ -19,7 +19,7 @@ struct RequestArchiveWithNoConditionsAction: Action {}
 
 struct SuccessArchiveAction: Action {
     let archiveSceneEntities: [ArchiveSceneEntity]
-    let isStored: Bool
+    let storedIds: [Int]
 }
 
 struct FailureArchiveAction: Action {}

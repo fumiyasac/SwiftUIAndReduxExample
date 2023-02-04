@@ -48,6 +48,30 @@ func archiveMiddleware() -> Middleware<AppState> {
 // ※テストコードの場合は想定するStubデータを返すものに差し替える想定
 private func requestArchiveScenes(inputText: String, selectedCategory: String, dispatch: @escaping Dispatcher) {
     Task { @MainActor in
-        // TODO: Realm処理とAPIリクエスト処理を組み合わせてレスポンスを取得する
+        do {
+            // 👉 Realm内に登録されているデータのIDだけを詰め込んだ配列に変換する
+            let storedIds = StoredArchiveDataRepositoryFactory.create().getAllObjectsFromRealm()
+                .map { $0.id }
+            // 👉 Realm内に登録されているデータのIDだけを詰め込んだ配列に変換する
+            // 🌟 最終的にViewObjectに変換をするのはArchiveReducerで実行する
+            let archiveResponse = try await RequestArchiveRepositoryFactory.create().getArchiveResponse(keyword: inputText, category: selectedCategory)
+            if let archiveSceneResponse = archiveResponse as? ArchiveSceneResponse {
+                // お望みのレスポンスが取得できた場合は成功時のActionを発行する
+                dispatch(
+                    SuccessArchiveAction(
+                        archiveSceneEntities: archiveSceneResponse.result,
+                        storedIds: storedIds
+                    )
+                )
+            } else {
+                // お望みのレスポンスが取得できなかった場合はErrorをthrowして失敗時のActionを発行する
+                throw APIError.error(message: "No FavoriteSceneResponse exists.")
+            }
+            dump(archiveResponse)
+        } catch APIError.error(let message) {
+            // 通信エラーないしはお望みのレスポンスが取得できなかった場合は成功時のActionを発行する
+            dispatch(FailureArchiveAction())
+            print(message)
+        }
     }
 }
