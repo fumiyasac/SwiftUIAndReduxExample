@@ -25,6 +25,9 @@ struct SwiftUIAndReduxExampleApp: App {
             middlewares: [
                 // MEMO: 正規の処理を実行するMiddlewareを登録する
                 homeMiddleware(),
+                archiveMiddleware(),
+                addArchiveObjectMiddleware(),
+                deleteArchiveObjectMiddleware(),
                 favoriteMiddleware(),
                 profileMiddleware(),
             ]
