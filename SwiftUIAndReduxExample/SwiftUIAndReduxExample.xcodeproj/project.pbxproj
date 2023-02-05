@@ -694,17 +694,9 @@
 		DE527ECD294A489C009894FA /* InternalData */ = {
 			isa = PBXGroup;
 			children = (
-				DE527ECE294A48B1009894FA /* BundleRealm */,
 				DE183401292FC76E00E3E885 /* Testing */,
 			);
 			path = InternalData;
-			sourceTree = "<group>";
-		};
-		DE527ECE294A48B1009894FA /* BundleRealm */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = BundleRealm;
 			sourceTree = "<group>";
 		};
 		DEA57B9D298475EB00872964 /* ViewObject */ = {
