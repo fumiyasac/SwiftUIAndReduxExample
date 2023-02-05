@@ -120,7 +120,7 @@ struct ContentView_Previews: PreviewProvider {
                 // Home
                 homeMockSuccessMiddleware(),
                 // Archive
-                archiveMockFailureMiddleware(),
+                archiveMockSuccessMiddleware(),
                 addMockArchiveObjectMiddleware(),
                 deleteMockArchiveObjectMiddleware(),
                 // Favorite
