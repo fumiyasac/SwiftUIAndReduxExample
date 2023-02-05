@@ -83,7 +83,7 @@ func onboardingMockHideMiddleware() -> Middleware<AppState> {
         switch action {
             case _ as RequestOnboardingAction:
             // 👉 RequestOnboardingActionを受け取ったらその後にオンボーディングの表示フラグ値に応じた処理を実行する
-            mockShowOnboardingStatus(dispatch: dispatch)
+            mockHideOnboardingStatus(dispatch: dispatch)
             default:
                 break
         }
