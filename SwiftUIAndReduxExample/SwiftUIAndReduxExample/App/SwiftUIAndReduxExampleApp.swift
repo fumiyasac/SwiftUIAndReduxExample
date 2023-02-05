@@ -24,6 +24,8 @@ struct SwiftUIAndReduxExampleApp: App {
             state: AppState(),
             middlewares: [
                 // MEMO: 正規の処理を実行するMiddlewareを登録する
+                onboardingMiddleware(),
+                onboardingCloseMiddleware(),
                 homeMiddleware(),
                 archiveMiddleware(),
                 addArchiveObjectMiddleware(),
