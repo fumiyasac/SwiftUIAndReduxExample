@@ -25,13 +25,20 @@ struct SwiftUIAndReduxExampleApp: App {
             state: AppState(),
             middlewares: [
                 // MEMO: API処理をMockにして実行するMiddlewareを登録する（他はそのままの処理）
-                onboardingMiddleware(),
-                onboardingCloseMiddleware(),
+                // OnBoarding
+                // ※ onBoardingを表示しない場合
+                //onboardingMockHideMiddleware(),
+                onboardingMockShowMiddleware(),
+                onboardingMockCloseMiddleware(),
+                // Home
                 homeMockSuccessMiddleware(),
+                // Archive
                 archiveMockSuccessMiddleware(),
-                addArchiveObjectMiddleware(),
-                deleteArchiveObjectMiddleware(),
+                addMockArchiveObjectMiddleware(),
+                deleteMockArchiveObjectMiddleware(),
+                // Favorite
                 favoriteMockSuccessMiddleware(),
+                // Profile
                 profileMockSuccessMiddleware()
             ]
         )
@@ -41,13 +48,18 @@ struct SwiftUIAndReduxExampleApp: App {
             state: AppState(),
             middlewares: [
                 // MEMO: 正規の処理を実行するMiddlewareを登録する
+                // OnBoarding
                 onboardingMiddleware(),
                 onboardingCloseMiddleware(),
+                // Home
                 homeMiddleware(),
+                // Archive
                 archiveMiddleware(),
                 addArchiveObjectMiddleware(),
                 deleteArchiveObjectMiddleware(),
+                // Favorite
                 favoriteMiddleware(),
+                // Profile
                 profileMiddleware(),
             ]
         )
