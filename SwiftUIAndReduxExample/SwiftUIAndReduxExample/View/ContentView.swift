@@ -14,9 +14,36 @@ struct ContentView: View {
     // 👉 画面全体用のView要素についても同様に.environmentObjectを利用してstoreを適用する
     @EnvironmentObject var store: Store<AppState>
 
+    private struct Props {
+        // Immutableに扱うProperty 👉 画面状態管理用
+        let showOnboarding: Bool
+        // Action発行用のClosure
+        let requestOnboarding: () -> Void
+        let closeOnboarding: () -> Void
+    }
+
+    private func mapStateToProps(state: OnboardingState) -> Props {
+        Props(
+            showOnboarding: state.showOnboarding,
+            requestOnboarding: {
+                store.dispatch(action: RequestOnboardingAction())
+            },
+            closeOnboarding: {
+                store.dispatch(action: CloseOnboardingAction())
+            }
+        )
+    }
+
     // MARK: - Body
 
     var body: some View {
+        // 該当画面で利用するState(ここではOnboardingState)をこの画面用のPropsにマッピングする
+        let props = mapStateToProps(state: store.state.onboardingState)
+
+        // 表示に必要な値をPropsから取得する
+        let onboardingState = mapToshowOnboarding(props: props)
+
+        // 画面用のPropsに応じた画面要素表示処理を実行する
         ZStack {
             // (1) TabView表示要素の配置
             TabView {
@@ -56,30 +83,53 @@ struct ContentView: View {
             }
             .accentColor(Color(AppConstants.ColorPalette.mint))
             // (2) 初回起動ダイアログ表示要素の配置
-            // TODO: この部分もContentView用のRedux処理を利用してハンドリングができる様にする
-            if true {
-                Group {
-                    Color.black.opacity(0.64)
-                    OnboardingContentsView(closeOnboardingAction: {
-                        
-                    })
+            if onboardingState {
+                withAnimation(.linear(duration: 0.3)) {
+                    Group {
+                        Color.black.opacity(0.64)
+                        OnboardingContentsView(closeOnboardingAction: props.closeOnboarding)
+                    }
+                    .edgesIgnoringSafeArea(.all)
                 }
-                .edgesIgnoringSafeArea(.all)
             }
         }
+        .onFirstAppear(props.requestOnboarding)
+    }
+
+    // MARK: - Private Function
+
+    private func mapToshowOnboarding(props: Props) -> Bool {
+        return props.showOnboarding
     }
 }
 
 // MARK: - Preview
 
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        let store = Store(
-//            reducer: appReducer,
-//            state: AppState(),
-//            middlewares: []
-//        )
-//        ContentView()
-//            .environmentObject(store)
-//    }
-//}
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        let store = Store(
+            reducer: appReducer,
+            state: AppState(),
+            middlewares: [
+                // 👉 Preview表示確認用にMockを適用しています
+                // OnBoarding
+                // ※ onBoardingを表示しない場合
+                //onboardingMockHideMiddleware(),
+                onboardingMockShowMiddleware(),
+                onboardingMockCloseMiddleware(),
+                // Home
+                homeMockSuccessMiddleware(),
+                // Archive
+                archiveMockFailureMiddleware(),
+                addMockArchiveObjectMiddleware(),
+                deleteMockArchiveObjectMiddleware(),
+                // Favorite
+                favoriteMockSuccessMiddleware(),
+                // Profile
+                profileMockSuccessMiddleware()
+            ]
+        )
+        ContentView()
+            .environmentObject(store)
+    }
+}
