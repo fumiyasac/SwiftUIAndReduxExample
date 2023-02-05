@@ -13,6 +13,8 @@ import Foundation
 
 func appReducer(_ state: AppState, _ action: Action) -> AppState {
     var state = state
+    // MEMO: OnboardingReducerの適用
+    state.onboardingState = onboardingReducer(state.onboardingState, action)
     // MEMO: HomeReducerの適用
     state.homeState = homeReducer(state.homeState, action)
     // MEMO: ArchiveReducerの適用

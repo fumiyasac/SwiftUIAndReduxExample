@@ -11,6 +11,8 @@ import Foundation
 
 // 👉 アプリ全体のState定義（画面ないしは機能ごとのState定義を集約する部分）
 struct AppState: ReduxState {
+    // MEMO: Onboarding表示で利用するState
+    var onboardingState: OnboardingState = OnboardingState()
     // MEMO: Home画面表示で利用するState
     var homeState: HomeState = HomeState()
     // MEMO: Archive画面表示で利用するState
