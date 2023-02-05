@@ -19,6 +19,23 @@ struct SwiftUIAndReduxExampleApp: App {
         // 👉 このアプリで利用するStoreを初期化する
         // ※ middlewaresの配列内にAPI通信/Realm/UserDefaultを操作するための関数を追加する
         // ※ TestCodeやPreview画面ではmiddlewaresの関数にはMockを適用する形にすればさらに良いかもしれない...
+        #if MOCKAPI
+        let store = Store(
+            reducer: appReducer,
+            state: AppState(),
+            middlewares: [
+                // MEMO: API処理をMockにして実行するMiddlewareを登録する（他はそのままの処理）
+                onboardingMiddleware(),
+                onboardingCloseMiddleware(),
+                homeMockSuccessMiddleware(),
+                archiveMockSuccessMiddleware(),
+                addArchiveObjectMiddleware(),
+                deleteArchiveObjectMiddleware(),
+                favoriteMockSuccessMiddleware(),
+                profileMockSuccessMiddleware()
+            ]
+        )
+        #else
         let store = Store(
             reducer: appReducer,
             state: AppState(),
@@ -34,6 +51,7 @@ struct SwiftUIAndReduxExampleApp: App {
                 profileMiddleware(),
             ]
         )
+        #endif
         // 👉 ContentViewには.environmentObjectを経由してstoreを適用する
         WindowGroup {
             ContentView()
