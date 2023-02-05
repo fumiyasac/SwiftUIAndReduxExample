@@ -9,12 +9,16 @@ import SwiftUI
 
 struct OnboardingContentsView: View {
 
+    // MARK: - Typealias
+
+    typealias CloseOnboardingAction = () -> Void
+
     // MARK: - Property
 
     private let screen = UIScreen.main.bounds
 
     private var screenWidth: CGFloat {
-        return screen.width - 88.0
+        return screen.width - 64.0
     }
 
     private var baseBackgroundColor: Color {
@@ -33,23 +37,43 @@ struct OnboardingContentsView: View {
         return Color(uiColor: AppConstants.ColorPalette.mint)
     }
 
+    private var closeOnboardingAction: OnboardingContentsView.CloseOnboardingAction
+
+    // MARK: - Initializer
+
+    init(closeOnboardingAction: @escaping OnboardingContentsView.CloseOnboardingAction) {
+        self.closeOnboardingAction = closeOnboardingAction
+    }
+
     // MARK: - Body
 
     var body: some View {
         VStack(spacing: 0.0) {
             TabView {
-                OnboardingItemView()
-                    .tag(0)
-                OnboardingItemView()
-                    .tag(1)
-                OnboardingItemView()
-                    .tag(2)
+                OnboardingItemView(
+                    imageName: "onboarding1",
+                    title: "Welcome to App.",
+                    summary: "アプリへようこそ！"
+                )
+                .tag(0)
+                OnboardingItemView(
+                    imageName: "onboarding2",
+                    title: "Find my favorite.",
+                    summary: "お気に入りに出会おう！"
+                )
+                .tag(1)
+                OnboardingItemView(
+                    imageName: "onboarding3",
+                    title: "Come on! Let's go!",
+                    summary: "さあ！使ってみよう！"
+                )
+                .tag(2)
             }
             .tabViewStyle(PageTabViewStyle())
             .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
             HStack {
                 Spacer()
-                Button(action: {}, label: {
+                Button(action: closeOnboardingAction, label: {
                     // MEMO: 縁取りをした角丸ボタンのための装飾
                     Text("オンボーディングを終了")
                         .font(quitOnboardingButtonFont)
@@ -67,11 +91,6 @@ struct OnboardingContentsView: View {
             .padding(.top, 24.0)
             .padding(.bottom, 24.0)
         }
-        .overlay(
-            RoundedRectangle(cornerRadius: 8.0)
-                .stroke(baseBorderColor, lineWidth: 1.0)
-        )
-        .clipShape(RoundedRectangle(cornerRadius: 8.0))
         .background(baseBackgroundColor)
         .frame(width: screenWidth, height: 480.0)
         .padding(.vertical, 64.0)
@@ -81,6 +100,6 @@ struct OnboardingContentsView: View {
 
 struct OnboardingContentsView_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingContentsView()
+        OnboardingContentsView(closeOnboardingAction: {})
     }
 }

@@ -59,8 +59,10 @@ struct ContentView: View {
             // TODO: この部分もContentView用のRedux処理を利用してハンドリングができる様にする
             if true {
                 Group {
-                    Color.black.opacity(0.3)
-                    OnboardingContentsView()
+                    Color.black.opacity(0.64)
+                    OnboardingContentsView(closeOnboardingAction: {
+                        
+                    })
                 }
                 .edgesIgnoringSafeArea(.all)
             }

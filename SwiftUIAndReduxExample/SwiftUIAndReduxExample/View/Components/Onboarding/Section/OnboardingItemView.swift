@@ -14,7 +14,7 @@ struct OnboardingItemView: View {
     private let screen = UIScreen.main.bounds
 
     private var screenWidth: CGFloat {
-        return screen.width - 88.0
+        return screen.width - 64.0
     }
 
     private var itemTitleFont: Font {
@@ -34,7 +34,23 @@ struct OnboardingItemView: View {
     }
 
     private var itemThumbnailMaskColor: Color {
-        return Color.black.opacity(0.36)
+        return Color.black.opacity(0.16)
+    }
+
+    private var imageName: String
+    private var title: String
+    private var summary: String
+
+    // MARK: - Initializer
+
+    init(
+        imageName: String,
+        title: String,
+        summary: String
+    ) {
+        self.imageName = imageName
+        self.title = title
+        self.summary = summary
     }
 
     // MARK: - Body
@@ -43,7 +59,7 @@ struct OnboardingItemView: View {
         // 👉 ZStack内部の要素についてはサムネイル表示のサイズと合わせています。
         ZStack {
             // (1) サムネイル画像表示
-            Image("profile_header_sample")
+            Image(imageName)
                 .resizable()
                 .scaledToFill()
                 // MEMO: .frameの後ろに.clippedを入れないとサムネイル画像が切り取られないので注意
@@ -56,7 +72,7 @@ struct OnboardingItemView: View {
             // (3) タイトル＆サマリーテキスト表示部分
             VStack(spacing: 0.0) {
                 HStack {
-                    Text("Welcome to App!")
+                    Text(title)
                         .font(itemTitleFont)
                         .foregroundColor(itemTitleColor)
                         .padding(.top, 24.0)
@@ -64,7 +80,7 @@ struct OnboardingItemView: View {
                     Spacer()
                 }
                 HStack {
-                    Text("アプリへようこそ！")
+                    Text(summary)
                         .font(itemSummaryFont)
                         .foregroundColor(itemSummaryColor)
                         .padding(.top, 8.0)
@@ -82,6 +98,10 @@ struct OnboardingItemView: View {
 
 struct OnboardingItemView_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingItemView()
+        OnboardingItemView(
+            imageName: "onboarding1",
+            title: "Welcome to App.",
+            summary: "アプリへようこそ！"
+        )
     }
 }
