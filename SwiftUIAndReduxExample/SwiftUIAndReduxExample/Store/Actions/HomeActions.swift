@@ -18,7 +18,3 @@ struct SuccessHomeAction: Action {
 }
 
 struct FailureHomeAction: Action {}
-
-struct ShowGuidanceAction: Action {}
-
-struct CloseGuidanceAction: Action {}
