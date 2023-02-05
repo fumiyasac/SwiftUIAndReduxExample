@@ -28,6 +28,143 @@
 		DE044414298FA6B8008357A4 /* OnboardingReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE044413298FA6B8008357A4 /* OnboardingReducer.swift */; };
 		DE044417298FAC9E008357A4 /* OnboardingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE044416298FAC9E008357A4 /* OnboardingRepository.swift */; };
 		DE044419298FBDBE008357A4 /* OnboardingMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE044418298FBDBE008357A4 /* OnboardingMiddleware.swift */; };
+		DE0444272990439A008357A4 /* ProfileCommentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAACEC3297BFBD200F436F5 /* ProfileCommentResponse.swift */; };
+		DE0444282990439A008357A4 /* StockArchiveRealmEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAACE93297595E200F436F5 /* StockArchiveRealmEntity.swift */; };
+		DE0444292990439A008357A4 /* ProfileRecentFavoriteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAACEBF297BF9B600F436F5 /* ProfileRecentFavoriteEntity.swift */; };
+		DE04442A2990439A008357A4 /* LoadingIndicatorViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAACE8A296D941F00F436F5 /* LoadingIndicatorViewRepresentable.swift */; };
+		DE04442B2990439A008357A4 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1833D8291FABCD00E3E885 /* UserDefaultManager.swift */; };
+		DE04442C2990439A008357A4 /* ProfileSelfIntroductionViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BB129852C3D00872964 /* ProfileSelfIntroductionViewObject.swift */; };
+		DE04442D2990439A008357A4 /* ProfilePersonalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE03CFE6295F10C10054BCF1 /* ProfilePersonalView.swift */; };
+		DE04442E2990439A008357A4 /* ProfileInformationAnnouncementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE03CFFF2962B6210054BCF1 /* ProfileInformationAnnouncementView.swift */; };
+		DE04442F2990439A008357A4 /* RealmAccessManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1833D1291FAA3C00E3E885 /* RealmAccessManager.swift */; };
+		DE0444302990439A008357A4 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBB6271B080900FC0F32 /* UIColorExtension.swift */; };
+		DE0444312990439A008357A4 /* ProfileSocialMediaViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BB329852D4800872964 /* ProfileSocialMediaViewObject.swift */; };
+		DE0444322990439A008357A4 /* FavoriteSceneResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27BFAD29512D6200CF96AC /* FavoriteSceneResponse.swift */; };
+		DE0444332990439A008357A4 /* RequestArchiveRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BE2298DE7A100872964 /* RequestArchiveRepository.swift */; };
+		DE0444342990439A008357A4 /* FavoriteScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBBF271B16FD00FC0F32 /* FavoriteScreenView.swift */; };
+		DE0444352990439A008357A4 /* HomeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAACEA12977448D00F436F5 /* HomeResponse.swift */; };
+		DE0444362990439A008357A4 /* ProfileInformationRecentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE03D0092962D2CA0054BCF1 /* ProfileInformationRecentView.swift */; };
+		DE0444372990439A008357A4 /* OnboardingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE044416298FAC9E008357A4 /* OnboardingRepository.swift */; };
+		DE0444382990439A008357A4 /* ProfileCommentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAACEBB297BF51700F436F5 /* ProfileCommentEntity.swift */; };
+		DE0444392990439A008357A4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE9C6F726E8308700190505 /* ContentView.swift */; };
+		DE04443A2990439A008357A4 /* CampaignBannerCarouselViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BA3298502EA00872964 /* CampaignBannerCarouselViewObject.swift */; };
+		DE04443B2990439A008357A4 /* FavoriteMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE427435297EC6520003DCE3 /* FavoriteMiddleware.swift */; };
+		DE04443C2990439A008357A4 /* PickupPhotosGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE18342A293FF87400E3E885 /* PickupPhotosGridView.swift */; };
+		DE04443D2990439A008357A4 /* RatingViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE20986A278B0F34000272B9 /* RatingViewRepresentable.swift */; };
+		DE04443E2990439A008357A4 /* ProfilePointsAndHistoryViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BB7298535A600872964 /* ProfilePointsAndHistoryViewObject.swift */; };
+		DE04443F2990439A008357A4 /* ProfileContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27BFBB295981D900CF96AC /* ProfileContentsView.swift */; };
+		DE0444402990439A008357A4 /* HomeMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBC9271B21B400FC0F32 /* HomeMiddleware.swift */; };
+		DE0444412990439A008357A4 /* ArchiveCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE03D00B29655DDB0054BCF1 /* ArchiveCategoryView.swift */; };
+		DE0444422990439A008357A4 /* OnboardingReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE044413298FA6B8008357A4 /* OnboardingReducer.swift */; };
+		DE0444432990439A008357A4 /* ArchiveContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27BFC3295D152200CF96AC /* ArchiveContentsView.swift */; };
+		DE0444442990439A008357A4 /* FavoriteContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BC529857E6600872964 /* FavoriteContentsView.swift */; };
+		DE0444452990439A008357A4 /* ProfileAnnoucementResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAACEC1297BFB8B00F436F5 /* ProfileAnnoucementResponse.swift */; };
+		DE0444462990439A008357A4 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBC3271B1EA400FC0F32 /* Store.swift */; };
+		DE0444472990439A008357A4 /* APIClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE257C5271F1E6500751B67 /* APIClientManager.swift */; };
+		DE0444482990439A008357A4 /* ArchiveMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BE0298D550900872964 /* ArchiveMiddleware.swift */; };
+		DE0444492990439A008357A4 /* ProfileSocialMediaLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE03CFF4296155390054BCF1 /* ProfileSocialMediaLinkView.swift */; };
+		DE04444A2990439A008357A4 /* ProfilePersonalResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAACEB4297BEAE000F436F5 /* ProfilePersonalResponse.swift */; };
+		DE04444B2990439A008357A4 /* FavoriteCommonSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE527EC929493FDE009894FA /* FavoriteCommonSectionView.swift */; };
+		DE04444C2990439A008357A4 /* ProfileAnnoucementEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAACEBD297BF70600F436F5 /* ProfileAnnoucementEntity.swift */; };
+		DE04444D2990439A008357A4 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBBB271B16AB00FC0F32 /* HomeScreenView.swift */; };
+		DE04444E2990439A008357A4 /* FavoriteSceneEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27BFA829512B6B00CF96AC /* FavoriteSceneEntity.swift */; };
+		DE04444F2990439A008357A4 /* ProfileReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42747A29801C220003DCE3 /* ProfileReducer.swift */; };
+		DE0444502990439A008357A4 /* DateLabelFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42E19929423C52007E462F /* DateLabelFormatter.swift */; };
+		DE0444512990439A008357A4 /* ArchiveActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BDA298BB6FE00872964 /* ArchiveActions.swift */; };
+		DE0444522990439A008357A4 /* FavoriteActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE427431297EC4650003DCE3 /* FavoriteActions.swift */; };
+		DE0444532990439A008357A4 /* ArchiveSceneEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE18341C2932829900E3E885 /* ArchiveSceneEntity.swift */; };
+		DE0444542990439A008357A4 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBC5271B20D200FC0F32 /* AppState.swift */; };
+		DE0444552990439A008357A4 /* OnboardingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE044411298FA6A4008357A4 /* OnboardingState.swift */; };
+		DE0444562990439A008357A4 /* ProfileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42742A297C355B0003DCE3 /* ProfileRepository.swift */; };
+		DE0444572990439A008357A4 /* ArchiveCurrentCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAACE88296C5B9300F436F5 /* ArchiveCurrentCountView.swift */; };
+		DE0444582990439A008357A4 /* ProfileInformationCommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE03CFFD2962B6090054BCF1 /* ProfileInformationCommentView.swift */; };
+		DE0444592990439A008357A4 /* ArchiveSceneResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAACE91296EFC3400F436F5 /* ArchiveSceneResponse.swift */; };
+		DE04445A2990439A008357A4 /* ProfileActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4274782980180C0003DCE3 /* ProfileActions.swift */; };
+		DE04445B2990439A008357A4 /* ProfilePointsAndHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE03CFEE296028900054BCF1 /* ProfilePointsAndHistoryView.swift */; };
+		DE04445C2990439A008357A4 /* TrendArticlesGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42E19D2943B02F007E462F /* TrendArticlesGridView.swift */; };
+		DE04445D2990439A008357A4 /* ArchiveFreewordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE03D00D29655DFA0054BCF1 /* ArchiveFreewordView.swift */; };
+		DE04445E2990439A008357A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9F9A1827867A5F00EF32BB /* AppDelegate.swift */; };
+		DE04445F2990439A008357A4 /* CampaignBannerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBD8271B38CF00FC0F32 /* CampaignBannerEntity.swift */; };
+		DE0444602990439A008357A4 /* CampaignBannersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBD6271B38BD00FC0F32 /* CampaignBannersResponse.swift */; };
+		DE0444612990439A008357A4 /* ProfileState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42742E297DF8910003DCE3 /* ProfileState.swift */; };
+		DE0444622990439A008357A4 /* SwiftUIAndReduxExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE9C6F526E8308700190505 /* SwiftUIAndReduxExampleApp.swift */; };
+		DE0444632990439A008357A4 /* TrendArticlesGridViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BA92985052700872964 /* TrendArticlesGridViewObject.swift */; };
+		DE0444642990439A008357A4 /* FavoriteState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42742C297DF7F50003DCE3 /* FavoriteState.swift */; };
+		DE0444652990439A008357A4 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBB9271B154900FC0F32 /* AppConstants.swift */; };
+		DE0444662990439A008357A4 /* OnboardingItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04440D298F5C6A008357A4 /* OnboardingItemView.swift */; };
+		DE0444672990439A008357A4 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE03D0052962BF840054BCF1 /* StringExtension.swift */; };
+		DE0444682990439A008357A4 /* ArchiveCellViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BD12987F98B00872964 /* ArchiveCellViewObject.swift */; };
+		DE0444692990439A008357A4 /* ProfileSpecialContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE03CFF62961748F0054BCF1 /* ProfileSpecialContentsView.swift */; };
+		DE04446A2990439A008357A4 /* FeaturedTopicsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1833BE291DAABF00E3E885 /* FeaturedTopicsResponse.swift */; };
+		DE04446B2990439A008357A4 /* FeaturedTopicEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1833BC291DA8BD00E3E885 /* FeaturedTopicEntity.swift */; };
+		DE04446C2990439A008357A4 /* HomeReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1833CC291F911000E3E885 /* HomeReducer.swift */; };
+		DE04446D2990439A008357A4 /* HomeCommonSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE18342E29407DC900E3E885 /* HomeCommonSectionView.swift */; };
+		DE04446E2990439A008357A4 /* ExecutingConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE427480298031580003DCE3 /* ExecutingConnectionView.swift */; };
+		DE04446F2990439A008357A4 /* HomeContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BCD2985816200872964 /* HomeContentsView.swift */; };
+		DE0444702990439A008357A4 /* ProfileInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE03CFF82961C4740054BCF1 /* ProfileInformationView.swift */; };
+		DE0444712990439A008357A4 /* RecentNewsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1833BA291DA7E800E3E885 /* RecentNewsResponse.swift */; };
+		DE0444722990439A008357A4 /* ProfileInformationTabSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE03CFFB2962B4D40054BCF1 /* ProfileInformationTabSwitcher.swift */; };
+		DE0444732990439A008357A4 /* ProfilePersonalEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAACEB7297BEE3200F436F5 /* ProfilePersonalEntity.swift */; };
+		DE0444742990439A008357A4 /* FavoriteSwipePagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE527ECB29495DA7009894FA /* FavoriteSwipePagingView.swift */; };
+		DE0444752990439A008357A4 /* TrendArticleEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1833C0291DAD9900E3E885 /* TrendArticleEntity.swift */; };
+		DE0444762990439A008357A4 /* StoredArchiveDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BE4298DEB2300872964 /* StoredArchiveDataRepository.swift */; };
+		DE0444772990439A008357A4 /* FeaturedTopicsCarouselViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BAB2985059F00872964 /* FeaturedTopicsCarouselViewObject.swift */; };
+		DE0444782990439A008357A4 /* ArchiveReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BDE298BB72500872964 /* ArchiveReducer.swift */; };
+		DE0444792990439A008357A4 /* HomeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAACEA3297744D900F436F5 /* HomeRepository.swift */; };
+		DE04447A2990439A008357A4 /* TrendArticleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1833C2291DAF8100E3E885 /* TrendArticleResponse.swift */; };
+		DE04447B2990439A008357A4 /* ArchiveState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BDC298BB71100872964 /* ArchiveState.swift */; };
+		DE04447C2990439A008357A4 /* SwiftUIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2098682787025D000272B9 /* SwiftUIColorExtension.swift */; };
+		DE04447D2990439A008357A4 /* FavioriteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAACEA72979818800F436F5 /* FavioriteRepository.swift */; };
+		DE04447E2990439A008357A4 /* PickupPhotoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1833C6291DB70D00E3E885 /* PickupPhotoResponse.swift */; };
+		DE04447F2990439A008357A4 /* RecentNewsCarouselViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BA72985045700872964 /* RecentNewsCarouselViewObject.swift */; };
+		DE0444802990439A008357A4 /* FeaturedTopicsCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42E19F2943EF00007E462F /* FeaturedTopicsCarouselView.swift */; };
+		DE0444812990439A008357A4 /* FavoriteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27BFAA29512D1600CF96AC /* FavoriteResponse.swift */; };
+		DE0444822990439A008357A4 /* PickupPhotosGridViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BA5298503DA00872964 /* PickupPhotosGridViewObject.swift */; };
+		DE0444832990439A008357A4 /* OnboardingMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE044418298FBDBE008357A4 /* OnboardingMiddleware.swift */; };
+		DE0444842990439A008357A4 /* ProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAACEB2297BBEC800F436F5 /* ProfileResponse.swift */; };
+		DE0444852990439A008357A4 /* HomeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1833CA291F910200E3E885 /* HomeState.swift */; };
+		DE0444862990439A008357A4 /* CampaignBannerCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1833EB292DC86800E3E885 /* CampaignBannerCarouselView.swift */; };
+		DE0444872990439A008357A4 /* FavoriteReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE427433297EC62E0003DCE3 /* FavoriteReducer.swift */; };
+		DE0444882990439A008357A4 /* ProfileInformationViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BB529852E4B00872964 /* ProfileInformationViewObject.swift */; };
+		DE0444892990439A008357A4 /* ArchiveEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BD8298B179D00872964 /* ArchiveEmptyView.swift */; };
+		DE04448A2990439A008357A4 /* RecentNewsCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE18342C29404A5E00E3E885 /* RecentNewsCarouselView.swift */; };
+		DE04448B2990439A008357A4 /* ArchiveResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAACE8E296EFC0B00F436F5 /* ArchiveResponse.swift */; };
+		DE04448C2990439A008357A4 /* ProfileScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBC1271B170B00FC0F32 /* ProfileScreenView.swift */; };
+		DE04448D2990439A008357A4 /* OnboardingActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04440F298FA692008357A4 /* OnboardingActions.swift */; };
+		DE04448E2990439A008357A4 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBC7271B20FA00FC0F32 /* AppReducer.swift */; };
+		DE04448F2990439A008357A4 /* RecentNewsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1833B6291DA39F00E3E885 /* RecentNewsEntity.swift */; };
+		DE0444902990439A008357A4 /* ProfileRecentFavoriteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAACEC5297BFC5400F436F5 /* ProfileRecentFavoriteResponse.swift */; };
+		DE0444912990439A008357A4 /* FirstAppearExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAACEA529797DF800F436F5 /* FirstAppearExtension.swift */; };
+		DE0444922990439A008357A4 /* ConnectionErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42747E2980255F0003DCE3 /* ConnectionErrorView.swift */; };
+		DE0444932990439A008357A4 /* ProfileMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42747C298021020003DCE3 /* ProfileMiddleware.swift */; };
+		DE0444942990439A008357A4 /* ProfileSelfIntroductionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE03CFEC29601D640054BCF1 /* ProfileSelfIntroductionView.swift */; };
+		DE0444952990439A008357A4 /* ArchiveScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBBD271B16E300FC0F32 /* ArchiveScreenView.swift */; };
+		DE0444962990439A008357A4 /* HomeActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1833CE291F972900E3E885 /* HomeActions.swift */; };
+		DE0444972990439A008357A4 /* ProfilePersonalViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BAF298525FE00872964 /* ProfilePersonalViewObject.swift */; };
+		DE0444982990439A008357A4 /* ProfileCommonSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE03CFE8295F118C0054BCF1 /* ProfileCommonSectionView.swift */; };
+		DE0444992990439A008357A4 /* OnboardingContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04440A298F5C4F008357A4 /* OnboardingContentsView.swift */; };
+		DE04449A2990439A008357A4 /* ArchiveCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BD32988769B00872964 /* ArchiveCellView.swift */; };
+		DE04449B2990439A008357A4 /* FavoritePhotosCardViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BAD2985095C00872964 /* FavoritePhotosCardViewObject.swift */; };
+		DE04449C2990439A008357A4 /* PickupPhotoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1833C4291DB41F00E3E885 /* PickupPhotoEntity.swift */; };
+		DE04449E2990439A008357A4 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DE0444232990439A008357A4 /* RealmSwift */; };
+		DE04449F2990439A008357A4 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = DE04441D2990439A008357A4 /* Cosmos */; };
+		DE0444A02990439A008357A4 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DE0444242990439A008357A4 /* Kingfisher */; };
+		DE0444A12990439A008357A4 /* CollectionViewPagingLayout in Frameworks */ = {isa = PBXBuildFile; productRef = DE04441F2990439A008357A4 /* CollectionViewPagingLayout */; };
+		DE0444A22990439A008357A4 /* SwiftyUserDefaults in Frameworks */ = {isa = PBXBuildFile; productRef = DE04441B2990439A008357A4 /* SwiftyUserDefaults */; };
+		DE0444A32990439A008357A4 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = DE0444212990439A008357A4 /* Realm */; };
+		DE0444A52990439A008357A4 /* trend_articles.json in Resources */ = {isa = PBXBuildFile; fileRef = DE1834192932714F00E3E885 /* trend_articles.json */; };
+		DE0444A62990439A008357A4 /* campaign_banners.json in Resources */ = {isa = PBXBuildFile; fileRef = DE1834152932174900E3E885 /* campaign_banners.json */; };
+		DE0444A72990439A008357A4 /* recent_news.json in Resources */ = {isa = PBXBuildFile; fileRef = DE183417293223E600E3E885 /* recent_news.json */; };
+		DE0444A82990439A008357A4 /* profile_announcement.json in Resources */ = {isa = PBXBuildFile; fileRef = DEAACEAD297AFD7A00F436F5 /* profile_announcement.json */; };
+		DE0444A92990439A008357A4 /* pickup_photos.json in Resources */ = {isa = PBXBuildFile; fileRef = DE1834212932887900E3E885 /* pickup_photos.json */; };
+		DE0444AA2990439A008357A4 /* profile_recent_favorite.json in Resources */ = {isa = PBXBuildFile; fileRef = DEAACEAC297AFD7A00F436F5 /* profile_recent_favorite.json */; };
+		DE0444AB2990439A008357A4 /* favorite_scenes.json in Resources */ = {isa = PBXBuildFile; fileRef = DE27BFA529512A8D00CF96AC /* favorite_scenes.json */; };
+		DE0444AC2990439A008357A4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEE9C6FC26E8308800190505 /* Preview Assets.xcassets */; };
+		DE0444AD2990439A008357A4 /* achive_images.json in Resources */ = {isa = PBXBuildFile; fileRef = DEAACE8C296ECE0000F436F5 /* achive_images.json */; };
+		DE0444AE2990439A008357A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEE9C6F926E8308800190505 /* Assets.xcassets */; };
+		DE0444AF2990439A008357A4 /* featured_topics.json in Resources */ = {isa = PBXBuildFile; fileRef = DE18341F2932833000E3E885 /* featured_topics.json */; };
+		DE0444B02990439A008357A4 /* profile_comment.json in Resources */ = {isa = PBXBuildFile; fileRef = DEAACEAB297AFD7A00F436F5 /* profile_comment.json */; };
+		DE0444B12990439A008357A4 /* profile_personal.json in Resources */ = {isa = PBXBuildFile; fileRef = DEAACEA9297ADE0F00F436F5 /* profile_personal.json */; };
 		DE0BFBB7271B080900FC0F32 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBB6271B080900FC0F32 /* UIColorExtension.swift */; };
 		DE0BFBBA271B154900FC0F32 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBB9271B154900FC0F32 /* AppConstants.swift */; };
 		DE0BFBBC271B16AB00FC0F32 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBBB271B16AB00FC0F32 /* HomeScreenView.swift */; };
@@ -187,6 +324,8 @@
 		DE044413298FA6B8008357A4 /* OnboardingReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingReducer.swift; sourceTree = "<group>"; };
 		DE044416298FAC9E008357A4 /* OnboardingRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRepository.swift; sourceTree = "<group>"; };
 		DE044418298FBDBE008357A4 /* OnboardingMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingMiddleware.swift; sourceTree = "<group>"; };
+		DE0444B52990439A008357A4 /* SwiftUIAndReduxExampleMockApi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIAndReduxExampleMockApi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE0444B62990439A008357A4 /* SwiftUIAndReduxExampleMockApi-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SwiftUIAndReduxExampleMockApi-Info.plist"; path = "/Users/sakaifumiya/Desktop/iOSApp/SwiftUIAndReduxExample/SwiftUIAndReduxExample/SwiftUIAndReduxExampleMockApi-Info.plist"; sourceTree = "<absolute>"; };
 		DE0BFBB6271B080900FC0F32 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		DE0BFBB9271B154900FC0F32 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		DE0BFBBB271B16AB00FC0F32 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
@@ -308,6 +447,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		DE04449D2990439A008357A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE04449E2990439A008357A4 /* RealmSwift in Frameworks */,
+				DE04449F2990439A008357A4 /* Cosmos in Frameworks */,
+				DE0444A02990439A008357A4 /* Kingfisher in Frameworks */,
+				DE0444A12990439A008357A4 /* CollectionViewPagingLayout in Frameworks */,
+				DE0444A22990439A008357A4 /* SwiftyUserDefaults in Frameworks */,
+				DE0444A32990439A008357A4 /* Realm in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DEE9C6EF26E8308700190505 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -975,6 +1127,7 @@
 				DEE9C70626E8308900190505 /* SwiftUIAndReduxExampleTests */,
 				DEE9C71126E8308900190505 /* SwiftUIAndReduxExampleUITests */,
 				DEE9C6F326E8308700190505 /* Products */,
+				DE0444B62990439A008357A4 /* SwiftUIAndReduxExampleMockApi-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -984,6 +1137,7 @@
 				DEE9C6F226E8308700190505 /* SwiftUIAndReduxExample.app */,
 				DEE9C70326E8308900190505 /* SwiftUIAndReduxExampleTests.xctest */,
 				DEE9C70E26E8308900190505 /* SwiftUIAndReduxExampleUITests.xctest */,
+				DE0444B52990439A008357A4 /* SwiftUIAndReduxExampleMockApi.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1038,6 +1192,31 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		DE04441A2990439A008357A4 /* SwiftUIAndReduxExampleMockApi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE0444B22990439A008357A4 /* Build configuration list for PBXNativeTarget "SwiftUIAndReduxExampleMockApi" */;
+			buildPhases = (
+				DE0444262990439A008357A4 /* Sources */,
+				DE04449D2990439A008357A4 /* Frameworks */,
+				DE0444A42990439A008357A4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftUIAndReduxExampleMockApi;
+			packageProductDependencies = (
+				DE04441B2990439A008357A4 /* SwiftyUserDefaults */,
+				DE04441D2990439A008357A4 /* Cosmos */,
+				DE04441F2990439A008357A4 /* CollectionViewPagingLayout */,
+				DE0444212990439A008357A4 /* Realm */,
+				DE0444232990439A008357A4 /* RealmSwift */,
+				DE0444242990439A008357A4 /* Kingfisher */,
+			);
+			productName = SwiftUIAndReduxExample;
+			productReference = DE0444B52990439A008357A4 /* SwiftUIAndReduxExampleMockApi.app */;
+			productType = "com.apple.product-type.application";
+		};
 		DEE9C6F126E8308700190505 /* SwiftUIAndReduxExample */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DEE9C71726E8308900190505 /* Build configuration list for PBXNativeTarget "SwiftUIAndReduxExample" */;
@@ -1142,6 +1321,7 @@
 			projectRoot = "";
 			targets = (
 				DEE9C6F126E8308700190505 /* SwiftUIAndReduxExample */,
+				DE04441A2990439A008357A4 /* SwiftUIAndReduxExampleMockApi */,
 				DEE9C70226E8308900190505 /* SwiftUIAndReduxExampleTests */,
 				DEE9C70D26E8308900190505 /* SwiftUIAndReduxExampleUITests */,
 			);
@@ -1149,6 +1329,26 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		DE0444A42990439A008357A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE0444A52990439A008357A4 /* trend_articles.json in Resources */,
+				DE0444A62990439A008357A4 /* campaign_banners.json in Resources */,
+				DE0444A72990439A008357A4 /* recent_news.json in Resources */,
+				DE0444A82990439A008357A4 /* profile_announcement.json in Resources */,
+				DE0444A92990439A008357A4 /* pickup_photos.json in Resources */,
+				DE0444AA2990439A008357A4 /* profile_recent_favorite.json in Resources */,
+				DE0444AB2990439A008357A4 /* favorite_scenes.json in Resources */,
+				DE0444AC2990439A008357A4 /* Preview Assets.xcassets in Resources */,
+				DE0444AD2990439A008357A4 /* achive_images.json in Resources */,
+				DE0444AE2990439A008357A4 /* Assets.xcassets in Resources */,
+				DE0444AF2990439A008357A4 /* featured_topics.json in Resources */,
+				DE0444B02990439A008357A4 /* profile_comment.json in Resources */,
+				DE0444B12990439A008357A4 /* profile_personal.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DEE9C6F026E8308700190505 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1186,6 +1386,131 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		DE0444262990439A008357A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE0444272990439A008357A4 /* ProfileCommentResponse.swift in Sources */,
+				DE0444282990439A008357A4 /* StockArchiveRealmEntity.swift in Sources */,
+				DE0444292990439A008357A4 /* ProfileRecentFavoriteEntity.swift in Sources */,
+				DE04442A2990439A008357A4 /* LoadingIndicatorViewRepresentable.swift in Sources */,
+				DE04442B2990439A008357A4 /* UserDefaultManager.swift in Sources */,
+				DE04442C2990439A008357A4 /* ProfileSelfIntroductionViewObject.swift in Sources */,
+				DE04442D2990439A008357A4 /* ProfilePersonalView.swift in Sources */,
+				DE04442E2990439A008357A4 /* ProfileInformationAnnouncementView.swift in Sources */,
+				DE04442F2990439A008357A4 /* RealmAccessManager.swift in Sources */,
+				DE0444302990439A008357A4 /* UIColorExtension.swift in Sources */,
+				DE0444312990439A008357A4 /* ProfileSocialMediaViewObject.swift in Sources */,
+				DE0444322990439A008357A4 /* FavoriteSceneResponse.swift in Sources */,
+				DE0444332990439A008357A4 /* RequestArchiveRepository.swift in Sources */,
+				DE0444342990439A008357A4 /* FavoriteScreenView.swift in Sources */,
+				DE0444352990439A008357A4 /* HomeResponse.swift in Sources */,
+				DE0444362990439A008357A4 /* ProfileInformationRecentView.swift in Sources */,
+				DE0444372990439A008357A4 /* OnboardingRepository.swift in Sources */,
+				DE0444382990439A008357A4 /* ProfileCommentEntity.swift in Sources */,
+				DE0444392990439A008357A4 /* ContentView.swift in Sources */,
+				DE04443A2990439A008357A4 /* CampaignBannerCarouselViewObject.swift in Sources */,
+				DE04443B2990439A008357A4 /* FavoriteMiddleware.swift in Sources */,
+				DE04443C2990439A008357A4 /* PickupPhotosGridView.swift in Sources */,
+				DE04443D2990439A008357A4 /* RatingViewRepresentable.swift in Sources */,
+				DE04443E2990439A008357A4 /* ProfilePointsAndHistoryViewObject.swift in Sources */,
+				DE04443F2990439A008357A4 /* ProfileContentsView.swift in Sources */,
+				DE0444402990439A008357A4 /* HomeMiddleware.swift in Sources */,
+				DE0444412990439A008357A4 /* ArchiveCategoryView.swift in Sources */,
+				DE0444422990439A008357A4 /* OnboardingReducer.swift in Sources */,
+				DE0444432990439A008357A4 /* ArchiveContentsView.swift in Sources */,
+				DE0444442990439A008357A4 /* FavoriteContentsView.swift in Sources */,
+				DE0444452990439A008357A4 /* ProfileAnnoucementResponse.swift in Sources */,
+				DE0444462990439A008357A4 /* Store.swift in Sources */,
+				DE0444472990439A008357A4 /* APIClientManager.swift in Sources */,
+				DE0444482990439A008357A4 /* ArchiveMiddleware.swift in Sources */,
+				DE0444492990439A008357A4 /* ProfileSocialMediaLinkView.swift in Sources */,
+				DE04444A2990439A008357A4 /* ProfilePersonalResponse.swift in Sources */,
+				DE04444B2990439A008357A4 /* FavoriteCommonSectionView.swift in Sources */,
+				DE04444C2990439A008357A4 /* ProfileAnnoucementEntity.swift in Sources */,
+				DE04444D2990439A008357A4 /* HomeScreenView.swift in Sources */,
+				DE04444E2990439A008357A4 /* FavoriteSceneEntity.swift in Sources */,
+				DE04444F2990439A008357A4 /* ProfileReducer.swift in Sources */,
+				DE0444502990439A008357A4 /* DateLabelFormatter.swift in Sources */,
+				DE0444512990439A008357A4 /* ArchiveActions.swift in Sources */,
+				DE0444522990439A008357A4 /* FavoriteActions.swift in Sources */,
+				DE0444532990439A008357A4 /* ArchiveSceneEntity.swift in Sources */,
+				DE0444542990439A008357A4 /* AppState.swift in Sources */,
+				DE0444552990439A008357A4 /* OnboardingState.swift in Sources */,
+				DE0444562990439A008357A4 /* ProfileRepository.swift in Sources */,
+				DE0444572990439A008357A4 /* ArchiveCurrentCountView.swift in Sources */,
+				DE0444582990439A008357A4 /* ProfileInformationCommentView.swift in Sources */,
+				DE0444592990439A008357A4 /* ArchiveSceneResponse.swift in Sources */,
+				DE04445A2990439A008357A4 /* ProfileActions.swift in Sources */,
+				DE04445B2990439A008357A4 /* ProfilePointsAndHistoryView.swift in Sources */,
+				DE04445C2990439A008357A4 /* TrendArticlesGridView.swift in Sources */,
+				DE04445D2990439A008357A4 /* ArchiveFreewordView.swift in Sources */,
+				DE04445E2990439A008357A4 /* AppDelegate.swift in Sources */,
+				DE04445F2990439A008357A4 /* CampaignBannerEntity.swift in Sources */,
+				DE0444602990439A008357A4 /* CampaignBannersResponse.swift in Sources */,
+				DE0444612990439A008357A4 /* ProfileState.swift in Sources */,
+				DE0444622990439A008357A4 /* SwiftUIAndReduxExampleApp.swift in Sources */,
+				DE0444632990439A008357A4 /* TrendArticlesGridViewObject.swift in Sources */,
+				DE0444642990439A008357A4 /* FavoriteState.swift in Sources */,
+				DE0444652990439A008357A4 /* AppConstants.swift in Sources */,
+				DE0444662990439A008357A4 /* OnboardingItemView.swift in Sources */,
+				DE0444672990439A008357A4 /* StringExtension.swift in Sources */,
+				DE0444682990439A008357A4 /* ArchiveCellViewObject.swift in Sources */,
+				DE0444692990439A008357A4 /* ProfileSpecialContentsView.swift in Sources */,
+				DE04446A2990439A008357A4 /* FeaturedTopicsResponse.swift in Sources */,
+				DE04446B2990439A008357A4 /* FeaturedTopicEntity.swift in Sources */,
+				DE04446C2990439A008357A4 /* HomeReducer.swift in Sources */,
+				DE04446D2990439A008357A4 /* HomeCommonSectionView.swift in Sources */,
+				DE04446E2990439A008357A4 /* ExecutingConnectionView.swift in Sources */,
+				DE04446F2990439A008357A4 /* HomeContentsView.swift in Sources */,
+				DE0444702990439A008357A4 /* ProfileInformationView.swift in Sources */,
+				DE0444712990439A008357A4 /* RecentNewsResponse.swift in Sources */,
+				DE0444722990439A008357A4 /* ProfileInformationTabSwitcher.swift in Sources */,
+				DE0444732990439A008357A4 /* ProfilePersonalEntity.swift in Sources */,
+				DE0444742990439A008357A4 /* FavoriteSwipePagingView.swift in Sources */,
+				DE0444752990439A008357A4 /* TrendArticleEntity.swift in Sources */,
+				DE0444762990439A008357A4 /* StoredArchiveDataRepository.swift in Sources */,
+				DE0444772990439A008357A4 /* FeaturedTopicsCarouselViewObject.swift in Sources */,
+				DE0444782990439A008357A4 /* ArchiveReducer.swift in Sources */,
+				DE0444792990439A008357A4 /* HomeRepository.swift in Sources */,
+				DE04447A2990439A008357A4 /* TrendArticleResponse.swift in Sources */,
+				DE04447B2990439A008357A4 /* ArchiveState.swift in Sources */,
+				DE04447C2990439A008357A4 /* SwiftUIColorExtension.swift in Sources */,
+				DE04447D2990439A008357A4 /* FavioriteRepository.swift in Sources */,
+				DE04447E2990439A008357A4 /* PickupPhotoResponse.swift in Sources */,
+				DE04447F2990439A008357A4 /* RecentNewsCarouselViewObject.swift in Sources */,
+				DE0444802990439A008357A4 /* FeaturedTopicsCarouselView.swift in Sources */,
+				DE0444812990439A008357A4 /* FavoriteResponse.swift in Sources */,
+				DE0444822990439A008357A4 /* PickupPhotosGridViewObject.swift in Sources */,
+				DE0444832990439A008357A4 /* OnboardingMiddleware.swift in Sources */,
+				DE0444842990439A008357A4 /* ProfileResponse.swift in Sources */,
+				DE0444852990439A008357A4 /* HomeState.swift in Sources */,
+				DE0444862990439A008357A4 /* CampaignBannerCarouselView.swift in Sources */,
+				DE0444872990439A008357A4 /* FavoriteReducer.swift in Sources */,
+				DE0444882990439A008357A4 /* ProfileInformationViewObject.swift in Sources */,
+				DE0444892990439A008357A4 /* ArchiveEmptyView.swift in Sources */,
+				DE04448A2990439A008357A4 /* RecentNewsCarouselView.swift in Sources */,
+				DE04448B2990439A008357A4 /* ArchiveResponse.swift in Sources */,
+				DE04448C2990439A008357A4 /* ProfileScreenView.swift in Sources */,
+				DE04448D2990439A008357A4 /* OnboardingActions.swift in Sources */,
+				DE04448E2990439A008357A4 /* AppReducer.swift in Sources */,
+				DE04448F2990439A008357A4 /* RecentNewsEntity.swift in Sources */,
+				DE0444902990439A008357A4 /* ProfileRecentFavoriteResponse.swift in Sources */,
+				DE0444912990439A008357A4 /* FirstAppearExtension.swift in Sources */,
+				DE0444922990439A008357A4 /* ConnectionErrorView.swift in Sources */,
+				DE0444932990439A008357A4 /* ProfileMiddleware.swift in Sources */,
+				DE0444942990439A008357A4 /* ProfileSelfIntroductionView.swift in Sources */,
+				DE0444952990439A008357A4 /* ArchiveScreenView.swift in Sources */,
+				DE0444962990439A008357A4 /* HomeActions.swift in Sources */,
+				DE0444972990439A008357A4 /* ProfilePersonalViewObject.swift in Sources */,
+				DE0444982990439A008357A4 /* ProfileCommonSectionView.swift in Sources */,
+				DE0444992990439A008357A4 /* OnboardingContentsView.swift in Sources */,
+				DE04449A2990439A008357A4 /* ArchiveCellView.swift in Sources */,
+				DE04449B2990439A008357A4 /* FavoritePhotosCardViewObject.swift in Sources */,
+				DE04449C2990439A008357A4 /* PickupPhotoEntity.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DEE9C6EE26E8308700190505 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1343,6 +1668,52 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		DE0444B32990439A008357A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"SwiftUIAndReduxExample/Preview Content\"";
+				DEVELOPMENT_TEAM = S5BF5553KY;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "SwiftUIAndReduxExampleMockApi-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_SWIFT_FLAGS = "-D MOCKAPI";
+				PRODUCT_BUNDLE_IDENTIFIER = com.just1factory.SwiftUIAndReduxExampleMockApi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DE0444B42990439A008357A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"SwiftUIAndReduxExample/Preview Content\"";
+				DEVELOPMENT_TEAM = S5BF5553KY;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "SwiftUIAndReduxExampleMockApi-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_SWIFT_FLAGS = "-D MOCKAPI";
+				PRODUCT_BUNDLE_IDENTIFIER = com.just1factory.SwiftUIAndReduxExampleMockApi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		DEE9C71526E8308900190505 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1590,6 +1961,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		DE0444B22990439A008357A4 /* Build configuration list for PBXNativeTarget "SwiftUIAndReduxExampleMockApi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE0444B32990439A008357A4 /* Debug */,
+				DE0444B42990439A008357A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		DEE9C6ED26E8308700190505 /* Build configuration list for PBXProject "SwiftUIAndReduxExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1629,6 +2009,46 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		DE04441C2990439A008357A4 /* XCRemoteSwiftPackageReference "SwiftyUserDefaults" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sunshinejr/SwiftyUserDefaults";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		DE04441E2990439A008357A4 /* XCRemoteSwiftPackageReference "Cosmos" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/Cosmos.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		DE0444202990439A008357A4 /* XCRemoteSwiftPackageReference "CollectionViewPagingLayout" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/amirdew/CollectionViewPagingLayout.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		DE0444222990439A008357A4 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 10.32.3;
+			};
+		};
+		DE0444252990439A008357A4 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		DE136BE627227525007F6808 /* XCRemoteSwiftPackageReference "SwiftyUserDefaults" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/sunshinejr/SwiftyUserDefaults";
@@ -1672,6 +2092,36 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		DE04441B2990439A008357A4 /* SwiftyUserDefaults */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE04441C2990439A008357A4 /* XCRemoteSwiftPackageReference "SwiftyUserDefaults" */;
+			productName = SwiftyUserDefaults;
+		};
+		DE04441D2990439A008357A4 /* Cosmos */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE04441E2990439A008357A4 /* XCRemoteSwiftPackageReference "Cosmos" */;
+			productName = Cosmos;
+		};
+		DE04441F2990439A008357A4 /* CollectionViewPagingLayout */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE0444202990439A008357A4 /* XCRemoteSwiftPackageReference "CollectionViewPagingLayout" */;
+			productName = CollectionViewPagingLayout;
+		};
+		DE0444212990439A008357A4 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE0444222990439A008357A4 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		DE0444232990439A008357A4 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE0444222990439A008357A4 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		DE0444242990439A008357A4 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE0444252990439A008357A4 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		DE136BE727227525007F6808 /* SwiftyUserDefaults */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DE136BE627227525007F6808 /* XCRemoteSwiftPackageReference "SwiftyUserDefaults" */;
