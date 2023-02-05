@@ -57,9 +57,10 @@ struct ContentView: View {
             .accentColor(Color(AppConstants.ColorPalette.mint))
             // (2) 初回起動ダイアログ表示要素の配置
             // TODO: この部分もContentView用のRedux処理を利用してハンドリングができる様にする
-            if false {
+            if true {
                 Group {
                     Color.black.opacity(0.3)
+                    OnboardingContentsView()
                 }
                 .edgesIgnoringSafeArea(.all)
             }
