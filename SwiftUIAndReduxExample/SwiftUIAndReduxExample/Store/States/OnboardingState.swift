@@ -12,11 +12,11 @@ struct OnboardingState: ReduxState, Equatable {
     // MARK: - Property
 
     // MEMO: オンボーディング表示フラグ
-    var isInitial: Bool = false
+    var showOnboarding: Bool = false
 
     // MARK: - Equatable
 
     static func == (lhs: OnboardingState, rhs: OnboardingState) -> Bool {
-        return lhs.isInitial == rhs.isInitial
+        return lhs.showOnboarding == rhs.showOnboarding
     }
 }

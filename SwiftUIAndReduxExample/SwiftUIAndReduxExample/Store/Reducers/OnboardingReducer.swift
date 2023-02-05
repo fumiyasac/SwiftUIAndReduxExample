@@ -11,9 +11,9 @@ func onboardingReducer(_ state: OnboardingState, _ action: Action) -> Onboarding
     var state = state
     switch action {
     case _ as ShowOnboardingAction:
-        state.isInitial = true
+        state.showOnboarding = true
     case _ as CloseOnboardingAction:
-        state.isInitial = false
+        state.showOnboarding = false
     default:
         break
     }
