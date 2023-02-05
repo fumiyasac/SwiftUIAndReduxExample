@@ -1131,7 +1131,6 @@
 				DEE9C70626E8308900190505 /* SwiftUIAndReduxExampleTests */,
 				DEE9C71126E8308900190505 /* SwiftUIAndReduxExampleUITests */,
 				DEE9C6F326E8308700190505 /* Products */,
-				DE0444B62990439A008357A4 /* SwiftUIAndReduxExampleMockApi-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1150,6 +1149,7 @@
 			isa = PBXGroup;
 			children = (
 				DEE9C6FE26E8308800190505 /* Info.plist */,
+				DE0444B62990439A008357A4 /* SwiftUIAndReduxExampleMockApi-Info.plist */,
 				DEE9C6F926E8308800190505 /* Assets.xcassets */,
 				DE0BFBAA271A99E700FC0F32 /* App */,
 				DE0BFBB8271B151F00FC0F32 /* Constants */,
