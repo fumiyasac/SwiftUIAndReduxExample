@@ -23,6 +23,9 @@
 		DE03D00E29655DFA0054BCF1 /* ArchiveFreewordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE03D00D29655DFA0054BCF1 /* ArchiveFreewordView.swift */; };
 		DE04440B298F5C4F008357A4 /* OnboardingContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04440A298F5C4F008357A4 /* OnboardingContentsView.swift */; };
 		DE04440E298F5C6A008357A4 /* OnboardingItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04440D298F5C6A008357A4 /* OnboardingItemView.swift */; };
+		DE044410298FA692008357A4 /* OnboardingActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04440F298FA692008357A4 /* OnboardingActions.swift */; };
+		DE044412298FA6A4008357A4 /* OnboardingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE044411298FA6A4008357A4 /* OnboardingState.swift */; };
+		DE044414298FA6B8008357A4 /* OnboardingReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE044413298FA6B8008357A4 /* OnboardingReducer.swift */; };
 		DE0BFBB7271B080900FC0F32 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBB6271B080900FC0F32 /* UIColorExtension.swift */; };
 		DE0BFBBA271B154900FC0F32 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBB9271B154900FC0F32 /* AppConstants.swift */; };
 		DE0BFBBC271B16AB00FC0F32 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBBB271B16AB00FC0F32 /* HomeScreenView.swift */; };
@@ -178,6 +181,9 @@
 		DE03D00D29655DFA0054BCF1 /* ArchiveFreewordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveFreewordView.swift; sourceTree = "<group>"; };
 		DE04440A298F5C4F008357A4 /* OnboardingContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContentsView.swift; sourceTree = "<group>"; };
 		DE04440D298F5C6A008357A4 /* OnboardingItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingItemView.swift; sourceTree = "<group>"; };
+		DE04440F298FA692008357A4 /* OnboardingActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingActions.swift; sourceTree = "<group>"; };
+		DE044411298FA6A4008357A4 /* OnboardingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingState.swift; sourceTree = "<group>"; };
+		DE044413298FA6B8008357A4 /* OnboardingReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingReducer.swift; sourceTree = "<group>"; };
 		DE0BFBB6271B080900FC0F32 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		DE0BFBB9271B154900FC0F32 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		DE0BFBBB271B16AB00FC0F32 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
@@ -428,6 +434,7 @@
 			isa = PBXGroup;
 			children = (
 				DE0BFBC7271B20FA00FC0F32 /* AppReducer.swift */,
+				DE044413298FA6B8008357A4 /* OnboardingReducer.swift */,
 				DE1833CC291F911000E3E885 /* HomeReducer.swift */,
 				DEA57BDE298BB72500872964 /* ArchiveReducer.swift */,
 				DE427433297EC62E0003DCE3 /* FavoriteReducer.swift */,
@@ -440,6 +447,7 @@
 			isa = PBXGroup;
 			children = (
 				DE0BFBC5271B20D200FC0F32 /* AppState.swift */,
+				DE044411298FA6A4008357A4 /* OnboardingState.swift */,
 				DE1833CA291F910200E3E885 /* HomeState.swift */,
 				DEA57BDC298BB71100872964 /* ArchiveState.swift */,
 				DE42742C297DF7F50003DCE3 /* FavoriteState.swift */,
@@ -956,6 +964,7 @@
 		DED73F8028E833B900A7F811 /* Actions */ = {
 			isa = PBXGroup;
 			children = (
+				DE04440F298FA692008357A4 /* OnboardingActions.swift */,
 				DE1833CE291F972900E3E885 /* HomeActions.swift */,
 				DEA57BDA298BB6FE00872964 /* ArchiveActions.swift */,
 				DE427431297EC4650003DCE3 /* FavoriteActions.swift */,
@@ -1212,6 +1221,7 @@
 				DE27BFBC295981D900CF96AC /* ProfileContentsView.swift in Sources */,
 				DE0BFBCA271B21B400FC0F32 /* HomeMiddleware.swift in Sources */,
 				DE03D00C29655DDB0054BCF1 /* ArchiveCategoryView.swift in Sources */,
+				DE044414298FA6B8008357A4 /* OnboardingReducer.swift in Sources */,
 				DE27BFC4295D152200CF96AC /* ArchiveContentsView.swift in Sources */,
 				DEA57BC629857E6600872964 /* FavoriteContentsView.swift in Sources */,
 				DEAACEC2297BFB8B00F436F5 /* ProfileAnnoucementResponse.swift in Sources */,
@@ -1230,6 +1240,7 @@
 				DE427432297EC4650003DCE3 /* FavoriteActions.swift in Sources */,
 				DE18341D2932829900E3E885 /* ArchiveSceneEntity.swift in Sources */,
 				DE0BFBC6271B20D200FC0F32 /* AppState.swift in Sources */,
+				DE044412298FA6A4008357A4 /* OnboardingState.swift in Sources */,
 				DE42742B297C355B0003DCE3 /* ProfileRepository.swift in Sources */,
 				DEAACE89296C5B9300F436F5 /* ArchiveCurrentCountView.swift in Sources */,
 				DE03CFFE2962B6090054BCF1 /* ProfileInformationCommentView.swift in Sources */,
@@ -1284,6 +1295,7 @@
 				DE18342D29404A5E00E3E885 /* RecentNewsCarouselView.swift in Sources */,
 				DEAACE8F296EFC0B00F436F5 /* ArchiveResponse.swift in Sources */,
 				DE0BFBC2271B170B00FC0F32 /* ProfileScreenView.swift in Sources */,
+				DE044410298FA692008357A4 /* OnboardingActions.swift in Sources */,
 				DE0BFBC8271B20FA00FC0F32 /* AppReducer.swift in Sources */,
 				DE1833B7291DA3A000E3E885 /* RecentNewsEntity.swift in Sources */,
 				DEAACEC6297BFC5400F436F5 /* ProfileRecentFavoriteResponse.swift in Sources */,
