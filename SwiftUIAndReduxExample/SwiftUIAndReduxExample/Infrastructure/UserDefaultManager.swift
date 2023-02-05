@@ -21,7 +21,7 @@ extension DefaultsKeys {
     // 補足3: Xcode14以降では下記のワークアラウンドは不要
     // https://github.com/sunshinejr/SwiftyUserDefaults/issues/285#issuecomment-1066897689
 
-    var isInitialBoot: DefaultsKey<Bool> {
-        .init("isInitialBoot", defaultValue: false)
+    var onboardingStatus: DefaultsKey<Bool> {
+        .init("onboardingStatus", defaultValue: true)
     }
 }

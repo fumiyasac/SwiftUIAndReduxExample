@@ -26,6 +26,7 @@
 		DE044410298FA692008357A4 /* OnboardingActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04440F298FA692008357A4 /* OnboardingActions.swift */; };
 		DE044412298FA6A4008357A4 /* OnboardingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE044411298FA6A4008357A4 /* OnboardingState.swift */; };
 		DE044414298FA6B8008357A4 /* OnboardingReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE044413298FA6B8008357A4 /* OnboardingReducer.swift */; };
+		DE044417298FAC9E008357A4 /* OnboardingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE044416298FAC9E008357A4 /* OnboardingRepository.swift */; };
 		DE0BFBB7271B080900FC0F32 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBB6271B080900FC0F32 /* UIColorExtension.swift */; };
 		DE0BFBBA271B154900FC0F32 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBB9271B154900FC0F32 /* AppConstants.swift */; };
 		DE0BFBBC271B16AB00FC0F32 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBBB271B16AB00FC0F32 /* HomeScreenView.swift */; };
@@ -184,6 +185,7 @@
 		DE04440F298FA692008357A4 /* OnboardingActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingActions.swift; sourceTree = "<group>"; };
 		DE044411298FA6A4008357A4 /* OnboardingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingState.swift; sourceTree = "<group>"; };
 		DE044413298FA6B8008357A4 /* OnboardingReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingReducer.swift; sourceTree = "<group>"; };
+		DE044416298FAC9E008357A4 /* OnboardingRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRepository.swift; sourceTree = "<group>"; };
 		DE0BFBB6271B080900FC0F32 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		DE0BFBB9271B154900FC0F32 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		DE0BFBBB271B16AB00FC0F32 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
@@ -376,6 +378,14 @@
 			path = Section;
 			sourceTree = "<group>";
 		};
+		DE044415298FAC8C008357A4 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				DE044416298FAC9E008357A4 /* OnboardingRepository.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		DE0BFBAA271A99E700FC0F32 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -508,6 +518,7 @@
 		DE1833B3291D9DD500E3E885 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				DE044415298FAC8C008357A4 /* Onboarding */,
 				DEA57BE6298DEBE900872964 /* Home */,
 				DEA57BE7298DEBF100872964 /* Archive */,
 				DEA57BE8298DEBFF00872964 /* Favorite */,
@@ -1211,6 +1222,7 @@
 				DE0BFBC0271B16FD00FC0F32 /* FavoriteScreenView.swift in Sources */,
 				DEAACEA22977448D00F436F5 /* HomeResponse.swift in Sources */,
 				DE03D00A2962D2CA0054BCF1 /* ProfileInformationRecentView.swift in Sources */,
+				DE044417298FAC9E008357A4 /* OnboardingRepository.swift in Sources */,
 				DEAACEBC297BF51700F436F5 /* ProfileCommentEntity.swift in Sources */,
 				DEE9C6F826E8308700190505 /* ContentView.swift in Sources */,
 				DEA57BA4298502EA00872964 /* CampaignBannerCarouselViewObject.swift in Sources */,
