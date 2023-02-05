@@ -40,7 +40,7 @@ final class MockShowOnboardingRepositoryImpl: OnboardingRepository {
     }
     
     func changeOnboardingStatusFalse() {
-        Defaults[\.onboardingStatus] = false
+        // Do Nothing.
     }
 }
 
@@ -55,7 +55,7 @@ final class MockHideOnboardingRepositoryImpl: OnboardingRepository {
     }
     
     func changeOnboardingStatusFalse() {
-        Defaults[\.onboardingStatus] = false
+        // Do Nothing.
     }
 }
 
