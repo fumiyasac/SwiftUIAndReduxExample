@@ -167,6 +167,7 @@
 		DE0444B12990439A008357A4 /* profile_personal.json in Resources */ = {isa = PBXBuildFile; fileRef = DEAACEA9297ADE0F00F436F5 /* profile_personal.json */; };
 		DE0444BF29904DF1008357A4 /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = DE0444BE29904DF1008357A4 /* Quick */; };
 		DE0444C229904E18008357A4 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = DE0444C129904E18008357A4 /* Nimble */; };
+		DE0444C429913F37008357A4 /* OnboardingStateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0444C329913F37008357A4 /* OnboardingStateTest.swift */; };
 		DE0BFBB7271B080900FC0F32 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBB6271B080900FC0F32 /* UIColorExtension.swift */; };
 		DE0BFBBA271B154900FC0F32 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBB9271B154900FC0F32 /* AppConstants.swift */; };
 		DE0BFBBC271B16AB00FC0F32 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBBB271B16AB00FC0F32 /* HomeScreenView.swift */; };
@@ -283,7 +284,6 @@
 		DEE9C6F826E8308700190505 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE9C6F726E8308700190505 /* ContentView.swift */; };
 		DEE9C6FA26E8308800190505 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEE9C6F926E8308800190505 /* Assets.xcassets */; };
 		DEE9C6FD26E8308800190505 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEE9C6FC26E8308800190505 /* Preview Assets.xcassets */; };
-		DEE9C70826E8308900190505 /* SwiftUIAndReduxExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE9C70726E8308900190505 /* SwiftUIAndReduxExampleTests.swift */; };
 		DEE9C71326E8308900190505 /* SwiftUIAndReduxExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE9C71226E8308900190505 /* SwiftUIAndReduxExampleUITests.swift */; };
 /* End PBXBuildFile section */
 
@@ -328,6 +328,7 @@
 		DE044418298FBDBE008357A4 /* OnboardingMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingMiddleware.swift; sourceTree = "<group>"; };
 		DE0444B52990439A008357A4 /* SwiftUIAndReduxExampleMockApi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIAndReduxExampleMockApi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE0444B62990439A008357A4 /* SwiftUIAndReduxExampleMockApi-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SwiftUIAndReduxExampleMockApi-Info.plist"; path = "/Users/sakaifumiya/Desktop/iOSApp/SwiftUIAndReduxExample/SwiftUIAndReduxExample/SwiftUIAndReduxExampleMockApi-Info.plist"; sourceTree = "<absolute>"; };
+		DE0444C329913F37008357A4 /* OnboardingStateTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStateTest.swift; sourceTree = "<group>"; };
 		DE0BFBB6271B080900FC0F32 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		DE0BFBB9271B154900FC0F32 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		DE0BFBBB271B16AB00FC0F32 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
@@ -441,7 +442,6 @@
 		DEE9C6FC26E8308800190505 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DEE9C6FE26E8308800190505 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DEE9C70326E8308900190505 /* SwiftUIAndReduxExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUIAndReduxExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DEE9C70726E8308900190505 /* SwiftUIAndReduxExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIAndReduxExampleTests.swift; sourceTree = "<group>"; };
 		DEE9C70926E8308900190505 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DEE9C70E26E8308900190505 /* SwiftUIAndReduxExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUIAndReduxExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEE9C71226E8308900190505 /* SwiftUIAndReduxExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIAndReduxExampleUITests.swift; sourceTree = "<group>"; };
@@ -1178,7 +1178,7 @@
 		DEE9C70626E8308900190505 /* SwiftUIAndReduxExampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				DEE9C70726E8308900190505 /* SwiftUIAndReduxExampleTests.swift */,
+				DE0444C329913F37008357A4 /* OnboardingStateTest.swift */,
 				DEE9C70926E8308900190505 /* Info.plist */,
 			);
 			path = SwiftUIAndReduxExampleTests;
@@ -1650,7 +1650,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEE9C70826E8308900190505 /* SwiftUIAndReduxExampleTests.swift in Sources */,
+				DE0444C429913F37008357A4 /* OnboardingStateTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
