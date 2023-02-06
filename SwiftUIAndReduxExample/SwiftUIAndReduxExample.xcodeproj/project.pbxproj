@@ -165,8 +165,6 @@
 		DE0444AF2990439A008357A4 /* featured_topics.json in Resources */ = {isa = PBXBuildFile; fileRef = DE18341F2932833000E3E885 /* featured_topics.json */; };
 		DE0444B02990439A008357A4 /* profile_comment.json in Resources */ = {isa = PBXBuildFile; fileRef = DEAACEAB297AFD7A00F436F5 /* profile_comment.json */; };
 		DE0444B12990439A008357A4 /* profile_personal.json in Resources */ = {isa = PBXBuildFile; fileRef = DEAACEA9297ADE0F00F436F5 /* profile_personal.json */; };
-		DE0444BF29904DF1008357A4 /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = DE0444BE29904DF1008357A4 /* Quick */; };
-		DE0444C229904E18008357A4 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = DE0444C129904E18008357A4 /* Nimble */; };
 		DE0444C429913F37008357A4 /* OnboardingStateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0444C329913F37008357A4 /* OnboardingStateTest.swift */; };
 		DE0BFBB7271B080900FC0F32 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBB6271B080900FC0F32 /* UIColorExtension.swift */; };
 		DE0BFBBA271B154900FC0F32 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBB9271B154900FC0F32 /* AppConstants.swift */; };
@@ -479,8 +477,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE0444BF29904DF1008357A4 /* Quick in Frameworks */,
-				DE0444C229904E18008357A4 /* Nimble in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1261,8 +1257,6 @@
 			);
 			name = SwiftUIAndReduxExampleTests;
 			packageProductDependencies = (
-				DE0444BE29904DF1008357A4 /* Quick */,
-				DE0444C129904E18008357A4 /* Nimble */,
 			);
 			productName = SwiftUIAndReduxExampleTests;
 			productReference = DEE9C70326E8308900190505 /* SwiftUIAndReduxExampleTests.xctest */;
@@ -1323,8 +1317,6 @@
 				DED73F8128F451DA00A7F811 /* XCRemoteSwiftPackageReference "CollectionViewPagingLayout" */,
 				DE1833D3291FAB6700E3E885 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				DE183427293FDC5000E3E885 /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				DE0444BD29904DF1008357A4 /* XCRemoteSwiftPackageReference "Quick" */,
-				DE0444C029904E18008357A4 /* XCRemoteSwiftPackageReference "Nimble" */,
 			);
 			productRefGroup = DEE9C6F326E8308700190505 /* Products */;
 			projectDirPath = "";
@@ -2061,22 +2053,6 @@
 				minimumVersion = 7.0.0;
 			};
 		};
-		DE0444BD29904DF1008357A4 /* XCRemoteSwiftPackageReference "Quick" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Quick/Quick.git";
-			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 6.1.0;
-			};
-		};
-		DE0444C029904E18008357A4 /* XCRemoteSwiftPackageReference "Nimble" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Quick/Nimble.git";
-			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 11.2.1;
-			};
-		};
 		DE136BE627227525007F6808 /* XCRemoteSwiftPackageReference "SwiftyUserDefaults" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/sunshinejr/SwiftyUserDefaults";
@@ -2149,16 +2125,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DE0444252990439A008357A4 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
-		};
-		DE0444BE29904DF1008357A4 /* Quick */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DE0444BD29904DF1008357A4 /* XCRemoteSwiftPackageReference "Quick" */;
-			productName = Quick;
-		};
-		DE0444C129904E18008357A4 /* Nimble */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DE0444C029904E18008357A4 /* XCRemoteSwiftPackageReference "Nimble" */;
-			productName = Nimble;
 		};
 		DE136BE727227525007F6808 /* SwiftyUserDefaults */ = {
 			isa = XCSwiftPackageProductDependency;
