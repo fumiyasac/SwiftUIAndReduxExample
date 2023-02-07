@@ -56,7 +56,7 @@ final class ArchiveStateTest: XCTestCase {
 
     // MARK: - Function (test_FailureArchiveResponse)
 
-    // 👉 取得したレスポンスがHomeState内のPropertyに反映されることを確認する(Errorの確認)
+    // 👉 取得したレスポンスがArchiveState内のPropertyに反映されることを確認する(Errorの確認)
     func test_FailureArchiveResponse() throws {
         let store = Store(
             reducer: appReducer,

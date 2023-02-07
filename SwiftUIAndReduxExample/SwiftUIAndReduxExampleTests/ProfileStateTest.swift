@@ -15,6 +15,8 @@ final class ProfileStateTest: XCTestCase {
     // stateの格納先が @Published なので購読のキャンセルができる様にしておく
     private var cancellables: [AnyCancellable] = []
 
+    // MARK: - Function (test_SuccessProfileResponse)
+
     // 👉 取得したレスポンスがFavoriteState内のPropertyに反映されることを確認する(FavoritePhotosCardViewObjectの確認)
     func test_SuccessProfileResponse_FavoritePhotosCardViewObjects() throws {
         // MEMO: Mock用のMiddlewareを適用したStoreを用意する
@@ -46,8 +48,9 @@ final class ProfileStateTest: XCTestCase {
             XCTAssertEqual("https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/profile_avatar_sample.jpg", targetProfilePersonalViewObject?.avatarUrl?.absoluteString, "アバターのURLが正しい値であること")
         })
     }
-    
-    // 👉 取得したレスポンスがHomeState内のPropertyに反映されることを確認する(Errorの確認)
+
+    // MARK: - Function (test_FailureProfileResponse)
+    // 👉 取得したレスポンスがProfileState内のPropertyに反映されることを確認する(Errorの確認)
     func test_FailureProfileResponse() throws {
         let store = Store(
             reducer: appReducer,

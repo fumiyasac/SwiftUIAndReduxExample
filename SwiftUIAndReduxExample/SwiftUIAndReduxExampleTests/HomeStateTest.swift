@@ -78,7 +78,9 @@ final class HomeStateTest: XCTestCase {
             XCTAssertEqual("美味しいみかんの年末年始の対応について", lastViewObject?.title, "最後のtitleが正しい値であること")
         })
     }
-    
+
+    // MARK: - Function (test_FailureHomeResponse)
+
     // 👉 取得したレスポンスがHomeState内のPropertyに反映されることを確認する(Errorの確認)
     func test_FailureHomeResponse() throws {
         let store = Store(

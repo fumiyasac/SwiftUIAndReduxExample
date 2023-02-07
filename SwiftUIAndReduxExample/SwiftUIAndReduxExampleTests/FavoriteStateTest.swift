@@ -48,9 +48,11 @@ final class FavoriteStateTest: XCTestCase {
             XCTAssertEqual("気になる一皿シリーズNo.1", firstViewObject?.title, "1番目のtitleが正しい値であること")
         })
     }
-    
+
+    // MARK: - Function (test_FailureFavoriteResponse)
+
     // 👉 取得したレスポンスがHomeState内のPropertyに反映されることを確認する(Errorの確認)
-    func test_FailureHomeResponse() throws {
+    func test_FailureFavoriteResponse() throws {
         let store = Store(
             reducer: appReducer,
             state: AppState(),
