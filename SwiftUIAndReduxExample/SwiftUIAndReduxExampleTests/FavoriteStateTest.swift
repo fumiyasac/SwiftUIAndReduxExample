@@ -32,11 +32,11 @@ final class FavoriteStateTest: XCTestCase {
         // MEMO: テスト前状態のState値を作る
         let beforeTestState = store.state
         // MEMO: Combineの処理を利用した形でActionが発行された場合での値変化を監視する
-        let expectationHomeSuccess = self.expectation(description: "Expect to get FavoritePhotosCardViewObject.")
+        let expectationFavoriteSuccess = self.expectation(description: "Expect to get FavoritePhotosCardViewObject.")
         let _ = store.$state.sink(receiveValue: { changedState in
             if beforeTestState.favoriteState.favoritePhotosCardViewObjects != changedState.favoriteState.favoritePhotosCardViewObjects {
                 targetFavoritePhotosCardViewObjects = changedState.favoriteState.favoritePhotosCardViewObjects
-                expectationHomeSuccess.fulfill()
+                expectationFavoriteSuccess.fulfill()
             }
         }).store(in: &cancellables)
         store.dispatch(action: RequestFavoriteAction())
@@ -60,11 +60,11 @@ final class FavoriteStateTest: XCTestCase {
         )
         var targetIsError: Bool?
         let beforeTestState = store.state
-        let expectationHomeSuccess = self.expectation(description: "Expect to get Error.")
+        let expectationFavoriteFailure = self.expectation(description: "Expect to get Error.")
         let _ = store.$state.sink(receiveValue: { changedState in
             if beforeTestState.favoriteState.isError != changedState.favoriteState.isError {
                 targetIsError = changedState.favoriteState.isError
-                expectationHomeSuccess.fulfill()
+                expectationFavoriteFailure.fulfill()
             }
         }).store(in: &cancellables)
         store.dispatch(action: RequestFavoriteAction())

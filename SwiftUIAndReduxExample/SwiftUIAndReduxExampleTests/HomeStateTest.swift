@@ -90,11 +90,11 @@ final class HomeStateTest: XCTestCase {
         )
         var targetIsError: Bool?
         let beforeTestState = store.state
-        let expectationHomeSuccess = self.expectation(description: "Expect to get Error.")
+        let expectationHomeFailure = self.expectation(description: "Expect to get Error.")
         let _ = store.$state.sink(receiveValue: { changedState in
             if beforeTestState.homeState.isError != changedState.homeState.isError {
                 targetIsError = changedState.homeState.isError
-                expectationHomeSuccess.fulfill()
+                expectationHomeFailure.fulfill()
             }
         }).store(in: &cancellables)
         store.dispatch(action: RequestHomeAction())
