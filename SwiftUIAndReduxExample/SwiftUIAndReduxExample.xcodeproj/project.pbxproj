@@ -167,6 +167,7 @@
 		DE0444B12990439A008357A4 /* profile_personal.json in Resources */ = {isa = PBXBuildFile; fileRef = DEAACEA9297ADE0F00F436F5 /* profile_personal.json */; };
 		DE0444C429913F37008357A4 /* OnboardingStateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0444C329913F37008357A4 /* OnboardingStateTest.swift */; };
 		DE0444C62991BB40008357A4 /* HomeStateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0444C52991BB40008357A4 /* HomeStateTest.swift */; };
+		DE0444C829928AB9008357A4 /* FavoriteStateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0444C729928AB9008357A4 /* FavoriteStateTest.swift */; };
 		DE0BFBB7271B080900FC0F32 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBB6271B080900FC0F32 /* UIColorExtension.swift */; };
 		DE0BFBBA271B154900FC0F32 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBB9271B154900FC0F32 /* AppConstants.swift */; };
 		DE0BFBBC271B16AB00FC0F32 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBBB271B16AB00FC0F32 /* HomeScreenView.swift */; };
@@ -329,6 +330,7 @@
 		DE0444B62990439A008357A4 /* SwiftUIAndReduxExampleMockApi-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SwiftUIAndReduxExampleMockApi-Info.plist"; path = "/Users/sakaifumiya/Desktop/iOSApp/SwiftUIAndReduxExample/SwiftUIAndReduxExample/SwiftUIAndReduxExampleMockApi-Info.plist"; sourceTree = "<absolute>"; };
 		DE0444C329913F37008357A4 /* OnboardingStateTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStateTest.swift; sourceTree = "<group>"; };
 		DE0444C52991BB40008357A4 /* HomeStateTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStateTest.swift; sourceTree = "<group>"; };
+		DE0444C729928AB9008357A4 /* FavoriteStateTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteStateTest.swift; sourceTree = "<group>"; };
 		DE0BFBB6271B080900FC0F32 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		DE0BFBB9271B154900FC0F32 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		DE0BFBBB271B16AB00FC0F32 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
@@ -1178,6 +1180,7 @@
 			children = (
 				DE0444C329913F37008357A4 /* OnboardingStateTest.swift */,
 				DE0444C52991BB40008357A4 /* HomeStateTest.swift */,
+				DE0444C729928AB9008357A4 /* FavoriteStateTest.swift */,
 				DEE9C70926E8308900190505 /* Info.plist */,
 			);
 			path = SwiftUIAndReduxExampleTests;
@@ -1647,6 +1650,7 @@
 			files = (
 				DE0444C62991BB40008357A4 /* HomeStateTest.swift in Sources */,
 				DE0444C429913F37008357A4 /* OnboardingStateTest.swift in Sources */,
+				DE0444C829928AB9008357A4 /* FavoriteStateTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
