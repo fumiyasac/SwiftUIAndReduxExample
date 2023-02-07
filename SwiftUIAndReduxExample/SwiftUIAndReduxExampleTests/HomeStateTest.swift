@@ -54,7 +54,6 @@ final class HomeStateTest: XCTestCase {
 
     // 👉 取得したレスポンスがHomeState内のPropertyに反映されることを確認する(RecentNewsCarouselViewObjectの確認)
     func test_SuccessHomeResponse_RecentNewsCarouselViewObjects() throws {
-        // MEMO: Mock用のMiddlewareを適用したStoreを用意する
         let store = Store(
             reducer: appReducer,
             state: AppState(),
@@ -62,11 +61,8 @@ final class HomeStateTest: XCTestCase {
                 homeMockSuccessMiddleware()
             ]
         )
-        // MEMO: Storeから取得できたデータを格納するための変数
         var targetRecentNewsCarouselViewObjects: [RecentNewsCarouselViewObject] = []
-        // MEMO: テスト前状態のState値を作る
         let beforeTestState = store.state
-        // MEMO: Combineの処理を利用した形でActionが発行された場合での
         let expectationHomeSuccess = self.expectation(description: "Expect to get RecentNewsCarouselViewObjects.")
         let _ = store.$state.sink(receiveValue: { changedState in
             if beforeTestState.homeState.recentNewsCarouselViewObjects != changedState.homeState.recentNewsCarouselViewObjects {
