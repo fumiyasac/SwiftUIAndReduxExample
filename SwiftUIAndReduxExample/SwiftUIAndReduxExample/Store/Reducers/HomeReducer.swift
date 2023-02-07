@@ -31,7 +31,7 @@ func homeReducer(_ state: HomeState, _ action: Action) -> HomeState {
                 publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: $0.publishedAt)
             )
         }
-        state.reaturedTopicsCarouselViewObjects = action.featuredTopicEntities.map {
+        state.featuredTopicsCarouselViewObjects = action.featuredTopicEntities.map {
             FeaturedTopicsCarouselViewObject(
                 id: $0.id,
                 rating: $0.rating,

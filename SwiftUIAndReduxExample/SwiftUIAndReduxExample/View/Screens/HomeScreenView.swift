@@ -20,7 +20,7 @@ struct HomeScreenView: View {
         // Immutableに扱うProperty 👉 画面表示要素用
         let campaignBannerCarouselViewObjects: [CampaignBannerCarouselViewObject]
         let recentNewsCarouselViewObjects: [RecentNewsCarouselViewObject]
-        let reaturedTopicsCarouselViewObjects: [FeaturedTopicsCarouselViewObject]
+        let featuredTopicsCarouselViewObjects: [FeaturedTopicsCarouselViewObject]
         let trendArticlesGridViewObjects: [TrendArticlesGridViewObject]
         let pickupPhotosGridViewObjects: [PickupPhotosGridViewObject]
         // Action発行用のClosure
@@ -34,7 +34,7 @@ struct HomeScreenView: View {
             isError: state.isError,
             campaignBannerCarouselViewObjects: state.campaignBannerCarouselViewObjects,
             recentNewsCarouselViewObjects: state.recentNewsCarouselViewObjects,
-            reaturedTopicsCarouselViewObjects: state.reaturedTopicsCarouselViewObjects,
+            featuredTopicsCarouselViewObjects: state.featuredTopicsCarouselViewObjects,
             trendArticlesGridViewObjects: state.trendArticlesGridViewObjects,
             pickupPhotosGridViewObjects: state.pickupPhotosGridViewObjects,
             requestHome: {
@@ -106,7 +106,7 @@ struct HomeScreenView: View {
     }
 
     private func mapToFeaturedTopicsCarouselViewObjects(props: Props) -> [FeaturedTopicsCarouselViewObject] {
-        return props.reaturedTopicsCarouselViewObjects
+        return props.featuredTopicsCarouselViewObjects
     }
 
     private func mapToTrendArticlesGridViewObjects(props: Props) -> [TrendArticlesGridViewObject] {

@@ -20,7 +20,7 @@ struct HomeState: ReduxState, Equatable {
     // ※ このコードではViewObjectとView表示要素のComponentが1:1対応となる想定で作っています。
     var campaignBannerCarouselViewObjects: [CampaignBannerCarouselViewObject] = []
     var recentNewsCarouselViewObjects: [RecentNewsCarouselViewObject] = []
-    var reaturedTopicsCarouselViewObjects: [FeaturedTopicsCarouselViewObject] = []
+    var featuredTopicsCarouselViewObjects: [FeaturedTopicsCarouselViewObject] = []
     var trendArticlesGridViewObjects: [TrendArticlesGridViewObject] = []
     var pickupPhotosGridViewObjects: [PickupPhotosGridViewObject] = []
     
@@ -31,7 +31,7 @@ struct HomeState: ReduxState, Equatable {
         && lhs.isError == rhs.isError
         && lhs.campaignBannerCarouselViewObjects == rhs.campaignBannerCarouselViewObjects
         && lhs.recentNewsCarouselViewObjects == rhs.recentNewsCarouselViewObjects
-        && lhs.reaturedTopicsCarouselViewObjects == rhs.reaturedTopicsCarouselViewObjects
+        && lhs.featuredTopicsCarouselViewObjects == rhs.featuredTopicsCarouselViewObjects
         && lhs.trendArticlesGridViewObjects == rhs.trendArticlesGridViewObjects
         && lhs.pickupPhotosGridViewObjects == rhs.pickupPhotosGridViewObjects
     }
