@@ -34,7 +34,7 @@ final class HomeStateTest: XCTestCase {
         var targetCampaignBannerCarouselViewObjects: [CampaignBannerCarouselViewObject] = []
         // MEMO: テスト前状態のState値を作る
         let beforeTestState = store.state
-        // MEMO: Combineの処理を利用した形でActionが発行された場合での
+        // MEMO: Combineの処理を利用した形でActionが発行された場合での値変化を監視する
         let expectationHomeSuccess = self.expectation(description: "Expect to get CampaignBannerCarouselViewObjects.")
         let _ = store.$state.sink(receiveValue: { changedState in
             if beforeTestState.homeState.campaignBannerCarouselViewObjects != changedState.homeState.campaignBannerCarouselViewObjects {
@@ -76,6 +76,30 @@ final class HomeStateTest: XCTestCase {
             let lastViewObject = targetRecentNewsCarouselViewObjects.last
             XCTAssertEqual(12, lastViewObject?.id, "最後のidが正しい値であること")
             XCTAssertEqual("美味しいみかんの年末年始の対応について", lastViewObject?.title, "最後のtitleが正しい値であること")
+        })
+    }
+    
+    // 👉 取得したレスポンスがHomeState内のPropertyに反映されることを確認する(Errorの確認)
+    func test_FailureHomeResponse() throws {
+        let store = Store(
+            reducer: appReducer,
+            state: AppState(),
+            middlewares: [
+                homeMockFailureMiddleware()
+            ]
+        )
+        var targetIsError: Bool?
+        let beforeTestState = store.state
+        let expectationHomeSuccess = self.expectation(description: "Expect to get Error.")
+        let _ = store.$state.sink(receiveValue: { changedState in
+            if beforeTestState.homeState.isError != changedState.homeState.isError {
+                targetIsError = changedState.homeState.isError
+                expectationHomeSuccess.fulfill()
+            }
+        }).store(in: &cancellables)
+        store.dispatch(action: RequestHomeAction())
+        waitForExpectations(timeout: 2.0, handler: { _ in
+            XCTAssertEqual(true, targetIsError)
         })
     }
 }
