@@ -34,12 +34,12 @@ final class OnboardingStateTest: XCTestCase {
         // MEMO: Storeから取得できたデータを格納するための変数
         var targetTestShowOnboarding: Bool?
         // MEMO: テスト前状態のState値を作る
-        let beforeTestShowOnboarding = store.state.onboardingState.showOnboarding
+        let beforeTestState = store.state
         // MEMO: Combineの処理を利用した形でActionが発行された場合での
         let expectationshowOnboardingTrue = self.expectation(description: "Expect showOnboarding is true.")
         let _ = store.$state.sink(receiveValue: { changedState in
             // 👉 ②対象のState内Propertyに変化が起こった場合にfulfill()を実行する
-            if beforeTestShowOnboarding != changedState.onboardingState.showOnboarding {
+            if beforeTestState.onboardingState.showOnboarding != changedState.onboardingState.showOnboarding {
                 targetTestShowOnboarding = changedState.onboardingState.showOnboarding
                 expectationshowOnboardingTrue.fulfill()
             }
