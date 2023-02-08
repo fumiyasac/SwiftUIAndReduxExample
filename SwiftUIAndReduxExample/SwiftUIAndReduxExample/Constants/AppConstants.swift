@@ -23,10 +23,4 @@ struct AppConstants {
         static let toasted = UIColor(code: "#fbcb7B")
         static let accent = UIColor(code: "#eb5e30")
     }
-
-    // MARK: - Struct (FontFamily)
-
-    struct FontFamily {
-        static let helveticaNeueBold = "HelveticaNeue-Bold"
-    }
 }
