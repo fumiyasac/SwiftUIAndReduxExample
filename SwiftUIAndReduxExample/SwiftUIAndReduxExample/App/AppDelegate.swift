@@ -23,7 +23,7 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
 
         // MEMO: NavigationBarのタイトル色を白色に合わせる対応
         var titleTextAttributes: [NSAttributedString.Key : Any] = [:]
-        titleTextAttributes[NSAttributedString.Key.font] = AppConstants.FontSetting.navigationTitle
+        titleTextAttributes[NSAttributedString.Key.font] = UIFont(name: "HelveticaNeue-Bold", size: 15.0)!
         titleTextAttributes[NSAttributedString.Key.foregroundColor] = UIColor.white
         // MEMO: NavigationBarの色をColorPalette.mintに合わせる対応
         let newNavigationAppearance = UINavigationBarAppearance()

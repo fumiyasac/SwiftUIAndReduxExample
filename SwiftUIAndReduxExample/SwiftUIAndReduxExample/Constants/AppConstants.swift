@@ -29,13 +29,4 @@ struct AppConstants {
     struct FontFamily {
         static let helveticaNeueBold = "HelveticaNeue-Bold"
     }
-
-    // MARK: - Struct (FontSetting)
-
-    struct FontSetting {
-        static let navigationTitle = UIFont(
-            name: FontFamily.helveticaNeueBold,
-            size: 15.0
-        )!
-    }
 }
