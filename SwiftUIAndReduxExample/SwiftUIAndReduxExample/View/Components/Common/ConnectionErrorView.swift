@@ -36,7 +36,7 @@ struct ConnectionErrorView: View {
     }
 
     private var connectionErrorButtonColor: Color {
-        return Color(uiColor: AppConstants.ColorPalette.mint)
+        return Color(uiColor: UIColor(code: "#b9d9c3"))
     }
 
     private var tapButtonAction: ProfileSpecialContentsView.TapButtonAction

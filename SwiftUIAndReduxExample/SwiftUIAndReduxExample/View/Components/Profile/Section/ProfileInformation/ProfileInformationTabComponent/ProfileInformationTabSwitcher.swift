@@ -24,7 +24,7 @@ struct ProfileInformationTabSwitcher: View {
     }
 
     private var tabRectangleColor: Color {
-        return Color(uiColor: AppConstants.ColorPalette.mint)
+        return Color(uiColor: UIColor(code: "#b9d9c3"))
     }
 
     private var profileInformationViewObject: ProfileInformationViewObject

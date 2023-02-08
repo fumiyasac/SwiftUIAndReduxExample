@@ -35,7 +35,7 @@ struct ArchiveCategoryView: View {
     }
 
     private var categoryBorderColor: Color {
-        return Color(uiColor: AppConstants.ColorPalette.mint)
+        return Color(uiColor: UIColor(code: "#b9d9c3"))
     }
 
     private var normalCategoryFont: Font {
@@ -59,7 +59,7 @@ struct ArchiveCategoryView: View {
     }
 
     private var selectedCategoryBackgroudColor: Color {
-        return Color(uiColor: AppConstants.ColorPalette.mint)
+        return Color(uiColor: UIColor(code: "#b9d9c3"))
     }
 
     private var selectedCategory: String = ""

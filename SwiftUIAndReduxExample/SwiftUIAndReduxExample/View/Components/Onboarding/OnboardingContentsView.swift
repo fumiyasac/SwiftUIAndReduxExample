@@ -34,7 +34,7 @@ struct OnboardingContentsView: View {
     }
 
     private var quitOnboardingButtonColor: Color {
-        return Color(uiColor: AppConstants.ColorPalette.mint)
+        return Color(uiColor: UIColor(code: "#b9d9c3"))
     }
 
     private var closeOnboardingAction: OnboardingContentsView.CloseOnboardingAction

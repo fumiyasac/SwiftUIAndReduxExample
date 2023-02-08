@@ -90,7 +90,6 @@
 		DE0444622990439A008357A4 /* SwiftUIAndReduxExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE9C6F526E8308700190505 /* SwiftUIAndReduxExampleApp.swift */; };
 		DE0444632990439A008357A4 /* TrendArticlesGridViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BA92985052700872964 /* TrendArticlesGridViewObject.swift */; };
 		DE0444642990439A008357A4 /* FavoriteState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42742C297DF7F50003DCE3 /* FavoriteState.swift */; };
-		DE0444652990439A008357A4 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBB9271B154900FC0F32 /* AppConstants.swift */; };
 		DE0444662990439A008357A4 /* OnboardingItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04440D298F5C6A008357A4 /* OnboardingItemView.swift */; };
 		DE0444672990439A008357A4 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE03D0052962BF840054BCF1 /* StringExtension.swift */; };
 		DE0444682990439A008357A4 /* ArchiveCellViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA57BD12987F98B00872964 /* ArchiveCellViewObject.swift */; };
@@ -171,7 +170,6 @@
 		DE0444CA29928E9B008357A4 /* ProfileStateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0444C929928E9B008357A4 /* ProfileStateTest.swift */; };
 		DE0444CC29929571008357A4 /* ArchiveStateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0444CB29929571008357A4 /* ArchiveStateTest.swift */; };
 		DE0BFBB7271B080900FC0F32 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBB6271B080900FC0F32 /* UIColorExtension.swift */; };
-		DE0BFBBA271B154900FC0F32 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBB9271B154900FC0F32 /* AppConstants.swift */; };
 		DE0BFBBC271B16AB00FC0F32 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBBB271B16AB00FC0F32 /* HomeScreenView.swift */; };
 		DE0BFBBE271B16E300FC0F32 /* ArchiveScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBBD271B16E300FC0F32 /* ArchiveScreenView.swift */; };
 		DE0BFBC0271B16FD00FC0F32 /* FavoriteScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0BFBBF271B16FD00FC0F32 /* FavoriteScreenView.swift */; };
@@ -336,7 +334,6 @@
 		DE0444C929928E9B008357A4 /* ProfileStateTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStateTest.swift; sourceTree = "<group>"; };
 		DE0444CB29929571008357A4 /* ArchiveStateTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveStateTest.swift; sourceTree = "<group>"; };
 		DE0BFBB6271B080900FC0F32 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
-		DE0BFBB9271B154900FC0F32 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		DE0BFBBB271B16AB00FC0F32 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
 		DE0BFBBD271B16E300FC0F32 /* ArchiveScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveScreenView.swift; sourceTree = "<group>"; };
 		DE0BFBBF271B16FD00FC0F32 /* FavoriteScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteScreenView.swift; sourceTree = "<group>"; };
@@ -656,14 +653,6 @@
 				DEAACEA529797DF800F436F5 /* FirstAppearExtension.swift */,
 			);
 			path = Extension;
-			sourceTree = "<group>";
-		};
-		DE0BFBB8271B151F00FC0F32 /* Constants */ = {
-			isa = PBXGroup;
-			children = (
-				DE0BFBB9271B154900FC0F32 /* AppConstants.swift */,
-			);
-			path = Constants;
 			sourceTree = "<group>";
 		};
 		DE0BFBCB271B21C000FC0F32 /* Infrastructure */ = {
@@ -1156,7 +1145,6 @@
 				DE0444B62990439A008357A4 /* SwiftUIAndReduxExampleMockApi-Info.plist */,
 				DEE9C6F926E8308800190505 /* Assets.xcassets */,
 				DE0BFBAA271A99E700FC0F32 /* App */,
-				DE0BFBB8271B151F00FC0F32 /* Constants */,
 				DE0BFBB5271B07ED00FC0F32 /* Extension */,
 				DE0BFBCB271B21C000FC0F32 /* Infrastructure */,
 				DE527ECD294A489C009894FA /* InternalData */,
@@ -1466,7 +1454,6 @@
 				DE0444622990439A008357A4 /* SwiftUIAndReduxExampleApp.swift in Sources */,
 				DE0444632990439A008357A4 /* TrendArticlesGridViewObject.swift in Sources */,
 				DE0444642990439A008357A4 /* FavoriteState.swift in Sources */,
-				DE0444652990439A008357A4 /* AppConstants.swift in Sources */,
 				DE0444662990439A008357A4 /* OnboardingItemView.swift in Sources */,
 				DE0444672990439A008357A4 /* StringExtension.swift in Sources */,
 				DE0444682990439A008357A4 /* ArchiveCellViewObject.swift in Sources */,
@@ -1591,7 +1578,6 @@
 				DEE9C6F626E8308700190505 /* SwiftUIAndReduxExampleApp.swift in Sources */,
 				DEA57BAA2985052700872964 /* TrendArticlesGridViewObject.swift in Sources */,
 				DE42742D297DF7F50003DCE3 /* FavoriteState.swift in Sources */,
-				DE0BFBBA271B154900FC0F32 /* AppConstants.swift in Sources */,
 				DE04440E298F5C6A008357A4 /* OnboardingItemView.swift in Sources */,
 				DE03D0062962BF840054BCF1 /* StringExtension.swift in Sources */,
 				DEA57BD22987F98B00872964 /* ArchiveCellViewObject.swift in Sources */,

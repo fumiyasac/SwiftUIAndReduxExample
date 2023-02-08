@@ -81,7 +81,7 @@ struct ContentView: View {
                         }
                     }.tag(3)
             }
-            .accentColor(Color(AppConstants.ColorPalette.mint))
+            .accentColor(Color(uiColor: UIColor(code: "#b9d9c3")))
             // (2) 初回起動ダイアログ表示要素の配置
             if onboardingState {
                 withAnimation(.linear(duration: 0.3)) {
