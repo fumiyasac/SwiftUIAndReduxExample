@@ -103,4 +103,4 @@ __【package.json設定例】__
 
 今回は1つの画面内に複数Sectionが入るものやUI実装イメージが湧きにくいものに加えて、API関連処理部分をasync/awaitを利用することもあったので、自分が __「ここはハマりそうかも...?」__ や __「UIの形や表現を自分の言葉でまとめておこう」__ と感じた部分を中心にメモとして残しています。
 
-![画面構想や並列処理に関連するメモ](https://github.com/fumiyasac/SwiftUIAndReduxExample/blob/master/images/design_memo.jpg)
+<img src="https://github.com/fumiyasac/SwiftUIAndReduxExample/blob/master/images/design_memo.jpg" width="960">
