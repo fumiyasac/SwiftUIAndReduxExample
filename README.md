@@ -10,13 +10,16 @@ WIP
 
 ### 1-1. 画面キャプチャ
 
+__【No,1】__
+
 <img src="https://github.com/fumiyasac/SwiftUIAndReduxExample/blob/main/images/sample_screen1.png" width="393"> <img src="https://github.com/fumiyasac/SwiftUIAndReduxExample/blob/main/images/sample_screen2.png" width="393">
+
+__【No,2】__
 
 <img src="https://github.com/fumiyasac/SwiftUIAndReduxExample/blob/main/images/sample_screen3.png" width="393"> <img src="https://github.com/fumiyasac/SwiftUIAndReduxExample/blob/main/images/sample_screen4.png" width="393">
 
 ## 2. ReduxをSwiftUI画面に導入するにあたって
 
-WIP
 
 ### 参考資料
 
@@ -25,13 +28,27 @@ WIP
 - [取り組んだ講座の要点をまとめたノート](https://twitter.com/fumiyasac/status/1582883611681861632)
 - [](https://qiita.com/fumiyasac@github/items/f25465a955afdcb795a2)
 
-## 3. このサンプル実装におけるアーキテクチャ
+### 余談. TCA (The Composable Architecture)と比較した際の所感等
+
+## 3. このサンプル実装におけるReduxと各層での処理
 
 WIP
+
+### 3-1. 全体像の概略図
+
+### 3-2. Middlewareで実行する処理と各種機能とのつながり
+
+### 3-3. API通信部分と内部データ保持に関する処理部分の要点
 
 ## 4. UI実装や表現に関連するTIPS紹介
 
 WIP
+
+### 4-1. Home画面で利用されているUI表現に関する要点
+
+### 4-2. GeometryReaderを利用したStretchyHeader表現
+
+### 4-3. 絞り込み検索の様な形を実現するためのポイント
 
 ## 5. 擬似BackendサーバーとAPI定義
 
