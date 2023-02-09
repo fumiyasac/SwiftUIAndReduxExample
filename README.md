@@ -97,7 +97,7 @@ __【package.json設定例】__
 - [TypeScriptで始めるNode.js入門](https://ics.media/entry/4682/)
 - [JSON ServerをCLIコマンドを使わずTypescript＆node.jsからサーバーを立てるやり方](https://deep.tacoskingdom.com/blog/151)
 
-### 6. 設計時のメモ書き
+## 6. 設計時のメモ書き
 
 余談にはなりますが、最近作っていたUI実装サンプルのアイデアや盛り込みたい機能イメージを雑に書いたものになります。
 
