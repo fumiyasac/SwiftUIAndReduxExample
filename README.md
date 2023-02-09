@@ -10,9 +10,9 @@ WIP
 
 ### 1-1. 画面キャプチャ
 
-<img src="https://github.com/fumiyasac/SwiftUIAndReduxExample/blob/master/images/sample_screen1.png" width="393"> <img src="https://github.com/fumiyasac/SwiftUIAndReduxExample/blob/master/images/sample_screen2.png" width="393">
+<img src="https://github.com/fumiyasac/SwiftUIAndReduxExample/blob/main/images/sample_screen1.png" width="393"> <img src="https://github.com/fumiyasac/SwiftUIAndReduxExample/blob/main/images/sample_screen2.png" width="393">
 
-<img src="https://github.com/fumiyasac/SwiftUIAndReduxExample/blob/master/images/sample_screen3.png" width="393"> <img src="https://github.com/fumiyasac/SwiftUIAndReduxExample/blob/master/images/sample_screen4.png" width="393">
+<img src="https://github.com/fumiyasac/SwiftUIAndReduxExample/blob/main/images/sample_screen3.png" width="393"> <img src="https://github.com/fumiyasac/SwiftUIAndReduxExample/blob/main/images/sample_screen4.png" width="393">
 
 ## 2. ReduxをSwiftUI画面に導入するにあたって
 
@@ -108,4 +108,4 @@ __【package.json設定例】__
 余談にはなりますが、最近作っていたUI実装サンプルのアイデアや盛り込みたい機能イメージを雑に書いたものになります。
 今回は1つの画面内に複数Sectionが入るものやUI実装イメージが湧きにくいものに加えて、API関連処理部分でasync/awaitを利用することもあったので、自分が __「ここはハマりそうかも...?」__ や __「UIの形や表現を自分の言葉でまとめておこう」__ と感じた部分を中心にメモとして残しています。
 
-![各種画面に関する構想やasync/awaitを利用した並列処理に関連するメモ](https://github.com/fumiyasac/SwiftUIAndReduxExample/blob/master/images/design_memo.png)
+![各種画面に関する構想やasync/awaitを利用した並列処理に関連するメモ](https://github.com/fumiyasac/SwiftUIAndReduxExample/blob/main/images/design_memo.png)
