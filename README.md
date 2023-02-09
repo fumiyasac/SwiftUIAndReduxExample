@@ -8,6 +8,12 @@ SwiftUIとReduxを組み合わせたUI実装サンプルになります。
 
 WIP
 
+### 1-1. 画面キャプチャ
+
+<img src="https://github.com/fumiyasac/SwiftUIAndReduxExample/blob/master/images/sample_screen1.png" width="393"> <img src="https://github.com/fumiyasac/SwiftUIAndReduxExample/blob/master/images/sample_screen2.png" width="393">
+
+<img src="https://github.com/fumiyasac/SwiftUIAndReduxExample/blob/master/images/sample_screen3.png" width="393"> <img src="https://github.com/fumiyasac/SwiftUIAndReduxExample/blob/master/images/sample_screen4.png" width="393">
+
 ## 2. ReduxをSwiftUI画面に導入するにあたって
 
 WIP
