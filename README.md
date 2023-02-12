@@ -7,15 +7,13 @@ SwiftUIを利用した表現＆Reduxを利用した画面状態管理を組み�
 
 基本的には、APIから画面表示に必要なデータを取得した後に画面表示をする機能を中心として、一部の画面では「お気に入り機能」の様な形でアプリ内部にデータを永続化して保持しておく機能や、表示一覧データをキーワードやカテゴリーに合致するものだけをフィルタリングする「絞り込み検索」の様な形で表示する画面も実装しています。
 
-### 1-1. 画面キャプチャ
+__【画面キャプチャ: その1】__
 
-__【No.1】__
+<img src="https://github.com/fumiyasac/SwiftUIAndReduxExample/blob/main/images/sample_screen1.png" width="320"> <img src="https://github.com/fumiyasac/SwiftUIAndReduxExample/blob/main/images/sample_screen2.png" width="320">
 
-<img src="https://github.com/fumiyasac/SwiftUIAndReduxExample/blob/main/images/sample_screen1.png" width="300"> <img src="https://github.com/fumiyasac/SwiftUIAndReduxExample/blob/main/images/sample_screen2.png" width="300">
+__【画面キャプチャ: その2】__
 
-__【No.2】__
-
-<img src="https://github.com/fumiyasac/SwiftUIAndReduxExample/blob/main/images/sample_screen3.png" width="300"> <img src="https://github.com/fumiyasac/SwiftUIAndReduxExample/blob/main/images/sample_screen4.png" width="300">
+<img src="https://github.com/fumiyasac/SwiftUIAndReduxExample/blob/main/images/sample_screen3.png" width="320"> <img src="https://github.com/fumiyasac/SwiftUIAndReduxExample/blob/main/images/sample_screen4.png" width="320">
 
 ## 2. ReduxをSwiftUI画面に導入するにあたって
 
@@ -53,37 +51,117 @@ __【TCA（The Composable Architecture）とRedux比較した際の所感等】_
 
 ## 3. このサンプル実装におけるReduxと各層での処理
 
-WIP
+今回のサンプルでは、下記のような形でReduxの処理を実現するために必要な要素を役割ごとのファイルに分割した上でまとめています。さらに命名によって画面ごとにそれぞれのStateが対応するようにしています。
+
+- __Store__:
+  👉 アプリケーション全体の状態(複数の画面表示用State)を一枚岩の様な形で保持する。
+- __Action__:
+  👉 Storeが保持している状態(対象の画面表示用State)を更新するための唯一の手段でstructで定義する。
+     (重要) Actionの発行はStoreが提供している`store.dispatch()`を実行する形となります。
+- __Reducer__:
+  👉 現在の状態(対象の画面表示用State)とActionの内容から新しい状態を作成する部分で純粋関数として定義する。
+- __Middleware__:
+  👉 Reducerの実行前後で処理を差し込むための部分で純粋関数として定義する。
+     (重要) 画面表示に必要なMiddleware内部で、API非同期通信処理や内部データ登録処理等を実施する形となります。
+
+この様な形にすることで、画面を構成しているView要素については、主に下記の処理に限定する事が可能になります。
+
+- 1. Storeから受け取った画面用State値を反映する
+- 2. ボタン押下処理等の部分に画面用Stateを変更するAction発行処理を記載する
+
+画面用State変化とUI変化をうまく結びつけるためには、できるだけ`「Stateの値 = アプリのUI要素の状態」`という形となる様に、State構造やUI関連処理に関する設計をする点がポイントになると考えております。すなわち、`「各状態におけるデータとUIのあるべき姿を整理する」 `点が重要になると思います。
+
+※ React.jsでも利用されている様なReduxの処理機構を、SwiftUIで表現した様なイメージで作成しています。
 
 ### 3-1. 全体像の概略図
 
+![本サンプルで利用しているReduxの概要図と処理フロー](https://github.com/fumiyasac/SwiftUIAndReduxExample/blob/main/images/3-1-fundamental_of_redux.png)
+
 ### 3-2. Middlewareで実行する処理と各種機能とのつながり
 
-### 3-3. API通信部分と内部データ保持に関する処理部分の要点
+![Middleware内で実行されている処理と結果に応じたAction発行](https://github.com/fumiyasac/SwiftUIAndReduxExample/blob/main/images/3-2-example_of_middleware.png)
+
+### 3-3. Storeの内容を子のView要素で利用する
+
+```swift
+// 👉 アプリの一番おおもと部分でStoreを定義する 
+let store = Store(
+    reducer: appReducer,
+    state: AppState(),
+    middlewares: [
+        // OnBoarding処理用Middleware
+        onboardingMiddleware(),
+        onboardingCloseMiddleware(),
+        // Home処理用Middleware
+        homeMiddleware(),
+        // Archive処理用Middleware
+        archiveMiddleware(),
+        addArchiveObjectMiddleware(),
+        deleteArchiveObjectMiddleware(),
+        // Favorite処理用Middleware
+        favoriteMiddleware(),
+        // Profile処理用Middleware
+        profileMiddleware(),
+    ]
+)
+
+// 👉 ContentView(ScreenView)に対してenvironmentObjectを経由してstoreを渡す
+WindowGroup {
+    ContentView()
+        .environmentObject(store)
+}
+
+// 👉 渡されたView(ScreenView)では下記の様な形でstoreを利用する
+@EnvironmentObject var store: Store<AppState>
+```
 
 ## 4. UI実装や表現に関連するTIPS紹介
 
-WIP
+本サンプルにおけるUI実装に関しては、一部`DragGesture`の処理を活用したCarousel表現や局所的に`GeometryReader`を利用した表現を画面のSection要素内に取り入れて組み合わせた様な形となっています。
 
-### 4-1. Home画面で利用されているUI表現に関する要点
+`DragGesture`を活用した奥行きのある無限Carouselの実装や、PinterestのようなGrid表示については、`UIKit + UICollectionView`を利用した実装を選択した場合でも、`UICollectionViewDelegateFlowLayout`クラスを継承した独自のレイアウト定義等を活用したカスタマイズが必要になるので、結果的にはなかなか一筋縄ではいかないUI実装になる事は多いかと思います。
+
+※ Home画面及びFavorite画面で利用されているUI表現に関する解説の詳細は、下記のQiita記事でまとめていますので、ご一読頂けますと幸いです。
 
 - [SwiftUIで作る「Drag処理を利用したCarousel型UI」と「Pinterest風GridレイアウトUI」の実装例とポイントまとめ](https://qiita.com/fumiyasac@github/items/b5b313d9807ff858a73c)
 
-### 4-2. GeometryReaderを利用したStretchyHeader表現
+### 4-1. Home画面 & Favorite画面におけるUI実装のポイント図解
 
-### 4-3. 絞り込み検索の様な形を実現するためのポイント
+__【UI表現例: その1】__
 
-## 5. 擬似BackendサーバーとAPI定義
+![Drag処理に伴って回転&奥行きのある無限循環型Carouselを実現するDragGesture活用例](https://github.com/fumiyasac/SwiftUIAndReduxExample/blob/main/images/4-1-1-3d_carousel_example.png)
+
+__【UI表現例: その2】__
+
+![Drag処理と連動した中央寄せ型のCarouselを実現するDragGesture活用例](https://github.com/fumiyasac/SwiftUIAndReduxExample/blob/main/images/4-1-2-drag_carousel_example.png)
+
+__【UI表現例: その3】__
+
+![LazyHStackとScrollViewで作成するシンプルなCarousel表現](https://github.com/fumiyasac/SwiftUIAndReduxExample/blob/main/images/4-1-3-simple_horizontal_carousel_example.png)
+
+__【UI表現例: その4】__
+
+![基本的なLazyVGridを利用したGrid](https://github.com/fumiyasac/SwiftUIAndReduxExample/blob/main/images/4-1-4-simple_2column_grid_example.png)
+
+__【UI表現例: その5】__
+
+![HStackと2つのVStackを並べて合計の高さを基準としたロジックを元に構築したGrid](https://github.com/fumiyasac/SwiftUIAndReduxExample/blob/main/images/4-1-5-waterfall_grid_example.png)
+
+__【UI表現例: その6】__
+
+![OSSライブラリ「CollectionViewPagingLayout」を利用した表現](https://github.com/fumiyasac/SwiftUIAndReduxExample/blob/main/images/4-1-6-swipe_paging_example.png)
+
+### 4-2. Profile画面におけるUI実装のポイント図解
+
+![Profile画面における特徴的なUI表現をする部分](https://github.com/fumiyasac/SwiftUIAndReduxExample/blob/main/images/4-2-profile_ui_example.png)
+
+### 4-3. Archive画面におけるUI実装のポイント図解
+
+![Archive画面における特徴的なUI表現をする部分](https://github.com/fumiyasac/SwiftUIAndReduxExample/blob/main/images/4-3-archive_ui_example.png)
+
+## 5. Mockサーバー環境構築
 
 サンプルアプリ内では、APIモックサーバーから受け取ったJSON形式のレスポンスを画面に表示する処理を実現するために、node.js製の __「json-server」__ を利用して実現しています。（※こちらはTypeScript製のものを利用しています。）
-
-### 5-1. サンプルで利用しているAPIエンドポイント
-
-
-
-WIP
-
-### 5-2. Mockサーバー環境構築
 
 このリポジトリをClone後に下記コマンドを実行することで、自分のローカル環境で動作させる事ができます。
 
