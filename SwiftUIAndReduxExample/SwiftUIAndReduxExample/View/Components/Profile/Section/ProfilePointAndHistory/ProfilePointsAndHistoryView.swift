@@ -31,7 +31,7 @@ struct ProfilePointsAndHistoryView: View {
         return Color(uiColor: .lightGray)
     }
 
-    private var profilePointsAndHistoryViewObject: ProfilePointsAndHistoryViewObject
+    private let profilePointsAndHistoryViewObject: ProfilePointsAndHistoryViewObject
 
     // MEMO: LazyVGridに表示する内容を格納するための変数
     @State private var pointAndHistoryPairs: [PointAndHistoryPair] = []

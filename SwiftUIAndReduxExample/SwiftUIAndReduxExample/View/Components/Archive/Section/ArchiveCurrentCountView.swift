@@ -31,8 +31,8 @@ struct ArchiveCurrentCountView: View {
         return Color.primary
     }
 
-    private var currentCount: Int
-    private var tapAllClearAction: ArchiveCurrentCountView.TapAllClearAction
+    private let currentCount: Int
+    private let tapAllClearAction: ArchiveCurrentCountView.TapAllClearAction
 
     // MARK: - Initializer
 

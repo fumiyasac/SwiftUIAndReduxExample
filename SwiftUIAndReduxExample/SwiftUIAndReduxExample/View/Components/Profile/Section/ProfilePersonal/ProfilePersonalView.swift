@@ -40,7 +40,7 @@ struct ProfilePersonalView: View {
         return 86.0
     }
 
-    private var profilePersonalViewObject: ProfilePersonalViewObject
+    private let profilePersonalViewObject: ProfilePersonalViewObject
 
     // MARK: - Initializer
 

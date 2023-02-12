@@ -49,9 +49,9 @@ struct ArchiveFreewordView: View {
     // テキスト編集モードの判定フラグ変数
     @State private var isEditing: Bool
 
-    private var isLoading: Bool
-    private var submitAction: ArchiveFreewordView.SubmitAction
-    private var cancelAction: ArchiveFreewordView.CancelAction
+    private let isLoading: Bool
+    private let submitAction: ArchiveFreewordView.SubmitAction
+    private let cancelAction: ArchiveFreewordView.CancelAction
 
     // MARK: - Initializer
 

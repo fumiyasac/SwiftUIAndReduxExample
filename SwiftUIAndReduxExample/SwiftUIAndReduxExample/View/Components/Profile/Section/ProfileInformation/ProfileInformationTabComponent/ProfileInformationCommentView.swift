@@ -11,7 +11,7 @@ struct ProfileInformationCommentView: View {
 
     // MARK: - Property
 
-    private var profileCommentViewObjects: [ProfileCommentViewObject]
+    private let profileCommentViewObjects: [ProfileCommentViewObject]
 
     // MARK: - Initializer
 

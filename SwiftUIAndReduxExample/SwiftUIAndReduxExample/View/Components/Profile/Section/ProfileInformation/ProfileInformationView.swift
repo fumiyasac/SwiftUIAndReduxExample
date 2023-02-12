@@ -19,7 +19,7 @@ struct ProfileInformationView: View {
         return Color.secondary
     }
 
-    private var profileInformationViewObject: ProfileInformationViewObject
+    private let profileInformationViewObject: ProfileInformationViewObject
 
     // MARK: - Initializer
 

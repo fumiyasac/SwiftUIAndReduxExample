@@ -19,7 +19,7 @@ struct ProfileSelfIntroductionView: View {
         return Color.secondary
     }
 
-    private var profileSelfIntroductionViewObject: ProfileSelfIntroductionViewObject
+    private let profileSelfIntroductionViewObject: ProfileSelfIntroductionViewObject
 
     // MARK: - Initializer
 

@@ -23,7 +23,7 @@ struct ProfileSocialMediaLinkView: View {
         return Color.secondary
     }
 
-    private var profileSocialMediaViewObject: ProfileSocialMediaViewObject
+    private let profileSocialMediaViewObject: ProfileSocialMediaViewObject
 
     // MEMO: LazyVGridに表示する内容を格納するための変数
     @State private var socialMediaSets: [SocialMediaSet] = []

@@ -11,7 +11,7 @@ struct ProfileInformationRecentView: View {
 
     // MARK: - Property
 
-    private var profileRecentFavoriteViewObjects: [ProfileRecentFavoriteViewObject]
+    private let profileRecentFavoriteViewObjects: [ProfileRecentFavoriteViewObject]
 
     // MARK: - Initializer
 

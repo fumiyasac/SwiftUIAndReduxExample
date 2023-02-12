@@ -19,14 +19,12 @@ struct FeaturedTopicsCarouselView: View {
     }
 
     // MEMO: LazyHStackに表示する内容を格納するための変数
-    @State private var featuredTopicsCarouselViewObjects: [FeaturedTopicsCarouselViewObject] = []
+    private let featuredTopicsCarouselViewObjects: [FeaturedTopicsCarouselViewObject]
 
     // MARK: - Initializer
 
     init(featuredTopicsCarouselViewObjects: [FeaturedTopicsCarouselViewObject]) {
-
-        // イニシャライザ内で「_(変数名)」値を代入することでState値の初期化を実行する
-        _featuredTopicsCarouselViewObjects = State(initialValue: featuredTopicsCarouselViewObjects)
+        self.featuredTopicsCarouselViewObjects = featuredTopicsCarouselViewObjects
     }
 
     // MARK: - Body

@@ -25,7 +25,7 @@ struct RecentNewsCarouselView: View {
         return screen.width - sectionSpacing
     }
 
-    private var recentNewsCarouselViewObjects: [RecentNewsCarouselViewObject] = []
+    private let recentNewsCarouselViewObjects: [RecentNewsCarouselViewObject]
 
     // MEMO: Grid表示View要素に表示する内容を格納するための変数
     @State private var groupedRecentNewsCarouselViewObjects: [GroupedRecentNewsCarouselViewObject] = []

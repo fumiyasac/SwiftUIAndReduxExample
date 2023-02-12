@@ -11,7 +11,7 @@ struct ProfileInformationAnnouncementView: View {
 
     // MARK: - Property
 
-    private var profileAnnoucementViewObjects: [ProfileAnnoucementViewObject]
+    private let profileAnnoucementViewObjects: [ProfileAnnoucementViewObject]
 
     // MARK: - Initializer
 
@@ -72,7 +72,7 @@ struct ProfileInformationAnnouncementCellView: View {
         return Color(uiColor: .lightGray)
     }
 
-    private var viewObject: ProfileAnnoucementViewObject
+    private let viewObject: ProfileAnnoucementViewObject
 
     // MARK: - Initializer
 

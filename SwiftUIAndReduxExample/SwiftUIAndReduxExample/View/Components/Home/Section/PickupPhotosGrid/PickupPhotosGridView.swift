@@ -16,7 +16,7 @@ struct PickupPhotosGridView: View {
 
     // MARK: - Property
 
-    private var pickupPhotosGridViewObjects: [PickupPhotosGridViewObject] = []
+    private let pickupPhotosGridViewObjects: [PickupPhotosGridViewObject]
 
     // MEMO: Grid表示View要素に表示する内容を格納するための変数
     @State private var splittedPickupPhotosGridViewObjects: (leftPhotosGridViewObjects: [PickupPhotosGridViewObject], rightPhotosGridViewObjects: [PickupPhotosGridViewObject]) = (leftPhotosGridViewObjects: [], rightPhotosGridViewObjects: [])

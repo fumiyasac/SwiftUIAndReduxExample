@@ -27,10 +27,10 @@ struct ProfileInformationTabSwitcher: View {
         return Color(uiColor: UIColor(code: "#b9d9c3"))
     }
 
-    private var profileInformationViewObject: ProfileInformationViewObject
+    private let profileInformationViewObject: ProfileInformationViewObject
 
     // 👉 有効にしたいTab要素を格納するための設けている
-    private var profileInformationTabs: [ProfileInformationTab]
+    private let profileInformationTabs: [ProfileInformationTab]
 
     // 👉 現在のTab位置を保持するためのState値
     @State private var currentProfileInformationTab: ProfileInformationTab

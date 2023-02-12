@@ -16,16 +16,16 @@ struct ArchiveContentsView: View {
     // MARK: - Property
 
     // 画面表示内容を格納するための変数
-    private var archiveCellViewObjects: [ArchiveCellViewObject]
+    private let archiveCellViewObjects: [ArchiveCellViewObject]
 
     // 親のViewから受け取った検索キーワードを格納するための変数
-    private var targetKeyword: String
+    private let targetKeyword: String
 
     // 親のViewから受け取ったカテゴリー名を格納するための変数
-    private var targetCategory: String
+    private let targetCategory: String
 
     // Storeボタン（ハート型ボタン要素）タップ時にArchiveCellViewに引き渡すClosure変数
-    private var tapIsStoredButtonAction: ArchiveContentsView.TapIsStoredButtonAction
+    private let tapIsStoredButtonAction: ArchiveContentsView.TapIsStoredButtonAction
 
     // MARK: - Initializer
 

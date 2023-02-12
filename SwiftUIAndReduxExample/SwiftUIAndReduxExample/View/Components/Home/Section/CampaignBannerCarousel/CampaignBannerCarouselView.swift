@@ -30,14 +30,14 @@ struct CampaignBannerCarouselView: View {
     @State private var draggingOffset: CGFloat
 
     // MEMO: Carouselに表示する内容を格納するための変数
-    @State private var campaignBannerCarouselViewObjects: [CampaignBannerCarouselViewObject] = []
+    private let campaignBannerCarouselViewObjects: [CampaignBannerCarouselViewObject]
 
     // MARK: - Initializer
     
     init(campaignBannerCarouselViewObjects: [CampaignBannerCarouselViewObject]) {
+        self.campaignBannerCarouselViewObjects = campaignBannerCarouselViewObjects
 
         // イニシャライザ内で「_(変数名)」値を代入することでState値の初期化を実行する
-        _campaignBannerCarouselViewObjects = State(initialValue: campaignBannerCarouselViewObjects)
         _snappedOffset = State(initialValue: 0.0)
         _draggingOffset = State(initialValue: 0.0)
     }

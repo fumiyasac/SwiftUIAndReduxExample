@@ -18,15 +18,12 @@ struct FavoriteSwipePagingView: View {
 
     // MARK: - Property
 
-    // MEMO: Card表示View要素に表示する内容を格納するための変数
-    @State private var favoritePhotosCardViewObjects: [FavoritePhotosCardViewObject] = []
+    private let favoritePhotosCardViewObjects: [FavoritePhotosCardViewObject]
 
     // MARK: - Initializer
 
     init(favoritePhotosCardViewObjects: [FavoritePhotosCardViewObject]) {
-
-        // イニシャライザ内で「_(変数名)」値を代入することでState値の初期化を実行する
-        _favoritePhotosCardViewObjects = State(initialValue: favoritePhotosCardViewObjects)
+        self.favoritePhotosCardViewObjects = favoritePhotosCardViewObjects
     }
 
     // MARK: - Body

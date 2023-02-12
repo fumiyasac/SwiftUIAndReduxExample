@@ -62,8 +62,8 @@ struct ArchiveCategoryView: View {
         return Color(uiColor: UIColor(code: "#b9d9c3"))
     }
 
-    private var selectedCategory: String = ""
-    private var tapCategoryChipAction: ArchiveCategoryView.TapCategoryChipAction
+    private let selectedCategory: String
+    private let tapCategoryChipAction: ArchiveCategoryView.TapCategoryChipAction
 
     // MARK: - Initializer
 

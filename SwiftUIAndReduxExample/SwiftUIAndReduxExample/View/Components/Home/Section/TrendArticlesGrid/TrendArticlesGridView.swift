@@ -34,14 +34,12 @@ struct TrendArticlesGridView: View {
     }
 
     // MEMO: LazyVGridに表示する内容を格納するための変数
-    @State private var trendArticlesGridViewObjects: [TrendArticlesGridViewObject] = []
+    private let trendArticlesGridViewObjects: [TrendArticlesGridViewObject]
 
     // MARK: - Initializer
 
     init(trendArticlesGridViewObjects: [TrendArticlesGridViewObject]) {
-
-        // イニシャライザ内で「_(変数名)」値を代入することでState値の初期化を実行する
-        _trendArticlesGridViewObjects = State(initialValue: trendArticlesGridViewObjects)
+        self.trendArticlesGridViewObjects = trendArticlesGridViewObjects
     }
 
     // MARK: - Body
