@@ -7,11 +7,19 @@ SwiftUIを利用した表現＆Reduxを利用した画面状態管理を組み�
 
 基本的には、APIから画面表示に必要なデータを取得した後に画面表示をする機能を中心として、一部の画面では「お気に入り機能」の様な形でアプリ内部にデータを永続化して保持しておく機能や、表示一覧データをキーワードやカテゴリーに合致するものだけをフィルタリングする「絞り込み検索」の様な形で表示する画面も実装しています。
 
-__【画面キャプチャ: その1】__
+### 1-1. 動画で見る画面の振る舞いと実機転送時の注意点
+
+- [📱UI実装サンプルの挙動を収録した動画](https://www.facebook.com/100001580558958/videos/734931384655279/)
+
+![実機確認時に利用するBuild Targetの指定](https://github.com/fumiyasac/SwiftUIAndReduxExample/blob/main/images/build-target-setting.png)
+
+### 1-2. 画面キャプチャ
+
+__【その1】__
 
 <img src="https://github.com/fumiyasac/SwiftUIAndReduxExample/blob/main/images/sample_screen1.png" width="320"> <img src="https://github.com/fumiyasac/SwiftUIAndReduxExample/blob/main/images/sample_screen2.png" width="320">
 
-__【画面キャプチャ: その2】__
+__【その2】__
 
 <img src="https://github.com/fumiyasac/SwiftUIAndReduxExample/blob/main/images/sample_screen3.png" width="320"> <img src="https://github.com/fumiyasac/SwiftUIAndReduxExample/blob/main/images/sample_screen4.png" width="320">
 
