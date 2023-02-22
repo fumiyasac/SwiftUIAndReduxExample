@@ -9,9 +9,15 @@
 
 import XCTest
 import Combine
+import CombineExpectations
+import Nimble
+import Quick
 
 // MEMO: テストの書き方は下記リンクを参考にしました。
 // https://stackoverflow.com/questions/59690913/how-do-i-properly-test-a-var-that-changes-through-a-publisher-in-my-viewmodel-in
+
+// MEMO: CombineExpectationsを利用してUnitTestを作成する
+// https://github.com/groue/CombineExpectations#usage
 
 final class OnboardingStateTest: XCTestCase {
 
