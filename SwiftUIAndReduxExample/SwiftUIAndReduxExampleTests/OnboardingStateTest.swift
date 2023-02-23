@@ -19,6 +19,54 @@ import Quick
 // MEMO: CombineExpectationsを利用してUnitTestを作成する
 // https://github.com/groue/CombineExpectations#usage
 
+
+final class OnboardingStateChangeTest: QuickSpec {
+
+    // MARK: - Override
+
+    override func spec() {
+
+        // MEMO: Quick+NimbleをベースにしたUnitTestを実行する
+        describe("#オンボーディング表示対象時のテストケース") {
+            // 👉 storeをインスタンス化す際に、想定するMiddlewareのMockを適用する
+            let store = Store(
+                reducer: appReducer,
+                state: AppState(),
+                middlewares: [
+                    onboardingMockShowMiddleware(),
+                    onboardingMockCloseMiddleware()
+                ]
+            )
+            // CombineExpectationを利用してAppStateの変化を記録するようにしたい
+            // 👉 このサンプルではAppStateで`@Published`を利用しているので、AppStateを記録対象とする
+            var onboardingStateRecorder: Recorder<AppState, Never>!
+            context("オンボーディング有無を判定するActionを発行した際に表示対象であった場合") {
+                // 👉 UnitTest実行前後で実行する処理
+                beforeEach {
+                    onboardingStateRecorder = store.$state.record()
+                }
+                afterEach {
+                    onboardingStateRecorder = nil
+                }
+                // 👉 オンボーディング可否を取得するActionを発行する
+                // この後にOnboardingStateの変化を見る
+                store.dispatch(action: RequestOnboardingAction())
+                // 対象のState値が変化することを確認する
+                // ※ onboardingStateはImmutable / Recorderで対象秒間における値変化を全て保持している
+                it("showOnboardingがtrueであること") {
+                    // timeout部分で0.16秒後の変化を見る（※async/await処理の場合は1.00秒ぐらいを見る）
+                    let onboardingStateRecorderResult = try! self.wait(for: onboardingStateRecorder.availableElements, timeout: 0.16)
+                    // 0.16秒間の変化を見て、最後の値が変化していることを確認する
+                    let targetResult = onboardingStateRecorderResult.last!
+                    let showOnboarding = targetResult.onboardingState.showOnboarding
+                    expect(showOnboarding).to(equal(true))
+                }
+            }
+        }
+        
+    }
+}
+
 final class OnboardingStateTest: XCTestCase {
 
     // stateの格納先が @Published なので購読のキャンセルができる様にしておく
