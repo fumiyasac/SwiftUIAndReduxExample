@@ -13,19 +13,14 @@ import CombineExpectations
 import Nimble
 import Quick
 
-// MEMO: テストの書き方は下記リンクを参考にしました。
-// https://stackoverflow.com/questions/59690913/how-do-i-properly-test-a-var-that-changes-through-a-publisher-in-my-viewmodel-in
-
 // MEMO: CombineExpectationsを利用してUnitTestを作成する
 // https://github.com/groue/CombineExpectations#usage
-
 
 final class OnboardingStateTest: QuickSpec {
 
     // MARK: - Override
 
     override func spec() {
-
         // MEMO: Quick+NimbleをベースにしたUnitTestを実行する
         describe("#オンボーディング表示対象時のテストケース") {
             // 👉 storeをインスタンス化する際に、想定するMiddlewareのMockを適用する
@@ -63,7 +58,6 @@ final class OnboardingStateTest: QuickSpec {
                 }
             }
         }
-
         describe("#オンボーディング表示対象からオンボーディング画面を閉じる時のテストケース") {
             let store = Store(
                 reducer: appReducer,
