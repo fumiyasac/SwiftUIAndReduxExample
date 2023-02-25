@@ -23,6 +23,7 @@ final class HomeStateTest: QuickSpec {
     override func spec() {
 
         // MEMO: Quick+NimbleをベースにしたUnitTestを実行する
+        // ※注意: Middlewareを直接適用するのではなく、Middlewareで起こるActionに近い形を作ることにしています。
         describe("#Home画面表示が成功する場合のテストケース") {
             // 👉 storeをインスタンス化する際に、想定するMiddlewareのMockを適用する
             let store = Store(
