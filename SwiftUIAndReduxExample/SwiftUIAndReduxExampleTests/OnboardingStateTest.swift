@@ -28,7 +28,7 @@ final class OnboardingStateTest: QuickSpec {
 
         // MEMO: Quick+NimbleをベースにしたUnitTestを実行する
         describe("#オンボーディング表示対象時のテストケース") {
-            // 👉 storeをインスタンス化す際に、想定するMiddlewareのMockを適用する
+            // 👉 storeをインスタンス化する際に、想定するMiddlewareのMockを適用する
             let store = Store(
                 reducer: appReducer,
                 state: AppState(),
@@ -63,7 +63,35 @@ final class OnboardingStateTest: QuickSpec {
                 }
             }
         }
-        
+
+        describe("#オンボーディング表示対象からオンボーディング画面を閉じる時のテストケース") {
+            let store = Store(
+                reducer: appReducer,
+                state: AppState(),
+                middlewares: [
+                    onboardingMockShowMiddleware(),
+                    onboardingMockCloseMiddleware()
+                ]
+            )
+            var onboardingStateRecorder: Recorder<AppState, Never>!
+            context("オンボーディング有無を判定するActionを発行した際に表示対象であったが、その後にオンボーディング画面を閉じた場合") {
+                beforeEach {
+                    onboardingStateRecorder = store.$state.record()
+                }
+                afterEach {
+                    onboardingStateRecorder = nil
+                }
+                // 👉 オンボーディング可否を取得するActionを発行し、その後にオンボーディングを閉じるActionを発行する
+                store.dispatch(action: RequestOnboardingAction())
+                store.dispatch(action: CloseOnboardingAction())
+                it("showOnboardingがfalseであること") {
+                    let onboardingStateRecorderResult = try! self.wait(for: onboardingStateRecorder.availableElements, timeout: 0.16)
+                    let targetResult = onboardingStateRecorderResult.last!
+                    let showOnboarding = targetResult.onboardingState.showOnboarding
+                    expect(showOnboarding).to(equal(false))
+                }
+            }
+        }
     }
 }
 
