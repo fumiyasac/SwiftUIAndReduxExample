@@ -28,9 +28,7 @@ final class HomeStateTest: QuickSpec {
             let store = Store(
                 reducer: appReducer,
                 state: AppState(),
-                middlewares: [
-                    homeMockSuccessMiddleware()
-                ]
+                middlewares: []
             )
             // CombineExpectationを利用してAppStateの変化を記録するようにしたい
             // 👉 このサンプルではAppStateで`@Published`を利用しているので、AppStateを記録対象とする
@@ -42,15 +40,24 @@ final class HomeStateTest: QuickSpec {
                 afterEach {
                     homeStateRecorder = nil
                 }
-                store.dispatch(action: RequestHomeAction())
+                // 👉 Middlewareで実行するAPIリクエストが成功した際に想定されるActionを発行する
+                store.dispatch(
+                    action: SuccessHomeAction(
+                        campaignBannerEntities: getCampaignBannerEntities(),
+                        recentNewsEntities: getRecentNewsRecentNewsEntities(),
+                        featuredTopicEntities: getFeaturedTopicEntities(),
+                        trendArticleEntities: getTrendArticleEntities(),
+                        pickupPhotoEntities: getPickupPhotoEntities()
+                    )
+                )
                 // 対象のState値が変化することを確認する
                 // ※ homeStateはImmutable / Recorderで対象秒間における値変化を全て保持している
                 it("homeStateに想定している値が格納された状態であること") {
-                    // timeout部分で5.00秒後の変化を見る（※async/await処理の場合は5.00秒ぐらいを見る）
-                    let homeStateRecorderResult = try! self.wait(for: homeStateRecorder.availableElements, timeout: 2.00)
-                    // 2.00秒間の変化を見て、最後の値が変化していることを確認する
+                    // timeout部分で0.16秒後の変化を見る（※async/await処理の場合は0.16秒ぐらいを見る）
+                    let homeStateRecorderResult = try! self.wait(for: homeStateRecorder.availableElements, timeout: 0.16)
+                    // 0.16秒間の変化を見て、最後の値が変化していることを確認する
                     let targetResult = homeStateRecorderResult.last!
-                    // 👉 特徴的なテストケースをいくつか準備する（このテストコードで返却されるのは仮のデータではあるものの該当Stateにマッピングされる想定）
+                    //] 👉 特徴的なテストケースをいくつか準備する（このテストコードで返却されるのは仮のデータではあるものの該当Stateにマッピングされる想定）
                     let homeState = targetResult.homeState
                     // (1) CampaignBannerCarouselViewObject
                     let campaignBannerCarouselViewObjects = homeState.campaignBannerCarouselViewObjects
@@ -78,9 +85,7 @@ final class HomeStateTest: QuickSpec {
             let store = Store(
                 reducer: appReducer,
                 state: AppState(),
-                middlewares: [
-                    homeMockFailureMiddleware()
-                ]
+                middlewares: []
             )
             var homeStateRecorder: Recorder<AppState, Never>!
             context("#Home画面で表示するデータ取得処理が失敗した場合") {
@@ -90,9 +95,9 @@ final class HomeStateTest: QuickSpec {
                 afterEach {
                     homeStateRecorder = nil
                 }
-                store.dispatch(action: RequestHomeAction())
+                store.dispatch(action: FailureHomeAction())
                 it("homeStateのisErrorがtrueとなること") {
-                    let homeStateRecorderResult = try! self.wait(for: homeStateRecorder.availableElements, timeout: 2.00)
+                    let homeStateRecorderResult = try! self.wait(for: homeStateRecorder.availableElements, timeout: 0.16)
                     let targetResult = homeStateRecorderResult.last!
                     let homeState = targetResult.homeState
                     let isError = homeState.isError
@@ -100,6 +105,72 @@ final class HomeStateTest: QuickSpec {
                 }
             }
         }
+    }
 
+    // MARK: - Private Function
+
+    private func getCampaignBannerEntities() -> [CampaignBannerEntity] {
+        guard let path = Bundle.main.path(forResource: "campaign_banners", ofType: "json") else {
+            fatalError()
+        }
+        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
+            fatalError()
+        }
+        guard let result = try? JSONDecoder().decode([CampaignBannerEntity].self, from: data) else {
+            fatalError()
+        }
+        return result
+    }
+
+    private func getRecentNewsRecentNewsEntities() -> [RecentNewsEntity] {
+        guard let path = Bundle.main.path(forResource: "recent_news", ofType: "json") else {
+            fatalError()
+        }
+        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
+            fatalError()
+        }
+        guard let result = try? JSONDecoder().decode([RecentNewsEntity].self, from: data) else {
+            fatalError()
+        }
+        return result
+    }
+
+    private func getFeaturedTopicEntities() -> [FeaturedTopicEntity] {
+        guard let path = Bundle.main.path(forResource: "featured_topics", ofType: "json") else {
+            fatalError()
+        }
+        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
+            fatalError()
+        }
+        guard let result = try? JSONDecoder().decode([FeaturedTopicEntity].self, from: data) else {
+            fatalError()
+        }
+        return result
+    }
+
+    private func getTrendArticleEntities() -> [TrendArticleEntity] {
+        guard let path = Bundle.main.path(forResource: "trend_articles", ofType: "json") else {
+            fatalError()
+        }
+        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
+            fatalError()
+        }
+        guard let result = try? JSONDecoder().decode([TrendArticleEntity].self, from: data) else {
+            fatalError()
+        }
+        return result
+    }
+
+    private func getPickupPhotoEntities() -> [PickupPhotoEntity] {
+        guard let path = Bundle.main.path(forResource: "pickup_photos", ofType: "json") else {
+            fatalError()
+        }
+        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
+            fatalError()
+        }
+        guard let result = try? JSONDecoder().decode([PickupPhotoEntity].self, from: data) else {
+            fatalError()
+        }
+        return result
     }
 }
