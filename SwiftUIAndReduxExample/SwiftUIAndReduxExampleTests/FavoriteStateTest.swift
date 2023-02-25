@@ -9,69 +9,104 @@
 
 import XCTest
 import Combine
+import CombineExpectations
+import Nimble
+import Quick
 
-final class FavoriteStateTest: XCTestCase {
+// MEMO: CombineExpectationsを利用してUnitTestを作成する
+// https://github.com/groue/CombineExpectations#usage
 
-    // stateの格納先が @Published なので購読のキャンセルができる様にしておく
-    private var cancellables: [AnyCancellable] = []
-    
-    // MARK: - Function (test_SuccessFavoriteResponse)
+final class FavoriteStateTest: QuickSpec {
 
-    // 👉 取得したレスポンスがFavoriteState内のPropertyに反映されることを確認する(FavoritePhotosCardViewObjectの確認)
-    func test_SuccessFavoriteResponse_FavoritePhotosCardViewObjects() throws {
-        // MEMO: Mock用のMiddlewareを適用したStoreを用意する
-        let store = Store(
-            reducer: appReducer,
-            state: AppState(),
-            middlewares: [
-                favoriteMockSuccessMiddleware()
-            ]
-        )
-        // MEMO: Storeから取得できたデータを格納するための変数
-        var targetFavoritePhotosCardViewObjects: [FavoritePhotosCardViewObject] = []
-        // MEMO: テスト前状態のState値を作る
-        let beforeTestState = store.state
-        // MEMO: Combineの処理を利用した形でActionが発行された場合での値変化を監視する
-        let expectationFavoriteSuccess = self.expectation(description: "Expect to get FavoritePhotosCardViewObject.")
-        let _ = store.$state.sink(receiveValue: { changedState in
-            if beforeTestState.favoriteState.favoritePhotosCardViewObjects != changedState.favoriteState.favoritePhotosCardViewObjects {
-                targetFavoritePhotosCardViewObjects = changedState.favoriteState.favoritePhotosCardViewObjects
-                expectationFavoriteSuccess.fulfill()
+    // MARK: - Override
+
+    override func spec() {
+
+        // MEMO: Quick+NimbleをベースにしたUnitTestを実行する
+        // ※注意: Middlewareを直接適用するのではなく、Middlewareで起こるActionに近い形を作ることにしています。
+        describe("#Favorite画面表示が成功する場合のテストケース") {
+            // 👉 storeをインスタンス化する際に、想定するMiddlewareのMockを適用する
+            let store = Store(
+                reducer: appReducer,
+                state: AppState(),
+                middlewares: []
+            )
+            // CombineExpectationを利用してAppStateの変化を記録するようにしたい
+            // 👉 このサンプルではAppStateで`@Published`を利用しているので、AppStateを記録対象とする
+            var favoriteStateRecorder: Recorder<AppState, Never>!
+            context("表示するデータ取得処理が成功する場合") {
+                beforeEach {
+                    favoriteStateRecorder = store.$state.record()
+                }
+                afterEach {
+                    favoriteStateRecorder = nil
+                }
+                // 👉 Middlewareで実行するAPIリクエストが成功した際に想定されるActionを発行する
+                store.dispatch(
+                    action: SuccessFavoriteAction(
+                        favoriteSceneEntities: getFavoriteSceneEntities()
+                    )
+                )
+                // 対象のState値が変化することを確認する
+                // ※ favoriteStateはImmutable / Recorderで対象秒間における値変化を全て保持している
+                it("favoriteStateに想定している値が格納された状態であること") {
+                    // timeout部分で0.16秒後の変化を見る（※async/await処理の場合は0.16秒ぐらいを見る）
+                    let favoriteStateRecorderResult = try! self.wait(for: favoriteStateRecorder.availableElements, timeout: 0.16)
+                    // 0.16秒間の変化を見て、最後の値が変化していることを確認する
+                    let targetResult = favoriteStateRecorderResult.last!
+                    // 👉 特徴的なテストケースをいくつか準備する（このテストコードで返却されるのは仮のデータではあるものの該当Stateにマッピングされる想定）
+                    let favoriteState = targetResult.favoriteState
+                    // favoritePhotosCardViewObjects
+                    let favoritePhotosCardViewObjects = favoriteState.favoritePhotosCardViewObjects
+                    let firstFavoritePhotosCardViewObject = favoritePhotosCardViewObjects.first
+                    // 編集部が選ぶお気に入りのグルメは合計12件取得できること
+                    expect(favoritePhotosCardViewObjects.count).to(equal(12))
+                    // 最初のidが正しい値であること
+                    expect(firstFavoritePhotosCardViewObject?.id).to(equal(1))
+                    // 最初のtitleが正しい値であること
+                    expect(firstFavoritePhotosCardViewObject?.title).to(equal("気になる一皿シリーズNo.1"))
+                }
             }
-        }).store(in: &cancellables)
-        store.dispatch(action: RequestFavoriteAction())
-        waitForExpectations(timeout: 2.0, handler: { _ in
-            // Example: 総数と最初の内容ぐらいは確認しておくと良さそうに思います。
-            XCTAssertEqual(12, targetFavoritePhotosCardViewObjects.count, "編集部が選ぶお気に入りのグルメは合計12件取得できること")
-            let firstViewObject = targetFavoritePhotosCardViewObjects.first
-            XCTAssertEqual(1, firstViewObject?.id, "1番目のidが正しい値であること")
-            XCTAssertEqual("気になる一皿シリーズNo.1", firstViewObject?.title, "1番目のtitleが正しい値であること")
-        })
+        }
+
+        describe("#Favorite画面表示が失敗する場合のテストケース") {
+            let store = Store(
+                reducer: appReducer,
+                state: AppState(),
+                middlewares: []
+            )
+            var favoriteStateRecorder: Recorder<AppState, Never>!
+            context("#Favorite画面で表示するデータ取得処理が失敗した場合") {
+                beforeEach {
+                    favoriteStateRecorder = store.$state.record()
+                }
+                afterEach {
+                    favoriteStateRecorder = nil
+                }
+                store.dispatch(action: FailureFavoriteAction())
+                it("favoriteStateのisErrorがtrueとなること") {
+                    let favoriteStateRecorderResult = try! self.wait(for: favoriteStateRecorder.availableElements, timeout: 0.16)
+                    let targetResult = favoriteStateRecorderResult.last!
+                    let favoriteState = targetResult.favoriteState
+                    let isError = favoriteState.isError
+                    expect(isError).to(equal(true))
+                }
+            }
+        }
     }
 
-    // MARK: - Function (test_FailureFavoriteResponse)
+    // MARK: - Private Function
 
-    // 👉 取得したレスポンスがHomeState内のPropertyに反映されることを確認する(Errorの確認)
-    func test_FailureFavoriteResponse() throws {
-        let store = Store(
-            reducer: appReducer,
-            state: AppState(),
-            middlewares: [
-                favoriteMockFailureMiddleware()
-            ]
-        )
-        var targetIsError: Bool?
-        let beforeTestState = store.state
-        let expectationFavoriteFailure = self.expectation(description: "Expect to get Error.")
-        let _ = store.$state.sink(receiveValue: { changedState in
-            if beforeTestState.favoriteState.isError != changedState.favoriteState.isError {
-                targetIsError = changedState.favoriteState.isError
-                expectationFavoriteFailure.fulfill()
-            }
-        }).store(in: &cancellables)
-        store.dispatch(action: RequestFavoriteAction())
-        waitForExpectations(timeout: 2.0, handler: { _ in
-            XCTAssertEqual(true, targetIsError)
-        })
+    private func getFavoriteSceneEntities() -> [FavoriteSceneEntity] {
+        guard let path = Bundle.main.path(forResource: "favorite_scenes", ofType: "json") else {
+            fatalError()
+        }
+        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
+            fatalError()
+        }
+        guard let result = try? JSONDecoder().decode([FavoriteSceneEntity].self, from: data) else {
+            fatalError()
+        }
+        return result
     }
 }

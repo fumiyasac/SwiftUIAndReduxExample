@@ -58,7 +58,7 @@ final class HomeStateTest: QuickSpec {
                     let homeStateRecorderResult = try! self.wait(for: homeStateRecorder.availableElements, timeout: 0.16)
                     // 0.16秒間の変化を見て、最後の値が変化していることを確認する
                     let targetResult = homeStateRecorderResult.last!
-                    //] 👉 特徴的なテストケースをいくつか準備する（このテストコードで返却されるのは仮のデータではあるものの該当Stateにマッピングされる想定）
+                    // 👉 特徴的なテストケースをいくつか準備する（このテストコードで返却されるのは仮のデータではあるものの該当Stateにマッピングされる想定）
                     let homeState = targetResult.homeState
                     // (1) CampaignBannerCarouselViewObject
                     let campaignBannerCarouselViewObjects = homeState.campaignBannerCarouselViewObjects
