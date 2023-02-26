@@ -9,68 +9,160 @@
 
 import XCTest
 import Combine
+import CombineExpectations
+import Nimble
+import Quick
 
-final class ProfileStateTest: XCTestCase {
+// MEMO: CombineExpectationsを利用してUnitTestを作成する
+// https://github.com/groue/CombineExpectations#usage
 
-    // stateの格納先が @Published なので購読のキャンセルができる様にしておく
-    private var cancellables: [AnyCancellable] = []
+final class ProfileStateTest: QuickSpec {
 
-    // MARK: - Function (test_SuccessProfileResponse)
+    // MARK: - Override
 
-    // 👉 取得したレスポンスがFavoriteState内のPropertyに反映されることを確認する(FavoritePhotosCardViewObjectの確認)
-    func test_SuccessProfileResponse_FavoritePhotosCardViewObjects() throws {
-        // MEMO: Mock用のMiddlewareを適用したStoreを用意する
-        let store = Store(
-            reducer: appReducer,
-            state: AppState(),
-            middlewares: [
-                profileMockSuccessMiddleware()
-            ]
-        )
-        // MEMO: Storeから取得できたデータを格納するための変数
-        var targetProfilePersonalViewObject: ProfilePersonalViewObject?
-        // MEMO: テスト前状態のState値を作る
-        let beforeTestState = store.state
-        // MEMO: Combineの処理を利用した形でActionが発行された場合での値変化を監視する
-        let expectationProfileSuccess = self.expectation(description: "Expect to get ProfilePersonalViewObject.")
-        let _ = store.$state.sink(receiveValue: { changedState in
-            if beforeTestState.profileState.profilePersonalViewObject != changedState.profileState.profilePersonalViewObject {
-                targetProfilePersonalViewObject = changedState.profileState.profilePersonalViewObject
-                expectationProfileSuccess.fulfill()
+    override func spec() {
+
+        // MEMO: Quick+NimbleをベースにしたUnitTestを実行する
+        // ※注意: Middlewareを直接適用するのではなく、Middlewareで起こるActionに近い形を作ることにしています。
+        describe("#Profile画面表示が成功する場合のテストケース") {
+            // 👉 storeをインスタンス化する際に、想定するMiddlewareのMockを適用する
+            let store = Store(
+                reducer: appReducer,
+                state: AppState(),
+                middlewares: []
+            )
+            // CombineExpectationを利用してAppStateの変化を記録するようにしたい
+            // 👉 このサンプルではAppStateで`@Published`を利用しているので、AppStateを記録対象とする
+            var profileStateRecorder: Recorder<AppState, Never>!
+            context("表示するデータ取得処理が成功する場合") {
+                beforeEach {
+                    profileStateRecorder = store.$state.record()
+                }
+                afterEach {
+                    profileStateRecorder = nil
+                }
+                // 👉 Middlewareで実行するAPIリクエストが成功した際に想定されるActionを発行する
+                store.dispatch(
+                    action: SuccessProfileAction(
+                        profilePersonalEntity: getProfilePersonalEntity(),
+                        profileAnnoucementEntities: getProfileAnnoucementEntities(),
+                        profileCommentEntities: getProfileCommentEntities(),
+                        profileRecentFavoriteEntities: getProfileRecentFavoriteEntities()
+                    )
+                )
+                // 対象のState値が変化することを確認する
+                // ※profileStateはImmutable / Recorderで対象秒間における値変化を全て保持している
+                it("profileStateに想定している値が格納された状態であること") {
+                    // timeout部分で0.16秒後の変化を見る
+                    let profileStateRecorderResult = try! self.wait(for: profileStateRecorder.availableElements, timeout: 0.16)
+                    // 0.16秒間の変化を見て、最後の値が変化していることを確認する
+                    let targetResult = profileStateRecorderResult.last!
+                    // 👉 特徴的なテストケースをいくつか準備する（このテストコードで返却されるのは仮のデータではあるものの該当Stateにマッピングされる想定）
+                    let profileState = targetResult.profileState
+                    // (1) ProfilePersonalViewObject
+                    let profilePersonalViewObject = profileState.profilePersonalViewObject
+                    // ユーザーIDが正しい値であること
+                    expect(profilePersonalViewObject?.id).to(equal(100))
+                    // ユーザーのニックネームが正しい値であること
+                    expect(profilePersonalViewObject?.nickname).to(equal("謎多き料理人"))
+                    // 登録日が正しい値であること
+                    expect(profilePersonalViewObject?.createdAt).to(equal("2022.11.16"))
+                    // アバターのURLが正しい値であること
+                    expect(profilePersonalViewObject?.avatarUrl?.absoluteString)
+                        .to(equal("https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/profile_avatar_sample.jpg"))
+                    // (2) ProfileSelfIntroductionViewObject
+                    let profileSelfIntroductionViewObject = profileState.profileSelfIntroductionViewObject
+                    expect(profileSelfIntroductionViewObject?.introduction)
+                        .to(equal("普段は東京でイタリアンレストランのシェフをしていますが、その傍らで自宅でも美味しく食べられる本格イタリアンデザート等のプロデュース等も手掛けております。普段は仕事が忙しいのもあって外食が多くなりがちではあるので、ジャンル問わずに幅広く食べ歩くのが趣味です。ただ最近は運動不足もあってちょっと体重が増えかけているので、自分でもヘルシーな食事を心がけたり、お酒を控えめにしています。よろしくお願いします。"))
+                    // (3) ProfileInformationViewObject
+                    let profileInformationViewObject = profileState.profileInformationViewObject
+                    // profileAnnoucementViewObjectsの登録件数が5件であること
+                    expect(profileInformationViewObject?.profileAnnoucementViewObjects.count).to(equal(5))
+                    // profileCommentViewObjectsの登録件数が5件であること
+                    expect(profileInformationViewObject?.profileCommentViewObjects.count).to(equal(5))
+                    // profileRecentFavoriteViewObjectsの登録件数が5件であること
+                    expect(profileInformationViewObject?.profileRecentFavoriteViewObjects.count).to(equal(5))
+                }
             }
-        }).store(in: &cancellables)
-        store.dispatch(action: RequestProfileAction())
-        waitForExpectations(timeout: 2.0, handler: { _ in
-            // Example: 総数と最初の内容ぐらいは確認しておくと良さそうに思います。
-            XCTAssertEqual(100, targetProfilePersonalViewObject?.id, "ユーザーIDが正しい値であること")
-            XCTAssertEqual("謎多き料理人", targetProfilePersonalViewObject?.nickname, "ユーザーのニックネームが正しい値であること")
-            XCTAssertEqual("2022.11.16", targetProfilePersonalViewObject?.createdAt, "登録日が正しい値であること")
-            XCTAssertEqual("https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/profile_avatar_sample.jpg", targetProfilePersonalViewObject?.avatarUrl?.absoluteString, "アバターのURLが正しい値であること")
-        })
+        }
+
+        describe("#Profile画面表示が失敗する場合のテストケース") {
+            let store = Store(
+                reducer: appReducer,
+                state: AppState(),
+                middlewares: []
+            )
+            var profileStateRecorder: Recorder<AppState, Never>!
+            context("画面で表示するデータ取得処理が失敗した場合") {
+                beforeEach {
+                    profileStateRecorder = store.$state.record()
+                }
+                afterEach {
+                    profileStateRecorder = nil
+                }
+                store.dispatch(action: FailureProfileAction())
+                it("profileStateRecorderのisErrorがtrueとなること") {
+                    let profileStateRecorderResult = try! self.wait(for: profileStateRecorder.availableElements, timeout: 0.16)
+                    let targetResult = profileStateRecorderResult.last!
+                    let profileState = targetResult.profileState
+                    let isError = profileState.isError
+                    expect(isError).to(equal(true))
+                }
+            }
+        }
     }
 
-    // MARK: - Function (test_FailureProfileResponse)
-    // 👉 取得したレスポンスがProfileState内のPropertyに反映されることを確認する(Errorの確認)
-    func test_FailureProfileResponse() throws {
-        let store = Store(
-            reducer: appReducer,
-            state: AppState(),
-            middlewares: [
-                profileMockFailureMiddleware()
-            ]
-        )
-        var targetIsError: Bool?
-        let beforeTestState = store.state
-        let expectationProfileFailure = self.expectation(description: "Expect to get Error.")
-        let _ = store.$state.sink(receiveValue: { changedState in
-            if beforeTestState.profileState.isError != changedState.profileState.isError {
-                targetIsError = changedState.profileState.isError
-                expectationProfileFailure.fulfill()
-            }
-        }).store(in: &cancellables)
-        store.dispatch(action: RequestProfileAction())
-        waitForExpectations(timeout: 2.0, handler: { _ in
-            XCTAssertEqual(true, targetIsError)
-        })
+    // MARK: - Private Function
+
+    private func getProfilePersonalEntity() -> ProfilePersonalEntity {
+        guard let path = Bundle.main.path(forResource: "profile_personal", ofType: "json") else {
+            fatalError()
+        }
+        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
+            fatalError()
+        }
+        guard let result = try? JSONDecoder().decode(ProfilePersonalEntity.self, from: data) else {
+            fatalError()
+        }
+        return result
+    }
+
+    private func getProfileAnnoucementEntities() -> [ProfileAnnoucementEntity] {
+        guard let path = Bundle.main.path(forResource: "profile_announcement", ofType: "json") else {
+            fatalError()
+        }
+        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
+            fatalError()
+        }
+        guard let result = try? JSONDecoder().decode([ProfileAnnoucementEntity].self, from: data) else {
+            fatalError()
+        }
+        return result
+    }
+
+    private func getProfileCommentEntities() -> [ProfileCommentEntity] {
+        guard let path = Bundle.main.path(forResource: "profile_comment", ofType: "json") else {
+            fatalError()
+        }
+        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
+            fatalError()
+        }
+        guard let result = try? JSONDecoder().decode([ProfileCommentEntity].self, from: data) else {
+            fatalError()
+        }
+        return result
+    }
+
+    private func getProfileRecentFavoriteEntities() -> [ProfileRecentFavoriteEntity] {
+        guard let path = Bundle.main.path(forResource: "profile_recent_favorite", ofType: "json") else {
+            fatalError()
+        }
+        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
+            fatalError()
+        }
+        guard let result = try? JSONDecoder().decode([ProfileRecentFavoriteEntity].self, from: data) else {
+            fatalError()
+        }
+        return result
     }
 }

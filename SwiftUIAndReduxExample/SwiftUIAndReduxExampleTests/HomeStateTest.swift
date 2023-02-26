@@ -89,7 +89,7 @@ final class HomeStateTest: QuickSpec {
                 middlewares: []
             )
             var homeStateRecorder: Recorder<AppState, Never>!
-            context("#Home画面で表示するデータ取得処理が失敗した場合") {
+            context("画面で表示するデータ取得処理が失敗した場合") {
                 beforeEach {
                     homeStateRecorder = store.$state.record()
                 }

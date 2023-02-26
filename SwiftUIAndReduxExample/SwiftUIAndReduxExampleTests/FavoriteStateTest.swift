@@ -76,7 +76,7 @@ final class FavoriteStateTest: QuickSpec {
                 middlewares: []
             )
             var favoriteStateRecorder: Recorder<AppState, Never>!
-            context("#Favorite画面で表示するデータ取得処理が失敗した場合") {
+            context("画面で表示するデータ取得処理が失敗した場合") {
                 beforeEach {
                     favoriteStateRecorder = store.$state.record()
                 }
