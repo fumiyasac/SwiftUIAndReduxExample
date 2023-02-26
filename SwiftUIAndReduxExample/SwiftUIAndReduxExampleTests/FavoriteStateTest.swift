@@ -50,7 +50,7 @@ final class FavoriteStateTest: QuickSpec {
                 // 対象のState値が変化することを確認する
                 // ※ favoriteStateはImmutable / Recorderで対象秒間における値変化を全て保持している
                 it("favoriteStateに想定している値が格納された状態であること") {
-                    // timeout部分で0.16秒後の変化を見る（※async/await処理の場合は0.16秒ぐらいを見る）
+                    // timeout部分で0.16秒後の変化を見る
                     let favoriteStateRecorderResult = try! self.wait(for: favoriteStateRecorder.availableElements, timeout: 0.16)
                     // 0.16秒間の変化を見て、最後の値が変化していることを確認する
                     let targetResult = favoriteStateRecorderResult.last!

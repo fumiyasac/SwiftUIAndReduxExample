@@ -21,6 +21,7 @@ final class OnboardingStateTest: QuickSpec {
     // MARK: - Override
 
     override func spec() {
+
         // MEMO: Quick+NimbleをベースにしたUnitTestを実行する
         describe("#オンボーディング表示対象時のテストケース") {
             // 👉 storeをインスタンス化する際に、想定するMiddlewareのMockを適用する
@@ -49,7 +50,7 @@ final class OnboardingStateTest: QuickSpec {
                 // 対象のState値が変化することを確認する
                 // ※ onboardingStateはImmutable / Recorderで対象秒間における値変化を全て保持している
                 it("showOnboardingがtrueであること") {
-                    // timeout部分で0.16秒後の変化を見る（※async/await処理の場合は1.00秒ぐらいを見る）
+                    // timeout部分で0.16秒後の変化を見る
                     let onboardingStateRecorderResult = try! self.wait(for: onboardingStateRecorder.availableElements, timeout: 0.16)
                     // 0.16秒間の変化を見て、最後の値が変化していることを確認する
                     let targetResult = onboardingStateRecorderResult.last!
