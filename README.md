@@ -79,6 +79,82 @@ __【TCA（The Composable Architecture）とRedux比較した際の所感等】_
 
 ※ React.jsでも利用されている様なReduxの処理機構を、SwiftUIで表現した様なイメージで作成しています。
 
+__【このUIサンプル実装におけるStore部分の実装】__
+
+各画面に対応するStateを集約している`AppState（ReduxStateプロトコル準拠）`の部分については、`@Published`で定義しています。
+
+<details>
+<summary>Store.swiftの実装コード</summary>
+
+```swift
+import Foundation
+
+// MEMO: Store部分はasync/awaitで書くなら、MainActorで良いんじゃないかという仮説
+// https://developer.apple.com/forums/thread/690957
+
+// FYI: 他にも全体的にCombineを利用した書き方も可能 (※他にも事例は探してみると面白そう)
+// https://wojciechkulik.pl/ios/redux-architecture-and-mind-blowing-features
+// https://kazaimazai.com/redux-in-ios/
+// https://www.raywenderlich.com/22096649-getting-a-redux-vibe-into-swiftui
+
+// MARK: - Typealias
+
+// 👉 Dispatcher・Reducer・Middlewareのtypealiasを定義する
+// ※おそらくエッセンスとしてはReact等の感じに近くなるイメージとなる
+typealias Dispatcher = (Action) -> Void
+typealias Reducer<State: ReduxState> = (_ state: State, _ action: Action) -> State
+typealias Middleware<StoreState: ReduxState> = (StoreState, Action, @escaping Dispatcher) -> Void
+
+// MARK: - Protocol
+
+protocol ReduxState {}
+
+protocol Action {}
+
+// MARK: - Store
+
+final class Store<StoreState: ReduxState>: ObservableObject {
+
+    // MARK: - Property
+    @Published private(set) var state: StoreState
+    private var reducer: Reducer<StoreState>
+    private var middlewares: [Middleware<StoreState>]
+
+    // MARK: - Initialzer
+    init(
+        reducer: @escaping Reducer<StoreState>,
+        state: StoreState,
+        middlewares: [Middleware<StoreState>] = []
+    ) {
+        self.reducer = reducer
+        self.state = state
+        self.middlewares = middlewares
+    }
+
+    // MARK: - Function
+    func dispatch(action: Action) {
+
+        // MEMO: Actionを発行するDispatcherの定義
+        // 👉 新しいstateに差し替える処理については、メインスレッドで操作したいのでMainActor内で実行する
+        Task { @MainActor in
+            self.state = reducer(
+                self.state,
+                action
+            )
+        }
+
+        // MEMO: 利用する全てのMiddlewareを適用
+        // 補足: MiddlewareにAPI通信処理等を全て寄せずに実装したい場合には別途ActionCreatorの様なStructを用意する方法もある
+        // https://qiita.com/fumiyasac@github/items/f25465a955afdcb795a2
+        middlewares.forEach { middleware in
+            middleware(state, action, dispatch)
+        }
+    }
+}
+```
+
+</details>
+
 ### 3-1. 全体像の概略図
 
 ![本サンプルで利用しているReduxの概要図と処理フロー](https://github.com/fumiyasac/SwiftUIAndReduxExample/blob/main/images/3-1-fundamental_of_redux.png)
@@ -235,3 +311,312 @@ __【package.json設定例】__
 今回は1つの画面内に複数Sectionが入るものやUI実装イメージが湧きにくいものに加えて、API関連処理部分でasync/awaitを利用することもあったので、自分が __「ここはハマりそうかも...?」__ や __「UIの形や表現を自分の言葉でまとめておこう」__ と感じた部分を中心にメモとして残しています。
 
 ![各種画面に関する構想やasync/awaitを利用した並列処理に関連するメモ](https://github.com/fumiyasac/SwiftUIAndReduxExample/blob/main/images/design_memo.png)
+
+## 7. UnitTestに関する補足
+
+[Quick](https://github.com/Quick/Quick) / [Nimble](https://github.com/Quick/Nimble) / [CombineExpectations](https://github.com/groue/CombineExpectations) を利用し、__「初期State → Action発行 → API処理が伴う部分ではMiddleware処理実行時に準ずるActionを発行 → 新規State」__ とすることで、Reducerでの処理が正しく実行されているかを見る方針としました。
+
+また、各画面に対応するStateをまとめて管理しているAppStateは`@Published`で定義されているため、下記の様な形で値変化をキャッチする点がポイントになるかと思います。
+
+__【Case1: Home画面でのテスト例】__
+
+<details>
+<summary>HomeStateTest.swiftの実装コード</summary>
+
+```swift
+final class HomeStateTest: QuickSpec {
+
+    // MARK: - Override
+
+    override func spec() {
+
+        // MEMO: Quick+NimbleをベースにしたUnitTestを実行する
+        // ※注意: Middlewareを直接適用するのではなく、Middlewareで起こるActionに近い形を作ることにしています。
+        describe("#Home画面表示が成功する場合のテストケース") {
+            // 👉 storeをインスタンス化する際に、想定するMiddlewareのMockを適用する
+            let store = Store(
+                reducer: appReducer,
+                state: AppState(),
+                middlewares: []
+            )
+            // CombineExpectationを利用してAppStateの変化を記録するようにしたい
+            // 👉 このサンプルではAppStateで`@Published`を利用しているので、AppStateを記録対象とする
+            var homeStateRecorder: Recorder<AppState, Never>!
+            context("表示するデータ取得処理が成功する場合") {
+                beforeEach {
+                    homeStateRecorder = store.$state.record()
+                }
+                afterEach {
+                    homeStateRecorder = nil
+                }
+                // 👉 Middlewareで実行するAPIリクエストが成功した際に想定されるActionを発行する
+                store.dispatch(
+                    action: SuccessHomeAction(
+                        campaignBannerEntities: getCampaignBannerEntities(),
+                        recentNewsEntities: getRecentNewsRecentNewsEntities(),
+                        featuredTopicEntities: getFeaturedTopicEntities(),
+                        trendArticleEntities: getTrendArticleEntities(),
+                        pickupPhotoEntities: getPickupPhotoEntities()
+                    )
+                )
+                // 対象のState値が変化することを確認する
+                // ※ homeStateはImmutable / Recorderで対象秒間における値変化を全て保持している
+                it("homeStateに想定している値が格納された状態であること") {
+                    // timeout部分で0.16秒後の変化を見る（※async/await処理の場合は0.16秒ぐらいを見る）
+                    let homeStateRecorderResult = try! self.wait(for: homeStateRecorder.availableElements, timeout: 0.16)
+                    // 0.16秒間の変化を見て、最後の値が変化していることを確認する
+                    let targetResult = homeStateRecorderResult.last!
+                    // 👉 特徴的なテストケースをいくつか準備する（このテストコードで返却されるのは仮のデータではあるものの該当Stateにマッピングされる想定）
+                    let homeState = targetResult.homeState
+                    // (1) CampaignBannerCarouselViewObject
+                    let campaignBannerCarouselViewObjects = homeState.campaignBannerCarouselViewObjects
+                    let firstCampaignBannerCarouselViewObject = campaignBannerCarouselViewObjects.first
+                    // 季節の特集コンテンツ一覧は合計6件取得できること
+                    expect(campaignBannerCarouselViewObjects.count).to(equal(6))
+                    // 1番目のidが正しい値であること
+                    expect(firstCampaignBannerCarouselViewObject?.id).to(equal(1))
+                    // 1番目のbannerContentsIdが正しい値であること
+                    expect(firstCampaignBannerCarouselViewObject?.bannerContentsId).to(equal(1001))
+                    // (2) RecentNewsCarouselViewObject
+                    let recentNewsCarouselViewObjects = homeState.recentNewsCarouselViewObjects
+                    let lastCampaignBannerCarouselViewObject = recentNewsCarouselViewObjects.last
+                    // 最新のお知らせは合計12件取得できること
+                    expect(recentNewsCarouselViewObjects.count).to(equal(12))
+                    // 最後のidが正しい値であること
+                    expect(lastCampaignBannerCarouselViewObject?.id).to(equal(12))
+                    // 最後のtitleが正しい値であること
+                    expect(lastCampaignBannerCarouselViewObject?.title).to(equal("美味しいみかんの年末年始の対応について"))
+                }
+            }
+        }
+
+        describe("#Home画面表示が失敗する場合のテストケース") {
+            let store = Store(
+                reducer: appReducer,
+                state: AppState(),
+                middlewares: []
+            )
+            var homeStateRecorder: Recorder<AppState, Never>!
+            context("#Home画面で表示するデータ取得処理が失敗した場合") {
+                beforeEach {
+                    homeStateRecorder = store.$state.record()
+                }
+                afterEach {
+                    homeStateRecorder = nil
+                }
+                store.dispatch(action: FailureHomeAction())
+                it("homeStateのisErrorがtrueとなること") {
+                    let homeStateRecorderResult = try! self.wait(for: homeStateRecorder.availableElements, timeout: 0.16)
+                    let targetResult = homeStateRecorderResult.last!
+                    let homeState = targetResult.homeState
+                    let isError = homeState.isError
+                    expect(isError).to(equal(true))
+                }
+            }
+        }
+    }
+
+    // MARK: - Private Function
+
+    private func getCampaignBannerEntities() -> [CampaignBannerEntity] {
+        guard let path = Bundle.main.path(forResource: "campaign_banners", ofType: "json") else {
+            fatalError()
+        }
+        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
+            fatalError()
+        }
+        guard let result = try? JSONDecoder().decode([CampaignBannerEntity].self, from: data) else {
+            fatalError()
+        }
+        return result
+    }
+
+    private func getRecentNewsRecentNewsEntities() -> [RecentNewsEntity] {
+        guard let path = Bundle.main.path(forResource: "recent_news", ofType: "json") else {
+            fatalError()
+        }
+        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
+            fatalError()
+        }
+        guard let result = try? JSONDecoder().decode([RecentNewsEntity].self, from: data) else {
+            fatalError()
+        }
+        return result
+    }
+
+    private func getFeaturedTopicEntities() -> [FeaturedTopicEntity] {
+        guard let path = Bundle.main.path(forResource: "featured_topics", ofType: "json") else {
+            fatalError()
+        }
+        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
+            fatalError()
+        }
+        guard let result = try? JSONDecoder().decode([FeaturedTopicEntity].self, from: data) else {
+            fatalError()
+        }
+        return result
+    }
+
+    private func getTrendArticleEntities() -> [TrendArticleEntity] {
+        guard let path = Bundle.main.path(forResource: "trend_articles", ofType: "json") else {
+            fatalError()
+        }
+        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
+            fatalError()
+        }
+        guard let result = try? JSONDecoder().decode([TrendArticleEntity].self, from: data) else {
+            fatalError()
+        }
+        return result
+    }
+
+    private func getPickupPhotoEntities() -> [PickupPhotoEntity] {
+        guard let path = Bundle.main.path(forResource: "pickup_photos", ofType: "json") else {
+            fatalError()
+        }
+        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
+            fatalError()
+        }
+        guard let result = try? JSONDecoder().decode([PickupPhotoEntity].self, from: data) else {
+            fatalError()
+        }
+        return result
+    }
+}
+```
+
+</details>
+
+__【Case2: Archive画面でのテスト例】__
+
+<details>
+<summary>ArchiveStateTest.swiftの実装コード</summary>
+
+```swift
+final class ArchiveStateTest: QuickSpec {
+    
+    // MARK: - Override
+    
+    override func spec() {
+        
+        // MEMO: Quick+NimbleをベースにしたUnitTestを実行する
+        // ※注意: Middlewareを直接適用するのではなく、Middlewareで起こるActionに近い形を作ることにしています。
+        describe("#Archive画面表示が成功する場合のテストケース") {
+            // 👉 storeをインスタンス化する際に、想定するMiddlewareのMockを適用する
+            let store = Store(
+                reducer: appReducer,
+                state: AppState(),
+                middlewares: []
+            )
+            // CombineExpectationを利用してAppStateの変化を記録するようにしたい
+            // 👉 このサンプルではAppStateで`@Published`を利用しているので、AppStateを記録対象とする
+            var archiveStateRecorder: Recorder<AppState, Never>!
+            context("表示するデータ取得処理が成功する場合") {
+                beforeEach {
+                    archiveStateRecorder = store.$state.record()
+                }
+                afterEach {
+                    archiveStateRecorder = nil
+                }
+                // 👉 Middlewareで実行するAPIリクエストが成功した際に想定されるActionを発行する
+                // 手順1: 検索キーワードとカテゴリーを選択する
+                let keyword = "チーズ"
+                let category = "洋食"
+                store.dispatch(
+                    action: RequestArchiveWithInputTextAction(inputText: keyword)
+                )
+                store.dispatch(
+                    action: RequestArchiveWithSelectedCategoryAction(selectedCategory: category)
+                )
+                var archiveSceneEntities = getArchiveSceneEntities()
+                archiveSceneEntities = archiveSceneEntities.filter {
+                    $0.category == category
+                }
+                archiveSceneEntities = archiveSceneEntities.filter {
+                    $0.dishName.contains(keyword) || $0.shopName.contains(keyword)  || $0.introduction.contains(keyword)
+                }
+                // 手順2: 登録されているIDの一覧を設定する
+                let storedIds = [17, 33]
+                store.dispatch(
+                    action: SuccessArchiveAction(
+                        archiveSceneEntities: archiveSceneEntities,
+                        storedIds: storedIds
+                    )
+                )
+                // 対象のState値が変化することを確認する
+                // ※ archiveStateはImmutable / Recorderで対象秒間における値変化を全て保持している
+                it("archiveStateに想定している値が格納された状態であること") {
+                    // timeout部分で0.16秒後の変化を見る
+                    let archiveStateRecorderResult = try! self.wait(for: archiveStateRecorder.availableElements, timeout: 0.16)
+                    // 0.16秒間の変化を見て、最後の値が変化していることを確認する
+                    let targetResult = archiveStateRecorderResult.last!
+                    // 👉 特徴的なテストケースをいくつか準備する（このテストコードで返却されるのは仮のデータではあるものの該当Stateにマッピングされる想定）
+                    let archiveState = targetResult.archiveState
+                    // archiveCellViewObjects / inputText / selectedCategory
+                    let archiveCellViewObjects = archiveState.archiveCellViewObjects
+                    let inputText = archiveState.inputText
+                    let selectedCategory = archiveState.selectedCategory
+                    // archiveStateのPropertyへ入力値＆選択値が反映されていること
+                    expect(inputText).to(equal("チーズ"))
+                    expect(selectedCategory).to(equal("洋食"))
+                    // Archive用コンテンツ一覧は合計2件取得できること
+                    expect(archiveCellViewObjects.count).to(equal(2))
+                    let firstArchiveCellViewObject = archiveCellViewObjects[0]
+                    let secondArchiveCellViewObject = archiveCellViewObjects[1]
+                    // (1) firstArchiveCellViewObject
+                    expect(firstArchiveCellViewObject.id).to(equal(17))
+                    expect(firstArchiveCellViewObject.dishName).to(equal("熱々が嬉しいマカロニグラタン"))
+                    expect(firstArchiveCellViewObject.isStored).to(equal(true))
+                    // (2) secondArchiveCellViewObject
+                    expect(secondArchiveCellViewObject.id).to(equal(33))
+                    expect(secondArchiveCellViewObject.dishName).to(equal("シーフードミックスピザ"))
+                    expect(secondArchiveCellViewObject.isStored).to(equal(true))
+                }
+            }
+        }
+
+        describe("#Archive画面表示が失敗する場合のテストケース") {
+            let store = Store(
+                reducer: appReducer,
+                state: AppState(),
+                middlewares: []
+            )
+            var archiveStateRecorder: Recorder<AppState, Never>!
+            context("画面で表示するデータ取得処理が失敗した場合") {
+                beforeEach {
+                    archiveStateRecorder = store.$state.record()
+                }
+                afterEach {
+                    archiveStateRecorder = nil
+                }
+                store.dispatch(action: FailureArchiveAction())
+                it("archiveStateのisErrorがtrueとなること") {
+                    let archiveStateRecorderResult = try! self.wait(for: archiveStateRecorder.availableElements, timeout: 0.16)
+                    let targetResult = archiveStateRecorderResult.last!
+                    let archiveState = targetResult.archiveState
+                    let isError = archiveState.isError
+                    expect(isError).to(equal(true))
+                }
+            }
+        }
+        
+    }
+
+    // MARK: - Private Function
+
+    private func getArchiveSceneEntities() -> [ArchiveSceneEntity] {
+        guard let path = Bundle.main.path(forResource: "achive_images", ofType: "json") else {
+            fatalError()
+        }
+        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
+            fatalError()
+        }
+        guard let result = try? JSONDecoder().decode([ArchiveSceneEntity].self, from: data) else {
+            fatalError()
+        }
+        return result
+    }
+}
+```
+
+</details>
