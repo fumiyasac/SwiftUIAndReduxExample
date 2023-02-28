@@ -620,3 +620,12 @@ final class ArchiveStateTest: QuickSpec {
 ```
 
 </details>
+
+## 8. Repository層及びMiddleware層で適用するMockに関する補足
+
+Preview画面では、API通信部分やデータ永続化が関係するMiddleware層（あるいはRepository層）の処理については、実際の振る舞いを模したMock用のクラスを適用しています。
+
+### 8-1. Repository層のMock定義例
+
+### 8-2. Repository層のMockを適用したMiddlewareとStoreへの適用
+
