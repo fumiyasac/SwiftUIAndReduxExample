@@ -627,5 +627,331 @@ Preview画面では、API通信部分やデータ永続化が関係するMiddlew
 
 ### 8-1. Repository層のMock定義例
 
+実際にAPI処理を実行させる形でもこのサンプル実装においては差し支えはありませんが、各種UI要素におけるPreview画面や実機検証の際に利用するビルドターゲット`SwiftUIAndReduxExampleMockApi`では下記の様な形でMock処理を使う様にしています。
+
+__【Case1: API通信部分のMock例】__
+
+<details>
+<summary>Mock込みのRequestArchiveRepository.swift実装コード</summary>
+
+```swift
+// MARK: - Protocol
+
+protocol RequestArchiveRepository {
+    func getArchiveResponse(keyword: String, category: String) async throws -> ArchiveResponse
+}
+
+final class RequestArchiveRepositoryImpl: RequestArchiveRepository {
+
+    // MARK: - Function
+
+    // 👉 検索キーワードと選択カテゴリーに合致する一覧データ取得APIリクエスト処理を実行する
+
+    func getArchiveResponse(keyword: String, category: String) async throws -> ArchiveResponse {
+        return try await ApiClientManager.shared.getAchiveImages(keyword: keyword, category: category)
+    }
+}
+
+// MARK: - MockSuccessRequestArchiveRepositoryImpl
+
+final class MockSuccessRequestArchiveRepositoryImpl: RequestArchiveRepository {
+
+    // MARK: - Function
+
+    // 👉 実際にAPIリクエスト処理で実行される処理に相当するものをMockで再現する
+
+    func getArchiveResponse(keyword: String, category: String) async throws -> ArchiveResponse {
+        // 第2引数で与えられるcategoryと全く同じ値であるものだけを取り出す
+        // 第1引数で与えられるkeywordが(dishName / shopName / introduction)いずれかに含まれるものだけを取り出す
+        var filteredResult = getArchiveSceneResponse().result
+        if !category.isEmpty {
+            filteredResult = filteredResult.filter { $0.category == category }
+        }
+        if !keyword.isEmpty {
+            filteredResult = filteredResult.filter { $0.dishName.contains(keyword) || $0.shopName.contains(keyword)  || $0.introduction.contains(keyword) }
+        }
+        return ArchiveSceneResponse(result: filteredResult)
+    }
+
+    // MARK: - Private Function
+
+    private func getArchiveSceneResponse() -> ArchiveSceneResponse {
+        guard let path = Bundle.main.path(forResource: "achive_images", ofType: "json") else {
+            fatalError()
+        }
+        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
+            fatalError()
+        }
+        guard let result = try? JSONDecoder().decode([ArchiveSceneEntity].self, from: data) else {
+            fatalError()
+        }
+        return ArchiveSceneResponse(result: result)
+    }
+}
+```
+
+</details>
+
+__【Case2: データ永続化部分のMock例】__
+
+<details>
+<summary>Mock込みのStoredArchiveDataRepository.swift実装コード</summary>
+
+```swift
+// MARK: - Protocol
+
+protocol StoredArchiveDataRepository {
+    func getAllObjectsFromRealm() -> [StockArchiveRealmEntity]
+    func createToRealm(archiveCellViewObject: ArchiveCellViewObject)
+    func deleteFromRealm(archiveCellViewObject: ArchiveCellViewObject)
+}
+
+final class StoredArchiveDataRepositoryImpl: StoredArchiveDataRepository {
+
+    // MARK: - Function
+
+    // 👉 Realmから全件取得処理・Realmへの1件追加・1件削除処理を実行する
+
+    func getAllObjectsFromRealm() -> [StockArchiveRealmEntity] {
+        if let stockArchiveRealmEntities = RealmAccessManager.shared.getAllObjects(StockArchiveRealmEntity.self) {
+            return stockArchiveRealmEntities.map { $0 }
+        } else {
+            return []
+        }
+    }
+
+    func createToRealm(archiveCellViewObject: ArchiveCellViewObject) {
+        let stockArchiveRealmEntity = convertToRealmObject(archiveCellViewObject: archiveCellViewObject)
+        RealmAccessManager.shared.saveStockArchiveRealmEntity(stockArchiveRealmEntity)
+    }
+
+    func deleteFromRealm(archiveCellViewObject: ArchiveCellViewObject) {
+        if let stockArchiveRealmEntities = RealmAccessManager.shared.getAllObjects(StockArchiveRealmEntity.self),
+           let stockArchiveRealmEntity = stockArchiveRealmEntities.map({ $0 }).filter({ $0.id == archiveCellViewObject.id }).first
+        {
+            RealmAccessManager.shared.deleteStockArchiveRealmEntity(stockArchiveRealmEntity)
+        } else {
+            fatalError("削除対象のデータは登録されていませんでした。")
+        }
+    }
+
+    // MARK: - Private Function
+
+    private func convertToRealmObject(archiveCellViewObject: ArchiveCellViewObject) -> StockArchiveRealmEntity {
+        let realmObject = StockArchiveRealmEntity()
+        realmObject.id = archiveCellViewObject.id
+        realmObject.photoUrl = archiveCellViewObject.photoUrl?.absoluteString ?? ""
+        realmObject.category = archiveCellViewObject.category
+        realmObject.dishName = archiveCellViewObject.dishName
+        realmObject.shopName = archiveCellViewObject.shopName
+        realmObject.introduction = archiveCellViewObject.introduction
+        return realmObject
+    }
+}
+
+final class MockStoredArchiveDataRepositoryImpl: StoredArchiveDataRepository {
+
+    // MARK: - Function
+
+    // 👉 実際にデータ永続化処理で実行される処理に相当するものをMockで再現する
+
+    func getAllObjectsFromRealm() -> [StockArchiveRealmEntity] {
+        return RealmMockAccessManager.shared.mockDataStore.values.map({ $0 })
+    }
+
+    func createToRealm(archiveCellViewObject: ArchiveCellViewObject) {
+        RealmMockAccessManager.shared.mockDataStore[archiveCellViewObject.id] = convertToRealmObject(archiveCellViewObject: archiveCellViewObject)
+    }
+
+    func deleteFromRealm(archiveCellViewObject: ArchiveCellViewObject) {
+        RealmMockAccessManager.shared.mockDataStore.removeValue(forKey: archiveCellViewObject.id)
+    }
+
+    // MARK: - Private Function
+
+    private func convertToRealmObject(archiveCellViewObject: ArchiveCellViewObject) -> StockArchiveRealmEntity {
+        let realmObject = StockArchiveRealmEntity()
+        realmObject.id = archiveCellViewObject.id
+        realmObject.photoUrl = archiveCellViewObject.photoUrl?.absoluteString ?? ""
+        realmObject.category = archiveCellViewObject.category
+        realmObject.dishName = archiveCellViewObject.dishName
+        realmObject.shopName = archiveCellViewObject.shopName
+        realmObject.introduction = archiveCellViewObject.introduction
+        return realmObject
+    }
+}
+```
+
+</details>
+
 ### 8-2. Repository層のMockを適用したMiddlewareとStoreへの適用
+
+Middlewareはメソッドとして提供されるので、Repositoryの本実装を適用したメソッドとRepositoryのMock実装を適用したメソッドの2種類を用意する形になります。
+
+<details>
+<summary>ArchiveMiddleware.swiftに定義した本実装時のメソッド</summary>
+
+```swift
+// MARK: - Function (Production)
+
+// APIリクエスト結果に応じたActionを発行する
+// ※テストコードの場合は検証用のarchiveMiddlewareのものに差し替える想定
+func archiveMiddleware() -> Middleware<AppState> {
+    return { state, action, dispatch in
+        switch action {
+            // 👉 選択カテゴリー・入力テキスト値の変更を受け取ったらその後にAPIリクエスト処理を実行する
+            // 複合条件の処理をするために現在Stateに格納されている値も利用する
+            case let action as RequestArchiveWithInputTextAction:
+            let selectedCategory = state.archiveState.selectedCategory
+            requestArchiveScenes(
+                inputText: action.inputText,
+                selectedCategory: selectedCategory,
+                dispatch: dispatch
+            )
+            case let action as RequestArchiveWithSelectedCategoryAction:
+            let inputText = state.archiveState.inputText
+            requestArchiveScenes(
+                inputText: inputText,
+                selectedCategory: action.selectedCategory,
+                dispatch: dispatch
+            )
+            case _ as RequestArchiveWithNoConditionsAction:
+            requestArchiveScenes(
+                inputText: "",
+                selectedCategory: "",
+                dispatch: dispatch
+            )
+            default:
+                break
+        }
+    }
+}
+
+// MARK: - Private Function (Production)
+
+// 👉 APIリクエスト処理を実行するためのメソッド
+// ※テストコードの場合は想定するStubデータを返すものに差し替える想定
+private func requestArchiveScenes(inputText: String, selectedCategory: String, dispatch: @escaping Dispatcher) {
+    Task { @MainActor in
+        do {
+            // 👉 Realm内に登録されているデータのIDだけを詰め込んだ配列に変換する
+            let storedIds = StoredArchiveDataRepositoryFactory.create().getAllObjectsFromRealm()
+                .map { $0.id }
+            // 👉 Realm内に登録されているデータのIDだけを詰め込んだ配列に変換する
+            // 🌟 最終的にViewObjectに変換をするのはArchiveReducerで実行する
+            let archiveResponse = try await RequestArchiveRepositoryFactory.create().getArchiveResponse(keyword: inputText, category: selectedCategory)
+            if let archiveSceneResponse = archiveResponse as? ArchiveSceneResponse {
+                // お望みのレスポンスが取得できた場合は成功時のActionを発行する
+                dispatch(
+                    SuccessArchiveAction(
+                        archiveSceneEntities: archiveSceneResponse.result,
+                        storedIds: storedIds
+                    )
+                )
+            } else {
+                // お望みのレスポンスが取得できなかった場合はErrorをthrowして失敗時のActionを発行する
+                throw APIError.error(message: "No FavoriteSceneResponse exists.")
+            }
+            dump(archiveResponse)
+        } catch APIError.error(let message) {
+            // 通信エラーないしはお望みのレスポンスが取得できなかった場合は成功時のActionを発行する
+            dispatch(FailureArchiveAction())
+            print(message)
+        }
+    }
+}
+```
+
+</details>
+
+
+<details>
+<summary>ArchiveMiddleware.swiftに定義したMock時のメソッド</summary>
+
+```swift
+// MARK: - Function (Mock for Success)
+
+// テストコードで利用するAPIリクエスト結果に応じたActionを発行する（Success時）
+func archiveMockSuccessMiddleware() -> Middleware<AppState> {
+    return { state, action, dispatch in
+        // 👉 本来はAPIリクエスト処理やRealmからのデータ取得処理をMockに置き換えたもので代用する関数を実行する
+        switch action {
+            case let action as RequestArchiveWithInputTextAction:
+            let selectedCategory = state.archiveState.selectedCategory
+            mockSuccessRequestArchiveScenes(
+                inputText: action.inputText,
+                selectedCategory: selectedCategory,
+                dispatch: dispatch
+            )
+            case let action as RequestArchiveWithSelectedCategoryAction:
+            let inputText = state.archiveState.inputText
+            mockSuccessRequestArchiveScenes(
+                inputText: inputText,
+                selectedCategory: action.selectedCategory,
+                dispatch: dispatch
+            )
+            case _ as RequestArchiveWithNoConditionsAction:
+            mockSuccessRequestArchiveScenes(
+                inputText: "",
+                selectedCategory: "",
+                dispatch: dispatch
+            )
+            default:
+                break
+        }
+    }
+}
+
+// MARK: - Function (Mock for Failure)
+
+// テストコードで利用するAPIリクエスト結果に応じたActionを発行する（Failure時）
+func archiveMockFailureMiddleware() -> Middleware<AppState> {
+    return { state, action, dispatch in
+        switch action {
+            // 👉 処理失敗を想定したmock用関数を実行する
+            case _ as RequestArchiveWithInputTextAction:
+                mockFailureRequestArchiveScenes(dispatch: dispatch)
+            case _ as RequestArchiveWithSelectedCategoryAction:
+                mockFailureRequestArchiveScenes(dispatch: dispatch)
+            case _ as RequestArchiveWithNoConditionsAction:
+                mockFailureRequestArchiveScenes(dispatch: dispatch)
+            default:
+                break
+        }
+    }
+}
+
+// MARK: - Private Function (Dispatch Action Success/Failure)
+
+// 👉 成功時のAPIリクエストを想定した処理を実行するためのメソッド
+private func mockSuccessRequestArchiveScenes(inputText: String, selectedCategory: String, dispatch: @escaping Dispatcher) {
+    Task { @MainActor in
+        let _ = try await Task.sleep(for: .seconds(0.64))
+        // 👉 実際はRealmへの処理ではあるが、MockはDictionaryを利用する処理としている
+        let storedIds = MockStoredArchiveDataRepositoryFactory.create().getAllObjectsFromRealm()
+            .map { $0.id }
+        let archiveResponse = try await MockSuccessRequestArchiveRepositoryFactory.create().getArchiveResponse(keyword: inputText, category: selectedCategory)
+        if let archiveSceneResponse = archiveResponse as? ArchiveSceneResponse {
+            dispatch(
+                SuccessArchiveAction(
+                    archiveSceneEntities: archiveSceneResponse.result,
+                    storedIds: storedIds
+                )
+            )
+        } else {
+            throw APIError.error(message: "No favoriteSceneResponse exists.")
+        }
+    }
+}
+
+// 👉 失敗時のAPIリクエストを想定した処理を実行するためのメソッド
+private func mockFailureRequestArchiveScenes(dispatch: @escaping Dispatcher) {
+    Task { @MainActor in
+        let _ = try await Task.sleep(for: .seconds(0.64))
+        dispatch(FailureArchiveAction())
+    }
+}
+```
+
+</details>
 
