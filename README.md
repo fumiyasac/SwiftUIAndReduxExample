@@ -3,6 +3,9 @@
 
 SwiftUIを利用した表現＆Reduxを利用した画面状態管理を組み合わせたUI実装サンプルになります。
 
+※ 2023.03.07に開催された「YUMEMI.grow Mobile #1」での登壇資料はこちらになります。
+- [SwiftUI&Reduxを利用したUI実装サンプルにおけるポイント解説](https://speakerdeck.com/fumiyasac0921/swiftui-and-reduxwoli-yong-sitauishi-zhuang-sanpuruniokerupointojie-shuo)
+
 ## 1. サンプル概要
 
 基本的には、APIから画面表示に必要なデータを取得した後に画面表示をする機能を中心として、一部の画面では「お気に入り機能」の様な形でアプリ内部にデータを永続化して保持しておく機能や、表示一覧データをキーワードやカテゴリーに合致するものだけをフィルタリングする「絞り込み検索」の様な形で表示する画面も実装しています。
