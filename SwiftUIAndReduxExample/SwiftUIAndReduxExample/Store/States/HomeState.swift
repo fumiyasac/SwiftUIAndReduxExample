@@ -11,7 +11,7 @@ struct HomeState: ReduxState, Equatable {
 
     // MARK: - Property
 
-    // MEMO: 読み込み中¥状態
+    // MEMO: 読み込み中状態
     var isLoading: Bool = false
     // MEMO: エラー状態
     var isError: Bool = false
