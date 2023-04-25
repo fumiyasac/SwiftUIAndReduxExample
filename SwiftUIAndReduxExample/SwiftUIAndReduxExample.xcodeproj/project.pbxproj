@@ -2096,7 +2096,7 @@
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 7.0.0;
+				minimumVersion = 7.6.0;
 			};
 		};
 		DE43243E28463B4E001ECA85 /* XCRemoteSwiftPackageReference "Cosmos" */ = {
