@@ -81,16 +81,13 @@ struct ProfileSocialMediaLinkView: View {
 
 // MARK: - Preview
 
-struct ProfileSocialMediaLinkView_Previews: PreviewProvider {
-    static var previews: some View {
-        // MEMO: 部品1つあたりを表示するためのViewObject
-        let profileSocialMediaViewObject = ProfileSocialMediaViewObject(
-            id: 100,
-            twitterUrl: URL(string: "https://twitter.com/"),
-            facebookUrl: URL(string: "https://facebook.com/"),
-            instagramUrl: URL(string: "https://instagram.com/")
-        )
-        // Preview: ProfileSocialMediaLinkView
-        ProfileSocialMediaLinkView(profileSocialMediaViewObject: profileSocialMediaViewObject)
-    }
+#Preview {
+    // MEMO: 部品1つあたりを表示するためのViewObject
+    let profileSocialMediaViewObject = ProfileSocialMediaViewObject(
+        id: 100,
+        twitterUrl: URL(string: "https://twitter.com/"),
+        facebookUrl: URL(string: "https://facebook.com/"),
+        instagramUrl: URL(string: "https://instagram.com/")
+    )
+    return ProfileSocialMediaLinkView(profileSocialMediaViewObject: profileSocialMediaViewObject)
 }
