@@ -123,49 +123,47 @@ struct ProfileInformationTabSwitcher: View {
 
 // MARK: - Preview
 
-struct ProfileInformationTabSwitcher_Previews: PreviewProvider {
-    static var previews: some View {
-        // MEMO: 部品1つあたりを表示するためのViewObject
-        let profileAnnoucementViewObjects = getProfileAnnoucementResponse().result.map {
-            ProfileAnnoucementViewObject(
-                id: $0.id,
-                category: $0.category,
-                title: $0.title,
-                publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: $0.publishedAt),
-                description: $0.description
-            )
-        }
-        let profileCommentViewObjects = getProfileCommentResponse().result.map {
-            ProfileCommentViewObject(
-                id: $0.id,
-                emotion: $0.emotion,
-                title: $0.title,
-                publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: $0.publishedAt),
-                comment: $0.comment
-            )
-        }
-        let profileRecentFavoriteViewObjects = getProfileRecentFavoriteResponse().result.map {
-            ProfileRecentFavoriteViewObject(
-                id: $0.id,
-                category: $0.category,
-                title: $0.title,
-                publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: $0.publishedAt),
-                description: $0.description
-            )
-        }
-        let profileInformationViewObject = ProfileInformationViewObject(
-            id: 100,
-            profileAnnoucementViewObjects: profileAnnoucementViewObjects,
-            profileCommentViewObjects: profileCommentViewObjects,
-            profileRecentFavoriteViewObjects: profileRecentFavoriteViewObjects
+#Preview("ProfileInformationTabSwitcher Preview") {
+    // MEMO: 部品1つあたりを表示するためのViewObject
+    let profileAnnoucementViewObjects = getProfileAnnoucementResponse().result.map {
+        ProfileAnnoucementViewObject(
+            id: $0.id,
+            category: $0.category,
+            title: $0.title,
+            publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: $0.publishedAt),
+            description: $0.description
         )
-        // Preview: ProfileInformationTabSwitcher
-        ProfileInformationTabSwitcher(profileInformationViewObject: profileInformationViewObject)
     }
+    let profileCommentViewObjects = getProfileCommentResponse().result.map {
+        ProfileCommentViewObject(
+            id: $0.id,
+            emotion: $0.emotion,
+            title: $0.title,
+            publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: $0.publishedAt),
+            comment: $0.comment
+        )
+    }
+    let profileRecentFavoriteViewObjects = getProfileRecentFavoriteResponse().result.map {
+        ProfileRecentFavoriteViewObject(
+            id: $0.id,
+            category: $0.category,
+            title: $0.title,
+            publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: $0.publishedAt),
+            description: $0.description
+        )
+    }
+    let profileInformationViewObject = ProfileInformationViewObject(
+        id: 100,
+        profileAnnoucementViewObjects: profileAnnoucementViewObjects,
+        profileCommentViewObjects: profileCommentViewObjects,
+        profileRecentFavoriteViewObjects: profileRecentFavoriteViewObjects
+    )
+    // Preview: ProfileInformationTabSwitcher
+    return ProfileInformationTabSwitcher(profileInformationViewObject: profileInformationViewObject)
 
-    // MARK: - Private Static Function
+    // MARK: - Function
 
-    private static func getProfileAnnoucementResponse() -> ProfileAnnoucementResponse {
+    func getProfileAnnoucementResponse() -> ProfileAnnoucementResponse {
         guard let path = Bundle.main.path(forResource: "profile_announcement", ofType: "json") else {
             fatalError()
         }
@@ -178,7 +176,7 @@ struct ProfileInformationTabSwitcher_Previews: PreviewProvider {
         return ProfileAnnoucementResponse(result: result)
     }
 
-    private static func getProfileCommentResponse() -> ProfileCommentResponse {
+    func getProfileCommentResponse() -> ProfileCommentResponse {
         guard let path = Bundle.main.path(forResource: "profile_comment", ofType: "json") else {
             fatalError()
         }
@@ -191,7 +189,7 @@ struct ProfileInformationTabSwitcher_Previews: PreviewProvider {
         return ProfileCommentResponse(result: result)
     }
 
-    private static func getProfileRecentFavoriteResponse() -> ProfileRecentFavoriteResponse {
+    func getProfileRecentFavoriteResponse() -> ProfileRecentFavoriteResponse {
         guard let path = Bundle.main.path(forResource: "profile_recent_favorite", ofType: "json") else {
             fatalError()
         }

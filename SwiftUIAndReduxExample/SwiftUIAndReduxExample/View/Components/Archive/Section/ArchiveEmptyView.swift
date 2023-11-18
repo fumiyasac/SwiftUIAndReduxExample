@@ -55,8 +55,8 @@ struct ArchiveEmptyView: View {
     }
 }
 
-struct ArchiveEmptyView_Previews: PreviewProvider {
-    static var previews: some View {
-        ArchiveEmptyView()
-    }
+// MARK: - Preview
+
+#Preview("ArchiveEmptyView Preview") {
+    ArchiveEmptyView()
 }

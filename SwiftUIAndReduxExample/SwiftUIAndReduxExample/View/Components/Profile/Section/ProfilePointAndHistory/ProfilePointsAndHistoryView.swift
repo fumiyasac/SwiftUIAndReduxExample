@@ -96,19 +96,17 @@ struct ProfilePointsAndHistoryView: View {
 
 // MARK: - Preview
 
-struct ProfilePointsAndHistoryView_Previews: PreviewProvider {
-    static var previews: some View {
-        // MEMO: 部品1つあたりを表示するためのViewObject
-        let profilePointsAndHistoryViewObject = ProfilePointsAndHistoryViewObject(
-            id: 100,
-            profileViewCount: 6083,
-            articlePostCount: 37,
-            totalPageViewCount: 103570,
-            totalAvailablePoints: 4000,
-            totalUseCouponCount: 24,
-            totalVisitShopCount: 58
-        )
-        // Preview: ProfilePointsAndHistoryView
-        ProfilePointsAndHistoryView(profilePointsAndHistoryViewObject: profilePointsAndHistoryViewObject)
-    }
+#Preview("ProfilePointsAndHistoryView Preview") {
+    // MEMO: 部品1つあたりを表示するためのViewObject
+    let profilePointsAndHistoryViewObject = ProfilePointsAndHistoryViewObject(
+        id: 100,
+        profileViewCount: 6083,
+        articlePostCount: 37,
+        totalPageViewCount: 103570,
+        totalAvailablePoints: 4000,
+        totalUseCouponCount: 24,
+        totalVisitShopCount: 58
+    )
+    // Preview: ProfilePointsAndHistoryView
+    return ProfilePointsAndHistoryView(profilePointsAndHistoryViewObject: profilePointsAndHistoryViewObject)
 }

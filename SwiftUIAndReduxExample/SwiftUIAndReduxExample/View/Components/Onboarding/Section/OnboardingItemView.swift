@@ -96,12 +96,12 @@ struct OnboardingItemView: View {
     }
 }
 
-struct OnboardingItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        OnboardingItemView(
-            imageName: "onboarding1",
-            title: "Welcome to App.",
-            summary: "アプリへようこそ！"
-        )
-    }
+// MARK: - Preview
+
+#Preview("OnboardingItemView Preview") {
+    OnboardingItemView(
+        imageName: "onboarding1",
+        title: "Welcome to App.",
+        summary: "アプリへようこそ！"
+    )
 }

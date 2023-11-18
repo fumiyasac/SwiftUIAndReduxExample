@@ -88,16 +88,14 @@ struct ProfilePersonalView: View {
 
 // MARK: - Preview
 
-struct ProfilePersonalView_Previews: PreviewProvider {
-    static var previews: some View {
-        // MEMO: 部品1つあたりを表示するためのViewObject
-        let profilePersonalViewObject = ProfilePersonalViewObject(
-            id: 100,
-            nickname: "謎多き料理人",
-            createdAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: "2022-11-16T07:30:00.000+0000"),
-            avatarUrl: URL(string: "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/profile_avatar_sample.jpg")
-        )
-        // Preview: ProfilePersonalView
-        ProfilePersonalView(profilePersonalViewObject: profilePersonalViewObject)
-    }
+#Preview("ProfilePersonalView Preview") {
+    // MEMO: 部品1つあたりを表示するためのViewObject
+    let profilePersonalViewObject = ProfilePersonalViewObject(
+        id: 100,
+        nickname: "謎多き料理人",
+        createdAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: "2022-11-16T07:30:00.000+0000"),
+        avatarUrl: URL(string: "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/profile_avatar_sample.jpg")
+    )
+    // Preview: ProfilePersonalView
+    return ProfilePersonalView(profilePersonalViewObject: profilePersonalViewObject)
 }

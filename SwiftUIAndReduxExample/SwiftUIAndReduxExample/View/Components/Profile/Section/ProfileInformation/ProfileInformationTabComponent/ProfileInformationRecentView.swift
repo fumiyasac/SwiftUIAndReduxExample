@@ -114,38 +114,23 @@ struct ProfileInformationRecentCellView: View {
 
 // MARK: - Preview
 
-struct ProfileInformationRecentView_Previews: PreviewProvider {
-    static var previews: some View {
-        // MEMO: Section要素全体を表示するためのViewObject
-        let profileRecentFavoriteViewObjects = getProfileRecentFavoriteResponse().result.map {
-            ProfileRecentFavoriteViewObject(
-                id: $0.id,
-                category: $0.category,
-                title: $0.title,
-                publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: $0.publishedAt),
-                description: $0.description
-            )
-        }
-        // Preview: ProfileInformationRecentView
-        ProfileInformationRecentView(profileRecentFavoriteViewObjects: profileRecentFavoriteViewObjects)
-            .previewDisplayName("ProfileInformationRecentView Preview")
-
-        // MEMO: 部品1つあたりを表示するためのViewObject
-        let viewObject = ProfileRecentFavoriteViewObject(
-            id: 1,
-            category: "新商品のご案内🍣",
-            title: "にぎり寿司のランチテイクアウトはじめました✨",
-            publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: "2023-01-01T07:30:00.000+0000"),
-            description: "おまかせにぎり12貫セットをランチテイクアウトスタイルで1500円にて販売することにしました！ちょっと贅沢なお弁当としてもピッタリですので、是非とも一度お試し下さいませ😊"
+#Preview("ProfileInformationRecentView Preview") {
+    // MEMO: Section要素全体を表示するためのViewObject
+    let profileRecentFavoriteViewObjects = getProfileRecentFavoriteResponse().result.map {
+        ProfileRecentFavoriteViewObject(
+            id: $0.id,
+            category: $0.category,
+            title: $0.title,
+            publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: $0.publishedAt),
+            description: $0.description
         )
-        // Preview: ProfileInformationRecentCellView
-        ProfileInformationRecentCellView(viewObject: viewObject)
-            .previewDisplayName("ProfileInformationRecentCellView Preview")
     }
+    // Preview: ProfileInformationRecentView
+    return ProfileInformationRecentView(profileRecentFavoriteViewObjects: profileRecentFavoriteViewObjects)
 
-    // MARK: - Private Static Function
+    // MARK: - Function
 
-    private static func getProfileRecentFavoriteResponse() -> ProfileRecentFavoriteResponse {
+    func getProfileRecentFavoriteResponse() -> ProfileRecentFavoriteResponse {
         guard let path = Bundle.main.path(forResource: "profile_recent_favorite", ofType: "json") else {
             fatalError()
         }

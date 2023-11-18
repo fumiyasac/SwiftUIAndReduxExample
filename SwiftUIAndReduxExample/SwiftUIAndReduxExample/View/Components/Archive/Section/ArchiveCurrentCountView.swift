@@ -67,8 +67,8 @@ struct ArchiveCurrentCountView: View {
     }
 }
 
-struct ArchiveCurrentCountView_Previews: PreviewProvider {
-    static var previews: some View {
-        ArchiveCurrentCountView(currentCount: 36, tapAllClearAction: {})
-    }
+// MARK: - Preview
+
+#Preview {
+    ArchiveCurrentCountView(currentCount: 36, tapAllClearAction: {})
 }

@@ -233,49 +233,28 @@ struct FavoritePhotosCardView: View {
 
 // MARK: - Preview
 
-struct FavoriteSwipePagingView_Previews: PreviewProvider {
-    static var previews: some View {
+#Preview("FavoriteSwipePagingView Preview") {
+    // MEMO: Preview表示用にレスポンスを想定したJsonを読み込んで画面に表示させる
+    let favoriteSceneResponse = getFavoriteSceneResponse()
+    let favoritePhotosCardViewObjects = favoriteSceneResponse.result
+        .map {
+            FavoritePhotosCardViewObject(
+                id: $0.id,
+                photoUrl: URL(string: $0.photoUrl) ?? nil,
+                author: $0.author,
+                title: $0.title,
+                category: $0.category,
+                shopName: $0.shopName,
+                comment: $0.comment,
+                publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: $0.publishedAt)
+            )
+        }
+    // Preview: FavoriteSwipePagingView
+    return FavoriteSwipePagingView(favoritePhotosCardViewObjects: favoritePhotosCardViewObjects)
 
-        // MEMO: Preview表示用にレスポンスを想定したJsonを読み込んで画面に表示させる
-        let favoriteSceneResponse = getFavoriteSceneResponse()
-        let favoritePhotosCardViewObjects = favoriteSceneResponse.result
-            .map {
-                FavoritePhotosCardViewObject(
-                    id: $0.id,
-                    photoUrl: URL(string: $0.photoUrl) ?? nil,
-                    author: $0.author,
-                    title: $0.title,
-                    category: $0.category,
-                    shopName: $0.shopName,
-                    comment: $0.comment,
-                    publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: $0.publishedAt)
-                )
-            }
+    // MARK: - Function
 
-        // Preview: FavoriteSwipePagingView
-        FavoriteSwipePagingView(favoritePhotosCardViewObjects: favoritePhotosCardViewObjects)
-            .previewDisplayName("FavoriteSwipePagingView Preview")
-        
-        // MEMO: 部品1つあたりを表示するためのViewObject
-        let viewObject = FavoritePhotosCardViewObject(
-            id: 1,
-            photoUrl: URL(string: "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/favorite_scene1.jpg") ?? nil,
-            author: "編集部●●●●",
-            title: "気になる一皿シリーズNo.1",
-            category: "Special Contents",
-            shopName: "サンプル店舗 No.1",
-            comment: "（※このコメントはサンプルになります!）気になる一皿シリーズでは、読者の皆様がお店で「思わず感動を覚えてしまった思い出の一皿」をテーマに、美味しかったお料理の写真とコメントを掲載しています。行きつけのお店でのお気に入りの一品から、ちょっと贅沢をしたい時に仕事帰りに立ち寄るお店での思い出、大切な人と行く勝負レストランでの是非とも食べて欲しいお料理の思い出等、あなたとお料理のストーリーを是非とも教えてください！",
-            publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: "2022-12-01T07:30:00.000+0000")
-        )
-        
-        // Preview: FavoritePhotosCardView
-        FavoritePhotosCardView(viewObject: viewObject)
-            .previewDisplayName("FavoritePhotosCardView Preview")
-    }
-    
-    // MARK: - Private Static Function
-
-    private static func getFavoriteSceneResponse() -> FavoriteSceneResponse {
+    func getFavoriteSceneResponse() -> FavoriteSceneResponse {
         guard let path = Bundle.main.path(forResource: "favorite_scenes", ofType: "json") else {
             fatalError()
         }
@@ -287,4 +266,20 @@ struct FavoriteSwipePagingView_Previews: PreviewProvider {
         }
         return FavoriteSceneResponse(result: result)
     }
+}
+
+#Preview("FavoritePhotosCardView Preview") {
+    // MEMO: 部品1つあたりを表示するためのViewObject
+    let viewObject = FavoritePhotosCardViewObject(
+        id: 1,
+        photoUrl: URL(string: "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/favorite_scene1.jpg") ?? nil,
+        author: "編集部●●●●",
+        title: "気になる一皿シリーズNo.1",
+        category: "Special Contents",
+        shopName: "サンプル店舗 No.1",
+        comment: "（※このコメントはサンプルになります!）気になる一皿シリーズでは、読者の皆様がお店で「思わず感動を覚えてしまった思い出の一皿」をテーマに、美味しかったお料理の写真とコメントを掲載しています。行きつけのお店でのお気に入りの一品から、ちょっと贅沢をしたい時に仕事帰りに立ち寄るお店での思い出、大切な人と行く勝負レストランでの是非とも食べて欲しいお料理の思い出等、あなたとお料理のストーリーを是非とも教えてください！",
+        publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: "2022-12-01T07:30:00.000+0000")
+    )
+    // Preview: FavoritePhotosCardView
+    return FavoritePhotosCardView(viewObject: viewObject)
 }

@@ -98,8 +98,8 @@ struct OnboardingContentsView: View {
     }
 }
 
-struct OnboardingContentsView_Previews: PreviewProvider {
-    static var previews: some View {
-        OnboardingContentsView(closeOnboardingAction: {})
-    }
+// MARK: - Preview
+
+#Preview("OnboardingContentsView Preview") {
+    OnboardingContentsView(closeOnboardingAction: {})
 }

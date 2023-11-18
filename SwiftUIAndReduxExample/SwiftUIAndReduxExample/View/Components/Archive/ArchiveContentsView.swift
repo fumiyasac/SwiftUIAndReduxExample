@@ -65,36 +65,32 @@ struct ArchiveContentsView: View {
 
 // MARK: - Preview
 
-struct ArchiveContentsView_Previews: PreviewProvider {
-    static var previews: some View {
+#Preview("ArchiveContentsView Preview") {
+    // MEMO: Preview表示用にレスポンスを想定したJsonを読み込んで画面に表示させる
+    let achiveSceneResponse = getArchiveSceneResponse()
+    let archiveCellViewObjects = achiveSceneResponse.result
+        .map {
+            ArchiveCellViewObject(
+                id: $0.id,
+                photoUrl: URL(string: $0.photoUrl) ?? nil,
+                category: $0.category,
+                dishName: $0.dishName,
+                shopName: $0.shopName,
+                introduction: $0.introduction
+            )
+        }
 
-        // MEMO: Preview表示用にレスポンスを想定したJsonを読み込んで画面に表示させる
-        let achiveSceneResponse = getArchiveSceneResponse()
-        let archiveCellViewObjects = achiveSceneResponse.result
-            .map {
-                ArchiveCellViewObject(
-                    id: $0.id,
-                    photoUrl: URL(string: $0.photoUrl) ?? nil,
-                    category: $0.category,
-                    dishName: $0.dishName,
-                    shopName: $0.shopName,
-                    introduction: $0.introduction
-                )
-            }
+    // Preview: ArchiveContentsView
+    return ArchiveContentsView(
+        archiveCellViewObjects: archiveCellViewObjects,
+        targetKeyword: "",
+        targetCategory: "",
+        tapIsStoredButtonAction: { _,_  in }
+    )
 
-        // Preview: ArchiveContentsView
-        ArchiveContentsView(
-            archiveCellViewObjects: archiveCellViewObjects,
-            targetKeyword: "",
-            targetCategory: "",
-            tapIsStoredButtonAction: { _,_  in }
-        )
-        .previewDisplayName("ArchiveContentsView Preview")
-    }
+    // MARK: - Function
 
-    // MARK: - Private Static Function
-
-    private static func getArchiveSceneResponse() -> ArchiveSceneResponse {
+    func getArchiveSceneResponse() -> ArchiveSceneResponse {
         guard let path = Bundle.main.path(forResource: "achive_images", ofType: "json") else {
             fatalError()
         }

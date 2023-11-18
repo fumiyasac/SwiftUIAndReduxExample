@@ -189,68 +189,30 @@ struct PickupPhotosCellView: View {
 
 // MARK: - Preview
 
-struct PickupPhotosGridView_Previews: PreviewProvider {
-    static var previews: some View {
-
-        // MEMO: Preview表示用にレスポンスを想定したJsonを読み込んで画面に表示させる
-        let pickupPhotoResponse = getPickupPhotoResponse()
-        let pickupPhotoGridViewObjects = pickupPhotoResponse.result
-            .map {
-                PickupPhotosGridViewObject(
-                    id: $0.id,
-                    title: $0.title,
-                    caption: $0.caption,
-                    photoUrl: URL(string: $0.photoUrl) ?? nil,
-                    photoWidth: CGFloat($0.photoWidth),
-                    photoHeight: CGFloat($0.photoHeight)
-                )
-            }
-
-        // Preview: PickupPhotosGridView
-        // MEMO: 全体を表示させたいのでScrollViewを仕込んでいる
-        ScrollView {
-            PickupPhotosGridView(pickupPhotosGridViewObjects: pickupPhotoGridViewObjects)
+#Preview("PickupPhotosGridView Preview") {
+    // MEMO: Preview表示用にレスポンスを想定したJsonを読み込んで画面に表示させる
+    let pickupPhotoResponse = getPickupPhotoResponse()
+    let pickupPhotoGridViewObjects = pickupPhotoResponse.result
+        .map {
+            PickupPhotosGridViewObject(
+                id: $0.id,
+                title: $0.title,
+                caption: $0.caption,
+                photoUrl: URL(string: $0.photoUrl) ?? nil,
+                photoWidth: CGFloat($0.photoWidth),
+                photoHeight: CGFloat($0.photoHeight)
+            )
         }
-        .previewDisplayName("PickupPhotosGridView Preview")
 
-        // MEMO: 部品1つあたりを表示するためのViewObject
-        let viewObject1 = PickupPhotosGridViewObject(
-            id: 1,
-            title: "Pickup Photo No.1",
-            caption: "Premium Gourmet Photo No.1",
-            photoUrl: URL(string: "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo1.jpg") ?? nil,
-            photoWidth: 960,
-            photoHeight: 960
-        )
-        let viewObject2 = PickupPhotosGridViewObject(
-            id: 2,
-            title: "Pickup Photo No.2",
-            caption: "Premium Gourmet Photo No.2",
-            photoUrl: URL(string: "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo2.jpg") ?? nil,
-            photoWidth: 960,
-            photoHeight: 1280
-        )
-        let viewObject3 = PickupPhotosGridViewObject(
-            id: 3,
-            title: "Pickup Photo No.3",
-            caption: "Premium Gourmet Photo No.3",
-            photoUrl: URL(string: "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo3.jpg") ?? nil,
-            photoWidth: 1200,
-            photoHeight: 800
-        )
-
-        // Preview: PickupPhotosCellView
-        PickupPhotosCellView(viewObject: viewObject1, tapCellAction: {})
-            .previewDisplayName("PickupPhotosCellView1 Preview")
-        PickupPhotosCellView(viewObject: viewObject2, tapCellAction: {})
-            .previewDisplayName("PickupPhotosCellView2 Preview")
-        PickupPhotosCellView(viewObject: viewObject3, tapCellAction: {})
-            .previewDisplayName("PickupPhotosCellView3 Preview")
+    // Preview: PickupPhotosGridView
+    // MEMO: 全体を表示させたいのでScrollViewを仕込んでいる
+    return ScrollView {
+        PickupPhotosGridView(pickupPhotosGridViewObjects: pickupPhotoGridViewObjects)
     }
 
-    // MARK: - Private Static Function
+    // MARK: - Function
 
-    private static func getPickupPhotoResponse() -> PickupPhotoResponse {
+    func getPickupPhotoResponse() -> PickupPhotoResponse {
         guard let path = Bundle.main.path(forResource: "pickup_photos", ofType: "json") else {
             fatalError()
         }
@@ -262,4 +224,40 @@ struct PickupPhotosGridView_Previews: PreviewProvider {
         }
         return PickupPhotoResponse(result: result)
     }
+}
+
+#Preview("PickupPhotosCellView1 Preview") {
+    let viewObject1 = PickupPhotosGridViewObject(
+        id: 1,
+        title: "Pickup Photo No.1",
+        caption: "Premium Gourmet Photo No.1",
+        photoUrl: URL(string: "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo1.jpg") ?? nil,
+        photoWidth: 960,
+        photoHeight: 960
+    )
+    return PickupPhotosCellView(viewObject: viewObject1, tapCellAction: {})
+}
+
+#Preview("PickupPhotosCellView2 Preview") {
+    let viewObject2 = PickupPhotosGridViewObject(
+        id: 2,
+        title: "Pickup Photo No.2",
+        caption: "Premium Gourmet Photo No.2",
+        photoUrl: URL(string: "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo2.jpg") ?? nil,
+        photoWidth: 960,
+        photoHeight: 1280
+    )
+    return PickupPhotosCellView(viewObject: viewObject2, tapCellAction: {})
+}
+
+#Preview("PickupPhotosCellView3 Preview") {
+    let viewObject3 = PickupPhotosGridViewObject(
+        id: 3,
+        title: "Pickup Photo No.3",
+        caption: "Premium Gourmet Photo No.3",
+        photoUrl: URL(string: "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/pickup_photo3.jpg") ?? nil,
+        photoWidth: 1200,
+        photoHeight: 800
+    )
+    return PickupPhotosCellView(viewObject: viewObject3, tapCellAction: {})
 }

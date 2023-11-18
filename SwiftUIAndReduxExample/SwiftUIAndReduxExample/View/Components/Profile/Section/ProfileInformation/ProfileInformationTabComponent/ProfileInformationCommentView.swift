@@ -114,38 +114,23 @@ struct ProfileInformationCommentCellView: View {
 
 // MARK: - Preview
 
-struct ProfileInformationCommentView_Previews: PreviewProvider {
-    static var previews: some View {
-        // MEMO: Section要素全体を表示するためのViewObject
-        let profileCommentViewObjects = getProfileCommentResponse().result.map {
-            ProfileCommentViewObject(
-                id: $0.id,
-                emotion: $0.emotion,
-                title: $0.title,
-                publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: $0.publishedAt),
-                comment: $0.comment
-            )
-        }
-        // Preview: ProfileInformationCommentView
-        ProfileInformationCommentView(profileCommentViewObjects: profileCommentViewObjects)
-            .previewDisplayName("ProfileInformationCommentView Preview")
-
-        // MEMO: 部品1つあたりを表示するためのViewObject
-        let viewObject = ProfileCommentViewObject(
-            id: 1,
-            emotion: "📝お知らせ",
-            title: "年末年始の営業とTake Outについて",
-            publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: "2022-12-25T07:30:00.000+0000"),
-            comment: "誠に勝手ながら店舗営業につきましては、年末年始期間は2022.12.27〜2023.01.05までとなりますが、お料理のTake Outにつきましては、年末:2022.12.29まで・年始:2023.01.03から開始致しますのでお間違えのない様にお願い致します。"
+#Preview("ProfileInformationCommentView Preview") {
+    // MEMO: Section要素全体を表示するためのViewObject
+    let profileCommentViewObjects = getProfileCommentResponse().result.map {
+        ProfileCommentViewObject(
+            id: $0.id,
+            emotion: $0.emotion,
+            title: $0.title,
+            publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: $0.publishedAt),
+            comment: $0.comment
         )
-        // Preview: ProfileInformationCommentCellView
-        ProfileInformationCommentCellView(viewObject: viewObject)
-            .previewDisplayName("ProfileInformationAnnouncementCellView Preview")
     }
+    // Preview: ProfileInformationCommentView
+    return ProfileInformationCommentView(profileCommentViewObjects: profileCommentViewObjects)
 
-    // MARK: - Private Static Function
+    // MARK: - Function
 
-    private static func getProfileCommentResponse() -> ProfileCommentResponse {
+    func getProfileCommentResponse() -> ProfileCommentResponse {
         guard let path = Bundle.main.path(forResource: "profile_comment", ofType: "json") else {
             fatalError()
         }
@@ -157,4 +142,17 @@ struct ProfileInformationCommentView_Previews: PreviewProvider {
         }
         return ProfileCommentResponse(result: result)
     }
+}
+
+#Preview("ProfileInformationAnnouncementCellView Preview") {
+    // MEMO: 部品1つあたりを表示するためのViewObject
+    let viewObject = ProfileCommentViewObject(
+        id: 1,
+        emotion: "📝お知らせ",
+        title: "年末年始の営業とTake Outについて",
+        publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: "2022-12-25T07:30:00.000+0000"),
+        comment: "誠に勝手ながら店舗営業につきましては、年末年始期間は2022.12.27〜2023.01.05までとなりますが、お料理のTake Outにつきましては、年末:2022.12.29まで・年始:2023.01.03から開始致しますのでお間違えのない様にお願い致します。"
+    )
+    // Preview: ProfileInformationCommentCellView
+    return ProfileInformationCommentCellView(viewObject: viewObject)
 }

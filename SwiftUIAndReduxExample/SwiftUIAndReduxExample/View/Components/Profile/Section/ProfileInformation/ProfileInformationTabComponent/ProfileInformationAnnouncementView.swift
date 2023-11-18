@@ -114,38 +114,23 @@ struct ProfileInformationAnnouncementCellView: View {
 
 // MARK: - Preview
 
-struct ProfileInformationAnnouncementView_Previews: PreviewProvider {
-    static var previews: some View {
-        // MEMO: Section要素全体を表示するためのViewObject
-        let profileAnnoucementViewObjects = getProfileAnnoucementResponse().result.map {
-            ProfileAnnoucementViewObject(
-                id: $0.id,
-                category: $0.category,
-                title: $0.title,
-                publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: $0.publishedAt),
-                description: $0.description
-            )
-        }
-        // Preview: ProfileInformationAnnouncementView
-        ProfileInformationAnnouncementView(profileAnnoucementViewObjects: profileAnnoucementViewObjects)
-            .previewDisplayName("ProfileInformationAnnouncementView Preview")
-
-        // MEMO: 部品1つあたりを表示するためのViewObject
-        let viewObject = ProfileAnnoucementViewObject(
-            id: 1,
-            category: "公式情報",
-            title: "クリスマスシーズンキャンペーンの結果報告",
-            publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: "2022-12-25T07:30:00.000+0000"),
-            description: "2022.12.01〜2022.12.25に開催されたクリスマスシーズンキャンペーンの結果を公開しております。今後の記事執筆やキャンペーン参加をご検討されているユーザー様はご一読頂けますと嬉しく思います。"
+#Preview("ProfileInformationAnnouncementView Preview") {
+    // MEMO: Section要素全体を表示するためのViewObject
+    let profileAnnoucementViewObjects = getProfileAnnoucementResponse().result.map {
+        ProfileAnnoucementViewObject(
+            id: $0.id,
+            category: $0.category,
+            title: $0.title,
+            publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: $0.publishedAt),
+            description: $0.description
         )
-        // Preview: ProfileInformationAnnouncementCellView
-        ProfileInformationAnnouncementCellView(viewObject: viewObject)
-            .previewDisplayName("ProfileInformationAnnouncementCellView Preview")
     }
+    // Preview: ProfileInformationAnnouncementView
+    return ProfileInformationAnnouncementView(profileAnnoucementViewObjects: profileAnnoucementViewObjects)
 
-    // MARK: - Private Static Function
+    // MARK: - Function
 
-    private static func getProfileAnnoucementResponse() -> ProfileAnnoucementResponse {
+    func getProfileAnnoucementResponse() -> ProfileAnnoucementResponse {
         guard let path = Bundle.main.path(forResource: "profile_announcement", ofType: "json") else {
             fatalError()
         }
@@ -157,4 +142,17 @@ struct ProfileInformationAnnouncementView_Previews: PreviewProvider {
         }
         return ProfileAnnoucementResponse(result: result)
     }
+}
+
+#Preview("ProfileInformationAnnouncementCellView Preview") {
+    // MEMO: 部品1つあたりを表示するためのViewObject
+    let viewObject = ProfileAnnoucementViewObject(
+        id: 1,
+        category: "公式情報",
+        title: "クリスマスシーズンキャンペーンの結果報告",
+        publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: "2022-12-25T07:30:00.000+0000"),
+        description: "2022.12.01〜2022.12.25に開催されたクリスマスシーズンキャンペーンの結果を公開しております。今後の記事執筆やキャンペーン参加をご検討されているユーザー様はご一読頂けますと嬉しく思います。"
+    )
+    // Preview: ProfileInformationAnnouncementCellView
+    return ProfileInformationAnnouncementCellView(viewObject: viewObject)
 }

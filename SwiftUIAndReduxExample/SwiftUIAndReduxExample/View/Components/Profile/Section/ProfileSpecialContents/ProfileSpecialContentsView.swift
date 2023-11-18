@@ -73,8 +73,6 @@ struct ProfileSpecialContentsView: View {
 
 // MARK: - Preview
 
-struct ProfileSpecialContentsView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileSpecialContentsView(tapButtonAction: {})
-    }
+#Preview("ProfileSpecialContentsView Preview") {
+    ProfileSpecialContentsView(tapButtonAction: {})
 }

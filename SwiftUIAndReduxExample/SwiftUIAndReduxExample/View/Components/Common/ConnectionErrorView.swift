@@ -94,8 +94,8 @@ struct ConnectionErrorView: View {
     }
 }
 
-struct ConnectionErrorView_Previews: PreviewProvider {
-    static var previews: some View {
-        ConnectionErrorView(tapButtonAction: {})
-    }
+// MARK: - Preview
+
+#Preview("ConnectionErrorView Preview") {
+    ConnectionErrorView(tapButtonAction: {})
 }

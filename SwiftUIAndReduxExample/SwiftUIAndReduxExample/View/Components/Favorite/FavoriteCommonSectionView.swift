@@ -70,8 +70,6 @@ struct FavoriteCommonSectionView: View {
 
 // MARK: - Preview
 
-struct FavoriteCommonSectionView_Previews: PreviewProvider {
-    static var previews: some View {
-        FavoriteCommonSectionView()
-    }
+#Preview("FavoriteCommonSectionView Preview") {
+    FavoriteCommonSectionView()
 }

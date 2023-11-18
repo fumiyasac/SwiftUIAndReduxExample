@@ -127,11 +127,10 @@ struct ArchiveCategoryView: View {
 
 // MARK: - Preview
 
-struct ArchiveCategoryView_Previews: PreviewProvider {
-    static var previews: some View {
-        ArchiveCategoryView(selectedCategory: "", tapCategoryChipAction: { _ in })
-            .previewDisplayName("ArchiveCategoryView (Default) Preview")
-        ArchiveCategoryView(selectedCategory: "カレー", tapCategoryChipAction: { _ in })
-            .previewDisplayName("ArchiveFreewordView (Selected) Preview")
-    }
+#Preview("ArchiveCategoryView (Default) Preview") {
+    ArchiveCategoryView(selectedCategory: "", tapCategoryChipAction: { _ in })
+}
+
+#Preview("ArchiveFreewordView (Selected) Preview") {
+    ArchiveCategoryView(selectedCategory: "カレー", tapCategoryChipAction: { _ in })
 }

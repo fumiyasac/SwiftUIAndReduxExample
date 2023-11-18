@@ -68,11 +68,9 @@ struct ProfileCommonSectionView: View {
 
 // MARK: - Preview
 
-struct ProfileCommonSectionView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileCommonSectionView(
-            title: "自己紹介文",
-            subTitle: "Self Inftoduction"
-        )
-    }
+#Preview("ProfileCommonSectionView Preview") {
+    ProfileCommonSectionView(
+        title: "自己紹介文",
+        subTitle: "Self Inftoduction"
+    )
 }

@@ -64,23 +64,22 @@ struct HomeCommonSectionView: View {
 
 // MARK: - Preview
 
-struct HomeCommonSectionView_Previews: PreviewProvider {
-    static var previews: some View {
+#Preview("季節の特集コンテンツ一覧") {
+    HomeCommonSectionView(title: "季節の特集コンテンツ一覧", subTitle: "Introduce seasonal shopping and features.")
+}
 
-        // Preview: HomeCommonSectionView
-        HomeCommonSectionView(title: "季節の特集コンテンツ一覧", subTitle: "Introduce seasonal shopping and features.")
-            .previewDisplayName("季節の特集コンテンツ一覧")
+#Preview("最新のおしらせ") {
+    HomeCommonSectionView(title: "最新のおしらせ", subTitle: "Let's Check Here for App-only Notifications.")
+}
 
-        HomeCommonSectionView(title: "最新のおしらせ", subTitle: "Let's Check Here for App-only Notifications.")
-            .previewDisplayName("最新のおしらせ")
+#Preview("特集掲載店舗") {
+    HomeCommonSectionView(title: "特集掲載店舗", subTitle: "Please Teach Us Your Favorite Gourmet.")
+}
 
-        HomeCommonSectionView(title: "特集掲載店舗", subTitle: "Please Teach Us Your Favorite Gourmet.")
-            .previewDisplayName("特集掲載店舗")
+#Preview("トレンド記事紹介") {
+    HomeCommonSectionView(title: "トレンド記事紹介", subTitle: "Memorial Articles about Special Season.")
+}
 
-        HomeCommonSectionView(title: "トレンド記事紹介", subTitle: "Memorial Articles about Special Season.")
-            .previewDisplayName("トレンド記事紹介")
-
-        HomeCommonSectionView(title: "ピックアップ写真集", subTitle: "Let's Enjoy Pickup Gourmet Photo Archives.")
-            .previewDisplayName("ピックアップ写真集")
-    }
+#Preview("ピックアップ写真集") {
+    HomeCommonSectionView(title: "ピックアップ写真集", subTitle: "Let's Enjoy Pickup Gourmet Photo Archives.")
 }

@@ -53,8 +53,8 @@ struct ExecutingConnectionView: View {
     }
 }
 
-struct ExecutingConnectionView_Previews: PreviewProvider {
-    static var previews: some View {
-        ExecutingConnectionView()
-    }
+// MARK: - Preview
+
+#Preview("ExecutingConnectionView Preview") {
+    ExecutingConnectionView()
 }

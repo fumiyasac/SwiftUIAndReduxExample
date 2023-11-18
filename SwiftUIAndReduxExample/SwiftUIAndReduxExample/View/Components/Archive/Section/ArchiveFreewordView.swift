@@ -163,13 +163,14 @@ struct ArchiveFreewordView: View {
 
 // MARK: - Preview
 
-struct ArchiveFreewordView_Previews: PreviewProvider {
-    static var previews: some View {
-        ArchiveFreewordView(inputText: "", isLoading: false, submitAction: { _ in }, cancelAction: {})
-            .previewDisplayName("ArchiveFreewordView (Default) Preview")
-        ArchiveFreewordView(inputText: "韓国料理", isLoading: false, submitAction: { _ in }, cancelAction: {})
-            .previewDisplayName("ArchiveFreewordView (Exist Keyword) Preview")
-        ArchiveFreewordView(inputText: "ベトナム", isLoading: true, submitAction: { _ in }, cancelAction: {})
-            .previewDisplayName("ArchiveFreewordView (Loading) Preview")
-    }
+#Preview("ArchiveFreewordView (Default) Preview") {
+    ArchiveFreewordView(inputText: "", isLoading: false, submitAction: { _ in }, cancelAction: {})
+}
+
+#Preview("ArchiveFreewordView (Exist Keyword) Preview") {
+    ArchiveFreewordView(inputText: "韓国料理", isLoading: false, submitAction: { _ in }, cancelAction: {})
+}
+
+#Preview("ArchiveFreewordView (Loading) Preview") {
+    ArchiveFreewordView(inputText: "ベトナム", isLoading: true, submitAction: { _ in }, cancelAction: {})
 }

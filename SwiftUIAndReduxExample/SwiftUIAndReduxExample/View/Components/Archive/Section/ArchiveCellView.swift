@@ -200,27 +200,46 @@ struct ArchiveCellView: View {
     }
 }
 
-struct ArchiveCellView_Previews: PreviewProvider {
-    static var previews: some View {
-        // MEMO: 部品1つあたりを表示するためのViewObject
-        let viewObject = ArchiveCellViewObject(
-            id: 1,
-            photoUrl: URL(string: "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image1.jpg") ?? nil,
-            category: "エスニック料理",
-            dishName: "ベトナム風生春巻き",
-            shopName: "美味しいベトナム料理のお店",
-            introduction: "エスニック料理の定番メニュー！ちょっと甘酸っぱいピリ辛のソースとの相性が抜群です。"
-        )
+// MARK: - Preview
 
-        // Preview: ArchiveCellView
-        ArchiveCellView(viewObject: viewObject, targetKeyword: "ベトナム", targetCategory: "", tapIsStoredButtonAction: { _ in })
-            .previewDisplayName("ArchiveCellView (with Search Keyword) Preview")
+#Preview("ArchiveCellView (with Search Keyword) Preview") {
+    // MEMO: 部品1つあたりを表示するためのViewObject
+    let viewObject = ArchiveCellViewObject(
+        id: 1,
+        photoUrl: URL(string: "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image1.jpg") ?? nil,
+        category: "エスニック料理",
+        dishName: "ベトナム風生春巻き",
+        shopName: "美味しいベトナム料理のお店",
+        introduction: "エスニック料理の定番メニュー！ちょっと甘酸っぱいピリ辛のソースとの相性が抜群です。"
+    )
+    // Preview: ArchiveCellView
+    return ArchiveCellView(viewObject: viewObject, targetKeyword: "ベトナム", targetCategory: "", tapIsStoredButtonAction: { _ in })
+}
 
-        ArchiveCellView(viewObject: viewObject, targetKeyword: "", targetCategory: "エスニック料理", tapIsStoredButtonAction: { _ in })
-            .previewDisplayName("ArchiveCellView (with Search Category) Preview")
+#Preview("ArchiveCellView (with Search Category) Preview") {
+    // MEMO: 部品1つあたりを表示するためのViewObject
+    let viewObject = ArchiveCellViewObject(
+        id: 1,
+        photoUrl: URL(string: "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image1.jpg") ?? nil,
+        category: "エスニック料理",
+        dishName: "ベトナム風生春巻き",
+        shopName: "美味しいベトナム料理のお店",
+        introduction: "エスニック料理の定番メニュー！ちょっと甘酸っぱいピリ辛のソースとの相性が抜群です。"
+    )
+    // Preview: ArchiveCellView
+    return ArchiveCellView(viewObject: viewObject, targetKeyword: "", targetCategory: "エスニック料理", tapIsStoredButtonAction: { _ in })
+}
 
-        // Preview: ArchiveCellView
-        ArchiveCellView(viewObject: viewObject, targetKeyword: "", targetCategory: "", tapIsStoredButtonAction: { _ in })
-            .previewDisplayName("ArchiveCellView (without Search Keyword) Preview")
-    }
+#Preview("ArchiveCellView (without Search Keyword) Preview") {
+    // MEMO: 部品1つあたりを表示するためのViewObject
+    let viewObject = ArchiveCellViewObject(
+        id: 1,
+        photoUrl: URL(string: "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/archive_image1.jpg") ?? nil,
+        category: "エスニック料理",
+        dishName: "ベトナム風生春巻き",
+        shopName: "美味しいベトナム料理のお店",
+        introduction: "エスニック料理の定番メニュー！ちょっと甘酸っぱいピリ辛のソースとの相性が抜群です。"
+    )
+    // Preview: ArchiveCellView
+    return ArchiveCellView(viewObject: viewObject, targetKeyword: "", targetCategory: "", tapIsStoredButtonAction: { _ in })
 }

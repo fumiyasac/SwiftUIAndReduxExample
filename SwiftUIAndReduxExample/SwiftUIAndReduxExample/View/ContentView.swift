@@ -105,31 +105,29 @@ struct ContentView: View {
 
 // MARK: - Preview
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        let store = Store(
-            reducer: appReducer,
-            state: AppState(),
-            middlewares: [
-                // 👉 Preview表示確認用にMockを適用しています
-                // OnBoarding
-                // ※ onBoardingを表示しない場合
-                //onboardingMockHideMiddleware(),
-                onboardingMockShowMiddleware(),
-                onboardingMockCloseMiddleware(),
-                // Home
-                homeMockSuccessMiddleware(),
-                // Archive
-                archiveMockSuccessMiddleware(),
-                addMockArchiveObjectMiddleware(),
-                deleteMockArchiveObjectMiddleware(),
-                // Favorite
-                favoriteMockSuccessMiddleware(),
-                // Profile
-                profileMockSuccessMiddleware()
-            ]
-        )
-        ContentView()
-            .environmentObject(store)
-    }
+#Preview("ContentView Preview") {
+    let store = Store(
+        reducer: appReducer,
+        state: AppState(),
+        middlewares: [
+            // 👉 Preview表示確認用にMockを適用しています
+            // OnBoarding
+            // ※ onBoardingを表示しない場合
+            //onboardingMockHideMiddleware(),
+            onboardingMockShowMiddleware(),
+            onboardingMockCloseMiddleware(),
+            // Home
+            homeMockSuccessMiddleware(),
+            // Archive
+            archiveMockSuccessMiddleware(),
+            addMockArchiveObjectMiddleware(),
+            deleteMockArchiveObjectMiddleware(),
+            // Favorite
+            favoriteMockSuccessMiddleware(),
+            // Profile
+            profileMockSuccessMiddleware()
+        ]
+    )
+    return ContentView()
+        .environmentObject(store)
 }
