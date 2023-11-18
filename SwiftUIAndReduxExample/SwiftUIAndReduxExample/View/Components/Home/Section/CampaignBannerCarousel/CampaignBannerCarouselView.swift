@@ -155,25 +155,22 @@ struct CampaignBannerCarouselViewModifier: ViewModifier {
 
 // MARK: - Preview
 
-struct CampaignBannerCarouselView_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        // MEMO: Preview表示用にレスポンスを想定したJsonを読み込んで画面に表示させる
-        let campaignBannersResponse = getCampaignBannersResponse()
-        let campaignBannerCarouselViewObjects = campaignBannersResponse.result
-            .map {
-                CampaignBannerCarouselViewObject(
-                    id: $0.id,
-                    bannerContentsId: $0.bannerContentsId,
-                    bannerUrl: URL(string: $0.bannerUrl) ?? nil
-                )
-            }
-        CampaignBannerCarouselView(campaignBannerCarouselViewObjects: campaignBannerCarouselViewObjects)
-    }
+#Preview("CampaignBannerCarouselView Preview") {
+    // MEMO: Preview表示用にレスポンスを想定したJsonを読み込んで画面に表示させる
+    let campaignBannersResponse = getCampaignBannersResponse()
+    let campaignBannerCarouselViewObjects = campaignBannersResponse.result
+        .map {
+            CampaignBannerCarouselViewObject(
+                id: $0.id,
+                bannerContentsId: $0.bannerContentsId,
+                bannerUrl: URL(string: $0.bannerUrl) ?? nil
+            )
+        }
+    return CampaignBannerCarouselView(campaignBannerCarouselViewObjects: campaignBannerCarouselViewObjects)
 
-    // MARK: - Private Static Function
+    // MARK: - Function
 
-    private static func getCampaignBannersResponse() -> CampaignBannersResponse {
+    func getCampaignBannersResponse() -> CampaignBannersResponse {
         guard let path = Bundle.main.path(forResource: "campaign_banners", ofType: "json") else {
             fatalError()
         }

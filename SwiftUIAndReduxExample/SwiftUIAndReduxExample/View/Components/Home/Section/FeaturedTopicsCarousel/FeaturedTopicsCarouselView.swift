@@ -236,49 +236,26 @@ struct StarRatingView: View {
 
 // MARK: - Preview
 
-struct FeaturedTopicsCarouselView_Previews: PreviewProvider {
-    static var previews: some View {
+#Preview("TrendArticlesGridView Preview") {
+    // MEMO: Preview表示用にレスポンスを想定したJsonを読み込んで画面に表示させる
+    let featuredTopicsResponse = getFeaturedTopicsResponse()
+    let featuredTopicsCarouselViewObjects = featuredTopicsResponse.result
+        .map {
+            FeaturedTopicsCarouselViewObject(
+                id: $0.id,
+                rating: $0.rating,
+                thumbnailUrl: URL(string: $0.thumbnailUrl) ?? nil,
+                title: $0.title,
+                caption: $0.caption,
+                publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: $0.publishedAt)
+            )
+        }
+    // Preview: FeaturedTopicsCarouselView
+    return FeaturedTopicsCarouselView(featuredTopicsCarouselViewObjects: featuredTopicsCarouselViewObjects)
 
-        // MEMO: Preview表示用にレスポンスを想定したJsonを読み込んで画面に表示させる
-        let featuredTopicsResponse = getFeaturedTopicsResponse()
-        let featuredTopicsCarouselViewObjects = featuredTopicsResponse.result
-            .map {
-                FeaturedTopicsCarouselViewObject(
-                    id: $0.id,
-                    rating: $0.rating,
-                    thumbnailUrl: URL(string: $0.thumbnailUrl) ?? nil,
-                    title: $0.title,
-                    caption: $0.caption,
-                    publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: $0.publishedAt)
-                )
-            }
+    // MARK: - Function
 
-        // Preview: FeaturedTopicsCarouselView
-        FeaturedTopicsCarouselView(featuredTopicsCarouselViewObjects: featuredTopicsCarouselViewObjects)
-            .previewDisplayName("FeaturedTopicsCarouselView Preview")
-    
-        // MEMO: 部品1つあたりを表示するためのViewObject
-        let viewObject = FeaturedTopicsCarouselViewObject(
-            id: 1,
-            rating: 3.7,
-            thumbnailUrl: URL(string: "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/featured_topic1.jpg") ?? nil,
-            title: "ボリューム満点の洋食セット",
-            caption: "この満足感はそう簡単には味わえないがうまい😆",
-            publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: "2022-12-01T07:30:00.000+0000")
-        )
-
-        // Preview: FeaturedTopicsCellView
-        FeaturedTopicsCellView(viewObject: viewObject, tapCellAction: {})
-            .previewDisplayName("FeaturedTopicsCellView Preview")
-
-        // MEMO: Preview表示用にレスポンスを想定したJsonを読み込んで画面に表示させる
-        StarRatingView(rating: 3.76)
-            .previewDisplayName("StarRatingView Preview")
-    }
-    
-    // MARK: - Private Static Function
-
-    private static func getFeaturedTopicsResponse() -> FeaturedTopicsResponse {
+    func getFeaturedTopicsResponse() -> FeaturedTopicsResponse {
         guard let path = Bundle.main.path(forResource: "featured_topics", ofType: "json") else {
             fatalError()
         }
@@ -290,4 +267,23 @@ struct FeaturedTopicsCarouselView_Previews: PreviewProvider {
         }
         return FeaturedTopicsResponse(result: result)
     }
+}
+
+#Preview("FeaturedTopicsCellView Preview") {
+    // MEMO: 部品1つあたりを表示するためのViewObject
+    let viewObject = FeaturedTopicsCarouselViewObject(
+        id: 1,
+        rating: 3.7,
+        thumbnailUrl: URL(string: "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/featured_topic1.jpg") ?? nil,
+        title: "ボリューム満点の洋食セット",
+        caption: "この満足感はそう簡単には味わえないがうまい😆",
+        publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: "2022-12-01T07:30:00.000+0000")
+    )
+    // Preview: FeaturedTopicsCellView
+    return FeaturedTopicsCellView(viewObject: viewObject, tapCellAction: {})
+}
+
+#Preview("StarRatingView Preview") {
+    // MEMO: Preview表示用にレスポンスを想定したJsonを読み込んで画面に表示させる
+    StarRatingView(rating: 3.76)
 }

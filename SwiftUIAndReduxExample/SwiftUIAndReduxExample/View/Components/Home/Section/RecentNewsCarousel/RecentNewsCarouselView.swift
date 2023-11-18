@@ -296,43 +296,25 @@ struct RecentNewsCellView: View {
 
 // MARK: - Preview
 
-struct RecentNewsCarouselView_Previews: PreviewProvider {
-    static var previews: some View {
+#Preview("FeaturedTopicsCellView Preview") {
+    // MEMO: Preview表示用にレスポンスを想定したJsonを読み込んで画面に表示させる
+    let recentNewsResponse = getRecentNewsResponse()
+    let recentNewsCarouselViewObjects = recentNewsResponse.result
+        .map {
+            RecentNewsCarouselViewObject(
+                id: $0.id,
+                thumbnailUrl: URL(string: $0.thumbnailUrl) ?? nil,
+                title: $0.title,
+                newsCategory: $0.newsCategory,
+                publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: $0.publishedAt)
+            )
+        }
+    // Preview: RecentNewsCarouselView
+    return RecentNewsCarouselView(recentNewsCarouselViewObjects: recentNewsCarouselViewObjects)
 
-        // MEMO: Preview表示用にレスポンスを想定したJsonを読み込んで画面に表示させる
-        let recentNewsResponse = getRecentNewsResponse()
-        let recentNewsCarouselViewObjects = recentNewsResponse.result
-            .map {
-                RecentNewsCarouselViewObject(
-                    id: $0.id,
-                    thumbnailUrl: URL(string: $0.thumbnailUrl) ?? nil,
-                    title: $0.title,
-                    newsCategory: $0.newsCategory,
-                    publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: $0.publishedAt)
-                )
-            }
+    // MARK: - Function
 
-        // Preview: RecentNewsCarouselView
-        RecentNewsCarouselView(recentNewsCarouselViewObjects: recentNewsCarouselViewObjects)
-            .previewDisplayName("RecentNewsCarouselView Preview")
-        
-        // MEMO: 部品1つあたりを表示するためのViewObject
-        let viewObject = RecentNewsCarouselViewObject(
-            id: 1,
-            thumbnailUrl: URL(string: "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail1.jpg") ?? nil,
-            title: "美味しい玉ねぎの年末年始の対応について",
-            newsCategory: "生産者からのお知らせ",
-            publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: "2022-12-01T07:30:00.000+0000")
-        )
-
-        // Preview: RecentNewsCellView
-        RecentNewsCellView(viewObject: viewObject, tapCellAction: {})
-            .previewDisplayName("RecentNewsCellView Preview")
-    }
-
-    // MARK: - Private Static Function
-
-    private static func getRecentNewsResponse() -> RecentNewsResponse {
+    func getRecentNewsResponse() -> RecentNewsResponse {
         guard let path = Bundle.main.path(forResource: "recent_news", ofType: "json") else {
             fatalError()
         }
@@ -344,4 +326,17 @@ struct RecentNewsCarouselView_Previews: PreviewProvider {
         }
         return RecentNewsResponse(result: result)
     }
+}
+
+#Preview("RecentNewsCellView Preview") {
+    // MEMO: 部品1つあたりを表示するためのViewObject
+    let viewObject = RecentNewsCarouselViewObject(
+        id: 1,
+        thumbnailUrl: URL(string: "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail1.jpg") ?? nil,
+        title: "美味しい玉ねぎの年末年始の対応について",
+        newsCategory: "生産者からのお知らせ",
+        publishedAt: DateLabelFormatter.getDateStringFromAPI(apiDateString: "2022-12-01T07:30:00.000+0000")
+    )
+    // Preview: RecentNewsCellView
+    return RecentNewsCellView(viewObject: viewObject, tapCellAction: {})
 }
