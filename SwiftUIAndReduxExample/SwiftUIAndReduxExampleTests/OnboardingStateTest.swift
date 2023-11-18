@@ -20,7 +20,7 @@ final class OnboardingStateTest: QuickSpec {
 
     // MARK: - Override
 
-    override func spec() {
+    override class func spec() {
 
         // MEMO: Quick+NimbleをベースにしたUnitTestを実行する
         describe("#オンボーディング表示対象時のテストケース") {
@@ -51,7 +51,7 @@ final class OnboardingStateTest: QuickSpec {
                 // ※ onboardingStateはImmutable / Recorderで対象秒間における値変化を全て保持している
                 it("showOnboardingがtrueであること") {
                     // timeout部分で0.16秒後の変化を見る
-                    let onboardingStateRecorderResult = try! self.wait(for: onboardingStateRecorder.availableElements, timeout: 0.16)
+                    let onboardingStateRecorderResult = try! self.current.wait(for: onboardingStateRecorder.availableElements, timeout: 0.16)
                     // 0.16秒間の変化を見て、最後の値が変化していることを確認する
                     let targetResult = onboardingStateRecorderResult.last!
                     let showOnboarding = targetResult.onboardingState.showOnboarding
@@ -80,7 +80,7 @@ final class OnboardingStateTest: QuickSpec {
                 store.dispatch(action: RequestOnboardingAction())
                 store.dispatch(action: CloseOnboardingAction())
                 it("showOnboardingがfalseであること") {
-                    let onboardingStateRecorderResult = try! self.wait(for: onboardingStateRecorder.availableElements, timeout: 0.16)
+                    let onboardingStateRecorderResult = try! self.current.wait(for: onboardingStateRecorder.availableElements, timeout: 0.16)
                     let targetResult = onboardingStateRecorderResult.last!
                     let showOnboarding = targetResult.onboardingState.showOnboarding
                     expect(showOnboarding).to(equal(false))

@@ -20,7 +20,7 @@ final class HomeStateTest: QuickSpec {
 
     // MARK: - Override
 
-    override func spec() {
+    override class func spec() {
 
         // MEMO: Quick+NimbleをベースにしたUnitTestを実行する
         // ※注意: Middlewareを直接適用するのではなく、Middlewareで起こるActionに近い形を作ることにしています。
@@ -55,7 +55,7 @@ final class HomeStateTest: QuickSpec {
                 // ※ homeStateはImmutable / Recorderで対象秒間における値変化を全て保持している
                 it("homeStateに想定している値が格納された状態であること") {
                     // timeout部分で0.16秒後の変化を見る
-                    let homeStateRecorderResult = try! self.wait(for: homeStateRecorder.availableElements, timeout: 0.16)
+                    let homeStateRecorderResult = try! self.current.wait(for: homeStateRecorder.availableElements, timeout: 0.16)
                     // 0.16秒間の変化を見て、最後の値が変化していることを確認する
                     let targetResult = homeStateRecorderResult.last!
                     // 👉 特徴的なテストケースをいくつか準備する（このテストコードで返却されるのは仮のデータではあるものの該当Stateにマッピングされる想定）
@@ -98,7 +98,7 @@ final class HomeStateTest: QuickSpec {
                 }
                 store.dispatch(action: FailureHomeAction())
                 it("homeStateのisErrorがtrueとなること") {
-                    let homeStateRecorderResult = try! self.wait(for: homeStateRecorder.availableElements, timeout: 0.16)
+                    let homeStateRecorderResult = try! self.current.wait(for: homeStateRecorder.availableElements, timeout: 0.16)
                     let targetResult = homeStateRecorderResult.last!
                     let homeState = targetResult.homeState
                     let isError = homeState.isError
@@ -110,7 +110,7 @@ final class HomeStateTest: QuickSpec {
 
     // MARK: - Private Function
 
-    private func getCampaignBannerEntities() -> [CampaignBannerEntity] {
+    private class func getCampaignBannerEntities() -> [CampaignBannerEntity] {
         guard let path = Bundle.main.path(forResource: "campaign_banners", ofType: "json") else {
             fatalError()
         }
@@ -123,7 +123,7 @@ final class HomeStateTest: QuickSpec {
         return result
     }
 
-    private func getRecentNewsRecentNewsEntities() -> [RecentNewsEntity] {
+    private class func getRecentNewsRecentNewsEntities() -> [RecentNewsEntity] {
         guard let path = Bundle.main.path(forResource: "recent_news", ofType: "json") else {
             fatalError()
         }
@@ -136,7 +136,7 @@ final class HomeStateTest: QuickSpec {
         return result
     }
 
-    private func getFeaturedTopicEntities() -> [FeaturedTopicEntity] {
+    private class func getFeaturedTopicEntities() -> [FeaturedTopicEntity] {
         guard let path = Bundle.main.path(forResource: "featured_topics", ofType: "json") else {
             fatalError()
         }
@@ -149,7 +149,7 @@ final class HomeStateTest: QuickSpec {
         return result
     }
 
-    private func getTrendArticleEntities() -> [TrendArticleEntity] {
+    private class func getTrendArticleEntities() -> [TrendArticleEntity] {
         guard let path = Bundle.main.path(forResource: "trend_articles", ofType: "json") else {
             fatalError()
         }
@@ -162,7 +162,7 @@ final class HomeStateTest: QuickSpec {
         return result
     }
 
-    private func getPickupPhotoEntities() -> [PickupPhotoEntity] {
+    private class func getPickupPhotoEntities() -> [PickupPhotoEntity] {
         guard let path = Bundle.main.path(forResource: "pickup_photos", ofType: "json") else {
             fatalError()
         }

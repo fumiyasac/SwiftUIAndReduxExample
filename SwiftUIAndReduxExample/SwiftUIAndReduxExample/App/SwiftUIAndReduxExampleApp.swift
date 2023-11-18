@@ -66,8 +66,14 @@ struct SwiftUIAndReduxExampleApp: App {
         #endif
         // 👉 ContentViewには.environmentObjectを経由してstoreを適用する
         WindowGroup {
-            ContentView()
-                .environmentObject(store)
+            let isUnitTest = ProcessInfo.processInfo.environment["XCTestBundlePath"] != nil
+            if isUnitTest {
+                Text("Executing SwiftUIAndReduxExampleTests ...")
+                    .font(.footnote)
+            } else {
+                ContentView()
+                    .environmentObject(store)
+            }
         }
     }
 }

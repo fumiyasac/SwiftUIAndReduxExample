@@ -20,7 +20,7 @@ final class FavoriteStateTest: QuickSpec {
 
     // MARK: - Override
 
-    override func spec() {
+    override class func spec() {
 
         // MEMO: Quick+NimbleをベースにしたUnitTestを実行する
         // ※注意: Middlewareを直接適用するのではなく、Middlewareで起こるActionに近い形を作ることにしています。
@@ -51,7 +51,7 @@ final class FavoriteStateTest: QuickSpec {
                 // ※ favoriteStateはImmutable / Recorderで対象秒間における値変化を全て保持している
                 it("favoriteStateに想定している値が格納された状態であること") {
                     // timeout部分で0.16秒後の変化を見る
-                    let favoriteStateRecorderResult = try! self.wait(for: favoriteStateRecorder.availableElements, timeout: 0.16)
+                    let favoriteStateRecorderResult = try! self.current.wait(for: favoriteStateRecorder.availableElements, timeout: 0.16)
                     // 0.16秒間の変化を見て、最後の値が変化していることを確認する
                     let targetResult = favoriteStateRecorderResult.last!
                     // 👉 特徴的なテストケースをいくつか準備する（このテストコードで返却されるのは仮のデータではあるものの該当Stateにマッピングされる想定）
@@ -85,7 +85,7 @@ final class FavoriteStateTest: QuickSpec {
                 }
                 store.dispatch(action: FailureFavoriteAction())
                 it("favoriteStateのisErrorがtrueとなること") {
-                    let favoriteStateRecorderResult = try! self.wait(for: favoriteStateRecorder.availableElements, timeout: 0.16)
+                    let favoriteStateRecorderResult = try! self.current.wait(for: favoriteStateRecorder.availableElements, timeout: 0.16)
                     let targetResult = favoriteStateRecorderResult.last!
                     let favoriteState = targetResult.favoriteState
                     let isError = favoriteState.isError
@@ -97,7 +97,7 @@ final class FavoriteStateTest: QuickSpec {
 
     // MARK: - Private Function
 
-    private func getFavoriteSceneEntities() -> [FavoriteSceneEntity] {
+    private class func getFavoriteSceneEntities() -> [FavoriteSceneEntity] {
         guard let path = Bundle.main.path(forResource: "favorite_scenes", ofType: "json") else {
             fatalError()
         }

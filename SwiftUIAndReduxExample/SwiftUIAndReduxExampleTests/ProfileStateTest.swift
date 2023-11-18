@@ -20,7 +20,7 @@ final class ProfileStateTest: QuickSpec {
 
     // MARK: - Override
 
-    override func spec() {
+    override class func spec() {
 
         // MEMO: Quick+NimbleをベースにしたUnitTestを実行する
         // ※注意: Middlewareを直接適用するのではなく、Middlewareで起こるActionに近い形を作ることにしています。
@@ -54,7 +54,7 @@ final class ProfileStateTest: QuickSpec {
                 // ※profileStateはImmutable / Recorderで対象秒間における値変化を全て保持している
                 it("profileStateに想定している値が格納された状態であること") {
                     // timeout部分で0.16秒後の変化を見る
-                    let profileStateRecorderResult = try! self.wait(for: profileStateRecorder.availableElements, timeout: 0.16)
+                    let profileStateRecorderResult = try! self.current.wait(for: profileStateRecorder.availableElements, timeout: 0.16)
                     // 0.16秒間の変化を見て、最後の値が変化していることを確認する
                     let targetResult = profileStateRecorderResult.last!
                     // 👉 特徴的なテストケースをいくつか準備する（このテストコードで返却されるのは仮のデータではあるものの該当Stateにマッピングされる想定）
@@ -102,7 +102,7 @@ final class ProfileStateTest: QuickSpec {
                 }
                 store.dispatch(action: FailureProfileAction())
                 it("profileStateRecorderのisErrorがtrueとなること") {
-                    let profileStateRecorderResult = try! self.wait(for: profileStateRecorder.availableElements, timeout: 0.16)
+                    let profileStateRecorderResult = try! self.current.wait(for: profileStateRecorder.availableElements, timeout: 0.16)
                     let targetResult = profileStateRecorderResult.last!
                     let profileState = targetResult.profileState
                     let isError = profileState.isError
@@ -114,7 +114,7 @@ final class ProfileStateTest: QuickSpec {
 
     // MARK: - Private Function
 
-    private func getProfilePersonalEntity() -> ProfilePersonalEntity {
+    private class func getProfilePersonalEntity() -> ProfilePersonalEntity {
         guard let path = Bundle.main.path(forResource: "profile_personal", ofType: "json") else {
             fatalError()
         }
@@ -127,7 +127,7 @@ final class ProfileStateTest: QuickSpec {
         return result
     }
 
-    private func getProfileAnnoucementEntities() -> [ProfileAnnoucementEntity] {
+    private class func getProfileAnnoucementEntities() -> [ProfileAnnoucementEntity] {
         guard let path = Bundle.main.path(forResource: "profile_announcement", ofType: "json") else {
             fatalError()
         }
@@ -140,7 +140,7 @@ final class ProfileStateTest: QuickSpec {
         return result
     }
 
-    private func getProfileCommentEntities() -> [ProfileCommentEntity] {
+    private class func getProfileCommentEntities() -> [ProfileCommentEntity] {
         guard let path = Bundle.main.path(forResource: "profile_comment", ofType: "json") else {
             fatalError()
         }
@@ -153,7 +153,7 @@ final class ProfileStateTest: QuickSpec {
         return result
     }
 
-    private func getProfileRecentFavoriteEntities() -> [ProfileRecentFavoriteEntity] {
+    private class func getProfileRecentFavoriteEntities() -> [ProfileRecentFavoriteEntity] {
         guard let path = Bundle.main.path(forResource: "profile_recent_favorite", ofType: "json") else {
             fatalError()
         }

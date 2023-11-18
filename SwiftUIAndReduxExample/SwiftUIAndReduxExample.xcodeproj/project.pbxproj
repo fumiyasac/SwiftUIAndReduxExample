@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -2128,7 +2128,7 @@
 			repositoryURL = "https://github.com/Quick/Quick.git";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 6.1.0;
+				minimumVersion = 7.3.0;
 			};
 		};
 		DEF1E46B29A6D533009A11B8 /* XCRemoteSwiftPackageReference "Nimble" */ = {
@@ -2136,7 +2136,7 @@
 			repositoryURL = "https://github.com/Quick/Nimble.git";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 11.2.1;
+				minimumVersion = 13.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
