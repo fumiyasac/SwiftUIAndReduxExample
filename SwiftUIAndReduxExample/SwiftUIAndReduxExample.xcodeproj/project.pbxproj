@@ -209,6 +209,7 @@
 		DE18342F29407DC900E3E885 /* HomeCommonSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE18342E29407DC900E3E885 /* HomeCommonSectionView.swift */; };
 		DE2098692787025D000272B9 /* SwiftUIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2098682787025D000272B9 /* SwiftUIColorExtension.swift */; };
 		DE20986B278B0F35000272B9 /* RatingViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE20986A278B0F34000272B9 /* RatingViewRepresentable.swift */; };
+		DE2444272C36DF0B00379EB8 /* Testing in Frameworks */ = {isa = PBXBuildFile; productRef = DE2444262C36DF0B00379EB8 /* Testing */; };
 		DE27BFA629512A8D00CF96AC /* favorite_scenes.json in Resources */ = {isa = PBXBuildFile; fileRef = DE27BFA529512A8D00CF96AC /* favorite_scenes.json */; };
 		DE27BFA929512B6B00CF96AC /* FavoriteSceneEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27BFA829512B6B00CF96AC /* FavoriteSceneEntity.swift */; };
 		DE27BFAB29512D1600CF96AC /* FavoriteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27BFAA29512D1600CF96AC /* FavoriteResponse.swift */; };
@@ -486,6 +487,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEF1E46D29A6D533009A11B8 /* Nimble in Frameworks */,
+				DE2444272C36DF0B00379EB8 /* Testing in Frameworks */,
 				DEF1E46A29A6D507009A11B8 /* Quick in Frameworks */,
 				DEF1E46729A6CCD8009A11B8 /* CombineExpectations in Frameworks */,
 			);
@@ -1274,6 +1276,7 @@
 				DEF1E46629A6CCD8009A11B8 /* CombineExpectations */,
 				DEF1E46929A6D507009A11B8 /* Quick */,
 				DEF1E46C29A6D533009A11B8 /* Nimble */,
+				DE2444262C36DF0B00379EB8 /* Testing */,
 			);
 			productName = SwiftUIAndReduxExampleTests;
 			productReference = DEE9C70326E8308900190505 /* SwiftUIAndReduxExampleTests.xctest */;
@@ -1337,6 +1340,7 @@
 				DEF1E46529A6CCD8009A11B8 /* XCRemoteSwiftPackageReference "CombineExpectations" */,
 				DEF1E46829A6D507009A11B8 /* XCRemoteSwiftPackageReference "Quick" */,
 				DEF1E46B29A6D533009A11B8 /* XCRemoteSwiftPackageReference "Nimble" */,
+				DE2444252C36DE8700379EB8 /* XCRemoteSwiftPackageReference "swift-testing" */,
 			);
 			productRefGroup = DEE9C6F326E8308700190505 /* Products */;
 			projectDirPath = "";
@@ -1796,6 +1800,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1850,6 +1855,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -2099,6 +2105,14 @@
 				minimumVersion = 7.11.0;
 			};
 		};
+		DE2444252C36DE8700379EB8 /* XCRemoteSwiftPackageReference "swift-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-testing.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.10.0;
+			};
+		};
 		DE43243E28463B4E001ECA85 /* XCRemoteSwiftPackageReference "Cosmos" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/evgenyneu/Cosmos.git";
@@ -2191,6 +2205,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DE183427293FDC5000E3E885 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		DE2444262C36DF0B00379EB8 /* Testing */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE2444252C36DE8700379EB8 /* XCRemoteSwiftPackageReference "swift-testing" */;
+			productName = Testing;
 		};
 		DE43243F28463B4F001ECA85 /* Cosmos */ = {
 			isa = XCSwiftPackageProductDependency;
